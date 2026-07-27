@@ -67,6 +67,16 @@ export async function getSaveSession(sessionId: string): Promise<SaveSession> {
   return response.json() as Promise<SaveSession>;
 }
 
+export async function exportSaveSession(sessionId: string): Promise<Blob> {
+  const response = await fetch(`/api/rust/sessions/${sessionId}/export`);
+
+  if (!response.ok) {
+    throw new Error(await readApiError(response));
+  }
+
+  return response.blob();
+}
+
 export async function deleteSaveSession(sessionId: string): Promise<boolean> {
   const response = await fetch(`/api/rust/sessions/${sessionId}`, {
     method: "DELETE",
