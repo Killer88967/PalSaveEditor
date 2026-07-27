@@ -1,9 +1,10 @@
 use std::io::{Cursor, Read, Write};
+
+use flate2::Compression;
 use flate2::read::ZlibDecoder;
 use flate2::write::ZlibEncoder;
-use flate2::Compression;
-use serde::{Serialize, Deserialize};
-use uesave::Save;
+use serde::{Deserialize, Serialize};
+use uesave::{Save, SaveReader, StructType, Types};
 
 const MAGIC_PLZ: &[u8; 3] = b"PlZ"; // pre-0.6, zlib
 const MAGIC_PLM: &[u8; 3] = b"PlM"; // 0.6 through 1.0, Oodle/Kraken
@@ -13,20 +14,99 @@ pub struct EditorSave {
     pub root: Save,
 }
 
+fn palworld_types() -> Types {
+    let mut types = Types::new();
+
+    types.add(
+        ".worldSaveData.CharacterSaveParameterMap.Key".to_string(),
+        StructType::Struct(None),
+    );
+
+    types.add(
+        ".worldSaveData.FoliageGridSaveDataMap.Key".to_string(),
+        StructType::Struct(None),
+    );
+
+    types.add(
+        ".worldSaveData.FoliageGridSaveDataMap.ModelMap.InstanceDataMap.Key".to_string(),
+        StructType::Struct(None),
+    );
+
+    types.add(
+        ".worldSaveData.MapObjectSpawnerInStageSaveData.Key".to_string(),
+        StructType::Struct(None),
+    );
+
+    types.add(
+        ".worldSaveData.ItemContainerSaveData.Key".to_string(),
+        StructType::Struct(None),
+    );
+
+    types.add(
+        ".worldSaveData.CharacterContainerSaveData.Key".to_string(),
+        StructType::Struct(None),
+    );
+
+    types
+}
+
+/// Decompresses and parses a complete Palworld `.sav` file into a `uesave::Save`.
+///
+/// This avoids converting the save into JSON, allowing the native API to keep
+/// the parsed save in Rust memory.
+pub fn parse_sav(data: &[u8]) -> Result<Save, String> {
+    let gvas = decompress_sav(data)?;
+    let gvas_len = gvas.len();
+
+    SaveReader::new()
+        .types(palworld_types())
+        .error_to_raw(true)
+        .read(Cursor::new(gvas))
+        .map_err(|error| format!("failed to parse GVAS payload ({gvas_len} bytes): {error}"))
+}
+
+/// Writes a parsed `uesave::Save` back into a compressed Palworld `.sav` file.
+pub fn write_sav(save: &Save) -> Result<Vec<u8>, String> {
+    let mut gvas = Vec::new();
+
+    save.write(&mut gvas).map_err(|error| error.to_string())?;
+
+    compress_sav(&gvas)
+}
+
+/// Decompresses the Palworld save container and returns the inner GVAS bytes.
 pub fn decompress_sav(data: &[u8]) -> Result<Vec<u8>, String> {
     if data.len() < 12 {
         return Err("file too small to be a Palworld save".into());
     }
-    let uncompressed_len = u32::from_le_bytes(data[0..4].try_into().unwrap()) as usize;
+
+    let uncompressed_len =
+        u32::from_le_bytes(data[0..4].try_into().map_err(|_| "invalid save header")?) as usize;
+
+    let compressed_len =
+        u32::from_le_bytes(data[4..8].try_into().map_err(|_| "invalid save header")?) as usize;
+
     let magic = &data[8..11];
     let save_type = data[11];
     let body = &data[12..];
 
+    if body.len() != compressed_len {
+        return Err(format!(
+            "compressed length mismatch: header {compressed_len} vs actual {}",
+            body.len()
+        ));
+    }
+
     let gvas = if magic == MAGIC_PLZ {
         match save_type {
             0x31 => zlib_decompress(body)?,
-            0x32 => zlib_decompress(&zlib_decompress(body)?)?,
-            other => return Err(format!("unhandled PlZ type: {other:#x}")),
+            0x32 => {
+                let first_pass = zlib_decompress(body)?;
+                zlib_decompress(&first_pass)?
+            }
+            other => {
+                return Err(format!("unhandled PlZ type: {other:#x}"));
+            }
         }
     } else if magic == MAGIC_PLM {
         oodle_decompress(body, uncompressed_len)?
@@ -40,54 +120,85 @@ pub fn decompress_sav(data: &[u8]) -> Result<Vec<u8>, String> {
             gvas.len()
         ));
     }
+
     Ok(gvas)
 }
 
+/// Compresses raw GVAS bytes into a Palworld `.sav` container.
+///
+/// This currently writes a single-zlib `PlZ` container. Palworld can upgrade
+/// the file to `PlM` the next time the game saves it.
 pub fn compress_sav(gvas: &[u8]) -> Result<Vec<u8>, String> {
-    // Always write PlZ single-zlib (0x31); the game upgrades it to PlM on next save.
-    let uncompressed_len = gvas.len() as u32;
+    let uncompressed_len = u32::try_from(gvas.len()).map_err(|_| {
+        format!(
+            "GVAS data is too large for the Palworld save container: {} bytes",
+            gvas.len()
+        )
+    })?;
+
     let compressed = zlib_compress(gvas)?;
-    let compressed_len = compressed.len() as u32;
-    let mut out = Vec::with_capacity(12 + compressed.len());
-    out.extend_from_slice(&uncompressed_len.to_le_bytes());
-    out.extend_from_slice(&compressed_len.to_le_bytes());
-    out.extend_from_slice(MAGIC_PLZ);
-    out.push(0x31);
-    out.extend_from_slice(&compressed);
-    Ok(out)
+
+    let compressed_len = u32::try_from(compressed.len()).map_err(|_| {
+        format!(
+            "compressed save is too large for the Palworld save container: {} bytes",
+            compressed.len()
+        )
+    })?;
+
+    let mut output = Vec::with_capacity(12 + compressed.len());
+
+    output.extend_from_slice(&uncompressed_len.to_le_bytes());
+    output.extend_from_slice(&compressed_len.to_le_bytes());
+    output.extend_from_slice(MAGIC_PLZ);
+    output.push(0x31);
+    output.extend_from_slice(&compressed);
+
+    Ok(output)
 }
 
-fn oodle_decompress(data: &[u8], out_len: usize) -> Result<Vec<u8>, String> {
-    let mut out = vec![0u8; out_len];
+fn oodle_decompress(data: &[u8], output_len: usize) -> Result<Vec<u8>, String> {
+    let mut output = vec![0_u8; output_len];
+
     oozextract::Extractor::new()
-        .read_from_slice(data, &mut out)
-        .map_err(|e| e.to_string())?;
-    Ok(out)
+        .read_from_slice(data, &mut output)
+        .map_err(|error| error.to_string())?;
+
+    Ok(output)
 }
 
 fn zlib_decompress(data: &[u8]) -> Result<Vec<u8>, String> {
-    let mut out = Vec::new();
-    ZlibDecoder::new(data).read_to_end(&mut out).map_err(|e| e.to_string())?;
-    Ok(out)
+    let mut output = Vec::new();
+
+    ZlibDecoder::new(data)
+        .read_to_end(&mut output)
+        .map_err(|error| error.to_string())?;
+
+    Ok(output)
 }
 
 fn zlib_compress(data: &[u8]) -> Result<Vec<u8>, String> {
-    let mut e = ZlibEncoder::new(Vec::new(), Compression::default());
-    e.write_all(data).map_err(|e| e.to_string())?;
-    e.finish().map_err(|e| e.to_string())
+    let mut encoder = ZlibEncoder::new(Vec::new(), Compression::default());
+
+    encoder.write_all(data).map_err(|error| error.to_string())?;
+
+    encoder.finish().map_err(|error| error.to_string())
 }
 
+/// Existing browser/WASM conversion path.
+///
+/// This remains available for now, but the native API should use `parse_sav()`
+/// instead so it does not generate one enormous JSON string.
 pub fn sav_to_json_impl(data: &[u8]) -> Result<String, String> {
-    let gvas = decompress_sav(data)?;
-    let root = Save::read(&mut Cursor::new(gvas)).map_err(|e| e.to_string())?;
-    serde_json::to_string(&(EditorSave { root })).map_err(|e| e.to_string())
+    let root = parse_sav(data)?;
+
+    serde_json::to_string(&(EditorSave { root })).map_err(|error| error.to_string())
 }
 
+/// Existing browser/WASM recompilation path.
 pub fn json_to_sav_impl(json: &str) -> Result<Vec<u8>, String> {
-    let editor: EditorSave = serde_json::from_str(json).map_err(|e| e.to_string())?;
-    let mut gvas = Vec::new();
-    editor.root.write(&mut gvas).map_err(|e| e.to_string())?;
-    compress_sav(&gvas)
+    let editor: EditorSave = serde_json::from_str(json).map_err(|error| error.to_string())?;
+
+    write_sav(&editor.root)
 }
 
 #[cfg(target_arch = "wasm32")]
@@ -96,11 +207,11 @@ mod wasm {
 
     #[wasm_bindgen]
     pub fn sav_to_json(data: &[u8]) -> Result<String, JsError> {
-        super::sav_to_json_impl(data).map_err(|e| JsError::new(&e))
+        super::sav_to_json_impl(data).map_err(|error| JsError::new(&error))
     }
 
     #[wasm_bindgen]
     pub fn json_to_sav(json: &str) -> Result<Vec<u8>, JsError> {
-        super::json_to_sav_impl(json).map_err(|e| JsError::new(&e))
+        super::json_to_sav_impl(json).map_err(|error| JsError::new(&error))
     }
 }

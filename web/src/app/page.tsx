@@ -2,6 +2,11 @@
 
 import { useMemo, useState } from "react";
 import init, { sav_to_json, json_to_sav } from "@/wasm/palsave_core";
+import {
+  createSaveSession,
+  deleteSaveSession,
+  type SaveSession,
+} from "@/lib/palsave-api";
 
 let wasmReady: Promise<unknown> | null = null;
 function ensureWasm() {
@@ -207,19 +212,36 @@ export default function Home() {
   const [status, setStatus] = useState("Pick a .sav file to parse.");
   const [data, setData] = useState<Json | null>(null);
   const [fileName, setFileName] = useState("");
+  const [session, setSession] = useState<SaveSession | null>(null);
   const [q, setQ] = useState("");
 
   async function onFile(e: React.ChangeEvent<HTMLInputElement>) {
+    if (session) {
+      try {
+        await deleteSaveSession(session.id);
+      } catch (error) {
+        console.warn("Failed to delete previous save session:", error);
+      }
+
+      setSession(null);
+    }
+
     const file = e.target.files?.[0];
     if (!file) return;
     setStatus(`Reading ${file.name}…`);
     setData(null);
     setFileName(file.name);
     try {
+      const createdSession = await createSaveSession(file);
+      setSession(createdSession);
+
       await ensureWasm();
       const bytes = new Uint8Array(await file.arrayBuffer());
       setData(JSON.parse(sav_to_json(bytes)));
-      setStatus(`✅ Parsed ${file.name}`);
+
+      setStatus(
+        `✅ Parsed ${createdSession.fileName} — Rust session ${createdSession.id}`,
+      );
     } catch (err) {
       setStatus(`❌ ${String(err)}`);
     }
@@ -265,6 +287,24 @@ export default function Home() {
         </button>
       </div>
       <p className="text-sm text-neutral-400">{status}</p>
+
+      {session && (
+        <div className="rounded border border-neutral-800 bg-neutral-950 p-3 text-sm">
+          <p>
+            <span className="text-neutral-500">Session:</span>{" "}
+            <code>{session.id}</code>
+          </p>
+
+          <p>
+            <span className="text-neutral-500">File:</span> {session.fileName}
+          </p>
+
+          <p>
+            <span className="text-neutral-500">Compressed size:</span>{" "}
+            {session.originalSize.toLocaleString()} bytes
+          </p>
+        </div>
+      )}
 
       {data !== null && (
         <section className="space-y-2 rounded border border-neutral-800 p-4">
