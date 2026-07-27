@@ -1,13 +1,20 @@
 use axum::{
     Json, Router,
+    body::Body,
     extract::{DefaultBodyLimit, Multipart, Path, State},
-    http::StatusCode,
+    http::{
+        StatusCode,
+        header::{CONTENT_DISPOSITION, CONTENT_TYPE},
+    },
     response::{IntoResponse, Response},
     routing::{get, post},
 };
 use dashmap::DashMap;
 use serde::Serialize;
-use std::{env, sync::Arc};
+use std::{
+    env,
+    sync::{Arc, Mutex},
+};
 use tower_http::trace::TraceLayer;
 use uesave::Save;
 use uuid::Uuid;
@@ -24,7 +31,7 @@ struct AppState {
 struct SaveSession {
     file_name: String,
     original_size: usize,
-    save: Save,
+    save: Arc<Mutex<Save>>,
 }
 
 #[derive(Debug, Serialize)]
@@ -136,7 +143,7 @@ async fn create_session(
         SaveSession {
             file_name: file_name.clone(),
             original_size,
-            save,
+            save: Arc::new(Mutex::new(save)),
         },
     );
 
@@ -171,6 +178,37 @@ async fn get_session(
         file_name: session.file_name.clone(),
         original_size: session.original_size,
     }))
+}
+
+async fn export_session(
+    State(state): State<Arc<AppState>>,
+    Path(id): Path<Uuid>,
+) -> Result<Response, ApiError> {
+    let save = state
+        .sessions
+        .get(&id)
+        .map(|session| Arc::clone(&session.save))
+        .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
+
+    let bytes = tokio::task::spawn_blocking(move || {
+        let save = save
+            .lock()
+            .map_err(|_| "save session lock was poisoned".to_string())?;
+
+        palsave_core::write_sav(&save)
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("save writer task failed: {error}")))?
+    .map_err(ApiError::Internal)?;
+
+    Response::builder()
+        .header(CONTENT_TYPE, "application/octet-stream")
+        .header(
+            CONTENT_DISPOSITION,
+            "attachment; filename=\"Level.roundtrip.sav\"",
+        )
+        .body(Body::from(bytes))
+        .map_err(|error| ApiError::Internal(format!("failed to build export response: {error}")))
 }
 
 async fn delete_session(
@@ -219,6 +257,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/health", get(health))
         .route("/sessions", post(create_session))
         .route("/sessions/{id}", get(get_session).delete(delete_session))
+        .route("/sessions/{id}/export", get(export_session))
         .layer(DefaultBodyLimit::max(MAX_UPLOAD_SIZE))
         .layer(TraceLayer::new_for_http())
         .with_state(state);
