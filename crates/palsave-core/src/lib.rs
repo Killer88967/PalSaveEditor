@@ -14,6 +14,11 @@ pub struct EditorSave {
     pub root: Save,
 }
 
+pub struct ParsedSave {
+    pub save: Save,
+    pub decompressed_size: usize,
+}
+
 fn palworld_types() -> Types {
     let mut types = Types::new();
 
@@ -55,14 +60,26 @@ fn palworld_types() -> Types {
 /// This avoids converting the save into JSON, allowing the native API to keep
 /// the parsed save in Rust memory.
 pub fn parse_sav(data: &[u8]) -> Result<Save, String> {
-    let gvas = decompress_sav(data)?;
-    let gvas_len = gvas.len();
+    parse_sav_with_metadata(data).map(|parsed| parsed.save)
+}
 
-    SaveReader::new()
+/// Decompresses and parses a complete Palworld `.sav`, retaining size metadata.
+pub fn parse_sav_with_metadata(data: &[u8]) -> Result<ParsedSave, String> {
+    let gvas = decompress_sav(data)?;
+    let decompressed_size = gvas.len();
+
+    let save = SaveReader::new()
         .types(palworld_types())
         .error_to_raw(true)
         .read(Cursor::new(gvas))
-        .map_err(|error| format!("failed to parse GVAS payload ({gvas_len} bytes): {error}"))
+        .map_err(|error| {
+            format!("failed to parse GVAS payload ({decompressed_size} bytes): {error}")
+        })?;
+
+    Ok(ParsedSave {
+        save,
+        decompressed_size,
+    })
 }
 
 /// Writes a parsed `uesave::Save` back into a compressed Palworld `.sav` file.

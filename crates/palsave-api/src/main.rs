@@ -16,7 +16,7 @@ use std::{
     sync::{Arc, Mutex},
 };
 use tower_http::trace::TraceLayer;
-use uesave::Save;
+use uesave::{Property, Save, StructValue, ValueVec};
 use uuid::Uuid;
 
 const DEFAULT_PORT: u16 = 47_831;
@@ -31,6 +31,7 @@ struct AppState {
 struct SaveSession {
     file_name: String,
     original_size: usize,
+    decompressed_size: usize,
     save: Arc<Mutex<Save>>,
 }
 
@@ -46,6 +47,34 @@ struct SessionResponse {
     id: Uuid,
     file_name: String,
     original_size: usize,
+    decompressed_size: usize,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct RootNodeResponse {
+    path: Vec<String>,
+    kind: NodeKind,
+    child_count: usize,
+    children: Vec<NodeSummary>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct NodeSummary {
+    key: String,
+    kind: NodeKind,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    child_count: Option<usize>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "lowercase")]
+enum NodeKind {
+    Object,
+    Array,
+    Scalar,
+    Raw,
 }
 
 #[derive(Debug, Serialize)]
@@ -131,10 +160,11 @@ async fn create_session(
 
     let original_size = bytes.len();
 
-    let save = tokio::task::spawn_blocking(move || palsave_core::parse_sav(&bytes))
+    let parsed = tokio::task::spawn_blocking(move || palsave_core::parse_sav_with_metadata(&bytes))
         .await
         .map_err(|error| ApiError::Internal(format!("save parser task failed: {error}")))?
         .map_err(ApiError::BadRequest)?;
+    let decompressed_size = parsed.decompressed_size;
 
     let id = Uuid::new_v4();
 
@@ -143,7 +173,8 @@ async fn create_session(
         SaveSession {
             file_name: file_name.clone(),
             original_size,
-            save: Arc::new(Mutex::new(save)),
+            decompressed_size,
+            save: Arc::new(Mutex::new(parsed.save)),
         },
     );
 
@@ -151,6 +182,7 @@ async fn create_session(
         %id,
         %file_name,
         original_size,
+        decompressed_size,
         "created save session"
     );
 
@@ -160,6 +192,7 @@ async fn create_session(
             id,
             file_name,
             original_size,
+            decompressed_size,
         }),
     ))
 }
@@ -177,6 +210,84 @@ async fn get_session(
         id,
         file_name: session.file_name.clone(),
         original_size: session.original_size,
+        decompressed_size: session.decompressed_size,
+    }))
+}
+
+fn value_vec_len(value: &ValueVec) -> usize {
+    match value {
+        ValueVec::Int8(v) => v.len(),
+        ValueVec::Int16(v) => v.len(),
+        ValueVec::Int(v) => v.len(),
+        ValueVec::Int64(v) => v.len(),
+        ValueVec::UInt8(v) => v.len(),
+        ValueVec::UInt16(v) => v.len(),
+        ValueVec::UInt32(v) => v.len(),
+        ValueVec::UInt64(v) => v.len(),
+        ValueVec::Float(v) => v.len(),
+        ValueVec::Double(v) => v.len(),
+        ValueVec::Bool(v) => v.len(),
+        ValueVec::Byte(uesave::ByteArray::Byte(v)) => v.len(),
+        ValueVec::Byte(uesave::ByteArray::Label(v)) => v.len(),
+        ValueVec::Enum(v) => v.len(),
+        ValueVec::Str(v) => v.len(),
+        ValueVec::Text(v) => v.len(),
+        ValueVec::SoftObject(v) => v.len(),
+        ValueVec::Name(v) => v.len(),
+        ValueVec::Object(v) => v.len(),
+        ValueVec::Box(v) => v.len(),
+        ValueVec::Box2D(v) => v.len(),
+        ValueVec::Struct(v) => v.len(),
+    }
+}
+
+fn property_summary(property: &Property) -> (NodeKind, Option<usize>) {
+    match property {
+        Property::Struct(StructValue::Struct(properties)) => {
+            (NodeKind::Object, Some(properties.0.len()))
+        }
+        Property::Struct(StructValue::Raw(_)) | Property::Raw(_) => (NodeKind::Raw, None),
+        Property::Array(values) | Property::Set(values) => {
+            (NodeKind::Array, Some(value_vec_len(values)))
+        }
+        Property::Map(values) => (NodeKind::Object, Some(values.len())),
+        _ => (NodeKind::Scalar, None),
+    }
+}
+
+async fn get_root(
+    State(state): State<Arc<AppState>>,
+    Path(id): Path<Uuid>,
+) -> Result<Json<RootNodeResponse>, ApiError> {
+    let save = state
+        .sessions
+        .get(&id)
+        .map(|session| Arc::clone(&session.save))
+        .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
+    let save = save
+        .lock()
+        .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
+    let properties = &save.root.properties.0;
+    let children = properties
+        .iter()
+        .map(|(key, property)| {
+            let (kind, child_count) = property_summary(property);
+            NodeSummary {
+                key: if key.0 == 0 {
+                    key.1.clone()
+                } else {
+                    format!("{}_{}", key.1, key.0)
+                },
+                kind,
+                child_count,
+            }
+        })
+        .collect();
+    Ok(Json(RootNodeResponse {
+        path: vec!["root".to_string(), "properties".to_string()],
+        kind: NodeKind::Object,
+        child_count: properties.len(),
+        children,
     }))
 }
 
@@ -257,6 +368,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/health", get(health))
         .route("/sessions", post(create_session))
         .route("/sessions/{id}", get(get_session).delete(delete_session))
+        .route("/sessions/{id}/root", get(get_root))
         .route("/sessions/{id}/export", get(export_session))
         .layer(DefaultBodyLimit::max(MAX_UPLOAD_SIZE))
         .layer(TraceLayer::new_for_http())

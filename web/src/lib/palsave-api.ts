@@ -7,6 +7,22 @@ export interface SaveSession {
   id: string;
   fileName: string;
   originalSize: number;
+  decompressedSize: number;
+}
+
+export type SaveNodeKind = "object" | "array" | "scalar" | "raw";
+
+export interface SaveNodeSummary {
+  key: string;
+  kind: SaveNodeKind;
+  childCount?: number;
+}
+
+export interface SaveRootNode {
+  path: string[];
+  kind: SaveNodeKind;
+  childCount: number;
+  children: SaveNodeSummary[];
 }
 
 interface DeleteSessionResponse {
@@ -65,6 +81,16 @@ export async function getSaveSession(sessionId: string): Promise<SaveSession> {
   }
 
   return response.json() as Promise<SaveSession>;
+}
+
+export async function getSaveRoot(sessionId: string): Promise<SaveRootNode> {
+  const response = await fetch(`/api/rust/sessions/${sessionId}/root`);
+
+  if (!response.ok) {
+    throw new Error(await readApiError(response));
+  }
+
+  return response.json() as Promise<SaveRootNode>;
 }
 
 export async function exportSaveSession(sessionId: string): Promise<Blob> {
