@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { PalList } from "@/components/pal-list";
 import {
   createSaveSession,
   deleteSaveSession,
@@ -13,6 +14,7 @@ import {
   type EditableScalarValue,
   type SaveNodeResponse,
   type SaveNodeSummary,
+  type SavePathSegment,
   type SaveSession,
 } from "@/lib/palsave-api";
 import { isTextScalar, scalarFromInput } from "@/lib/scalar-input";
@@ -236,6 +238,8 @@ function roundtripFileName(name: string) {
 export default function Home() {
   const [status, setStatus] = useState("Pick a .sav file to parse."),
     [session, setSession] = useState<SaveSession | null>(null);
+  const [activeView, setActiveView] = useState<"pals" | "raw">("pals"),
+    [palRefresh, setPalRefresh] = useState(0);
   const [root, setRoot] = useState<SaveNodeResponse | null>(null),
     [rootError, setRootError] = useState<string | null>(null);
   const [isLoadingRoot, setIsLoadingRoot] = useState(false),
@@ -267,6 +271,8 @@ export default function Home() {
     setIsExporting(false);
     setExpanded(new Set());
     setLoaded({});
+    setActiveView("pals");
+    setPalRefresh(0);
     if (previous)
       void deleteSaveSession(previous.id).catch((error) =>
         console.warn("Failed to delete previous save session:", error),
@@ -421,7 +427,10 @@ export default function Home() {
           ]),
         ),
       );
-      setStatus(`✅ Saved scalar — revision ${response.revision}`);
+      setPalRefresh((value) => value + 1);
+      setStatus(
+        `✅ Saved scalar — revision ${response.revision}; Pal index refreshed`,
+      );
     } catch (error) {
       if (
         active(g) &&
@@ -499,6 +508,11 @@ export default function Home() {
     }
   }
 
+  function viewRawPath(path: SavePathSegment[]) {
+    setActiveView("raw");
+    setStatus(`Raw path: ${JSON.stringify(path)}`);
+  }
+
   const ratio =
     session && session.originalSize
       ? session.decompressedSize / session.originalSize
@@ -552,47 +566,82 @@ export default function Home() {
             <span className="text-neutral-500">Expansion ratio:</span>{" "}
             {ratio.toFixed(2)}×
           </p>
-          <div className="mt-3 border-t border-neutral-800 pt-3">
-            <h2 className="font-medium">Root properties</h2>
-            {isLoadingRoot && (
-              <p className="text-neutral-400">Loading root summary…</p>
-            )}
-            {rootError && <p className="text-red-400">❌ {rootError}</p>}
-            {root && (
-              <>
-                <p className="text-neutral-500">
-                  {root.childCount.toLocaleString()} immediate{" "}
-                  {root.childCount === 1 ? "property" : "properties"}
-                </p>
-                <ul className="mt-2">
-                  {root.children.map((child) => (
-                    <TreeNode
-                      key={pathKey(child.path)}
-                      node={child}
-                      depth={0}
-                      sessionId={session.id}
-                      expanded={expanded}
-                      loaded={loaded}
-                      onToggle={toggleNode}
-                      onLoadMore={loadMore}
-                      onSave={saveScalar}
-                    />
-                  ))}
-                </ul>
-                {root.hasMore && (
-                  <button
-                    disabled={isLoadingRoot}
-                    onClick={() => void loadMoreRoot()}
-                    className="mt-2 rounded border border-neutral-700 px-2 py-1 text-xs disabled:opacity-40"
-                  >
-                    {isLoadingRoot
-                      ? "Loading…"
-                      : `Load more (${root.children.length}/${root.totalChildren})`}
-                  </button>
-                )}
-              </>
-            )}
+          <div
+            className="mt-3 flex gap-1 border-t border-neutral-800 pt-3"
+            role="tablist"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeView === "pals"}
+              onClick={() => setActiveView("pals")}
+              className={`rounded px-3 py-1.5 text-sm ${activeView === "pals" ? "bg-sky-800 text-white" : "text-neutral-400 hover:bg-neutral-900"}`}
+            >
+              Pals
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeView === "raw"}
+              onClick={() => setActiveView("raw")}
+              className={`rounded px-3 py-1.5 text-sm ${activeView === "raw" ? "bg-sky-800 text-white" : "text-neutral-400 hover:bg-neutral-900"}`}
+            >
+              Raw Save Tree
+            </button>
           </div>
+          {activeView === "pals" ? (
+            <div className="mt-3">
+              <PalList
+                key={session.id}
+                sessionId={session.id}
+                generation={generation.current}
+                refreshToken={palRefresh}
+                onViewRaw={viewRawPath}
+              />
+            </div>
+          ) : (
+            <div className="mt-3 border-t border-neutral-800 pt-3">
+              <h2 className="font-medium">Root properties</h2>
+              {isLoadingRoot && (
+                <p className="text-neutral-400">Loading root summary…</p>
+              )}
+              {rootError && <p className="text-red-400">❌ {rootError}</p>}
+              {root && (
+                <>
+                  <p className="text-neutral-500">
+                    {root.childCount.toLocaleString()} immediate{" "}
+                    {root.childCount === 1 ? "property" : "properties"}
+                  </p>
+                  <ul className="mt-2">
+                    {root.children.map((child) => (
+                      <TreeNode
+                        key={pathKey(child.path)}
+                        node={child}
+                        depth={0}
+                        sessionId={session.id}
+                        expanded={expanded}
+                        loaded={loaded}
+                        onToggle={toggleNode}
+                        onLoadMore={loadMore}
+                        onSave={saveScalar}
+                      />
+                    ))}
+                  </ul>
+                  {root.hasMore && (
+                    <button
+                      disabled={isLoadingRoot}
+                      onClick={() => void loadMoreRoot()}
+                      className="mt-2 rounded border border-neutral-700 px-2 py-1 text-xs disabled:opacity-40"
+                    >
+                      {isLoadingRoot
+                        ? "Loading…"
+                        : `Load more (${root.children.length}/${root.totalChildren})`}
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
+          )}
         </div>
       )}
     </main>

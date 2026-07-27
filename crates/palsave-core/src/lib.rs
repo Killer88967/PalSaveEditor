@@ -1,10 +1,10 @@
-use std::io::{ Cursor, Read, Write };
+use std::io::{Cursor, Read, Write};
 
 use flate2::Compression;
 use flate2::read::ZlibDecoder;
 use flate2::write::ZlibEncoder;
-use serde::{ Deserialize, Serialize };
-use uesave::{ Save, SaveReader, StructType, Types };
+use serde::{Deserialize, Serialize};
+use uesave::{Save, SaveReader, StructType, Types};
 
 const MAGIC_PLZ: &[u8; 3] = b"PlZ"; // pre-0.6, zlib
 const MAGIC_PLM: &[u8; 3] = b"PlM"; // 0.6 through 1.0, Oodle/Kraken
@@ -22,25 +22,40 @@ pub struct ParsedSave {
 fn palworld_types() -> Types {
     let mut types = Types::new();
 
-    types.add(".worldSaveData.CharacterSaveParameterMap.Key".to_string(), StructType::Struct(None));
+    // uesave 0.7 scopes omit the leading dot. Both the key and value need
+    // explicit struct hints or the complete map falls back to Property::Raw.
+    types.add(
+        "worldSaveData.CharacterSaveParameterMap.Key".to_string(),
+        StructType::Struct(None),
+    );
+    types.add(
+        "worldSaveData.CharacterSaveParameterMap.Value".to_string(),
+        StructType::Struct(None),
+    );
 
-    types.add(".worldSaveData.FoliageGridSaveDataMap.Key".to_string(), StructType::Struct(None));
+    types.add(
+        ".worldSaveData.FoliageGridSaveDataMap.Key".to_string(),
+        StructType::Struct(None),
+    );
 
     types.add(
         ".worldSaveData.FoliageGridSaveDataMap.ModelMap.InstanceDataMap.Key".to_string(),
-        StructType::Struct(None)
+        StructType::Struct(None),
     );
 
     types.add(
         ".worldSaveData.MapObjectSpawnerInStageSaveData.Key".to_string(),
-        StructType::Struct(None)
+        StructType::Struct(None),
     );
 
-    types.add(".worldSaveData.ItemContainerSaveData.Key".to_string(), StructType::Struct(None));
+    types.add(
+        ".worldSaveData.ItemContainerSaveData.Key".to_string(),
+        StructType::Struct(None),
+    );
 
     types.add(
         ".worldSaveData.CharacterContainerSaveData.Key".to_string(),
-        StructType::Struct(None)
+        StructType::Struct(None),
     );
 
     types
@@ -64,7 +79,7 @@ pub fn parse_sav_with_metadata(data: &[u8]) -> Result<ParsedSave, String> {
 /// Callers accepting untrusted uploads should use this form to bound decompression memory.
 pub fn parse_sav_with_metadata_limit(
     data: &[u8],
-    max_decompressed_size: usize
+    max_decompressed_size: usize,
 ) -> Result<ParsedSave, String> {
     let gvas = decompress_sav_with_limit(data, max_decompressed_size)?;
     let decompressed_size = gvas.len();
@@ -100,26 +115,22 @@ pub fn decompress_sav(data: &[u8]) -> Result<Vec<u8>, String> {
 /// Decompresses a Palworld container with an explicit output-size limit.
 pub fn decompress_sav_with_limit(
     data: &[u8],
-    max_decompressed_size: usize
+    max_decompressed_size: usize,
 ) -> Result<Vec<u8>, String> {
     if data.len() < 12 {
         return Err("file too small to be a Palworld save".into());
     }
 
-    let uncompressed_len = u32::from_le_bytes(
-        data[0..4].try_into().map_err(|_| "invalid save header")?
-    ) as usize;
+    let uncompressed_len =
+        u32::from_le_bytes(data[0..4].try_into().map_err(|_| "invalid save header")?) as usize;
 
-    let compressed_len = u32::from_le_bytes(
-        data[4..8].try_into().map_err(|_| "invalid save header")?
-    ) as usize;
+    let compressed_len =
+        u32::from_le_bytes(data[4..8].try_into().map_err(|_| "invalid save header")?) as usize;
 
     if uncompressed_len > max_decompressed_size {
-        return Err(
-            format!(
-                "decompressed save size {uncompressed_len} exceeds configured limit {max_decompressed_size}"
-            )
-        );
+        return Err(format!(
+            "decompressed save size {uncompressed_len} exceeds configured limit {max_decompressed_size}"
+        ));
     }
 
     let magic = &data[8..11];
@@ -127,9 +138,10 @@ pub fn decompress_sav_with_limit(
     let body = &data[12..];
 
     if body.len() != compressed_len {
-        return Err(
-            format!("compressed length mismatch: header {compressed_len} vs actual {}", body.len())
-        );
+        return Err(format!(
+            "compressed length mismatch: header {compressed_len} vs actual {}",
+            body.len()
+        ));
     }
 
     let gvas = if magic == MAGIC_PLZ {
@@ -150,12 +162,10 @@ pub fn decompress_sav_with_limit(
     };
 
     if gvas.len() != uncompressed_len {
-        return Err(
-            format!(
-                "uncompressed length mismatch: header {uncompressed_len} vs actual {}",
-                gvas.len()
-            )
-        );
+        return Err(format!(
+            "uncompressed length mismatch: header {uncompressed_len} vs actual {}",
+            gvas.len()
+        ));
     }
 
     Ok(gvas)
@@ -166,22 +176,21 @@ pub fn decompress_sav_with_limit(
 /// This currently writes a single-zlib `PlZ` container. Palworld can upgrade
 /// the file to `PlM` the next time the game saves it.
 pub fn compress_sav(gvas: &[u8]) -> Result<Vec<u8>, String> {
-    let uncompressed_len = u32
-        ::try_from(gvas.len())
-        .map_err(|_| {
-            format!("GVAS data is too large for the Palworld save container: {} bytes", gvas.len())
-        })?;
+    let uncompressed_len = u32::try_from(gvas.len()).map_err(|_| {
+        format!(
+            "GVAS data is too large for the Palworld save container: {} bytes",
+            gvas.len()
+        )
+    })?;
 
     let compressed = zlib_compress(gvas)?;
 
-    let compressed_len = u32
-        ::try_from(compressed.len())
-        .map_err(|_| {
-            format!(
-                "compressed save is too large for the Palworld save container: {} bytes",
-                compressed.len()
-            )
-        })?;
+    let compressed_len = u32::try_from(compressed.len()).map_err(|_| {
+        format!(
+            "compressed save is too large for the Palworld save container: {} bytes",
+            compressed.len()
+        )
+    })?;
 
     let mut output = Vec::with_capacity(12 + compressed.len());
 
@@ -197,8 +206,7 @@ pub fn compress_sav(gvas: &[u8]) -> Result<Vec<u8>, String> {
 fn oodle_decompress(data: &[u8], output_len: usize) -> Result<Vec<u8>, String> {
     let mut output = vec![0_u8; output_len];
 
-    oozextract::Extractor
-        ::new()
+    oozextract::Extractor::new()
         .read_from_slice(data, &mut output)
         .map_err(|error| error.to_string())?;
 
@@ -213,7 +221,9 @@ fn zlib_decompress_limited(data: &[u8], limit: usize) -> Result<Vec<u8>, String>
         .read_to_end(&mut output)
         .map_err(|error| error.to_string())?;
     if output.len() > limit {
-        return Err(format!("decompressed data exceeds configured limit {limit}"));
+        return Err(format!(
+            "decompressed data exceeds configured limit {limit}"
+        ));
     }
     Ok(output)
 }

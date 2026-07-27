@@ -1,20 +1,29 @@
 use axum::{
-    Json,
-    Router,
+    Json, Router,
     body::Body,
-    extract::{ DefaultBodyLimit, Multipart, Path, Query, State, rejection::JsonRejection },
-    http::{ HeaderName, HeaderValue, StatusCode, header::{ CONTENT_DISPOSITION, CONTENT_TYPE } },
-    response::{ IntoResponse, Response },
-    routing::{ get, patch, post },
+    extract::{
+        DefaultBodyLimit, Multipart, Path, Query, State,
+        rejection::{JsonRejection, QueryRejection},
+    },
+    http::{
+        HeaderName, HeaderValue, StatusCode,
+        header::{CONTENT_DISPOSITION, CONTENT_TYPE},
+    },
+    response::{IntoResponse, Response},
+    routing::{get, patch, post},
 };
 use dashmap::DashMap;
-use serde::{ Deserialize, Serialize };
-use std::{ env, sync::{ Arc, Mutex } };
+use serde::{Deserialize, Serialize};
+use std::{
+    env,
+    sync::{Arc, Mutex},
+};
 use tower_http::trace::TraceLayer;
 use uesave::Save;
 use uuid::Uuid;
 
 mod nodes;
+mod pals;
 
 const DEFAULT_PORT: u16 = 47_831;
 const MAX_UPLOAD_SIZE: usize = 512 * 1024 * 1024;
@@ -38,6 +47,7 @@ struct SaveSessionData {
     save: Save,
     dirty: bool,
     revision: u64,
+    pal_index: Option<pals::PalIndexCache>,
 }
 
 #[derive(Debug, Serialize)]
@@ -62,6 +72,22 @@ struct PageQuery {
     #[serde(default)]
     offset: usize,
     limit: Option<usize>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+struct PalsQuery {
+    #[serde(default)]
+    offset: usize,
+    limit: Option<usize>,
+    search: Option<String>,
+    character_id: Option<String>,
+    owner_player_uid: Option<String>,
+    gender: Option<String>,
+    min_level: Option<i32>,
+    max_level: Option<i32>,
+    #[serde(default)]
+    include_players: bool,
 }
 
 #[derive(Debug, Serialize)]
@@ -97,8 +123,15 @@ impl IntoResponse for ApiError {
             Self::BadRequest(message) => (StatusCode::BAD_REQUEST, message, None, None),
             Self::NotFound(message) => (StatusCode::NOT_FOUND, message, None, None),
             Self::PayloadTooLarge(message) => (StatusCode::PAYLOAD_TOO_LARGE, message, None, None),
-            Self::Conflict { message, current_revision } =>
-                (StatusCode::CONFLICT, message, Some("revisionConflict"), Some(current_revision)),
+            Self::Conflict {
+                message,
+                current_revision,
+            } => (
+                StatusCode::CONFLICT,
+                message,
+                Some("revisionConflict"),
+                Some(current_revision),
+            ),
             Self::Internal(message) => (StatusCode::INTERNAL_SERVER_ERROR, message, None, None),
         };
         (
@@ -108,7 +141,8 @@ impl IntoResponse for ApiError {
                 code,
                 current_revision,
             }),
-        ).into_response()
+        )
+            .into_response()
     }
 }
 
@@ -121,14 +155,14 @@ async fn health() -> Json<HealthResponse> {
 
 async fn create_session(
     State(state): State<Arc<AppState>>,
-    mut multipart: Multipart
+    mut multipart: Multipart,
 ) -> Result<(StatusCode, Json<SessionResponse>), ApiError> {
     let mut uploaded_file: Option<(String, Vec<u8>)> = None;
 
-    while
-        let Some(field) = multipart
-            .next_field().await
-            .map_err(|error| ApiError::BadRequest(format!("invalid multipart upload: {error}")))?
+    while let Some(field) = multipart
+        .next_field()
+        .await
+        .map_err(|error| ApiError::BadRequest(format!("invalid multipart upload: {error}")))?
     {
         if field.name() != Some("file") {
             continue;
@@ -139,57 +173,57 @@ async fn create_session(
             .map(ToOwned::to_owned)
             .unwrap_or_else(|| "Level.sav".to_string());
 
-        let bytes = field
-            .bytes().await
-            .map_err(|error| {
-                ApiError::BadRequest(format!("failed to read uploaded file: {error}"))
-            })?;
+        let bytes = field.bytes().await.map_err(|error| {
+            ApiError::BadRequest(format!("failed to read uploaded file: {error}"))
+        })?;
 
         if bytes.len() > MAX_UPLOAD_SIZE {
-            return Err(
-                ApiError::PayloadTooLarge(
-                    format!("uploaded file is too large: {} bytes", bytes.len())
-                )
-            );
+            return Err(ApiError::PayloadTooLarge(format!(
+                "uploaded file is too large: {} bytes",
+                bytes.len()
+            )));
         }
 
         uploaded_file = Some((file_name, bytes.to_vec()));
         break;
     }
 
-    let (file_name, bytes) = uploaded_file.ok_or_else(||
-        ApiError::BadRequest("missing multipart field named `file`".to_string())
-    )?;
+    let (file_name, bytes) = uploaded_file
+        .ok_or_else(|| ApiError::BadRequest("missing multipart field named `file`".to_string()))?;
 
     if !file_name.to_ascii_lowercase().ends_with(".sav") {
-        return Err(ApiError::BadRequest("uploaded file must have a .sav extension".to_string()));
+        return Err(ApiError::BadRequest(
+            "uploaded file must have a .sav extension".to_string(),
+        ));
     }
 
     let original_size = bytes.len();
     let max_decompressed_size = state.max_decompressed_size;
 
-    let parsed = tokio::task
-        ::spawn_blocking(move || {
-            palsave_core::parse_sav_with_metadata_limit(&bytes, max_decompressed_size)
-        }).await
-        .map_err(|error| ApiError::Internal(format!("save parser task failed: {error}")))?
-        .map_err(ApiError::BadRequest)?;
+    let parsed = tokio::task::spawn_blocking(move || {
+        palsave_core::parse_sav_with_metadata_limit(&bytes, max_decompressed_size)
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("save parser task failed: {error}")))?
+    .map_err(ApiError::BadRequest)?;
     let decompressed_size = parsed.decompressed_size;
 
     let id = Uuid::new_v4();
 
-    state.sessions.insert(id, SaveSession {
-        file_name: file_name.clone(),
-        original_size,
-        decompressed_size,
-        save: Arc::new(
-            Mutex::new(SaveSessionData {
+    state.sessions.insert(
+        id,
+        SaveSession {
+            file_name: file_name.clone(),
+            original_size,
+            decompressed_size,
+            save: Arc::new(Mutex::new(SaveSessionData {
                 save: parsed.save,
                 dirty: false,
                 revision: 0,
-            })
-        ),
-    });
+                pal_index: None,
+            })),
+        },
+    );
 
     tracing::info!(
         %id,
@@ -214,9 +248,10 @@ async fn create_session(
 
 async fn get_session(
     State(state): State<Arc<AppState>>,
-    Path(id): Path<Uuid>
+    Path(id): Path<Uuid>,
 ) -> Result<Json<SessionResponse>, ApiError> {
-    let (file_name, original_size, decompressed_size, save) = state.sessions
+    let (file_name, original_size, decompressed_size, save) = state
+        .sessions
         .get(&id)
         .map(|session| {
             (
@@ -227,68 +262,71 @@ async fn get_session(
             )
         })
         .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
-    let (dirty, revision) = tokio::task
-        ::spawn_blocking(move || {
-            let data = save
-                .lock()
-                .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
-            Ok::<_, ApiError>((data.dirty, data.revision))
-        }).await
-        .map_err(|error| ApiError::Internal(format!("session metadata task failed: {error}")))??;
-    Ok(
-        Json(SessionResponse {
-            id,
-            file_name,
-            original_size,
-            decompressed_size,
-            dirty,
-            revision,
-        })
-    )
+    let (dirty, revision) = tokio::task::spawn_blocking(move || {
+        let data = save
+            .lock()
+            .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
+        Ok::<_, ApiError>((data.dirty, data.revision))
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("session metadata task failed: {error}")))??;
+    Ok(Json(SessionResponse {
+        id,
+        file_name,
+        original_size,
+        decompressed_size,
+        dirty,
+        revision,
+    }))
 }
 
 async fn get_root(
     State(state): State<Arc<AppState>>,
     Path(id): Path<Uuid>,
-    Query(query): Query<PageQuery>
+    Query(query): Query<PageQuery>,
 ) -> Result<Json<nodes::SaveNodeResponse>, ApiError> {
-    inspect_node_for_session(state, id, nodes::InspectSaveNodeRequest {
-        path: Vec::new(),
-        offset: query.offset,
-        limit: query.limit,
-    }).await
+    inspect_node_for_session(
+        state,
+        id,
+        nodes::InspectSaveNodeRequest {
+            path: Vec::new(),
+            offset: query.offset,
+            limit: query.limit,
+        },
+    )
+    .await
 }
 
 async fn inspect_node(
     State(state): State<Arc<AppState>>,
     Path(id): Path<Uuid>,
-    request: Result<Json<nodes::InspectSaveNodeRequest>, JsonRejection>
+    request: Result<Json<nodes::InspectSaveNodeRequest>, JsonRejection>,
 ) -> Result<Json<nodes::SaveNodeResponse>, ApiError> {
-    let Json(request) = request.map_err(|error|
-        ApiError::BadRequest(format!("invalid inspect request: {error}"))
-    )?;
+    let Json(request) = request
+        .map_err(|error| ApiError::BadRequest(format!("invalid inspect request: {error}")))?;
     inspect_node_for_session(state, id, request).await
 }
 
 async fn inspect_node_for_session(
     state: Arc<AppState>,
     id: Uuid,
-    request: nodes::InspectSaveNodeRequest
+    request: nodes::InspectSaveNodeRequest,
 ) -> Result<Json<nodes::SaveNodeResponse>, ApiError> {
     let (offset, limit) = request.page().map_err(ApiError::BadRequest)?;
-    let save = state.sessions
+    let save = state
+        .sessions
         .get(&id)
         .map(|session| Arc::clone(&session.save))
         .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
     let path = request.path;
-    let response = tokio::task
-        ::spawn_blocking(move || {
-            let save = save
-                .lock()
-                .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
-            nodes::inspect_path(&save.save, &path, offset, limit).map_err(ApiError::BadRequest)
-        }).await
-        .map_err(|error| ApiError::Internal(format!("node inspection task failed: {error}")))??;
+    let response = tokio::task::spawn_blocking(move || {
+        let save = save
+            .lock()
+            .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
+        nodes::inspect_path(&save.save, &path, offset, limit).map_err(ApiError::BadRequest)
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("node inspection task failed: {error}")))??;
 
     Ok(Json(response))
 }
@@ -319,7 +357,7 @@ fn run_revisioned_mutation<T>(
     dirty: &mut bool,
     revision: &mut u64,
     expected_revision: u64,
-    mutation: impl FnOnce() -> Result<T, ApiError>
+    mutation: impl FnOnce() -> Result<T, ApiError>,
 ) -> Result<T, ApiError> {
     if expected_revision != *revision {
         return Err(ApiError::Conflict {
@@ -341,12 +379,18 @@ fn run_revisioned_mutation<T>(
 
 fn mutate_session_data(
     data: &mut SaveSessionData,
-    request: UpdateScalarRequest
+    request: UpdateScalarRequest,
 ) -> Result<UpdateScalarResponse, ApiError> {
-    let SaveSessionData { save, dirty, revision } = data;
+    let SaveSessionData {
+        save,
+        dirty,
+        revision,
+        pal_index,
+    } = data;
     let value = run_revisioned_mutation(dirty, revision, request.expected_revision, || {
         nodes::update_scalar(save, &request.path, request.value).map_err(ApiError::BadRequest)
     })?;
+    *pal_index = None;
     Ok(UpdateScalarResponse {
         path: request.path,
         value,
@@ -358,76 +402,84 @@ fn mutate_session_data(
 async fn update_scalar(
     State(state): State<Arc<AppState>>,
     Path(id): Path<Uuid>,
-    request: Result<Json<UpdateScalarRequest>, JsonRejection>
+    request: Result<Json<UpdateScalarRequest>, JsonRejection>,
 ) -> Result<Json<UpdateScalarResponse>, ApiError> {
-    let Json(request) = request.map_err(|error|
-        ApiError::BadRequest(format!("invalid scalar update request: {error}"))
-    )?;
-    let save = state.sessions
+    let Json(request) = request
+        .map_err(|error| ApiError::BadRequest(format!("invalid scalar update request: {error}")))?;
+    let save = state
+        .sessions
         .get(&id)
         .map(|session| Arc::clone(&session.save))
         .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
-    let response = tokio::task
-        ::spawn_blocking(move || {
-            let mut data = save
-                .lock()
-                .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
-            mutate_session_data(&mut data, request)
-        }).await
-        .map_err(|error| ApiError::Internal(format!("scalar mutation task failed: {error}")))??;
+    let response = tokio::task::spawn_blocking(move || {
+        let mut data = save
+            .lock()
+            .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
+        mutate_session_data(&mut data, request)
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("scalar mutation task failed: {error}")))??;
     Ok(Json(response))
 }
 
 async fn export_session(
     State(state): State<Arc<AppState>>,
     Path(id): Path<Uuid>,
-    Query(query): Query<ExportQuery>
+    Query(query): Query<ExportQuery>,
 ) -> Result<Response, ApiError> {
-    let save = state.sessions
+    let save = state
+        .sessions
         .get(&id)
         .map(|session| Arc::clone(&session.save))
         .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
-    let (bytes, revision, dirty, validated) = tokio::task
-        ::spawn_blocking(move || {
-            let data = save.lock().map_err(|_| "save session lock was poisoned".to_string())?;
-            let validate = query.validate.unwrap_or(true);
-            let bytes = palsave_core::write_sav(&data.save)?;
-            if validate {
-                palsave_core
-                    ::parse_sav_with_metadata(&bytes)
-                    .map_err(|error| format!("export validation failed: {error}"))?;
-            }
-            Ok::<_, String>((bytes, data.revision, data.dirty, validate))
-        }).await
-        .map_err(|error| ApiError::Internal(format!("save writer task failed: {error}")))?
-        .map_err(ApiError::Internal)?;
+    let (bytes, revision, dirty, validated) = tokio::task::spawn_blocking(move || {
+        let data = save
+            .lock()
+            .map_err(|_| "save session lock was poisoned".to_string())?;
+        let validate = query.validate.unwrap_or(true);
+        let bytes = palsave_core::write_sav(&data.save)?;
+        if validate {
+            palsave_core::parse_sav_with_metadata(&bytes)
+                .map_err(|error| format!("export validation failed: {error}"))?;
+        }
+        Ok::<_, String>((bytes, data.revision, data.dirty, validate))
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("save writer task failed: {error}")))?
+    .map_err(ApiError::Internal)?;
     Response::builder()
         .header(CONTENT_TYPE, "application/octet-stream")
-        .header(CONTENT_DISPOSITION, "attachment; filename=\"Level.roundtrip.sav\"")
+        .header(
+            CONTENT_DISPOSITION,
+            "attachment; filename=\"Level.roundtrip.sav\"",
+        )
         .header(
             HeaderName::from_static("x-palsave-revision"),
-            HeaderValue::from_str(&revision.to_string()).map_err(|e|
-                ApiError::Internal(e.to_string())
-            )?
+            HeaderValue::from_str(&revision.to_string())
+                .map_err(|e| ApiError::Internal(e.to_string()))?,
         )
-        .header(HeaderName::from_static("x-palsave-dirty"), if dirty { "true" } else { "false" })
-        .header(HeaderName::from_static("x-palsave-validated"), if validated {
-            "true"
-        } else {
-            "false"
-        })
+        .header(
+            HeaderName::from_static("x-palsave-dirty"),
+            if dirty { "true" } else { "false" },
+        )
+        .header(
+            HeaderName::from_static("x-palsave-validated"),
+            if validated { "true" } else { "false" },
+        )
         .body(Body::from(bytes))
         .map_err(|error| ApiError::Internal(format!("failed to build export response: {error}")))
 }
 
 async fn delete_session(
     State(state): State<Arc<AppState>>,
-    Path(id): Path<Uuid>
+    Path(id): Path<Uuid>,
 ) -> Result<Json<DeleteSessionResponse>, ApiError> {
     let deleted = state.sessions.remove(&id).is_some();
 
     if !deleted {
-        return Err(ApiError::NotFound(format!("save session {id} was not found")));
+        return Err(ApiError::NotFound(format!(
+            "save session {id} was not found"
+        )));
     }
 
     tracing::info!(%id, "deleted save session");
@@ -436,8 +488,7 @@ async fn delete_session(
 }
 
 fn max_decompressed_size() -> Result<usize, Box<dyn std::error::Error>> {
-    let value = env
-        ::var("PALSAVE_MAX_DECOMPRESSED_SIZE")
+    let value = env::var("PALSAVE_MAX_DECOMPRESSED_SIZE")
         .ok()
         .map(|value| value.parse::<usize>())
         .transpose()?
@@ -451,8 +502,7 @@ fn max_decompressed_size() -> Result<usize, Box<dyn std::error::Error>> {
 fn server_address() -> Result<(String, u16), Box<dyn std::error::Error>> {
     let host = env::var("PALSAVE_API_HOST").unwrap_or_else(|_| "0.0.0.0".to_string());
 
-    let port = env
-        ::var("PALSAVE_API_PORT")
+    let port = env::var("PALSAVE_API_PORT")
         .ok()
         .map(|value| value.parse::<u16>())
         .transpose()?
@@ -468,6 +518,8 @@ fn build_app(state: Arc<AppState>) -> Router {
         .route("/sessions/{id}", get(get_session).delete(delete_session))
         .route("/sessions/{id}/root", get(get_root))
         .route("/sessions/{id}/inspect", post(inspect_node))
+        .route("/sessions/{id}/pals", get(get_pals))
+        .route("/sessions/{id}/pals/{pal_id}", get(get_pal))
         .route("/sessions/{id}/scalar", patch(update_scalar))
         .route("/sessions/{id}/export", get(export_session))
         .layer(DefaultBodyLimit::max(MAX_UPLOAD_SIZE))
@@ -477,12 +529,10 @@ fn build_app(state: Arc<AppState>) -> Router {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    tracing_subscriber
-        ::fmt()
+    tracing_subscriber::fmt()
         .with_env_filter(
-            tracing_subscriber::EnvFilter
-                ::try_from_default_env()
-                .unwrap_or_else(|_| "palsave_api=info,tower_http=info".into())
+            tracing_subscriber::EnvFilter::try_from_default_env()
+                .unwrap_or_else(|_| "palsave_api=info,tower_http=info".into()),
         )
         .init();
 
@@ -499,7 +549,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     tracing::info!(%address, "PalSave API listening");
 
-    axum::serve(listener, app).with_graceful_shutdown(shutdown_signal()).await?;
+    axum::serve(listener, app)
+        .with_graceful_shutdown(shutdown_signal())
+        .await?;
 
     Ok(())
 }
@@ -513,26 +565,115 @@ async fn shutdown_signal() {
     tracing::info!("shutdown signal received");
 }
 
+async fn get_pals(
+    State(state): State<Arc<AppState>>,
+    Path(id): Path<Uuid>,
+    query: Result<Query<PalsQuery>, QueryRejection>,
+) -> Result<Json<pals::PalListResponse>, ApiError> {
+    let Query(query) =
+        query.map_err(|error| ApiError::BadRequest(format!("invalid Pal list query: {error}")))?;
+    let limit = query.limit.unwrap_or(pals::DEFAULT_LIMIT);
+    if limit == 0 {
+        return Err(ApiError::BadRequest(
+            "limit must be greater than zero".to_string(),
+        ));
+    }
+    if limit > pals::MAX_LIMIT {
+        return Err(ApiError::BadRequest(format!(
+            "limit must not exceed {}",
+            pals::MAX_LIMIT
+        )));
+    }
+    if query
+        .min_level
+        .zip(query.max_level)
+        .is_some_and(|(minimum, maximum)| minimum > maximum)
+    {
+        return Err(ApiError::BadRequest(
+            "minLevel must not exceed maxLevel".to_string(),
+        ));
+    }
+    let save = state
+        .sessions
+        .get(&id)
+        .map(|session| Arc::clone(&session.save))
+        .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
+    let filter = pals::PalFilter {
+        search: query.search,
+        character_id: query.character_id,
+        owner_player_uid: query.owner_player_uid,
+        gender: query.gender,
+        min_level: query.min_level,
+        max_level: query.max_level,
+        include_players: query.include_players,
+    };
+    let response = tokio::task::spawn_blocking(move || {
+        let mut data = save
+            .lock()
+            .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
+        let rebuild = data
+            .pal_index
+            .as_ref()
+            .is_none_or(|cache| cache.revision != data.revision);
+        if rebuild {
+            data.pal_index =
+                Some(pals::build_index(&data.save, data.revision).map_err(ApiError::BadRequest)?);
+        }
+        Ok::<_, ApiError>(pals::list(
+            data.pal_index.as_ref().expect("cache was built"),
+            query.offset,
+            limit,
+            &filter,
+        ))
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("Pal index task failed: {error}")))??;
+    Ok(Json(response))
+}
+
+async fn get_pal(
+    State(state): State<Arc<AppState>>,
+    Path((id, pal_id)): Path<(Uuid, String)>,
+) -> Result<Json<pals::PalDetail>, ApiError> {
+    let save = state
+        .sessions
+        .get(&id)
+        .map(|session| Arc::clone(&session.save))
+        .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
+    let response = tokio::task::spawn_blocking(move || {
+        let data = save
+            .lock()
+            .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
+        pals::detail(&data.save, &pal_id).map_err(|error| {
+            if error.contains("was not found") {
+                ApiError::NotFound(error)
+            } else {
+                ApiError::BadRequest(error)
+            }
+        })
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("Pal detail task failed: {error}")))??;
+    Ok(Json(response))
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
-    use axum::http::{ Request, header::CONTENT_TYPE };
+    use axum::http::{Request, header::CONTENT_TYPE};
     use http_body_util::BodyExt;
-    use serde_json::{ Value, json };
+    use serde_json::{Value, json};
     use tower::ServiceExt;
-    use uesave::{ Header, Properties, Property, PropertySchemas, Root };
+    use uesave::{Header, MapEntry, Properties, Property, PropertySchemas, Root, StructValue};
 
     fn test_save(properties: Properties) -> Save {
-        let header: Header = serde_json
-            ::from_value(
-                json!({
+        let header: Header = serde_json::from_value(json!({
             "magic": u32::from_le_bytes(*b"GVAS"), "save_game_version": 3,
             "package_version": { "ue4": 522, "ue5": 1009 },
             "engine_version_major": 5, "engine_version_minor": 1, "engine_version_patch": 1,
             "engine_version_build": 0, "engine_version": "test", "custom_version": [0, []]
-        })
-            )
-            .expect("test header");
+        }))
+        .expect("test header");
         Save {
             header,
             schemas: PropertySchemas::new(),
@@ -546,26 +687,28 @@ mod tests {
     fn state_with_save(
         save: Save,
         dirty: bool,
-        revision: u64
+        revision: u64,
     ) -> (Arc<AppState>, Uuid, Arc<Mutex<SaveSessionData>>) {
         let state = Arc::new(AppState {
             sessions: Arc::new(DashMap::new()),
             max_decompressed_size: DEFAULT_MAX_DECOMPRESSED_SIZE,
         });
         let id = Uuid::new_v4();
-        let data = Arc::new(
-            Mutex::new(SaveSessionData {
-                save,
-                dirty,
-                revision,
-            })
+        let data = Arc::new(Mutex::new(SaveSessionData {
+            save,
+            dirty,
+            revision,
+            pal_index: None,
+        }));
+        state.sessions.insert(
+            id,
+            SaveSession {
+                file_name: "test.sav".into(),
+                original_size: 0,
+                decompressed_size: 0,
+                save: Arc::clone(&data),
+            },
         );
-        state.sessions.insert(id, SaveSession {
-            file_name: "test.sav".into(),
-            original_size: 0,
-            decompressed_size: 0,
-            save: Arc::clone(&data),
-        });
         (state, id, data)
     }
     fn scalar_request(id: Uuid, body: Value) -> Request<Body> {
@@ -580,6 +723,160 @@ mod tests {
         serde_json::from_slice(&response.into_body().collect().await.unwrap().to_bytes()).unwrap()
     }
 
+    fn test_pal_save() -> Save {
+        let instance = uesave::FGuid::parse_str("c1b07a9e-7953-4b0e-bd5e-ed18d8df27b3").unwrap();
+        let mut key = Properties::default();
+        key.insert(
+            "PlayerUId",
+            Property::Struct(StructValue::Guid(uesave::FGuid::nil())),
+        );
+        key.insert("InstanceId", Property::Struct(StructValue::Guid(instance)));
+        key.insert("DebugName", Property::Str("synthetic".into()));
+        let entry = MapEntry {
+            key: Property::Struct(StructValue::Struct(key)),
+            value: Property::Struct(StructValue::Struct(Properties::default())),
+        };
+        let mut world = Properties::default();
+        world.insert("CharacterSaveParameterMap", Property::Map(vec![entry]));
+        let mut root = Properties::default();
+        root.insert(
+            "worldSaveData",
+            Property::Struct(StructValue::Struct(world)),
+        );
+        test_save(root)
+    }
+
+    #[tokio::test]
+    async fn pals_missing_session_is_structured_404() {
+        let app = build_app(Arc::new(AppState {
+            sessions: Arc::new(DashMap::new()),
+            max_decompressed_size: DEFAULT_MAX_DECOMPRESSED_SIZE,
+        }));
+        let id = Uuid::new_v4();
+        let response = app
+            .oneshot(
+                Request::builder()
+                    .uri(format!("/sessions/{id}/pals"))
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::NOT_FOUND);
+        assert!(
+            json_body(response).await["error"]
+                .as_str()
+                .unwrap()
+                .contains("not found")
+        );
+    }
+
+    #[tokio::test]
+    async fn pals_list_response_is_paginated_and_cached() {
+        let (state, id, data) = state_with_save(test_pal_save(), false, 4);
+        let app = build_app(state);
+        for _ in 0..2 {
+            let response = app
+                .clone()
+                .oneshot(
+                    Request::builder()
+                        .uri(format!("/sessions/{id}/pals?limit=1&includePlayers=true"))
+                        .body(Body::empty())
+                        .unwrap(),
+                )
+                .await
+                .unwrap();
+            assert_eq!(response.status(), StatusCode::OK);
+            let body = json_body(response).await;
+            assert_eq!(body["total"], 1);
+            assert_eq!(body["items"][0]["parseStatus"], "unsupported");
+        }
+        let data = data.lock().unwrap();
+        assert_eq!(data.pal_index.as_ref().unwrap().revision, 4);
+        assert_eq!(data.pal_index.as_ref().unwrap().items.len(), 1);
+    }
+
+    #[tokio::test]
+    async fn pal_detail_response_and_invalid_id_status() {
+        let (state, id, _) = state_with_save(test_pal_save(), false, 0);
+        let app = build_app(state);
+        let pal_id = "instance%3Ac1b07a9e-7953-4b0e-bd5e-ed18d8df27b3";
+        let response = app
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .uri(format!("/sessions/{id}/pals/{pal_id}"))
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::OK);
+        assert_eq!(json_body(response).await["mapIndex"], 0);
+        let response = app
+            .oneshot(
+                Request::builder()
+                    .uri(format!("/sessions/{id}/pals/map%3A99"))
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::NOT_FOUND);
+    }
+
+    #[tokio::test]
+    async fn malformed_pal_query_is_structured_400() {
+        let (state, id, _) = state_with_save(test_pal_save(), false, 0);
+        for query in [
+            "limit=nope",
+            "limit=0",
+            "limit=201",
+            "minLevel=3&maxLevel=2",
+        ] {
+            let response = build_app(Arc::clone(&state))
+                .oneshot(
+                    Request::builder()
+                        .uri(format!("/sessions/{id}/pals?{query}"))
+                        .body(Body::empty())
+                        .unwrap(),
+                )
+                .await
+                .unwrap();
+            assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+            assert!(json_body(response).await["error"].is_string());
+        }
+    }
+
+    #[test]
+    fn successful_mutation_invalidates_pal_cache() {
+        let mut properties = Properties::default();
+        properties.insert("Value", Property::Int(7));
+        let mut data = SaveSessionData {
+            save: test_save(properties),
+            dirty: false,
+            revision: 0,
+            pal_index: Some(pals::PalIndexCache {
+                revision: 0,
+                items: vec![],
+            }),
+        };
+        mutate_session_data(
+            &mut data,
+            UpdateScalarRequest {
+                path: vec![nodes::PathSegment::Property {
+                    name: "Value".into(),
+                    index: 0,
+                }],
+                expected_revision: 0,
+                value: nodes::EditableScalarValue::Int32(8),
+            },
+        )
+        .unwrap();
+        assert!(data.pal_index.is_none());
+        assert_eq!(data.revision, 1);
+    }
+
     #[test]
     fn revision_conflict_does_not_run_mutation() {
         let mut dirty = false;
@@ -589,15 +886,13 @@ mod tests {
             ran = true;
             Ok(())
         });
-        assert!(
-            matches!(
-                result,
-                Err(ApiError::Conflict {
-                    current_revision: 2,
-                    ..
-                })
-            )
-        );
+        assert!(matches!(
+            result,
+            Err(ApiError::Conflict {
+                current_revision: 2,
+                ..
+            })
+        ));
         assert!(!ran);
         assert_eq!(revision, 2);
         assert!(!dirty);
@@ -614,15 +909,13 @@ mod tests {
         );
         assert_eq!(revision, 2);
         assert!(dirty);
-        assert!(
-            matches!(
-                run_revisioned_mutation(&mut dirty, &mut revision, 1, || Ok::<_, ApiError>(())),
-                Err(ApiError::Conflict {
-                    current_revision: 2,
-                    ..
-                })
-            )
-        );
+        assert!(matches!(
+            run_revisioned_mutation(&mut dirty, &mut revision, 1, || Ok::<_, ApiError>(())),
+            Err(ApiError::Conflict {
+                current_revision: 2,
+                ..
+            })
+        ));
     }
     #[test]
     fn failed_mutations_preserve_dirty_and_revision() {
@@ -646,6 +939,7 @@ mod tests {
                 save: test_save(properties),
                 dirty: initial_dirty,
                 revision: u64::MAX,
+                pal_index: None,
             };
             let request = UpdateScalarRequest {
                 path: vec![nodes::PathSegment::Property {
@@ -655,9 +949,16 @@ mod tests {
                 expected_revision: u64::MAX,
                 value: nodes::EditableScalarValue::Int32(8),
             };
-            assert!(matches!(mutate_session_data(&mut data, request), Err(ApiError::Internal(_))));
+            assert!(matches!(
+                mutate_session_data(&mut data, request),
+                Err(ApiError::Internal(_))
+            ));
             assert_eq!(
-                data.save.root.properties.0.get(&uesave::PropertyKey(0, "Value".into())),
+                data.save
+                    .root
+                    .properties
+                    .0
+                    .get(&uesave::PropertyKey(0, "Value".into())),
                 Some(&Property::Int(7))
             );
             assert_eq!(data.revision, u64::MAX);
@@ -673,6 +974,7 @@ mod tests {
             save: test_save(properties),
             dirty: false,
             revision: 3,
+            pal_index: None,
         };
         for (path, value) in [
             (
@@ -699,7 +1001,11 @@ mod tests {
             assert_eq!(data.revision, 3);
             assert!(!data.dirty);
             assert_eq!(
-                data.save.root.properties.0.get(&uesave::PropertyKey(0, "Value".into())),
+                data.save
+                    .root
+                    .properties
+                    .0
+                    .get(&uesave::PropertyKey(0, "Value".into())),
                 Some(&Property::Int(7))
             );
         }
@@ -708,20 +1014,17 @@ mod tests {
     #[tokio::test]
     async fn scalar_http_errors_have_expected_status_and_conflict_shape() {
         let missing = Uuid::new_v4();
-        let app = build_app(
-            Arc::new(AppState {
-                sessions: Arc::new(DashMap::new()),
-                max_decompressed_size: DEFAULT_MAX_DECOMPRESSED_SIZE,
-            })
-        );
+        let app = build_app(Arc::new(AppState {
+            sessions: Arc::new(DashMap::new()),
+            max_decompressed_size: DEFAULT_MAX_DECOMPRESSED_SIZE,
+        }));
         let response = app
             .clone()
-            .oneshot(
-                scalar_request(
-                    missing,
-                    json!({"path":[],"expectedRevision":0,"value":{"type":"int32","value":1}})
-                )
-            ).await
+            .oneshot(scalar_request(
+                missing,
+                json!({"path":[],"expectedRevision":0,"value":{"type":"int32","value":1}}),
+            ))
+            .await
             .unwrap();
         assert_eq!(response.status(), StatusCode::NOT_FOUND);
         let malformed = Request::builder()
@@ -787,20 +1090,26 @@ mod tests {
             .unwrap();
         assert_eq!(response.status(), StatusCode::OK);
         let body = json_body(response).await;
-        assert_eq!(body["value"], json!({"type":"uint64","value":"18446744073709551615"}));
+        assert_eq!(
+            body["value"],
+            json!({"type":"uint64","value":"18446744073709551615"})
+        );
         assert_eq!(body["dirty"], true);
         assert_eq!(body["revision"], 1);
         let data = data.lock().unwrap();
         assert_eq!(
-            data.save.root.properties.0.get(&uesave::PropertyKey(0, "Big".into())),
+            data.save
+                .root
+                .properties
+                .0
+                .get(&uesave::PropertyKey(0, "Big".into())),
             Some(&Property::UInt64(u64::MAX))
         );
     }
 
     #[test]
     fn synthetic_empty_save_writes_and_reparses() {
-        let bytes = palsave_core
-            ::write_sav(&test_save(Properties::default()))
+        let bytes = palsave_core::write_sav(&test_save(Properties::default()))
             .expect("write synthetic save");
         palsave_core::parse_sav_with_metadata(&bytes).expect("reparse synthetic save");
     }
@@ -814,17 +1123,17 @@ mod tests {
                     Request::builder()
                         .uri(format!("/sessions/{id}/export?validate={validate}"))
                         .body(Body::empty())
-                        .unwrap()
-                ).await
+                        .unwrap(),
+                )
+                .await
                 .unwrap();
             assert_eq!(response.status(), StatusCode::OK);
             assert_eq!(response.headers()["x-palsave-revision"], "9");
             assert_eq!(response.headers()["x-palsave-dirty"], "true");
-            assert_eq!(response.headers()["x-palsave-validated"], if validate {
-                "true"
-            } else {
-                "false"
-            });
+            assert_eq!(
+                response.headers()["x-palsave-validated"],
+                if validate { "true" } else { "false" }
+            );
             let data = data.lock().unwrap();
             assert!(data.dirty);
             assert_eq!(data.revision, 9);

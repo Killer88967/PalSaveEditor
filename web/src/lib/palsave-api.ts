@@ -12,6 +12,57 @@ export interface SaveSession {
   revision: number;
 }
 
+export type PalParseStatus = "complete" | "partial" | "unsupported";
+
+export interface PalSummary {
+  id: string;
+  mapIndex: number;
+  instanceId?: string;
+  characterId?: string;
+  nickname?: string;
+  level?: number;
+  rank?: number;
+  gender?: string;
+  ownerPlayerUid?: string;
+  isPlayer: boolean;
+  parseStatus: PalParseStatus;
+  rawPath: SavePathSegment[];
+}
+
+export interface PalListResponse {
+  offset: number;
+  limit: number;
+  total: number;
+  hasMore: boolean;
+  items: PalSummary[];
+}
+
+export interface PalDetail extends PalSummary {
+  rankHp?: number;
+  rankAttack?: number;
+  rankDefence?: number;
+  rankCraftSpeed?: number;
+  talentHp?: number;
+  talentMelee?: number;
+  talentShot?: number;
+  talentDefense?: number;
+  passiveSkills: string[];
+  activeSkills: string[];
+  missingFields: string[];
+}
+
+export interface GetPalsQuery {
+  offset?: number;
+  limit?: number;
+  search?: string;
+  characterId?: string;
+  ownerPlayerUid?: string;
+  gender?: string;
+  minLevel?: number;
+  maxLevel?: number;
+  includePlayers?: boolean;
+}
+
 export type SaveNodeKind = "object" | "array" | "scalar" | "raw";
 
 export type SavePathSegment =
@@ -247,6 +298,37 @@ export async function exportSaveSession(
   }
 
   return response.blob();
+}
+
+export async function getPals(
+  sessionId: string,
+  query: GetPalsQuery = {},
+  signal?: AbortSignal,
+): Promise<PalListResponse> {
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(query)) {
+    if (value !== undefined && value !== "") params.set(key, String(value));
+  }
+  const suffix = params.size ? `?${params.toString()}` : "";
+  const response = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/pals${suffix}`,
+    { signal },
+  );
+  if (!response.ok) throw await apiError(response);
+  return response.json() as Promise<PalListResponse>;
+}
+
+export async function getPal(
+  sessionId: string,
+  palId: string,
+  signal?: AbortSignal,
+): Promise<PalDetail> {
+  const response = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/pals/${encodeURIComponent(palId)}`,
+    { signal },
+  );
+  if (!response.ok) throw await apiError(response);
+  return response.json() as Promise<PalDetail>;
 }
 
 export async function deleteSaveSession(sessionId: string): Promise<boolean> {
