@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import init, { sav_to_json, json_to_sav } from "@/wasm/palsave_core";
 
 let wasmReady: Promise<unknown> | null = null;
@@ -10,8 +10,25 @@ function ensureWasm() {
 }
 
 type Json = null | boolean | number | string | Json[] | { [k: string]: Json };
+type Path = (string | number)[];
 
-function setAtPath(root: Json, path: (string | number)[], value: Json): Json {
+function entriesOf(node: Json): (readonly [string, Json])[] {
+  if (node === null || typeof node !== "object") return [];
+  return Array.isArray(node)
+    ? node.map((v, i) => [String(i), v] as const)
+    : Object.entries(node as { [k: string]: Json });
+}
+
+function getAtPath(root: Json, path: Path): Json {
+  let cur: Json = root;
+  for (const k of path) {
+    if (cur === null || typeof cur !== "object") return null;
+    cur = (cur as { [k: string]: Json })[k as string];
+  }
+  return cur;
+}
+
+function setAtPath(root: Json, path: Path, value: Json): Json {
   if (path.length === 0) return value;
   const [head, ...rest] = path;
   if (Array.isArray(root)) {
@@ -23,13 +40,71 @@ function setAtPath(root: Json, path: (string | number)[], value: Json): Json {
   return { ...obj, [head]: setAtPath(obj[head as string], rest, value) };
 }
 
+// descend to the most likely editable scalar under a node (prefer a "value" key)
+function scalarLeaf(node: Json, path: Path): Path | null {
+  if (node === null) return null;
+  if (typeof node !== "object") return path;
+  const ents = entriesOf(node).sort(([a], [b]) =>
+    a === "value" ? -1 : b === "value" ? 1 : 0,
+  );
+  for (const [k, v] of ents) {
+    const r = scalarLeaf(v, [...path, Array.isArray(node) ? Number(k) : k]);
+    if (r) return r;
+  }
+  return null;
+}
+
+// find a property by (prefixed) name anywhere, return path to its scalar leaf
+function findFieldLeaf(root: Json, name: string): Path | null {
+  function walk(node: Json, path: Path): Path | null {
+    for (const [k, v] of entriesOf(node)) {
+      const kp: Path = [...path, Array.isArray(node) ? Number(k) : k];
+      if (k === name || k.startsWith(name + "_")) {
+        const leaf = scalarLeaf(v, kp);
+        if (leaf) return leaf;
+      }
+      const deeper = walk(v, kp);
+      if (deeper) return deeper;
+    }
+    return null;
+  }
+  return walk(root, []);
+}
+
 function subtreeMatches(value: Json, q: string): boolean {
   if (value === null || typeof value !== "object") return false;
-  const entries = Array.isArray(value)
-    ? value.map((v, i) => [String(i), v] as const)
-    : Object.entries(value);
-  return entries.some(
+  return entriesOf(value).some(
     ([k, v]) => k.toLowerCase().includes(q) || subtreeMatches(v, q),
+  );
+}
+
+function NumberField({
+  label,
+  name,
+  data,
+  onChange,
+}: {
+  label: string;
+  name: string;
+  data: Json;
+  onChange: (path: Path, v: Json) => void;
+}) {
+  const path = useMemo(() => findFieldLeaf(data, name), [data, name]);
+  const val = path ? getAtPath(data, path) : undefined;
+  if (!path || typeof val !== "number") return null;
+  return (
+    <label className="flex items-center justify-between gap-3">
+      <span className="text-neutral-300">{label}</span>
+      <input
+        type="number"
+        defaultValue={val}
+        onChange={(e) => {
+          const n = Number(e.target.value);
+          if (!Number.isNaN(n)) onChange(path, n);
+        }}
+        className="w-44 rounded bg-neutral-800 px-2 py-1 text-neutral-100"
+      />
+    </label>
   );
 }
 
@@ -80,19 +155,18 @@ function Node({
 }: {
   k: string;
   value: Json;
-  path: (string | number)[];
+  path: Path;
   q: string;
-  onChange: (path: (string | number)[], v: Json) => void;
+  onChange: (path: Path, v: Json) => void;
 }) {
   const isBranch = value !== null && typeof value === "object";
   const keyMatch = q !== "" && k.toLowerCase().includes(q);
   const [open, setOpen] = useState(false);
-
   if (!(q === "" || keyMatch || (isBranch && subtreeMatches(value, q))))
     return null;
   const expanded = q !== "" ? true : open;
 
-  if (!isBranch) {
+  if (!isBranch)
     return (
       <div className="flex items-center gap-2 py-0.5">
         <span className={keyMatch ? "text-amber-400" : "text-neutral-400"}>
@@ -101,12 +175,8 @@ function Node({
         <LeafInput value={value} onChange={(v) => onChange(path, v)} />
       </div>
     );
-  }
 
-  const entries = Array.isArray(value)
-    ? value.map((v, i) => [String(i), v] as const)
-    : Object.entries(value as { [key: string]: Json });
-
+  const entries = entriesOf(value);
   return (
     <div className="ml-3 border-l border-neutral-800 pl-3">
       <button
@@ -155,7 +225,7 @@ export default function Home() {
     }
   }
 
-  function onChange(path: (string | number)[], v: Json) {
+  function onChange(path: Path, v: Json) {
     setData((d) => (d === null ? d : setAtPath(d, path, v)));
   }
 
@@ -193,20 +263,42 @@ export default function Home() {
         >
           Repack &amp; download .sav
         </button>
-        {data !== null && (
-          <input
-            placeholder="filter keys… (try: Tech)"
-            value={q}
-            onChange={(e) => setQ(e.target.value.toLowerCase())}
-            className="rounded bg-neutral-800 px-2 py-1 text-sm text-neutral-100"
-          />
-        )}
       </div>
       <p className="text-sm text-neutral-400">{status}</p>
+
       {data !== null && (
-        <div className="max-h-[70vh] overflow-auto rounded bg-neutral-950 p-3 font-mono text-xs">
-          <Node k="save" value={data} path={[]} q={q} onChange={onChange} />
-        </div>
+        <section className="space-y-2 rounded border border-neutral-800 p-4">
+          <h2 className="font-medium">Player</h2>
+          <NumberField
+            label="Technology Points"
+            name="TechnologyPoint"
+            data={data}
+            onChange={onChange}
+          />
+          <NumberField
+            label="Ancient Technology Points"
+            name="bossTechnologyPoint"
+            data={data}
+            onChange={onChange}
+          />
+        </section>
+      )}
+
+      {data !== null && (
+        <section className="space-y-2">
+          <div className="flex items-center gap-2">
+            <h2 className="font-medium">Raw tree</h2>
+            <input
+              placeholder="filter keys…"
+              value={q}
+              onChange={(e) => setQ(e.target.value.toLowerCase())}
+              className="rounded bg-neutral-800 px-2 py-1 text-sm text-neutral-100"
+            />
+          </div>
+          <div className="max-h-[60vh] overflow-auto rounded bg-neutral-950 p-3 font-mono text-xs">
+            <Node k="save" value={data} path={[]} q={q} onChange={onChange} />
+          </div>
+        </section>
       )}
     </main>
   );

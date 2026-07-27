@@ -2,3 +2,4 @@
 /web/src/wasm
 /web/node_modules
 /web/.next
+/web/public/palsave_core_bg.wasm
