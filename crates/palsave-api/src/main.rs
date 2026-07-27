@@ -1,23 +1,20 @@
 use axum::{
-    Json, Router,
+    Json,
+    Router,
     body::Body,
-    extract::{DefaultBodyLimit, Multipart, Path, State},
-    http::{
-        StatusCode,
-        header::{CONTENT_DISPOSITION, CONTENT_TYPE},
-    },
-    response::{IntoResponse, Response},
-    routing::{get, post},
+    extract::{ DefaultBodyLimit, Multipart, Path, Query, State, rejection::JsonRejection },
+    http::{ StatusCode, header::{ CONTENT_DISPOSITION, CONTENT_TYPE } },
+    response::{ IntoResponse, Response },
+    routing::{ get, post },
 };
 use dashmap::DashMap;
-use serde::Serialize;
-use std::{
-    env,
-    sync::{Arc, Mutex},
-};
+use serde::{ Deserialize, Serialize };
+use std::{ env, sync::{ Arc, Mutex } };
 use tower_http::trace::TraceLayer;
-use uesave::{Property, Save, StructValue, ValueVec};
+use uesave::Save;
 use uuid::Uuid;
+
+mod nodes;
 
 const DEFAULT_PORT: u16 = 47_831;
 const MAX_UPLOAD_SIZE: usize = 512 * 1024 * 1024;
@@ -50,31 +47,11 @@ struct SessionResponse {
     decompressed_size: usize,
 }
 
-#[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
-struct RootNodeResponse {
-    path: Vec<String>,
-    kind: NodeKind,
-    child_count: usize,
-    children: Vec<NodeSummary>,
-}
-
-#[derive(Debug, Serialize)]
-#[serde(rename_all = "camelCase")]
-struct NodeSummary {
-    key: String,
-    kind: NodeKind,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    child_count: Option<usize>,
-}
-
-#[derive(Debug, Serialize)]
-#[serde(rename_all = "lowercase")]
-enum NodeKind {
-    Object,
-    Array,
-    Scalar,
-    Raw,
+#[derive(Debug, Deserialize)]
+struct PageQuery {
+    #[serde(default)]
+    offset: usize,
+    limit: Option<usize>,
 }
 
 #[derive(Debug, Serialize)]
@@ -116,14 +93,14 @@ async fn health() -> Json<HealthResponse> {
 
 async fn create_session(
     State(state): State<Arc<AppState>>,
-    mut multipart: Multipart,
+    mut multipart: Multipart
 ) -> Result<(StatusCode, Json<SessionResponse>), ApiError> {
     let mut uploaded_file: Option<(String, Vec<u8>)> = None;
 
-    while let Some(field) = multipart
-        .next_field()
-        .await
-        .map_err(|error| ApiError::BadRequest(format!("invalid multipart upload: {error}")))?
+    while
+        let Some(field) = multipart
+            .next_field().await
+            .map_err(|error| ApiError::BadRequest(format!("invalid multipart upload: {error}")))?
     {
         if field.name() != Some("file") {
             continue;
@@ -134,49 +111,48 @@ async fn create_session(
             .map(ToOwned::to_owned)
             .unwrap_or_else(|| "Level.sav".to_string());
 
-        let bytes = field.bytes().await.map_err(|error| {
-            ApiError::BadRequest(format!("failed to read uploaded file: {error}"))
-        })?;
+        let bytes = field
+            .bytes().await
+            .map_err(|error| {
+                ApiError::BadRequest(format!("failed to read uploaded file: {error}"))
+            })?;
 
         if bytes.len() > MAX_UPLOAD_SIZE {
-            return Err(ApiError::PayloadTooLarge(format!(
-                "uploaded file is too large: {} bytes",
-                bytes.len()
-            )));
+            return Err(
+                ApiError::PayloadTooLarge(
+                    format!("uploaded file is too large: {} bytes", bytes.len())
+                )
+            );
         }
 
         uploaded_file = Some((file_name, bytes.to_vec()));
         break;
     }
 
-    let (file_name, bytes) = uploaded_file
-        .ok_or_else(|| ApiError::BadRequest("missing multipart field named `file`".to_string()))?;
+    let (file_name, bytes) = uploaded_file.ok_or_else(||
+        ApiError::BadRequest("missing multipart field named `file`".to_string())
+    )?;
 
     if !file_name.to_ascii_lowercase().ends_with(".sav") {
-        return Err(ApiError::BadRequest(
-            "uploaded file must have a .sav extension".to_string(),
-        ));
+        return Err(ApiError::BadRequest("uploaded file must have a .sav extension".to_string()));
     }
 
     let original_size = bytes.len();
 
-    let parsed = tokio::task::spawn_blocking(move || palsave_core::parse_sav_with_metadata(&bytes))
-        .await
+    let parsed = tokio::task
+        ::spawn_blocking(move || palsave_core::parse_sav_with_metadata(&bytes)).await
         .map_err(|error| ApiError::Internal(format!("save parser task failed: {error}")))?
         .map_err(ApiError::BadRequest)?;
     let decompressed_size = parsed.decompressed_size;
 
     let id = Uuid::new_v4();
 
-    state.sessions.insert(
-        id,
-        SaveSession {
-            file_name: file_name.clone(),
-            original_size,
-            decompressed_size,
-            save: Arc::new(Mutex::new(parsed.save)),
-        },
-    );
+    state.sessions.insert(id, SaveSession {
+        file_name: file_name.clone(),
+        original_size,
+        decompressed_size,
+        save: Arc::new(Mutex::new(parsed.save)),
+    });
 
     tracing::info!(
         %id,
@@ -199,139 +175,101 @@ async fn create_session(
 
 async fn get_session(
     State(state): State<Arc<AppState>>,
-    Path(id): Path<Uuid>,
+    Path(id): Path<Uuid>
 ) -> Result<Json<SessionResponse>, ApiError> {
-    let session = state
-        .sessions
+    let session = state.sessions
         .get(&id)
         .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
 
-    Ok(Json(SessionResponse {
-        id,
-        file_name: session.file_name.clone(),
-        original_size: session.original_size,
-        decompressed_size: session.decompressed_size,
-    }))
-}
-
-fn value_vec_len(value: &ValueVec) -> usize {
-    match value {
-        ValueVec::Int8(v) => v.len(),
-        ValueVec::Int16(v) => v.len(),
-        ValueVec::Int(v) => v.len(),
-        ValueVec::Int64(v) => v.len(),
-        ValueVec::UInt8(v) => v.len(),
-        ValueVec::UInt16(v) => v.len(),
-        ValueVec::UInt32(v) => v.len(),
-        ValueVec::UInt64(v) => v.len(),
-        ValueVec::Float(v) => v.len(),
-        ValueVec::Double(v) => v.len(),
-        ValueVec::Bool(v) => v.len(),
-        ValueVec::Byte(uesave::ByteArray::Byte(v)) => v.len(),
-        ValueVec::Byte(uesave::ByteArray::Label(v)) => v.len(),
-        ValueVec::Enum(v) => v.len(),
-        ValueVec::Str(v) => v.len(),
-        ValueVec::Text(v) => v.len(),
-        ValueVec::SoftObject(v) => v.len(),
-        ValueVec::Name(v) => v.len(),
-        ValueVec::Object(v) => v.len(),
-        ValueVec::Box(v) => v.len(),
-        ValueVec::Box2D(v) => v.len(),
-        ValueVec::Struct(v) => v.len(),
-    }
-}
-
-fn property_summary(property: &Property) -> (NodeKind, Option<usize>) {
-    match property {
-        Property::Struct(StructValue::Struct(properties)) => {
-            (NodeKind::Object, Some(properties.0.len()))
-        }
-        Property::Struct(StructValue::Raw(_)) | Property::Raw(_) => (NodeKind::Raw, None),
-        Property::Array(values) | Property::Set(values) => {
-            (NodeKind::Array, Some(value_vec_len(values)))
-        }
-        Property::Map(values) => (NodeKind::Object, Some(values.len())),
-        _ => (NodeKind::Scalar, None),
-    }
+    Ok(
+        Json(SessionResponse {
+            id,
+            file_name: session.file_name.clone(),
+            original_size: session.original_size,
+            decompressed_size: session.decompressed_size,
+        })
+    )
 }
 
 async fn get_root(
     State(state): State<Arc<AppState>>,
     Path(id): Path<Uuid>,
-) -> Result<Json<RootNodeResponse>, ApiError> {
-    let save = state
-        .sessions
+    Query(query): Query<PageQuery>
+) -> Result<Json<nodes::SaveNodeResponse>, ApiError> {
+    inspect_node_for_session(state, id, nodes::InspectSaveNodeRequest {
+        path: Vec::new(),
+        offset: query.offset,
+        limit: query.limit,
+    }).await
+}
+
+async fn inspect_node(
+    State(state): State<Arc<AppState>>,
+    Path(id): Path<Uuid>,
+    request: Result<Json<nodes::InspectSaveNodeRequest>, JsonRejection>
+) -> Result<Json<nodes::SaveNodeResponse>, ApiError> {
+    let Json(request) = request.map_err(|error|
+        ApiError::BadRequest(format!("invalid inspect request: {error}"))
+    )?;
+    inspect_node_for_session(state, id, request).await
+}
+
+async fn inspect_node_for_session(
+    state: Arc<AppState>,
+    id: Uuid,
+    request: nodes::InspectSaveNodeRequest
+) -> Result<Json<nodes::SaveNodeResponse>, ApiError> {
+    let (offset, limit) = request.page().map_err(ApiError::BadRequest)?;
+    let save = state.sessions
         .get(&id)
         .map(|session| Arc::clone(&session.save))
         .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
-    let save = save
-        .lock()
-        .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
-    let properties = &save.root.properties.0;
-    let children = properties
-        .iter()
-        .map(|(key, property)| {
-            let (kind, child_count) = property_summary(property);
-            NodeSummary {
-                key: if key.0 == 0 {
-                    key.1.clone()
-                } else {
-                    format!("{}_{}", key.1, key.0)
-                },
-                kind,
-                child_count,
-            }
-        })
-        .collect();
-    Ok(Json(RootNodeResponse {
-        path: vec!["root".to_string(), "properties".to_string()],
-        kind: NodeKind::Object,
-        child_count: properties.len(),
-        children,
-    }))
+    let path = request.path;
+    let response = tokio::task
+        ::spawn_blocking(move || {
+            let save = save
+                .lock()
+                .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
+            nodes::inspect_path(&save, &path, offset, limit).map_err(ApiError::BadRequest)
+        }).await
+        .map_err(|error| ApiError::Internal(format!("node inspection task failed: {error}")))??;
+
+    Ok(Json(response))
 }
 
 async fn export_session(
     State(state): State<Arc<AppState>>,
-    Path(id): Path<Uuid>,
+    Path(id): Path<Uuid>
 ) -> Result<Response, ApiError> {
-    let save = state
-        .sessions
+    let save = state.sessions
         .get(&id)
         .map(|session| Arc::clone(&session.save))
         .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
 
-    let bytes = tokio::task::spawn_blocking(move || {
-        let save = save
-            .lock()
-            .map_err(|_| "save session lock was poisoned".to_string())?;
+    let bytes = tokio::task
+        ::spawn_blocking(move || {
+            let save = save.lock().map_err(|_| "save session lock was poisoned".to_string())?;
 
-        palsave_core::write_sav(&save)
-    })
-    .await
-    .map_err(|error| ApiError::Internal(format!("save writer task failed: {error}")))?
-    .map_err(ApiError::Internal)?;
+            palsave_core::write_sav(&save)
+        }).await
+        .map_err(|error| ApiError::Internal(format!("save writer task failed: {error}")))?
+        .map_err(ApiError::Internal)?;
 
     Response::builder()
         .header(CONTENT_TYPE, "application/octet-stream")
-        .header(
-            CONTENT_DISPOSITION,
-            "attachment; filename=\"Level.roundtrip.sav\"",
-        )
+        .header(CONTENT_DISPOSITION, "attachment; filename=\"Level.roundtrip.sav\"")
         .body(Body::from(bytes))
         .map_err(|error| ApiError::Internal(format!("failed to build export response: {error}")))
 }
 
 async fn delete_session(
     State(state): State<Arc<AppState>>,
-    Path(id): Path<Uuid>,
+    Path(id): Path<Uuid>
 ) -> Result<Json<DeleteSessionResponse>, ApiError> {
     let deleted = state.sessions.remove(&id).is_some();
 
     if !deleted {
-        return Err(ApiError::NotFound(format!(
-            "save session {id} was not found"
-        )));
+        return Err(ApiError::NotFound(format!("save session {id} was not found")));
     }
 
     tracing::info!(%id, "deleted save session");
@@ -342,7 +280,8 @@ async fn delete_session(
 fn server_address() -> Result<(String, u16), Box<dyn std::error::Error>> {
     let host = env::var("PALSAVE_API_HOST").unwrap_or_else(|_| "0.0.0.0".to_string());
 
-    let port = env::var("PALSAVE_API_PORT")
+    let port = env
+        ::var("PALSAVE_API_PORT")
         .ok()
         .map(|value| value.parse::<u16>())
         .transpose()?
@@ -353,10 +292,12 @@ fn server_address() -> Result<(String, u16), Box<dyn std::error::Error>> {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    tracing_subscriber::fmt()
+    tracing_subscriber
+        ::fmt()
         .with_env_filter(
-            tracing_subscriber::EnvFilter::try_from_default_env()
-                .unwrap_or_else(|_| "palsave_api=info,tower_http=info".into()),
+            tracing_subscriber::EnvFilter
+                ::try_from_default_env()
+                .unwrap_or_else(|_| "palsave_api=info,tower_http=info".into())
         )
         .init();
 
@@ -369,6 +310,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/sessions", post(create_session))
         .route("/sessions/{id}", get(get_session).delete(delete_session))
         .route("/sessions/{id}/root", get(get_root))
+        .route("/sessions/{id}/inspect", post(inspect_node))
         .route("/sessions/{id}/export", get(export_session))
         .layer(DefaultBodyLimit::max(MAX_UPLOAD_SIZE))
         .layer(TraceLayer::new_for_http())
@@ -380,9 +322,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     tracing::info!(%address, "PalSave API listening");
 
-    axum::serve(listener, app)
-        .with_graceful_shutdown(shutdown_signal())
-        .await?;
+    axum::serve(listener, app).with_graceful_shutdown(shutdown_signal()).await?;
 
     Ok(())
 }

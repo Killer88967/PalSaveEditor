@@ -12,17 +12,44 @@ export interface SaveSession {
 
 export type SaveNodeKind = "object" | "array" | "scalar" | "raw";
 
+export type SavePathSegment =
+  | { type: "property"; name: string; index: number }
+  | { type: "structField"; name: string; index: number }
+  | { type: "arrayIndex"; index: number }
+  | { type: "setIndex"; index: number }
+  | { type: "mapEntry"; index: number }
+  | { type: "mapKey"; index: number }
+  | { type: "mapValue"; index: number };
+
+export type ScalarPreview = boolean | number | string;
+
 export interface SaveNodeSummary {
-  key: string;
+  path: SavePathSegment[];
+  displayName: string;
   kind: SaveNodeKind;
   childCount?: number;
+  preview?: ScalarPreview;
+  byteLength?: number;
 }
 
-export interface SaveRootNode {
-  path: string[];
+export interface SaveNodeResponse {
+  path: SavePathSegment[];
   kind: SaveNodeKind;
+  displayName: string;
   childCount: number;
   children: SaveNodeSummary[];
+  offset: number;
+  limit: number;
+  totalChildren: number;
+  hasMore: boolean;
+  preview?: ScalarPreview;
+  byteLength?: number;
+}
+
+export interface InspectSaveNodeRequest {
+  path: SavePathSegment[];
+  offset?: number;
+  limit?: number;
 }
 
 interface DeleteSessionResponse {
@@ -83,14 +110,33 @@ export async function getSaveSession(sessionId: string): Promise<SaveSession> {
   return response.json() as Promise<SaveSession>;
 }
 
-export async function getSaveRoot(sessionId: string): Promise<SaveRootNode> {
+export async function getSaveRoot(
+  sessionId: string,
+): Promise<SaveNodeResponse> {
   const response = await fetch(`/api/rust/sessions/${sessionId}/root`);
 
   if (!response.ok) {
     throw new Error(await readApiError(response));
   }
 
-  return response.json() as Promise<SaveRootNode>;
+  return response.json() as Promise<SaveNodeResponse>;
+}
+
+export async function inspectSaveNode(
+  sessionId: string,
+  request: InspectSaveNodeRequest,
+): Promise<SaveNodeResponse> {
+  const response = await fetch(`/api/rust/sessions/${sessionId}/inspect`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(request),
+  });
+
+  if (!response.ok) {
+    throw new Error(await readApiError(response));
+  }
+
+  return response.json() as Promise<SaveNodeResponse>;
 }
 
 export async function exportSaveSession(sessionId: string): Promise<Blob> {
