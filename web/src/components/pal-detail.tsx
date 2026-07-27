@@ -14,15 +14,15 @@ function Stat({ label, value }: { label: string; value?: string | number }) {
   );
 }
 const numbers = [
-  ["level", "Level", 1, 80],
+  ["level", "Level", 1, 255],
   ["rankHp", "Rank HP", 0, 255],
   ["rankAttack", "Rank attack", 0, 255],
   ["rankDefence", "Rank defence", 0, 255],
   ["rankCraftSpeed", "Rank craft speed", 0, 255],
-  ["talentHp", "Talent HP", 0, 100],
-  ["talentMelee", "Talent melee", 0, 100],
-  ["talentShot", "Talent shot", 0, 100],
-  ["talentDefense", "Talent defense", 0, 100],
+  ["talentHp", "Talent HP", 0, 255],
+  ["talentMelee", "Talent melee", 0, 255],
+  ["talentShot", "Talent shot", 0, 255],
+  ["talentDefense", "Talent defense", 0, 255],
 ] as const;
 export function PalDetail({
   detail,
@@ -244,7 +244,7 @@ export function PalDetail({
               ),
           )}
           {numbers
-            .slice(1, 5)
+            .slice(1)
             .some(([key]) => Number(form[key] ?? 0) > 100) && (
             <p className="rounded border border-amber-800 p-2 text-xs text-amber-300">
               Advanced value. Extremely high stats may destabilize gameplay or
