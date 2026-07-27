@@ -24,11 +24,36 @@ export type SavePathSegment =
   | { type: "mapValue"; index: number };
 
 export type ScalarPreview = boolean | number | string;
-export type ScalarType = "bool" | "int8" | "int16" | "int32" | "int64" | "uInt8" | "uInt16" | "uInt32" | "uInt64" | "float" | "double" | "string" | "name" | "enum";
+export type ScalarType =
+  | "bool"
+  | "int8"
+  | "int16"
+  | "int32"
+  | "int64"
+  | "uint8"
+  | "uint16"
+  | "uint32"
+  | "uint64"
+  | "float"
+  | "double"
+  | "string"
+  | "name"
+  | "enum";
 export type EditableScalarValue =
   | { type: "bool"; value: boolean }
-  | { type: "int8" | "int16" | "int32" | "uInt8" | "uInt16" | "uInt32" | "float" | "double"; value: number }
-  | { type: "int64" | "uInt64" | "string" | "name" | "enum"; value: string };
+  | {
+      type:
+        | "int8"
+        | "int16"
+        | "int32"
+        | "uint8"
+        | "uint16"
+        | "uint32"
+        | "float"
+        | "double";
+      value: number;
+    }
+  | { type: "int64" | "uint64" | "string" | "name" | "enum"; value: string };
 
 export interface SaveNodeSummary {
   path: SavePathSegment[];
@@ -82,17 +107,34 @@ interface DeleteSessionResponse {
   deleted: boolean;
 }
 
-interface ApiErrorResponse { error?: string; code?: string; currentRevision?: number; }
+interface ApiErrorResponse {
+  error?: string;
+  code?: string;
+  currentRevision?: number;
+}
 
 export class PalSaveApiError extends Error {
-  constructor(message: string, public readonly status: number, public readonly currentRevision?: number) { super(message); this.name = "PalSaveApiError"; }
+  constructor(
+    message: string,
+    public readonly status: number,
+    public readonly currentRevision?: number,
+  ) {
+    super(message);
+    this.name = "PalSaveApiError";
+  }
 }
 
 async function apiError(response: Response): Promise<PalSaveApiError> {
   let body: ApiErrorResponse = {};
-  try { body = (await response.json()) as ApiErrorResponse; } catch { /* non-JSON */ }
-  const detail = body.error ?? `PalSave API request failed (${response.status})`;
-  const message = response.status === 409 ? `Revision conflict (409): ${detail}` : detail;
+  try {
+    body = (await response.json()) as ApiErrorResponse;
+  } catch {
+    // The response was not JSON.
+  }
+  const detail =
+    body.error ?? `PalSave API request failed (${response.status})`;
+  const message =
+    response.status === 409 ? `Revision conflict (409): ${detail}` : detail;
   return new PalSaveApiError(message, response.status, body.currentRevision);
 }
 
@@ -106,13 +148,17 @@ export async function getApiHealth(): Promise<HealthResponse> {
   return response.json() as Promise<HealthResponse>;
 }
 
-export async function createSaveSession(file: File, signal?: AbortSignal): Promise<SaveSession> {
+export async function createSaveSession(
+  file: File,
+  signal?: AbortSignal,
+): Promise<SaveSession> {
   const formData = new FormData();
   formData.append("file", file);
 
   const response = await fetch("/api/rust/sessions", {
     method: "POST",
-    body: formData, signal,
+    body: formData,
+    signal,
   });
 
   if (!response.ok) {
@@ -122,7 +168,10 @@ export async function createSaveSession(file: File, signal?: AbortSignal): Promi
   return response.json() as Promise<SaveSession>;
 }
 
-export async function getSaveSession(sessionId: string, signal?: AbortSignal): Promise<SaveSession> {
+export async function getSaveSession(
+  sessionId: string,
+  signal?: AbortSignal,
+): Promise<SaveSession> {
   const response = await fetch(`/api/rust/sessions/${sessionId}`, { signal });
 
   if (!response.ok) {
@@ -132,8 +181,13 @@ export async function getSaveSession(sessionId: string, signal?: AbortSignal): P
   return response.json() as Promise<SaveSession>;
 }
 
-export async function getSaveRoot(sessionId: string, signal?: AbortSignal): Promise<SaveNodeResponse> {
-  const response = await fetch(`/api/rust/sessions/${sessionId}/root`, { signal });
+export async function getSaveRoot(
+  sessionId: string,
+  signal?: AbortSignal,
+): Promise<SaveNodeResponse> {
+  const response = await fetch(`/api/rust/sessions/${sessionId}/root`, {
+    signal,
+  });
 
   if (!response.ok) {
     throw await apiError(response);
@@ -150,7 +204,8 @@ export async function inspectSaveNode(
   const response = await fetch(`/api/rust/sessions/${sessionId}/inspect`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(request), signal,
+    body: JSON.stringify(request),
+    signal,
   });
 
   if (!response.ok) {
@@ -161,18 +216,31 @@ export async function inspectSaveNode(
 }
 
 export async function updateSaveScalar(
-  sessionId: string, request: UpdateSaveScalarRequest, signal?: AbortSignal,
+  sessionId: string,
+  request: UpdateSaveScalarRequest,
+  signal?: AbortSignal,
 ): Promise<UpdateSaveScalarResponse> {
   const response = await fetch(`/api/rust/sessions/${sessionId}/scalar`, {
-    method: "PATCH", headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(request), signal,
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(request),
+    signal,
   });
-  if (!response.ok) throw await apiError(response);
+  if (!response.ok) {
+    throw await apiError(response);
+  }
   return response.json() as Promise<UpdateSaveScalarResponse>;
 }
 
-export async function exportSaveSession(sessionId: string, validate = true, signal?: AbortSignal): Promise<Blob> {
-  const response = await fetch(`/api/rust/sessions/${sessionId}/export?validate=${validate}`, { signal });
+export async function exportSaveSession(
+  sessionId: string,
+  validate = true,
+  signal?: AbortSignal,
+): Promise<Blob> {
+  const response = await fetch(
+    `/api/rust/sessions/${sessionId}/export?validate=${validate}`,
+    { signal },
+  );
 
   if (!response.ok) {
     throw await apiError(response);

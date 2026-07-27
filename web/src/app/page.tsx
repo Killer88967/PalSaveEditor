@@ -13,9 +13,10 @@ import {
   type EditableScalarValue,
   type SaveNodeResponse,
   type SaveNodeSummary,
-  type SavePathSegment,
   type SaveSession,
 } from "@/lib/palsave-api";
+import { isTextScalar, scalarFromInput } from "@/lib/scalar-input";
+import { pathKey, updateSummaryAtPath } from "@/lib/save-tree-state";
 
 const PAGE_SIZE = 100;
 interface LoadedNode {
@@ -25,37 +26,13 @@ interface LoadedNode {
   loading: boolean;
   error?: string;
 }
-const pathKey = (path: SavePathSegment[]) => JSON.stringify(path);
-const previewText = (node: SaveNodeSummary) =>
-  node.value
-    ? typeof node.value.value === "string"
-      ? JSON.stringify(node.value.value)
-      : String(node.value.value)
-    : node.preview === undefined
-      ? null
-      : typeof node.preview === "string"
-        ? JSON.stringify(node.preview)
-        : String(node.preview);
 
-function scalarFromInput(
-  value: EditableScalarValue,
-  input: string,
-  checked: boolean,
-): EditableScalarValue {
-  if (value.type === "bool") return { type: "bool", value: checked };
-  if (["string", "name", "enum", "int64", "uInt64"].includes(value.type)) {
-    if (
-      (value.type === "int64" || value.type === "uInt64") &&
-      !/^-?\d+$/.test(input)
-    )
-      throw new Error("Enter a base-10 integer.");
-    return { type: value.type, value: input } as EditableScalarValue;
-  }
-  const parsed = Number(input);
-  if (!Number.isFinite(parsed)) throw new Error("Enter a finite number.");
-  if (!["float", "double"].includes(value.type) && !Number.isInteger(parsed))
-    throw new Error("Enter a whole number.");
-  return { type: value.type, value: parsed } as EditableScalarValue;
+function previewText(node: SaveNodeSummary): string | null {
+  const preview = node.value?.value ?? node.preview;
+  if (preview === undefined) return null;
+  return typeof preview === "string"
+    ? JSON.stringify(preview)
+    : String(preview);
 }
 
 function TreeNode({
@@ -145,13 +122,7 @@ function TreeNode({
               <input
                 aria-label={`Value for ${node.displayName}`}
                 className="min-w-36 rounded border border-neutral-700 bg-neutral-900 px-1 text-sky-200"
-                type={
-                  ["string", "name", "enum", "int64", "uInt64"].includes(
-                    node.value.type,
-                  )
-                    ? "text"
-                    : "number"
-                }
+                type={isTextScalar(node.value) ? "text" : "number"}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
               />
@@ -261,19 +232,6 @@ function roundtripFileName(name: string) {
   const base = name.toLowerCase().endsWith(".sav") ? name.slice(0, -4) : name;
   return `${base || "Level"}.roundtrip.sav`;
 }
-function updateSummary(
-  node: SaveNodeSummary,
-  path: SavePathSegment[],
-  value: EditableScalarValue,
-): SaveNodeSummary {
-  return pathKey(node.path) === pathKey(path)
-    ? {
-        ...node,
-        value,
-        preview: typeof value.value === "string" ? value.value : value.value,
-      }
-    : node;
-}
 
 export default function Home() {
   const [status, setStatus] = useState("Pick a .sav file to parse."),
@@ -306,6 +264,7 @@ export default function Home() {
     setRoot(null);
     setRootError(null);
     setIsLoadingRoot(false);
+    setIsExporting(false);
     setExpanded(new Set());
     setLoaded({});
     if (previous)
@@ -444,7 +403,7 @@ export default function Home() {
           ? {
               ...cur,
               children: cur.children.map((n) =>
-                updateSummary(n, response.path, response.value),
+                updateSummaryAtPath(n, response.path, response.value),
               ),
             }
           : cur,
@@ -456,7 +415,7 @@ export default function Home() {
             {
               ...state,
               children: state.children.map((n) =>
-                updateSummary(n, response.path, response.value),
+                updateSummaryAtPath(n, response.path, response.value),
               ),
             },
           ]),
