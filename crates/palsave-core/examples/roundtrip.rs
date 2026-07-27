@@ -1,9 +1,11 @@
-use palsave_core::{ compress_sav, decompress_sav };
+use palsave_core::{compress_sav, decompress_sav};
 use std::io::Cursor;
 use uesave::Save;
 
 fn main() {
-    let path = std::env::args().nth(1).expect("usage: roundtrip <player.sav>");
+    let path = std::env::args()
+        .nth(1)
+        .expect("usage: roundtrip <player.sav>");
     let data = std::fs::read(&path).unwrap();
 
     let gvas1 = decompress_sav(&data).expect("decompress");
@@ -18,5 +20,9 @@ fn main() {
     println!("✅ GVAS round-trip is byte-identical");
 
     let repacked = compress_sav(&gvas2).expect("repack");
-    println!("repacked .sav = {} bytes (original {})", repacked.len(), data.len());
+    println!(
+        "repacked .sav = {} bytes (original {})",
+        repacked.len(),
+        data.len()
+    );
 }
