@@ -1,9 +1,28 @@
-use serde::Serialize;
-use std::io::{Cursor, Read, Seek, SeekFrom};
+use serde::{ Deserialize, Serialize };
+use std::{
+    collections::{ BTreeMap, HashMap, HashSet },
+    io::{ Cursor, Read, Seek, SeekFrom, Write },
+};
 use uesave::{
-    ArchiveReader, Byte, ByteArray, Header, Properties, Property, PropertyKey, PropertyTagPartial,
-    Save, SaveGameArchiveType, Scope, SoftObjectPath, StructType, StructValue, ValueVec,
-    VersionInfo, read_properties_until_none,
+    ArchiveReader,
+    ArchiveWriter,
+    Byte,
+    ByteArray,
+    Header,
+    Properties,
+    Property,
+    PropertyKey,
+    PropertyTagPartial,
+    Save,
+    SaveGameArchiveType,
+    Scope,
+    SoftObjectPath,
+    StructType,
+    StructValue,
+    ValueVec,
+    VersionInfo,
+    read_properties_until_none,
+    write_properties_none_terminated,
 };
 use uuid::Uuid;
 
@@ -13,6 +32,65 @@ pub const DEFAULT_LIMIT: usize = 50;
 pub const MAX_LIMIT: usize = 200;
 const WORLD: &str = "worldSaveData";
 const PAL_MAP: &str = "CharacterSaveParameterMap";
+pub const MAX_PAL_LEVEL: i32 = 80;
+pub const MAX_PAL_RANK: i32 = 5;
+pub const MAX_RANK_STAT: i32 = 255;
+pub const MAX_TALENT: i32 = 100;
+pub const MAX_NICKNAME_CHARS: usize = 64;
+pub const MAX_SKILLS: usize = 64;
+pub const MAX_SKILL_ID_CHARS: usize = 128;
+
+#[derive(Debug, Clone, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct FieldUpdate<T> {
+    pub value: T,
+}
+
+#[derive(Debug, Clone, Default, Deserialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct UpdatePalRequest {
+    pub expected_revision: u64,
+    pub nickname: Option<FieldUpdate<String>>,
+    pub level: Option<FieldUpdate<i32>>,
+    pub rank: Option<FieldUpdate<i32>>,
+    pub gender: Option<FieldUpdate<String>>,
+    pub rank_hp: Option<FieldUpdate<i32>>,
+    pub rank_attack: Option<FieldUpdate<i32>>,
+    pub rank_defence: Option<FieldUpdate<i32>>,
+    pub rank_craft_speed: Option<FieldUpdate<i32>>,
+    pub talent_hp: Option<FieldUpdate<i32>>,
+    pub talent_melee: Option<FieldUpdate<i32>>,
+    pub talent_shot: Option<FieldUpdate<i32>>,
+    pub talent_defense: Option<FieldUpdate<i32>>,
+    pub passive_skills: Option<FieldUpdate<Vec<String>>>,
+    pub active_skills: Option<FieldUpdate<Vec<String>>>,
+}
+
+#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PalEditCapabilities {
+    pub nickname: bool,
+    pub level: bool,
+    pub rank: bool,
+    pub gender: bool,
+    pub rank_hp: bool,
+    pub rank_attack: bool,
+    pub rank_defence: bool,
+    pub rank_craft_speed: bool,
+    pub talent_hp: bool,
+    pub talent_melee: bool,
+    pub talent_shot: bool,
+    pub talent_defense: bool,
+    pub passive_skills: bool,
+    pub active_skills: bool,
+}
+
+#[derive(Debug)]
+pub enum UpdateError {
+    NotFound(String),
+    Validation(BTreeMap<String, String>),
+    Internal(String),
+}
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -87,6 +165,7 @@ pub struct PalDetail {
     pub active_skills: Vec<String>,
     pub raw_path: Vec<PathSegment>,
     pub missing_fields: Vec<String>,
+    pub edit_capabilities: PalEditCapabilities,
 }
 
 #[derive(Debug, Clone, Serialize)]
@@ -129,10 +208,9 @@ pub fn list(
     cache: &PalIndexCache,
     offset: usize,
     limit: usize,
-    filter: &PalFilter,
+    filter: &PalFilter
 ) -> PalListResponse {
-    let filtered: Vec<_> = cache
-        .items
+    let filtered: Vec<_> = cache.items
         .iter()
         .filter(|item| matches_filter(item, filter))
         .collect();
@@ -142,24 +220,14 @@ pub fn list(
         limit,
         total,
         has_more: offset.saturating_add(limit) < total,
-        items: filtered
-            .into_iter()
-            .skip(offset)
-            .take(limit)
-            .cloned()
-            .collect(),
+        items: filtered.into_iter().skip(offset).take(limit).cloned().collect(),
     }
 }
 
 pub fn detail(save: &Save, id: &str) -> Result<PalDetail, String> {
     let entries = character_map(save)?;
     let index = resolve_id(entries, id).ok_or_else(|| format!("Pal {id} was not found"))?;
-    Ok(detail_for(
-        &save.header,
-        index,
-        &entries[index].key,
-        &entries[index].value,
-    ))
+    Ok(detail_for(&save.header, index, &entries[index].key, &entries[index].value))
 }
 
 fn character_map(save: &Save) -> Result<&[uesave::MapEntry], String> {
@@ -176,43 +244,44 @@ fn character_map(save: &Save) -> Result<&[uesave::MapEntry], String> {
 
 fn resolve_id(entries: &[uesave::MapEntry], id: &str) -> Option<usize> {
     if let Some(index) = id.strip_prefix("map:") {
-        return index.parse().ok().filter(|index| *index < entries.len());
+        return index
+            .parse()
+            .ok()
+            .filter(|index| *index < entries.len());
     }
     let wanted = id.strip_prefix("instance:")?;
-    entries.iter().position(|entry| {
-        uuid_field(as_struct_properties(&entry.key), "InstanceId")
-            .is_some_and(|actual| actual.eq_ignore_ascii_case(wanted))
-    })
+    entries
+        .iter()
+        .position(|entry| {
+            uuid_field(as_struct_properties(&entry.key), "InstanceId").is_some_and(|actual|
+                actual.eq_ignore_ascii_case(wanted)
+            )
+        })
 }
 
 fn matches_filter(item: &PalSummary, filter: &PalFilter) -> bool {
     if item.is_player && !filter.include_players {
         return false;
     }
-    if let Some(search) = normalized(&filter.search)
-        && ![
-            item.character_id.as_deref(),
-            item.nickname.as_deref(),
-            item.instance_id.as_deref(),
-        ]
-        .into_iter()
-        .flatten()
-        .any(|value| value.to_lowercase().contains(&search))
+    if
+        let Some(search) = normalized(&filter.search) &&
+        ![item.character_id.as_deref(), item.nickname.as_deref(), item.instance_id.as_deref()]
+            .into_iter()
+            .flatten()
+            .any(|value| value.to_lowercase().contains(&search))
     {
         return false;
     }
-    if !equals(item.character_id.as_deref(), &filter.character_id)
-        || !equals(item.owner_player_uid.as_deref(), &filter.owner_player_uid)
-        || !equals(item.gender.as_deref(), &filter.gender)
+    if
+        !equals(item.character_id.as_deref(), &filter.character_id) ||
+        !equals(item.owner_player_uid.as_deref(), &filter.owner_player_uid) ||
+        !equals(item.gender.as_deref(), &filter.gender)
     {
         return false;
     }
-    if filter
-        .min_level
-        .is_some_and(|min| item.level.is_none_or(|level| level < min))
-        || filter
-            .max_level
-            .is_some_and(|max| item.level.is_none_or(|level| level > max))
+    if
+        filter.min_level.is_some_and(|min| item.level.is_none_or(|level| level < min)) ||
+        filter.max_level.is_some_and(|max| item.level.is_none_or(|level| level > max))
     {
         return false;
     }
@@ -228,8 +297,9 @@ fn normalized(value: &Option<String>) -> Option<String> {
 }
 
 fn equals(value: Option<&str>, filter: &Option<String>) -> bool {
-    normalized(filter)
-        .is_none_or(|wanted| value.is_some_and(|actual| actual.eq_ignore_ascii_case(&wanted)))
+    normalized(filter).is_none_or(|wanted|
+        value.is_some_and(|actual| actual.eq_ignore_ascii_case(&wanted))
+    )
 }
 
 fn summary(header: &Header, index: usize, key: &Property, value: &Property) -> PalSummary {
@@ -248,20 +318,16 @@ fn summary(header: &Header, index: usize, key: &Property, value: &Property) -> P
         .and_then(|properties| property_by_name(properties, "IsPlayer"))
         .and_then(as_bool)
         .unwrap_or(false);
-    let is_player = explicit_player
-        || character_id
+    let is_player =
+        explicit_player ||
+        character_id
             .as_deref()
-            .is_some_and(|id| id.is_empty() || id.eq_ignore_ascii_case("Player"))
-        || instance_id
+            .is_some_and(|id| (id.is_empty() || id.eq_ignore_ascii_case("Player"))) ||
+        instance_id
             .as_deref()
             .zip(key_player_uid.as_deref())
             .is_some_and(|(instance, player)| instance == player);
-    let required = [
-        character_id.is_some(),
-        level.is_some(),
-        rank.is_some(),
-        gender.is_some(),
-    ];
+    let required = [character_id.is_some(), level.is_some(), rank.is_some(), gender.is_some()];
     let parse_status = if parsed.is_err() {
         PalParseStatus::Unsupported
     } else if required.into_iter().all(|present| present) {
@@ -270,9 +336,10 @@ fn summary(header: &Header, index: usize, key: &Property, value: &Property) -> P
         PalParseStatus::Partial
     };
     PalSummary {
-        id: instance_id
-            .as_ref()
-            .map_or_else(|| format!("map:{index}"), |uuid| format!("instance:{uuid}")),
+        id: instance_id.as_ref().map_or_else(
+            || format!("map:{index}"),
+            |uuid| format!("instance:{uuid}")
+        ),
         map_index: index,
         instance_id,
         character_id,
@@ -343,21 +410,416 @@ fn detail_for(header: &Header, index: usize, key: &Property, value: &Property) -
         active_skills,
         raw_path: summary.raw_path,
         missing_fields,
+        edit_capabilities: capabilities(parameters.as_ref()),
     }
 }
 
 fn save_parameter(header: &Header, value: &Property) -> Result<Properties, String> {
+    decode_raw_data(header, value).map(|decoded| decoded.save_parameter().clone())
+}
+
+fn capabilities(properties: Option<&Properties>) -> PalEditCapabilities {
+    let property = |name| properties.and_then(|p| property_by_name(p, name));
+    let integer = |name| property(name).is_some_and(|v| as_i32(v).is_some());
+    let strings = |name| {
+        property(name).is_some_and(|v| {
+            matches!(
+                v,
+                Property::Array(ValueVec::Name(_)) |
+                    Property::Array(ValueVec::Str(_)) |
+                    Property::Array(ValueVec::Enum(_)) |
+                    Property::Array(ValueVec::Byte(ByteArray::Label(_)))
+            )
+        })
+    };
+    PalEditCapabilities {
+        nickname: property("NickName").is_some_and(|v| matches!(v, Property::Str(_))),
+        level: integer("Level"),
+        rank: integer("Rank"),
+        gender: property("Gender").is_some_and(|v|
+            matches!(v, Property::Enum(_) | Property::Byte(Byte::Label(_)))
+        ),
+        rank_hp: integer("Rank_HP"),
+        rank_attack: integer("Rank_Attack"),
+        rank_defence: integer("Rank_Defence"),
+        rank_craft_speed: integer("Rank_CraftSpeed"),
+        talent_hp: integer("Talent_HP"),
+        talent_melee: integer("Talent_Melee"),
+        talent_shot: integer("Talent_Shot"),
+        talent_defense: integer("Talent_Defense"),
+        passive_skills: strings("PassiveSkillList"),
+        active_skills: strings("EquipWaza"),
+    }
+}
+
+struct DecodedRaw {
+    properties: Properties,
+    suffix: Vec<u8>,
+    schemas: HashMap<String, PropertyTagPartial>,
+}
+
+impl DecodedRaw {
+    fn save_parameter(&self) -> &Properties {
+        property_by_name(&self.properties, "SaveParameter")
+            .and_then(as_struct_properties)
+            .expect("validated SaveParameter")
+    }
+    fn save_parameter_mut(&mut self) -> Result<&mut Properties, String> {
+        exact_mut(&mut self.properties, "SaveParameter", 0)
+            .and_then(as_struct_properties_mut)
+            .ok_or_else(|| "RawData SaveParameter is not a struct".to_string())
+    }
+}
+
+fn decode_raw_data(header: &Header, value: &Property) -> Result<DecodedRaw, String> {
     let value = as_struct_properties(value).ok_or("map value is not a struct")?;
-    let bytes = exact(value, "RawData", 0)
-        .and_then(as_bytes)
-        .ok_or("RawData is not a byte array")?;
+    let bytes = exact(value, "RawData", 0).and_then(as_bytes).ok_or("RawData is not a byte array")?;
     let mut reader = RawArchive::new(bytes, header);
-    let raw = read_properties_until_none(&mut reader)
-        .map_err(|error| format!("failed to parse RawData: {error}"))?;
-    property_by_name(&raw, "SaveParameter")
-        .and_then(as_struct_properties)
-        .cloned()
-        .ok_or_else(|| "RawData SaveParameter is not a struct".to_string())
+    let properties = read_properties_until_none(&mut reader).map_err(|e|
+        format!("failed to parse RawData: {e}")
+    )?;
+    if property_by_name(&properties, "SaveParameter").and_then(as_struct_properties).is_none() {
+        return Err("RawData SaveParameter is not a struct".to_string());
+    }
+    let position = usize::try_from(reader.stream.position()).map_err(|e| e.to_string())?;
+    Ok(DecodedRaw {
+        properties,
+        suffix: bytes[position..].to_vec(),
+        schemas: reader.schemas,
+    })
+}
+
+fn encode_raw_data(header: &Header, decoded: &DecodedRaw) -> Result<Vec<u8>, String> {
+    let mut writer = RawWriter::new(header, &decoded.schemas);
+    write_properties_none_terminated(&mut writer, &decoded.properties).map_err(|e|
+        format!("failed to serialize RawData: {e}")
+    )?;
+    let mut bytes = writer.stream.into_inner();
+    bytes.extend_from_slice(&decoded.suffix);
+    Ok(bytes)
+}
+
+pub fn update(
+    save: &mut Save,
+    id: &str,
+    request: &UpdatePalRequest
+) -> Result<PalDetail, UpdateError> {
+    let index = resolve_id(character_map(save).map_err(UpdateError::Internal)?, id).ok_or_else(||
+        UpdateError::NotFound(format!("Pal {id} was not found"))
+    )?;
+    let header = save.header.clone();
+    let entries = character_map(save).map_err(UpdateError::Internal)?;
+    let key = entries[index].key.clone();
+    let mut value = entries[index].value.clone();
+    let current = detail_for(&header, index, &key, &value);
+    if current.is_player {
+        return Err(UpdateError::NotFound(format!("Pal {id} was not found")));
+    }
+    if
+        let Some(expected) = id.strip_prefix("instance:") &&
+        current.instance_id.as_deref().is_none_or(|actual| !actual.eq_ignore_ascii_case(expected))
+    {
+        return Err(UpdateError::NotFound(format!("Pal {id} no longer resolves to that instance")));
+    }
+    let mut decoded = decode_raw_data(&header, &value).map_err(UpdateError::Internal)?;
+    let errors = validate_update(request, decoded.save_parameter());
+    if !errors.is_empty() {
+        return Err(UpdateError::Validation(errors));
+    }
+    apply_update(decoded.save_parameter_mut().map_err(UpdateError::Internal)?, request).map_err(
+        |(field, message)| UpdateError::Validation(BTreeMap::from([(field, message)]))
+    )?;
+    let bytes = encode_raw_data(&header, &decoded).map_err(UpdateError::Internal)?;
+    set_raw_bytes(&mut value, bytes).map_err(UpdateError::Internal)?;
+    decode_raw_data(&header, &value).map_err(|e|
+        UpdateError::Internal(format!("serialized Pal failed verification: {e}"))
+    )?;
+    character_map_mut(save).map_err(UpdateError::Internal)?[index].value = value;
+    let entries = character_map(save).map_err(UpdateError::Internal)?;
+    Ok(detail_for(&header, index, &entries[index].key, &entries[index].value))
+}
+
+fn validate_update(
+    request: &UpdatePalRequest,
+    properties: &Properties
+) -> BTreeMap<String, String> {
+    let mut errors = BTreeMap::new();
+    let caps = capabilities(Some(properties));
+    let mut requested = 0;
+    macro_rules! existing {
+        ($field:ident, $cap:ident, $wire:literal) => {
+            if request.$field.is_some() {
+                requested += 1;
+                if !caps.$cap {
+                    errors.insert(
+                        $wire.into(),
+                        "Field is absent or has an unsupported property type".into(),
+                    );
+                }
+            }
+        };
+    }
+    existing!(nickname, nickname, "nickname");
+    existing!(level, level, "level");
+    existing!(rank, rank, "rank");
+    existing!(gender, gender, "gender");
+    existing!(rank_hp, rank_hp, "rankHp");
+    existing!(rank_attack, rank_attack, "rankAttack");
+    existing!(rank_defence, rank_defence, "rankDefence");
+    existing!(rank_craft_speed, rank_craft_speed, "rankCraftSpeed");
+    existing!(talent_hp, talent_hp, "talentHp");
+    existing!(talent_melee, talent_melee, "talentMelee");
+    existing!(talent_shot, talent_shot, "talentShot");
+    existing!(talent_defense, talent_defense, "talentDefense");
+    existing!(passive_skills, passive_skills, "passiveSkills");
+    existing!(active_skills, active_skills, "activeSkills");
+    if requested == 0 {
+        errors.insert("request".into(), "At least one Pal field must be supplied".into());
+    }
+    if let Some(v) = &request.nickname && v.value.chars().count() > MAX_NICKNAME_CHARS {
+        errors.insert(
+            "nickname".into(),
+            format!("Nickname must contain at most {MAX_NICKNAME_CHARS} characters")
+        );
+    }
+    range(
+        &mut errors,
+        "level",
+        request.level.as_ref().map(|v| v.value),
+        1,
+        MAX_PAL_LEVEL
+    );
+    range(
+        &mut errors,
+        "rank",
+        request.rank.as_ref().map(|v| v.value),
+        1,
+        MAX_PAL_RANK
+    );
+    for (name, value) in [
+        ("rankHp", &request.rank_hp),
+        ("rankAttack", &request.rank_attack),
+        ("rankDefence", &request.rank_defence),
+        ("rankCraftSpeed", &request.rank_craft_speed),
+    ] {
+        range(
+            &mut errors,
+            name,
+            value.as_ref().map(|v| v.value),
+            0,
+            MAX_RANK_STAT
+        );
+    }
+    for (name, value) in [
+        ("talentHp", &request.talent_hp),
+        ("talentMelee", &request.talent_melee),
+        ("talentShot", &request.talent_shot),
+        ("talentDefense", &request.talent_defense),
+    ] {
+        range(
+            &mut errors,
+            name,
+            value.as_ref().map(|v| v.value),
+            0,
+            MAX_TALENT
+        );
+    }
+    if let Some(v) = &request.gender && !matches!(enum_tail(&v.value).as_str(), "Male" | "Female") {
+        errors.insert(
+            "gender".into(),
+            "Gender must be EPalGenderType::Male or EPalGenderType::Female".into()
+        );
+    }
+    if let Some(v) = &request.passive_skills {
+        validate_skills(&mut errors, "passiveSkills", &v.value);
+    }
+    if let Some(v) = &request.active_skills {
+        validate_skills(&mut errors, "activeSkills", &v.value);
+    }
+    errors
+}
+
+fn range(
+    errors: &mut BTreeMap<String, String>,
+    field: &str,
+    value: Option<i32>,
+    min: i32,
+    max: i32
+) {
+    if let Some(v) = value && !(min..=max).contains(&v) {
+        errors.insert(field.into(), format!("Value must be between {min} and {max}"));
+    }
+}
+fn validate_skills(errors: &mut BTreeMap<String, String>, field: &str, values: &[String]) {
+    if values.len() > MAX_SKILLS {
+        errors.insert(field.into(), format!("At most {MAX_SKILLS} skills are allowed"));
+        return;
+    }
+    let mut seen = HashSet::new();
+    for value in values {
+        if value.is_empty() {
+            errors.insert(field.into(), "Skill identifiers cannot be empty".into());
+            break;
+        }
+        if value.chars().count() > MAX_SKILL_ID_CHARS {
+            errors.insert(
+                field.into(),
+                format!("Skill identifiers must contain at most {MAX_SKILL_ID_CHARS} characters")
+            );
+            break;
+        }
+        if !seen.insert(value) {
+            errors.insert(field.into(), "Duplicate skill identifiers are not allowed".into());
+            break;
+        }
+    }
+}
+
+fn apply_update(properties: &mut Properties, r: &UpdatePalRequest) -> Result<(), (String, String)> {
+    macro_rules! integer {
+        ($field:ident, $name:literal, $wire:literal) => {
+            if let Some(v) = &r.$field {
+                set_existing_i32(properties, $name, v.value).map_err(|e| ($wire.into(), e))?;
+            }
+        };
+    }
+    if let Some(v) = &r.nickname {
+        set_existing_string(properties, "NickName", v.value.clone()).map_err(|e| (
+            "nickname".into(),
+            e,
+        ))?;
+    }
+    integer!(level, "Level", "level");
+    integer!(rank, "Rank", "rank");
+    integer!(rank_hp, "Rank_HP", "rankHp");
+    integer!(rank_attack, "Rank_Attack", "rankAttack");
+    integer!(rank_defence, "Rank_Defence", "rankDefence");
+    integer!(rank_craft_speed, "Rank_CraftSpeed", "rankCraftSpeed");
+    integer!(talent_hp, "Talent_HP", "talentHp");
+    integer!(talent_melee, "Talent_Melee", "talentMelee");
+    integer!(talent_shot, "Talent_Shot", "talentShot");
+    integer!(talent_defense, "Talent_Defense", "talentDefense");
+    if let Some(v) = &r.gender {
+        set_existing_gender(properties, &v.value).map_err(|e| ("gender".into(), e))?;
+    }
+    if let Some(v) = &r.passive_skills {
+        set_existing_string_vec(properties, "PassiveSkillList", v.value.clone()).map_err(|e| (
+            "passiveSkills".into(),
+            e,
+        ))?;
+    }
+    if let Some(v) = &r.active_skills {
+        set_existing_string_vec(properties, "EquipWaza", v.value.clone()).map_err(|e| (
+            "activeSkills".into(),
+            e,
+        ))?;
+    }
+    Ok(())
+}
+
+fn set_existing_i32(p: &mut Properties, name: &str, value: i32) -> Result<(), String> {
+    match exact_mut(p, name, 0).ok_or_else(|| format!("{name} is absent"))? {
+        Property::Int(v) => {
+            *v = value;
+        }
+        Property::Int8(v) => {
+            *v = i8::try_from(value).map_err(|_| format!("{name} exceeds its Int8 storage"))?;
+        }
+        Property::Int16(v) => {
+            *v = i16::try_from(value).map_err(|_| format!("{name} exceeds its Int16 storage"))?;
+        }
+        Property::UInt8(v) => {
+            *v = u8::try_from(value).map_err(|_| format!("{name} exceeds its UInt8 storage"))?;
+        }
+        Property::UInt16(v) => {
+            *v = u16::try_from(value).map_err(|_| format!("{name} exceeds its UInt16 storage"))?;
+        }
+        Property::Byte(Byte::Byte(v)) => {
+            *v = u8::try_from(value).map_err(|_| format!("{name} exceeds its byte storage"))?;
+        }
+        _ => {
+            return Err(format!("{name} has an unsupported property type"));
+        }
+    }
+    Ok(())
+}
+fn set_existing_string(p: &mut Properties, name: &str, value: String) -> Result<(), String> {
+    match exact_mut(p, name, 0).ok_or_else(|| format!("{name} is absent"))? {
+        Property::Str(v) => {
+            *v = value;
+        }
+        _ => {
+            return Err(format!("{name} is not a string property"));
+        }
+    }
+    Ok(())
+}
+fn set_existing_gender(p: &mut Properties, value: &str) -> Result<(), String> {
+    let tail = enum_tail(value);
+    match exact_mut(p, "Gender", 0).ok_or("Gender is absent")? {
+        Property::Enum(v) | Property::Byte(Byte::Label(v)) => {
+            let prefix = v
+                .rsplit_once("::")
+                .map(|(p, _)| format!("{p}::"))
+                .unwrap_or_default();
+            *v = format!("{prefix}{tail}");
+        }
+        _ => {
+            return Err("Gender has an unsupported property type".into());
+        }
+    }
+    Ok(())
+}
+fn set_existing_string_vec(
+    p: &mut Properties,
+    name: &str,
+    values: Vec<String>
+) -> Result<(), String> {
+    match exact_mut(p, name, 0).ok_or_else(|| format!("{name} is absent"))? {
+        | Property::Array(ValueVec::Name(v))
+        | Property::Array(ValueVec::Str(v))
+        | Property::Array(ValueVec::Enum(v)) => {
+            *v = values;
+        }
+        Property::Array(ValueVec::Byte(ByteArray::Label(v))) => {
+            *v = values;
+        }
+        _ => {
+            return Err(format!("{name} is not a supported string array"));
+        }
+    }
+    Ok(())
+}
+fn set_raw_bytes(value: &mut Property, bytes: Vec<u8>) -> Result<(), String> {
+    match as_struct_properties_mut(value).and_then(|p| exact_mut(p, "RawData", 0)) {
+        Some(Property::Array(ValueVec::Byte(ByteArray::Byte(v)))) => {
+            *v = bytes;
+            Ok(())
+        }
+        _ => Err("RawData is not a byte array".into()),
+    }
+}
+fn exact_mut<'a>(
+    properties: &'a mut Properties,
+    name: &str,
+    index: u32
+) -> Option<&'a mut Property> {
+    properties.0.get_mut(&PropertyKey(index, name.to_string()))
+}
+fn as_struct_properties_mut(property: &mut Property) -> Option<&mut Properties> {
+    match property {
+        Property::Struct(StructValue::Struct(p)) => Some(p),
+        _ => None,
+    }
+}
+fn character_map_mut(save: &mut Save) -> Result<&mut Vec<uesave::MapEntry>, String> {
+    let world = exact_mut(&mut save.root.properties, WORLD, 0)
+        .and_then(as_struct_properties_mut)
+        .ok_or("worldSaveData is not a parsed struct")?;
+    match exact_mut(world, PAL_MAP, 0) {
+        Some(Property::Map(v)) => Ok(v),
+        _ => Err("CharacterSaveParameterMap is not a map".into()),
+    }
 }
 
 fn raw_path(index: usize) -> Vec<PathSegment> {
@@ -370,7 +832,7 @@ fn raw_path(index: usize) -> Vec<PathSegment> {
             name: PAL_MAP.to_string(),
             index: 0,
         },
-        PathSegment::MapEntry { index },
+        PathSegment::MapEntry { index }
     ]
 }
 
@@ -397,7 +859,7 @@ pub fn as_struct_properties(property: &Property) -> Option<&Properties> {
 
 pub fn as_string(property: &Property) -> Option<&str> {
     match property {
-        Property::Str(value)
+        | Property::Str(value)
         | Property::Name(value)
         | Property::Enum(value)
         | Property::Byte(Byte::Label(value)) => Some(value),
@@ -428,9 +890,10 @@ pub fn as_uuid_string(property: &Property) -> Option<String> {
     match property {
         Property::Struct(StructValue::Guid(value)) if !value.is_nil() => Some(value.to_string()),
         Property::Str(value) | Property::Name(value) => normalize_uuid(value),
-        Property::Struct(StructValue::Struct(properties)) => property_by_name(properties, "Guid")
-            .or_else(|| property_by_name(properties, "ID"))
-            .and_then(as_uuid_string),
+        Property::Struct(StructValue::Struct(properties)) =>
+            property_by_name(properties, "Guid")
+                .or_else(|| property_by_name(properties, "ID"))
+                .and_then(as_uuid_string),
         Property::Array(ValueVec::Byte(ByteArray::Byte(bytes))) if bytes.len() == 16 => {
             guid_bytes(bytes)
         }
@@ -440,7 +903,7 @@ pub fn as_uuid_string(property: &Property) -> Option<String> {
 
 pub fn as_string_array(property: &Property) -> Vec<String> {
     match property {
-        Property::Array(ValueVec::Name(values))
+        | Property::Array(ValueVec::Name(values))
         | Property::Array(ValueVec::Str(values))
         | Property::Array(ValueVec::Enum(values)) => values.clone(),
         Property::Array(ValueVec::Byte(ByteArray::Label(values))) => values.clone(),
@@ -456,9 +919,7 @@ fn as_bytes(property: &Property) -> Option<&[u8]> {
 }
 
 fn int_field(properties: Option<&Properties>, name: &str) -> Option<i32> {
-    properties
-        .and_then(|properties| property_by_name(properties, name))
-        .and_then(as_i32)
+    properties.and_then(|properties| property_by_name(properties, name)).and_then(as_i32)
 }
 
 fn string_field(properties: Option<&Properties>, name: &str) -> Option<String> {
@@ -469,9 +930,7 @@ fn string_field(properties: Option<&Properties>, name: &str) -> Option<String> {
 }
 
 fn uuid_field(properties: Option<&Properties>, name: &str) -> Option<String> {
-    properties
-        .and_then(|properties| property_by_name(properties, name))
-        .and_then(as_uuid_string)
+    properties.and_then(|properties| property_by_name(properties, name)).and_then(as_uuid_string)
 }
 
 fn strings_field(properties: Option<&Properties>, name: &str) -> Vec<String> {
@@ -505,7 +964,7 @@ fn guid_bytes(bytes: &[u8]) -> Option<String> {
         u32::from_le_bytes(a),
         u32::from_le_bytes(b),
         u32::from_le_bytes(c),
-        u32::from_le_bytes(d),
+        u32::from_le_bytes(d)
     );
     (!guid.is_nil()).then(|| guid.to_string())
 }
@@ -514,6 +973,7 @@ struct RawArchive<'a> {
     stream: Cursor<&'a [u8]>,
     header: &'a Header,
     scope: Scope,
+    schemas: HashMap<String, PropertyTagPartial>,
 }
 
 impl<'a> RawArchive<'a> {
@@ -522,6 +982,7 @@ impl<'a> RawArchive<'a> {
             stream: Cursor::new(bytes),
             header,
             scope: Scope::root(),
+            schemas: HashMap::new(),
         }
     }
 
@@ -545,12 +1006,15 @@ impl<'a> RawArchive<'a> {
                 .map(|value| (value, trailing))
                 .map_err(|error| uesave::Error::Other(format!("invalid UTF-8: {error}")));
         }
-        let units = usize::try_from(
-            length
-                .checked_abs()
-                .ok_or_else(|| uesave::Error::Other("invalid UTF-16 string length".to_string()))?,
-        )
-        .map_err(|error| uesave::Error::Other(error.to_string()))?;
+        let units = usize
+            ::try_from(
+                length
+                    .checked_abs()
+                    .ok_or_else(||
+                        uesave::Error::Other("invalid UTF-16 string length".to_string())
+                    )?
+            )
+            .map_err(|error| uesave::Error::Other(error.to_string()))?;
         let mut bytes = vec![0; units.saturating_mul(2)];
         self.read_exact(&mut bytes)?;
         let trailing = if bytes.ends_with(&[0, 0]) {
@@ -616,12 +1080,109 @@ impl ArchiveReader for RawArchive<'_> {
             })
         }
     }
-    fn record_schema(&mut self, _path: String, _tag: PropertyTagPartial) {}
+    fn record_schema(&mut self, path: String, tag: PropertyTagPartial) {
+        self.schemas.insert(path, tag);
+    }
     fn path(&self) -> String {
         self.scope.path()
     }
     fn error_to_raw(&self) -> bool {
         true
+    }
+}
+
+struct RawWriter<'a> {
+    stream: Cursor<Vec<u8>>,
+    header: &'a Header,
+    scope: Scope,
+    schemas: &'a HashMap<String, PropertyTagPartial>,
+}
+impl<'a> RawWriter<'a> {
+    fn new(header: &'a Header, schemas: &'a HashMap<String, PropertyTagPartial>) -> Self {
+        Self {
+            stream: Cursor::new(Vec::new()),
+            header,
+            scope: Scope::root(),
+            schemas,
+        }
+    }
+}
+impl Write for RawWriter<'_> {
+    fn write(&mut self, b: &[u8]) -> std::io::Result<usize> {
+        self.stream.write(b)
+    }
+    fn flush(&mut self) -> std::io::Result<()> {
+        Ok(())
+    }
+}
+impl Seek for RawWriter<'_> {
+    fn seek(&mut self, p: SeekFrom) -> std::io::Result<u64> {
+        self.stream.seek(p)
+    }
+}
+impl ArchiveWriter for RawWriter<'_> {
+    type ArchiveType = SaveGameArchiveType;
+    fn version(&self) -> &dyn VersionInfo {
+        self.header
+    }
+    fn set_version(&mut self, _header: Header) {}
+    fn scope(&mut self) -> &mut Scope {
+        &mut self.scope
+    }
+    fn write_string(&mut self, value: &str) -> Result<(), uesave::Error> {
+        self.write_string_trailing(value, None)
+    }
+    fn write_string_trailing(
+        &mut self,
+        value: &str,
+        trailing: Option<&[u8]>
+    ) -> Result<(), uesave::Error> {
+        if value.is_empty() || value.is_ascii() {
+            let tail = trailing.unwrap_or(&[0]);
+            self.write_all(
+                &u32
+                    ::try_from(value.len() + tail.len())
+                    .map_err(|e| uesave::Error::Other(e.to_string()))?
+                    .to_le_bytes()
+            )?;
+            self.write_all(value.as_bytes())?;
+            self.write_all(tail)?;
+        } else {
+            let units: Vec<u16> = value.encode_utf16().collect();
+            let tail = trailing.unwrap_or(&[0, 0]);
+            let count = i32
+                ::try_from(units.len() + tail.len() / 2)
+                .map_err(|e| uesave::Error::Other(e.to_string()))?;
+            self.write_all(&(-count).to_le_bytes())?;
+            for unit in units {
+                self.write_all(&unit.to_le_bytes())?;
+            }
+            self.write_all(tail)?;
+        }
+        Ok(())
+    }
+    fn write_object_ref(&mut self, value: &String) -> Result<(), uesave::Error> {
+        self.write_string(value)
+    }
+    fn write_soft_object_path(&mut self, value: &SoftObjectPath) -> Result<(), uesave::Error> {
+        match value {
+            SoftObjectPath::New { asset_path_name, package_name, asset_name } => {
+                self.write_string(asset_path_name)?;
+                self.write_string(package_name)?;
+                self.write_string_trailing(&asset_name.0, Some(&asset_name.1))?;
+            }
+            SoftObjectPath::Old { asset_path_name, sub_path_string } => {
+                self.write_string(asset_path_name)?;
+                self.write_string(sub_path_string)?;
+            }
+        }
+        Ok(())
+    }
+    fn get_schema(&self, path: &str) -> Option<PropertyTagPartial> {
+        self.schemas.get(path).cloned()
+    }
+    fn path(&self) -> String {
+        self.scope.path()
     }
 }
 
@@ -634,10 +1195,7 @@ mod tests {
         let uuid = "c1b07a9e-7953-4b0e-bd5e-ed18d8df27b3";
         assert_eq!(normalize_uuid(&uuid.to_uppercase()).as_deref(), Some(uuid));
         assert_eq!(normalize_uuid("bad"), None);
-        assert_eq!(
-            format!("instance:{uuid}"),
-            "instance:c1b07a9e-7953-4b0e-bd5e-ed18d8df27b3"
-        );
+        assert_eq!(format!("instance:{uuid}"), "instance:c1b07a9e-7953-4b0e-bd5e-ed18d8df27b3");
         assert_eq!(format!("map:{}", 412), "map:412");
     }
 
@@ -662,7 +1220,7 @@ mod tests {
             items: vec![
                 make(0, "Sekhmet", 50, "Female", false),
                 make(1, "Frostallion", 40, "Male", false),
-                make(2, "Player", 50, "Male", true),
+                make(2, "Player", 50, "Male", true)
             ],
         };
         let page = list(&cache, 0, 1, &PalFilter::default());
@@ -672,7 +1230,7 @@ mod tests {
             &cache,
             0,
             50,
-            &PalFilter {
+            &(PalFilter {
                 search: Some("frost".into()),
                 character_id: Some("FROSTALLION".into()),
                 owner_player_uid: Some("OWNER".into()),
@@ -680,7 +1238,7 @@ mod tests {
                 min_level: Some(40),
                 max_level: Some(40),
                 include_players: false,
-            },
+            })
         );
         assert_eq!(filtered.items[0].map_index, 1);
         assert_eq!(
@@ -688,13 +1246,229 @@ mod tests {
                 &cache,
                 0,
                 50,
-                &PalFilter {
+                &(PalFilter {
                     include_players: true,
                     ..PalFilter::default()
-                }
-            )
-            .total,
+                })
+            ).total,
             3
         );
+    }
+
+    fn editable_properties() -> Properties {
+        let mut p = Properties::default();
+        for (name, value) in [
+            ("Level", Property::Byte(Byte::Byte(10))),
+            ("Rank", Property::Byte(Byte::Byte(1))),
+            ("Rank_HP", Property::Byte(Byte::Byte(0))),
+            ("Rank_Attack", Property::Byte(Byte::Byte(0))),
+            ("Rank_Defence", Property::Byte(Byte::Byte(0))),
+            ("Rank_CraftSpeed", Property::Byte(Byte::Byte(0))),
+            ("Talent_HP", Property::Byte(Byte::Byte(50))),
+            ("Talent_Melee", Property::Byte(Byte::Byte(50))),
+            ("Talent_Shot", Property::Byte(Byte::Byte(50))),
+            ("Talent_Defense", Property::Byte(Byte::Byte(50))),
+        ] {
+            p.insert(PropertyKey(0, name.into()), value);
+        }
+        p.insert(PropertyKey(0, "NickName".into()), Property::Str("old".into()));
+        p.insert(PropertyKey(0, "Gender".into()), Property::Enum("EPalGenderType::Male".into()));
+        p.insert(
+            PropertyKey(0, "PassiveSkillList".into()),
+            Property::Array(ValueVec::Name(vec!["A".into()]))
+        );
+        p.insert(
+            PropertyKey(0, "EquipWaza".into()),
+            Property::Array(ValueVec::Enum(vec!["B".into()]))
+        );
+        p.insert(PropertyKey(0, "Untouched".into()), Property::Str("preserve".into()));
+        p
+    }
+
+    #[test]
+    fn validates_all_numeric_boundaries_and_gender() {
+        let p = editable_properties();
+        for (field, request) in [
+            (
+                "level",
+                UpdatePalRequest {
+                    level: Some(FieldUpdate { value: 0 }),
+                    ..Default::default()
+                },
+            ),
+            (
+                "level",
+                UpdatePalRequest {
+                    level: Some(FieldUpdate { value: 81 }),
+                    ..Default::default()
+                },
+            ),
+            (
+                "rank",
+                UpdatePalRequest {
+                    rank: Some(FieldUpdate { value: 0 }),
+                    ..Default::default()
+                },
+            ),
+            (
+                "rank",
+                UpdatePalRequest {
+                    rank: Some(FieldUpdate { value: 6 }),
+                    ..Default::default()
+                },
+            ),
+            (
+                "rankHp",
+                UpdatePalRequest {
+                    rank_hp: Some(FieldUpdate { value: -1 }),
+                    ..Default::default()
+                },
+            ),
+            (
+                "rankHp",
+                UpdatePalRequest {
+                    rank_hp: Some(FieldUpdate { value: 256 }),
+                    ..Default::default()
+                },
+            ),
+            (
+                "talentHp",
+                UpdatePalRequest {
+                    talent_hp: Some(FieldUpdate { value: -1 }),
+                    ..Default::default()
+                },
+            ),
+            (
+                "talentHp",
+                UpdatePalRequest {
+                    talent_hp: Some(FieldUpdate { value: 101 }),
+                    ..Default::default()
+                },
+            ),
+            (
+                "gender",
+                UpdatePalRequest {
+                    gender: Some(FieldUpdate {
+                        value: "Other".into(),
+                    }),
+                    ..Default::default()
+                },
+            ),
+        ] {
+            assert!(validate_update(&request, &p).contains_key(field));
+        }
+        assert!(
+            validate_update(
+                &(UpdatePalRequest {
+                    level: Some(FieldUpdate { value: 80 }),
+                    rank: Some(FieldUpdate { value: 5 }),
+                    rank_hp: Some(FieldUpdate { value: 255 }),
+                    talent_hp: Some(FieldUpdate { value: 100 }),
+                    gender: Some(FieldUpdate {
+                        value: "EPalGenderType::Female".into(),
+                    }),
+                    ..Default::default()
+                }),
+                &p
+            ).is_empty()
+        );
+    }
+
+    #[test]
+    fn validates_nickname_and_skill_lists() {
+        let p = editable_properties();
+        let long = "界".repeat(65);
+        assert!(
+            validate_update(
+                &(UpdatePalRequest {
+                    nickname: Some(FieldUpdate { value: long }),
+                    ..Default::default()
+                }),
+                &p
+            ).contains_key("nickname")
+        );
+        for values in [
+            vec!["".into()],
+            vec!["A".into(), "A".into()],
+            vec!["x".repeat(129)],
+            vec!["x".into(); 65],
+        ] {
+            assert!(
+                validate_update(
+                    &(UpdatePalRequest {
+                        passive_skills: Some(FieldUpdate { value: values }),
+                        ..Default::default()
+                    }),
+                    &p
+                ).contains_key("passiveSkills")
+            );
+        }
+    }
+
+    #[test]
+    fn applies_every_supported_field_and_preserves_untouched_properties() {
+        let mut p = editable_properties();
+        let untouched = property_by_name(&p, "Untouched").cloned();
+        let request = UpdatePalRequest {
+            nickname: Some(FieldUpdate { value: "".into() }),
+            level: Some(FieldUpdate { value: 80 }),
+            rank: Some(FieldUpdate { value: 5 }),
+            gender: Some(FieldUpdate {
+                value: "Female".into(),
+            }),
+            rank_hp: Some(FieldUpdate { value: 1 }),
+            rank_attack: Some(FieldUpdate { value: 2 }),
+            rank_defence: Some(FieldUpdate { value: 3 }),
+            rank_craft_speed: Some(FieldUpdate { value: 4 }),
+            talent_hp: Some(FieldUpdate { value: 91 }),
+            talent_melee: Some(FieldUpdate { value: 92 }),
+            talent_shot: Some(FieldUpdate { value: 93 }),
+            talent_defense: Some(FieldUpdate { value: 94 }),
+            passive_skills: Some(FieldUpdate {
+                value: vec!["P1".into(), "P2".into()],
+            }),
+            active_skills: Some(FieldUpdate {
+                value: vec!["W1".into()],
+            }),
+            ..Default::default()
+        };
+        apply_update(&mut p, &request).unwrap();
+        assert_eq!(int_field(Some(&p), "Level"), Some(80));
+        assert_eq!(int_field(Some(&p), "Rank"), Some(5));
+        assert_eq!(string_field(Some(&p), "NickName").as_deref(), Some(""));
+        assert_eq!(string_field(Some(&p), "Gender").as_deref(), Some("EPalGenderType::Female"));
+        for (name, value) in [
+            ("Rank_HP", 1),
+            ("Rank_Attack", 2),
+            ("Rank_Defence", 3),
+            ("Rank_CraftSpeed", 4),
+            ("Talent_HP", 91),
+            ("Talent_Melee", 92),
+            ("Talent_Shot", 93),
+            ("Talent_Defense", 94),
+        ] {
+            assert_eq!(int_field(Some(&p), name), Some(value));
+        }
+        assert_eq!(strings_field(Some(&p), "PassiveSkillList"), vec!["P1", "P2"]);
+        assert_eq!(property_by_name(&p, "Untouched").cloned(), untouched);
+    }
+
+    #[test]
+    fn missing_and_wrong_variant_fields_are_never_created_or_retyped() {
+        let mut p = editable_properties();
+        p.0.shift_remove(&PropertyKey(0, "Rank".into()));
+        p.insert(PropertyKey(0, "Level".into()), Property::Str("wrong".into()));
+        let before = p.clone();
+        let errors = validate_update(
+            &(UpdatePalRequest {
+                rank: Some(FieldUpdate { value: 2 }),
+                level: Some(FieldUpdate { value: 2 }),
+                ..Default::default()
+            }),
+            &p
+        );
+        assert!(errors.contains_key("rank"));
+        assert!(errors.contains_key("level"));
+        assert_eq!(p, before);
     }
 }

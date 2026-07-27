@@ -596,6 +596,13 @@ export default function Home() {
                 sessionId={session.id}
                 generation={generation.current}
                 refreshToken={palRefresh}
+                revision={session.revision}
+                onSessionUpdate={(dirty, revision) => {
+                  setSession((current) =>
+                    current ? { ...current, dirty, revision } : current,
+                  );
+                  setStatus(`✅ Pal saved — revision `);
+                }}
                 onViewRaw={viewRawPath}
               />
             </div>

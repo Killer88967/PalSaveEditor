@@ -4,11 +4,15 @@ import { useEffect, useRef, useState } from "react";
 import {
   getPal,
   getPals,
+  getSaveSession,
+  updatePal,
+  PalSaveApiError,
   type PalDetail as PalDetailModel,
   type PalSummary,
   type SavePathSegment,
 } from "@/lib/palsave-api";
 import { PalDetail } from "@/components/pal-detail";
+import { updatePalRow } from "@/lib/pal-form";
 
 const PAGE_SIZE = 50;
 
@@ -22,11 +26,15 @@ export function PalList({
   generation,
   refreshToken,
   onViewRaw,
+  revision,
+  onSessionUpdate,
 }: {
   sessionId: string;
   generation: number;
   refreshToken: number;
   onViewRaw: (path: SavePathSegment[]) => void;
+  revision: number;
+  onSessionUpdate: (dirty: boolean, revision: number) => void;
 }) {
   const [input, setInput] = useState("");
   const [search, setSearch] = useState("");
@@ -39,6 +47,7 @@ export function PalList({
   const [detail, setDetail] = useState<PalDetailModel | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
   const [detailError, setDetailError] = useState<string>();
+  const [savingPal, setSavingPal] = useState(false);
   const listController = useRef<AbortController | null>(null);
   const detailController = useRef<AbortController | null>(null);
   const request = useRef(0);
@@ -138,6 +147,27 @@ export function PalList({
     }
   }
 
+  async function savePal(
+    request: import("@/lib/palsave-api").UpdatePalRequest,
+  ) {
+    setSavingPal(true);
+    try {
+      const response = await updatePal(sessionId, selectedId!, request);
+      setDetail(response.pal);
+      setItems((current) => updatePalRow(current, response.pal));
+      onSessionUpdate(response.dirty, response.revision);
+      return response.pal;
+    } catch (cause) {
+      if (cause instanceof PalSaveApiError && cause.status === 409) {
+        const metadata = await getSaveSession(sessionId);
+        onSessionUpdate(metadata.dirty, metadata.revision);
+      }
+      throw cause;
+    } finally {
+      setSavingPal(false);
+    }
+  }
+
   return (
     <div className="grid min-h-96 overflow-hidden rounded border border-neutral-800 lg:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.85fr)]">
       <section className="border-b border-neutral-800 lg:border-r lg:border-b-0">
@@ -190,8 +220,10 @@ export function PalList({
                   <tr
                     key={pal.id}
                     aria-selected={selectedId === pal.id}
-                    onClick={() => void selectPal(pal)}
-                    className={`cursor-pointer border-t border-neutral-900 hover:bg-neutral-900 ${
+                    onClick={() => {
+                      if (!savingPal) void selectPal(pal);
+                    }}
+                    className={`cursor-pointer  border-t border-neutral-900 hover:bg-neutral-900 ${
                       selectedId === pal.id ? "bg-sky-950/50" : ""
                     }`}
                   >
@@ -244,9 +276,12 @@ export function PalList({
         )}
       </section>
       <PalDetail
+        key={selectedId + (detail ? ":loaded" : ":pending")}
         detail={detail}
         loading={detailLoading}
         error={detailError}
+        revision={revision}
+        onSave={savePal}
         onViewRaw={(selected) => onViewRaw(selected.rawPath)}
       />
     </div>

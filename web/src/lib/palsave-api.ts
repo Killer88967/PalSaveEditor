@@ -37,6 +37,46 @@ export interface PalListResponse {
   items: PalSummary[];
 }
 
+export interface PalEditCapabilities {
+  nickname: boolean;
+  level: boolean;
+  rank: boolean;
+  gender: boolean;
+  rankHp: boolean;
+  rankAttack: boolean;
+  rankDefence: boolean;
+  rankCraftSpeed: boolean;
+  talentHp: boolean;
+  talentMelee: boolean;
+  talentShot: boolean;
+  talentDefense: boolean;
+  passiveSkills: boolean;
+  activeSkills: boolean;
+}
+export type FieldUpdate<T> = { value: T };
+export interface UpdatePalRequest {
+  expectedRevision: number;
+  nickname?: FieldUpdate<string>;
+  level?: FieldUpdate<number>;
+  rank?: FieldUpdate<number>;
+  gender?: FieldUpdate<string>;
+  rankHp?: FieldUpdate<number>;
+  rankAttack?: FieldUpdate<number>;
+  rankDefence?: FieldUpdate<number>;
+  rankCraftSpeed?: FieldUpdate<number>;
+  talentHp?: FieldUpdate<number>;
+  talentMelee?: FieldUpdate<number>;
+  talentShot?: FieldUpdate<number>;
+  talentDefense?: FieldUpdate<number>;
+  passiveSkills?: FieldUpdate<string[]>;
+  activeSkills?: FieldUpdate<string[]>;
+}
+export interface UpdatePalResponse {
+  pal: PalDetail;
+  dirty: boolean;
+  revision: number;
+}
+
 export interface PalDetail extends PalSummary {
   rankHp?: number;
   rankAttack?: number;
@@ -49,6 +89,7 @@ export interface PalDetail extends PalSummary {
   passiveSkills: string[];
   activeSkills: string[];
   missingFields: string[];
+  editCapabilities: PalEditCapabilities;
 }
 
 export interface GetPalsQuery {
@@ -159,6 +200,7 @@ interface DeleteSessionResponse {
 }
 
 interface ApiErrorResponse {
+  fields?: Record<string, string>;
   error?: string;
   code?: string;
   currentRevision?: number;
@@ -169,6 +211,7 @@ export class PalSaveApiError extends Error {
     message: string,
     public readonly status: number,
     public readonly currentRevision?: number,
+    public readonly fields?: Record<string, string>,
   ) {
     super(message);
     this.name = "PalSaveApiError";
@@ -186,7 +229,12 @@ async function apiError(response: Response): Promise<PalSaveApiError> {
     body.error ?? `PalSave API request failed (${response.status})`;
   const message =
     response.status === 409 ? `Revision conflict (409): ${detail}` : detail;
-  return new PalSaveApiError(message, response.status, body.currentRevision);
+  return new PalSaveApiError(
+    message,
+    response.status,
+    body.currentRevision,
+    body.fields,
+  );
 }
 
 export async function getApiHealth(): Promise<HealthResponse> {
@@ -329,6 +377,25 @@ export async function getPal(
   );
   if (!response.ok) throw await apiError(response);
   return response.json() as Promise<PalDetail>;
+}
+
+export async function updatePal(
+  sessionId: string,
+  palId: string,
+  request: UpdatePalRequest,
+  signal?: AbortSignal,
+): Promise<UpdatePalResponse> {
+  const response = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/pals/${encodeURIComponent(palId)}`,
+    {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(request),
+      signal,
+    },
+  );
+  if (!response.ok) throw await apiError(response);
+  return response.json() as Promise<UpdatePalResponse>;
 }
 
 export async function deleteSaveSession(sessionId: string): Promise<boolean> {
