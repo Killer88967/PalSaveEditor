@@ -1,0 +1,13 @@
+{
+  "forwardPorts": [3000, 47831],
+  "portsAttributes": {
+    "3000": {
+      "label": "PalSave Editor",
+      "onAutoForward": "openBrowser"
+    },
+    "47831": {
+      "label": "PalSave Rust API",
+      "onAutoForward": "silent"
+    }
+  }
+}

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently -k -n NEXT,RUST -c cyan,magenta \"bun run dev:next\" \"bun run dev:rust\"",
+    "dev:next": "next dev",
+    "dev:rust": "cd .. && cargo run -p palsave-api",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -18,6 +20,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^10.0.4",
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
     "tailwindcss": "^4",
