@@ -18,7 +18,8 @@
       "version": "22"
     },
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/prulloac/devcontainer-features/bun:1": {}
+    "ghcr.io/prulloac/devcontainer-features/bun:1": {},
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
   },
 
   "forwardPorts": [3000, 47831],
