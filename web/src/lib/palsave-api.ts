@@ -10,6 +10,7 @@ export interface SaveSession {
   decompressedSize: number;
   dirty: boolean;
   revision: number;
+  playerFileCount: number;
 }
 
 export type PalParseStatus = "complete" | "partial" | "unsupported";
@@ -248,11 +249,11 @@ export async function getApiHealth(): Promise<HealthResponse> {
 }
 
 export async function createSaveSession(
-  file: File,
+  files: File[],
   signal?: AbortSignal,
 ): Promise<SaveSession> {
   const formData = new FormData();
-  formData.append("file", file);
+  for (const file of files) formData.append("files", file);
 
   const response = await fetch("/api/rust/sessions", {
     method: "POST",
@@ -410,4 +411,82 @@ export async function deleteSaveSession(sessionId: string): Promise<boolean> {
   const result = (await response.json()) as DeleteSessionResponse;
 
   return result.deleted;
+}
+
+export interface ContainerReference {
+  kind: string;
+  containerId: string;
+}
+export interface PlayerInventoryOwner {
+  playerUid: string;
+  fileName: string;
+  nickname?: string;
+  personalContainers: ContainerReference[];
+}
+export interface InventorySlot {
+  index: number;
+  itemId?: string;
+  quantity?: number;
+  editable: boolean;
+}
+export interface InventoryContainer {
+  kind: string;
+  containerId: string;
+  slots: InventorySlot[];
+}
+export interface UpdateInventorySlotRequest {
+  expectedRevision: number;
+  guild?: boolean;
+  itemId?: string;
+  quantity?: number;
+}
+export interface UpdateInventorySlotResponse {
+  slot: InventorySlot;
+  dirty: boolean;
+  revision: number;
+}
+export async function getInventoryPlayers(
+  sessionId: string,
+  signal?: AbortSignal,
+): Promise<PlayerInventoryOwner[]> {
+  const r = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/players`,
+    { signal },
+  );
+  if (!r.ok) throw await apiError(r);
+  return r.json();
+}
+export async function getPlayerInventory(
+  sessionId: string,
+  playerUid: string,
+  guild = false,
+  signal?: AbortSignal,
+): Promise<InventoryContainer[]> {
+  const q = guild ? "?guild=true" : "";
+  const r = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/players/${encodeURIComponent(playerUid)}/inventory${q}`,
+    { signal },
+  );
+  if (!r.ok) throw await apiError(r);
+  return r.json();
+}
+export async function updateInventorySlot(
+  sessionId: string,
+  playerUid: string,
+  containerId: string,
+  index: number,
+  request: UpdateInventorySlotRequest,
+  signal?: AbortSignal,
+): Promise<UpdateInventorySlotResponse> {
+  const r = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/players/${encodeURIComponent(playerUid)}/inventory/${encodeURIComponent(containerId)}/slots/${index}`,
+    {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(request),
+      signal,
+    },
+  );
+  if (!r.ok) throw await apiError(r);
+  return r.json();
 }

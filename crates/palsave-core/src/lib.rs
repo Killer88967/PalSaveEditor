@@ -49,12 +49,12 @@ fn palworld_types() -> Types {
     );
 
     types.add(
-        ".worldSaveData.ItemContainerSaveData.Key".to_string(),
+        "worldSaveData.ItemContainerSaveData.Key".to_string(),
         StructType::Struct(None),
     );
 
     types.add(
-        ".worldSaveData.CharacterContainerSaveData.Key".to_string(),
+        "worldSaveData.CharacterContainerSaveData.Key".to_string(),
         StructType::Struct(None),
     );
 

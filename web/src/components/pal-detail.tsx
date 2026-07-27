@@ -243,9 +243,7 @@ export function PalDetail({
                 </div>
               ),
           )}
-          {numbers
-            .slice(1)
-            .some(([key]) => Number(form[key] ?? 0) > 100) && (
+          {numbers.slice(1).some(([key]) => Number(form[key] ?? 0) > 100) && (
             <p className="rounded border border-amber-800 p-2 text-xs text-amber-300">
               Advanced value. Extremely high stats may destabilize gameplay or
               cause unexpected behavior.

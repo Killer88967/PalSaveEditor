@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { PalList } from "@/components/pal-list";
+import { InventoryEditor } from "@/components/inventory-editor";
 import {
   createSaveSession,
   deleteSaveSession,
@@ -238,7 +239,9 @@ function roundtripFileName(name: string) {
 export default function Home() {
   const [status, setStatus] = useState("Pick a .sav file to parse."),
     [session, setSession] = useState<SaveSession | null>(null);
-  const [activeView, setActiveView] = useState<"pals" | "raw">("pals"),
+  const [activeView, setActiveView] = useState<"pals" | "inventory" | "raw">(
+      "pals",
+    ),
     [palRefresh, setPalRefresh] = useState(0);
   const [root, setRoot] = useState<SaveNodeResponse | null>(null),
     [rootError, setRootError] = useState<string | null>(null);
@@ -277,12 +280,12 @@ export default function Home() {
       void deleteSaveSession(previous.id).catch((error) =>
         console.warn("Failed to delete previous save session:", error),
       );
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setStatus(`Reading ${file.name}…`);
+    const files = Array.from(e.target.files ?? []);
+    if (!files.length) return;
+    setStatus(`Reading  save file(s)…`);
     const c = controller();
     try {
-      const created = await createSaveSession(file, c.signal);
+      const created = await createSaveSession(files, c.signal);
       if (!active(g)) {
         void deleteSaveSession(created.id);
         return;
@@ -521,7 +524,7 @@ export default function Home() {
     <main className="mx-auto max-w-4xl space-y-4 p-6">
       <h1 className="text-xl font-semibold">PalSave Editor</h1>
       <div className="flex flex-wrap items-center gap-3">
-        <input type="file" accept=".sav" onChange={onFile} />
+        <input type="file" accept=".sav" multiple onChange={onFile} />
         <button
           onClick={() => void onDownload()}
           disabled={!session || isExporting}
@@ -582,6 +585,15 @@ export default function Home() {
             <button
               type="button"
               role="tab"
+              aria-selected={activeView === "inventory"}
+              onClick={() => setActiveView("inventory")}
+              className={`rounded px-3 py-1.5 text-sm ${activeView === "inventory" ? "bg-sky-800 text-white" : "text-neutral-400 hover:bg-neutral-900"}`}
+            >
+              Inventories
+            </button>
+            <button
+              type="button"
+              role="tab"
               aria-selected={activeView === "raw"}
               onClick={() => setActiveView("raw")}
               className={`rounded px-3 py-1.5 text-sm ${activeView === "raw" ? "bg-sky-800 text-white" : "text-neutral-400 hover:bg-neutral-900"}`}
@@ -601,9 +613,22 @@ export default function Home() {
                   setSession((current) =>
                     current ? { ...current, dirty, revision } : current,
                   );
-                  setStatus(`✅ Pal saved — revision `);
+                  setStatus(`✅ Pal saved — revision ${revision}`);
                 }}
                 onViewRaw={viewRawPath}
+              />
+            </div>
+          ) : activeView === "inventory" ? (
+            <div className="mt-3">
+              <InventoryEditor
+                sessionId={session.id}
+                revision={session.revision}
+                onSessionUpdate={(dirty, revision) => {
+                  setSession((current) =>
+                    current ? { ...current, dirty, revision } : current,
+                  );
+                  setStatus(`✅ Inventory saved — revision ${revision}`);
+                }}
               />
             </div>
           ) : (
