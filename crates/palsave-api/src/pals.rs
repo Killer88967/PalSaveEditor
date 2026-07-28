@@ -337,7 +337,7 @@ fn summary(header: &Header, index: usize, key: &Property, value: &Property) -> P
         explicit_player ||
         character_id
             .as_deref()
-            .is_some_and(|id| (id.is_empty() || id.eq_ignore_ascii_case("Player"))) ||
+            .is_some_and(|id| id.is_empty() || id.eq_ignore_ascii_case("Player") ) ||
         instance_id
             .as_deref()
             .zip(key_player_uid.as_deref())
