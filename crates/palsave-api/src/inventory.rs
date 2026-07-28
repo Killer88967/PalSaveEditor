@@ -1,6 +1,9 @@
-use serde::{ Deserialize, Serialize };
-use std::{ collections::HashMap, io::{ Cursor, Read } };
-use uesave::{ Properties, Property, PropertyKey, Save, StructValue };
+use serde::{Deserialize, Serialize};
+use std::{
+    collections::HashMap,
+    io::{Cursor, Read},
+};
+use uesave::{Properties, Property, PropertyKey, Save, StructValue};
 
 const ITEM_CONTAINER_MODULE: &str = "EPalMapObjectConcreteModelModuleType::ItemContainer";
 const ZERO_GUID: &str = "00000000-0000-0000-0000-000000000000";
@@ -28,10 +31,7 @@ pub struct PlayerInventoryOwner {
 }
 
 pub fn owners(level: &Save, files: &[PlayerSaveFile]) -> Vec<PlayerInventoryOwner> {
-    files
-        .iter()
-        .filter_map(|file| owner(level, file))
-        .collect()
+    files.iter().filter_map(|file| owner(level, file)).collect()
 }
 
 fn owner(level: &Save, file: &PlayerSaveFile) -> Option<PlayerInventoryOwner> {
@@ -108,24 +108,22 @@ pub fn personal_containers(level: &Save, owner: &PlayerInventoryOwner) -> Vec<In
         return Vec::new();
     };
 
-    owner.personal_containers
+    owner
+        .personal_containers
         .iter()
         .filter_map(|reference| {
-            let entry = map
-                .iter()
-                .find(|entry| {
-                    container_id(&entry.key).as_deref() == Some(&reference.container_id)
-                })?;
+            let entry = map.iter().find(|entry| {
+                container_id(&entry.key).as_deref() == Some(&reference.container_id)
+            })?;
 
             let value = struct_properties(&entry.value)?;
 
             let slots = match exact(value, "Slots") {
-                Some(Property::Array(uesave::ValueVec::Struct(values))) =>
-                    values
-                        .iter()
-                        .enumerate()
-                        .map(|(index, slot)| { slot_summary(&level.header, index, slot) })
-                        .collect(),
+                Some(Property::Array(uesave::ValueVec::Struct(values))) => values
+                    .iter()
+                    .enumerate()
+                    .map(|(index, slot)| slot_summary(&level.header, index, slot))
+                    .collect(),
                 _ => Vec::new(),
             };
 
@@ -149,7 +147,7 @@ fn item_container_map(save: &Save) -> Option<&Vec<uesave::MapEntry>> {
 
 fn slot_summary(_header: &uesave::Header, index: usize, slot: &StructValue) -> InventorySlot {
     let data = slot_properties(slot)
-        .and_then(|properties| { exact(properties, "RawData") })
+        .and_then(|properties| exact(properties, "RawData"))
         .and_then(raw_bytes)
         .and_then(|bytes| decode_slot(bytes).ok());
 
@@ -181,13 +179,19 @@ fn decode_slot(bytes: &[u8]) -> Result<SlotData, String> {
     let mut created = [0; 16];
     let mut local = [0; 16];
 
-    cursor.read_exact(&mut created).map_err(|error| error.to_string())?;
+    cursor
+        .read_exact(&mut created)
+        .map_err(|error| error.to_string())?;
 
-    cursor.read_exact(&mut local).map_err(|error| error.to_string())?;
+    cursor
+        .read_exact(&mut local)
+        .map_err(|error| error.to_string())?;
 
     let mut trailing = Vec::new();
 
-    cursor.read_to_end(&mut trailing).map_err(|error| error.to_string())?;
+    cursor
+        .read_to_end(&mut trailing)
+        .map_err(|error| error.to_string())?;
 
     Ok(SlotData {
         slot_index,
@@ -217,7 +221,9 @@ fn encode_slot(value: &SlotData) -> Result<Vec<u8>, String> {
 fn read_i32(cursor: &mut Cursor<&[u8]>) -> Result<i32, String> {
     let mut bytes = [0; 4];
 
-    cursor.read_exact(&mut bytes).map_err(|error| error.to_string())?;
+    cursor
+        .read_exact(&mut bytes)
+        .map_err(|error| error.to_string())?;
 
     Ok(i32::from_le_bytes(bytes))
 }
@@ -232,7 +238,9 @@ fn read_fstring(cursor: &mut Cursor<&[u8]>) -> Result<String, String> {
     if length > 0 {
         let mut bytes = vec![0; length as usize];
 
-        cursor.read_exact(&mut bytes).map_err(|error| error.to_string())?;
+        cursor
+            .read_exact(&mut bytes)
+            .map_err(|error| error.to_string())?;
 
         if bytes.last() == Some(&0) {
             bytes.pop();
@@ -244,11 +252,13 @@ fn read_fstring(cursor: &mut Cursor<&[u8]>) -> Result<String, String> {
 
         let mut bytes = vec![0; count * 2];
 
-        cursor.read_exact(&mut bytes).map_err(|error| error.to_string())?;
+        cursor
+            .read_exact(&mut bytes)
+            .map_err(|error| error.to_string())?;
 
         let mut units = bytes
             .chunks_exact(2)
-            .map(|value| { u16::from_le_bytes([value[0], value[1]]) })
+            .map(|value| u16::from_le_bytes([value[0], value[1]]))
             .collect::<Vec<_>>();
 
         if units.last() == Some(&0) {
@@ -263,7 +273,7 @@ fn write_fstring(output: &mut Vec<u8>, value: &str) -> Result<(), String> {
     if value.is_empty() {
         output.extend((0_i32).to_le_bytes());
     } else if value.is_ascii() {
-        let length = i32::try_from(value.len() + 1).map_err(|error| { error.to_string() })?;
+        let length = i32::try_from(value.len() + 1).map_err(|error| error.to_string())?;
 
         output.extend(length.to_le_bytes());
         output.extend(value.as_bytes());
@@ -271,7 +281,7 @@ fn write_fstring(output: &mut Vec<u8>, value: &str) -> Result<(), String> {
     } else {
         let units = value.encode_utf16().collect::<Vec<_>>();
 
-        let length = i32::try_from(units.len() + 1).map_err(|error| { error.to_string() })?;
+        let length = i32::try_from(units.len() + 1).map_err(|error| error.to_string())?;
 
         output.extend((-length).to_le_bytes());
 
@@ -287,7 +297,7 @@ fn write_fstring(output: &mut Vec<u8>, value: &str) -> Result<(), String> {
 
 fn slot_properties(value: &StructValue) -> Option<&Properties> {
     match value {
-        StructValue::Struct(properties) => { Some(properties) }
+        StructValue::Struct(properties) => Some(properties),
         _ => None,
     }
 }
@@ -315,7 +325,7 @@ pub fn update_slot(
     save: &mut Save,
     container_id_value: &str,
     index: usize,
-    request: &UpdateSlotRequest
+    request: &UpdateSlotRequest,
 ) -> Result<InventorySlot, String> {
     if request.item_id.is_none() && request.quantity.is_none() {
         return Err("itemId or quantity must be supplied".into());
@@ -325,7 +335,11 @@ pub fn update_slot(
         return Err("quantity must not be negative".into());
     }
 
-    if request.item_id.as_ref().is_some_and(|value| { value.chars().count() > 128 }) {
+    if request
+        .item_id
+        .as_ref()
+        .is_some_and(|value| value.chars().count() > 128)
+    {
         return Err("itemId must contain at most 128 characters".into());
     }
 
@@ -334,9 +348,7 @@ pub fn update_slot(
     let entry = map
         .iter_mut()
         .find(|entry| {
-            container_id(&entry.key).is_some_and(|id| {
-                id.eq_ignore_ascii_case(container_id_value)
-            })
+            container_id(&entry.key).is_some_and(|id| id.eq_ignore_ascii_case(container_id_value))
         })
         .ok_or("container was not found")?;
 
@@ -349,7 +361,10 @@ pub fn update_slot(
         }
     };
 
-    let original = slots.get(index).ok_or("slot index is out of range")?.clone();
+    let original = slots
+        .get(index)
+        .ok_or("slot index is out of range")?
+        .clone();
 
     let mut updated = original.clone();
 
@@ -370,11 +385,10 @@ pub fn update_slot(
 
     if let Some(item_id) = &request.item_id {
         if *item_id != decoded.item_id && (decoded.created != [0; 16] || decoded.local != [0; 16]) {
-            return Err(
-                "itemId changes for dynamic equipment \
+            return Err("itemId changes for dynamic equipment \
                  require DynamicItemSaveData \
-                 synchronization and are not supported yet".into()
-            );
+                 synchronization and are not supported yet"
+                .into());
         }
 
         decoded.item_id = item_id.clone();
@@ -401,9 +415,8 @@ pub fn update_slot(
 }
 
 fn item_container_map_mut(save: &mut Save) -> Option<&mut Vec<uesave::MapEntry>> {
-    let world = exact_mut(&mut save.root.properties, "worldSaveData").and_then(
-        struct_properties_mut
-    )?;
+    let world =
+        exact_mut(&mut save.root.properties, "worldSaveData").and_then(struct_properties_mut)?;
 
     match exact_mut(world, "ItemContainerSaveData")? {
         Property::Map(value) => Some(value),
@@ -424,7 +437,7 @@ fn struct_properties_mut(property: &mut Property) -> Option<&mut Properties> {
 
 fn slot_properties_mut(value: &mut StructValue) -> Option<&mut Properties> {
     match value {
-        StructValue::Struct(properties) => { Some(properties) }
+        StructValue::Struct(properties) => Some(properties),
         _ => None,
     }
 }
@@ -452,10 +465,10 @@ pub fn guild_containers(level: &Save, owner: &PlayerInventoryOwner) -> Vec<Inven
     map.iter()
         .filter(|entry| {
             container_id(&entry.key)
-                .and_then(|container_id| { owners.get(&container_id) })
-                .is_some_and(|owner_guild_id| { owner_guild_id.eq_ignore_ascii_case(&guild_id) })
+                .and_then(|container_id| owners.get(&container_id))
+                .is_some_and(|owner_guild_id| owner_guild_id.eq_ignore_ascii_case(&guild_id))
         })
-        .filter_map(|entry| { container_from_entry(level, "GuildStorage", entry) })
+        .filter_map(|entry| container_from_entry(level, "GuildStorage", entry))
         .collect()
 }
 
@@ -463,14 +476,13 @@ fn guid_from(bytes: &[u8], offset: usize) -> Option<String> {
     let value = bytes.get(offset..offset + 16)?;
 
     Some(
-        uesave::FGuid
-            ::new(
-                u32::from_le_bytes(value[0..4].try_into().ok()?),
-                u32::from_le_bytes(value[4..8].try_into().ok()?),
-                u32::from_le_bytes(value[8..12].try_into().ok()?),
-                u32::from_le_bytes(value[12..16].try_into().ok()?)
-            )
-            .to_string()
+        uesave::FGuid::new(
+            u32::from_le_bytes(value[0..4].try_into().ok()?),
+            u32::from_le_bytes(value[4..8].try_into().ok()?),
+            u32::from_le_bytes(value[8..12].try_into().ok()?),
+            u32::from_le_bytes(value[12..16].try_into().ok()?),
+        )
+        .to_string(),
     )
 }
 
@@ -501,39 +513,34 @@ fn container_guild_owners(save: &Save) -> HashMap<String, String> {
         // group_id_belong_to at bytes 48..64.
         let guild_id = exact(properties, "Model")
             .and_then(struct_properties)
-            .and_then(|model| { exact(model, "RawData") })
+            .and_then(|model| exact(model, "RawData"))
             .and_then(raw_bytes)
-            .and_then(|bytes| { guid_from(bytes, 48) });
+            .and_then(|bytes| guid_from(bytes, 48));
 
         // First GUID in the ItemContainer module:
         // target_container_id at bytes 0..16.
         let container_id = exact(properties, "ConcreteModel")
             .and_then(struct_properties)
-            .and_then(|concrete_model| { exact(concrete_model, "ModuleMap") })
-            .and_then(|module_map| {
-                match module_map {
-                    Property::Map(entries) => {
-                        entries.iter().find_map(|entry| {
-                            let module_type = crate::pals::as_string(&entry.key)?;
+            .and_then(|concrete_model| exact(concrete_model, "ModuleMap"))
+            .and_then(|module_map| match module_map {
+                Property::Map(entries) => entries.iter().find_map(|entry| {
+                    let module_type = crate::pals::as_string(&entry.key)?;
 
-                            if module_type != ITEM_CONTAINER_MODULE {
-                                return None;
-                            }
-
-                            struct_properties(&entry.value)
-                                .and_then(|value| { exact(value, "RawData") })
-                                .and_then(raw_bytes)
-                                .and_then(|bytes| { guid_from(bytes, 0) })
-                        })
+                    if module_type != ITEM_CONTAINER_MODULE {
+                        return None;
                     }
-                    _ => None,
-                }
+
+                    struct_properties(&entry.value)
+                        .and_then(|value| exact(value, "RawData"))
+                        .and_then(raw_bytes)
+                        .and_then(|bytes| guid_from(bytes, 0))
+                }),
+                _ => None,
             });
 
-        if
-            let (Some(guild_id), Some(container_id)) = (guild_id, container_id) &&
-            !guild_id.eq_ignore_ascii_case(ZERO_GUID) &&
-            !container_id.eq_ignore_ascii_case(ZERO_GUID)
+        if let (Some(guild_id), Some(container_id)) = (guild_id, container_id)
+            && !guild_id.eq_ignore_ascii_case(ZERO_GUID)
+            && !container_id.eq_ignore_ascii_case(ZERO_GUID)
         {
             owners.insert(container_id, guild_id);
         }
@@ -545,19 +552,18 @@ fn container_guild_owners(save: &Save) -> HashMap<String, String> {
 fn container_from_entry(
     level: &Save,
     kind: &str,
-    entry: &uesave::MapEntry
+    entry: &uesave::MapEntry,
 ) -> Option<InventoryContainer> {
     let id = container_id(&entry.key)?;
 
     let value = struct_properties(&entry.value)?;
 
     let slots = match exact(value, "Slots") {
-        Some(Property::Array(uesave::ValueVec::Struct(values))) =>
-            values
-                .iter()
-                .enumerate()
-                .map(|(index, value)| { slot_summary(&level.header, index, value) })
-                .collect(),
+        Some(Property::Array(uesave::ValueVec::Struct(values))) => values
+            .iter()
+            .enumerate()
+            .map(|(index, value)| slot_summary(&level.header, index, value))
+            .collect(),
         _ => Vec::new(),
     };
 
@@ -599,7 +605,10 @@ fn guild_id_for_player(save: &Save, player_uid: &str) -> Option<String> {
             continue;
         };
 
-        if members.iter().any(|member| { member.eq_ignore_ascii_case(player_uid) }) {
+        if members
+            .iter()
+            .any(|member| member.eq_ignore_ascii_case(player_uid))
+        {
             return Some(group_id);
         }
     }
@@ -634,13 +643,15 @@ fn decode_group_members(raw: &[u8]) -> Result<(String, Vec<String>), String> {
 fn read_guid(cursor: &mut Cursor<&[u8]>) -> Result<String, String> {
     let mut bytes = [0; 16];
 
-    cursor.read_exact(&mut bytes).map_err(|error| error.to_string())?;
+    cursor
+        .read_exact(&mut bytes)
+        .map_err(|error| error.to_string())?;
 
     let guid = uesave::FGuid::new(
-        u32::from_le_bytes(bytes[0..4].try_into().map_err(|_| { "invalid GUID bytes" })?),
-        u32::from_le_bytes(bytes[4..8].try_into().map_err(|_| { "invalid GUID bytes" })?),
-        u32::from_le_bytes(bytes[8..12].try_into().map_err(|_| { "invalid GUID bytes" })?),
-        u32::from_le_bytes(bytes[12..16].try_into().map_err(|_| { "invalid GUID bytes" })?)
+        u32::from_le_bytes(bytes[0..4].try_into().map_err(|_| "invalid GUID bytes")?),
+        u32::from_le_bytes(bytes[4..8].try_into().map_err(|_| "invalid GUID bytes")?),
+        u32::from_le_bytes(bytes[8..12].try_into().map_err(|_| "invalid GUID bytes")?),
+        u32::from_le_bytes(bytes[12..16].try_into().map_err(|_| "invalid GUID bytes")?),
     );
 
     Ok(guid.to_string())
