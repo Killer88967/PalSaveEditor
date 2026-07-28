@@ -28,6 +28,12 @@ fn palworld_types() -> Types {
         "worldSaveData.CharacterSaveParameterMap.Key".to_string(),
         StructType::Struct(None),
     );
+
+    types.add(
+        "worldSaveData.MapObjectSaveData.MapObjectSaveData.ConcreteModel.ModuleMap.Value".to_string(),
+        StructType::Struct(None),
+    );
+    
     types.add(
         "worldSaveData.CharacterSaveParameterMap.Value".to_string(),
         StructType::Struct(None),
