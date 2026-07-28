@@ -24,7 +24,20 @@ fn palworld_types() -> Types {
 
     // uesave 0.7 scopes omit the leading dot. Both the key and value need
     // explicit struct hints or the complete map falls back to Property::Raw.
+<<<<<<< HEAD
     types.add("worldSaveData.CharacterSaveParameterMap.Key".to_string(), StructType::Struct(None));
+=======
+    types.add(
+        "worldSaveData.CharacterSaveParameterMap.Key".to_string(),
+        StructType::Struct(None),
+    );
+
+    types.add(
+        "worldSaveData.MapObjectSaveData.MapObjectSaveData.ConcreteModel.ModuleMap.Value".to_string(),
+        StructType::Struct(None),
+    );
+    
+>>>>>>> refs/remotes/origin/main
     types.add(
         "worldSaveData.CharacterSaveParameterMap.Value".to_string(),
         StructType::Struct(None)
