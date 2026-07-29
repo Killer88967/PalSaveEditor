@@ -1,0 +1,23 @@
+services:
+  api:
+    build:
+      context: .
+      target: api
+    environment:
+      PALSAVE_MAX_DECOMPRESSED_SIZE: ${PALSAVE_MAX_DECOMPRESSED_SIZE:-2147483648}
+      RUST_LOG: ${RUST_LOG:-palsave_api=info,tower_http=info}
+    init: true
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      target: web
+    environment:
+      RUST_API_URL: http://api:47831
+    depends_on:
+      - api
+    init: true
+    ports:
+      - "${PALSAVE_PORT:-3000}:3000"
+    restart: unless-stopped

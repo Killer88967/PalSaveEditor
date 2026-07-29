@@ -1,0 +1,11 @@
+.git
+.github
+.agents
+.codex
+target
+web/.next
+web/node_modules
+**/*.log
+.env
+.env.*
+!.env.example
