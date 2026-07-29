@@ -436,7 +436,6 @@ export interface InventoryContainer {
 }
 export interface UpdateInventorySlotRequest {
   expectedRevision: number;
-  guild?: boolean;
   itemId?: string;
   quantity?: number;
 }
@@ -459,12 +458,10 @@ export async function getInventoryPlayers(
 export async function getPlayerInventory(
   sessionId: string,
   playerUid: string,
-  guild = false,
   signal?: AbortSignal,
 ): Promise<InventoryContainer[]> {
-  const q = guild ? "?guild=true" : "";
   const r = await fetch(
-    `/api/rust/sessions/${encodeURIComponent(sessionId)}/players/${encodeURIComponent(playerUid)}/inventory${q}`,
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/players/${encodeURIComponent(playerUid)}/inventory`,
     { signal },
   );
   if (!r.ok) throw await apiError(r);

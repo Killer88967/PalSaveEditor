@@ -1,12 +1,6 @@
 use serde::{Deserialize, Serialize};
-use std::{
-    collections::HashMap,
-    io::{Cursor, Read},
-};
+use std::io::{Cursor, Read};
 use uesave::{Properties, Property, PropertyKey, Save, StructValue};
-
-const ITEM_CONTAINER_MODULE: &str = "EPalMapObjectConcreteModelModuleType::ItemContainer";
-const ZERO_GUID: &str = "00000000-0000-0000-0000-000000000000";
 
 #[derive(Debug)]
 pub struct PlayerSaveFile {
@@ -314,9 +308,6 @@ fn raw_bytes(property: &Property) -> Option<&[u8]> {
 pub struct UpdateSlotRequest {
     pub expected_revision: u64,
 
-    #[serde(default)]
-    pub guild: bool,
-
     pub item_id: Option<String>,
     pub quantity: Option<i32>,
 }
@@ -442,221 +433,6 @@ fn slot_properties_mut(value: &mut StructValue) -> Option<&mut Properties> {
     }
 }
 
-/// Returns every inventory-bearing map object that belongs to the
-/// player's guild.
-///
-/// Ownership is determined through MapObjectSaveData:
-///
-/// - Model.RawData[48..64] contains group_id_belong_to.
-/// - ItemContainer module RawData[0..16] contains the container ID.
-///
-/// The container ID is then joined against ItemContainerSaveData.
-pub fn guild_containers(level: &Save, owner: &PlayerInventoryOwner) -> Vec<InventoryContainer> {
-    let Some(guild_id) = guild_id_for_player(level, &owner.player_uid) else {
-        return Vec::new();
-    };
-
-    let owners = container_guild_owners(level);
-
-    let Some(map) = item_container_map(level) else {
-        return Vec::new();
-    };
-
-    map.iter()
-        .filter(|entry| {
-            container_id(&entry.key)
-                .and_then(|container_id| owners.get(&container_id))
-                .is_some_and(|owner_guild_id| owner_guild_id.eq_ignore_ascii_case(&guild_id))
-        })
-        .filter_map(|entry| container_from_entry(level, "GuildStorage", entry))
-        .collect()
-}
-
-fn guid_from(bytes: &[u8], offset: usize) -> Option<String> {
-    let value = bytes.get(offset..offset + 16)?;
-
-    Some(
-        uesave::FGuid::new(
-            u32::from_le_bytes(value[0..4].try_into().ok()?),
-            u32::from_le_bytes(value[4..8].try_into().ok()?),
-            u32::from_le_bytes(value[8..12].try_into().ok()?),
-            u32::from_le_bytes(value[12..16].try_into().ok()?),
-        )
-        .to_string(),
-    )
-}
-
-fn map_object_array(save: &Save) -> Option<&Vec<StructValue>> {
-    let world = exact(&save.root.properties, "worldSaveData").and_then(struct_properties)?;
-
-    match exact(world, "MapObjectSaveData")? {
-        Property::Array(uesave::ValueVec::Struct(values)) => Some(values),
-        _ => None,
-    }
-}
-
-/// Maps each item-container GUID to the guild that owns its map
-/// object.
-fn container_guild_owners(save: &Save) -> HashMap<String, String> {
-    let mut owners = HashMap::new();
-
-    let Some(objects) = map_object_array(save) else {
-        return owners;
-    };
-
-    for object in objects {
-        let Some(properties) = slot_properties(object) else {
-            continue;
-        };
-
-        // Fourth GUID in Model.RawData:
-        // group_id_belong_to at bytes 48..64.
-        let guild_id = exact(properties, "Model")
-            .and_then(struct_properties)
-            .and_then(|model| exact(model, "RawData"))
-            .and_then(raw_bytes)
-            .and_then(|bytes| guid_from(bytes, 48));
-
-        // First GUID in the ItemContainer module:
-        // target_container_id at bytes 0..16.
-        let container_id = exact(properties, "ConcreteModel")
-            .and_then(struct_properties)
-            .and_then(|concrete_model| exact(concrete_model, "ModuleMap"))
-            .and_then(|module_map| match module_map {
-                Property::Map(entries) => entries.iter().find_map(|entry| {
-                    let module_type = crate::pals::as_string(&entry.key)?;
-
-                    if module_type != ITEM_CONTAINER_MODULE {
-                        return None;
-                    }
-
-                    struct_properties(&entry.value)
-                        .and_then(|value| exact(value, "RawData"))
-                        .and_then(raw_bytes)
-                        .and_then(|bytes| guid_from(bytes, 0))
-                }),
-                _ => None,
-            });
-
-        if let (Some(guild_id), Some(container_id)) = (guild_id, container_id)
-            && !guild_id.eq_ignore_ascii_case(ZERO_GUID)
-            && !container_id.eq_ignore_ascii_case(ZERO_GUID)
-        {
-            owners.insert(container_id, guild_id);
-        }
-    }
-
-    owners
-}
-
-fn container_from_entry(
-    level: &Save,
-    kind: &str,
-    entry: &uesave::MapEntry,
-) -> Option<InventoryContainer> {
-    let id = container_id(&entry.key)?;
-
-    let value = struct_properties(&entry.value)?;
-
-    let slots = match exact(value, "Slots") {
-        Some(Property::Array(uesave::ValueVec::Struct(values))) => values
-            .iter()
-            .enumerate()
-            .map(|(index, value)| slot_summary(&level.header, index, value))
-            .collect(),
-        _ => Vec::new(),
-    };
-
-    Some(InventoryContainer {
-        kind: kind.into(),
-        container_id: id,
-        slots,
-    })
-}
-
-fn guild_id_for_player(save: &Save, player_uid: &str) -> Option<String> {
-    let world = exact(&save.root.properties, "worldSaveData").and_then(struct_properties)?;
-
-    let groups = match exact(world, "GroupSaveDataMap")? {
-        Property::Map(value) => value,
-        _ => {
-            return None;
-        }
-    };
-
-    for entry in groups {
-        let Some(value) = struct_properties(&entry.value) else {
-            continue;
-        };
-
-        let Some(group_type) = exact(value, "GroupType").and_then(crate::pals::as_string) else {
-            continue;
-        };
-
-        if group_type != "EPalGroupType::Guild" {
-            continue;
-        }
-
-        let Some(raw) = exact(value, "RawData").and_then(raw_bytes) else {
-            continue;
-        };
-
-        let Ok((group_id, members)) = decode_group_members(raw) else {
-            continue;
-        };
-
-        if members
-            .iter()
-            .any(|member| member.eq_ignore_ascii_case(player_uid))
-        {
-            return Some(group_id);
-        }
-    }
-
-    None
-}
-
-fn decode_group_members(raw: &[u8]) -> Result<(String, Vec<String>), String> {
-    let mut cursor = Cursor::new(raw);
-
-    let group = read_guid(&mut cursor)?;
-
-    let _ = read_fstring(&mut cursor)?;
-
-    let count = read_i32(&mut cursor)?;
-
-    if !(0..=100_000).contains(&count) {
-        return Err("invalid group member count".into());
-    }
-
-    let mut members = Vec::with_capacity(count as usize);
-
-    for _ in 0..count {
-        members.push(read_guid(&mut cursor)?);
-
-        let _ = read_guid(&mut cursor)?;
-    }
-
-    Ok((group, members))
-}
-
-fn read_guid(cursor: &mut Cursor<&[u8]>) -> Result<String, String> {
-    let mut bytes = [0; 16];
-
-    cursor
-        .read_exact(&mut bytes)
-        .map_err(|error| error.to_string())?;
-
-    let guid = uesave::FGuid::new(
-        u32::from_le_bytes(bytes[0..4].try_into().map_err(|_| "invalid GUID bytes")?),
-        u32::from_le_bytes(bytes[4..8].try_into().map_err(|_| "invalid GUID bytes")?),
-        u32::from_le_bytes(bytes[8..12].try_into().map_err(|_| "invalid GUID bytes")?),
-        u32::from_le_bytes(bytes[12..16].try_into().map_err(|_| "invalid GUID bytes")?),
-    );
-
-    Ok(guid.to_string())
-}
-
 #[cfg(test)]
 mod codec_tests {
     use super::*;
@@ -684,19 +460,5 @@ mod codec_tests {
         assert_eq!(decoded.trailing, vec![9, 8, 7, 6]);
 
         assert_eq!(encode_slot(&decoded).unwrap(), bytes);
-    }
-
-    #[test]
-    fn guid_from_rejects_short_data() {
-        assert!(guid_from(&[0; 15], 0).is_none());
-
-        assert!(guid_from(&[0; 63], 48).is_none());
-    }
-
-    #[test]
-    fn guid_from_accepts_complete_guid() {
-        let bytes = [0; 64];
-
-        assert_eq!(guid_from(&bytes, 48).as_deref(), Some(ZERO_GUID));
     }
 }

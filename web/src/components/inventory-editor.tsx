@@ -20,7 +20,6 @@ export function InventoryEditor({
 }) {
   const [players, setPlayers] = useState<PlayerInventoryOwner[]>([]),
     [selected, setSelected] = useState(""),
-    [guild, setGuild] = useState(false),
     [containers, setContainers] = useState<InventoryContainer[]>([]),
     [loading, setLoading] = useState(true),
     [error, setError] = useState<string>();
@@ -44,7 +43,7 @@ export function InventoryEditor({
         setError(undefined);
       }
     });
-    void getPlayerInventory(sessionId, selected, guild, c.signal)
+    void getPlayerInventory(sessionId, selected, c.signal)
       .then(setContainers)
       .catch((e) => {
         if (!c.signal.aborted) setError(String(e));
@@ -53,7 +52,7 @@ export function InventoryEditor({
         if (!c.signal.aborted) setLoading(false);
       });
     return () => c.abort();
-  }, [guild, selected, sessionId]);
+  }, [selected, sessionId]);
   async function save(
     containerId: string,
     slot: InventorySlot,
@@ -66,7 +65,7 @@ export function InventoryEditor({
         selected,
         containerId,
         slot.index,
-        { expectedRevision: revision, guild, itemId, quantity },
+        { expectedRevision: revision, itemId, quantity },
       );
       setContainers((v) =>
         v.map((c) =>
@@ -112,20 +111,6 @@ export function InventoryEditor({
             ))}
           </select>
         </label>
-        <div className="flex rounded border border-neutral-700 p-1">
-          <button
-            onClick={() => setGuild(false)}
-            className={`rounded px-3 py-1 text-xs ${!guild ? "bg-sky-800" : ""}`}
-          >
-            Personal Inventory
-          </button>
-          <button
-            onClick={() => setGuild(true)}
-            className={`rounded px-3 py-1 text-xs ${guild ? "bg-sky-800" : ""}`}
-          >
-            Guild Chests
-          </button>
-        </div>
       </div>
       {players.length === 0 && (
         <p className="text-sm text-amber-300">
@@ -163,7 +148,7 @@ export function InventoryEditor({
       </div>
       {!loading && selected && containers.length === 0 && (
         <p className="text-sm text-neutral-500">
-          No {guild ? "guild-owned chests" : "personal containers"} found.
+          No personal containers found.
         </p>
       )}
     </div>

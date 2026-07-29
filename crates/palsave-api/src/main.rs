@@ -336,16 +336,9 @@ async fn get_players(
     Ok(Json(players))
 }
 
-#[derive(Debug, Deserialize)]
-struct InventoryQuery {
-    #[serde(default)]
-    guild: bool,
-}
-
 async fn get_player_inventory(
     State(state): State<Arc<AppState>>,
     Path((id, player_uid)): Path<(Uuid, String)>,
-    Query(query): Query<InventoryQuery>,
 ) -> Result<Json<Vec<inventory::InventoryContainer>>, ApiError> {
     let save = state
         .sessions
@@ -364,11 +357,7 @@ async fn get_player_inventory(
                     "player {player_uid} was not found among uploaded player saves"
                 ))
             })?;
-        Ok::<_, ApiError>(if query.guild {
-            inventory::guild_containers(&data.save, &owner)
-        } else {
-            inventory::personal_containers(&data.save, &owner)
-        })
+        Ok::<_, ApiError>(inventory::personal_containers(&data.save, &owner))
     })
     .await
     .map_err(|e| ApiError::Internal(format!("inventory task failed: {e}")))??;
@@ -412,19 +401,13 @@ async fn update_player_inventory_slot(
             .into_iter()
             .find(|v| v.player_uid.eq_ignore_ascii_case(&player_uid))
             .ok_or_else(|| ApiError::NotFound(format!("player {player_uid} was not found")))?;
-        let authorized = if request.guild {
-            inventory::guild_containers(&data.save, &owner)
-                .iter()
-                .any(|v| v.container_id.eq_ignore_ascii_case(&container_id))
-        } else {
-            owner
-                .personal_containers
-                .iter()
-                .any(|v| v.container_id.eq_ignore_ascii_case(&container_id))
-        };
+        let authorized = owner
+            .personal_containers
+            .iter()
+            .any(|v| v.container_id.eq_ignore_ascii_case(&container_id));
         if !authorized {
             return Err(ApiError::NotFound(
-                "container is not owned by the selected player or guild".into(),
+                "container is not owned by the selected player".into(),
             ));
         }
         let slot = inventory::update_slot(&mut data.save, &container_id, index, &request)

@@ -31,12 +31,6 @@ fn palworld_types() -> Types {
     );
 
     types.add(
-        "worldSaveData.MapObjectSaveData.MapObjectSaveData.ConcreteModel.ModuleMap.Value"
-            .to_string(),
-        StructType::Struct(None),
-    );
-
-    types.add(
         "worldSaveData.CharacterSaveParameterMap.Value".to_string(),
         StructType::Struct(None),
     );
@@ -53,17 +47,6 @@ fn palworld_types() -> Types {
 
     types.add(
         ".worldSaveData.MapObjectSpawnerInStageSaveData.Key".to_string(),
-        StructType::Struct(None),
-    );
-
-    types.add(
-        "worldSaveData.MapObjectSaveData.MapObjectSaveData.ConcreteModel.ModuleMap.Value"
-            .to_string(),
-        StructType::Struct(None),
-    );
-
-    types.add(
-        "worldSaveData.MapObjectSaveData.MapObjectSaveData.Model.EffectMap.Value".to_string(),
         StructType::Struct(None),
     );
 
