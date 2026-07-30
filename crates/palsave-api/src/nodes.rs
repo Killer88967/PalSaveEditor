@@ -648,7 +648,7 @@ fn value_element_info(values: &ValueVec, index: usize) -> NodeInfo {
     }
 }
 
-fn value_vec_len(value: &ValueVec) -> usize {
+pub(crate) fn value_vec_len(value: &ValueVec) -> usize {
     match value {
         ValueVec::Int8(v) => v.len(),
         ValueVec::Int16(v) => v.len(),

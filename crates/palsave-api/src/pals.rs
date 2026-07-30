@@ -102,6 +102,10 @@ pub struct PalSummary {
     pub gender: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub owner_player_uid: Option<String>,
+    /// `PlayerUId` from the map key. Set on player rows and on Pals captured
+    /// by a player; this is what joins a Pal to its owner.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub player_uid: Option<String>,
     pub is_player: bool,
     pub parse_status: PalParseStatus,
     pub raw_path: Vec<PathSegment>,
@@ -126,6 +130,8 @@ pub struct PalDetail {
     pub gender: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub owner_player_uid: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub player_uid: Option<String>,
     pub is_player: bool,
     pub parse_status: PalParseStatus,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -355,6 +361,7 @@ fn summary(header: &Header, index: usize, key: &Property, value: &Property) -> P
         rank,
         gender,
         owner_player_uid,
+        player_uid: key_player_uid,
         is_player,
         parse_status,
         raw_path: raw_path(index),
@@ -403,6 +410,7 @@ fn detail_for(header: &Header, index: usize, key: &Property, value: &Property) -
         rank: summary.rank,
         gender: summary.gender,
         owner_player_uid: summary.owner_player_uid,
+        player_uid: summary.player_uid,
         is_player: summary.is_player,
         parse_status: summary.parse_status,
         rank_hp,
@@ -1247,6 +1255,7 @@ mod tests {
             rank: Some(1),
             gender: Some(gender.into()),
             owner_player_uid: Some("owner".into()),
+            player_uid: None,
             is_player: player,
             parse_status: PalParseStatus::Complete,
             raw_path: raw_path(index),

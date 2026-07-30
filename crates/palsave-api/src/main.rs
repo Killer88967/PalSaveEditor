@@ -25,6 +25,7 @@ use uuid::Uuid;
 
 mod inventory;
 mod nodes;
+mod overview;
 mod pals;
 
 const DEFAULT_PORT: u16 = 47_831;
@@ -42,6 +43,7 @@ struct SaveSession {
     file_name: String,
     original_size: usize,
     decompressed_size: usize,
+    container: palsave_core::SavContainer,
     save: Arc<Mutex<SaveSessionData>>,
 }
 
@@ -69,6 +71,7 @@ struct SessionResponse {
     dirty: bool,
     revision: u64,
     player_file_count: usize,
+    container: palsave_core::SavContainer,
 }
 
 #[derive(Debug, Deserialize)]
@@ -191,15 +194,18 @@ async fn create_session(
             .file_name()
             .map(ToOwned::to_owned)
             .unwrap_or_else(|| "Level.sav".into());
+        // Read the field before validating its name. Responding while the
+        // client is still uploading resets the stream, and a reverse proxy
+        // reports that as a 500 instead of forwarding this 400.
+        let bytes = field
+            .bytes()
+            .await
+            .map_err(|e| ApiError::BadRequest(format!("failed to read {file_name}: {e}")))?;
         if !file_name.to_ascii_lowercase().ends_with(".sav") {
             return Err(ApiError::BadRequest(format!(
                 "{file_name} is not a .sav file"
             )));
         }
-        let bytes = field
-            .bytes()
-            .await
-            .map_err(|e| ApiError::BadRequest(format!("failed to read {file_name}: {e}")))?;
         total_size = total_size
             .checked_add(bytes.len())
             .ok_or_else(|| ApiError::PayloadTooLarge("combined upload size overflow".into()))?;
@@ -229,12 +235,14 @@ async fn create_session(
         let mut players = Vec::new();
         let mut level_size = 0;
         let mut level_decompressed = 0;
+        let mut level_container = None;
         for (index, (name, bytes)) in uploads.into_iter().enumerate() {
             let parsed = palsave_core::parse_sav_with_metadata_limit(&bytes, max)
                 .map_err(|e| format!("failed to parse {name}: {e}"))?;
             if index == level_index {
                 level_size = bytes.len();
                 level_decompressed = parsed.decompressed_size;
+                level_container = Some(parsed.container);
                 level = Some((name, parsed.save));
             } else {
                 players.push(inventory::PlayerSaveFile {
@@ -244,12 +252,21 @@ async fn create_session(
             }
         }
         let (name, save) = level.ok_or_else(|| "Level.sav was not parsed".to_string())?;
-        Ok::<_, String>((name, level_size, level_decompressed, save, players))
+        let container =
+            level_container.ok_or_else(|| "Level.sav header was not read".to_string())?;
+        Ok::<_, String>((
+            name,
+            level_size,
+            level_decompressed,
+            container,
+            save,
+            players,
+        ))
     })
     .await
     .map_err(|e| ApiError::Internal(format!("save parser task failed: {e}")))?
     .map_err(ApiError::BadRequest)?;
-    let (file_name, original_size, decompressed_size, save, player_saves) = parsed;
+    let (file_name, original_size, decompressed_size, container, save, player_saves) = parsed;
     let player_file_count = player_saves.len();
     let id = Uuid::new_v4();
     state.sessions.insert(
@@ -258,6 +275,7 @@ async fn create_session(
             file_name: file_name.clone(),
             original_size,
             decompressed_size,
+            container: container.clone(),
             save: Arc::new(Mutex::new(SaveSessionData {
                 save,
                 dirty: false,
@@ -277,6 +295,7 @@ async fn create_session(
             dirty: false,
             revision: 0,
             player_file_count,
+            container,
         }),
     ))
 }
@@ -285,7 +304,7 @@ async fn get_session(
     State(state): State<Arc<AppState>>,
     Path(id): Path<Uuid>,
 ) -> Result<Json<SessionResponse>, ApiError> {
-    let (file_name, original_size, decompressed_size, save) = state
+    let (file_name, original_size, decompressed_size, container, save) = state
         .sessions
         .get(&id)
         .map(|session| {
@@ -293,6 +312,7 @@ async fn get_session(
                 session.file_name.clone(),
                 session.original_size,
                 session.decompressed_size,
+                session.container.clone(),
                 Arc::clone(&session.save),
             )
         })
@@ -313,7 +333,46 @@ async fn get_session(
         dirty,
         revision,
         player_file_count,
+        container,
     }))
+}
+
+async fn get_overview(
+    State(state): State<Arc<AppState>>,
+    Path(id): Path<Uuid>,
+) -> Result<Json<overview::SaveOverview>, ApiError> {
+    let save = state
+        .sessions
+        .get(&id)
+        .map(|session| Arc::clone(&session.save))
+        .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
+    let response = tokio::task::spawn_blocking(move || {
+        let mut data = save
+            .lock()
+            .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
+        ensure_pal_index(&mut data)?;
+        let index = data.pal_index.as_ref().expect("the index was just ensured");
+        Ok::<_, ApiError>(overview::build(&data.save, index, &data.player_saves))
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("save overview task failed: {error}")))??;
+    Ok(Json(response))
+}
+
+/// Rebuilds the session's Pal index when the revision moved past it.
+///
+/// Callers then borrow `data.pal_index` directly; the index can hold tens of
+/// thousands of rows, so it is shared rather than cloned.
+fn ensure_pal_index(data: &mut SaveSessionData) -> Result<(), ApiError> {
+    let stale = data
+        .pal_index
+        .as_ref()
+        .is_none_or(|cache| cache.revision != data.revision);
+    if stale {
+        data.pal_index =
+            Some(pals::build_index(&data.save, data.revision).map_err(ApiError::BadRequest)?);
+    }
+    Ok(())
 }
 
 async fn get_players(
@@ -658,27 +717,218 @@ async fn export_session(
     .await
     .map_err(|error| ApiError::Internal(format!("save writer task failed: {error}")))?
     .map_err(ApiError::Internal)?;
-    Response::builder()
+    let container = palsave_core::inspect_container(&bytes).ok();
+    let mut response = binary_response(
+        bytes,
+        "Level.roundtrip.sav",
+        revision,
+        dirty,
+        container.as_ref(),
+    )?;
+    response.headers_mut().insert(
+        HeaderName::from_static("x-palsave-validated"),
+        HeaderValue::from_static(if validated { "true" } else { "false" }),
+    );
+    Ok(response)
+}
+
+/// Streams the session's current tree back as uncompressed GVAS.
+///
+/// This is the "decompile" half of the round trip: the same bytes the game
+/// compresses into a `.sav`, including any edits made in this session.
+async fn export_session_gvas(
+    State(state): State<Arc<AppState>>,
+    Path(id): Path<Uuid>,
+) -> Result<Response, ApiError> {
+    let (file_name, save) = state
+        .sessions
+        .get(&id)
+        .map(|session| (session.file_name.clone(), Arc::clone(&session.save)))
+        .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
+    let (bytes, revision, dirty) = tokio::task::spawn_blocking(move || {
+        let data = save
+            .lock()
+            .map_err(|_| "save session lock was poisoned".to_string())?;
+        let bytes = palsave_core::write_gvas(&data.save)?;
+        Ok::<_, String>((bytes, data.revision, data.dirty))
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("GVAS writer task failed: {error}")))?
+    .map_err(ApiError::Internal)?;
+
+    binary_response(
+        bytes,
+        &format!("{}.gvas", strip_sav_extension(&file_name)),
+        revision,
+        dirty,
+        None,
+    )
+}
+
+/// Decompresses an uploaded `.sav` and returns the raw GVAS payload.
+///
+/// Stateless on purpose: the tools page converts files without holding a
+/// session, so nothing is retained after the response is written.
+async fn convert_decompile(
+    State(state): State<Arc<AppState>>,
+    multipart: Multipart,
+) -> Result<Response, ApiError> {
+    let (file_name, bytes) = single_upload(multipart, ".sav").await?;
+    let max = state.max_decompressed_size;
+
+    let (gvas, container) = tokio::task::spawn_blocking(move || {
+        palsave_core::decompress_sav_with_container(&bytes, max)
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("decompile task failed: {error}")))?
+    .map_err(ApiError::BadRequest)?;
+
+    binary_response(
+        gvas,
+        &format!("{}.gvas", strip_sav_extension(&file_name)),
+        0,
+        false,
+        Some(&container),
+    )
+}
+
+/// Compresses an uploaded raw GVAS payload back into a `.sav` container.
+///
+/// The payload is parsed before it is written so a corrupt upload fails here
+/// rather than inside the game.
+async fn convert_recompile(
+    State(state): State<Arc<AppState>>,
+    multipart: Multipart,
+) -> Result<Response, ApiError> {
+    let (file_name, bytes) = single_upload(multipart, ".gvas").await?;
+    let max = state.max_decompressed_size;
+
+    if bytes.len() > max {
+        return Err(ApiError::PayloadTooLarge(format!(
+            "GVAS payload {} bytes exceeds configured limit {max}",
+            bytes.len()
+        )));
+    }
+
+    let sav = tokio::task::spawn_blocking(move || {
+        let save = palsave_core::parse_gvas(bytes)?;
+        palsave_core::write_sav(&save)
+    })
+    .await
+    .map_err(|error| ApiError::Internal(format!("recompile task failed: {error}")))?
+    .map_err(ApiError::BadRequest)?;
+
+    let container = palsave_core::inspect_container(&sav).map_err(ApiError::Internal)?;
+
+    binary_response(
+        sav,
+        &format!("{}.sav", strip_gvas_extension(&file_name)),
+        0,
+        false,
+        Some(&container),
+    )
+}
+
+/// Reads exactly one `file`/`files` multipart field with the expected suffix.
+async fn single_upload(
+    mut multipart: Multipart,
+    expected_extension: &str,
+) -> Result<(String, Vec<u8>), ApiError> {
+    while let Some(field) = multipart
+        .next_field()
+        .await
+        .map_err(|error| ApiError::BadRequest(format!("invalid multipart upload: {error}")))?
+    {
+        if !matches!(field.name(), Some("file" | "files")) {
+            continue;
+        }
+        let file_name = field
+            .file_name()
+            .map(ToOwned::to_owned)
+            .unwrap_or_else(|| format!("upload{expected_extension}"));
+        // Drain the field before rejecting the name: an early response would
+        // reset the upload stream and surface as a proxy 500 rather than this
+        // 400. See the matching note in `create_session`.
+        let bytes = field.bytes().await.map_err(|error| {
+            ApiError::BadRequest(format!("failed to read {file_name}: {error}"))
+        })?;
+        if !file_name.to_ascii_lowercase().ends_with(expected_extension) {
+            return Err(ApiError::BadRequest(format!(
+                "{file_name} is not a {expected_extension} file"
+            )));
+        }
+        return Ok((file_name, bytes.to_vec()));
+    }
+
+    Err(ApiError::BadRequest(
+        "missing multipart fields named `file` or `files`".into(),
+    ))
+}
+
+fn strip_sav_extension(name: &str) -> &str {
+    strip_extension(name, ".sav")
+}
+
+fn strip_gvas_extension(name: &str) -> &str {
+    strip_extension(name, ".gvas")
+}
+
+fn strip_extension<'a>(name: &'a str, extension: &str) -> &'a str {
+    let base = name
+        .rsplit(['/', '\\'])
+        .next()
+        .unwrap_or(name)
+        .trim_end_matches(char::is_whitespace);
+    let trimmed = if base.to_ascii_lowercase().ends_with(extension) {
+        &base[..base.len() - extension.len()]
+    } else {
+        base
+    };
+    if trimmed.is_empty() { "Level" } else { trimmed }
+}
+
+/// Builds a download response with the editor's diagnostic headers attached.
+fn binary_response(
+    bytes: Vec<u8>,
+    file_name: &str,
+    revision: u64,
+    dirty: bool,
+    container: Option<&palsave_core::SavContainer>,
+) -> Result<Response, ApiError> {
+    let mut builder = Response::builder()
         .header(CONTENT_TYPE, "application/octet-stream")
         .header(
             CONTENT_DISPOSITION,
-            "attachment; filename=\"Level.roundtrip.sav\"",
+            HeaderValue::from_str(&format!("attachment; filename=\"{file_name}\""))
+                .map_err(|error| ApiError::Internal(error.to_string()))?,
         )
         .header(
             HeaderName::from_static("x-palsave-revision"),
             HeaderValue::from_str(&revision.to_string())
-                .map_err(|e| ApiError::Internal(e.to_string()))?,
+                .map_err(|error| ApiError::Internal(error.to_string()))?,
         )
         .header(
             HeaderName::from_static("x-palsave-dirty"),
             if dirty { "true" } else { "false" },
-        )
-        .header(
-            HeaderName::from_static("x-palsave-validated"),
-            if validated { "true" } else { "false" },
-        )
+        );
+
+    if let Some(container) = container {
+        builder = builder
+            .header(
+                HeaderName::from_static("x-palsave-compression"),
+                HeaderValue::from_str(container.compression)
+                    .map_err(|error| ApiError::Internal(error.to_string()))?,
+            )
+            .header(
+                HeaderName::from_static("x-palsave-decompressed-size"),
+                HeaderValue::from_str(&container.decompressed_size.to_string())
+                    .map_err(|error| ApiError::Internal(error.to_string()))?,
+            );
+    }
+
+    builder
         .body(Body::from(bytes))
-        .map_err(|error| ApiError::Internal(format!("failed to build export response: {error}")))
+        .map_err(|error| ApiError::Internal(format!("failed to build download response: {error}")))
 }
 
 async fn delete_session(
@@ -727,6 +977,7 @@ fn build_app(state: Arc<AppState>) -> Router {
         .route("/health", get(health))
         .route("/sessions", post(create_session))
         .route("/sessions/{id}", get(get_session).delete(delete_session))
+        .route("/sessions/{id}/overview", get(get_overview))
         .route("/sessions/{id}/root", get(get_root))
         .route("/sessions/{id}/players", get(get_players))
         .route(
@@ -745,6 +996,9 @@ fn build_app(state: Arc<AppState>) -> Router {
         )
         .route("/sessions/{id}/scalar", patch(update_scalar))
         .route("/sessions/{id}/export", get(export_session))
+        .route("/sessions/{id}/gvas", get(export_session_gvas))
+        .route("/convert/decompile", post(convert_decompile))
+        .route("/convert/recompile", post(convert_recompile))
         .layer(DefaultBodyLimit::max(MAX_UPLOAD_SIZE))
         .layer(TraceLayer::new_for_http())
         .with_state(state)
@@ -834,14 +1088,7 @@ async fn get_pals(
         let mut data = save
             .lock()
             .map_err(|_| ApiError::Internal("save session lock was poisoned".to_string()))?;
-        let rebuild = data
-            .pal_index
-            .as_ref()
-            .is_none_or(|cache| cache.revision != data.revision);
-        if rebuild {
-            data.pal_index =
-                Some(pals::build_index(&data.save, data.revision).map_err(ApiError::BadRequest)?);
-        }
+        ensure_pal_index(&mut data)?;
         Ok::<_, ApiError>(pals::list(
             data.pal_index.as_ref().expect("cache was built"),
             query.offset,
@@ -930,6 +1177,13 @@ mod tests {
                 file_name: "test.sav".into(),
                 original_size: 0,
                 decompressed_size: 0,
+                container: palsave_core::SavContainer {
+                    magic: "PlZ".into(),
+                    save_type: 0x31,
+                    compression: "zlib",
+                    decompressed_size: 0,
+                    compressed_size: 0,
+                },
                 save: Arc::clone(&data),
             },
         );
@@ -1365,6 +1619,247 @@ mod tests {
             assert!(data.dirty);
             assert_eq!(data.revision, 9);
         }
+    }
+
+    /// Builds a `multipart/form-data` body with a single `file` field.
+    fn multipart_request(uri: &str, file_name: &str, bytes: Vec<u8>) -> Request<Body> {
+        const BOUNDARY: &str = "palsaveboundary";
+        let mut body = Vec::new();
+        body.extend_from_slice(format!("--{BOUNDARY}\r\n").as_bytes());
+        body.extend_from_slice(
+            format!("Content-Disposition: form-data; name=\"file\"; filename=\"{file_name}\"\r\n")
+                .as_bytes(),
+        );
+        body.extend_from_slice(b"Content-Type: application/octet-stream\r\n\r\n");
+        body.extend_from_slice(&bytes);
+        body.extend_from_slice(format!("\r\n--{BOUNDARY}--\r\n").as_bytes());
+
+        Request::builder()
+            .method("POST")
+            .uri(uri)
+            .header(
+                CONTENT_TYPE,
+                format!("multipart/form-data; boundary={BOUNDARY}"),
+            )
+            .body(Body::from(body))
+            .unwrap()
+    }
+
+    async fn body_bytes(response: Response) -> Vec<u8> {
+        response
+            .into_body()
+            .collect()
+            .await
+            .unwrap()
+            .to_bytes()
+            .to_vec()
+    }
+
+    fn empty_state() -> Arc<AppState> {
+        Arc::new(AppState {
+            sessions: Arc::new(DashMap::new()),
+            max_decompressed_size: DEFAULT_MAX_DECOMPRESSED_SIZE,
+        })
+    }
+
+    #[tokio::test]
+    async fn overview_reports_engine_metadata_and_collection_sizes() {
+        let (state, id, _) = state_with_save(test_pal_save(), false, 0);
+        let response = build_app(state)
+            .oneshot(
+                Request::builder()
+                    .uri(format!("/sessions/{id}/overview"))
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::OK);
+        let body = json_body(response).await;
+        assert_eq!(body["saveGameType"], "TestSave");
+        assert_eq!(body["engineVersion"], "5.1.1 build 0");
+        assert_eq!(body["rootPropertyCount"], 1);
+        assert_eq!(
+            body["worldCollections"][0]["name"],
+            "CharacterSaveParameterMap"
+        );
+        assert_eq!(body["worldCollections"][0]["entryCount"], 1);
+        assert_eq!(body["characters"]["total"], 1);
+        assert_eq!(body["characters"]["unsupported"], 1);
+        // The synthetic entry has no decodable level, so no average is reported.
+        assert!(body["characters"]["averagePalLevel"].is_null());
+    }
+
+    #[tokio::test]
+    async fn overview_missing_session_is_a_structured_404() {
+        let id = Uuid::new_v4();
+        let response = build_app(empty_state())
+            .oneshot(
+                Request::builder()
+                    .uri(format!("/sessions/{id}/overview"))
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::NOT_FOUND);
+        assert!(
+            json_body(response).await["error"]
+                .as_str()
+                .unwrap()
+                .contains("not found")
+        );
+    }
+
+    #[tokio::test]
+    async fn gvas_export_matches_the_core_writer_and_recompiles_to_a_valid_sav() {
+        let save = test_save(Properties::default());
+        let expected = palsave_core::write_gvas(&save).expect("reference GVAS");
+        let (state, id, _) = state_with_save(save, true, 5);
+        let app = build_app(state);
+
+        let response = app
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .uri(format!("/sessions/{id}/gvas"))
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::OK);
+        assert_eq!(response.headers()["x-palsave-revision"], "5");
+        assert_eq!(response.headers()["x-palsave-dirty"], "true");
+        assert!(
+            response.headers()[CONTENT_DISPOSITION]
+                .to_str()
+                .unwrap()
+                .contains("test.gvas")
+        );
+        let gvas = body_bytes(response).await;
+        assert_eq!(gvas, expected);
+
+        // Feeding that payload straight back must produce a loadable container.
+        let response = app
+            .oneshot(multipart_request(
+                "/convert/recompile",
+                "test.gvas",
+                gvas.clone(),
+            ))
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::OK);
+        assert_eq!(response.headers()["x-palsave-compression"], "zlib");
+        assert!(
+            response.headers()[CONTENT_DISPOSITION]
+                .to_str()
+                .unwrap()
+                .contains("test.sav")
+        );
+        let sav = body_bytes(response).await;
+        assert_eq!(palsave_core::decompress_sav(&sav).unwrap(), gvas);
+    }
+
+    #[tokio::test]
+    async fn decompile_returns_the_raw_gvas_payload() {
+        let gvas = palsave_core::write_gvas(&test_save(Properties::default())).unwrap();
+        let sav = palsave_core::compress_sav(&gvas).unwrap();
+
+        let response = build_app(empty_state())
+            .oneshot(multipart_request("/convert/decompile", "Level.sav", sav))
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::OK);
+        assert_eq!(response.headers()["x-palsave-compression"], "zlib");
+        assert_eq!(
+            response.headers()["x-palsave-decompressed-size"],
+            gvas.len().to_string()
+        );
+        assert!(
+            response.headers()[CONTENT_DISPOSITION]
+                .to_str()
+                .unwrap()
+                .contains("Level.gvas")
+        );
+        assert_eq!(body_bytes(response).await, gvas);
+    }
+
+    #[tokio::test]
+    async fn converters_reject_wrong_extensions_missing_fields_and_corrupt_payloads() {
+        let app = build_app(empty_state());
+
+        // Wrong extension for the decompiler.
+        let response = app
+            .clone()
+            .oneshot(multipart_request(
+                "/convert/decompile",
+                "Level.gvas",
+                vec![0; 16],
+            ))
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+        assert!(
+            json_body(response).await["error"]
+                .as_str()
+                .unwrap()
+                .contains("not a .sav file")
+        );
+
+        // A .sav that is not a Palworld container.
+        let response = app
+            .clone()
+            .oneshot(multipart_request(
+                "/convert/decompile",
+                "Level.sav",
+                vec![0; 64],
+            ))
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+
+        // Garbage that is not GVAS at all.
+        let response = app
+            .clone()
+            .oneshot(multipart_request(
+                "/convert/recompile",
+                "Level.gvas",
+                b"not gvas".to_vec(),
+            ))
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+
+        // No `file`/`files` field at all.
+        let response = app
+            .oneshot(
+                Request::builder()
+                    .method("POST")
+                    .uri("/convert/recompile")
+                    .header(CONTENT_TYPE, "multipart/form-data; boundary=x")
+                    .body(Body::from("--x--\r\n"))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+        assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+    }
+
+    #[test]
+    fn download_names_survive_paths_and_missing_extensions() {
+        assert_eq!(strip_sav_extension("Level.sav"), "Level");
+        assert_eq!(strip_sav_extension("saves/world/Level.SAV"), "Level");
+        assert_eq!(strip_sav_extension("C:\\saves\\Level.sav"), "Level");
+        assert_eq!(strip_sav_extension("Level"), "Level");
+        assert_eq!(strip_sav_extension(".sav"), "Level");
+        assert_eq!(strip_gvas_extension("Level.gvas"), "Level");
+        assert_eq!(strip_gvas_extension("Level.sav"), "Level.sav");
     }
 
     fn pal_update_request(id: Uuid, pal_id: &str, body: Value) -> Request<Body> {

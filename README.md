@@ -1,12 +1,38 @@
 # PalSave Editor
 
-A browser-based editor for Palworld save files. It can inspect the raw save
-tree, edit supported Pal and inventory fields, and export a validated
+A browser-based decompiler, recompiler and editor for Palworld save files. It
+decompresses both container formats, parses the Unreal property tree, lets you
+edit Pals, inventories and individual scalars, and exports a validated
 `Level.sav`.
 
 > [!CAUTION]
 > Back up your entire world save directory before editing it. This project is
 > experimental and is not affiliated with Pocketpair.
+
+## What it does
+
+| Page      | Purpose                                                            |
+| --------- | ------------------------------------------------------------------ |
+| `/`       | Overview of the project and the container format                   |
+| `/editor` | Load a world, then use the dashboard, Pal, inventory and raw views |
+| `/tools`  | Stateless `.sav` ⇄ `.gvas` conversion, no session needed           |
+| `/guide`  | Save locations, backup steps, format notes and troubleshooting     |
+
+Inside the editor:
+
+- **Overview** — sizes every `worldSaveData` collection and digests the
+  character map: species leaders, level spread, per-player Pal counts, parse
+  coverage and the decoded container header.
+- **Pals** — search by species, nickname or instance ID, filter by level, and
+  edit level, star rank, gender, souls, IVs, nickname and skill lists.
+- **Inventories** — walk each player's personal containers and rewrite item IDs
+  and stack quantities.
+- **Raw tree** — page through every parsed property with types, child counts and
+  byte lengths, and edit any scalar the parser understands.
+
+Both container variants are read: `PlZ` (zlib, pre-0.6) and `PlM` (Oodle Kraken,
+0.6 onward). Exports are always written as single-pass `PlZ`, which Palworld
+loads and re-saves in its own format.
 
 ## Run with Docker
 
@@ -113,6 +139,36 @@ The API supports these optional environment variables:
 - `PALSAVE_API_PORT` (default `47831`)
 - `PALSAVE_MAX_DECOMPRESSED_SIZE` in bytes (default 2 GiB)
 - `RUST_LOG` for log filtering
+
+### API routes
+
+The browser reaches these through the Next.js rewrite at `/api/rust/*`.
+
+| Method  | Route                                                                | Purpose                                     |
+| ------- | -------------------------------------------------------------------- | ------------------------------------------- |
+| `GET`   | `/health`                                                            | Liveness probe                              |
+| `POST`  | `/sessions`                                                          | Parse an upload into a session              |
+| `GET`   | `/sessions/{id}`                                                     | Session metadata and decoded container      |
+| `GET`   | `/sessions/{id}/overview`                                            | Dashboard statistics                        |
+| `GET`   | `/sessions/{id}/root`                                                | First page of root properties               |
+| `POST`  | `/sessions/{id}/inspect`                                             | Page the children of any property path      |
+| `PATCH` | `/sessions/{id}/scalar`                                              | Write one scalar                            |
+| `GET`   | `/sessions/{id}/pals`                                                | Filtered, paged character index             |
+| `GET`   | `/sessions/{id}/pals/{palId}`                                        | Full Pal detail and edit capabilities       |
+| `PATCH` | `/sessions/{id}/pals/{palId}`                                        | Update supported Pal fields                 |
+| `GET`   | `/sessions/{id}/players`                                             | Players and their container references       |
+| `GET`   | `/sessions/{id}/players/{uid}/inventory`                             | Slots for a player's personal containers    |
+| `PATCH` | `/sessions/{id}/players/{uid}/inventory/{containerId}/slots/{index}` | Write one inventory slot                    |
+| `GET`   | `/sessions/{id}/export?validate=true`                                | Recompiled `.sav`, re-parsed before sending |
+| `GET`   | `/sessions/{id}/gvas`                                                | Uncompressed GVAS for the current tree      |
+| `POST`  | `/convert/decompile`                                                 | `.sav` → raw GVAS, stateless                |
+| `POST`  | `/convert/recompile`                                                 | Raw GVAS → `.sav`, stateless                |
+| `DELETE`| `/sessions/{id}`                                                     | Drop the session from memory                |
+
+Mutating routes take an `expectedRevision` and answer `409` with the current
+revision when a write races, so a stale view cannot silently overwrite an edit.
+Downloads carry `x-palsave-revision`, `x-palsave-dirty`, `x-palsave-compression`
+and `x-palsave-decompressed-size` headers; `/export` adds `x-palsave-validated`.
 
 ## License
 

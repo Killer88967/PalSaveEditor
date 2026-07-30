@@ -1,681 +1,389 @@
-"use client";
-
-import { useRef, useState } from "react";
-import { PalList } from "@/components/pal-list";
-import { InventoryEditor } from "@/components/inventory-editor";
+import Link from "next/link";
 import {
-  createSaveSession,
-  deleteSaveSession,
-  exportSaveSession,
-  getSaveRoot,
-  getSaveSession,
-  inspectSaveNode,
-  PalSaveApiError,
-  updateSaveScalar,
-  type EditableScalarValue,
-  type SaveNodeResponse,
-  type SaveNodeSummary,
-  type SavePathSegment,
-  type SaveSession,
-} from "@/lib/palsave-api";
-import { isTextScalar, scalarFromInput } from "@/lib/scalar-input";
-import { pathKey, updateSummaryAtPath } from "@/lib/save-tree-state";
+  AlertIcon,
+  ArrowRightIcon,
+  BagIcon,
+  BoltIcon,
+  ChartIcon,
+  CheckIcon,
+  PackIcon,
+  PalIcon,
+  ShieldIcon,
+  TreeIcon,
+  UnpackIcon,
+} from "@/components/icons";
 
-const PAGE_SIZE = 100;
-interface LoadedNode {
-  children: SaveNodeSummary[];
-  hasMore: boolean;
-  totalChildren: number;
-  loading: boolean;
-  error?: string;
-}
+/**
+ * Numbers from the sample world checked into `EXData/`. They are shown as a
+ * worked example of the container decode, not as the visitor's own data.
+ */
+const SAMPLE = {
+  name: "Level.sav",
+  compressed: 498_401,
+  uncompressed: 7_059_486,
+  headerRows: [
+    {
+      offset: "00",
+      bytes: "1E B8 6B 00",
+      field: "uncompressed",
+      value: "7,059,486",
+    },
+    {
+      offset: "04",
+      bytes: "D5 9A 07 00",
+      field: "compressed",
+      value: "498,389",
+    },
+    { offset: "08", bytes: "50 6C 4D", field: "magic", value: "PlM" },
+    { offset: "0B", bytes: "31", field: "type", value: "Oodle Kraken" },
+  ],
+} as const;
 
-function previewText(node: SaveNodeSummary): string | null {
-  const preview = node.value?.value ?? node.preview;
-  if (preview === undefined) return null;
-  return typeof preview === "string"
-    ? JSON.stringify(preview)
-    : String(preview);
-}
+const CAPABILITIES = [
+  {
+    icon: UnpackIcon,
+    title: "Decompile to GVAS",
+    body: "Strip the Palworld container and get the raw Unreal GVAS payload — the exact bytes the game compresses — for diffing or external tooling.",
+  },
+  {
+    icon: PackIcon,
+    title: "Recompile to .sav",
+    body: "Pack GVAS back into a loadable container. The payload is re-parsed before it is written, so a corrupt edit fails here instead of in-game.",
+  },
+  {
+    icon: PalIcon,
+    title: "Edit Pals",
+    body: "Search 170+ characters by species, nickname or instance ID, then change level, star rank, gender, IVs, souls and skill lists.",
+  },
+  {
+    icon: BagIcon,
+    title: "Edit inventories",
+    body: "Walk each player's personal containers — pack, key items, weapon loadout, armour and food slots — and rewrite item IDs and stack counts.",
+  },
+  {
+    icon: TreeIcon,
+    title: "Browse the raw tree",
+    body: "Page through every property in the save with types, child counts and byte lengths, and edit any scalar the parser understands.",
+  },
+  {
+    icon: ChartIcon,
+    title: "See the whole world",
+    body: "A dashboard sizes every worldSaveData collection and digests the character map: species leaders, level spread and per-player Pal counts.",
+  },
+] as const;
 
-function TreeNode({
-  node,
-  depth,
-  sessionId,
-  expanded,
-  loaded,
-  onToggle,
-  onLoadMore,
-  onSave,
-}: {
-  node: SaveNodeSummary;
-  depth: number;
-  sessionId: string;
-  expanded: Set<string>;
-  loaded: Record<string, LoadedNode>;
-  onToggle: (id: string, node: SaveNodeSummary) => void;
-  onLoadMore: (id: string, node: SaveNodeSummary) => void;
-  onSave: (node: SaveNodeSummary, value: EditableScalarValue) => Promise<void>;
-}) {
-  const key = pathKey(node.path),
-    state = loaded[key],
-    isExpanded = expanded.has(key),
-    expandable = (node.childCount ?? 0) > 0;
-  const [editing, setEditing] = useState(false),
-    [input, setInput] = useState(""),
-    [checked, setChecked] = useState(false);
-  const [submitting, setSubmitting] = useState(false),
-    [error, setError] = useState<string>();
-  function beginEdit() {
-    if (!node.value) return;
-    setInput(String(node.value.value));
-    setChecked(node.value.type === "bool" && node.value.value);
-    setError(undefined);
-    setEditing(true);
-  }
-  async function save() {
-    if (!node.value || submitting) return;
-    setError(undefined);
-    try {
-      const next = scalarFromInput(node.value, input, checked);
-      setSubmitting(true);
-      await onSave(node, next);
-      setEditing(false);
-    } catch (cause) {
-      setError(cause instanceof Error ? cause.message : String(cause));
-    } finally {
-      setSubmitting(false);
-    }
-  }
+const STEPS = [
+  {
+    title: "Back up first",
+    body: "Copy your entire world folder somewhere safe. This is the only step that cannot be undone for you.",
+  },
+  {
+    title: "Upload Level.sav",
+    body: "Add the player .sav files alongside it to unlock inventory editing. Everything is parsed in memory by the Rust API.",
+  },
+  {
+    title: "Inspect and edit",
+    body: "Work through the dashboard, the Pal list, inventories or the raw property tree. Each edit bumps a revision so stale writes are rejected.",
+  },
+  {
+    title: "Export and verify",
+    body: "Download a validated .sav — it is re-parsed after writing — then drop it back into your world folder and load the game.",
+  },
+] as const;
+
+const GUARANTEES = [
+  {
+    icon: ShieldIcon,
+    title: "Runs where you run it",
+    body: "Saves are held in the API process's memory, never written to disk, and dropped when the container restarts.",
+  },
+  {
+    icon: BoltIcon,
+    title: "Rust parser, paged UI",
+    body: "A 7 MB save expands to hundreds of thousands of properties. The tree is served page by page instead of shipped as one JSON blob.",
+  },
+  {
+    icon: CheckIcon,
+    title: "Validated round trip",
+    body: "Exports are decompressed and re-parsed before you get the file, so a save that cannot be read never reaches your game.",
+  },
+] as const;
+
+function HeaderDecode() {
+  const ratio = SAMPLE.uncompressed / SAMPLE.compressed;
+
   return (
-    <li>
-      <div
-        className="flex min-w-0 flex-wrap items-center gap-1 py-0.5"
-        style={{ paddingLeft: depth * 16 }}
-      >
-        {expandable ? (
-          <button
-            type="button"
-            aria-label={`${isExpanded ? "Collapse" : "Expand"} ${node.displayName}`}
-            onClick={() => onToggle(sessionId, node)}
-            className="w-5 shrink-0 text-neutral-400 hover:text-white"
-          >
-            {isExpanded ? "▾" : "▸"}
-          </button>
-        ) : (
-          <span className="w-5 shrink-0" />
-        )}
-        <code className="break-all">{node.displayName}</code>
-        <span className="shrink-0 text-neutral-500">— {node.kind}</span>
-        {node.childCount !== undefined && (
-          <span className="shrink-0 text-neutral-600">
-            ({node.childCount.toLocaleString()})
-          </span>
-        )}
-        {editing && node.value ? (
-          <>
-            {node.value.type === "bool" ? (
-              <input
-                aria-label={`Value for ${node.displayName}`}
-                type="checkbox"
-                checked={checked}
-                onChange={(e) => setChecked(e.target.checked)}
-              />
-            ) : (
-              <input
-                aria-label={`Value for ${node.displayName}`}
-                className="min-w-36 rounded border border-neutral-700 bg-neutral-900 px-1 text-sky-200"
-                type={isTextScalar(node.value) ? "text" : "number"}
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-              />
-            )}
-            <button
-              disabled={submitting}
-              onClick={() => void save()}
-              className="rounded bg-sky-700 px-2 text-xs disabled:opacity-40"
-            >
-              {submitting ? "Saving…" : "Save"}
-            </button>
-            <button
-              disabled={submitting}
-              onClick={() => {
-                setEditing(false);
-                setError(undefined);
-              }}
-              className="rounded border border-neutral-700 px-2 text-xs"
-            >
-              Cancel
-            </button>
-          </>
-        ) : (
-          <>
-            {previewText(node) !== null && (
-              <span className="min-w-0 truncate text-sky-300">
-                = {previewText(node)}
-              </span>
-            )}
-            {node.editable && (
-              <button
-                onClick={beginEdit}
-                className="rounded border border-neutral-700 px-2 text-xs"
-              >
-                Edit
-              </button>
-            )}
-          </>
-        )}
-        {node.byteLength !== undefined && (
-          <span className="shrink-0 text-amber-300">
-            {formatFileSize(node.byteLength)}
-          </span>
-        )}
-        {error && <span className="basis-full pl-6 text-red-400">{error}</span>}
+    <div className="card glow overflow-hidden">
+      <div className="flex items-center gap-2 border-b border-line bg-raised px-4 py-2.5">
+        <span className="flex gap-1.5">
+          <span className="size-2.5 rounded-full bg-danger/70" />
+          <span className="size-2.5 rounded-full bg-warning/70" />
+          <span className="size-2.5 rounded-full bg-success/70" />
+        </span>
+        <p className="ml-1 font-mono text-xs text-muted">
+          container decode — {SAMPLE.name}
+        </p>
       </div>
-      {isExpanded && (
-        <>
-          {state?.loading && <p className="ml-8 text-neutral-500">Loading…</p>}
-          {state?.error && (
-            <p className="ml-8 text-red-400">
-              {state.error}{" "}
-              <button
-                className="underline"
-                onClick={() => onLoadMore(sessionId, node)}
-              >
-                Retry
-              </button>
-            </p>
-          )}
-          {state && !state.error && (
-            <ul>
-              {state.children.map((child) => (
-                <TreeNode
-                  key={pathKey(child.path)}
-                  node={child}
-                  depth={depth + 1}
-                  sessionId={sessionId}
-                  expanded={expanded}
-                  loaded={loaded}
-                  onToggle={onToggle}
-                  onLoadMore={onLoadMore}
-                  onSave={onSave}
-                />
-              ))}
-              {state.hasMore && (
-                <li style={{ paddingLeft: (depth + 2) * 16 }}>
-                  <button
-                    disabled={state.loading}
-                    onClick={() => onLoadMore(sessionId, node)}
-                    className="mt-1 rounded border border-neutral-700 px-2 py-1 text-xs disabled:opacity-40"
-                  >
-                    {state.loading
-                      ? "Loading…"
-                      : `Load more (${state.children.length}/${state.totalChildren})`}
-                  </button>
-                </li>
-              )}
-            </ul>
-          )}
-        </>
-      )}
-    </li>
+
+      <div className="overflow-x-auto p-4">
+        <table className="w-full min-w-[22rem] border-collapse font-mono text-xs">
+          <caption className="sr-only">
+            The twelve header bytes of a Palworld save container
+          </caption>
+          <thead>
+            <tr className="text-subtle">
+              <th scope="col" className="pb-2 pr-3 text-left font-normal">
+                off
+              </th>
+              <th scope="col" className="pb-2 pr-3 text-left font-normal">
+                bytes
+              </th>
+              <th scope="col" className="pb-2 pr-3 text-left font-normal">
+                field
+              </th>
+              <th scope="col" className="pb-2 text-right font-normal">
+                value
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {SAMPLE.headerRows.map((row) => (
+              <tr key={row.offset} className="border-t border-line/70">
+                <td className="py-1.5 pr-3 text-subtle">{row.offset}</td>
+                <td className="py-1.5 pr-3 text-violet">{row.bytes}</td>
+                <td className="py-1.5 pr-3 text-muted">{row.field}</td>
+                <td className="py-1.5 text-right text-accent">{row.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="space-y-2 border-t border-line bg-sunken px-4 py-3">
+        <div className="flex items-baseline justify-between gap-3 text-xs">
+          <span className="text-muted">486.7 KB on disk</span>
+          <span className="font-mono text-accent">
+            {ratio.toFixed(2)}× expansion
+          </span>
+          <span className="text-muted">6.7 MB of GVAS</span>
+        </div>
+        <div className="meter" aria-hidden="true">
+          <span style={{ width: "100%" }} />
+        </div>
+        <p className="text-xs text-subtle">
+          4 root properties · 21 world collections · 172 characters · 1,207 item
+          containers
+        </p>
+      </div>
+    </div>
   );
 }
 
-function formatFileSize(bytes: number) {
-  if (!bytes) return "0 bytes";
-  const units = ["bytes", "KB", "MB", "GB"],
-    i = Math.min(
-      Math.floor(Math.log(bytes) / Math.log(1024)),
-      units.length - 1,
-    );
-  return `${(bytes / 1024 ** i).toFixed(i ? 1 : 0)} ${units[i]}`;
-}
-function roundtripFileName(name: string) {
-  const base = name.toLowerCase().endsWith(".sav") ? name.slice(0, -4) : name;
-  return `${base || "Level"}.roundtrip.sav`;
-}
-
 export default function Home() {
-  const [status, setStatus] = useState("Pick a .sav file to parse."),
-    [session, setSession] = useState<SaveSession | null>(null);
-  const [activeView, setActiveView] = useState<"pals" | "inventory" | "raw">(
-      "pals",
-    ),
-    [palRefresh, setPalRefresh] = useState(0);
-  const [root, setRoot] = useState<SaveNodeResponse | null>(null),
-    [rootError, setRootError] = useState<string | null>(null);
-  const [isLoadingRoot, setIsLoadingRoot] = useState(false),
-    [isExporting, setIsExporting] = useState(false);
-  const [expanded, setExpanded] = useState<Set<string>>(new Set()),
-    [loaded, setLoaded] = useState<Record<string, LoadedNode>>({});
-  const generation = useRef(0),
-    controllers = useRef<Set<AbortController>>(new Set());
-  const active = (g: number) => generation.current === g;
-  function controller() {
-    const c = new AbortController();
-    controllers.current.add(c);
-    return c;
-  }
-  function finish(c: AbortController) {
-    controllers.current.delete(c);
-  }
-
-  async function onFile(e: React.ChangeEvent<HTMLInputElement>) {
-    generation.current += 1;
-    const g = generation.current;
-    controllers.current.forEach((c) => c.abort());
-    controllers.current.clear();
-    const previous = session;
-    setSession(null);
-    setRoot(null);
-    setRootError(null);
-    setIsLoadingRoot(false);
-    setIsExporting(false);
-    setExpanded(new Set());
-    setLoaded({});
-    setActiveView("pals");
-    setPalRefresh(0);
-    if (previous)
-      void deleteSaveSession(previous.id).catch((error) =>
-        console.warn("Failed to delete previous save session:", error),
-      );
-    const files = Array.from(e.target.files ?? []);
-    if (!files.length) return;
-    setStatus(`Reading  save file(s)…`);
-    const c = controller();
-    try {
-      const created = await createSaveSession(files, c.signal);
-      if (!active(g)) {
-        void deleteSaveSession(created.id);
-        return;
-      }
-      setSession(created);
-      setStatus(`✅ Opened ${created.fileName} in Rust`);
-      setIsLoadingRoot(true);
-      try {
-        const response = await getSaveRoot(created.id, c.signal);
-        if (active(g)) setRoot(response);
-      } catch (error) {
-        if (
-          active(g) &&
-          !(error instanceof DOMException && error.name === "AbortError")
-        )
-          setRootError(String(error));
-      } finally {
-        if (active(g)) setIsLoadingRoot(false);
-      }
-    } catch (error) {
-      if (
-        active(g) &&
-        !(error instanceof DOMException && error.name === "AbortError")
-      )
-        setStatus(`❌ ${String(error)}`);
-    } finally {
-      finish(c);
-    }
-  }
-
-  async function loadNode(id: string, node: SaveNodeSummary, offset: number) {
-    const g = generation.current,
-      key = pathKey(node.path),
-      c = controller();
-    setLoaded((cur) => ({
-      ...cur,
-      [key]: {
-        ...(cur[key] ?? {
-          children: [],
-          hasMore: false,
-          totalChildren: node.childCount ?? 0,
-        }),
-        loading: true,
-        error: undefined,
-      },
-    }));
-    try {
-      const response = await inspectSaveNode(
-        id,
-        { path: node.path, offset, limit: PAGE_SIZE },
-        c.signal,
-      );
-      if (!active(g)) return;
-      setLoaded((cur) => ({
-        ...cur,
-        [key]: {
-          children: offset
-            ? [...(cur[key]?.children ?? []), ...response.children]
-            : response.children,
-          hasMore: response.hasMore,
-          totalChildren: response.totalChildren,
-          loading: false,
-        },
-      }));
-    } catch (error) {
-      if (
-        active(g) &&
-        !(error instanceof DOMException && error.name === "AbortError")
-      )
-        setLoaded((cur) => ({
-          ...cur,
-          [key]: {
-            ...(cur[key] ?? {
-              children: [],
-              hasMore: false,
-              totalChildren: node.childCount ?? 0,
-            }),
-            loading: false,
-            error: String(error),
-          },
-        }));
-    } finally {
-      finish(c);
-    }
-  }
-  function toggleNode(id: string, node: SaveNodeSummary) {
-    const key = pathKey(node.path);
-    if (expanded.has(key))
-      setExpanded((cur) => {
-        const n = new Set(cur);
-        n.delete(key);
-        return n;
-      });
-    else {
-      setExpanded((cur) => new Set(cur).add(key));
-      if (!loaded[key] || loaded[key].error) void loadNode(id, node, 0);
-    }
-  }
-  function loadMore(id: string, node: SaveNodeSummary) {
-    const state = loaded[pathKey(node.path)];
-    if (state && !state.loading) void loadNode(id, node, state.children.length);
-  }
-
-  async function saveScalar(node: SaveNodeSummary, value: EditableScalarValue) {
-    if (!session) throw new Error("The save session is no longer active.");
-    const g = generation.current,
-      id = session.id,
-      revision = session.revision,
-      c = controller();
-    try {
-      const response = await updateSaveScalar(
-        id,
-        { path: node.path, expectedRevision: revision, value },
-        c.signal,
-      );
-      if (!active(g)) return;
-      setSession((cur) =>
-        cur?.id === id
-          ? { ...cur, dirty: response.dirty, revision: response.revision }
-          : cur,
-      );
-      setRoot((cur) =>
-        cur
-          ? {
-              ...cur,
-              children: cur.children.map((n) =>
-                updateSummaryAtPath(n, response.path, response.value),
-              ),
-            }
-          : cur,
-      );
-      setLoaded((cur) =>
-        Object.fromEntries(
-          Object.entries(cur).map(([key, state]) => [
-            key,
-            {
-              ...state,
-              children: state.children.map((n) =>
-                updateSummaryAtPath(n, response.path, response.value),
-              ),
-            },
-          ]),
-        ),
-      );
-      setPalRefresh((value) => value + 1);
-      setStatus(
-        `✅ Saved scalar — revision ${response.revision}; Pal index refreshed`,
-      );
-    } catch (error) {
-      if (
-        active(g) &&
-        error instanceof PalSaveApiError &&
-        error.status === 409
-      ) {
-        const refreshed = await getSaveSession(id, c.signal);
-        if (active(g)) {
-          setSession(refreshed);
-          throw new Error(
-            "This view was stale. Session metadata was refreshed; retry the edit.",
-          );
-        }
-      }
-      throw error;
-    } finally {
-      finish(c);
-    }
-  }
-
-  async function onDownload() {
-    if (!session || isExporting) return;
-    const g = generation.current,
-      current = session,
-      c = controller();
-    setIsExporting(true);
-    setStatus(`Exporting ${current.fileName}…`);
-    try {
-      const blob = await exportSaveSession(current.id, true, c.signal);
-      if (!active(g)) return;
-      const name = roundtripFileName(current.fileName),
-        url = URL.createObjectURL(blob),
-        a = document.createElement("a");
-      a.href = url;
-      a.download = name;
-      a.click();
-      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-      setStatus(`✅ Exported ${name} — ${formatFileSize(blob.size)}`);
-    } catch (error) {
-      if (
-        active(g) &&
-        !(error instanceof DOMException && error.name === "AbortError")
-      )
-        setStatus(`❌ export: ${String(error)}`);
-    } finally {
-      finish(c);
-      if (active(g)) setIsExporting(false);
-    }
-  }
-  async function loadMoreRoot() {
-    if (!session || !root || isLoadingRoot) return;
-    const g = generation.current,
-      id = session.id,
-      offset = root.children.length,
-      c = controller();
-    setIsLoadingRoot(true);
-    setRootError(null);
-    try {
-      const response = await inspectSaveNode(
-        id,
-        { path: [], offset, limit: PAGE_SIZE },
-        c.signal,
-      );
-      if (active(g))
-        setRoot((cur) =>
-          cur
-            ? { ...response, children: [...cur.children, ...response.children] }
-            : cur,
-        );
-    } catch (error) {
-      if (active(g)) setRootError(String(error));
-    } finally {
-      finish(c);
-      if (active(g)) setIsLoadingRoot(false);
-    }
-  }
-
-  function viewRawPath(path: SavePathSegment[]) {
-    setActiveView("raw");
-    setStatus(`Raw path: ${JSON.stringify(path)}`);
-  }
-
-  const ratio =
-    session && session.originalSize
-      ? session.decompressedSize / session.originalSize
-      : 0;
   return (
-    <main className="mx-auto max-w-4xl space-y-4 p-6">
-      <h1 className="text-xl font-semibold">PalSave Editor</h1>
-      <div className="flex flex-wrap items-center gap-3">
-        <input type="file" accept=".sav" multiple onChange={onFile} />
-        <button
-          onClick={() => void onDownload()}
-          disabled={!session || isExporting}
-          className="rounded bg-emerald-600 px-3 py-1.5 text-sm font-medium text-white disabled:opacity-40"
-        >
-          {isExporting
-            ? "Exporting…"
-            : session?.dirty
-              ? "Validate & download .sav"
-              : "Round-trip & download .sav"}
-        </button>
-      </div>
-      <p className="text-sm text-neutral-400">{status}</p>
-      {session && (
-        <div className="rounded border border-neutral-800 bg-neutral-950 p-3 text-sm">
-          <p>
-            <span className="text-neutral-500">Session:</span>{" "}
-            <code>{session.id}</code>
-          </p>
-          <p>
-            <span className="text-neutral-500">File:</span> {session.fileName}
-          </p>
-          <p>
-            <span className="text-neutral-500">Status:</span>{" "}
-            {session.dirty ? "Modified" : "Unmodified"}
-          </p>
-          {session.dirty && (
-            <p>
-              <span className="text-neutral-500">Revision:</span>{" "}
-              {session.revision}
+    <>
+      {/* Hero ------------------------------------------------------------- */}
+      <section className="relative overflow-hidden border-b border-line">
+        <div
+          className="bg-grid pointer-events-none absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_72%)]"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute left-1/2 top-[-14rem] size-[34rem] -translate-x-1/2 rounded-full bg-accent/12 blur-3xl"
+          aria-hidden="true"
+        />
+
+        <div className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="animate-in space-y-7">
+            <span className="badge badge-accent">
+              <span className="size-1.5 rounded-full bg-accent" />
+              Rust parser · zlib &amp; Oodle Kraken containers
+            </span>
+
+            <h1 className="text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+              Take your Palworld save
+              <br />
+              <span className="text-gradient">apart and back together.</span>
+            </h1>
+
+            <p className="max-w-xl text-lg leading-relaxed text-muted">
+              PalSaveEditor decompresses{" "}
+              <code className="text-accent">Level.sav</code>, parses the Unreal
+              property tree, lets you edit Pals, inventories and individual
+              scalars, then recompiles a container the game will actually load.
             </p>
-          )}
-          <p>
-            <span className="text-neutral-500">Compressed size:</span>{" "}
-            {formatFileSize(session.originalSize)}
-          </p>
-          <p>
-            <span className="text-neutral-500">Expanded size:</span>{" "}
-            {formatFileSize(session.decompressedSize)}
-          </p>
-          <p>
-            <span className="text-neutral-500">Expansion ratio:</span>{" "}
-            {ratio.toFixed(2)}×
-          </p>
-          <div
-            className="mt-3 flex gap-1 border-t border-neutral-800 pt-3"
-            role="tablist"
-          >
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeView === "pals"}
-              onClick={() => setActiveView("pals")}
-              className={`rounded px-3 py-1.5 text-sm ${activeView === "pals" ? "bg-sky-800 text-white" : "text-neutral-400 hover:bg-neutral-900"}`}
-            >
-              Pals
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeView === "inventory"}
-              onClick={() => setActiveView("inventory")}
-              className={`rounded px-3 py-1.5 text-sm ${activeView === "inventory" ? "bg-sky-800 text-white" : "text-neutral-400 hover:bg-neutral-900"}`}
-            >
-              Inventories
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeView === "raw"}
-              onClick={() => setActiveView("raw")}
-              className={`rounded px-3 py-1.5 text-sm ${activeView === "raw" ? "bg-sky-800 text-white" : "text-neutral-400 hover:bg-neutral-900"}`}
-            >
-              Raw Save Tree
-            </button>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <Link href="/editor" className="btn btn-primary btn-lg">
+                Open the editor
+                <ArrowRightIcon className="size-4" />
+              </Link>
+              <Link href="/tools" className="btn btn-secondary btn-lg">
+                <UnpackIcon className="size-4" />
+                Just decompile a file
+              </Link>
+            </div>
+
+            <dl className="grid max-w-lg grid-cols-3 gap-4 border-t border-line pt-6">
+              {[
+                { label: "Container formats", value: "PlZ + PlM" },
+                { label: "Editable surfaces", value: "4" },
+                { label: "Uploads leave the box", value: "Never" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <dt className="text-xs text-subtle">{stat.label}</dt>
+                  <dd className="mt-0.5 text-sm font-semibold sm:text-base">
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
-          {activeView === "pals" ? (
-            <div className="mt-3">
-              <PalList
-                key={session.id}
-                sessionId={session.id}
-                generation={generation.current}
-                refreshToken={palRefresh}
-                revision={session.revision}
-                onSessionUpdate={(dirty, revision) => {
-                  setSession((current) =>
-                    current ? { ...current, dirty, revision } : current,
-                  );
-                  setStatus(`✅ Pal saved — revision ${revision}`);
-                }}
-                onViewRaw={viewRawPath}
-              />
-            </div>
-          ) : activeView === "inventory" ? (
-            <div className="mt-3">
-              <InventoryEditor
-                sessionId={session.id}
-                revision={session.revision}
-                onSessionUpdate={(dirty, revision) => {
-                  setSession((current) =>
-                    current ? { ...current, dirty, revision } : current,
-                  );
-                  setStatus(`✅ Inventory saved — revision ${revision}`);
-                }}
-              />
-            </div>
-          ) : (
-            <div className="mt-3 border-t border-neutral-800 pt-3">
-              <h2 className="font-medium">Root properties</h2>
-              {isLoadingRoot && (
-                <p className="text-neutral-400">Loading root summary…</p>
-              )}
-              {rootError && <p className="text-red-400">❌ {rootError}</p>}
-              {root && (
-                <>
-                  <p className="text-neutral-500">
-                    {root.childCount.toLocaleString()} immediate{" "}
-                    {root.childCount === 1 ? "property" : "properties"}
-                  </p>
-                  <ul className="mt-2">
-                    {root.children.map((child) => (
-                      <TreeNode
-                        key={pathKey(child.path)}
-                        node={child}
-                        depth={0}
-                        sessionId={session.id}
-                        expanded={expanded}
-                        loaded={loaded}
-                        onToggle={toggleNode}
-                        onLoadMore={loadMore}
-                        onSave={saveScalar}
-                      />
-                    ))}
-                  </ul>
-                  {root.hasMore && (
-                    <button
-                      disabled={isLoadingRoot}
-                      onClick={() => void loadMoreRoot()}
-                      className="mt-2 rounded border border-neutral-700 px-2 py-1 text-xs disabled:opacity-40"
-                    >
-                      {isLoadingRoot
-                        ? "Loading…"
-                        : `Load more (${root.children.length}/${root.totalChildren})`}
-                    </button>
-                  )}
-                </>
-              )}
-            </div>
-          )}
+
+          <div
+            className="animate-in lg:pl-4"
+            style={{ animationDelay: "120ms" }}
+          >
+            <HeaderDecode />
+          </div>
         </div>
-      )}
-    </main>
+      </section>
+
+      {/* Warning ---------------------------------------------------------- */}
+      <section className="mx-auto w-full max-w-7xl px-4 pt-10 sm:px-6">
+        <div className="alert alert-warning">
+          <AlertIcon className="mt-0.5 size-5 shrink-0 text-warning" />
+          <p>
+            <strong className="font-semibold">Back up your world first.</strong>{" "}
+            This project is experimental and writes a different compression
+            variant than the game does. Copy your entire save directory before
+            you edit anything — a bad write can cost a world.{" "}
+            <Link href="/guide" className="text-accent underline">
+              Where saves live
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* Capabilities ----------------------------------------------------- */}
+      <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium text-accent">What it does</p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Six ways into the same save
+          </h2>
+          <p className="mt-3 text-muted">
+            Every view reads from one parsed tree in memory, so a change made in
+            the Pal editor is visible in the raw property browser and lands in
+            the same export.
+          </p>
+        </div>
+
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {CAPABILITIES.map(({ icon: Glyph, title, body }) => (
+            <li key={title} className="card card-hover p-5">
+              <span className="inline-flex rounded-lg bg-accent-soft p-2 text-accent">
+                <Glyph className="size-5" />
+              </span>
+              <h3 className="mt-3.5 font-semibold">{title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                {body}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Workflow --------------------------------------------------------- */}
+      <section className="border-y border-line bg-sunken">
+        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium text-accent">How it works</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Four steps, one of them yours
+            </h2>
+          </div>
+
+          <ol className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {STEPS.map((step, index) => (
+              <li key={step.title} className="card relative p-5">
+                <span className="font-mono text-sm text-subtle">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-2 font-semibold">{step.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                  {step.body}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Guarantees ------------------------------------------------------- */}
+      <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="text-sm font-medium text-accent">Why trust it</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
+              The boring guarantees that matter
+            </h2>
+            <p className="mt-3 text-muted">
+              A save editor is only useful if it hands back a file the game can
+              open. The pipeline is built to fail loudly on the server rather
+              than quietly in your world.
+            </p>
+            <Link href="/guide" className="btn btn-secondary mt-6">
+              Read the format notes
+              <ArrowRightIcon className="size-4" />
+            </Link>
+          </div>
+
+          <ul className="space-y-3">
+            {GUARANTEES.map(({ icon: Glyph, title, body }) => (
+              <li key={title} className="card flex gap-4 p-5">
+                <span className="inline-flex h-fit rounded-lg bg-accent-soft p-2 text-accent">
+                  <Glyph className="size-5" />
+                </span>
+                <div>
+                  <h3 className="font-semibold">{title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">
+                    {body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* CTA -------------------------------------------------------------- */}
+      <section className="mx-auto w-full max-w-7xl px-4 pb-20 sm:px-6">
+        <div className="card relative overflow-hidden p-8 text-center sm:p-12">
+          <div
+            className="bg-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"
+            aria-hidden="true"
+          />
+          <div className="relative space-y-5">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Ready when your backup is
+            </h2>
+            <p className="mx-auto max-w-xl text-muted">
+              Load a world, read what is actually inside it, change what you
+              meant to change, and export something you can trust.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/editor" className="btn btn-primary btn-lg">
+                Open the editor
+                <ArrowRightIcon className="size-4" />
+              </Link>
+              <Link href="/guide" className="btn btn-secondary btn-lg">
+                Find my save folder
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

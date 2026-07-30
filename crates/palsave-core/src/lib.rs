@@ -17,6 +17,92 @@ pub struct EditorSave {
 pub struct ParsedSave {
     pub save: Save,
     pub decompressed_size: usize,
+    pub container: SavContainer,
+}
+
+/// Everything the 12-byte Palworld container header describes, plus a
+/// human-readable label for the codec it selects.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct SavContainer {
+    /// The three magic bytes as ASCII, either `PlZ` or `PlM`.
+    pub magic: String,
+    /// The codec selector byte that follows the magic.
+    pub save_type: u8,
+    /// `"zlib"`, `"zlib (double)"` or `"Oodle Kraken"`.
+    pub compression: &'static str,
+    /// Decompressed GVAS length recorded in the header.
+    pub decompressed_size: usize,
+    /// Compressed payload length recorded in the header.
+    pub compressed_size: usize,
+}
+
+impl SavContainer {
+    /// Ratio of decompressed to compressed bytes, or `0.0` for an empty payload.
+    pub fn expansion_ratio(&self) -> f64 {
+        if self.compressed_size == 0 {
+            return 0.0;
+        }
+        (self.decompressed_size as f64) / (self.compressed_size as f64)
+    }
+}
+
+/// Reads the container header without decompressing the payload.
+///
+/// This is cheap enough to run on every upload, so the UI can describe a save
+/// (codec, expected size) even when the GVAS body later fails to parse.
+pub fn inspect_container(data: &[u8]) -> Result<SavContainer, String> {
+    let header = read_container_header(data)?;
+
+    Ok(SavContainer {
+        magic: String::from_utf8_lossy(&header.magic).into_owned(),
+        save_type: header.save_type,
+        compression: header.compression()?,
+        decompressed_size: header.uncompressed_len,
+        compressed_size: header.compressed_len,
+    })
+}
+
+struct ContainerHeader {
+    uncompressed_len: usize,
+    compressed_len: usize,
+    magic: [u8; 3],
+    save_type: u8,
+    body_len: usize,
+}
+
+impl ContainerHeader {
+    fn compression(&self) -> Result<&'static str, String> {
+        match (&self.magic, self.save_type) {
+            (MAGIC_PLZ, 0x31) => Ok("zlib"),
+            (MAGIC_PLZ, 0x32) => Ok("zlib (double)"),
+            (MAGIC_PLZ, other) => Err(format!("unhandled PlZ type: {other:#x}")),
+            (MAGIC_PLM, _) => Ok("Oodle Kraken"),
+            (magic, _) => Err(format!("not a Palworld save: bad magic {magic:?}")),
+        }
+    }
+}
+
+fn read_container_header(data: &[u8]) -> Result<ContainerHeader, String> {
+    if data.len() < 12 {
+        return Err("file too small to be a Palworld save".into());
+    }
+
+    let uncompressed_len =
+        u32::from_le_bytes(data[0..4].try_into().map_err(|_| "invalid save header")?) as usize;
+
+    let compressed_len =
+        u32::from_le_bytes(data[4..8].try_into().map_err(|_| "invalid save header")?) as usize;
+
+    let magic: [u8; 3] = data[8..11].try_into().map_err(|_| "invalid save header")?;
+
+    Ok(ContainerHeader {
+        uncompressed_len,
+        compressed_len,
+        magic,
+        save_type: data[11],
+        body_len: data.len() - 12,
+    })
 }
 
 fn palworld_types() -> Types {
@@ -83,30 +169,46 @@ pub fn parse_sav_with_metadata_limit(
     data: &[u8],
     max_decompressed_size: usize,
 ) -> Result<ParsedSave, String> {
-    let gvas = decompress_sav_with_limit(data, max_decompressed_size)?;
+    let (gvas, container) = decompress_sav_with_container(data, max_decompressed_size)?;
     let decompressed_size = gvas.len();
 
-    let save = SaveReader::new()
-        .types(palworld_types())
-        .error_to_raw(true)
-        .read(Cursor::new(gvas))
-        .map_err(|error| {
-            format!("failed to parse GVAS payload ({decompressed_size} bytes): {error}")
-        })?;
+    let save = parse_gvas(gvas)?;
 
     Ok(ParsedSave {
         save,
         decompressed_size,
+        container,
     })
+}
+
+/// Parses already-decompressed GVAS bytes into a `uesave::Save`.
+///
+/// The tools page hands users raw GVAS, so it has to be able to come back in.
+pub fn parse_gvas(gvas: Vec<u8>) -> Result<Save, String> {
+    let len = gvas.len();
+
+    SaveReader::new()
+        .types(palworld_types())
+        .error_to_raw(true)
+        .read(Cursor::new(gvas))
+        .map_err(|error| format!("failed to parse GVAS payload ({len} bytes): {error}"))
 }
 
 /// Writes a parsed `uesave::Save` back into a compressed Palworld `.sav` file.
 pub fn write_sav(save: &Save) -> Result<Vec<u8>, String> {
+    compress_sav(&write_gvas(save)?)
+}
+
+/// Serializes a parsed `uesave::Save` to uncompressed GVAS bytes.
+///
+/// This is the "decompiled" form: the exact payload the game compresses into a
+/// `.sav` container, suitable for diffing or for external tooling.
+pub fn write_gvas(save: &Save) -> Result<Vec<u8>, String> {
     let mut gvas = Vec::new();
 
     save.write(&mut gvas).map_err(|error| error.to_string())?;
 
-    compress_sav(&gvas)
+    Ok(gvas)
 }
 
 /// Decompresses the Palworld save container and returns the inner GVAS bytes.
@@ -119,58 +221,66 @@ pub fn decompress_sav_with_limit(
     data: &[u8],
     max_decompressed_size: usize,
 ) -> Result<Vec<u8>, String> {
-    if data.len() < 12 {
-        return Err("file too small to be a Palworld save".into());
-    }
+    decompress_sav_with_container(data, max_decompressed_size).map(|(gvas, _)| gvas)
+}
 
-    let uncompressed_len =
-        u32::from_le_bytes(data[0..4].try_into().map_err(|_| "invalid save header")?) as usize;
+/// Decompresses a Palworld container and also reports what the header said.
+pub fn decompress_sav_with_container(
+    data: &[u8],
+    max_decompressed_size: usize,
+) -> Result<(Vec<u8>, SavContainer), String> {
+    let header = read_container_header(data)?;
+    let compression = header.compression()?;
 
-    let compressed_len =
-        u32::from_le_bytes(data[4..8].try_into().map_err(|_| "invalid save header")?) as usize;
-
-    if uncompressed_len > max_decompressed_size {
+    if header.uncompressed_len > max_decompressed_size {
         return Err(format!(
-            "decompressed save size {uncompressed_len} exceeds configured limit {max_decompressed_size}"
+            "decompressed save size {} exceeds configured limit {max_decompressed_size}",
+            header.uncompressed_len
         ));
     }
 
-    let magic = &data[8..11];
-    let save_type = data[11];
+    if header.body_len != header.compressed_len {
+        return Err(format!(
+            "compressed length mismatch: header {} vs actual {}",
+            header.compressed_len, header.body_len
+        ));
+    }
+
     let body = &data[12..];
 
-    if body.len() != compressed_len {
-        return Err(format!(
-            "compressed length mismatch: header {compressed_len} vs actual {}",
-            body.len()
-        ));
-    }
-
-    let gvas = if magic == MAGIC_PLZ {
-        match save_type {
-            0x31 => zlib_decompress_limited(body, max_decompressed_size)?,
-            0x32 => {
-                let first_pass = zlib_decompress_limited(body, max_decompressed_size)?;
-                zlib_decompress_limited(&first_pass, max_decompressed_size)?
-            }
-            other => {
-                return Err(format!("unhandled PlZ type: {other:#x}"));
-            }
+    let gvas = match (&header.magic, header.save_type) {
+        (MAGIC_PLZ, 0x31) => zlib_decompress_limited(body, max_decompressed_size)?,
+        (MAGIC_PLZ, 0x32) => {
+            let first_pass = zlib_decompress_limited(body, max_decompressed_size)?;
+            zlib_decompress_limited(&first_pass, max_decompressed_size)?
         }
-    } else if magic == MAGIC_PLM {
-        oodle_decompress(body, uncompressed_len)?
-    } else {
-        return Err(format!("not a Palworld save: bad magic {magic:?}"));
+        (MAGIC_PLM, _) => oodle_decompress(body, header.uncompressed_len)?,
+        // `compression()` above already rejected every other magic/type pair.
+        (magic, save_type) => {
+            return Err(format!(
+                "unhandled container: magic {magic:?}, type {save_type:#x}"
+            ));
+        }
     };
 
-    if gvas.len() != uncompressed_len {
+    if gvas.len() != header.uncompressed_len {
         return Err(format!(
-            "uncompressed length mismatch: header {uncompressed_len} vs actual {}",
+            "uncompressed length mismatch: header {} vs actual {}",
+            header.uncompressed_len,
             gvas.len()
         ));
     }
 
-    Ok(gvas)
+    Ok((
+        gvas,
+        SavContainer {
+            magic: String::from_utf8_lossy(&header.magic).into_owned(),
+            save_type: header.save_type,
+            compression,
+            decompressed_size: header.uncompressed_len,
+            compressed_size: header.compressed_len,
+        },
+    ))
 }
 
 /// Compresses raw GVAS bytes into a Palworld `.sav` container.
@@ -287,5 +397,59 @@ mod tests {
         let save = compress_sav(data).unwrap();
         let error = decompress_sav_with_limit(&save, data.len() - 1).unwrap_err();
         assert!(error.contains("configured limit"));
+    }
+
+    #[test]
+    fn container_inspection_reads_the_header_without_decompressing() {
+        let data = b"small gvas payload";
+        let save = compress_sav(data).unwrap();
+
+        let container = inspect_container(&save).unwrap();
+
+        assert_eq!(container.magic, "PlZ");
+        assert_eq!(container.save_type, 0x31);
+        assert_eq!(container.compression, "zlib");
+        assert_eq!(container.decompressed_size, data.len());
+        assert_eq!(container.compressed_size, save.len() - 12);
+        assert!(container.expansion_ratio() > 0.0);
+    }
+
+    #[test]
+    fn container_inspection_rejects_foreign_files() {
+        assert!(
+            inspect_container(b"nope")
+                .unwrap_err()
+                .contains("too small")
+        );
+
+        let mut bogus = vec![0_u8; 32];
+        bogus[8..11].copy_from_slice(b"ZZZ");
+        assert!(inspect_container(&bogus).unwrap_err().contains("bad magic"));
+    }
+
+    #[test]
+    fn decompression_reports_the_container_alongside_the_payload() {
+        let data = b"gvas bytes";
+        let save = compress_sav(data).unwrap();
+
+        let (gvas, container) = decompress_sav_with_container(&save, usize::MAX).unwrap();
+
+        assert_eq!(gvas, data);
+        assert_eq!(container.compression, "zlib");
+        assert_eq!(container.decompressed_size, data.len());
+    }
+
+    #[test]
+    fn expansion_ratio_does_not_divide_by_zero() {
+        // A header claiming an empty payload never reaches decompression, but
+        // the UI still formats whatever `inspect_container` reports.
+        let mut header = vec![0_u8; 12];
+        header[8..11].copy_from_slice(MAGIC_PLZ);
+        header[11] = 0x31;
+
+        let container = inspect_container(&header).unwrap();
+
+        assert_eq!(container.compressed_size, 0);
+        assert_eq!(container.expansion_ratio(), 0.0);
     }
 }

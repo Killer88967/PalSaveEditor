@@ -3,6 +3,17 @@ export interface HealthResponse {
   service: "palsave-api";
 }
 
+/** The 12-byte Palworld container header, decoded. */
+export interface SavContainer {
+  /** `PlZ` for zlib saves, `PlM` for Oodle Kraken saves. */
+  magic: string;
+  /** Codec selector byte following the magic. */
+  saveType: number;
+  compression: string;
+  decompressedSize: number;
+  compressedSize: number;
+}
+
 export interface SaveSession {
   id: string;
   fileName: string;
@@ -11,6 +22,66 @@ export interface SaveSession {
   dirty: boolean;
   revision: number;
   playerFileCount: number;
+  container: SavContainer;
+}
+
+export interface CollectionSummary {
+  name: string;
+  kind: "map" | "array" | "struct" | "raw" | "scalar";
+  entryCount?: number;
+  byteLength?: number;
+}
+
+export interface CharacterStats {
+  total: number;
+  pals: number;
+  players: number;
+  nicknamed: number;
+  complete: number;
+  partial: number;
+  unsupported: number;
+  averagePalLevel?: number;
+  maxPalLevel?: number;
+  distinctSpecies: number;
+}
+
+export interface SpeciesCount {
+  characterId: string;
+  count: number;
+}
+
+export interface LevelBucket {
+  label: string;
+  count: number;
+}
+
+export interface PalHighlight {
+  id: string;
+  nickname?: string;
+  characterId?: string;
+  level?: number;
+  rank?: number;
+}
+
+export interface PlayerOverview {
+  playerUid: string;
+  nickname?: string;
+  level?: number;
+  palCount: number;
+  hasSaveFile: boolean;
+}
+
+export interface SaveOverview {
+  saveGameType: string;
+  engineVersion: string;
+  saveGameVersion: number;
+  rootPropertyCount: number;
+  worldCollections: CollectionSummary[];
+  characters: CharacterStats;
+  topSpecies: SpeciesCount[];
+  levelHistogram: LevelBucket[];
+  strongest: PalHighlight[];
+  players: PlayerOverview[];
 }
 
 export type PalParseStatus = "complete" | "partial" | "unsupported";
@@ -25,6 +96,8 @@ export interface PalSummary {
   rank?: number;
   gender?: string;
   ownerPlayerUid?: string;
+  /** `PlayerUId` from the map key: set on players and player-owned Pals. */
+  playerUid?: string;
   isPlayer: boolean;
   parseStatus: PalParseStatus;
   rawPath: SavePathSegment[];
@@ -332,6 +405,22 @@ export async function updateSaveScalar(
   return response.json() as Promise<UpdateSaveScalarResponse>;
 }
 
+export async function getSaveOverview(
+  sessionId: string,
+  signal?: AbortSignal,
+): Promise<SaveOverview> {
+  const response = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/overview`,
+    { signal },
+  );
+
+  if (!response.ok) {
+    throw await apiError(response);
+  }
+
+  return response.json() as Promise<SaveOverview>;
+}
+
 export async function exportSaveSession(
   sessionId: string,
   validate = true,
@@ -347,6 +436,85 @@ export async function exportSaveSession(
   }
 
   return response.blob();
+}
+
+/** Downloads the session's current tree as uncompressed GVAS. */
+export async function exportSaveSessionGvas(
+  sessionId: string,
+  signal?: AbortSignal,
+): Promise<Blob> {
+  const response = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/gvas`,
+    { signal },
+  );
+
+  if (!response.ok) {
+    throw await apiError(response);
+  }
+
+  return response.blob();
+}
+
+export interface ConversionResult {
+  blob: Blob;
+  fileName: string;
+  compression?: string;
+  decompressedSize?: number;
+}
+
+/** Decompresses a `.sav` into raw GVAS without opening a session. */
+export function decompileSav(
+  file: File,
+  signal?: AbortSignal,
+): Promise<ConversionResult> {
+  return convert("decompile", file, signal);
+}
+
+/** Compresses raw GVAS back into a `.sav` container. */
+export function recompileGvas(
+  file: File,
+  signal?: AbortSignal,
+): Promise<ConversionResult> {
+  return convert("recompile", file, signal);
+}
+
+async function convert(
+  operation: "decompile" | "recompile",
+  file: File,
+  signal?: AbortSignal,
+): Promise<ConversionResult> {
+  const body = new FormData();
+  body.append("file", file);
+
+  const response = await fetch(`/api/rust/convert/${operation}`, {
+    method: "POST",
+    body,
+    signal,
+  });
+
+  if (!response.ok) {
+    throw await apiError(response);
+  }
+
+  const size = Number(response.headers.get("x-palsave-decompressed-size"));
+
+  return {
+    blob: await response.blob(),
+    fileName: fileNameFromDisposition(
+      response.headers.get("content-disposition"),
+      operation === "decompile" ? "Level.gvas" : "Level.sav",
+    ),
+    compression: response.headers.get("x-palsave-compression") ?? undefined,
+    decompressedSize: Number.isFinite(size) && size > 0 ? size : undefined,
+  };
+}
+
+function fileNameFromDisposition(
+  header: string | null,
+  fallback: string,
+): string {
+  const match = header?.match(/filename="([^"]+)"/);
+  return match?.[1] ?? fallback;
 }
 
 export async function getPals(

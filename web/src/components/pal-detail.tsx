@@ -1,29 +1,39 @@
 "use client";
+
 import { useState } from "react";
 import type {
   PalDetail as PalDetailModel,
   UpdatePalRequest,
 } from "@/lib/palsave-api";
 import { buildPalUpdate, STAR_OPTIONS, validateSkillIds } from "@/lib/pal-form";
+import { humanizeId, shortId } from "@/lib/format";
+import { AlertIcon, PalIcon, TreeIcon } from "@/components/icons";
+
+/** Editable numeric fields, with the bounds the API enforces. */
+const NUMBERS = [
+  ["level", "Level", 1, 255],
+  ["rankHp", "Souls · HP", 0, 255],
+  ["rankAttack", "Souls · Attack", 0, 255],
+  ["rankDefence", "Souls · Defence", 0, 255],
+  ["rankCraftSpeed", "Souls · Work speed", 0, 255],
+  ["talentHp", "IV · HP", 0, 255],
+  ["talentMelee", "IV · Melee", 0, 255],
+  ["talentShot", "IV · Ranged", 0, 255],
+  ["talentDefense", "IV · Defence", 0, 255],
+] as const;
+
+/** Values above this are legal in the file but well outside normal gameplay. */
+const UNUSUAL_THRESHOLD = 100;
+
 function Stat({ label, value }: { label: string; value?: string | number }) {
   return (
-    <div className="rounded border border-neutral-800 bg-neutral-950 p-2">
-      <dt className="text-xs text-neutral-500">{label}</dt>
-      <dd className="break-all text-sm">{value ?? "—"}</dd>
+    <div className="panel p-2.5">
+      <dt className="text-xs text-subtle">{label}</dt>
+      <dd className="mt-0.5 break-all text-sm tabular-nums">{value ?? "—"}</dd>
     </div>
   );
 }
-const numbers = [
-  ["level", "Level", 1, 255],
-  ["rankHp", "Rank HP", 0, 255],
-  ["rankAttack", "Rank attack", 0, 255],
-  ["rankDefence", "Rank defence", 0, 255],
-  ["rankCraftSpeed", "Rank craft speed", 0, 255],
-  ["talentHp", "Talent HP", 0, 255],
-  ["talentMelee", "Talent melee", 0, 255],
-  ["talentShot", "Talent shot", 0, 255],
-  ["talentDefense", "Talent defense", 0, 255],
-] as const;
+
 export function PalDetail({
   detail,
   loading,
@@ -36,27 +46,53 @@ export function PalDetail({
   loading: boolean;
   error?: string;
   revision: number;
-  onViewRaw: (d: PalDetailModel) => void;
+  onViewRaw: (detail: PalDetailModel) => void;
   onSave: (request: UpdatePalRequest) => Promise<PalDetailModel>;
 }) {
-  const [editing, setEditing] = useState(false),
-    [form, setForm] = useState<PalDetailModel | null>(detail),
-    [saving, setSaving] = useState(false),
-    [formError, setFormError] = useState<string>(),
-    [fields, setFields] = useState<Record<string, string>>({});
-  if (loading)
-    return <p className="p-4 text-sm text-neutral-400">Loading Pal details…</p>;
-  if (error) return <p className="p-4 text-sm text-red-400">❌ {error}</p>;
-  if (!detail || !form)
+  const [editing, setEditing] = useState(false);
+  const [form, setForm] = useState<PalDetailModel | null>(detail);
+  const [saving, setSaving] = useState(false);
+  const [formError, setFormError] = useState<string>();
+  const [fields, setFields] = useState<Record<string, string>>({});
+
+  if (loading) {
     return (
-      <p className="p-4 text-sm text-neutral-500">
-        Select a Pal to inspect its saved attributes.
+      <p className="p-6 text-sm text-muted" role="status">
+        Loading Pal details…
       </p>
     );
-  const c = detail.editCapabilities;
+  }
+
+  if (error) {
+    return (
+      <p className="p-6 text-sm text-danger" role="alert">
+        {error}
+      </p>
+    );
+  }
+
+  if (!detail || !form) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-3 p-8 text-center">
+        <span className="rounded-xl bg-accent-soft p-3 text-accent">
+          <PalIcon className="size-6" />
+        </span>
+        <p className="text-sm text-muted">
+          Select a character to inspect and edit its saved attributes.
+        </p>
+      </div>
+    );
+  }
+
+  const capabilities = detail.editCapabilities;
+
+  function set(key: keyof PalDetailModel, value: string | number) {
+    setForm((current) => (current ? { ...current, [key]: value } : current));
+  }
+
   async function submit() {
-    const passive = validateSkillIds(form!.passiveSkills),
-      active = validateSkillIds(form!.activeSkills);
+    const passive = validateSkillIds(form!.passiveSkills);
+    const active = validateSkillIds(form!.activeSkills);
     if (passive || active) {
       setFields({
         ...(passive ? { passiveSkills: passive } : {}),
@@ -64,6 +100,7 @@ export function PalDetail({
       });
       return;
     }
+
     setSaving(true);
     setFormError(undefined);
     setFields({});
@@ -72,115 +109,142 @@ export function PalDetail({
       setForm(updated);
       setEditing(false);
     } catch (cause) {
-      const e = cause as Error & { fields?: Record<string, string> };
-      setFormError(e.message);
-      setFields(e.fields ?? {});
+      const failure = cause as Error & { fields?: Record<string, string> };
+      setFormError(failure.message);
+      setFields(failure.fields ?? {});
     } finally {
       setSaving(false);
     }
   }
-  const input = (
-    key: keyof PalDetailModel,
-    value: string | number | undefined,
-  ) =>
-    setForm((cur) =>
-      cur ? { ...cur, [key]: typeof value === "number" ? value : value } : cur,
-    );
+
+  const unusual = NUMBERS.slice(1).some(
+    ([key]) => Number(form[key] ?? 0) > UNUSUAL_THRESHOLD,
+  );
+
   return (
-    <section className="space-y-4 p-4" aria-label="Selected Pal details">
-      <div className="flex justify-between gap-2">
-        <div>
-          <h3 className="text-lg font-medium">
-            {form.nickname || form.characterId || "Unknown character"}
+    <section
+      className="scroll-slim max-h-[42rem] space-y-4 overflow-y-auto p-4"
+      aria-label="Selected character details"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h3 className="truncate text-lg font-semibold">
+            {form.nickname || humanizeId(form.characterId)}
           </h3>
-          <p className="text-sm text-neutral-500">{form.characterId || "—"}</p>
+          <p className="truncate font-mono text-xs text-subtle">
+            {form.characterId ?? "—"}
+          </p>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {detail.isPlayer && <span className="badge">Player</span>}
+            {detail.gender && <span className="badge">{detail.gender}</span>}
+            {detail.instanceId && (
+              <span className="badge" title={detail.instanceId}>
+                <span className="font-mono">{shortId(detail.instanceId)}</span>
+              </span>
+            )}
+          </div>
         </div>
-        <div className="flex gap-2">
+
+        <div className="flex shrink-0 gap-2">
           {!editing && (
             <button
-              className="rounded border border-sky-700 px-2 py-1 text-xs"
+              type="button"
+              className="btn btn-secondary btn-sm"
               onClick={() => setEditing(true)}
             >
               Edit
             </button>
           )}
           <button
-            className="rounded border border-neutral-700 px-2 py-1 text-xs"
+            type="button"
+            className="btn btn-ghost btn-sm"
             onClick={() => onViewRaw(detail)}
+            title="Jump to this entry in the raw property tree"
           >
-            View raw
+            <TreeIcon className="size-4" />
+            Raw
           </button>
         </div>
       </div>
+
       {editing ? (
         <form
-          className="space-y-3"
-          onSubmit={(e) => {
-            e.preventDefault();
+          className="space-y-4"
+          onSubmit={(event) => {
+            event.preventDefault();
             void submit();
           }}
         >
-          {c.nickname && (
-            <label className="block text-xs">
-              Nickname
+          {capabilities.nickname && (
+            <label className="block">
+              <span className="field-label">Nickname</span>
               <input
                 value={form.nickname ?? ""}
                 maxLength={64}
-                onChange={(e) => input("nickname", e.target.value)}
-                className="mt-1 w-full rounded border border-neutral-700 bg-neutral-950 p-2"
+                onChange={(event) => set("nickname", event.target.value)}
+                className="field"
               />
             </label>
           )}
-          {c.rank && (
-            <label className="block text-xs">
-              Star progression
-              <select
-                value={form.rank}
-                onChange={(e) => input("rank", Number(e.target.value))}
-                className="mt-1 w-full rounded border border-neutral-700 bg-neutral-950 p-2"
-              >
-                {STAR_OPTIONS.map((o) => (
-                  <option key={o.value} value={o.value}>
-                    {o.label} (save rank {o.value})
-                  </option>
-                ))}
-              </select>
-            </label>
-          )}
-          {c.gender && (
-            <label className="block text-xs">
-              Gender
-              <select
-                value={form.gender}
-                onChange={(e) => input("gender", e.target.value)}
-                className="mt-1 w-full rounded border border-neutral-700 bg-neutral-950 p-2"
-              >
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </label>
-          )}
-          <div className="grid grid-cols-2 gap-2">
-            {numbers.map(
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {capabilities.rank && (
+              <label className="block">
+                <span className="field-label">Star progression</span>
+                <select
+                  value={form.rank}
+                  onChange={(event) => set("rank", Number(event.target.value))}
+                  className="field"
+                >
+                  {STAR_OPTIONS.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
+
+            {capabilities.gender && (
+              <label className="block">
+                <span className="field-label">Gender</span>
+                <select
+                  value={form.gender}
+                  onChange={(event) => set("gender", event.target.value)}
+                  className="field"
+                >
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </label>
+            )}
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            {NUMBERS.map(
               ([key, label, min, max]) =>
-                c[key] && (
-                  <label key={key} className="text-xs">
-                    {label}
+                capabilities[key] && (
+                  <label key={key} className="block">
+                    <span className="field-label">{label}</span>
                     <input
                       type="number"
                       min={min}
                       max={max}
                       value={form[key] ?? ""}
-                      onChange={(e) => input(key, Number(e.target.value))}
-                      className="mt-1 w-full rounded border border-neutral-700 bg-neutral-950 p-2"
+                      onChange={(event) => set(key, Number(event.target.value))}
+                      className="field tabular-nums"
+                      aria-invalid={Boolean(fields[key])}
                     />
                     {fields[key] && (
-                      <span className="text-red-400">{fields[key]}</span>
+                      <span className="mt-1 block text-xs text-danger">
+                        {fields[key]}
+                      </span>
                     )}
                   </label>
                 ),
             )}
           </div>
+
           {(
             [
               ["passiveSkills", "Passive skills"],
@@ -188,74 +252,92 @@ export function PalDetail({
             ] as const
           ).map(
             ([key, label]) =>
-              c[key] && (
+              capabilities[key] && (
                 <div key={key}>
-                  <p className="text-xs font-medium">
-                    {label}{" "}
-                    <span className="text-neutral-500">(internal IDs)</span>
+                  <p className="field-label">
+                    {label} <span className="text-subtle">(internal IDs)</span>
                   </p>
-                  {form[key].map((skill, i) => (
-                    <div key={i} className="mt-1 flex gap-1">
-                      <input
-                        value={skill}
-                        onChange={(e) =>
-                          setForm((cur) => {
-                            if (!cur) return cur;
-                            const v = [...cur[key]];
-                            v[i] = e.target.value;
-                            return { ...cur, [key]: v };
-                          })
-                        }
-                        className="min-w-0 flex-1 rounded border border-neutral-700 bg-neutral-950 p-2 text-xs"
-                      />
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setForm((cur) =>
-                            cur
-                              ? {
-                                  ...cur,
-                                  [key]: cur[key].filter((_, n) => n !== i),
-                                }
-                              : cur,
-                          )
-                        }
-                        className="px-2"
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  ))}
+                  <div className="space-y-1.5">
+                    {form[key].map((skill, position) => (
+                      <div key={position} className="flex gap-1.5">
+                        <input
+                          value={skill}
+                          aria-label={`${label} ${position + 1}`}
+                          onChange={(event) =>
+                            setForm((current) => {
+                              if (!current) return current;
+                              const next = [...current[key]];
+                              next[position] = event.target.value;
+                              return { ...current, [key]: next };
+                            })
+                          }
+                          className="field field-sm min-w-0 flex-1 font-mono"
+                        />
+                        <button
+                          type="button"
+                          className="btn btn-ghost btn-sm"
+                          onClick={() =>
+                            setForm((current) =>
+                              current
+                                ? {
+                                    ...current,
+                                    [key]: current[key].filter(
+                                      (_, index) => index !== position,
+                                    ),
+                                  }
+                                : current,
+                            )
+                          }
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    ))}
+                  </div>
                   <button
                     type="button"
+                    className="mt-1.5 text-xs text-accent hover:underline"
                     onClick={() =>
-                      setForm((cur) =>
-                        cur ? { ...cur, [key]: [...cur[key], ""] } : cur,
+                      setForm((current) =>
+                        current
+                          ? { ...current, [key]: [...current[key], ""] }
+                          : current,
                       )
                     }
-                    className="mt-1 text-xs text-sky-400"
                   >
-                    Add {key === "passiveSkills" ? "passive" : "active"} skill
+                    + Add {key === "passiveSkills" ? "passive" : "active"} skill
                   </button>
                   {fields[key] && (
-                    <p className="text-xs text-red-400">{fields[key]}</p>
+                    <p className="mt-1 text-xs text-danger">{fields[key]}</p>
                   )}
                 </div>
               ),
           )}
-          {numbers.slice(1).some(([key]) => Number(form[key] ?? 0) > 100) && (
-            <p className="rounded border border-amber-800 p-2 text-xs text-amber-300">
-              Advanced value. Extremely high stats may destabilize gameplay or
-              cause unexpected behavior.
+
+          {unusual && (
+            <div className="alert alert-warning text-xs">
+              <AlertIcon className="mt-0.5 size-4 shrink-0 text-warning" />
+              <p>
+                Values above {UNUSUAL_THRESHOLD} are far outside normal
+                gameplay. They will be written faithfully, but may destabilise
+                the game.
+              </p>
+            </div>
+          )}
+
+          {formError && (
+            <p className="text-sm text-danger" role="alert">
+              {formError}
             </p>
           )}
-          {formError && <p className="text-xs text-red-400">{formError}</p>}
+
           <div className="flex gap-2">
             <button
+              type="submit"
               disabled={saving}
-              className="rounded bg-sky-700 px-3 py-1.5 text-sm"
+              className="btn btn-primary btn-sm"
             >
-              {saving ? "Saving…" : "Save"}
+              {saving ? "Saving…" : "Save changes"}
             </button>
             <button
               type="button"
@@ -264,8 +346,9 @@ export function PalDetail({
                 setForm(detail);
                 setEditing(false);
                 setFields({});
+                setFormError(undefined);
               }}
-              className="rounded border border-neutral-700 px-3 py-1.5 text-sm"
+              className="btn btn-secondary btn-sm"
             >
               Cancel
             </button>
@@ -273,36 +356,51 @@ export function PalDetail({
         </form>
       ) : (
         <>
-          <dl className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <dl className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             <Stat label="Level" value={detail.level} />
             <Stat
               label="Star rank"
               value={STAR_OPTIONS.find((o) => o.value === detail.rank)?.label}
             />
-            {numbers.slice(1).map(([key, label]) => (
+            {NUMBERS.slice(1).map(([key, label]) => (
               <Stat key={key} label={label} value={detail[key]} />
             ))}
           </dl>
+
           <div className="grid gap-3 sm:grid-cols-2">
             {(
               [
                 ["Passive skills", detail.passiveSkills],
                 ["Active skills", detail.activeSkills],
               ] as const
-            ).map(([label, v]) => (
+            ).map(([label, values]) => (
               <div key={label}>
-                <h4 className="text-xs text-neutral-500">{label}</h4>
-                <p className="wrap-break-word text-xs">
-                  {v.join(", ") || "None saved"}
-                </p>
+                <h4 className="text-xs text-subtle">{label}</h4>
+                {values.length ? (
+                  <ul className="mt-1 flex flex-wrap gap-1">
+                    {values.map((value, index) => (
+                      <li key={`${value}-${index}`} className="badge">
+                        <span className="font-mono">{value}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-1 text-sm text-subtle">None saved</p>
+                )}
               </div>
             ))}
           </div>
         </>
       )}
+
       {detail.missingFields.length > 0 && (
-        <div className="rounded border border-amber-900 p-2 text-xs text-amber-200">
-          Missing or unsupported: {detail.missingFields.join(", ")}
+        <div className="alert alert-warning text-xs">
+          <AlertIcon className="mt-0.5 size-4 shrink-0 text-warning" />
+          <p>
+            <strong className="font-medium">Not present in this entry:</strong>{" "}
+            {detail.missingFields.join(", ")}. Those fields are hidden rather
+            than created, so the save keeps its original shape.
+          </p>
         </div>
       )}
     </section>
