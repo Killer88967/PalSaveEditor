@@ -8,10 +8,10 @@
 use std::collections::HashMap;
 
 use serde::Serialize;
-use uesave::{Property, Save};
+use uesave::{ Property, Save };
 
 use crate::inventory::PlayerSaveFile;
-use crate::pals::{PalIndexCache, PalParseStatus, as_struct_properties, property_by_name};
+use crate::pals::{ PalIndexCache, PalParseStatus, as_struct_properties, property_by_name };
 
 /// Species and player rows shown in the dashboard's leaderboards.
 const HIGHLIGHT_LIMIT: usize = 8;
@@ -149,13 +149,13 @@ fn engine_version(save: &Save) -> String {
 }
 
 fn world_collections(save: &Save) -> Vec<CollectionSummary> {
-    let Some(world) = property_by_name(&save.root.properties, WORLD).and_then(as_struct_properties)
-    else {
+    let Some(world) = property_by_name(&save.root.properties, WORLD).and_then(
+        as_struct_properties
+    ) else {
         return Vec::new();
     };
 
-    let mut collections: Vec<_> = world
-        .0
+    let mut collections: Vec<_> = world.0
         .iter()
         .map(|(key, property)| collection_summary(key.1.clone(), property))
         .collect();
@@ -180,11 +180,8 @@ fn collection_summary(name: String, property: &Property) -> CollectionSummary {
         }
         // Struct values that are not plain property bags (vectors, GUIDs, …)
         // have no child count to report.
-        Property::Struct(_) => (
-            "struct",
-            as_struct_properties(property).map(|properties| properties.0.len()),
-            None,
-        ),
+        Property::Struct(_) =>
+            ("struct", as_struct_properties(property).map(|properties| properties.0.len()), None),
         Property::Raw(bytes) => ("raw", None, Some(bytes.len())),
         _ => ("scalar", None, None),
     };
@@ -226,8 +223,9 @@ fn character_stats(index: &PalIndexCache) -> CharacterStats {
             if let Some(level) = item.level {
                 level_total += i64::from(level);
                 level_count += 1;
-                stats.max_pal_level =
-                    Some(stats.max_pal_level.map_or(level, |m: i32| m.max(level)));
+                stats.max_pal_level = Some(
+                    stats.max_pal_level.map_or(level, |m: i32| m.max(level))
+                );
             }
         }
 
@@ -274,17 +272,14 @@ fn top_species(index: &PalIndexCache) -> Vec<SpeciesCount> {
         .collect();
 
     ranked.sort_by(|a, b| {
-        b.count
-            .cmp(&a.count)
-            .then_with(|| a.character_id.cmp(&b.character_id))
+        b.count.cmp(&a.count).then_with(|| a.character_id.cmp(&b.character_id))
     });
     ranked.truncate(SPECIES_LIMIT);
     ranked
 }
 
 fn level_histogram(index: &PalIndexCache) -> Vec<LevelBucket> {
-    let mut buckets: Vec<LevelBucket> = LEVEL_BUCKETS
-        .iter()
+    let mut buckets: Vec<LevelBucket> = LEVEL_BUCKETS.iter()
         .map(|(label, _)| LevelBucket { label, count: 0 })
         .collect();
 
@@ -292,8 +287,7 @@ fn level_histogram(index: &PalIndexCache) -> Vec<LevelBucket> {
         let Some(level) = item.level else {
             continue;
         };
-        let slot = LEVEL_BUCKETS
-            .iter()
+        let slot = LEVEL_BUCKETS.iter()
             .position(|(_, max)| level <= *max)
             .unwrap_or(LEVEL_BUCKETS.len() - 1);
         buckets[slot].count += 1;
@@ -303,8 +297,7 @@ fn level_histogram(index: &PalIndexCache) -> Vec<LevelBucket> {
 }
 
 fn strongest(index: &PalIndexCache) -> Vec<PalHighlight> {
-    let mut ranked: Vec<_> = index
-        .items
+    let mut ranked: Vec<_> = index.items
         .iter()
         .filter(|item| !item.is_player && item.level.is_some())
         .collect();
@@ -332,7 +325,7 @@ fn strongest(index: &PalIndexCache) -> Vec<PalHighlight> {
 fn players(
     save: &Save,
     index: &PalIndexCache,
-    player_saves: &[PlayerSaveFile],
+    player_saves: &[PlayerSaveFile]
 ) -> Vec<PlayerOverview> {
     let mut owned: HashMap<String, usize> = HashMap::new();
 
@@ -347,15 +340,13 @@ fn players(
         .map(|file| file.file_name.to_ascii_lowercase())
         .collect();
 
-    let mut players: Vec<_> = index
-        .items
+    let mut players: Vec<_> = index.items
         .iter()
         .filter(|item| item.is_player)
         .map(|item| {
             // A player row carries its identity in the map key's `PlayerUId`;
             // `OwnerPlayerUId` is only populated on the Pals it captured.
-            let uid = item
-                .player_uid
+            let uid = item.player_uid
                 .clone()
                 .or_else(|| item.owner_player_uid.clone())
                 .unwrap_or_default();
@@ -363,25 +354,20 @@ fn players(
             let compact = key.replace('-', "");
 
             PlayerOverview {
-                nickname: item
-                    .nickname
+                nickname: item.nickname
                     .clone()
                     .or_else(|| crate::pals::player_nickname(save, &uid)),
                 level: item.level,
                 pal_count: owned.get(&key).copied().unwrap_or(0),
-                has_save_file: !compact.is_empty()
-                    && uploaded
-                        .iter()
-                        .any(|name| name.replace('-', "").contains(&compact)),
+                has_save_file: !compact.is_empty() &&
+                uploaded.iter().any(|name| name.replace('-', "").contains(&compact)),
                 player_uid: uid,
             }
         })
         .collect();
 
     players.sort_by(|a, b| {
-        b.pal_count
-            .cmp(&a.pal_count)
-            .then_with(|| a.player_uid.cmp(&b.player_uid))
+        b.pal_count.cmp(&a.pal_count).then_with(|| a.player_uid.cmp(&b.player_uid))
     });
 
     players
@@ -392,7 +378,7 @@ mod tests {
     use super::*;
     use crate::pals::PalSummary;
     use serde_json::json;
-    use uesave::{Header, Properties, PropertySchemas, Root, StructValue};
+    use uesave::{ Header, Properties, PropertySchemas, Root, StructValue };
 
     const OWNER: &str = "aaaaaaaa-0000-0000-0000-000000000001";
 
@@ -443,19 +429,22 @@ mod tests {
                 pal(3, "Frostallion", Some(50), Some(3)),
                 // No level at all: counted as a Pal, excluded from averages.
                 pal(4, "Jetragon", None, None),
-                player(5, "Tester"),
+                player(5, "Tester")
             ],
         }
     }
 
     fn save(world: Option<Properties>) -> Save {
-        let header: Header = serde_json::from_value(json!({
+        let header: Header = serde_json
+            ::from_value(
+                json!({
             "magic": u32::from_le_bytes(*b"GVAS"), "save_game_version": 3,
             "package_version": { "ue4": 522, "ue5": 1009 },
             "engine_version_major": 5, "engine_version_minor": 1, "engine_version_patch": 1,
             "engine_version_build": 42, "engine_version": "test", "custom_version": [0, []]
-        }))
-        .expect("test header");
+        })
+            )
+            .expect("test header");
 
         let mut root = Properties::default();
         if let Some(world) = world {
@@ -494,7 +483,7 @@ mod tests {
             &(PalIndexCache {
                 revision: 0,
                 items: Vec::new(),
-            }),
+            })
         );
 
         assert_eq!(stats.total, 0);
@@ -518,10 +507,19 @@ mod tests {
         let buckets = level_histogram(&index());
 
         assert_eq!(buckets.len(), LEVEL_BUCKETS.len());
-        let counts: Vec<_> = buckets.iter().map(|bucket| bucket.count).collect();
+        let counts: Vec<_> = buckets
+            .iter()
+            .map(|bucket| bucket.count)
+            .collect();
         // 5 → "1–10", 15 → "11–20", 50 → "41–50", 55 → "51+".
         assert_eq!(counts, vec![1, 1, 0, 0, 1, 1]);
-        assert_eq!(buckets.iter().map(|bucket| bucket.count).sum::<usize>(), 4);
+        assert_eq!(
+            buckets
+                .iter()
+                .map(|bucket| bucket.count)
+                .sum::<usize>(),
+            4
+        );
     }
 
     #[test]
@@ -536,10 +534,12 @@ mod tests {
 
     #[test]
     fn players_are_matched_to_their_uploaded_save_file_by_uid() {
-        let uploaded = [PlayerSaveFile {
-            file_name: "AAAAAAAA0000000000000000".to_string() + "00000001.sav",
-            save: save(None),
-        }];
+        let uploaded = [
+            PlayerSaveFile {
+                file_name: "AAAAAAAA0000000000000000".to_string() + "00000001.sav",
+                save: save(None),
+            },
+        ];
 
         let rows = players(&save(None), &index(), &uploaded);
 
@@ -566,16 +566,18 @@ mod tests {
         world.insert("CharacterSaveParameterMap", Property::Map(Vec::new()));
         world.insert(
             "GroupSaveDataMap",
-            Property::Map(vec![
-                uesave::MapEntry {
-                    key: Property::Str("a".into()),
-                    value: Property::Int(1),
-                },
-                uesave::MapEntry {
-                    key: Property::Str("b".into()),
-                    value: Property::Int(2),
-                },
-            ]),
+            Property::Map(
+                vec![
+                    uesave::MapEntry {
+                        key: Property::Str("a".into()),
+                        value: Property::Int(1),
+                    },
+                    uesave::MapEntry {
+                        key: Property::Str("b".into()),
+                        value: Property::Int(2),
+                    }
+                ]
+            )
         );
         world.insert("MapObjectSaveData", Property::Raw(vec![0; 64]));
         world.insert("Version", Property::Int(3));

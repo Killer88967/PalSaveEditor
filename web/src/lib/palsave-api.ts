@@ -592,14 +592,21 @@ export interface PlayerInventoryOwner {
   personalContainers: ContainerReference[];
 }
 export interface InventorySlot {
+  /** Position in the stored slot array — how a slot is addressed. */
   index: number;
+  /** The in-game slot the entry occupies. Saves store occupied slots only. */
+  slotIndex?: number;
   itemId?: string;
   quantity?: number;
   editable: boolean;
+  /** Carries durability/ammo data, so its item id cannot be swapped. */
+  dynamic: boolean;
 }
 export interface InventoryContainer {
   kind: string;
   containerId: string;
+  /** Slots the game gives this container; `slots.length` is what is used. */
+  capacity: number;
   slots: InventorySlot[];
 }
 export interface UpdateInventorySlotRequest {
@@ -611,6 +618,27 @@ export interface UpdateInventorySlotResponse {
   slot: InventorySlot;
   dirty: boolean;
   revision: number;
+}
+export interface AddInventoryItemRequest {
+  expectedRevision: number;
+  itemId: string;
+  quantity: number;
+  /** Defaults to the lowest free slot in the container. */
+  slotIndex?: number;
+}
+export interface AddInventoryItemResponse {
+  slot: InventorySlot;
+  /** Item whose durability record was copied for the new stack, if any. */
+  dynamicSource: string | null;
+  warning?: string;
+  dirty: boolean;
+  revision: number;
+}
+export interface KnownItem {
+  itemId: string;
+  stacks: number;
+  totalQuantity: number;
+  hasDynamicTemplate: boolean;
 }
 export async function getInventoryPlayers(
   sessionId: string,
@@ -644,7 +672,7 @@ export async function updateInventorySlot(
   signal?: AbortSignal,
 ): Promise<UpdateInventorySlotResponse> {
   const r = await fetch(
-    `/api/rust/sessions/${encodeURIComponent(sessionId)}/players/${encodeURIComponent(playerUid)}/inventory/${encodeURIComponent(containerId)}/slots/${index}`,
+    `${slotsUrl(sessionId, playerUid, containerId)}/${index}`,
     {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -654,4 +682,51 @@ export async function updateInventorySlot(
   );
   if (!r.ok) throw await apiError(r);
   return r.json();
+}
+export async function addInventoryItem(
+  sessionId: string,
+  playerUid: string,
+  containerId: string,
+  request: AddInventoryItemRequest,
+  signal?: AbortSignal,
+): Promise<AddInventoryItemResponse> {
+  const r = await fetch(slotsUrl(sessionId, playerUid, containerId), {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(request),
+    signal,
+  });
+  if (!r.ok) throw await apiError(r);
+  return r.json();
+}
+/** Deletes the slot entry outright, which is how a save records an empty slot. */
+export async function removeInventorySlot(
+  sessionId: string,
+  playerUid: string,
+  containerId: string,
+  index: number,
+  expectedRevision: number,
+  signal?: AbortSignal,
+): Promise<UpdateInventorySlotResponse> {
+  const r = await fetch(
+    `${slotsUrl(sessionId, playerUid, containerId)}/${index}?expectedRevision=${expectedRevision}`,
+    { method: "DELETE", signal },
+  );
+  if (!r.ok) throw await apiError(r);
+  return r.json();
+}
+/** Item ids the uploaded world actually contains, commonest first. */
+export async function getKnownItems(
+  sessionId: string,
+  signal?: AbortSignal,
+): Promise<KnownItem[]> {
+  const r = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/items`,
+    { signal },
+  );
+  if (!r.ok) throw await apiError(r);
+  return r.json();
+}
+function slotsUrl(sessionId: string, playerUid: string, containerId: string) {
+  return `/api/rust/sessions/${encodeURIComponent(sessionId)}/players/${encodeURIComponent(playerUid)}/inventory/${encodeURIComponent(containerId)}/slots`;
 }

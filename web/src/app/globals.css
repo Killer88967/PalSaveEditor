@@ -409,6 +409,11 @@
     background-color: color-mix(in oklab, var(--success) 10%, transparent);
   }
 
+  .alert-accent {
+    border-color: color-mix(in oklab, var(--accent) 40%, transparent);
+    background-color: var(--accent-soft);
+  }
+
   /* Drop zone -------------------------------------------------------------- */
 
   .dropzone {

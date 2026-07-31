@@ -58,7 +58,7 @@ const CAPABILITIES = [
   {
     icon: BagIcon,
     title: "Edit inventories",
-    body: "Walk each player's personal containers — pack, key items, weapon loadout, armour and food slots — and rewrite item IDs and stack counts.",
+    body: "Walk each player's personal containers — pack, key items, weapon loadout, armour and food slots — add or remove items in any free slot, and rewrite IDs and stack counts.",
   },
   {
     icon: TreeIcon,
@@ -126,7 +126,7 @@ function HeaderDecode() {
       </div>
 
       <div className="overflow-x-auto p-4">
-        <table className="w-full min-w-[22rem] border-collapse font-mono text-xs">
+        <table className="w-full min-w-88 border-collapse font-mono text-xs">
           <caption className="sr-only">
             The twelve header bytes of a Palworld save container
           </caption>
@@ -185,11 +185,11 @@ export default function Home() {
       {/* Hero ------------------------------------------------------------- */}
       <section className="relative overflow-hidden border-b border-line">
         <div
-          className="bg-grid pointer-events-none absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_at_50%_0%,black,transparent_72%)]"
+          className="bg-grid pointer-events-none absolute inset-0 opacity-60 mask-[radial-gradient(ellipse_at_50%_0%,black,transparent_72%)]"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute left-1/2 top-[-14rem] size-[34rem] -translate-x-1/2 rounded-full bg-accent/12 blur-3xl"
+          className="pointer-events-none absolute left-1/2 -top-56 size-136 -translate-x-1/2 rounded-full bg-accent/12 blur-3xl"
           aria-hidden="true"
         />
 
@@ -361,7 +361,7 @@ export default function Home() {
       <section className="mx-auto w-full max-w-7xl px-4 pb-20 sm:px-6">
         <div className="card relative overflow-hidden p-8 text-center sm:p-12">
           <div
-            className="bg-grid pointer-events-none absolute inset-0 opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"
+            className="bg-grid pointer-events-none absolute inset-0 opacity-40 mask-[radial-gradient(ellipse_at_center,black,transparent_70%)]"
             aria-hidden="true"
           />
           <div className="relative space-y-5">

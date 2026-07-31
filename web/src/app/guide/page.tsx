@@ -60,11 +60,14 @@ const SUPPORTED = [
   "Souls (Rank_HP, Attack, Defence, CraftSpeed) and IVs (Talent_*)",
   "Nicknames and passive / active skill ID lists",
   "Player inventory slots: item ID and stack quantity",
+  "Adding items to any free slot, including key items, and removing them",
+  "Duplicating gear the world already holds, durability and passives included",
   "Any individual scalar in the property tree the parser understands",
 ] as const;
 
 const UNSUPPORTED = [
   "Adding or deleting characters, bases or containers",
+  "Creating gear from nothing: equipment needs a durability record to copy",
   "Creating fields that are not already present in an entry",
   "Guild membership, technology points and base layouts",
   "Anything stored inside a collection the parser left as raw bytes",
@@ -177,7 +180,7 @@ export default function GuidePage() {
       {/* Files ----------------------------------------------------------- */}
       <Card title="What is in a world folder">
         <div className="scroll-slim overflow-x-auto">
-          <table className="w-full min-w-[30rem] text-left text-sm">
+          <table className="w-full min-w-120 text-left text-sm">
             <thead className="text-xs text-subtle">
               <tr>
                 <th scope="col" className="pb-2 pr-4 font-medium">
@@ -250,6 +253,16 @@ export default function GuidePage() {
             every inventory, and <code>GroupSaveDataMap</code> holds guilds.
             Several of those store their contents as nested byte arrays, which
             is why some entries show up as raw rather than as editable fields.
+          </p>
+          <p>
+            A container only stores the slots it is actually using — its{" "}
+            <code>SlotNum</code> is the capacity, and each stored slot carries
+            its own in-game slot number. That is why emptying a slot deletes its
+            entry rather than blanking it, and why adding an item appends a new
+            one. Equipment is a special case: durability, ammo and passives live
+            in a separate <code>DynamicItemSaveData</code> record, so adding a
+            weapon or armour piece copies the record of one the world already
+            holds.
           </p>
           <p>
             Parsing is done by{" "}

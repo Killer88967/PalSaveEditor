@@ -25,8 +25,10 @@ Inside the editor:
   coverage and the decoded container header.
 - **Pals** — search by species, nickname or instance ID, filter by level, and
   edit level, star rank, gender, souls, IVs, nickname and skill lists.
-- **Inventories** — walk each player's personal containers and rewrite item IDs
-  and stack quantities.
+- **Inventories** — walk each player's personal containers (pack, key items,
+  weapon loadout, armour, food), add or remove items in any free slot, and
+  rewrite item IDs and stack quantities. Suggestions are drawn from the item
+  IDs the uploaded world actually contains.
 - **Raw tree** — page through every parsed property with types, child counts and
   byte lengths, and edit any scalar the parser understands.
 
@@ -144,26 +146,29 @@ The API supports these optional environment variables:
 
 The browser reaches these through the Next.js rewrite at `/api/rust/*`.
 
-| Method  | Route                                                                | Purpose                                     |
-| ------- | -------------------------------------------------------------------- | ------------------------------------------- |
-| `GET`   | `/health`                                                            | Liveness probe                              |
-| `POST`  | `/sessions`                                                          | Parse an upload into a session              |
-| `GET`   | `/sessions/{id}`                                                     | Session metadata and decoded container      |
-| `GET`   | `/sessions/{id}/overview`                                            | Dashboard statistics                        |
-| `GET`   | `/sessions/{id}/root`                                                | First page of root properties               |
-| `POST`  | `/sessions/{id}/inspect`                                             | Page the children of any property path      |
-| `PATCH` | `/sessions/{id}/scalar`                                              | Write one scalar                            |
-| `GET`   | `/sessions/{id}/pals`                                                | Filtered, paged character index             |
-| `GET`   | `/sessions/{id}/pals/{palId}`                                        | Full Pal detail and edit capabilities       |
-| `PATCH` | `/sessions/{id}/pals/{palId}`                                        | Update supported Pal fields                 |
-| `GET`   | `/sessions/{id}/players`                                             | Players and their container references       |
-| `GET`   | `/sessions/{id}/players/{uid}/inventory`                             | Slots for a player's personal containers    |
-| `PATCH` | `/sessions/{id}/players/{uid}/inventory/{containerId}/slots/{index}` | Write one inventory slot                    |
-| `GET`   | `/sessions/{id}/export?validate=true`                                | Recompiled `.sav`, re-parsed before sending |
-| `GET`   | `/sessions/{id}/gvas`                                                | Uncompressed GVAS for the current tree      |
-| `POST`  | `/convert/decompile`                                                 | `.sav` → raw GVAS, stateless                |
-| `POST`  | `/convert/recompile`                                                 | Raw GVAS → `.sav`, stateless                |
-| `DELETE`| `/sessions/{id}`                                                     | Drop the session from memory                |
+| Method   | Route                                                                | Purpose                                     |
+| -------- | -------------------------------------------------------------------- | ------------------------------------------- |
+| `GET`    | `/health`                                                            | Liveness probe                              |
+| `POST`   | `/sessions`                                                          | Parse an upload into a session              |
+| `GET`    | `/sessions/{id}`                                                     | Session metadata and decoded container      |
+| `GET`    | `/sessions/{id}/overview`                                            | Dashboard statistics                        |
+| `GET`    | `/sessions/{id}/root`                                                | First page of root properties               |
+| `POST`   | `/sessions/{id}/inspect`                                             | Page the children of any property path      |
+| `PATCH`  | `/sessions/{id}/scalar`                                              | Write one scalar                            |
+| `GET`    | `/sessions/{id}/pals`                                                | Filtered, paged character index             |
+| `GET`    | `/sessions/{id}/pals/{palId}`                                        | Full Pal detail and edit capabilities       |
+| `PATCH`  | `/sessions/{id}/pals/{palId}`                                        | Update supported Pal fields                 |
+| `GET`    | `/sessions/{id}/players`                                             | Players and their container references      |
+| `GET`    | `/sessions/{id}/items`                                               | Item IDs present in the world, with counts  |
+| `GET`    | `/sessions/{id}/players/{uid}/inventory`                             | Slots for a player's personal containers    |
+| `POST`   | `/sessions/{id}/players/{uid}/inventory/{containerId}/slots`         | Add an item to a free slot                  |
+| `PATCH`  | `/sessions/{id}/players/{uid}/inventory/{containerId}/slots/{index}` | Write one inventory slot                    |
+| `DELETE` | `/sessions/{id}/players/{uid}/inventory/{containerId}/slots/{index}` | Empty a slot by dropping its entry          |
+| `GET`    | `/sessions/{id}/export?validate=true`                                | Recompiled `.sav`, re-parsed before sending |
+| `GET`    | `/sessions/{id}/gvas`                                                | Uncompressed GVAS for the current tree      |
+| `POST`   | `/convert/decompile`                                                 | `.sav` → raw GVAS, stateless                |
+| `POST`   | `/convert/recompile`                                                 | Raw GVAS → `.sav`, stateless                |
+| `DELETE` | `/sessions/{id}`                                                     | Drop the session from memory                |
 
 Mutating routes take an `expectedRevision` and answer `409` with the current
 revision when a write races, so a stale view cannot silently overwrite an edit.
