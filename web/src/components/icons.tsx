@@ -143,6 +143,15 @@ export function ShieldIcon(props: IconProps) {
   );
 }
 
+export function PlayerIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M4.5 20a7.5 7.5 0 0 1 15 0" />
+    </Icon>
+  );
+}
+
 export function BoltIcon(props: IconProps) {
   return (
     <Icon {...props}>

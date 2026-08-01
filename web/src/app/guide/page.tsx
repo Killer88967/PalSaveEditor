@@ -57,6 +57,7 @@ const WORLD_FILES = [
 
 const SUPPORTED = [
   "Pal and player level, star rank and gender",
+  "Player experience and status points, capped at 255 like Pal souls",
   "Souls (Rank_HP, Attack, Defence, CraftSpeed) and IVs (Talent_*)",
   "Nicknames and passive / active skill ID lists",
   "Player inventory slots: item ID and stack quantity",
@@ -69,6 +70,7 @@ const UNSUPPORTED = [
   "Adding or deleting characters, bases or containers",
   "Creating gear from nothing: equipment needs a durability record to copy",
   "Creating fields that are not already present in an entry",
+  "A player's HP, stamina or weight directly: the game derives them",
   "Guild membership, technology points and base layouts",
   "Anything stored inside a collection the parser left as raw bytes",
 ] as const;
@@ -263,6 +265,14 @@ export default function GuidePage() {
             in a separate <code>DynamicItemSaveData</code> record, so adding a
             weapon or armour piece copies the record of one the world already
             holds.
+          </p>
+          <p>
+            Players sit in that same character map, next to the Pals, but hold a
+            different set of fields: a <code>Level</code> byte, an{" "}
+            <code>Exp</code> total and two arrays of status points whose names
+            the game stores in Japanese whatever your language is. Nothing
+            derived from them — maximum HP, stamina, carry weight — is written
+            down, so the game recalculates those when it loads the save.
           </p>
           <p>
             Parsing is done by{" "}

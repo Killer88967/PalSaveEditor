@@ -730,3 +730,83 @@ export async function getKnownItems(
 function slotsUrl(sessionId: string, playerUid: string, containerId: string) {
   return `/api/rust/sessions/${encodeURIComponent(sessionId)}/players/${encodeURIComponent(playerUid)}/inventory/${encodeURIComponent(containerId)}/slots`;
 }
+
+export interface PlayerStatusPoint {
+  /** `StatusName` as the save stores it (Japanese); updates key off this. */
+  name: string;
+  /** English rendering of `name`, falling back to the raw name. */
+  label: string;
+  point?: number;
+  editable: boolean;
+}
+export interface PlayerEditCapabilities {
+  level: boolean;
+  exp: boolean;
+  unusedStatusPoint: boolean;
+  statusPoints: boolean;
+  exStatusPoints: boolean;
+}
+export interface PlayerDetail {
+  id: string;
+  mapIndex: number;
+  playerUid?: string;
+  instanceId?: string;
+  nickname?: string;
+  level?: number;
+  /** Ceiling the `Level` property can store — the only limit on level edits. */
+  maxLevel?: number;
+  exp?: number;
+  unusedStatusPoint?: number;
+  statusPoints: PlayerStatusPoint[];
+  exStatusPoints: PlayerStatusPoint[];
+  missingFields: string[];
+  editCapabilities: PlayerEditCapabilities;
+  rawPath: SavePathSegment[];
+}
+export interface StatusPointUpdate {
+  name: string;
+  value: number;
+}
+export interface UpdatePlayerRequest {
+  expectedRevision: number;
+  level?: FieldUpdate<number>;
+  exp?: FieldUpdate<number>;
+  unusedStatusPoint?: FieldUpdate<number>;
+  statusPoints?: FieldUpdate<StatusPointUpdate[]>;
+  exStatusPoints?: FieldUpdate<StatusPointUpdate[]>;
+}
+export interface UpdatePlayerResponse {
+  player: PlayerDetail;
+  dirty: boolean;
+  revision: number;
+}
+/** Every player in the world file, whether or not their .sav was uploaded. */
+export async function getPlayerStats(
+  sessionId: string,
+  signal?: AbortSignal,
+): Promise<PlayerDetail[]> {
+  const r = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/player-stats`,
+    { signal },
+  );
+  if (!r.ok) throw await apiError(r);
+  return r.json();
+}
+export async function updatePlayerStats(
+  sessionId: string,
+  playerUid: string,
+  request: UpdatePlayerRequest,
+  signal?: AbortSignal,
+): Promise<UpdatePlayerResponse> {
+  const r = await fetch(
+    `/api/rust/sessions/${encodeURIComponent(sessionId)}/player-stats/${encodeURIComponent(playerUid)}`,
+    {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(request),
+      signal,
+    },
+  );
+  if (!r.ok) throw await apiError(r);
+  return r.json();
+}

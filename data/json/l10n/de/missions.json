@@ -1,0 +1,466 @@
+{
+  "Main_BaseCampLevel": {
+    "localized_name": "Komfortables Lager",
+    "description": "Um die Effizienz deiner Pals zu steigern, musst du dein Lager ausbauen. Erhöhe deine Lagerstufe auf 7 und richte eine möglichst komfortable Umgebung für deine Pals ein. Wenn du das geschafft hast, solltest du bereit für deinen ersten Turm sein."
+  },
+  "Main_BeginAdventure": {
+    "localized_name": "Das Abenteuer beginnt",
+    "description": "Du hast alle Anweisungen auf deinem Gerät befolgt und dir die nötigen Grundlagen angeeignet. Kehre zur Überlebenden der Aufklärungseinheit zurück und sprich mit ihr."
+  },
+  "Main_BuildHatchingMachine": {
+    "localized_name": "Pal-Eier",
+    "description": "Pals schlüpfen aus Eiern, die sich überall auf der Insel finden lassen. Halte bei deinen Erkundungstouren Ausschau danach. Durch das Ausbrüten von Pal-Eiern entdeckst du vielleicht besondere Individuen. Wer weiß – eines Tages kannst du vielleicht deinen ganz persönlichen Pal züchten. Schalte zuerst die Technologie „Brutkasten“ frei und errichte die Anlage in deinem Lager. Lege ein Ei in den Brutkasten und warte eine Weile, bis es schlüpft."
+  },
+  "Main_BuildPalBox": {
+    "localized_name": "Basislager",
+    "description": "Öffne mit <keyGuideIcon id=|OpenConstructionMenu| iconScale=|0.7|/> das Baumenü und platziere die Pal-Box so, dass außen herum reichlich Platz bleibt. Hier wirst du mit deinen Pals dein erstes Lager aufbauen. Ein gutes Lager wird dir die Weiterreise zum Turm wesentlich leichter machen. Wähle den Standort mit Bedacht."
+  },
+  "Main_BuildWorkBench_Old": {
+    "localized_name": "Ran an die Bank",
+    "description": "Material in seiner Rohform ist wenig nützlich. Du benötigst eine Werkbank, um komplexere Gegenstände herzustellen. Öffne das Baumenü, wähle Primitive Werkbank und bestimme einen Standort für deine Werkbank. Deine erste Anlage musst du wohl oder übel noch eigenhändig bauen."
+  },
+  "Main_BuildWorkbench": {
+    "localized_name": "Ran an die Bank",
+    "description": "Holz sammeln und eine Werkbank platzieren: Diese Insel verfügt über reichhaltige Vorkommen an Holz, Stein und anderen Materialien. Für eine langfristige Erkundung mit begrenzten Mitteln von außerhalb ist es unerlässlich, diese Ressourcen zu nutzen. Beginne mit Holz. Sammle es vom Boden auf oder gewinne es, indem du gegen Bäume schlägst. Sobald du einen sicheren Ort mit ausreichend Platz gefunden hast, bestimme einen geeigneten Standort für die Werkbank und baue sie auf."
+  },
+  "Main_Capture30Pal": {
+    "localized_name": "Fange 30 beliebige Pals.",
+    "description": "Dein Gerät verfügt über eine Palpedia, ein Register, das Informationen über Pals sammelt. Für jede Art können bis zu 12 Exemplare registriert werden. Wenn du viele Pals fängst, erhältst du zusätzliche Erfahrungspunkte. Fange zunächst 30 verschiedene Pals. Je bunter deine Truppe ist, desto besser bist du gegen mächtige Feinde gewappnet."
+  },
+  "Main_CaptureDeerGround": {
+    "localized_name": "Naturschutzgebiete",
+    "description": "Rund um Palapagos gibt es Naturschutzgebiete, in denen Pals mit besonderen Eigenschaften leben. Der Pal namens {targetpal} gilt als besonders außergewöhnlich. Einen solchen Pal zu fangen, bedeutet, neue Möglichkeiten zu erschließen."
+  },
+  "Main_CapturePal": {
+    "localized_name": "Der erste Pal",
+    "description": "Indem du eine Pal-Sphäre auf einen Pal wirfst, kannst du ihn einfangen. Wenn du ihn vorher schwächst, steigen deine Erfolgschancen. Mach dich nun auf den Weg und fange deinen ersten Pal."
+  },
+  "Main_CaptureSheepBall": {
+    "localized_name": "Ball im Schafspelz",
+    "description": "Nutzung von SheepBall: SheepBall sind schwach und lassen sich einfach fangen. Sie sind jedoch überraschend geschickt und können viele Aufgaben für dich übernehmen, weshalb sie bestens geeignet sind, um beim anfänglichen Ausbau deines Lagers zu helfen. Außerdem liefern SheepBall wichtige Materialien wie Wolle und Lamball-Fleisch. Fange einige dieser Pals, um dir die Arbeit zu erleichtern."
+  },
+  "Main_CaptureSheepBall_Old": {
+    "localized_name": "Ball im Schafspelz",
+    "description": "Auf Palapagos heißt es „fressen oder gefressen werden“. SheepBall stehen dabei ganz am unteren Ende der Nahrungskette und lassen sich sehr einfach fangen. Sie sind jedoch überraschend gelehrig können viele Aufgaben für dich übernehmen. Fange zunächst fünf SheepBall. Das sollte vorerst für den Ausbau deines Lagers genügen. SheepBall liefern außerdem wichtige Materialien wie Wolle und Lamball-Fleisch. In dieser gnadenlosen Welt musst du jede Ressource nutzen, die du bekommen kannst."
+  },
+  "Main_CatchPal": {
+    "localized_name": "Auf Pal-Pirsch",
+    "description": "Pal-Sphären fertigen und Pals fangen: Du wirst es bereits bemerkt haben: Diese Insel ist von zahlreichen unbekannten Kreaturen bevölkert. Diese sogenannten „Pals“ verfügen über vielfältige biologische Eigenschaften und eine bemerkenswerte Intelligenz, wodurch sie sich hervorragend zur Unterstützung unserer Aktivitäten eignen. Pals lassen sich mithilfe von „Pal-Sphären“ genannten Hilfsmitteln einfangen. Das genaue Prinzip dahinter ist unklar, doch gefangene Pals zeigen in der Regel ein kooperatives Verhalten. Öffne im Menü den Technologiebildschirm und sieh nach, was du zum Fertigen von Pal-Sphären benötigst. Beschaffe dann Paldium-Bruchstück, ein bläulich leuchtendes Erz, das häufig in Wassernähe zu finden ist. Fertige anschließend eine Pal-Sphäre an deiner Primitive Werkbank und begib dich auf Pal-Fang. Um deine Erfolgschancen zu erhöhen, ist es ratsam, das Ziel vor dem Fang zu schwächen. Da viele Pals sich verteidigen, solltest du zunächst kleinere, weniger gefährliche Pals ins Visier nehmen, bis du eine bessere Ausrüstung hast."
+  },
+  "Main_CollectCrystal": {
+    "localized_name": "Paldium",
+    "description": "Auf dieser Insel gibt es ein Erz namens Paldium, das übernatürliche Kräfte in sich birgt. Es scheint in enger Verbindung zu dem riesigen Baum zu stehen, der in der Ferne zu sehen ist, doch Vieles ist noch unklar. Dieses mysteriöse Erz ist vielseitig anwendbar und auch ein elementarer Bestandteil jeder Pal-Sphäre. Es ist bekannt, dass Paldium in der Nähe von Wasser zu finden ist. Suche an Flussufern oder anderen Gewässern nach bläulich leuchtenden Steinen und spalte sie mit einer Spitzhacke. Eine Spitzhacke kannst du aus Stein und Holz an der Primitive Werkbank herstellen."
+  },
+  "Main_CollectKeySpheres": {
+    "localized_name": "Schlüsselsphärensammeln",
+    "description": "Zoe zufolge gibt es auf Palapagos acht Türme, in denen jeweils eine Schlüsselsphäre verwahrt ist. Wenn du sie alle findest, kommst du der Wahrheit vielleicht näher."
+  },
+  "Main_CraftMealPouch": {
+    "localized_name": "Hunger ist dein größter Feind",
+    "description": "Hunger ist dein größter Feind. Vergiss nicht, regelmäßig etwas zu essen. Ein Kleiner Futterbeutel kann dich und deine Pals einfacher bei Kräften halten. Er ist ein simples Hilfsmittel, kann aber beim Erkunden und Kämpfen einen großen Unterschied machen. Futterbeutel findest du im Bereich für „Wichtige Objekte“ neben deinem Inventar."
+  },
+  "Main_CraftPalGear": {
+    "localized_name": "Praktische Pal-Ausrüstung",
+    "description": "Der Dorfvorsteher hat dir geraten, Zoe, die Tochter des Anführers der Wilderer, aufzusuchen, wenn du mehr über die Vergangenheit der Insel erfahren willst. Doch bevor du dich auf den Weg zum Turm machst, solltest du seinem Rat folgen und dich gründlich vorbereiten. Fange dazu ein Foxparks und fertige dann die passende Pal-Ausrüstung an."
+  },
+  "Main_CraftPalSphere": {
+    "localized_name": "Werfbare Sphären",
+    "description": "Mit einer Pal-Sphäre kannst du Pals einfangen. Nimm das nötige Material und stelle an der Primitive Werkbank eine Pal-Sphäre her. Du brauchst dafür Holz, Stein und Paldium-Bruchstück."
+  },
+  "Main_CraftShield": {
+    "localized_name": "Schutz durch Paldium",
+    "description": "Im Kampf wirst du früher oder später getroffen werden. Die Kraft des Paldiums kann dir aber helfen, das Schlimmste zu verhindern. Schalte die Technologie „Normaler Schild“ frei und stelle das Gerät an der WorBench her. Wer gut vorbereitet ist, kann auch einen Überraschungsangriff überstehen."
+  },
+  "Main_CraftTools": {
+    "localized_name": "Fertigung von Axt und Spitzhacke",
+    "description": "Fertigung von Axt und Spitzhacke: Grundmaterialien wie Holz und Stein werden dauerhaft benötigt. Du kannst sie zwar vom Boden aufsammeln oder gewinnen, indem du mit bloßen Händen gegen Bäume und Felsen schlägst, doch wirklich effizient ist das nicht. Um größere Mengen zu beschaffen, brauchst du geeignetes Werkzeug, nämlich eine Axt oder eine Spitzhacke. Wirf an der Werkbank zunächst einen Blick auf die Anleitungen, besorge dann die benötigte Menge an Holz und Stein und fertige dir anschließend eine Steinerne Spitzhacke und eine Steinaxt."
+  },
+  "Main_Craft_PalGear": {
+    "localized_name": "Fähige Partner",
+    "description": "Jede Art von Pal besitzt eine bestimmte Partnerfähigkeit. Manche Pals können zu Transportzwecken als Reittiere oder sogar als Ausrüstung benutzt werden. Schalte zunächst die Technologie „Pal-Ausrüstungs-Werkbank“ frei und errichte die Anlage in deinem Lager. Dann schalte die Technologie „Foxparks-Geschirr“ frei und stelle den Gegenstand an der Pal-Ausrüstungs-Werkbank her. Pal-Ausrüstung ist im Inventar unter „Wichtige Objekte“ zu finden."
+  },
+  "Main_DefeatDesertBoss": {
+    "localized_name": "Warlord der Wüste",
+    "description": "Du hast Axel Travers besiegt und die Schlüsselsphäre des Müßiggangs an dich gebracht. Begib dich als nächstes zum Turm der Miliz."
+  },
+  "Main_DefeatDungeonBoss": {
+    "localized_name": "Vorsicht vor dem Pal",
+    "description": "Auf dieser Insel lebt ein Pal namens {targetpal}. Dieser Pal ist ein harter Brocken – aber vielleicht auch ein guter Test für deine Kampffähigkeiten. Finde {targetpal} und besiege oder fange es."
+  },
+  "Main_DefeatForestBoss": {
+    "localized_name": "Liebe deinen Pal wie dich selbst",
+    "description": "Du hast Zoe Rayne besiegt und die Schlüsselsphäre der Eifersucht an dich gebracht. Begib dich als nächstes zum Turm der Liga der Palfreunde."
+  },
+  "Main_DefeatGrassBoss": {
+    "localized_name": "Das Mädchen und der Turm",
+    "description": "Es wird Zeit, dass du deinen ersten Turm eroberst. Zoe Rayne ist eine der Turmwächterinnen dieser Insel. Doch auch sie weiß nicht, wozu die Türme gut sind. Trotzdem erfüllt sie ihre Pflicht und steht tagein, tagaus auf ihrem Posten. Was erwartet dich jenseits dieses Turms? Es liegt an dir, die Antwort zu finden."
+  },
+  "Main_DefeatKingWhale": {
+    "localized_name": "Panthalus",
+    "description": "Um in den Weltenbaum zu gelangen, brauchst du die Hilfe von Panthalus. Finde Panthalus und beweise deine Stärke."
+  },
+  "Main_DefeatSakurajimaBoss": {
+    "localized_name": "Der Sake mundet",
+    "description": "Du hast Viktor Ashford besiegt und die Schlüsselsphäre der Maßlosigkeit an dich gebracht. Begib dich als nächstes zum Turm der Gesellschaft des Blumenmondes."
+  },
+  "Main_DefeatSkyIslandBoss": {
+    "localized_name": "Ein Tag wie tausend Herbste",
+    "description": "Du hast Björn Seligson besiegt und die Schlüsselsphäre des Zorns an dich gebracht. Begib dich als nächstes zum Turm des Gelübdes."
+  },
+  "Main_DefeatSnowyMountainBoss": {
+    "localized_name": "Palkensteins Monster",
+    "description": "Du hast Markus Dryden besiegt und die Schlüsselsphäre der Gier an dich gebracht. Begib dich als nächstes zum Turm des Instituts für Genforschung."
+  },
+  "Main_DefeatVikingBoss": {
+    "localized_name": "Das Joch der Pflicht",
+    "description": "Du hast Saya Kurosaki besiegt und die Schlüsselsphäre der Genusssucht an dich gebracht. Begib dich als nächstes zum Turm der Feybreak."
+  },
+  "Main_DefeatVolcanoBoss": {
+    "localized_name": "Besessen vom perfekten Sieg",
+    "description": "Du hast Lily Everhart besiegt und die Schlüsselsphäre des Hochmuts an dich gebracht. Begib dich als nächstes zum Turm der Bruderschaft der ewigen Lohe."
+  },
+  "Main_DefeatWildBoss": {
+    "localized_name": "Der erste Bosskampf",
+    "description": "Auf Palapagos gibt es hier und da besonders gefährliche Pals mit eigenem Revier. Ein Kampf gegen einen solchen Pal ist riskant – doch wenn du ihn besiegst, erhältst du eine Menge Erfahrung. Fängst du ihn stattdessen, gewinnst du einen mächtigen Verbündeten. Die Entscheidung liegt ganz bei dir. Irgendwo auf der Insel soll sich ein Pal namens {targetpal} befinden. Spüre {targetpal} auf und besiege oder fange es."
+  },
+  "Main_DefeatWorldTreeDragon": {
+    "localized_name": "Das Erwachen",
+    "description": "Der weiße Unheilsdrache und seine Meisterin sind aus ihrem langen Schlummer erwacht. Zwischen dir und ihnen müssen keine Worte gewechselt werden. Der Moment ist gekommen, allem ein Ende zu setzen."
+  },
+  "Main_DefeatWorldTreeMiddleBoss": {
+    "localized_name": "Der Pfad in die Tiefe",
+    "description": "Tief im Inneren des Weltenbaums hast du eine Tonaufzeichnung entdeckt, die von einem Hüter hinterlassen wurde. Suche anhand der ihr beigefügten Koordinaten nach weiteren Hinweisen."
+  },
+  "Main_EatFood": {
+    "localized_name": "Auf leeren Magen",
+    "description": "Nahrungsversorgung: Eine stabile Versorgung mit Nahrung ist für einen langfristigen Einsatz unerlässlich. Glücklicherweise sind Rote Beeren auf der Insel weit verbreitet und auch roh verzehrbar. Einige Pals eignen sich ebenfalls als Nahrungsquelle. Letzteres mag nicht leichtfallen, kann jedoch für das Überleben unvermeidlich sein."
+  },
+  "Main_EquipClothArmor": {
+    "localized_name": "Kleider machen Leute",
+    "description": "Das Leben auf Palapagos ist hart – für alle Lebewesen gleichermaßen. Zum Schutz vor Kälte und Angriffen solltest du dich zunächst ordentlich anziehen. Schalte die Technologie „Stoffkleidung“ frei und stelle deine neue Rüstung an der Primitive Werkbank her. Dafür brauchst du Stoff, was du aus Wolle von Pals herstellen kannst. Suche nach flauschigen Pals!"
+  },
+  "Main_GainStatus": {
+    "localized_name": "Statusverbesserung",
+    "description": "Du musst Erfahrung sammeln, wenn du dich in dieser Welt behaupten willst. Sobald du ein Level aufsteigst, öffne dein Inventar und verbessere einen deiner Statuswerte. Nur keine Angst vor Veränderungen – jeder kleine Schritt bringt dich weiter."
+  },
+  "Main_Meal": {
+    "localized_name": "Auf leeren Magen",
+    "description": "Mit leerem Magen lässt es sich schlecht kämpfen und abenteuern. Zum Glück wachsen auf dieser Insel Pflanzen mit schmackhaften Früchten. Halte Ausschau nach Rote Beeren. Wenn du welche findest, öffne dein Inventar und benutze die Rote Beeren, um deinen Hunger zu stillen."
+  },
+  "Main_OpenSurvivalGuide": {
+    "localized_name": "Die Kunst des Überlebens",
+    "description": "Einleitung: Dieser Survival-Guide basiert auf den Erfahrungen, die wir bei unserer Aufklärungsexpedition auf Palapagos gemacht haben. Auf diesem Archipel gelten andere Regeln, und vieles hier widerspricht scheinbar dem gesunden Menschenverstand. Wenn du nicht weiterweißt, wirf einen Blick in diesen Guide."
+  },
+  "Main_PickupWood": {
+    "localized_name": "Die erste Sammel-Tour",
+    "description": "Holz ist eine vielseitige natürliche Ressource und bildet die Grundlage für nahezu jedes Werkzeug und jede Anlage. Sammle herabgefallene Äste auf oder greife einen Baum an, um an Holz zu kommen."
+  },
+  "Main_PrepareEquipment": {
+    "localized_name": "Gut gerüstet",
+    "description": "Ausrüstung fertigen: Verarbeite zunächst mithilfe der Werkbank die Wolle eines SheepBall zu Stoff und fertige daraus Stoffkleidung. Mache dir anschließend die regenerativen Eigenschaften von Paldium zunutze, um die Technologie Normaler Schild zu entwickeln. Ein Einfacher Gleitschirm kann dabei helfen, das unwegsame Gelände einfacher zu erschließen. Fertige einen. Mit dieser Grundausstattung lassen sich weitere Erkundungen deutlich effizienter durchführen."
+  },
+  "Main_RayneSyndicate": {
+    "localized_name": "Das Rayne-Syndikat",
+    "description": "Du hast dich ausreichend vorbereitet. Mache dich auf den Weg zu Zoe im Turm des Rayne-Syndikats."
+  },
+  "Main_ReachWorldTree": {
+    "localized_name": "Zum Weltenbaum",
+    "description": "Du hast Panthalus überzeugt und seine Unterstützung gewonnen. Panthalus ist der Schlüssel zum Weltenbaum. Mach dich auf den Weg dorthin und finde heraus, wie du ins Innere gelangst."
+  },
+  "Main_ReturnSmallVillage": {
+    "localized_name": "Die Schlüsselsphäre",
+    "description": "Du hast Zoe besiegt und dabei einen seltsamen Gegenstand an dich genommen, der einer Pal-Sphäre ähnelt. Kehre ins Dorf zurück und sprich mit dem Dorfvorsteher."
+  },
+  "Main_SmallVillage": {
+    "localized_name": "Das kleine Dorf",
+    "description": "Du hast alle Anweisungen auf deinem Gerät befolgt und dir die nötigen Grundlagen angeeignet. Den Worten der Überlebenden nach soll sich in der Nähe des Turms des Rayne-Syndikats eine Siedlung befinden. Wenn du sie findest, lohnt es sich vielleicht, mit dem Dorfvorsteher zu sprechen."
+  },
+  "Main_StatusUp": {
+    "localized_name": "Statusverbesserung",
+    "description": "Verbesserung deiner Statuswerte: Wenn du dich in dieser Welt behaupten willst, musst du Erfahrung sammeln und stärker werden. Sobald du ein Level aufsteigst, öffne dein Inventar und verbessere deine Statuswerte. So kommst du bei deiner Erkundungsarbeit effizienter und sicherer voran."
+  },
+  "Main_TalkGrassBoss": {
+    "localized_name": "Zoe Rayne",
+    "description": "Der Dorfälteste meinte, du solltest mit Zoe sprechen, wenn du mehr erfahren willst. Gehe noch einmal zum Turm des Rayne-Syndikats."
+  },
+  "Main_TalkSkyBoss": {
+    "localized_name": "Über den Wolken",
+    "description": "Du hast Auri besiegt, und doch wirkte es, als hätte sie längst nicht alles gegeben. Irgendetwas unterscheidet sie von den anderen Turmbossen. Vielleicht solltest du einmal mit ihr sprechen."
+  },
+  "Main_TalkSkyBossAgain": {
+    "localized_name": "Das Unheil",
+    "description": "Auri scheint dir mehr über den Weltenbaum erzählen zu wollen. Es wird kein kurzes Gespräch werden. Wenn du Zeit hast, sprich sie noch einmal an."
+  },
+  "Main_TalkWorldTreeNPC": {
+    "localized_name": "Sünden der Vergangenheit",
+    "description": "Du hast den Weltenbaum endlich betreten. Ein mystischer Ort, und doch liegt eine düstere Spannung in der Luft. Als du dich umsiehst, entdeckst du eine Gestalt."
+  },
+  "Main_TutorialStart": {
+    "localized_name": "Erstkontakt",
+    "description": "Du erwachst an einem fremden Strand. Deine Erinnerungen sind bruchstückhaft. Was ist das für ein Ort ... und wer bist du ...? Während du nach Hinweisen suchst, entdeckst du in der Ferne eine Gestalt."
+  },
+  "Main_UnlockFastTravel": {
+    "localized_name": "Aktiviere die Adlerstatue",
+    "description": "An alle Mitglieder des Forschungstrupps: Palapagos ist nach wie vor voller Rätsel, doch nach den bisher vorliegenden Erkenntnissen sollen sich über den gesamten Archipel hinweg steinerne Vogelstatuen finden. Diese Statuen scheinen durch ein unbekanntes Prinzip untereinander verbunden zu sein, das es möglich macht, augenblicklich von einer zur nächsten zu gelangen. Es dürfte daher sinnvoll sein, solche Statuen als Ausgangspunkte für die Erkundung der näheren Umgebung zu nutzen."
+  },
+  "Main_UnlockPalBox": {
+    "localized_name": "Die Pal-Box",
+    "description": "Für den alltäglichen Umgang mit Pals ist eine gute Organisation unverzichtbar. In der alten Zeit wurde dafür eine so genannte Pal-Box benutzt – ein Gerät, das Pals speichern kann. Öffne im Menü den Technologiebildschirm und entschlüssele den Bauplan. Übrigens: Eine Pal-Box kann verletzte Pals heilen."
+  },
+  "Main_UnlockPalSphere": {
+    "localized_name": "Klar zum Freischalten",
+    "description": "Pals sind der Schlüssel zum Überleben auf dieser Insel. Und der Schlüssel zu den Pals sind kleine Kugeln namens Pal-Sphäre. Öffne im Menü den Technologiebildschirm und entschlüssele ihren Bauplan. Es ist an der Zeit, die Technologie der antiken Zivilisation wiederzuentdecken."
+  },
+  "Main_UseGlider": {
+    "localized_name": "Sicherheitsvorkehrung",
+    "description": "Diese Insel birgt viele Gefahren – dazu zählen auch steile Klippen. Ein falscher Schritt, und die Folgen sind fatal. Schalte die Technologie „Einfacher Gleitschirm“ frei und stelle den Gleiter an der Primitive Werkbank her. So kannst du auch von hohen Klippen sicher hinabgleiten."
+  },
+  "Main_WorkPal": {
+    "localized_name": "Lass die Pals mal machen",
+    "description": "Pals als Arbeitskräfte nutzen: Mit Pal-Sphären gefangene Pals kannst du mithilfe einer Pal-Box managen. Sieh zunächst im Technologiebildschirm nach, was du zum Bau einer Pal-Box benötigst, und errichte diese an einem gewünschten Ort. In der Pal-Box kannst du Pals aufbewahren oder sie daraus rufen. Aus der Pal-Box gerufene Pals bewegen sich in einem begrenzten Umkreis um die Box, woraus sich im Wesentlichen der Bereich deines Lagers ergibt. Wähle den Standort daher sorgfältig. Aus der Pal-Box gerufene Pals suchen sich eigenständig Arbeit entsprechend ihrer Fähigkeiten. Je mehr Pals du sammelst, desto effizienter wird der Betrieb deines Lagers."
+  },
+  "Main_WorkerPal": {
+    "localized_name": "Lass die Pals mal machen",
+    "description": "Pals können dich bei der Arbeit im Lager unterstützen. Öffne deine Pal-Box und wähle im Pal-Box-Management einen gefangenen Pal aus, den du im Lager einsetzen willst."
+  },
+  "Main_WorldTreeAbyss": {
+    "localized_name": "Das versiegelte Unheil",
+    "description": "Vom Hüter des Weltenbaums hast du erfahren, was sich im Weltenbaum abspielt, und kennst nun das wahre Wesen des Unheils, das in seinem Innersten schlummert. Die Stunde des Schicksals rückt unaufhaltsam näher."
+  },
+  "Sub_Angler01": {
+    "localized_name": "Ein guter Tag zum Angeln",
+    "description": "Na, beißt was an? Hier in Ufernähe sollte es eigentlich {PalName} geben. Wenn du an {PalName}-Fleisch kommst, gib mir bitte unbedingt etwas ab!"
+  },
+  "Sub_BossDefeatReward": {
+    "localized_name": "Auftrag des erfahrenen Paljägers",
+    "description": "Du bist kein gewöhnlicher Tamer, das sehe ich sofort ... Ein Blick, so scharf wie der eines Jägers ... Vortrefflich. In Anbetracht deiner Fähigkeiten will ich dich um einen Gefallen bitten."
+  },
+  "Sub_Breeder01": {
+    "localized_name": "Zucht-Grundlagen",
+    "description": "Yo! Hast du meine Torten? 5 Stück sind vielleicht etwas viel, aber ich will eben gleich richtig ins Zuchtgeschäft einsteigen! Ich zähl auf dich, okay?"
+  },
+  "Sub_Breeder02": {
+    "localized_name": "Fallende Kirschblüten",
+    "description": "Sag bloß, du hast mir einen Extrem-Heiltrank mitgebracht?!"
+  },
+  "Sub_Breeder03": {
+    "localized_name": "Keine Gnade den Pal-Dieben!",
+    "description": "Bring meinen Lieblingspal wieder, den mir die Wilderer geklaut haben! Die Mistkerle sind auf die Anhöhe dort geflüchtet!"
+  },
+  "Sub_Breeder04": {
+    "localized_name": "Splatterina-Zuchtprogramm",
+    "description": "Hast du meine Splatterina dabei? 10 Exemplare sollten für die Zucht ausreichen. Ich zähl auf dich!"
+  },
+  "Sub_DeliveryQuartz": {
+    "localized_name": "Reinquarz sammeln",
+    "description": "Sammle 10 Stück Reinquarz und bringe sie dem Auftraggeber."
+  },
+  "Sub_DeliveryRainbowCrystal": {
+    "localized_name": "Hexoquarz sammeln",
+    "description": "Sammle 10 Stück Hexoquarz und bringe sie der Auftraggeberin."
+  },
+  "Sub_DeliverySkyIslandOre": {
+    "localized_name": "Soralit sammeln",
+    "description": "Sammle 10 Stück Soralit und bringe sie dem Auftraggeber."
+  },
+  "Sub_DeliverySulfur": {
+    "localized_name": "Schwefel sammeln",
+    "description": "Sammle 10 Stück Schwefel und bringe sie dem Auftraggeber."
+  },
+  "Sub_DeliveryWood_Fine": {
+    "localized_name": "Hartholz sammeln",
+    "description": "Sammle 10 Stück Hartholz und bringe sie der Auftraggeberin."
+  },
+  "Sub_Farmer01": {
+    "localized_name": "Erntesegen",
+    "description": "Wenn du einen Pal hast, der Bewässern beherrscht, wärst du so nett, ihn mir zu überlassen? Mit dem Wasser aus dem Fluss ginge das zur Not zwar auch, aber im Wasser von Pals scheint irgendetwas zu sein, das mein Gemüse besonders gut gedeihen lässt. Du hilfst mir doch sicher, ja?"
+  },
+  "Sub_Farmer02": {
+    "localized_name": "Vielfraß gesucht!",
+    "description": "Ich habe noch immer zu viel Torte. Hast du hungrige Pals im Team? Je verfressener der Pal, desto mehr freut er sich bestimmt über das Leckerli! Meine Torten sind ein Genuss, versprochen!"
+  },
+  "Sub_Farmer03": {
+    "localized_name": "Spezialgericht",
+    "description": "Bring es zur verlässlich aussehenden Person direkt am Eingang zum Dorf hier in der Nähe! Und pass bitte auf, dass es heil ankommt! Komm danach wieder her, um dir deine Belohnung abzuholen!"
+  },
+  "Sub_Farmer04": {
+    "localized_name": "Teure Behandlung",
+    "description": "Wenn ich doch bloß ein wenig mehr Geld hätte, könnte ich mir die Behandlung für meinen Pal leisten ... Nur 5000 Goldmünzen! Bitte, hab ein Herz!"
+  },
+  "Sub_FoodReward": {
+    "localized_name": "Auftrag des arroganten Gourmets",
+    "description": "Ähöm. Ich bin Gastrokritiker und Chefberater der gastronomischen Gesellschaft von Palapagos. Ich habe zwar so meine Ansprüche, aber ausnahmsweise werde ich mir deine Kochkünste zu Gemüte führen. Auch wenn ich bezweifle, dass ein Vagabund wie du meinen Gaumen zufriedenstellen könnte."
+  },
+  "Sub_HowSurviveWorldTree": {
+    "localized_name": "Überleben im Weltenbaum",
+    "description": "Finde jeweils 1 Stück Mystisches Holz und Paloxit und erstatte der Auftraggeberin Bericht."
+  },
+  "Sub_Kigurumi01": {
+    "localized_name": "Depresso-Kumpanen",
+    "description": "Warte, warte! Ich bin kein Pal! Wirf keine Sphären nach mir! ... Ach, du bist das. Ich hatte versprochen, dir ein Kostüm zu nähen, oder? Haha! Na, hast du die nötigen Materialien beisammen? 20 hochwertige Stoffe und 100 Giftdrüsen brauche ich! Ohne die vielen Giftdrüsen bekommt man die schöne Farbe des Depresso-Fells nämlich nicht originalgetreu hin."
+  },
+  "Sub_Kigurumi01_Replay": {
+    "localized_name": "Depresso-Kumpanen",
+    "description": "Warte, warte! Ich bin kein Pal! Wirf keine Sphären nach mir! ... Ach, du bist das. Ich hatte versprochen, dir ein Kostüm zu nähen, oder? Haha! Na, hast du die nötigen Materialien beisammen? 20 hochwertige Stoffe und 100 Giftdrüsen brauche ich! Ohne die vielen Giftdrüsen bekommt man die schöne Farbe des Depresso-Fells nämlich nicht originalgetreu hin."
+  },
+  "Sub_LoneWolf01": {
+    "localized_name": "Der schwarze Wolf",
+    "description": "Du hast ein schwer verletztes Kitsun Noct gefunden."
+  },
+  "Sub_LoneWolf02": {
+    "localized_name": "Auf den Spuren der Erinnerung",
+    "description": "Suche nach Hinweisen auf das Herrchen des Kitsun Noct."
+  },
+  "Sub_LoneWolf03": {
+    "localized_name": "Die blanke Klinge",
+    "description": "Du hast in einem Dorf den Auftrag angenommen, einen aggressiven Pal zu beseitigen."
+  },
+  "Sub_Nomad01": {
+    "localized_name": "Gipfelstürmer",
+    "description": "Wumpo ist ein echter Kraftprotz! Ich wünschte, es würde meine Ausrüstung für mich tragen ..."
+  },
+  "Sub_Nomad02": {
+    "localized_name": "Glitzerkörnchen",
+    "description": "Sternsand leuchtet bei Nacht. Sobald die Sonne untergeht, kann man ihn glitzern sehen. Würdest du mir vielleicht welchen abgeben? 10 wären schon genug."
+  },
+  "Sub_Nomad03": {
+    "localized_name": "Der Ruf des Dungeons",
+    "description": "Hast du ein Tombat für mich dabei? Ich tausche es dir gegen einen richtig feinen Gegenstand!"
+  },
+  "Sub_Nomad04": {
+    "localized_name": "Entspannt reisen",
+    "description": "Ach, wenn ich doch nur ein Yakumo mit gelassenem Charakter hätte ... Dann könnten wir gemeinsam entspannt unter den Kirschblüten spazieren ..."
+  },
+  "Sub_PalCaptureCountReward": {
+    "localized_name": "Auftrag des verständigen Jägers",
+    "description": "Hey! Ich bin hier, um die Zahl der Pals zu überwachen, damit das ökologische Gleichgewicht in dieser Region gewahrt bleibt. Tja, und momentan suche ich jemanden, der die Pal-Population hier etwas ausdünnt ..."
+  },
+  "Sub_PalDisplay_A_01": {
+    "localized_name": "Auftrag des Palkritikers",
+    "description": "Rufe ein {PalName} und sprich mit dem Palkritiker."
+  },
+  "Sub_PalDisplay_B_01": {
+    "localized_name": "Auftrag des Palkritikers",
+    "description": "Rufe ein {PalName} und sprich mit dem Palkritiker."
+  },
+  "Sub_PalDisplay_C_01": {
+    "localized_name": "Auftrag des Palkritikers",
+    "description": "Rufe ein {PalName} und sprich mit dem Palkritiker."
+  },
+  "Sub_PalDisplay_D_01": {
+    "localized_name": "Auftrag des Palkritikers",
+    "description": "Rufe ein {PalName} und sprich mit dem Palkritiker."
+  },
+  "Sub_PalDisplay_E_01": {
+    "localized_name": "Auftrag des Palkritikers",
+    "description": "Rufe ein {PalName} und sprich mit dem Palkritiker."
+  },
+  "Sub_PalDisplay_F_01": {
+    "localized_name": "Auftrag des Palkritikers",
+    "description": "Rufe ein {PalName} und sprich mit dem Palkritiker."
+  },
+  "Sub_PalDisplay_G_01": {
+    "localized_name": "Auftrag des Palkritikers",
+    "description": "Rufe ein {PalName} und sprich mit dem Palkritiker."
+  },
+  "Sub_PalDisplay_H_01": {
+    "localized_name": "Auftrag des Palkritikers",
+    "description": "Rufe ein {PalName} und sprich mit dem Palkritiker."
+  },
+  "Sub_PalDisplay_I_01": {
+    "localized_name": "Auftrag des Palkritikers",
+    "description": "Rufe ein {PalName} und sprich mit dem Palkritiker."
+  },
+  "Sub_PaldexReward": {
+    "localized_name": "Auftrag des Pal-Biologen",
+    "description": "Hallöchen, ich bin Pal-Forscher und führe hier Untersuchungen zur Lebensweise verschiedener Pal-Spezies durch. Ich sehe, du hast eine Palpedia! Würdest du sie mir zeigen?"
+  },
+  "Sub_Ranger01": {
+    "localized_name": "Das A und O beim Jagen",
+    "description": "Ein Pal, der stets konzentriert bleibt und auf dem man wie auf einem Surfbrett über die Dünen gleiten kann, wäre ideal. Wenn du so einen findest, sag mir Bescheid!"
+  },
+  "Sub_Ranger02": {
+    "localized_name": "Heiße Spur",
+    "description": "Der Übeltäter ist ein Stück weiter des Weges. So etwas ist unverzeihlich. Ich will, dass du ihn zur Rechenschaft ziehst, und zwar mit aller Härte!"
+  },
+  "Sub_Ranger03": {
+    "localized_name": "Großwildjagd",
+    "description": "Du solltest das große Faleris Aqua nicht unterschätzen. Checke am besten noch einmal deine Ausrüstung, bevor du es herausforderst."
+  },
+  "Sub_Ranger04": {
+    "localized_name": "Duftender Nektar",
+    "description": "Hast du Beegarde oder Elizabee für mich dabei? 3 wären schon genug!"
+  },
+  "Sub_RookieExpeditionTeam01": {
+    "localized_name": "Nachwuchsforscher",
+    "description": "Du triffst zufällig auf eine dreiköpfige Truppe, die von wilden Pals angegriffen wurde und völlig erschöpft wirkt. Hilf ihnen aus der Klemme."
+  },
+  "Sub_RookieExpeditionTeam02": {
+    "localized_name": "Keimling",
+    "description": "Du begegnest erneut der Expedition, der du zuvor geholfen hast. Doch von Carla fehlt jede Spur ..."
+  },
+  "Sub_RookieExpeditionTeam03": {
+    "localized_name": "Gedeihen",
+    "description": "Du triffst erneut auf Fia. Es scheint, als suche sie verzweifelt nach einem Weg, stärker zu werden."
+  },
+  "Sub_RookieExpeditionTeam04": {
+    "localized_name": "Blüte ohne Frucht",
+    "description": "Als du Fia erneut begegnest, stürzt sie sich mit leerem Blick auf dich. Wenn du überleben willst, bleibt dir nichts anderes übrig, als gegen sie zu kämpfen."
+  },
+  "Sub_Scholar01": {
+    "localized_name": "Die Legende lebt!",
+    "description": "Geh und finde mir einen legendären Pal! An der Geisterzinne im Norden, in den Durstdünen im Osten und an einem weit entfernten Ort, den man als Sonnenhort kennt, soll jeweils einer zu finden sein. Wenn du auf den großen Felsen kletterst, solltest du die Insel gut überblicken können. Ich zähle auf dich!"
+  },
+  "Sub_Scholar02": {
+    "localized_name": "Motivationsschub",
+    "description": "Ahhh, ich bin völlig unmotiviert ... Hast du mir einen Pal mitgebracht, der meine Arbeitseffizienz steigern kann? Am besten einen, der dazu noch mühelos steile Berghänge hochklettern kann!"
+  },
+  "Sub_Scholar03": {
+    "localized_name": "Fuack-Forschung",
+    "description": "Hast du mir endlich ein Fuack mitgebracht?!"
+  },
+  "Sub_Scholar04": {
+    "localized_name": "Sondengänger",
+    "description": "Wie schaut’s aus? Hast du genug Chromit gesammelt? Mit einem Metalldetektor lässt sich Chromit auch unter der Erde mühelos aufspüren!"
+  },
+  "Sub_StrongOldMan01": {
+    "localized_name": "Der gefangene Abenteurer",
+    "description": "Du hast einen Inselbewohner aus einem Käfig befreit. Doch die Wilderer haben Wind davon bekommen und rücken bereits an. Jetzt heißt es erst einmal, sie zurückzuschlagen und für Sicherheit zu sorgen."
+  },
+  "Sub_StrongOldMan02": {
+    "localized_name": "Die Kopfgeldjagd",
+    "description": "Als du den Abenteurer Harold erneut triffst, scheint er wegen eines mächtigen Gegners weder ein noch aus zu wissen. Die Aussicht, gemeinsam mit dir zu kämpfen, begeistert ihn sichtlich. Schließe dich ihm an und besiegt gemeinsam das Kopfgeldziel."
+  },
+  "Sub_StrongOldMan03": {
+    "localized_name": "Die Bürde",
+    "description": "Als du Harold erneut triffst, wirkt er ungewohnt still. Aus einem nahegelegenen Dorf hat er den Auftrag erhalten, einen wildgewordenen Pal zu erlegen. Mit düsterer Miene fragt er dich, ob du diesen Auftrag nicht übernehmen möchtest. Als du zustimmst, wirkt er kurz erleichtert, doch ein Schatten bleibt auf seinem Gesicht ..."
+  },
+  "Sub_StrongOldMan04": {
+    "localized_name": "Die Vergangenheit",
+    "description": "Harold wartet am Fuß des Weltenbaums. Er wirkt, als hätte er dir etwas anzuvertrauen. Ob er sich seiner Vergangenheit stellen will, oder einfach möchte, dass jemand seine Geschichte kennt ... Sein stoischer Blick verrät es nicht."
+  },
+  "Sub_StrongOldMan05": {
+    "localized_name": "Des Ritters letzter Kampf",
+    "description": "Werde Zeuge des Schicksals von Harold und seinem Gefährten."
+  },
+  "Sub_Zoe01": {
+    "localized_name": "Ein Sieg beeindruckt mich nicht",
+    "description": "Hast du ein Grizzbolt gefangen? Im 1. Naturschutzgebiet wimmelt es nur so von starken Pals, das ist dir wahrscheinlich noch eine Nummer zu hoch. Na, wenn du meinen Respekt willst, musst du dich eben ins Zeug legen!"
+  },
+  "Sub_Zoe02": {
+    "localized_name": "Vertrauen muss man sich erkämpfen",
+    "description": "Hast du es den Palfreunden gezeigt? Hm? Sag bloß, du hast Schiss bekommen? Pff, ich wusste, es war ein Fehler, mich auf dich zu verlassen. Anscheinend muss ich mal wieder selbst ran?"
+  },
+  "Sub_Zoe03": {
+    "localized_name": "Kuschelweiche Erinnerungen",
+    "description": "Hast du gefunden, worum ich dich gebeten habe? Ich denke, ich habe es bei der Ruine zurückgelassen, wo die Mauerreste sind. Naja, dass du nichts findest, war mir eigentlich klar. Schließlich ist das Ganze schon Jahre her. Vergiss es. Ich hatte sowieso keine großen Hoffnungen."
+  },
+  "Sub_Zoe04": {
+    "localized_name": "Zoes Sphäre",
+    "description": "Hast du dich noch immer nicht um die Palfreunde gekümmert? Ich hab doch gesagt, meine Sphäre rücke ich erst raus, nachdem du ihnen ’nen Arschtritt verpasst hast."
+  },
+  "Sub_Zoe_Halloween": {
+    "localized_name": "Fröhliches Halloween!",
+    "description": "(Hmm ... Cattiva-Ohren wären vielleicht ganz süß ...? Und wenn schon Ohren, dann muss eigentlich auch ein Schwanz dazu ... Hmm ... was noch ...?)"
+  }
+}

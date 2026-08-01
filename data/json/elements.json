@@ -1,0 +1,74 @@
+{
+  "Dark": {
+    "color": "#ad0035",
+    "icon": "dark",
+    "badge_icon": "Dark_icon",
+    "egg_icon": "t_itemicon_material_palegg_dark_01",
+    "fruit_icon": "t_itemicon_consume_skillcard_dark",
+    "white_icon": "Dark_white"
+  },
+  "Dragon": {
+    "color": "#c22df9",
+    "icon": "dragon",
+    "badge_icon": "Dragon_icon",
+    "egg_icon": "t_itemicon_material_palegg_dragon_01",
+    "fruit_icon": "t_itemicon_consume_skillcard_dragon",
+    "white_icon": "Dragon_white"
+  },
+  "Earth": {
+    "color": "#ba5608",
+    "icon": "ground",
+    "badge_icon": "Ground_icon",
+    "egg_icon": "t_itemicon_material_palegg_earth_01",
+    "fruit_icon": "t_itemicon_consume_skillcard_earth",
+    "white_icon": "Ground_white"
+  },
+  "Electricity": {
+    "color": "#feed01",
+    "icon": "electric",
+    "badge_icon": "Electric_icon",
+    "egg_icon": "t_itemicon_material_palegg_electricity_01",
+    "fruit_icon": "t_itemicon_consume_skillcard_electric",
+    "white_icon": "Electric_white"
+  },
+  "Fire": {
+    "color": "#ff4208",
+    "icon": "fire",
+    "badge_icon": "Fire_icon",
+    "egg_icon": "t_itemicon_material_palegg_fire_01",
+    "fruit_icon": "t_itemicon_consume_skillcard_flame",
+    "white_icon": "Fire_white"
+  },
+  "Ice": {
+    "color": "#00f2ff",
+    "icon": "ice",
+    "badge_icon": "Ice_icon",
+    "egg_icon": "t_itemicon_material_palegg_ice_01",
+    "fruit_icon": "t_itemicon_consume_skillcard_frost",
+    "white_icon": "Ice_white"
+  },
+  "Leaf": {
+    "color": "#83f001",
+    "icon": "grass",
+    "badge_icon": "Grass_icon",
+    "egg_icon": "t_itemicon_material_palegg_leaf_01",
+    "fruit_icon": "t_itemicon_consume_skillcard_grass",
+    "white_icon": "Grass_white"
+  },
+  "Normal": {
+    "color": "#d8a796",
+    "icon": "neutral",
+    "badge_icon": "Neutral_icon",
+    "egg_icon": "t_itemicon_material_palegg",
+    "fruit_icon": "t_itemicon_consume_skillcard_neutral",
+    "white_icon": "Neutral_white"
+  },
+  "Water": {
+    "color": "#0074ff",
+    "icon": "water",
+    "badge_icon": "Water_icon",
+    "egg_icon": "t_itemicon_material_palegg_water_01",
+    "fruit_icon": "t_itemicon_consume_skillcard_water",
+    "white_icon": "Water_white"
+  }
+}

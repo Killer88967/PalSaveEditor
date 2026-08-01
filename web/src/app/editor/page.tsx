@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { InventoryEditor } from "@/components/inventory-editor";
 import { PalList } from "@/components/pal-list";
+import { PlayerEditor } from "@/components/player-editor";
 import { SaveDropzone, UploadSummary } from "@/components/save-dropzone";
 import { SaveOverviewPanel } from "@/components/save-overview";
 import { SaveTree, type LoadedNode } from "@/components/save-tree";
@@ -15,6 +16,7 @@ import {
   CloseIcon,
   DownloadIcon,
   PalIcon,
+  PlayerIcon,
   TreeIcon,
   UnpackIcon,
 } from "@/components/icons";
@@ -43,11 +45,12 @@ import { pathKey, updateSummaryAtPath } from "@/lib/save-tree-state";
 
 const PAGE_SIZE = 100;
 
-type View = "overview" | "pals" | "inventory" | "raw";
+type View = "overview" | "pals" | "players" | "inventory" | "raw";
 
 const VIEWS = [
   { id: "overview", label: "Overview", icon: ChartIcon },
   { id: "pals", label: "Pals", icon: PalIcon },
+  { id: "players", label: "Players", icon: PlayerIcon },
   { id: "inventory", label: "Inventories", icon: BagIcon },
   { id: "raw", label: "Raw tree", icon: TreeIcon },
 ] as const satisfies readonly { id: View; label: string; icon: unknown }[];
@@ -591,6 +594,24 @@ export default function EditorPage() {
                 });
               }}
               onViewRaw={viewRawPath}
+            />
+          )}
+
+          {view === "players" && (
+            <PlayerEditor
+              key={session.id}
+              sessionId={session.id}
+              revision={session.revision}
+              focusPlayerUid={focusPlayer}
+              onSessionUpdate={(dirty, revision) => {
+                setSession((state) =>
+                  state ? { ...state, dirty, revision } : state,
+                );
+                setStatus({
+                  tone: "success",
+                  text: `Player saved — revision ${revision}`,
+                });
+              }}
             />
           )}
 

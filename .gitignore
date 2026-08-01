@@ -4,3 +4,5 @@
 /web/.next
 /web/public/palsave_core_bg.wasm
 /EXData
+/ignore
+/test.txt

@@ -1,0 +1,1298 @@
+{
+  "EPalWazaID::AcidRain": {
+    "localized_name": "Asit Yağmuru",
+    "description": "Düşmanların üzerine asit yağdıran asit bulutları oluşturur."
+  },
+  "EPalWazaID::AirBlade": {
+    "localized_name": "Hava Kılıcı",
+    "description": "Bir yelpaze şeklinde, keskin hava bıçakları fırlatır."
+  },
+  "EPalWazaID::AirCanon": {
+    "localized_name": "Hava Topu",
+    "description": "Yüksek oranda baskılanmış havayı bir seri hâlinde hızlıca ateşler."
+  },
+  "EPalWazaID::Apocalypse": {
+    "localized_name": "Kıyamet",
+    "description": "Düşmanın çevresinde birkaç karanlık girdap oluşturur."
+  },
+  "EPalWazaID::AquaJet": {
+    "localized_name": "Hidrojet",
+    "description": "Bir düşmana yüksek hızlı bir su topu fırlatır."
+  },
+  "EPalWazaID::BeamSlicer": {
+    "localized_name": "Işın Kesici",
+    "description": "Ejderha gücüyle dolu bir ışınla önündeki alanı tarar. Işının dokunduğu bölge ayrıca birkaç saniye sonra patlar."
+  },
+  "EPalWazaID::BlastCanon": {
+    "localized_name": "Patlama Topu",
+    "description": "Düşmanın konumuna ejderha gücüyle yüklü bir enerji mermisi ateşler. Çarpma anında mermi parçalanır ve ön bölgede uzun menzilli bir patlamaya sebep olur."
+  },
+  "EPalWazaID::BlizzardLance": {
+    "localized_name": "Buz Dağı",
+    "description": "Bir düşmanın altına buzdan, keskin bir kargı çağırır."
+  },
+  "EPalWazaID::BubbleShot": {
+    "localized_name": "Baloncuk Patlaması",
+    "description": "Yavaşça bir düşmanı kovalayan çok sayıda baloncuk fırlatır."
+  },
+  "EPalWazaID::BubbleShower": {
+    "localized_name": "Zehir Yağmuru",
+    "description": "Enerjiyi bedeninde odaklar ve tüm yönlere zehirli küreler dağıtır."
+  },
+  "EPalWazaID::ChargeCanon": {
+    "localized_name": "Yük Topu",
+    "description": "Düşmana ejderha gücüyle dolu bir enerji küresi fırlatır. Küre, temas anında geniş bir alanı etkileyen bir patlamaya sebep olur."
+  },
+  "EPalWazaID::Commet": {
+    "localized_name": "Kayan Yıldız Saldırısı",
+    "description": "Bir meteoriti doğrudan aşağı bırakır ve çarpma alanının çevresinde bir şok dalgası oluşturur."
+  },
+  "EPalWazaID::CommetRain": {
+    "localized_name": "Meteor Yağmuru",
+    "description": "Sayısız meteoriti bırakarak bir dizi şok dalgası oluşturur."
+  },
+  "EPalWazaID::CreepingBubble": {
+    "localized_name": "Baloncuk Yürüyüşü",
+    "description": "Panthaluse özgü bir yetenektir. Düşmanın etrafında çok sayıda baloncuk oluşturur ve onu sararak saldırır."
+  },
+  "EPalWazaID::CrossWind": {
+    "localized_name": "Çift Yönlü Rüzgar",
+    "description": "Düşmanın önünde oluşturulan rüzgar bıçaklarını çapraz şekilde birleştirerek saldırır."
+  },
+  "EPalWazaID::DarkArrow": {
+    "localized_name": "Kara Ok",
+    "description": "Karanlığın gücüyle düşmanları takip eden çok sayıda karanlık oku hızlı bir şekilde art arda fırlatır."
+  },
+  "EPalWazaID::DarkBall": {
+    "localized_name": "Karanlık Top",
+    "description": "Bir düşmanı yavaşça takip eden bir karanlık küresini serbest bırakır."
+  },
+  "EPalWazaID::DarkCanon": {
+    "localized_name": "Kara Top",
+    "description": "Bir düşmana karanlık enerjiyle yüklü bir enerji topu fırlatır."
+  },
+  "EPalWazaID::DarkLaser": {
+    "localized_name": "Kara Lazer",
+    "description": "Karanlık enerjiyi biriktirir ve güçlü bir ışın olarak düşmanlara ateşler."
+  },
+  "EPalWazaID::DarkLegion": {
+    "localized_name": "Karanlık Bela",
+    "description": "Düşmanları kovalayan çok sayıda karanlık enerji topu fırlatır."
+  },
+  "EPalWazaID::DarkPulse": {
+    "localized_name": "Gölge Dalgası",
+    "description": "Yüksek hızlı karanlık küreleri ilerleyerek yayılan bir yelpaze şeklinde fırlatır."
+  },
+  "EPalWazaID::DarkWave": {
+    "localized_name": "Gölge Patlaması",
+    "description": "Karanlık enerjiyi hızlı bir şekilde boşaltarak çevresindekilere hasar verir."
+  },
+  "EPalWazaID::DiamondFall": {
+    "localized_name": "Elmas Yağmuru",
+    "description": "Bir düşmanın kafasına birbiri ardına düşen çok sayıda buz kütlesi oluşturur."
+  },
+  "EPalWazaID::DiversionLaser": {
+    "localized_name": "Yüksek Basınçlı Su Saldırısı",
+    "description": "Öne doğru yüksek basınçlı bir su akışı fırlatır. Su akışı kısa bir süre sonra sağa ve sola ayrılır."
+  },
+  "EPalWazaID::DoubleIcicleThrow": {
+    "localized_name": "Çifte Tipi Dikeni",
+    "description": "İki devasa buz bloku oluşturur ve bunları birbiri ardına düşmana fırlatır. Çarpma anında çevredeki hedeflere de hasar verir."
+  },
+  "EPalWazaID::DragonBreath": {
+    "localized_name": "Ejder Nefesi",
+    "description": "Ejderhalara özgü bir enerjiyle dolu nefesiyle önündeki hedeflere sürekli hasar verir."
+  },
+  "EPalWazaID::DragonCanon": {
+    "localized_name": "Ejderha Topu",
+    "description": "Bir düşmana ejderha enerjisiyle yüklü bir enerji topu fırlatır."
+  },
+  "EPalWazaID::DragonMeteor": {
+    "localized_name": "Ejderha Meteoru",
+    "description": "Çok sayıda küçük meteorit oluşturur ve onları bir düşmana fırlatır."
+  },
+  "EPalWazaID::DragonWave": {
+    "localized_name": "Ejderha Patlaması",
+    "description": "Ejderha enerjisini hızlıca boşaltarak çevresindekilere hasar verir."
+  },
+  "EPalWazaID::ElecWave": {
+    "localized_name": "Şok Dalgası",
+    "description": "Hızlı bir şekilde elektrik boşaltarak çevresindekileri çarpar."
+  },
+  "EPalWazaID::Eruption": {
+    "localized_name": "Volkanik Yağmur",
+    "description": "Gökyüzüne sayısız volkanik bomba ateşler. Bir süre sonra, bombalar başladıkları konuma geri yağar."
+  },
+  "EPalWazaID::FireBall": {
+    "localized_name": "Ateş Topu",
+    "description": "Devasa bir alev topu yaratır ve bir düşmana fırlatır. Alev topu, çarpma anında geniş bir alana hasar verir."
+  },
+  "EPalWazaID::FireBlast": {
+    "localized_name": "Ateş Patlaması",
+    "description": "Doğrudan bir düşmana doğru bir ateş topu fırlatır."
+  },
+  "EPalWazaID::FireSeed": {
+    "localized_name": "Ruh Ateşi",
+    "description": "Bir düşmana doğru ateş topları atar. Ateş topları kısa bir mesafeden sonra patlar ve ileri doğru yayılan daha küçük ateş topları oluşturur."
+  },
+  "EPalWazaID::FlameFunnel": {
+    "localized_name": "Alev Bacası",
+    "description": "Alevli enerjiyle dolu pek çok küre oluşturur ve bu kürelerden çıkan sayısız ateş topu düşmana ateşlenir."
+  },
+  "EPalWazaID::FlameWall": {
+    "localized_name": "Alev Duvarı",
+    "description": "Düşmanının konumunda alevlerden bir duvar oluşturur. Alev duvarı bir süre devam eder ve dokunduğu düşmanlara hasar verir."
+  },
+  "EPalWazaID::Flamethrower": {
+    "localized_name": "Ateş Nefesi",
+    "description": "Bir düşmana alevler atarak sürekli hasar verir."
+  },
+  "EPalWazaID::FlareArrow": {
+    "localized_name": "Alev Oku",
+    "description": "Düşmanı takip eden üç alevli oku art arda ateşler."
+  },
+  "EPalWazaID::FlareTornado": {
+    "localized_name": "Alev Fırtınası",
+    "description": "İki yanında iki alevli hortum oluşturur ve bir düşmana fırlatır."
+  },
+  "EPalWazaID::FrostBreath": {
+    "localized_name": "Kristal Nefesi",
+    "description": "Bir düşmanı donmuş bir hava patlamasıyla sarar ve sürekli olarak hasar verir."
+  },
+  "EPalWazaID::GhostFlame": {
+    "localized_name": "Ruh Alevi",
+    "description": "Bir düşmanı acımasızca kovalayan üç kötülük topu fırlatır."
+  },
+  "EPalWazaID::GrassTornado": {
+    "localized_name": "Çimen Hortumu",
+    "description": "İki yanında iki hortum oluşturur ve bir düşmana fırlatır."
+  },
+  "EPalWazaID::GravityShot": {
+    "localized_name": "Karanlık Atış",
+    "description": "Zaman içinde hızlanan bir karanlık enerji mermisi ateşler."
+  },
+  "EPalWazaID::HolyBlast": {
+    "localized_name": "Kutsal Patlama",
+    "description": "Düşmanın konumunda ve etrafında geniş bir ışık patlaması oluşturur."
+  },
+  "EPalWazaID::Human_Punch": {
+    "localized_name": "Yumruk",
+    "description": "İnanarak yumruk at. Yumruğun gücüne inan."
+  },
+  "EPalWazaID::HydroPump": {
+    "localized_name": "Hidrolazer",
+    "description": "Son derece yüksek hızlarda basınçlı su ateşler ve önündeki geniş bir alanı süpürür."
+  },
+  "EPalWazaID::HydroSlicer": {
+    "localized_name": "Su Kılıcı",
+    "description": "Sıkıştırılmış su akışıyla önündeki alanı savurur. Savrulan yerlerden kısa bir gecikmeyle su fışkırır."
+  },
+  "EPalWazaID::HyperBeam": {
+    "localized_name": "Pal Patlaması",
+    "description": "Yıkıcı enerjisi toplayıp geniş bir alana yüksek güçlü bir ışın ateşler."
+  },
+  "EPalWazaID::IceAge": {
+    "localized_name": "Mutlak Don",
+    "description": "Düşmanın ayaklarının altındaki geniş bir alana buz saçakları fırlatır."
+  },
+  "EPalWazaID::IceBlade": {
+    "localized_name": "Buzul Kesici",
+    "description": "Buzdan, hilal biçimli bir kılıç oluşturur ve ileri fırlatır."
+  },
+  "EPalWazaID::IceMissile": {
+    "localized_name": "Buz Füzesi",
+    "description": "Havada, düşmanlara doğru uçan buzdan kargılar oluşturur."
+  },
+  "EPalWazaID::IceWall": {
+    "localized_name": "Buz duvari",
+    "description": "Yerden bir buz duvarı çıkarır. Buz duvarı bir süre kalır ve hasar aldığında kırılır."
+  },
+  "EPalWazaID::IcicleLine": {
+    "localized_name": "Buzul Hattı",
+    "description": "Üç yönde düz bir çizgi hâlinde ilerleyen buz sütunları oluşturur."
+  },
+  "EPalWazaID::IciclePierce": {
+    "localized_name": "Buzul Mermisi",
+    "description": "Gökyüzünde çok sayıda keskin buz bloku oluşturur ve düşmana fırlatır."
+  },
+  "EPalWazaID::IcicleThrow": {
+    "localized_name": "Tipi Dikeni",
+    "description": "Dev bir buz kütlesi oluşturur ve bir düşmana fırlatır. Çarpma anında, çevredeki alanda bulunan hedeflere hasar verir."
+  },
+  "EPalWazaID::Inferno": {
+    "localized_name": "Ateş Öfkesi",
+    "description": "Çevresindeki yeri enerji yükleyerek belirli bir süre sonra patlamasına neden olur."
+  },
+  "EPalWazaID::LightningStrike": {
+    "localized_name": "Şimşek Saldırısı",
+    "description": "Bir paratoner işlevi görerek çevresindeki alana elektrik verecek yıldırımları üzerine çeker."
+  },
+  "EPalWazaID::LineGeyser": {
+    "localized_name": "Sıçrama",
+    "description": "Düz bir çizgi hâlinde ilerleyen bir su sütunu oluşturur."
+  },
+  "EPalWazaID::LineThunder": {
+    "localized_name": "Şimşek Serisi",
+    "description": "Bir çizgi hâlinde ilerleyen bir şimşek oluşturur."
+  },
+  "EPalWazaID::LockonLaser": {
+    "localized_name": "Kilitlenen Lazer",
+    "description": "Bir düşmanı hedef alıp yüksek hızlı bir lazer ateşler."
+  },
+  "EPalWazaID::MudShot": {
+    "localized_name": "Bataklık Patlaması",
+    "description": "Bir düşmana yapışkan çamur fırlatır."
+  },
+  "EPalWazaID::PoisonFog": {
+    "localized_name": "Zehirli Sis",
+    "description": "Önünde zehirli bir sis oluşturarak rakibinin zehirlenmesine sebep olur."
+  },
+  "EPalWazaID::PoisonShot": {
+    "localized_name": "Zehir Patlaması",
+    "description": "Bir düşmana zehirli çamur fırlatır."
+  },
+  "EPalWazaID::PowerBall": {
+    "localized_name": "Güç Bombası",
+    "description": "Devasa miktarda enerji biriktirip büyük ve yıkıcı bir top ateşler."
+  },
+  "EPalWazaID::PowerShot": {
+    "localized_name": "Güçlü Atış",
+    "description": "Enerjisini biriktirerek enerji mermisi oluşturur ve onu fırlatır."
+  },
+  "EPalWazaID::PredatorBeam": {
+    "localized_name": "Avcı Patlaması",
+    "description": null
+  },
+  "EPalWazaID::PredatorLockon": {
+    "localized_name": "Avcı İşareti",
+    "description": null
+  },
+  "EPalWazaID::PredatorWave": {
+    "localized_name": "Avcı Dalgası",
+    "description": null
+  },
+  "EPalWazaID::Psychokinesis": {
+    "localized_name": "Psiko Yer Çekimi",
+    "description": "Yerçekimini kontrol ederek düşmanın hareket özgürlüğünü kısıtlar onu yüksekten yere sert bir şekilde çarpar."
+  },
+  "EPalWazaID::RadiantBarrage": {
+    "localized_name": "Işıltı Yağmuru",
+    "description": "Yavaşça düşmanı takip eden bir ışık küresi fırlatır. Işık küresi hedefe yaklaştığında sayısız ışık mermisine bölünür ve saldırıya geçer."
+  },
+  "EPalWazaID::RaidCutter": {
+    "localized_name": "Akıncı Kesici",
+    "description": "Doğrudan düşmana doğru uçan sayısız rüzgâr kılıcı ateşler."
+  },
+  "EPalWazaID::Railbolt": {
+    "localized_name": "Yıldırım Rayı",
+    "description": "Şimşeğin gücünü sınırlarına kadar biriktirir ve düşmana aynı anda çok sayıda elektrik şoku ateşler."
+  },
+  "EPalWazaID::RangeThunder": {
+    "localized_name": "Her Menzilde Yıldırım",
+    "description": "Tüm yönlerde düz bir çizgi hâlinde ilerleyen şimşekler oluşturur."
+  },
+  "EPalWazaID::ReflectiveShuriken": {
+    "localized_name": "Yaprak Yansıması",
+    "description": "Düşmana veya ağaçlara çarptığında sekerek ardışık saldırılar yapan bir rüzgar bıçağı fırlatır. En fazla 4 kez sekebilir."
+  },
+  "EPalWazaID::RipTide": {
+    "localized_name": "Su Gücü Taarruzu",
+    "description": "Düşmanın etrafından dalgalar oluşturur. Dalgalar sonunda merkezde patlayarak su sütunu yükseltir."
+  },
+  "EPalWazaID::RockBeat": {
+    "localized_name": "Taş Ritmi",
+    "description": "Yeri sarsar ve devasa bir kayayı havaya kaldırır."
+  },
+  "EPalWazaID::RockLance": {
+    "localized_name": "Kaya Kargısı",
+    "description": "Bir düşmanın altında kayadan, keskin bir mızrak oluşturur."
+  },
+  "EPalWazaID::RootAttack": {
+    "localized_name": "İğneli Sarmaşık",
+    "description": "Zemin boyunca düşmanı kovalayıp onu alttan delen iğneli dikenler oluşturur."
+  },
+  "EPalWazaID::RootLance": {
+    "localized_name": "Çevreleyen Sarmaşık",
+    "description": "Düşmanın konumunda ve çevresinde keskin kökler oluşturur."
+  },
+  "EPalWazaID::SandTornado": {
+    "localized_name": "Kum Hortumu",
+    "description": "İki yanında iki kum hortumu oluşturur ve bir düşmana fırlatır."
+  },
+  "EPalWazaID::SandTwister": {
+    "localized_name": "Kum Kasırgası",
+    "description": "Birden fazla kum hortumu oluşturur. Hortumlar daireler şeklinde sürekli döner."
+  },
+  "EPalWazaID::SeaGush": {
+    "localized_name": "Su sütunu püskürmesi",
+    "description": "Düşmanın bulunduğu noktaya ve çevresine büyük miktarda su fışkırtır."
+  },
+  "EPalWazaID::SeedMachinegun": {
+    "localized_name": "Tohum Mitralyözü",
+    "description": "Önündeki düşmanlara sert tohumlarla bir yaylım ateşi açar."
+  },
+  "EPalWazaID::SeedMine": {
+    "localized_name": "Tohum Mayını",
+    "description": "Ölümcül bir tohum fırlatır. Tohum, bir düşmana çarpması hâlinde patlar."
+  },
+  "EPalWazaID::SelfDestruct": {
+    "localized_name": "İçe Çöküş",
+    "description": "Şiddetli bir patlamaya sebep olmak için hayatını riske atar. Sonrasında saf dışı kalır."
+  },
+  "EPalWazaID::SelfDestruct_Bee": {
+    "localized_name": "Arıların Sessizliği",
+    "description": "Şiddetli bir patlamaya sebep olmak için hayatını riske atar ama savaşarak düşmenin gururunu yaşar."
+  },
+  "EPalWazaID::SelfExplosion": {
+    "localized_name": "Megatonluk Çöküş",
+    "description": "Devasa bir patlamaya sebep olmak için hayatını riske atar. Görev başında hayatını kaybedenler, gece gökyüzünde görünen parlak yıldızlara dönüşür."
+  },
+  "EPalWazaID::ShadowBall": {
+    "localized_name": "Kâbus Topu",
+    "description": "Devasa bir karanlık topu yaratır ve bir düşmana fırlatır."
+  },
+  "EPalWazaID::ShokeiLaser": {
+    "localized_name": "Ölümcül Lazer",
+    "description": "Bir düşmanı hedef aldıktan sonra çok sayıda ultra hızlı şimşek lazeri ateşler."
+  },
+  "EPalWazaID::SolarBeam": {
+    "localized_name": "Güneş Patlaması",
+    "description": "Güneş enerjisini biriktirir ve güçlü bir ışın olarak düşmanlara ateşler."
+  },
+  "EPalWazaID::SpecialCutter": {
+    "localized_name": "Çoklu Kesici",
+    "description": "Kullanıcı, doğrudan düşmanlara doğru uçan üç yüksek hızlı rüzgâr kılıcını hızlı bir şekilde ateşler."
+  },
+  "EPalWazaID::SpreadPulse": {
+    "localized_name": "Kıvılcım Patlaması",
+    "description": "Şimşek kürelerini ilerleyerek yayılan bir yelpaze şeklinde serbest bırakır."
+  },
+  "EPalWazaID::StarMine": {
+    "localized_name": "Yıldız Mayını",
+    "description": "Düşmanın etrafında temas anında patlayan yıldızlar oluşturur. Yıldızlar bir süre sonra da patlar."
+  },
+  "EPalWazaID::StoneShotgun": {
+    "localized_name": "Taş Patlaması",
+    "description": "İleri doğru bir taş yağmuru gönderir."
+  },
+  "EPalWazaID::ThreeCommet": {
+    "localized_name": "Kayan Yıldız Yağmuru",
+    "description": "Meteoritleri birbiri ardına bırakır, çarpma alanlarının çevrelerinde şok dalgaları oluşturur."
+  },
+  "EPalWazaID::ThreeThunder": {
+    "localized_name": "Üçlü Şimşek",
+    "description": "Bir düşmana yukarıdan üç kez saldıran bir şimşek oluşturur."
+  },
+  "EPalWazaID::ThrowRock": {
+    "localized_name": "Taş Topu",
+    "description": "Yeri kazarak bir kaya çıkarır ve bir düşmana fırlatır."
+  },
+  "EPalWazaID::ThunderBall": {
+    "localized_name": "Elektrik Topu",
+    "description": "Yavaşça bir düşmanı kovalayan bir elektrik topu fırlatır."
+  },
+  "EPalWazaID::ThunderFunnel": {
+    "localized_name": "Plazma Bacası",
+    "description": "Düşmanlara sayısız şimşek küresi ateşleyen iki elektrik enerjisi topu oluşturur."
+  },
+  "EPalWazaID::ThunderRain": {
+    "localized_name": "Yıldırım Yağmuru",
+    "description": "Şimşeği çağırır ve belirli bir süre sonra çok sayıda yıldırım düşürür."
+  },
+  "EPalWazaID::ThunderSpear": {
+    "localized_name": "Yıldırım Mızrağı",
+    "description": "Doğrudan düşmana ilerleyen yüksek hızlı bir şimşek mızrağı fırlatır."
+  },
+  "EPalWazaID::ThunderStorm": {
+    "localized_name": "Boran Fırtınası",
+    "description": "Yavaşça düşmana doğru ilerleyen devasa bir şimşek hortumu oluşturur."
+  },
+  "EPalWazaID::Thunderbolt": {
+    "localized_name": "Şimşek Çarpması",
+    "description": "Elektrik enerjisini biriktirir ve güçlü bir şokla düşmanlarını çarpar."
+  },
+  "EPalWazaID::Tremor": {
+    "localized_name": "Kaya Kırılması",
+    "description": "Yeri titretip çevresine devasa bir taş kütlesi fırlatır."
+  },
+  "EPalWazaID::TriSpark": {
+    "localized_name": "Üçlü Kıvılcım",
+    "description": "Düz bir çizgi hâlinde uçan yüksek hızlı bir şimşek topu. Aynı anda, düşmanı izleyecek yavaş şimşek topları ateşler."
+  },
+  "EPalWazaID::Unique_Alpaca_Tackle": {
+    "localized_name": "Pofuduk Hücum",
+    "description": "Melpaca özel yeteneği. Sevimli bir aurayla çevrili şekilde ileri hücum eder."
+  },
+  "EPalWazaID::Unique_AmaterasuWolf_Bite": {
+    "localized_name": "Vahşi Diş (Ateş)",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_AmaterasuWolf_BiteV2": {
+    "localized_name": "Çifte Diş (Ateş)",
+    "description": "Düşmana doğru hızla art arda ısırma saldırıları yapar."
+  },
+  "EPalWazaID::Unique_AmaterasuWolf_Dark_Bite": {
+    "localized_name": "Vahşi Diş (Karanlık)",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_AmaterasuWolf_Dark_BiteV2": {
+    "localized_name": "Çifte Diş (Karanlık)",
+    "description": "Düşmana doğru hızla art arda ısırma saldırıları yapar."
+  },
+  "EPalWazaID::Unique_AmaterasuWolf_Dark_DarkCharge": {
+    "localized_name": "Cüretkâr Gölge Fırtınası",
+    "description": "Kitsun Noct özel yeteneği. Yoğun, mor alevlerle çevrili şekilde büyük bir hızla ileri hücum eder."
+  },
+  "EPalWazaID::Unique_AmaterasuWolf_FireCharge": {
+    "localized_name": "Cüretkâr Alevler",
+    "description": "Kitsun özel yeteneği. Yoğun, mavi alevlerle çevrili şekilde büyük bir hızla ileri hücum eder."
+  },
+  "EPalWazaID::Unique_Anubis_GroundPunch": {
+    "localized_name": "Yer Darbesi",
+    "description": "Anubis özel yeteneği. Havaya, yükseğe zıplar ve zemine bir yumruk atarak geniş bir alana hasar veren bir şok dalgasına sebep olur."
+  },
+  "EPalWazaID::Unique_Anubis_LowRoundKick": {
+    "localized_name": "Geniş Dönen Tekme",
+    "description": "Anubis özel yeteneği. Güçlü bacaklarıyla dönerek tekme atar ve geniş bir alandaki düşmanlara hasar verir."
+  },
+  "EPalWazaID::Unique_Anubis_Tackle": {
+    "localized_name": "Kuvvetli Hücum",
+    "description": "Anubis özel yeteneği. Enerjisini kullanarak hızlı bir şekilde düşmanlarını kovalar ve güçlü bir yumruk atar."
+  },
+  "EPalWazaID::Unique_Baphomet_Dark_DarkKite": {
+    "localized_name": "Kâbus Pençesi",
+    "description": "Incineram Noct’un özel yeteneği. Yaklaşırken sol elindeki karanlık pençesiyle yukarı doğru keser, ardından sıçrayıp sağ elindeki karanlık pençesiyle hızlı bir darbe indirir."
+  },
+  "EPalWazaID::Unique_Baphomet_SwallowKite": {
+    "localized_name": "Cehennem Ateşi Pençesi",
+    "description": "Incineram özel yeteneği. Sol pençesini kullanarak yakındaki düşmanları havaya fırlatır ve sağ pençesiyle onları keser."
+  },
+  "EPalWazaID::Unique_BirdDragon_FireBreath": {
+    "localized_name": "Alev Nefesi",
+    "description": "Vanwyrm özel yeteneği. Ağzından ateş püskürterek ilerler."
+  },
+  "EPalWazaID::Unique_BirdDragon_Ice_IceBreath": {
+    "localized_name": "Tipi Fırtınası",
+    "description": "Vanwyrm Cryst özel yeteneği. Ağzından soğuk hava püskürterek ilerler."
+  },
+  "EPalWazaID::Unique_BlackCentaur_TwoSpearRushes": {
+    "localized_name": "Çifte Mızrak",
+    "description": "Necromus özel yeteneği. İkili mızraklarını vahşi hortumlarla kaplar ve ileri hücum ederek mızraklarını birbiri ardına saplar."
+  },
+  "EPalWazaID::Unique_BlackGriffon_TackleLaser": {
+    "localized_name": "Kutsal Felaket",
+    "description": "Shadowbeak özel yeteneği. İleri hücum ederken bir ışık küresi oluşturur. Işık küresi düşmanları otomatik olarak hedef alır ve sayısız lazer ateşler."
+  },
+  "EPalWazaID::Unique_BlackGriffon_TackleLaser2": {
+    "localized_name": "Kutsal Felaket II",
+    "description": "Shadowbeak özel yeteneği. İleri atılırken vücudundaki ışık halkasından sayısız mavi ışın saçar. Işınlar düşmanı otomatik olarak hedef alır ve takip eder."
+  },
+  "EPalWazaID::Unique_BlackMetalDragon_FirePunch": {
+    "localized_name": "Ateş Yumruklu Nefes Fırtınası",
+    "description": "Astegon özel yeteneği. İleri doğru iki yumruk attıktan sonra aşağı doğru ejderha nefesi verir."
+  },
+  "EPalWazaID::Unique_BlackPuppy_Bite": {
+    "localized_name": "Vahşi Diş (Karanlık)",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_BlackPuppy_BiteV2": {
+    "localized_name": "Çifte Diş (Karanlık)",
+    "description": "Düşmana doğru hızla art arda ısırma saldırıları yapar."
+  },
+  "EPalWazaID::Unique_BluePlatypus_Toboggan": {
+    "localized_name": "Kayarak Çarpma",
+    "description": null
+  },
+  "EPalWazaID::Unique_BluePlatypus_Toboggan_Fire": {
+    "localized_name": "Ateş Saldırısı",
+    "description": null
+  },
+  "EPalWazaID::Unique_BlueSkyDragon_DrainStorm": {
+    "localized_name": "Gök Değişimi Girdabı",
+    "description": "Shaolonge özgü bir yetenektir. Göğe kadar uzanan dev bir girdap çağırır. Girdap çevredeki düşmanları yutar ve hepsini bir anda etkisiz hale getirir."
+  },
+  "EPalWazaID::Unique_BlueSkyDragon_SweepBreath": {
+    "localized_name": "Mavi Ejder Ateşi",
+    "description": "Shaolonge özgü bir yetenektir. Ejderha elementli alevi savurarak püskürtür, bulunduğu alanı yakıp kavurur."
+  },
+  "EPalWazaID::Unique_BlueSkyDragon_Tossin": {
+    "localized_name": "Su Ejderi Hücumu",
+    "description": "Shaolonge özgü bir yetenektir. Tüm vücudunu suyla kaplayarak düz bir şekilde hücum eder."
+  },
+  "EPalWazaID::Unique_BlueThunderHorse_FlashDash": {
+    "localized_name": "Şimşek Anı",
+    "description": "Azurmane özel yeteneği. Şimşek hızıyla hareket ederek yoluna çıkan her şeyi sarar."
+  },
+  "EPalWazaID::Unique_BlueThunderHorse_Tossin": {
+    "localized_name": "Flaş Hücumu",
+    "description": "Azurmanee özgü bir yetenek. Yıldırımla kaplanarak düşmana doğru yüksek hızla hücum eder."
+  },
+  "EPalWazaID::Unique_Boar_Tackle": {
+    "localized_name": "Gözü Kara Hücum",
+    "description": "Rushoar özel yeteneği. Bir düşmanı hedef alır ve haşin bir hücumla ona doğru koşar."
+  },
+  "EPalWazaID::Unique_CaptainPenguin_Black_BodySlide_Electric": {
+    "localized_name": "Yıldırım kayması",
+    "description": "Penking LuxTürüne ait özel yetenek. Karnını yere koyarak, vücudundan elektrik yayarak kayarak düşmana çarpar."
+  },
+  "EPalWazaID::Unique_CaptainPenguin_BodySlide": {
+    "localized_name": "İmparator Kayağı",
+    "description": "Penking özel yeteneği. Karnının üzerine yatıp etrafında donmuş hava biriktirir; ardından yüksek hızla düşmanlarına doğru kayar."
+  },
+  "EPalWazaID::Unique_ChickenPal_ChickenPeck": {
+    "localized_name": "Tavuk Hücumu",
+    "description": "Chikipi özel yeteneği. Gözüne kestirdiği düşmanlara doğru uçar, keskin gagasıyla onlara saldırır."
+  },
+  "EPalWazaID::Unique_ClownRabbit_TrickShow": {
+    "localized_name": "Hile Gösterisi",
+    "description": "Dupine özgü bir yetenek. 2 adet illüzyon yaratıp düşmanı şaşırtır, ardından asıl beden silindir şapkadan bir ateş kuşu fırlatarak saldırır."
+  },
+  "EPalWazaID::Unique_CuteMole_DiggingAttack": {
+    "localized_name": "Mogurifuto",
+    "description": "Fuddlere özgü bir yetenek. Yerin altına dalar ve düşmanın ayaklarının altından hızla fırlar."
+  },
+  "EPalWazaID::Unique_DarkAlien_JumpScractch": {
+    "localized_name": "Kötücül Kesiş",
+    "description": "Xenovader özel yeteneği. Hızla sıçrayarak sol eliyle düşmanı yarar."
+  },
+  "EPalWazaID::Unique_DarkCrow_TelePoke": {
+    "localized_name": "Hayalet Gaga",
+    "description": "Cawgnito özel yeteneği. Bir düşmanın yanına ışınlanıp ona gagasıyla saldırır."
+  },
+  "EPalWazaID::Unique_DarkMechaDragon_BeamSlash": {
+    "localized_name": "Işın Kesişi",
+    "description": "Xenolord özel yeteneği. Sağ elinde yüksek güçlü bir ışın kılıcı oluşturur ve yüksek hızla hareket ederken iki güçlü kesme saldırısı yapar."
+  },
+  "EPalWazaID::Unique_DarkMechaDragon_ConvergentBeam": {
+    "localized_name": "Astral Işık",
+    "description": "Xenolord özel yeteneği. Karanlıkla dolu enerjiyi yoğunlaştırır ve düz bir çizgi hâlinde, tek seferde serbest bırakır."
+  },
+  "EPalWazaID::Unique_DarkMechaDragon_FunnelLaser": {
+    "localized_name": "Omega Lazeri",
+    "description": "Xenolord özel yeteneği. Alt uzaydan yıkımın ışığını çağırır ve tüm yönlerde sürekli olarak ateşleyerek görüş alanındaki her şeyi küle çevirir."
+  },
+  "EPalWazaID::Unique_DarkMechaDragon_SetFunnel": {
+    "localized_name": "Uydu Parçası",
+    "description": "Xenolord özel yeteneği. Otomatik saldırı işlevine sahip dört uydu benzeri kanat oluşturur. Sonraki saldırı başlatıldığında bu kanatlar otomatik olarak düşmanları izler ve onlara saldırır."
+  },
+  "EPalWazaID::Unique_DarkMechaDragon_WarpComet": {
+    "localized_name": "Kozmik Meteor",
+    "description": "Xenolord özel yeteneği. Işık hızıyla havaya yükselir ve sayısız meteoru mermi olarak yağdırır. Sonrasında bir kuyruklu yıldıza dönüşür ve ileri hücum eder, temas hâlinde devasa bir patlamaya sebep olur."
+  },
+  "EPalWazaID::Unique_DarkScorpion_Pierce": {
+    "localized_name": "Zıplayan İğne",
+    "description": "Menasting özel yeteneği. Yükseğe zıplar ve kuyruğuyla avını büyük bir güç kullanarak sokar. Kuyruğunun zehri ölümcüldür."
+  },
+  "EPalWazaID::Unique_Deer_Ground_DirtyHorn": {
+    "localized_name": "Çılgın Boynuz",
+    "description": "Eikthyrdeer Terra özel yeteneği. Düşmana doğru atılarak boynuzlarıyla çamur sıçratarak saldırır. Binerken kullanıldığında, hareket yönü oyuncu tarafından kontrol edilebilir."
+  },
+  "EPalWazaID::Unique_Deer_PushupHorn": {
+    "localized_name": "Boynuz Aparkatı",
+    "description": "Eikthyrdeer özel yeteneği. Düşmanlarına hücum eder ve boynuzlarını kullanarak onları havaya fırlatır. Binilirken kullanılması hâlinde, hücumun yönü kontrol edilebilir."
+  },
+  "EPalWazaID::Unique_DomeArmorDragon_ExplosiveMissile": {
+    "localized_name": "Patlayıcı Füze",
+    "description": "Aegidrone özgü bir yetenek. Kanatlarından sayısız patlayıcı füze fırlatarak saldırır."
+  },
+  "EPalWazaID::Unique_DrillGame_ShellAttack": {
+    "localized_name": "Kabuk Dönüşü",
+    "description": "Digtoise özel yeteneği. Tüm vücudunu yüksek hızla döndürerek hareket eder. Düşmanları delip geçerek sürekli hasar verir."
+  },
+  "EPalWazaID::Unique_Eagle_GlidingNail": {
+    "localized_name": "Fırtına Pençesi",
+    "description": "Galeclaw özel yeteneği. Dışa uzattığı pençeleriyle acımasız bir hücum hâlinde ileri süzülür."
+  },
+  "EPalWazaID::Unique_ElecPanda_ElecScratch": {
+    "localized_name": "Şimşek Pençesi",
+    "description": "Grizzbolt özel yeteneği. Bir düşmanın üzerine atladıktan ve elektrik yüklü pençeleriyle iki kez saldırdıktan sonra, yere hücum eder ve bölgeye bir elektrik şoku gönderir."
+  },
+  "EPalWazaID::Unique_ElecPanda_GatlingAttack": {
+    "localized_name": "Ağır Yıldırım Tankı",
+    "description": "Grizzbolt özel yeteneği. Nereden çıkardığı belli olmayan bir minigunla ateş açar. Son olarak kısa süre şarj ettikten sonra güçlü 1 mermi ateşler."
+  },
+  "EPalWazaID::Unique_ElecPomeranian_Bite": {
+    "localized_name": "Vahşi Diş (Yıldırım)",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_ElecPomeranian_BiteV2": {
+    "localized_name": "Çifte Diş (Yıldırım)",
+    "description": "Düşmana doğru hızla art arda ısırma saldırıları yapar."
+  },
+  "EPalWazaID::Unique_ElecSnail_ShellCharge": {
+    "localized_name": "Kabuk Hücumu",
+    "description": "SnockTürüne özel yetenek. Kabuğuna çekilerek aldığı hasarı azaltır ve elektrik enerjisi depolar. Şarj tamamlandığında elektrik boşaltarak çevredeki düşmanlara hasar verir. Boşaltma sonrası belirli bir süre boyunca bu Pal'ın kullandığı Elektrik elementli becerilerin saldırı gücü artar."
+  },
+  "EPalWazaID::Unique_FairyDragon_FairyTornado": {
+    "localized_name": "Mistik Kasırga",
+    "description": "Elphidran özel yeteneği. Düşmanları kovalayan gizemli bir güç içeren ikili hortumlar oluşturur."
+  },
+  "EPalWazaID::Unique_FeatherOstrich_Tossin": {
+    "localized_name": "Toprak Koşusu",
+    "description": "Dazemu özel yeteneği. Bir anda hızlanır ve yüksek hızla ileri doğru atılır."
+  },
+  "EPalWazaID::Unique_FengyunDeeper_CloudTempest": {
+    "localized_name": "Bulut Fırtınası",
+    "description": "Fenglope özel yeteneği. İleri hücum ettiği esnada atmosferi manipüle ederek kendi çevresinde basınçlı bir rüzgâr tüneli oluşturur."
+  },
+  "EPalWazaID::Unique_FengyunDeeper_Electric_ThunderTempest": {
+    "localized_name": "Yıldırım Fırtınası",
+    "description": "Fenglope Lux özel yeteneği. İleri hücum ettiği esnada atmosferi manipüle ederek kendi çevresinde fırtına bulutları oluşturur."
+  },
+  "EPalWazaID::Unique_FireKirin_Dark_DarkTossin": {
+    "localized_name": "Karanlık Hücum",
+    "description": "Pyrin Noct özel yeteneği. Karanlık alevlerden bir örtüyle sarılı şekilde ileri hücum eder. Geçtiği yerlerde alevler yanmaya devam eder."
+  },
+  "EPalWazaID::Unique_FireKirin_Tackle": {
+    "localized_name": "Ateş Hücumu",
+    "description": "Pyrin özel yeteneği. Alevlerden bir örtüyle sarılı şekilde ileri hücum eder. Geçtiği yerlerde alevler yanmaya devam eder."
+  },
+  "EPalWazaID::Unique_FlameBuffalo_FlameHorn": {
+    "localized_name": "Alevli Boynuz",
+    "description": "Arsox özel yeteneği. Hedef alır ve boynuzunu kaldırırken acımasız bir momentumla hücum eder."
+  },
+  "EPalWazaID::Unique_FlowerDinosaur_Electric_ThunderWhip": {
+    "localized_name": "Şimşek Darbesi",
+    "description": "Dinossom Lux özel yeteneği. Büyük kuyruğunu kullanarak önündeki yere vurur ve doğrusal bir hat boyunca yıldırım hasarı verir."
+  },
+  "EPalWazaID::Unique_FlowerDinosaur_Whip": {
+    "localized_name": "Botanik Darbesi",
+    "description": "Dinossom özel yeteneği. Büyük kuyruğunu kullanarak önüne, yere vurur ve düz bir çizgide bir şok dalgasına sebep olur."
+  },
+  "EPalWazaID::Unique_FlowerPrince_PoisonGasDance": {
+    "localized_name": "Zehir Dansı",
+    "description": "Dandilorde özgü bir yetenek. Dans ederek korozif sis püskürtür. Püskürtülen bu korozif sis, belirli bir süre boyunca bulunduğu alanda kalır."
+  },
+  "EPalWazaID::Unique_FlowerPrince_PoisonGasTackle": {
+    "localized_name": "Zehir Yürüyüşü",
+    "description": "Dandilorde özgü bir yetenek. Korozif sis püskürterek, yer üzerinde kayar gibi hücum eder. Püskürtülen bu korozif sis, belirli bir süre boyunca bulunduğu alanda kalır."
+  },
+  "EPalWazaID::Unique_Garm_Bite": {
+    "localized_name": "Haşin Diş",
+    "description": "Direhowl özel yeteneği. Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_Garm_BiteV2": {
+    "localized_name": "Çifte Diş",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_GhostAnglerfish_Fire_SweepBait_Fire": {
+    "localized_name": "Alevli fenerle yapılan kötü ruhları uzaklaştırma ritüeli",
+    "description": "Ghangler IgnisTürüne ait özel yetenek. Başındaki alevle sarılmış fenerle önündekini büyük bir hamleyle savurur."
+  },
+  "EPalWazaID::Unique_GhostAnglerfish_SweepBait": {
+    "localized_name": "Fenerle kötülükleri uzaklaştırma ritüeli",
+    "description": "GhanglerTürüne ait özel yetenek. Başındaki uzun fenerle önüdekini büyük bir hamleyle savurur."
+  },
+  "EPalWazaID::Unique_GhostBeast_Tossin": {
+    "localized_name": "Ruh Koşusu",
+    "description": "Maraith özel yeteneği. Yavaşça koşarken düşmanına doğru sürekli olarak titreşen ateş topları fırlatır."
+  },
+  "EPalWazaID::Unique_GhostDragon_PhosphorousBeam": {
+    "localized_name": "Alev Işını",
+    "description": "Eidrolone özgü bir yetenek. Belirli bir süre boyunca yüksek ısıda bir ışın püskürtür. Son anda, ışının hedef aldığı noktada büyük bir patlama meydana getirir."
+  },
+  "EPalWazaID::Unique_GhostDragon_TailSlash": {
+    "localized_name": "Kuyruk Darbesi",
+    "description": "Eidrolone özgü bir yetenek. Düşmana hızla yaklaşır ve kuyruğuyla keser gibi saldırır."
+  },
+  "EPalWazaID::Unique_GoldenHorse_Bite": {
+    "localized_name": "Vahşi Diş (Toprak)",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_GoldenHorse_BiteV2": {
+    "localized_name": "Çifte Diş (Toprak)",
+    "description": "Düşmana doğru hızla art arda ısırma saldırıları yapar."
+  },
+  "EPalWazaID::Unique_GoldenHorse_StoneDash": {
+    "localized_name": "Çarpma Koşusu",
+    "description": "Gildane özel yeteneği. İleri hücum eder, sola ve sağa büyük kuvvetle kayalar fırlatır."
+  },
+  "EPalWazaID::Unique_Gorilla_GroundPunch": {
+    "localized_name": "Yer Yumruğu",
+    "description": "Gorirat özel yeteneği. İki kez yere vurup havaya sıçrar ve güçlü bir yumruk atar."
+  },
+  "EPalWazaID::Unique_Gorilla_Ground_EarthPunch": {
+    "localized_name": "Yer Yumruğu",
+    "description": "Gorirat Terraözel yeteneği. Yere iki kez vurduktan sonra havaya sıçrar ve toprağın gücünü toplayarak güçlü bir yumruk indirir."
+  },
+  "EPalWazaID::Unique_GrassGolem_ArmCannon": {
+    "localized_name": "Kök Topu",
+    "description": "Dualithe özgü bir yetenektir. Kolundan bitki elementli enerji mermileri fırlatır. Mermiler isabetten sonra düşmanı ısrarla takip eden köklere dönüşür ve ayaklarının altından delerek saldırır."
+  },
+  "EPalWazaID::Unique_GrassGolem_Dark_DarkArmCannon": {
+    "localized_name": "Karanlık Kök",
+    "description": "Dualith Nocte özgü bir yetenektir. Kolundan karanlık elementli enerji mermileri fırlatır. Mermiler isabetten sonra düşmanı ısrarla takip eden köklere dönüşür ve ayaklarının altından delerek saldırır."
+  },
+  "EPalWazaID::Unique_GrassGolem_RocketPunch": {
+    "localized_name": "Roket Kolu",
+    "description": "Dualith türüne özel bir beceri. Sol kolunu ana gövdeden ayırarak düşmanları süpürür. Ardından sağ kolunu fırlatır."
+  },
+  "EPalWazaID::Unique_GrassMinotaur_BullRush": {
+    "localized_name": "Boğa Hücumu: Öfke",
+    "description": "Elgrovee özgü bir yetenek. Şiddetle kendini coşturur ve art arda 4 kez öfkeli çim türü hücum gerçekleştirir."
+  },
+  "EPalWazaID::Unique_GrassMinotaur_BullRush_Lower": {
+    "localized_name": "Boğa Hücumu",
+    "description": "Elgrovee özgü bir yetenek. Vahşice kendini coşturur, 2 kez ardışık olarak çim türü bir hücum gerçekleştirir."
+  },
+  "EPalWazaID::Unique_GrassMinotaur_Ice_BullRush": {
+    "localized_name": "Kar Hücumu: Öfke",
+    "description": "Elgrove Cryste özgü bir yetenek. Kendini şiddetle harekete geçirir, art arda 4 kez öfke dolu. Buz elementli hücum saldırısı yapar."
+  },
+  "EPalWazaID::Unique_GrassMinotaur_Ice_BullRush_Lower": {
+    "localized_name": "Kar Hücumu",
+    "description": "Elgrove Cryste özgü bir yetenek. Kendini şiddetle harekete geçirir ve ard arda 2 kez Buz elementine sahip hücum saldırısı yapar."
+  },
+  "EPalWazaID::Unique_GrassPanda_Electric_ElectricPunch": {
+    "localized_name": "Patlayan Yumruk",
+    "description": "Mossanda Lux özel yeteneği. Önce sağ kolunu hazırlayıp ardından düşmana elektrik yüklü bir yumrukla saldırır."
+  },
+  "EPalWazaID::Unique_GrassPanda_MusclePunch": {
+    "localized_name": "Ezici Yumruk",
+    "description": "Mossanda özel yeteneği. Bir düşmana yıkıcı bir yumrukla saldırmadan önce sağ kolunu hazırlar."
+  },
+  "EPalWazaID::Unique_GrassRabbitMan_GrassRoundKick": {
+    "localized_name": "Dönen Bacak Hücumu",
+    "description": "Verdash özel yeteneği. İleri doğru zıplarken yüksek hızlı döner tekmesiyle çevresine hasar verir."
+  },
+  "EPalWazaID::Unique_Grassmammoth_Earthquake": {
+    "localized_name": "Toprak Darbesi",
+    "description": "Mammorest özel yeteneği. Toprağı sarsmak için devasa gövdesini kullanır ve geniş bir alana hasar verir."
+  },
+  "EPalWazaID::Unique_GrimGirl_BrutalMachete": {
+    "localized_name": "Kin Yağmuru",
+    "description": "Splatterina özel yeteneği. Bir anda ışınlanır ve bir kesici saldırı gönderir. Ardından düşmanın üzerine ışınlanır, silahını düşmanına saplar ve karanlık enerji dalgası salar."
+  },
+  "EPalWazaID::Unique_GuardianDog_Bite": {
+    "localized_name": "Vahşi Diş",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_GuardianDog_BiteV2": {
+    "localized_name": "Çifte Diş",
+    "description": "Düşmana doğru hızla art arda ısırma saldırıları yapar."
+  },
+  "EPalWazaID::Unique_HawkBird_Storm": {
+    "localized_name": "Hortum Saldırısı",
+    "description": "Nitewing özel yeteneği. Önünde bir hortum oluşturup hedefine doğru uçar."
+  },
+  "EPalWazaID::Unique_HerculesBeetle_BeetleTackle": {
+    "localized_name": "Milyar Boynuz",
+    "description": "Warsect türünün özel yeteneği. 4 sağlam boynuzuyla düşmanı şişe dizer."
+  },
+  "EPalWazaID::Unique_Horus_FlareBird": {
+    "localized_name": "Anka Parıltısı",
+    "description": "Faleris özel yeteneği. Yakıcı hortumlar oluşturduktan sonra kendini cehennem ateşiyle kaplar ve ileri hücum eder."
+  },
+  "EPalWazaID::Unique_Horus_PerfectStorm": {
+    "localized_name": "Merhametsiz Alev Dalgası",
+    "description": "Faleris özel yeteneği. Çok sayıda yakıcı hortum oluşturur ve süzülürken ileri hücum eder. Hortumlar tam merkezde birleşir ve zaman içinde tek bir devasa hortum hâline gelir."
+  },
+  "EPalWazaID::Unique_Horus_Water_AquaStorm": {
+    "localized_name": "Anka Dalgası",
+    "description": "Faleris Aqua özel yeteneği. Devasa bir hortum çağırdıktan sonra gövdesini suyla kaplar ve ileri hücum eder."
+  },
+  "EPalWazaID::Unique_IceCrocodile_SpitAttack": {
+    "localized_name": "Zehirli kusma tekniği",
+    "description": "Munchilltürüne özel yetenek. Vücudunda sindirilmeden soğutulmuş el bombalarından 3 tane seri şekilde fırlatıp saldırır. Bazen daha tehlikeli şeyler de fırlatabilir…"
+  },
+  "EPalWazaID::Unique_IceDeer_IceHorn": {
+    "localized_name": "Dondurucu Hücum",
+    "description": "Reindrix özel yeteneği. Görkemli buz boynuzlarıyla düşmanları boynuzlayarak ileri hücum eder."
+  },
+  "EPalWazaID::Unique_IceHorse_Dark_DarkBladeAttack": {
+    "localized_name": "Karanlık Kılıç Darbesi",
+    "description": "Frostallion Noct’un özel yeteneği. Karanlık enerjiyi kanatlarına sararak hızla ileriye atılırken kanatlarıyla düşmanı kesip biçer. Sonunda karanlık enerji, hedefi takip eden bir mermiye dönüşür."
+  },
+  "EPalWazaID::Unique_IceHorse_IceBladeAttack": {
+    "localized_name": "Kristal Kanat",
+    "description": "Frostallion özel yeteneği. Kanatları etrafında donmuş havayı biriktirerek ileri koşar ve düşmanlarını kesmek için kanatlarını donuk bir kılıç gibi kullanır."
+  },
+  "EPalWazaID::Unique_IceNarwhal_JumpingHorn": {
+    "localized_name": "Üst Seviye Temizleyici Güç",
+    "description": "Whalaskatürüne özel yetenek. Doğruca ileri doğru kısa bir dalış yaptıktan sonra, göğe doğru fırlayarak saldırır. Fırlarken buz elementli bir patlama gerçekleşir."
+  },
+  "EPalWazaID::Unique_JetDragon_JumpBeam": {
+    "localized_name": "Yıldız Işınları",
+    "description": "Jetragon özel yeteneği. Düşmana doğru uçarken kanatlarını aydınlatır ve sayısız ışın ateşler. Işınlar temas anında patlar."
+  },
+  "EPalWazaID::Unique_KingAlpaca_BodyPress": {
+    "localized_name": "Kral Çarpması",
+    "description": "Kingpaca özel yeteneği. Havaya, çok yükseğe zıplar ve tombul, devasa gövdesiyle düşmanına çarpar."
+  },
+  "EPalWazaID::Unique_KingAlpaca_Ice_IcePress": {
+    "localized_name": "Buz Ezmesi",
+    "description": "Kingpaca Cryst’in özel yeteneği. Yükseğe sıçradıktan sonra, devasa bedeni ve buz gücüyle düşmanlarını ezer."
+  },
+  "EPalWazaID::Unique_KingBahamut_AirCrash": {
+    "localized_name": "Magna Ezişi",
+    "description": "Blazamut Ryu özel yeteneği. Büyük bir zıplamanın ardından havada, yüksek hızla ilerler ve güçlü bir yumruk atmak için güç toplar."
+  },
+  "EPalWazaID::Unique_KingBahamut_ArmSmash": {
+    "localized_name": "Adale Darbesi",
+    "description": "Blazamut özel yeteneği. Kollarını kaldırır ve şişirir, ardından hızla birleştirerek çevre bölgede devasa bir patlamaya sebep olur."
+  },
+  "EPalWazaID::Unique_KingWhale_AquaBlade": {
+    "localized_name": "Deniz Kılıcı",
+    "description": "Panthaluse özgü bir yetenektir. Keskin su bıçakları fırlatarak saldırır."
+  },
+  "EPalWazaID::Unique_KingWhale_AquaTornado": {
+    "localized_name": "Su Tornadosu",
+    "description": "Panthaluse özgü bir yetenektir. Gökyüzüne doğru yükselir ve birden fazla dev kasırga oluşturur. Kasırgalar yavaşça düşmanı takip eder."
+  },
+  "EPalWazaID::Unique_KingWhale_Breaching": {
+    "localized_name": "Yer Çatlağı",
+    "description": "Panthalus'e özgü bir yetenek. Suya dalar, kısa bir süre sonra büyük bir hızla dışarı fırlar. Fırlama ivmesiyle çevresine yayılan dalgalar oluşur."
+  },
+  "EPalWazaID::Unique_KingWhale_HomingBubble": {
+    "localized_name": "Baloncuk Yağmuru",
+    "description": "Panthaluse özgü bir yetenektir. Hedefi takip eden çok sayıda baloncuk fırlatır. Baloncuklar isabetten sonra da yerinde kalır. Temas edildiğinde ya da birkaç saniye sonra patlayarak hasar verir."
+  },
+  "EPalWazaID::Unique_KingWhale_Maelstrom": {
+    "localized_name": "Girdap",
+    "description": "Panthaluse özgü bir yetenektir. Düşmanın etrafında bir girdap oluşturur. Girdap, düşmanı merkeze doğru çekerken daralır, sonunda patlayarak bir su sütunu oluşturur."
+  },
+  "EPalWazaID::Unique_KingWhale_WaveTackle": {
+    "localized_name": "Gelgit Hücumu",
+    "description": "Panthaluse özgü bir beceridir. Tüm vücuduyla düşmana çarparak dalga oluşturur."
+  },
+  "EPalWazaID::Unique_Kirin_Ice_IceTackle": {
+    "localized_name": "Fırtınalı Buz Darbesi",
+    "description": "Univolt Cryste özgü bir yetenek. Kendi etrafında buz sütunları oluştururken düşmana doğru hücum eder."
+  },
+  "EPalWazaID::Unique_Kirin_LightningTackle": {
+    "localized_name": "Şimşek Fırtınası",
+    "description": "Univolt özel yeteneği. Hedefine doğru hücum ederken her yanında şimşekler oluşturur."
+  },
+  "EPalWazaID::Unique_LanternButler_LanternFlame": {
+    "localized_name": "Fener Alevi",
+    "description": "Loomene özgü bir yetenek. Feneri kaldırır ve düşmanı inatla takip eden birden fazla intikam dolu ruhu çağırır."
+  },
+  "EPalWazaID::Unique_LeafMomonga_SomerSault": {
+    "localized_name": "Yaprak dönüşü tekniği",
+    "description": "HerbilTürüne ait özel yetenek. Kısa bir süre pozisyon aldıktan sonra, düşmana hızla çarparak takla atar."
+  },
+  "EPalWazaID::Unique_LegendDeer_RadiantPurge_Otomo": {
+    "localized_name": "Arınma Işığı",
+    "description": "Hartalisözel yeteneği. Gökyüzüne sıçrayarak muazzam bir enerjiyi yoğunlaştırır ve onu yere doğru salar. Yere inen ışık küresi, yeryüzündeki her şeyi arındırır."
+  },
+  "EPalWazaID::Unique_LegendDeer_RadiantWingRush": {
+    "localized_name": "Işıltılı Kanat Hücumu",
+    "description": "Hartalisözel yeteneği. Geriye doğru sıçrayarak sırtında ışık kanatları oluşturur ve havadan düşmana doğru hücum eder."
+  },
+  "EPalWazaID::Unique_LegendDeer_WarpPillarBurst": {
+    "localized_name": "Işın Sütunu Patlaması",
+    "description": "Hartalisözel yeteneği. Bir anlığına görünmez olduktan sonra, kendi etrafındaki geniş bir alana sayısız ışık sütunu yağdırır."
+  },
+  "EPalWazaID::Unique_LilyQueen_LilyHealing": {
+    "localized_name": "Bereketli Koruma",
+    "description": "Lyleen özel yeteneği. Şifa gücüyle, menzil içindeki tüm dostların HP’sini yeniler."
+  },
+  "EPalWazaID::Unique_LilyQueen_WindBarrier": {
+    "localized_name": "-",
+    "description": "-"
+  },
+  "EPalWazaID::Unique_LotusDragon_LotusBloom": {
+    "localized_name": "Açan Nilüfer",
+    "description": "Ophydiae özgü bir yetenek. Yere dalarak gözden kaybolur. Bir tomurcuk olarak yüzeye çıktıktan sonra açılarak geniş bir alanı saldırıyla vurur."
+  },
+  "EPalWazaID::Unique_Manticore_InfernoStrike": {
+    "localized_name": "Volkanik Diş",
+    "description": "Blazehowl özel yeteneği. Topladığı momentumla düşmanına acımasızca saldırır ve çarpma noktasında bir ateş patlamasına sebep olur."
+  },
+  "EPalWazaID::Unique_MonochromeQueen_BalletJump": {
+    "localized_name": "Kara Kanat Dansı",
+    "description": "Solennee özgü bir yetenektir. Çapraz yönde zıplar ve siyah, keskin tüyler fırlatır."
+  },
+  "EPalWazaID::Unique_MoonQueen_IceMoonBlade": {
+    "localized_name": "Seigetsu Parıltısı",
+    "description": "Selyne özel yeteneği. Ay ışığının gücünü taşıyan hızlı bıçakları art arda 3 kez fırlatır."
+  },
+  "EPalWazaID::Unique_MoonQueen_MoonBeam": {
+    "localized_name": "Ay Işını",
+    "description": "Selyne özel yeteneği. Sırtındaki ayda enerji biriktirir ve ön tarafa hilal şeklinde bir ışın fırlatır."
+  },
+  "EPalWazaID::Unique_MoonQueen_MoonBlade": {
+    "localized_name": "Seigetsu Kılıcı",
+    "description": "Selyne özel yeteneği. Ay ışığının gücünü taşıyan hızlı bıçakları art arda 2 kez fırlatır."
+  },
+  "EPalWazaID::Unique_Mothman_GiantSpore": {
+    "localized_name": "Dev Spor",
+    "description": "Silvancee özgü bir yetenek. Düşmanı takip eden devasa sporlar fırlatır. Hedefe çarptığında patlar ve geniş bir alana yayılan şok dalgası oluşturur."
+  },
+  "EPalWazaID::Unique_Mothman_SporeScatter": {
+    "localized_name": "Spor Patlaması",
+    "description": "Silvancee özgü bir yetenek. Patlayan sporları geniş bir alana saçar, belirli bir süre sonra hepsini aynı anda infilak ettirir."
+  },
+  "EPalWazaID::Unique_MummyPal_MummyAttack": {
+    "localized_name": "Mumya Hücumu",
+    "description": "Gildrae özgü bir yetenek. Ellerinden sargı bezleri uzatarak ardı ardına saldırılar gerçekleştirir."
+  },
+  "EPalWazaID::Unique_MysteryMask_LifeSteal": {
+    "localized_name": "Ruh Emme",
+    "description": "Omascul özel yeteneği. Birden hedefin yakınında belirir, kollarıyla hedefini zapt eder ve zapt ettiği düşmanın canını absorbe eder."
+  },
+  "EPalWazaID::Unique_NaughtyCat_CatPress": {
+    "localized_name": "Kedi Baskısı",
+    "description": "Grintale özel yeteneği. Tehditkâr bir şekilde gülümseyerek havaya zıplar ve gövdesiyle düşmanlarını ezer."
+  },
+  "EPalWazaID::Unique_NightBlueHorse_DeathStep": {
+    "localized_name": "Ölümcül Adım",
+    "description": "Starryon özel yeteneği. Bir görünüp bir kaybolan adımlarıyla düşmanları şaşırtır ve keskin boynuzlarıyla kesici bir saldırı yapar."
+  },
+  "EPalWazaID::Unique_NightBlueHorse_Neutral_AirStep": {
+    "localized_name": "Kraliyet Adımı",
+    "description": "Starryon Primoe özgü bir yetenek. Zarif adımlarla düşmanı şaşırtarak, keskin boynuzuyla keskin darbe gönderir."
+  },
+  "EPalWazaID::Unique_NightBlueHorse_Neutral_Tossin": {
+    "localized_name": "Gümüş Atın Koşusu",
+    "description": "Starryon Primoe özgü bir yetenek. Parlak alevlerle kaplanarak düşmana doğru hücum eder."
+  },
+  "EPalWazaID::Unique_NightBlueHorse_Tossin": {
+    "localized_name": "Hayalet Atın Koşusu",
+    "description": "Starryone özgü bir yetenek. Titrek alevlerle kaplanarak düşmana doğru hücum eder."
+  },
+  "EPalWazaID::Unique_NightLady_FlameNightmare": {
+    "localized_name": "Alev Valsi",
+    "description": "Bellanoir Libero özel yeteneği. Zarif bir dansla, genişleyen ateş çemberleri çağırır; ardından düşmanları takip eden ürkütücü alevleri serbest bırakır."
+  },
+  "EPalWazaID::Unique_NightLady_WarpBeam": {
+    "localized_name": "Kâbus Goncası",
+    "description": "Bellanoir Libero özel yeteneği. Aniden kaybolur, sonra yeniden belirerek bir ışın yağmuru ateşler. Işınlar, açan bir çiçek kadar güzel bir görüntüyle dağılır."
+  },
+  "EPalWazaID::Unique_NightLady_WarpBeam_Straight": {
+    "localized_name": "Kâbus Işını",
+    "description": "Bellanoir özel yeteneği. Aniden kaybolur, sonra yeniden belirerek bir ışın yağmuru ateşler."
+  },
+  "EPalWazaID::Unique_OctopursGirl_InkJet": {
+    "localized_name": "Jet dumanı",
+    "description": "Gloopie türüne ait özel yetenek. Önünde duman oluşturarak kendini gizler ve görünmez haldeyken kafa atarak ani bir saldırı gerçekleştirir."
+  },
+  "EPalWazaID::Unique_PandaGirl_RapidKick": {
+    "localized_name": "Ardışık Döner Tekme",
+    "description": "Leafane özgü bir yetenek. bir şekilde art arda döner tekmeler yapar ve sonunda bir iç enerji dalgası gönderir."
+  },
+  "EPalWazaID::Unique_PinkCat_CatPunch": {
+    "localized_name": "Yumruk Yağmuru",
+    "description": "Cattiva özel yeteneği. İki kolunu da sallayıp yumruklar savurarak düşmanlarını kovalar."
+  },
+  "EPalWazaID::Unique_Plesiosaur_LongBreath": {
+    "localized_name": "Derin nefes alımı",
+    "description": "BralohaTürüne ait özel yetenek. Uzun boynundan başına doğru, yavaşça bitki elementi nefesi yayar."
+  },
+  "EPalWazaID::Unique_PoseidonOrca_TorrentLaser": {
+    "localized_name": "Talasonik Lazer",
+    "description": "NeptiliusTürüne ait özel yetenek. Yükselerek ağzında su toplar. Ardından, yüksek basınçlı suyu yatay ve dikey üç kez savurur. Savrulan noktada yarıklar oluşur ve su fışkırır."
+  },
+  "EPalWazaID::Unique_PurpleSpider_SpiderRaid": {
+    "localized_name": "Ağ Saldırısı Darbesi",
+    "description": "Tarantriss özel yeteneği. Çarptığı ilk hedefi bağlayan bir yumak tükürür. Ardından bağlanan hedefe doğru tüm hızıyla gider ve düşmanının işini bitirmek için üç kesici saldırı yapar."
+  },
+  "EPalWazaID::Unique_QueenBee_SpinLance": {
+    "localized_name": "Dönen Asa",
+    "description": "Elizabee özel yeteneği. Gücünü asasına kanalize eder ve asayı hızla döndürerek serbest bırakır."
+  },
+  "EPalWazaID::Unique_RedArmorBird_TriplePeck": {
+    "localized_name": "Aceleci Gaga",
+    "description": "Ragnahawk özel yeteneği. İleri doğru kanat çırparken gagasıyla saldırarak önünde, sağında ve solunda ateşler yakıp küçük bir patlamaya sebep olur."
+  },
+  "EPalWazaID::Unique_RedFlowerBird_JumpKick": {
+    "localized_name": "Çiçek Damgası",
+    "description": "Tropicaw'e özgü bir yetenek. Havaya hafifçe süzülür ve keskin pençelerini büyük bir kuvvetle yere saplar."
+  },
+  "EPalWazaID::Unique_RobinHood_BowSnipe": {
+    "localized_name": "Odaklı Atış",
+    "description": "Robinquill’in özel yeteneği. Yayını çekerek nişan alır ve düşmana güçlü bir atış yapar."
+  },
+  "EPalWazaID::Unique_RockBeast_Ice_IceHorn": {
+    "localized_name": "Buz Patlaması",
+    "description": "Kuprok Cryste özgü bir yetenek. Boynuzuyla zemini kazıyarak yukarı savurur düşmana doğru kar yığınları fırlatır."
+  },
+  "EPalWazaID::Unique_RockBeast_RockHorn": {
+    "localized_name": "Boynuz Patlaması",
+    "description": "Kuproke özgü bir yetenek. Boynuzuyla zemini kazıyarak yukarı savurur, düşmana doğru kaya mermileri fırlatır."
+  },
+  "EPalWazaID::Unique_Ronin_Iai": {
+    "localized_name": "Iaigiri",
+    "description": "Bushitüründe özel bir yetenek. Kılıcını tutarak bir anda düşmanının önünde belirir ve ultra hızlı bir kılıç çekme saldırısı gerçekleştirir."
+  },
+  "EPalWazaID::Unique_Ronin_Iai_PartnerSkill": {
+    "localized_name": "Ani Kılıç Darbesi",
+    "description": "Bushiözel yeteneği. Kılıcını kuşandıktan sonra bir anda düşmanın önünde belirir ve süper hızlı bir kılıç saldırısı gerçekleştirir."
+  },
+  "EPalWazaID::Unique_SaintCentaur_OneSpearRushes": {
+    "localized_name": "Mızrak Saplama",
+    "description": "Paladius özel yeteneği. Mızrağı önde, kutsal güçle sarmalanmış şekilde ileri hücum eder. Diğer elindeki kalkan, hücum sırasındaki tüm saldırıları bloke eder."
+  },
+  "EPalWazaID::Unique_SakuraSaurus_SideTackle": {
+    "localized_name": "Kas Çarpması",
+    "description": "Broncherry’nin özel yeteneği. Yan döner ve önündeki düşmanlara saldırarak onları havaya fırlatır."
+  },
+  "EPalWazaID::Unique_SakuraSaurus_Water_SplashTackle": {
+    "localized_name": "Su Çarpması",
+    "description": "Broncherry Aqua’nın özel yeteneği. Vücudunu yana çevirerek öne doğru atılır, su sıçratırken düşmanlarını savurur."
+  },
+  "EPalWazaID::Unique_SamuraiDog_Bite": {
+    "localized_name": "Vahşi Diş (Toprak)",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_SamuraiDog_BiteV2": {
+    "localized_name": "Çifte Diş (Toprak)",
+    "description": "Düşmana doğru hızla art arda ısırma saldırıları yapar."
+  },
+  "EPalWazaID::Unique_SamuraiDog_DashSlash": {
+    "localized_name": "Azim Kılıcı",
+    "description": "Pupperaie özgü bir yetenek. Tüm gücüyle koşarken ağzında tuttuğu sopayla düşmana saldırır. Bunu art arda 2 kez gerçekleştirir."
+  },
+  "EPalWazaID::Unique_ScorpionMan_Erectric_UpperThunder": {
+    "localized_name": "Yükselen Yıldırım",
+    "description": "Prixter Luxe özgü bir yetenek. Süperiletkenlik ile düşmanla arasındaki mesafeyi anında kapatır, makasını büyük bir güçle savurur."
+  },
+  "EPalWazaID::Unique_ScorpionMan_Uppercut": {
+    "localized_name": "Aparkat Darbesi",
+    "description": "Prixter özel yeteneği. Düşmanla arasındaki mesafeyi hızla kapatır ve kıskaçlarını tüm gücüyle yukarı savurur."
+  },
+  "EPalWazaID::Unique_Sekhmet_RollingScratch": {
+    "localized_name": "Yuvarlanarak Tırmalama",
+    "description": "Sekhmete özgü bir yetenektir. Dönerek düşmanla mesafeyi hızla kapatır ve tırmalar."
+  },
+  "EPalWazaID::Unique_Sekhmet_SomersaultScratch": {
+    "localized_name": "Ters Takla Tırmalaması",
+    "description": "Sekhmete özgü bir yetenektir. Düşmanı tırmalarken geriye doğru takla atarak mesafe açar."
+  },
+  "EPalWazaID::Unique_SheepBall_Roll": {
+    "localized_name": "Döner Hücum",
+    "description": "SheepBall özel yeteneği. Bir top hâline gelir, yolundaki düşmanları yuvarlanarak kovalar. Saldırı sona erdikten sonra sersemler ve hareket edemez."
+  },
+  "EPalWazaID::Unique_SifuDog_Counter": {
+    "localized_name": "Gayretli Duruş",
+    "description": "Dogen özel yeteneği. Aiki duruşuna geçer. Bu duruştayken aldığı saldırıları geçersiz kılar; ardından bir anda düşmana yaklaşarak tüm gücüyle avuç içi darbesi indirir."
+  },
+  "EPalWazaID::Unique_SnakeGirl_SnakeShot": {
+    "localized_name": "Zehir Saçıcı",
+    "description": "Venusa'e özgü bir yetenek. Başındaki yılanlar, parabolik bir yörüngede ilerleyen zehir küreleri püskürtür. Çarptığı noktada yayılan zehirli bataklık, ona temas edenleri zehirli duruma düşürür."
+  },
+  "EPalWazaID::Unique_SnowTigerBeastman_SnowImpact": {
+    "localized_name": "Buzul Darbesi",
+    "description": "Bastigor özel yeteneği. Kuvvetli bir şekilde kükrer ve havaya sıçrar. Ardından iki kolunu da yere gömerek devasa bir buz yarığı oluşturur. Gücünü yere kanalize etmeye devam ederek sonunda buz enerjisiyle büyük bir patlamaya sebep olur."
+  },
+  "EPalWazaID::Unique_SnowTigerBeastman_TrampleSlash": {
+    "localized_name": "Donuk Pençe",
+    "description": "Bastigor özel yeteneği. Yere vurur ve ileride bir buz yarığı oluşmasına sebep olur. Ardından aradaki mesafeyi hızlı bir şekilde kapatarak sağ eliyle kesici bir saldırı yapar."
+  },
+  "EPalWazaID::Unique_SoldierBee_NeedleLance": {
+    "localized_name": "İğne Mızrak",
+    "description": "Beegarde özel yeteneği. Düşmana yüksek hızla hücum eder, mızrağıyla son darbeyi indirir."
+  },
+  "EPalWazaID::Unique_StuffedShark_HiddenWeapon": {
+    "localized_name": "Gözü Kara Nişancı",
+    "description": "Finsidertürüne özel yetenek. Ağzından çift su tabancası çıkarır, sağ ve sol sırayla toplam 6 su mermisi ateşler. Son olarak iki tabancayı birleştirip güçlü tek 1 atış yapar."
+  },
+  "EPalWazaID::Unique_SumoDog_SumoStomp": {
+    "localized_name": "Dosukoi Ezmesi",
+    "description": "Bulldosue özgü bir yetenek. Sağ arka bacağını büyük bir savuruşla yere vurur, oluşan şok dalgasıyla önündeki alanı yelpaze şeklinde saldırıya uğratır."
+  },
+  "EPalWazaID::Unique_TentacleTurtle_HydroSpin": {
+    "localized_name": "Su Dönüşü",
+    "description": "TurtacleBu türün özel yeteneği. Jet püskürtmeli itici gücü kullanarak, yüksek hızda dönerek düşmana doğru hızla saldırır."
+  },
+  "EPalWazaID::Unique_ThunderBird_Ice_SnowStrom": {
+    "localized_name": "Buz Dalışı",
+    "description": "Beakon Cryste özgü bir yetenek. Önce düşmanın bulunduğu noktadan buzları yukarı doğru fışkırtır. Ardından süzülerek hücum ederken sağa ve sola doğru buzları yükseltmeye devam eder."
+  },
+  "EPalWazaID::Unique_ThunderBird_ThunderStorm": {
+    "localized_name": "Şimşek Dalışı",
+    "description": "Beakon özel yeteneği. Önce düşmanın konumuna şimşekle saldırır. Ardından, ileri doğru süzülerek sağına ve soluna şimşekler bırakır."
+  },
+  "EPalWazaID::Unique_ThunderDog_Bite": {
+    "localized_name": "Vahşi Diş (Yıldırım)",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_ThunderDog_BiteV2": {
+    "localized_name": "Çifte Diş (Yıldırım)",
+    "description": "Düşmana doğru hızla art arda ısırma saldırıları yapar."
+  },
+  "EPalWazaID::Unique_ThunderDog_Ice_Bite": {
+    "localized_name": "Vahşi Diş (Buz)",
+    "description": "Bir düşmana doğru hızlıca atlar ve onu ısırır."
+  },
+  "EPalWazaID::Unique_ThunderDog_Ice_BiteV2": {
+    "localized_name": "Çifte Diş (Buz)",
+    "description": "Düşmana doğru hızla art arda ısırma saldırıları yapar."
+  },
+  "EPalWazaID::Unique_ThunderDog_Ice_KoriShorai": {
+    "localized_name": "Yıldırım Çağırma",
+    "description": "Rayhound Cryste özgü bir yetenek. Önüne ardı ardına buz sütunları oluşturur oluşturduğu bu sütunların arasından yüksek hızla hücum ederek ilerler."
+  },
+  "EPalWazaID::Unique_ThunderDog_InazumaShorai": {
+    "localized_name": "Şimşek Çağırma",
+    "description": "Rayhound özel yeteneği. Önünde birbiri ardına şimşekler çağırır, ardından düşen şimşeklerin aralarındaki boşluklardan yüksek hızla ileri hücum eder."
+  },
+  "EPalWazaID::Unique_ThunderDragonMan_NumerousSwordAttack": {
+    "localized_name": "Polikeraunos",
+    "description": "Orserk özel yeteneği. Çok sayıda yıldırım mızrağı çağırır ve düşmana doğru fırlatır. İlk mızrak yıldırım gücünü içinde biriktirir ve birkaç saniye sonra patlar."
+  },
+  "EPalWazaID::Unique_ThunderDragonMan_ThunderSwordAttack": {
+    "localized_name": "Kerauno",
+    "description": "Orserk özel yeteneği. Havaya sıçrayarak şimşekten bir mızrak çağırır ve düşmanına fırlatır."
+  },
+  "EPalWazaID::Unique_TropicalOstrich_DashKick": {
+    "localized_name": "Hızlı tekme",
+    "description": "PalumbaTürüne ait özel yetenek. Koşarak hız kazanırken, düşmana şiddetli bir tekme atar."
+  },
+  "EPalWazaID::Unique_Umihebi_Fire_FireWindingTackle": {
+    "localized_name": "Magma Yılanı",
+    "description": "Jormuntide Ignis özel yeteneği. İlerlerken ateşle kaplı gövdesini döndüre döndüre, kükreyerek düşmana doğru hücum eder."
+  },
+  "EPalWazaID::Unique_Umihebi_WindingTackle": {
+    "localized_name": "Sürtünen Çarpma",
+    "description": "Jormuntide özel yeteneği. İlerlerken suyla kaplı gövdesini döndüre döndüre, kükreyerek düşmana doğru hücum eder."
+  },
+  "EPalWazaID::Unique_VolcanicMonster_Ice_IceAttack": {
+    "localized_name": "Buz Patlaması",
+    "description": "Reptyro Cryst özel yeteneği. Ön bacaklarını kaldırıp yere vurarak düşmanlarının altında soğuk patlamalarına sebep olur. Aynı anda, üzerlerine kar toplarıyla bombardıman yapar."
+  },
+  "EPalWazaID::Unique_VolcanicMonster_MagmaAttack": {
+    "localized_name": "Volkanik Patlama",
+    "description": "Reptyro özel yeteneği. Ön bacaklarını kaldırıp yere vurarak düşmanlarının altında volkanik patlamalara sebep olur. Aynı anda, üzerlerine volkanik bombalarla bombardıman yapar."
+  },
+  "EPalWazaID::Unique_VolcanoDragon_Ice_IceLaser": {
+    "localized_name": "Buz Lazer",
+    "description": "Moldron Cryst'e özgü bir yetenektir. Ağzından dondurucu bir ışın püskürterek yeri buzla kaplar. Donmuş zeminde kırağı birikintileri oluşur temas eden düşmanları dondurarak hasar verir."
+  },
+  "EPalWazaID::Unique_VolcanoDragon_Ice_IcicleSpit": {
+    "localized_name": "Buz Püskürtmesi",
+    "description": "Moldron Cryste özgü bir yetenektir. Ağzından buz parçaları fırlatır. Donmuş zeminde kırağı birikintileri oluşur, temas eden düşmanları dondurarak hasar verir."
+  },
+  "EPalWazaID::Unique_VolcanoDragon_MagmaSpit": {
+    "localized_name": "Magma Püskürtmesi",
+    "description": "Moldrone özgü bir yetenektir. Ağzından magma parçaları fırlatır. İsabet noktasında magma birikintileri oluşur temas eden düşmanlara hasar verir."
+  },
+  "EPalWazaID::Unique_VolcanoDragon_VolcanicLaser": {
+    "localized_name": "Magma Lazer",
+    "description": "Moldrone özgü bir yetenektir. Ağzından taşan ısı ışınıyla yeri yakıp kavurur. Isınan zeminde magma birikintileri oluşur, temas edenleri yakar."
+  },
+  "EPalWazaID::Unique_WeaselDragon_FlyingTackle": {
+    "localized_name": "Roket Çarpması",
+    "description": "Chillet özel yeteneği. Biraz güç toplayıp ileri atılır. İniş yaptığı anda her zaman gözlerini korkuyla sımsıkı kapatır."
+  },
+  "EPalWazaID::Unique_Werewolf_Ice_SnowScratch": {
+    "localized_name": "Kar Pençesi",
+    "description": "WereWolf_Ice özel yeteneği. İleri atılır ve buz elementiyle güçlendirilmiş vahşi pençeleriyle iki kez saldırır."
+  },
+  "EPalWazaID::Unique_Werewolf_Scratch": {
+    "localized_name": "Zıplayan Pençe",
+    "description": "WereWolf özel yeteneği. İleri atılır ve karanlık enerjiyle güçlendirilmiş vahşi pençeleriyle iki kez saldırır."
+  },
+  "EPalWazaID::Unique_WhiteDeer_Dark_DarkPillar": {
+    "localized_name": "Karanlık Nova",
+    "description": "Celesdir Nocte özgü bir yetenek. Önündeki geniş bir alanda Karanlık elementli bir patlama oluşturur, ardından yürürken kendi etrafında karanlık sütunlar meydana getirir."
+  },
+  "EPalWazaID::Unique_WhiteDeer_HolyPillar": {
+    "localized_name": "Kutsal Nova",
+    "description": "Celesdir özel yeteneği. Önündeki geniş bir alanı kutsal ışıkla yaktıktan sonra kendi çevresine kutsal ışık yayarak ilerler."
+  },
+  "EPalWazaID::Unique_WhiteShieldDragon_ShieldTackle": {
+    "localized_name": "Kalkan Hücumu",
+    "description": "Silvegis özel yeteneği. Ön tarafına her türlü saldırıyı azaltan bir kalkan yerleştirir; ardından ileri hücum ederek düşmanı ezer."
+  },
+  "EPalWazaID::Unique_WhiteTiger_Ground_IronScratch": {
+    "localized_name": "Taş Pençesi",
+    "description": "Cryolinx Terra özel yeteneği. Önce pençeleriyle saldırır; ardından ikinci bir darbe gelir ve tüm gövdesini kullanarak güçlü bir kesme hareketiyle işi bitirir. Pençelerini savurduğunda üç taş bir yelpaze şeklinde fırlar."
+  },
+  "EPalWazaID::Unique_WhiteTiger_IceScratch": {
+    "localized_name": "Tipi Pençesi",
+    "description": "Cryolinx özel yeteneği. Önce pençeleriyle saldırır, ardından ikinci bir darbe gelir ve tüm gövdesini kullanarak güçlü bir kesme hareketiyle işi bitirir. Pençelerini savurduğunda üç buz sütunu bir yelpaze şeklinde fırlar."
+  },
+  "EPalWazaID::Unique_WingGolem_Fire_FlameCutter": {
+    "localized_name": "Alev Kesici",
+    "description": "Knocklem Ignise özgü bir yetenek. Geniş bir savuruşla sırtındaki alev halkasını fırlatır. Alev halkası, dairesel bir yörünge çizerek uçar."
+  },
+  "EPalWazaID::Unique_WingGolem_RoundCutter": {
+    "localized_name": "Yer Kesici",
+    "description": "Knocklem özel yeteneği. Büyük bir savuruşla sırtındaki halkayı fırlatır. Halka, dairesel bir rota izleyerek ilerler."
+  },
+  "EPalWazaID::Unique_YakushimaBoss001_Small_DemonEyeCharge": {
+    "localized_name": "Göz Hücumu",
+    "description": "Şeytan Gözü’nin özel yeteneği. , düşmana doğru hızla atılır. Yere veya duvara çarptığında sekme yapar."
+  },
+  "EPalWazaID::Unique_YakushimaMonster001_SlimePress_Dark": {
+    "localized_name": "Slime Baskısı (Karanlık)",
+    "description": "Mor Slime’nin özel yeteneği. Düşmana doğru zıplayarak saldırır."
+  },
+  "EPalWazaID::Unique_YakushimaMonster001_SlimePress_Fire": {
+    "localized_name": "Slime Baskısı (Ateş)",
+    "description": "Kırmızı Slime’nin özel yeteneği. Düşmana doğru zıplayarak saldırır."
+  },
+  "EPalWazaID::Unique_YakushimaMonster001_SlimePress_Leaf": {
+    "localized_name": "Slime Baskısı (Ot)",
+    "description": "Yeşil Slime’nin özel yeteneği. Düşmana doğru zıplayarak saldırır."
+  },
+  "EPalWazaID::Unique_YakushimaMonster001_SlimePress_Normal": {
+    "localized_name": "Slime Baskısı (Element Yok)",
+    "description": "Kırmızı Slime’nin özel yeteneği. Düşmana doğru zıplayarak saldırır."
+  },
+  "EPalWazaID::Unique_YakushimaMonster001_SlimePress_Rainbow": {
+    "localized_name": "Slime Baskısı (Gökkuşağı)",
+    "description": "Gökkuşağı Slime’nin özel yeteneği. Düşmana doğru zıplayarak saldırır."
+  },
+  "EPalWazaID::Unique_YakushimaMonster001_SlimePress_Water": {
+    "localized_name": "Slime Baskısı (Su)",
+    "description": "Mavi Slime’nin özel yeteneği. Düşmana doğru zıplayarak saldırır."
+  },
+  "EPalWazaID::Unique_YakushimaMonster002_SwordCharge": {
+    "localized_name": "Kılıç Şarjı",
+    "description": "Büyülü Kılıç’nin özel yeteneği. , düşmana doğru saplama saldırısı yapar."
+  },
+  "EPalWazaID::Unique_YakushimaMonster003_BatCharge": {
+    "localized_name": "Yarasa Saldırısı",
+    "description": "Mağara Yarasası’nin özel yeteneği. , tüm vücudunu kullanarak düşmana saldırır. Yere veya duvara çarptığında sekme yapar."
+  },
+  "EPalWazaID::Unique_Yakushima_EyeTossin": {
+    "localized_name": "Sabit Bakışla Hücum",
+    "description": "Cthulhu’nun Gözü’nin özel yeteneği. Düşmana doğru birkaç kez saldırır."
+  },
+  "EPalWazaID::Unique_Yakushima_MouthTossin": {
+    "localized_name": "Hızlı Hücum",
+    "description": "Cthulhu’nun Gözü’nin özel yeteneği. Düşmana doğru yüksek hızda defalarca saldırır."
+  },
+  "EPalWazaID::Unique_Yakushima_SummonServant": {
+    "localized_name": "Hizmetkar Çağırma",
+    "description": "Cthulhu’nun Gözü’nin özel yeteneği. 4 hizmetkar çağırır. Hizmetkarlar düşmana doğru gider ve çarparak hasar verir. Hizmetkarlar saldırıya uğradığında veya belirli bir süre geçtikten sonra yok olur."
+  },
+  "EPalWazaID::Unique_Yeti_Grass_GrassBall": {
+    "localized_name": "Çim Bovlingi",
+    "description": "Wumpo Botan özel yeteneği. İlerlerken çimenden oluşan bir top yuvarlar ve çimen topu yeterince büyüdüğünde onu fırlatarak bir patlamaya sebep olur."
+  },
+  "EPalWazaID::Unique_Yeti_SnowBall": {
+    "localized_name": "Kar Bovlingi",
+    "description": "Wumpo özel yeteneği. İlerlerken bir kar topu yuvarlar ve kar topu yeterince büyüdüğünde onu fırlatarak bir patlamaya sebep olur."
+  },
+  "EPalWazaID::WallSplash": {
+    "localized_name": "Sıçrama Perdesi",
+    "description": "Sürekli olarak düşmanın konumunda su sütunlarından oluşan duvarlar oluşturur."
+  },
+  "EPalWazaID::WaterBall": {
+    "localized_name": "Su Patlaması",
+    "description": "Devasa bir su topu yaratır ve bir düşmana fırlatır."
+  },
+  "EPalWazaID::WaterGun": {
+    "localized_name": "Su Silahı",
+    "description": "Doğrudan bir düşmana doğru bir su topu fırlatır."
+  },
+  "EPalWazaID::Weapon_Use": {
+    "localized_name": "Silah kullanımı",
+    "description": "Eldeki silahı kullanarak saldır."
+  },
+  "EPalWazaID::WindBurst": {
+    "localized_name": "Rüzgâr Patlaması",
+    "description": "Kendi etrafında dev bir rüzgâr girdabı oluşturur, büyük güçte bir saldırı gerçekleştirir."
+  },
+  "EPalWazaID::WindCutter": {
+    "localized_name": "Rüzgâr Kesici",
+    "description": "Doğrudan düşmana uçan yüksek hızlı, rüzgârdan bir kılıç fırlatır."
+  },
+  "EPalWazaID::WindEdge": {
+    "localized_name": "Keskin Rüzgâr",
+    "description": "Dağılan keskin hava bıçakları ateşler."
+  }
+}

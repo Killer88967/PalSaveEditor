@@ -512,6 +512,67 @@ pub(crate) fn decode_raw_data(header: &Header, value: &Property) -> Result<Decod
     })
 }
 
+/// Builds the `RawData` blob a character-map row carries, so HTTP tests can
+/// stand up a row the real reader accepts instead of hand-rolling bytes.
+#[cfg(test)]
+pub(crate) fn raw_data_for_test(
+    header: &Header,
+    save_parameter: Properties
+) -> Result<Vec<u8>, String> {
+    let mut properties = Properties::default();
+    properties.insert(
+        PropertyKey(0, "SaveParameter".into()),
+        Property::Struct(StructValue::Struct(save_parameter))
+    );
+    let mut schemas = HashMap::new();
+    test_schemas("", &properties, &mut schemas);
+    encode_raw_data(header, &(DecodedRaw { properties, suffix: Vec::new(), schemas }))
+}
+
+/// Derives the per-path property schemas the writer normally collects while
+/// reading, covering only the shapes the test fixtures use.
+#[cfg(test)]
+fn test_schemas(
+    prefix: &str,
+    properties: &Properties,
+    out: &mut HashMap<String, PropertyTagPartial>
+) {
+    use uesave::{ PropertyTagDataPartial, PropertyType };
+    // Any struct name round-trips through the reader; a fixture-specific one
+    // keeps synthetic bytes obviously distinct from a real save's.
+    let structure = || PropertyTagDataPartial::Struct {
+        struct_type: StructType::Struct(Some("SyntheticStruct".into())),
+        id: uesave::FGuid::nil(),
+    };
+    for (key, property) in &properties.0 {
+        let path = if prefix.is_empty() { key.1.clone() } else { format!("{prefix}.{}", key.1) };
+        let data = match property {
+            Property::Int(_) => PropertyTagDataPartial::Other(PropertyType::IntProperty),
+            Property::Int64(_) => PropertyTagDataPartial::Other(PropertyType::Int64Property),
+            Property::Bool(_) => PropertyTagDataPartial::Other(PropertyType::BoolProperty),
+            Property::Str(_) => PropertyTagDataPartial::Other(PropertyType::StrProperty),
+            Property::Name(_) => PropertyTagDataPartial::Other(PropertyType::NameProperty),
+            Property::Byte(Byte::Byte(_)) => PropertyTagDataPartial::Byte(Some("None".into())),
+            Property::Struct(StructValue::Struct(inner)) => {
+                test_schemas(&path, inner, out);
+                structure()
+            }
+            Property::Array(ValueVec::Struct(values)) => {
+                for value in values {
+                    if let StructValue::Struct(inner) = value {
+                        test_schemas(&path, inner, out);
+                    }
+                }
+                PropertyTagDataPartial::Array(Box::new(structure()))
+            }
+            _ => {
+                continue;
+            }
+        };
+        out.insert(path, PropertyTagPartial { id: None, data });
+    }
+}
+
 fn encode_raw_data(header: &Header, decoded: &DecodedRaw) -> Result<Vec<u8>, String> {
     let mut writer = RawWriter::new(header, &decoded.schemas);
     write_properties_none_terminated(&mut writer, &decoded.properties).map_err(|e|
@@ -1205,6 +1266,477 @@ impl ArchiveWriter for RawWriter<'_> {
     }
 }
 
+// ---------------------------------------------------------------------------
+// Players
+//
+// Players are rows of the same character map as Pals, but they carry a
+// different set of fields: a level, an experience total, and two arrays of
+// status points that the game spends on HP, stamina, attack and so on.
+// ---------------------------------------------------------------------------
+
+/// Status points are stored per player as a bounded stat allocation, so the
+/// editor caps them where the Pal souls and IVs are capped.
+pub const MAX_STATUS_POINT: i32 = 255;
+
+/// Palworld writes these status names in Japanese whatever the client locale
+/// is, so they are matched verbatim and only given an English label for display.
+const STATUS_LABELS: [(&str, &str); 8] = [
+    ("最大HP", "Max HP"),
+    ("最大SP", "Max stamina"),
+    ("攻撃力", "Attack"),
+    ("防御力", "Defence"),
+    ("所持重量", "Carry weight"),
+    ("捕獲率", "Capture power"),
+    ("作業速度", "Work speed"),
+    ("移動速度アップ", "Move speed"),
+];
+
+fn status_label(name: &str) -> String {
+    STATUS_LABELS.iter()
+        .find(|(japanese, _)| *japanese == name)
+        .map_or_else(
+            || name.to_string(),
+            |(_, label)| (*label).to_string()
+        )
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PlayerStatusPoint {
+    /// The `StatusName` exactly as the save stores it; updates key off this.
+    pub name: String,
+    /// English rendering of `name`, falling back to the raw name.
+    pub label: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub point: Option<i32>,
+    /// False when the entry has no integer `StatusPoint` to write back into.
+    pub editable: bool,
+}
+
+#[derive(Debug, Clone, Default, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PlayerEditCapabilities {
+    pub level: bool,
+    pub exp: bool,
+    pub unused_status_point: bool,
+    pub status_points: bool,
+    pub ex_status_points: bool,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PlayerDetail {
+    /// Character-map id, in the same `instance:`/`map:` form Pals use.
+    pub id: String,
+    pub map_index: usize,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub player_uid: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub instance_id: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub nickname: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub level: Option<i32>,
+    /// Highest level this player's `Level` property can physically store. The
+    /// game caps levels far below this; the save format is the only limit here.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub max_level: Option<i64>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub exp: Option<i64>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub unused_status_point: Option<i32>,
+    pub status_points: Vec<PlayerStatusPoint>,
+    pub ex_status_points: Vec<PlayerStatusPoint>,
+    pub missing_fields: Vec<String>,
+    pub edit_capabilities: PlayerEditCapabilities,
+    pub raw_path: Vec<PathSegment>,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct StatusPointUpdate {
+    /// Must match a `StatusName` the player already has; entries are never added.
+    pub name: String,
+    pub value: i32,
+}
+
+#[derive(Debug, Clone, Default, Deserialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct UpdatePlayerRequest {
+    pub expected_revision: u64,
+    pub level: Option<FieldUpdate<i32>>,
+    pub exp: Option<FieldUpdate<i64>>,
+    pub unused_status_point: Option<FieldUpdate<i32>>,
+    pub status_points: Option<FieldUpdate<Vec<StatusPointUpdate>>>,
+    pub ex_status_points: Option<FieldUpdate<Vec<StatusPointUpdate>>>,
+}
+
+/// Every player row in the world file, whether or not its `.sav` was uploaded.
+pub fn players(save: &Save) -> Result<Vec<PlayerDetail>, String> {
+    let entries = character_map(save)?;
+    Ok(
+        entries
+            .iter()
+            .enumerate()
+            .filter(
+                |(index, entry)| summary(&save.header, *index, &entry.key, &entry.value).is_player
+            )
+            .map(|(index, entry)| player_detail_for(&save.header, index, &entry.key, &entry.value))
+            .collect()
+    )
+}
+
+pub fn update_player(
+    save: &mut Save,
+    player_uid: &str,
+    request: &UpdatePlayerRequest
+) -> Result<PlayerDetail, UpdateError> {
+    let header = save.header.clone();
+    let entries = character_map(save).map_err(UpdateError::Internal)?;
+    let index = resolve_player(&header, entries, player_uid).ok_or_else(||
+        UpdateError::NotFound(format!("player {player_uid} was not found in the world file"))
+    )?;
+    let mut value = entries[index].value.clone();
+    let mut decoded = decode_raw_data(&header, &value).map_err(UpdateError::Internal)?;
+    let errors = validate_player_update(request, decoded.save_parameter());
+    if !errors.is_empty() {
+        return Err(UpdateError::Validation(errors));
+    }
+    apply_player_update(
+        decoded.save_parameter_mut().map_err(UpdateError::Internal)?,
+        request
+    ).map_err(|(field, message)| UpdateError::Validation(BTreeMap::from([(field, message)])))?;
+    let bytes = encode_raw_data(&header, &decoded).map_err(UpdateError::Internal)?;
+    set_raw_bytes(&mut value, bytes).map_err(UpdateError::Internal)?;
+    decode_raw_data(&header, &value).map_err(|e|
+        UpdateError::Internal(format!("serialized player failed verification: {e}"))
+    )?;
+    character_map_mut(save).map_err(UpdateError::Internal)?[index].value = value;
+    let entries = character_map(save).map_err(UpdateError::Internal)?;
+    Ok(player_detail_for(&header, index, &entries[index].key, &entries[index].value))
+}
+
+fn resolve_player(
+    header: &Header,
+    entries: &[uesave::MapEntry],
+    player_uid: &str
+) -> Option<usize> {
+    entries
+        .iter()
+        .position(|entry| {
+            uuid_field(as_struct_properties(&entry.key), "PlayerUId").is_some_and(|actual|
+                actual.eq_ignore_ascii_case(player_uid)
+            )
+        })
+        .filter(|index| {
+            summary(header, *index, &entries[*index].key, &entries[*index].value).is_player
+        })
+}
+
+fn player_detail_for(
+    header: &Header,
+    index: usize,
+    key: &Property,
+    value: &Property
+) -> PlayerDetail {
+    let summary = summary(header, index, key, value);
+    let parameters = save_parameter(header, value).ok();
+    let level_property = parameters
+        .as_ref()
+        .and_then(|properties| property_by_name(properties, "Level"));
+    let exp = parameters
+        .as_ref()
+        .and_then(|properties| property_by_name(properties, "Exp"))
+        .and_then(as_i64);
+    let unused_status_point = int_field(parameters.as_ref(), "UnusedStatusPoint");
+    let status_points = status_point_list(parameters.as_ref(), "GotStatusPointList");
+    let ex_status_points = status_point_list(parameters.as_ref(), "GotExStatusPointList");
+    let mut missing_fields = Vec::new();
+    for (name, missing) in [
+        ("level", summary.level.is_none()),
+        ("exp", exp.is_none()),
+        ("statusPoints", status_points.is_empty()),
+        ("exStatusPoints", ex_status_points.is_empty()),
+    ] {
+        if missing {
+            missing_fields.push(name.to_string());
+        }
+    }
+    PlayerDetail {
+        id: summary.id,
+        map_index: index,
+        player_uid: summary.player_uid,
+        instance_id: summary.instance_id,
+        nickname: summary.nickname,
+        level: summary.level,
+        max_level: level_property.and_then(numeric_bounds).map(|(_, max)| max),
+        exp,
+        unused_status_point,
+        edit_capabilities: player_capabilities(
+            parameters.as_ref(),
+            &status_points,
+            &ex_status_points
+        ),
+        status_points,
+        ex_status_points,
+        missing_fields,
+        raw_path: summary.raw_path,
+    }
+}
+
+fn player_capabilities(
+    properties: Option<&Properties>,
+    status_points: &[PlayerStatusPoint],
+    ex_status_points: &[PlayerStatusPoint]
+) -> PlayerEditCapabilities {
+    let property = |name| properties.and_then(|p| property_by_name(p, name));
+    PlayerEditCapabilities {
+        level: property("Level").and_then(numeric_bounds).is_some(),
+        exp: property("Exp").and_then(numeric_bounds).is_some(),
+        unused_status_point: property("UnusedStatusPoint").and_then(numeric_bounds).is_some(),
+        status_points: status_points.iter().any(|entry| entry.editable),
+        ex_status_points: ex_status_points.iter().any(|entry| entry.editable),
+    }
+}
+
+fn status_point_list(properties: Option<&Properties>, name: &str) -> Vec<PlayerStatusPoint> {
+    let Some(Property::Array(ValueVec::Struct(entries))) = properties.and_then(|properties|
+        property_by_name(properties, name)
+    ) else {
+        return Vec::new();
+    };
+    entries.iter().filter_map(status_point).collect()
+}
+
+fn status_point(entry: &StructValue) -> Option<PlayerStatusPoint> {
+    let properties = match entry {
+        StructValue::Struct(properties) => properties,
+        _ => {
+            return None;
+        }
+    };
+    let name = status_name(entry)?.to_string();
+    let point = property_by_name(properties, "StatusPoint");
+    Some(PlayerStatusPoint {
+        label: status_label(&name),
+        name,
+        point: point.and_then(as_i32),
+        editable: point.and_then(numeric_bounds).is_some(),
+    })
+}
+
+fn status_name(entry: &StructValue) -> Option<&str> {
+    match entry {
+        StructValue::Struct(properties) =>
+            property_by_name(properties, "StatusName").and_then(as_string),
+        _ => None,
+    }
+}
+
+/// The inclusive range a numeric property's storage can hold. Player level is
+/// checked against this instead of a game-balance cap, so the only ceiling is
+/// what the field can physically keep.
+fn numeric_bounds(property: &Property) -> Option<(i64, i64)> {
+    Some(match property {
+        Property::Int8(_) => (i64::from(i8::MIN), i64::from(i8::MAX)),
+        Property::Int16(_) => (i64::from(i16::MIN), i64::from(i16::MAX)),
+        Property::Int(_) => (i64::from(i32::MIN), i64::from(i32::MAX)),
+        Property::Int64(_) => (i64::MIN, i64::MAX),
+        Property::UInt8(_) | Property::Byte(Byte::Byte(_)) => (0, i64::from(u8::MAX)),
+        Property::UInt16(_) => (0, i64::from(u16::MAX)),
+        Property::UInt32(_) => (0, i64::from(u32::MAX)),
+        Property::UInt64(_) => (0, i64::MAX),
+        _ => {
+            return None;
+        }
+    })
+}
+
+fn as_i64(property: &Property) -> Option<i64> {
+    match property {
+        Property::Int64(value) => Some(*value),
+        Property::UInt32(value) => Some(i64::from(*value)),
+        Property::UInt64(value) => i64::try_from(*value).ok(),
+        other => as_i32(other).map(i64::from),
+    }
+}
+
+fn validate_player_update(
+    request: &UpdatePlayerRequest,
+    properties: &Properties
+) -> BTreeMap<String, String> {
+    let mut errors = BTreeMap::new();
+    let caps = player_capabilities(
+        Some(properties),
+        &status_point_list(Some(properties), "GotStatusPointList"),
+        &status_point_list(Some(properties), "GotExStatusPointList")
+    );
+    let mut requested = 0;
+    macro_rules! existing {
+        ($field:ident, $cap:ident, $wire:literal) => {
+            if request.$field.is_some() {
+                requested += 1;
+                if !caps.$cap {
+                    errors.insert(
+                        $wire.into(),
+                        "Field is absent or has an unsupported property type".into(),
+                    );
+                }
+            }
+        };
+    }
+    existing!(level, level, "level");
+    existing!(exp, exp, "exp");
+    existing!(unused_status_point, unused_status_point, "unusedStatusPoint");
+    existing!(status_points, status_points, "statusPoints");
+    existing!(ex_status_points, ex_status_points, "exStatusPoints");
+    if requested == 0 {
+        errors.insert("request".into(), "At least one player field must be supplied".into());
+    }
+    if let Some(v) = &request.level {
+        // Levels are bounded by the property's storage rather than by the
+        // game's own progression cap, which players routinely edit past.
+        let (_, max) = property_by_name(properties, "Level")
+            .and_then(numeric_bounds)
+            .unwrap_or((0, i64::from(MAX_PAL_LEVEL)));
+        if i64::from(v.value) < 1 || i64::from(v.value) > max {
+            errors.insert("level".into(), format!("Value must be between 1 and {max}"));
+        }
+    }
+    if let Some(v) = &request.exp && v.value < 0 {
+        errors.insert("exp".into(), "Experience cannot be negative".into());
+    }
+    range(
+        &mut errors,
+        "unusedStatusPoint",
+        request.unused_status_point.as_ref().map(|v| v.value),
+        0,
+        MAX_STATUS_POINT
+    );
+    for (wire, source, update) in [
+        ("statusPoints", "GotStatusPointList", &request.status_points),
+        ("exStatusPoints", "GotExStatusPointList", &request.ex_status_points),
+    ] {
+        if let Some(update) = update {
+            validate_status_points(
+                &mut errors,
+                wire,
+                &update.value,
+                &status_point_list(Some(properties), source)
+            );
+        }
+    }
+    errors
+}
+
+fn validate_status_points(
+    errors: &mut BTreeMap<String, String>,
+    field: &str,
+    updates: &[StatusPointUpdate],
+    existing: &[PlayerStatusPoint]
+) {
+    let mut seen = HashSet::new();
+    for update in updates {
+        if !seen.insert(update.name.as_str()) {
+            errors.insert(field.into(), format!("{} was supplied twice", update.name));
+            break;
+        }
+        let Some(entry) = existing.iter().find(|entry| entry.name == update.name) else {
+            errors.insert(
+                field.into(),
+                format!("{} is not one of this player's status entries", update.name)
+            );
+            break;
+        };
+        if !entry.editable {
+            errors.insert(
+                field.into(),
+                format!("{} has an unsupported property type", update.name)
+            );
+            break;
+        }
+        if !(0..=MAX_STATUS_POINT).contains(&update.value) {
+            errors.insert(
+                field.into(),
+                format!("{} must be between 0 and {MAX_STATUS_POINT}", update.name)
+            );
+            break;
+        }
+    }
+}
+
+fn apply_player_update(
+    properties: &mut Properties,
+    request: &UpdatePlayerRequest
+) -> Result<(), (String, String)> {
+    if let Some(v) = &request.level {
+        set_existing_i32(properties, "Level", v.value).map_err(|e| ("level".into(), e))?;
+    }
+    if let Some(v) = &request.exp {
+        set_existing_i64(properties, "Exp", v.value).map_err(|e| ("exp".into(), e))?;
+    }
+    if let Some(v) = &request.unused_status_point {
+        set_existing_i32(properties, "UnusedStatusPoint", v.value).map_err(|e| (
+            "unusedStatusPoint".into(),
+            e,
+        ))?;
+    }
+    for (wire, source, update) in [
+        ("statusPoints", "GotStatusPointList", &request.status_points),
+        ("exStatusPoints", "GotExStatusPointList", &request.ex_status_points),
+    ] {
+        if let Some(update) = update {
+            set_existing_status_points(properties, source, &update.value).map_err(|e| (
+                wire.to_string(),
+                e,
+            ))?;
+        }
+    }
+    Ok(())
+}
+
+fn set_existing_i64(p: &mut Properties, name: &str, value: i64) -> Result<(), String> {
+    match exact_mut(p, name, 0).ok_or_else(|| format!("{name} is absent"))? {
+        Property::Int64(v) => {
+            *v = value;
+        }
+        Property::UInt64(v) => {
+            *v = u64::try_from(value).map_err(|_| format!("{name} exceeds its UInt64 storage"))?;
+        }
+        Property::UInt32(v) => {
+            *v = u32::try_from(value).map_err(|_| format!("{name} exceeds its UInt32 storage"))?;
+        }
+        _ => {
+            let value = i32
+                ::try_from(value)
+                .map_err(|_| format!("{name} exceeds its 32-bit storage"))?;
+            return set_existing_i32(p, name, value);
+        }
+    }
+    Ok(())
+}
+
+fn set_existing_status_points(
+    p: &mut Properties,
+    name: &str,
+    updates: &[StatusPointUpdate]
+) -> Result<(), String> {
+    let Some(Property::Array(ValueVec::Struct(entries))) = exact_mut(p, name, 0) else {
+        return Err(format!("{name} is not an array of status structs"));
+    };
+    for update in updates {
+        let entry = entries
+            .iter_mut()
+            .find(|entry| status_name(entry) == Some(update.name.as_str()))
+            .ok_or_else(|| format!("{} is not one of this player's status entries", update.name))?;
+        let StructValue::Struct(properties) = entry else {
+            return Err(format!("{} is not a status struct", update.name));
+        };
+        set_existing_i32(properties, "StatusPoint", update.value)?;
+    }
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -1469,6 +2001,215 @@ mod tests {
         }
         assert_eq!(strings_field(Some(&p), "PassiveSkillList"), vec!["P1", "P2"]);
         assert_eq!(property_by_name(&p, "Untouched").cloned(), untouched);
+    }
+
+    fn status_array(entries: &[(&str, i32)]) -> Property {
+        Property::Array(
+            ValueVec::Struct(
+                entries
+                    .iter()
+                    .map(|(name, point)| {
+                        let mut p = Properties::default();
+                        p.insert(
+                            PropertyKey(0, "StatusName".into()),
+                            Property::Name((*name).into())
+                        );
+                        p.insert(PropertyKey(0, "StatusPoint".into()), Property::Int(*point));
+                        StructValue::Struct(p)
+                    })
+                    .collect()
+            )
+        )
+    }
+
+    /// Mirrors a real player row: a byte level, an Int64 experience total and
+    /// two status arrays whose entries differ between the two.
+    fn player_properties() -> Properties {
+        let mut p = Properties::default();
+        p.insert(PropertyKey(0, "Level".into()), Property::Byte(Byte::Byte(17)));
+        p.insert(PropertyKey(0, "Exp".into()), Property::Int64(38_224));
+        p.insert(PropertyKey(0, "NickName".into()), Property::Str("Bludistak".into()));
+        p.insert(PropertyKey(0, "IsPlayer".into()), Property::Bool(true));
+        p.insert(
+            PropertyKey(0, "GotStatusPointList".into()),
+            status_array(
+                &[
+                    ("最大HP", 0),
+                    ("最大SP", 8),
+                    ("所持重量", 8),
+                    ("移動速度アップ", 1),
+                ]
+            )
+        );
+        p.insert(
+            PropertyKey(0, "GotExStatusPointList".into()),
+            status_array(
+                &[
+                    ("最大HP", 0),
+                    ("攻撃力", 1),
+                ]
+            )
+        );
+        p
+    }
+
+    #[test]
+    fn reads_status_points_with_labels_and_storage_bounds() {
+        let p = player_properties();
+        let points = status_point_list(Some(&p), "GotStatusPointList");
+        assert_eq!(
+            points
+                .iter()
+                .map(|entry| (entry.label.as_str(), entry.point, entry.editable))
+                .collect::<Vec<_>>(),
+            vec![
+                ("Max HP", Some(0), true),
+                ("Max stamina", Some(8), true),
+                ("Carry weight", Some(8), true),
+                ("Move speed", Some(1), true)
+            ]
+        );
+        // Names with no translation are shown as the save stores them.
+        assert_eq!(status_label("知らない"), "知らない");
+        assert_eq!(numeric_bounds(property_by_name(&p, "Level").unwrap()), Some((0, 255)));
+        assert_eq!(
+            numeric_bounds(property_by_name(&p, "Exp").unwrap()),
+            Some((i64::MIN, i64::MAX))
+        );
+        assert_eq!(numeric_bounds(&Property::Str("x".into())), None);
+        let caps = player_capabilities(
+            Some(&p),
+            &points,
+            &status_point_list(Some(&p), "GotExStatusPointList")
+        );
+        assert_eq!(caps, PlayerEditCapabilities {
+            level: true,
+            exp: true,
+            unused_status_point: false,
+            status_points: true,
+            ex_status_points: true,
+        });
+    }
+
+    #[test]
+    fn player_level_is_bounded_by_its_storage_not_by_a_game_cap() {
+        let mut p = player_properties();
+        let level = |value| UpdatePlayerRequest {
+            level: Some(FieldUpdate { value }),
+            ..Default::default()
+        };
+        // A byte-stored level accepts anything the byte holds, and nothing more.
+        assert!(validate_player_update(&level(255), &p).is_empty());
+        assert_eq!(
+            validate_player_update(&level(256), &p).get("level").map(String::as_str),
+            Some("Value must be between 1 and 255")
+        );
+        assert!(validate_player_update(&level(0), &p).contains_key("level"));
+        // A wider property lifts the ceiling with it.
+        p.insert(PropertyKey(0, "Level".into()), Property::Int(17));
+        assert!(validate_player_update(&level(100_000), &p).is_empty());
+    }
+
+    #[test]
+    fn validates_status_points_and_experience() {
+        let p = player_properties();
+        let points = |entries: &[(&str, i32)]| UpdatePlayerRequest {
+            status_points: Some(FieldUpdate {
+                value: entries
+                    .iter()
+                    .map(|(name, value)| StatusPointUpdate {
+                        name: (*name).to_string(),
+                        value: *value,
+                    })
+                    .collect(),
+            }),
+            ..Default::default()
+        };
+        assert!(
+            validate_player_update(
+                &points(
+                    &[
+                        ("最大HP", 255),
+                        ("最大SP", 0),
+                    ]
+                ),
+                &p
+            ).is_empty()
+        );
+        for entries in [
+            vec![("最大HP", 256)],
+            vec![("最大HP", -1)],
+            // Present in the Ex list only, so not a valid target here.
+            vec![("攻撃力", 1)],
+            vec![("Nope", 1)],
+            vec![("最大HP", 1), ("最大HP", 2)],
+        ] {
+            assert!(validate_player_update(&points(&entries), &p).contains_key("statusPoints"));
+        }
+        assert!(
+            validate_player_update(
+                &(UpdatePlayerRequest {
+                    exp: Some(FieldUpdate { value: -1 }),
+                    ..Default::default()
+                }),
+                &p
+            ).contains_key("exp")
+        );
+        // UnusedStatusPoint is absent from this row, so it is refused, not created.
+        assert!(
+            validate_player_update(
+                &(UpdatePlayerRequest {
+                    unused_status_point: Some(FieldUpdate { value: 3 }),
+                    ..Default::default()
+                }),
+                &p
+            ).contains_key("unusedStatusPoint")
+        );
+        assert!(
+            validate_player_update(&UpdatePlayerRequest::default(), &p).contains_key("request")
+        );
+    }
+
+    #[test]
+    fn applies_player_updates_and_leaves_other_entries_alone() {
+        let mut p = player_properties();
+        apply_player_update(
+            &mut p,
+            &(UpdatePlayerRequest {
+                level: Some(FieldUpdate { value: 250 }),
+                exp: Some(FieldUpdate { value: 12_345_678 }),
+                status_points: Some(FieldUpdate {
+                    value: vec![StatusPointUpdate {
+                        name: "所持重量".into(),
+                        value: 100,
+                    }],
+                }),
+                ex_status_points: Some(FieldUpdate {
+                    value: vec![StatusPointUpdate {
+                        name: "攻撃力".into(),
+                        value: 7,
+                    }],
+                }),
+                ..Default::default()
+            })
+        ).unwrap();
+        assert_eq!(int_field(Some(&p), "Level"), Some(250));
+        assert_eq!(property_by_name(&p, "Exp").and_then(as_i64), Some(12_345_678));
+        assert_eq!(
+            status_point_list(Some(&p), "GotStatusPointList")
+                .iter()
+                .map(|entry| entry.point)
+                .collect::<Vec<_>>(),
+            vec![Some(0), Some(8), Some(100), Some(1)]
+        );
+        assert_eq!(
+            status_point_list(Some(&p), "GotExStatusPointList")
+                .iter()
+                .map(|entry| entry.point)
+                .collect::<Vec<_>>(),
+            vec![Some(0), Some(7)]
+        );
+        assert_eq!(string_field(Some(&p), "NickName").as_deref(), Some("Bludistak"));
     }
 
     #[test]

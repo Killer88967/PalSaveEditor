@@ -8,6 +8,7 @@ import {
   CheckIcon,
   PackIcon,
   PalIcon,
+  PlayerIcon,
   ShieldIcon,
   TreeIcon,
   UnpackIcon,
@@ -54,6 +55,11 @@ const CAPABILITIES = [
     icon: PalIcon,
     title: "Edit Pals",
     body: "Search 170+ characters by species, nickname or instance ID, then change level, star rank, gender, IVs, souls and skill lists.",
+  },
+  {
+    icon: PlayerIcon,
+    title: "Edit players",
+    body: "Set a player's level, experience and status points — HP, stamina, attack, carry weight, capture power and work speed — with the save format as the only ceiling.",
   },
   {
     icon: BagIcon,

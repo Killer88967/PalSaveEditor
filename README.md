@@ -11,12 +11,12 @@ edit Pals, inventories and individual scalars, and exports a validated
 
 ## What it does
 
-| Page      | Purpose                                                            |
-| --------- | ------------------------------------------------------------------ |
-| `/`       | Overview of the project and the container format                   |
-| `/editor` | Load a world, then use the dashboard, Pal, inventory and raw views |
-| `/tools`  | Stateless `.sav` ⇄ `.gvas` conversion, no session needed           |
-| `/guide`  | Save locations, backup steps, format notes and troubleshooting     |
+| Page      | Purpose                                                          |
+| --------- | ---------------------------------------------------------------- |
+| `/`       | Overview of the project and the container format                 |
+| `/editor` | Load a world: dashboard, Pals, players, inventories and raw tree |
+| `/tools`  | Stateless `.sav` ⇄ `.gvas` conversion, no session needed         |
+| `/guide`  | Save locations, backup steps, format notes and troubleshooting   |
 
 Inside the editor:
 
@@ -25,6 +25,10 @@ Inside the editor:
   coverage and the decoded container header.
 - **Pals** — search by species, nickname or instance ID, filter by level, and
   edit level, star rank, gender, souls, IVs, nickname and skill lists.
+- **Players** — edit each player's level, total experience and status points
+  (HP, stamina, attack, carry weight, capture power, work speed). Level is
+  limited only by what the save field can store; status points cap at 255, as
+  Pal souls and IVs do.
 - **Inventories** — walk each player's personal containers (pack, key items,
   weapon loadout, armour, food), add or remove items in any free slot, and
   rewrite item IDs and stack quantities. Suggestions are drawn from the item
@@ -159,6 +163,8 @@ The browser reaches these through the Next.js rewrite at `/api/rust/*`.
 | `GET`    | `/sessions/{id}/pals/{palId}`                                        | Full Pal detail and edit capabilities       |
 | `PATCH`  | `/sessions/{id}/pals/{palId}`                                        | Update supported Pal fields                 |
 | `GET`    | `/sessions/{id}/players`                                             | Players and their container references      |
+| `GET`    | `/sessions/{id}/player-stats`                                        | Player level, experience and status points  |
+| `PATCH`  | `/sessions/{id}/player-stats/{uid}`                                  | Update player level and status points       |
 | `GET`    | `/sessions/{id}/items`                                               | Item IDs present in the world, with counts  |
 | `GET`    | `/sessions/{id}/players/{uid}/inventory`                             | Slots for a player's personal containers    |
 | `POST`   | `/sessions/{id}/players/{uid}/inventory/{containerId}/slots`         | Add an item to a free slot                  |

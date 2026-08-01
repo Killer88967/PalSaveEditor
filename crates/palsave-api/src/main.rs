@@ -767,6 +767,92 @@ fn mutate_pal_session_data(
     })
 }
 
+async fn get_player_stats(
+    State(state): State<Arc<AppState>>,
+    Path(id): Path<Uuid>
+) -> Result<Json<Vec<pals::PlayerDetail>>, ApiError> {
+    let save = state.sessions
+        .get(&id)
+        .map(|s| Arc::clone(&s.save))
+        .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
+    let players = tokio::task
+        ::spawn_blocking(move || {
+            let data = save
+                .lock()
+                .map_err(|_| ApiError::Internal("save session lock was poisoned".into()))?;
+            pals::players(&data.save).map_err(ApiError::BadRequest)
+        }).await
+        .map_err(|e| ApiError::Internal(format!("player stat task failed: {e}")))??;
+    Ok(Json(players))
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct UpdatePlayerResponse {
+    player: pals::PlayerDetail,
+    dirty: bool,
+    revision: u64,
+}
+
+fn mutate_player_session_data(
+    data: &mut SaveSessionData,
+    player_uid: &str,
+    request: pals::UpdatePlayerRequest
+) -> Result<UpdatePlayerResponse, ApiError> {
+    if request.expected_revision != data.revision {
+        return Err(ApiError::Conflict {
+            message: format!(
+                "stale revision: expected {}, current revision is {}",
+                request.expected_revision,
+                data.revision
+            ),
+            current_revision: data.revision,
+        });
+    }
+    let next = data.revision
+        .checked_add(1)
+        .ok_or_else(|| ApiError::Internal("session revision overflow".into()))?;
+    let player = pals::update_player(&mut data.save, player_uid, &request).map_err(|e| {
+        match e {
+            pals::UpdateError::NotFound(v) => ApiError::NotFound(v),
+            pals::UpdateError::Validation(v) => ApiError::Validation(v),
+            pals::UpdateError::Internal(v) => ApiError::Internal(v),
+        }
+    })?;
+    data.dirty = true;
+    data.revision = next;
+    // The Pal index caches player levels and nicknames alongside Pal rows.
+    data.pal_index = None;
+    Ok(UpdatePlayerResponse {
+        player,
+        dirty: data.dirty,
+        revision: data.revision,
+    })
+}
+
+async fn update_player_stats(
+    State(state): State<Arc<AppState>>,
+    Path((id, player_uid)): Path<(Uuid, String)>,
+    request: Result<Json<pals::UpdatePlayerRequest>, JsonRejection>
+) -> Result<Json<UpdatePlayerResponse>, ApiError> {
+    let Json(request) = request.map_err(|e|
+        ApiError::BadRequest(format!("invalid player update request: {e}"))
+    )?;
+    let save = state.sessions
+        .get(&id)
+        .map(|s| Arc::clone(&s.save))
+        .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
+    let response = tokio::task
+        ::spawn_blocking(move || {
+            let mut data = save
+                .lock()
+                .map_err(|_| ApiError::Internal("save session lock was poisoned".into()))?;
+            mutate_player_session_data(&mut data, &player_uid, request)
+        }).await
+        .map_err(|e| ApiError::Internal(format!("player mutation task failed: {e}")))??;
+    Ok(Json(response))
+}
+
 async fn update_pal(
     State(state): State<Arc<AppState>>,
     Path((id, pal_id)): Path<(Uuid, String)>,
@@ -1089,6 +1175,8 @@ fn build_app(state: Arc<AppState>) -> Router {
             "/sessions/{id}/players/{player_uid}/inventory/{container_id}/slots/{index}",
             patch(update_player_inventory_slot).delete(delete_player_inventory_slot)
         )
+        .route("/sessions/{id}/player-stats", get(get_player_stats))
+        .route("/sessions/{id}/player-stats/{player_uid}", patch(update_player_stats))
         .route("/sessions/{id}/inspect", post(inspect_node))
         .route("/sessions/{id}/pals", get(get_pals))
         .route("/sessions/{id}/pals/{pal_id}", get(get_pal).patch(update_pal))
@@ -1766,6 +1854,158 @@ mod tests {
         assert_eq!(body[0]["capacity"], 4);
         assert_eq!(body[0]["slots"].as_array().unwrap().len(), 1);
         assert_eq!(body[0]["slots"][0]["itemId"], "KeySphere_01");
+    }
+
+    /// A world file holding one player row whose `RawData` carries a level, an
+    /// experience total and both status-point arrays.
+    fn test_player_save() -> Save {
+        let header = test_save(Properties::default()).header;
+        let status = |entries: &[(&str, i32)]| {
+            Property::Array(
+                uesave::ValueVec::Struct(
+                    entries
+                        .iter()
+                        .map(|(name, point)| {
+                            let mut entry = Properties::default();
+                            entry.insert("StatusName", Property::Name((*name).into()));
+                            entry.insert("StatusPoint", Property::Int(*point));
+                            StructValue::Struct(entry)
+                        })
+                        .collect()
+                )
+            )
+        };
+        let mut parameter = Properties::default();
+        parameter.insert("Level", Property::Byte(uesave::Byte::Byte(17)));
+        parameter.insert("Exp", Property::Int64(38_224));
+        parameter.insert("NickName", Property::Str("Bludistak".into()));
+        parameter.insert("IsPlayer", Property::Bool(true));
+        parameter.insert(
+            "GotStatusPointList",
+            status(
+                &[
+                    ("最大HP", 0),
+                    ("所持重量", 8),
+                ]
+            )
+        );
+        parameter.insert("GotExStatusPointList", status(&[("攻撃力", 1)]));
+        let raw = pals::raw_data_for_test(&header, parameter).expect("encode player RawData");
+
+        let uid = uesave::FGuid::parse_str(TEST_PLAYER).unwrap();
+        let mut key = Properties::default();
+        key.insert("PlayerUId", Property::Struct(StructValue::Guid(uid)));
+        key.insert("InstanceId", Property::Struct(StructValue::Guid(uid)));
+        let mut value = Properties::default();
+        value.insert(
+            "RawData",
+            Property::Array(uesave::ValueVec::Byte(uesave::ByteArray::Byte(raw)))
+        );
+        let mut world = Properties::default();
+        world.insert(
+            "CharacterSaveParameterMap",
+            Property::Map(
+                vec![MapEntry {
+                    key: Property::Struct(StructValue::Struct(key)),
+                    value: Property::Struct(StructValue::Struct(value)),
+                }]
+            )
+        );
+        let mut root = Properties::default();
+        root.insert("worldSaveData", Property::Struct(StructValue::Struct(world)));
+        test_save(root)
+    }
+
+    fn player_request(uri: String, body: Value) -> Request<Body> {
+        Request::builder()
+            .method("PATCH")
+            .uri(uri)
+            .header(CONTENT_TYPE, "application/json")
+            .body(Body::from(body.to_string()))
+            .unwrap()
+    }
+
+    #[tokio::test]
+    async fn player_level_and_stats_can_be_edited_over_http() {
+        let (state, id, data) = state_with_save(test_player_save(), false, 0);
+        let app = build_app(state);
+        let uri = format!("/sessions/{id}/player-stats/{TEST_PLAYER}");
+
+        let listed = app
+            .clone()
+            .oneshot(
+                Request::builder()
+                    .uri(format!("/sessions/{id}/player-stats"))
+                    .body(Body::empty())
+                    .unwrap()
+            ).await
+            .unwrap();
+        assert_eq!(listed.status(), StatusCode::OK);
+        let body = json_body(listed).await;
+        assert_eq!(body[0]["nickname"], "Bludistak");
+        assert_eq!(body[0]["level"], 17);
+        assert_eq!(body[0]["maxLevel"], 255);
+        assert_eq!(body[0]["statusPoints"][0]["label"], "Max HP");
+        assert_eq!(body[0]["exStatusPoints"][0]["name"], "攻撃力");
+
+        let updated = app
+            .clone()
+            .oneshot(
+                player_request(
+                    uri.clone(),
+                    json!({
+                        "expectedRevision": 0,
+                        "level": { "value": 200 },
+                        "exp": { "value": 9_000_000 },
+                        "statusPoints": { "value": [{ "name": "最大HP", "value": 255 }] },
+                        "exStatusPoints": { "value": [{ "name": "攻撃力", "value": 5 }] }
+                    })
+                )
+            ).await
+            .unwrap();
+        assert_eq!(updated.status(), StatusCode::OK);
+        let body = json_body(updated).await;
+        assert_eq!(body["player"]["level"], 200);
+        assert_eq!(body["player"]["exp"], 9_000_000);
+        assert_eq!(body["player"]["statusPoints"][0]["point"], 255);
+        assert_eq!(body["player"]["statusPoints"][1]["point"], 8);
+        assert_eq!(body["player"]["exStatusPoints"][0]["point"], 5);
+        assert_eq!(body["dirty"], true);
+        assert_eq!(body["revision"], 1);
+        assert!(data.lock().unwrap().dirty);
+
+        // A level past what the byte can store, and an unknown status name.
+        for body in [
+            json!({ "expectedRevision": 1, "level": { "value": 300 } }),
+            json!({
+                "expectedRevision": 1,
+                "statusPoints": { "value": [{ "name": "Nope", "value": 1 }] }
+            }),
+        ] {
+            let response = app.clone().oneshot(player_request(uri.clone(), body)).await.unwrap();
+            assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+            assert_eq!(json_body(response).await["code"], "validationError");
+        }
+
+        // Stale revision, then an unknown player.
+        let stale = app
+            .clone()
+            .oneshot(
+                player_request(uri, json!({"expectedRevision": 0, "level": {"value": 20}}))
+            ).await
+            .unwrap();
+        assert_eq!(stale.status(), StatusCode::CONFLICT);
+        assert_eq!(json_body(stale).await["currentRevision"], 1);
+
+        let missing = app
+            .oneshot(
+                player_request(
+                    format!("/sessions/{id}/player-stats/00000000-0000-0000-0000-000000000009"),
+                    json!({"expectedRevision": 1, "level": {"value": 20}})
+                )
+            ).await
+            .unwrap();
+        assert_eq!(missing.status(), StatusCode::NOT_FOUND);
     }
 
     #[tokio::test]
