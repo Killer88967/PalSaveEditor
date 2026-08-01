@@ -603,7 +603,7 @@ export default function EditorPage() {
               sessionId={session.id}
               revision={session.revision}
               focusPlayerUid={focusPlayer}
-              onSessionUpdate={(dirty, revision) => {
+              onSessionUpdateAction={(dirty, revision) => {
                 setSession((state) =>
                   state ? { ...state, dirty, revision } : state,
                 );

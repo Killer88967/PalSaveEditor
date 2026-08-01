@@ -288,6 +288,14 @@ export default function GuidePage() {
             structs instead of opaque blobs.
           </p>
         </div>
+        <p className="mt-3 text-sm text-muted">
+          Every ID those structures hold — Pals, items, skills, technologies —
+          is listed in the{" "}
+          <Link href="/wiki" className="text-accent underline">
+            wiki
+          </Link>
+          .
+        </p>
         <Link href="/tools" className="btn btn-secondary mt-4">
           Inspect a container yourself
           <ArrowRightIcon className="size-4" />

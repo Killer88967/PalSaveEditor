@@ -1,0 +1,194 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { WikiHeader } from "@/components/wiki-ui";
+
+export const metadata: Metadata = {
+  title: "FAQ",
+  description:
+    "Common questions about PalSaveEditor: where your save goes, why some fields are read-only, revision conflicts, gear durability and Game Pass saves.",
+};
+
+const FAQ = [
+  {
+    question: "Where does my save actually go?",
+    answer: (
+      <>
+        Into the Rust API this app talks to. It parses the upload, keeps the
+        result in memory under a session ID, and never writes it to disk. If you
+        are running the project yourself — the normal case — that process is on
+        your own machine and the file never leaves it. Closing the session, or
+        stopping the API, drops it.
+      </>
+    ),
+  },
+  {
+    question: "Do I have to upload the Players folder?",
+    answer: (
+      <>
+        Only for inventories. Player <em>stats</em> — level, experience, status
+        points — live in <code>Level.sav</code> and are editable without it. The
+        per-player files are what tie a player to their containers.
+      </>
+    ),
+  },
+  {
+    question: "Can it open Xbox / Game Pass saves?",
+    answer: (
+      <>
+        No. Game Pass stores saves in an obfuscated container layout with no{" "}
+        <code>.sav</code> extension, so there is nothing here for the parser to
+        recognise. Steam, Linux/Proton and dedicated-server saves all work.
+      </>
+    ),
+  },
+  {
+    question: "Why can I see a Pal's star rank but not change it?",
+    answer: (
+      <>
+        Because it is not stored in the per-Pal parameters this editor rewrites.
+        A control that appeared to work and silently did nothing would be worse,
+        so the field is read-only and requests to change it are refused
+        outright.
+      </>
+    ),
+  },
+  {
+    question: "I set a player's level but the game did not agree. Why?",
+    answer: (
+      <>
+        Level and experience are stored separately. If the experience total
+        still matches level 17, the game will act on that the next time it
+        recalculates. Set both fields together — the Players tab has an
+        experience field beside the level for exactly this reason.
+      </>
+    ),
+  },
+  {
+    question: "Why are HP and carry weight not editable?",
+    answer: (
+      <>
+        They are not in the save. Palworld derives them from level and status
+        points when it loads a character, so raising{" "}
+        <em>Max HP</em> status points is the way to change them.
+      </>
+    ),
+  },
+  {
+    question: "What does “Revision conflict (409)” mean?",
+    answer: (
+      <>
+        Two edits raced: the one you sent was based on an older revision of the
+        session. Nothing was written. Reload the panel and repeat the edit.
+      </>
+    ),
+  },
+  {
+    question: "Why does a container show fewer slots than the game does?",
+    answer: (
+      <>
+        Saves store only occupied slots; <code>SlotNum</code> is the capacity. A
+        header reading “8 / 230” means eight entries exist. Empty slots are
+        genuinely absent, which is also why clearing one removes its entry
+        rather than blanking it.
+      </>
+    ),
+  },
+  {
+    question: "I added a weapon and it has no durability.",
+    answer: (
+      <>
+        Durability, ammo and rolled passives live in a separate{" "}
+        <code>DynamicItemSaveData</code> record. Adding gear copies the record
+        of one the world already holds; if the save contains no other copy of
+        that item, the editor tells you it wrote the item without one instead of
+        inventing values.
+      </>
+    ),
+  },
+  {
+    question: "I typed an item ID and the game ignores it.",
+    answer: (
+      <>
+        The ID is written faithfully, but the game only shows items it knows.
+        Check the spelling against the{" "}
+        <Link href="/wiki/items" className="text-accent underline">
+          items page
+        </Link>
+        , which lists every ID in the game data.
+      </>
+    ),
+  },
+  {
+    question: "Can I add a new Pal, container or base?",
+    answer: (
+      <>
+        No. The editor changes values that already exist and adds inventory
+        entries; it does not create characters, containers or map objects.
+        Those carry cross-references the save format expects to be consistent,
+        and a half-built one corrupts a world.
+      </>
+    ),
+  },
+  {
+    question: "The game will not load my exported save.",
+    answer: (
+      <>
+        Restore your backup first, then report the file. Exports are re-parsed
+        before they download, so a rejection points at something the writer got
+        wrong rather than at your edit.
+      </>
+    ),
+  },
+  {
+    question: "Is the wiki data current?",
+    answer: (
+      <>
+        It is a snapshot: game data extracted from Palworld and regenerated by{" "}
+        <code>scripts/build-wiki-data.mjs</code>. It reflects the version the
+        dump was taken from, which may not be the version you are playing.
+      </>
+    ),
+  },
+  {
+    question: "Does this work with a dedicated server?",
+    answer: (
+      <>
+        Yes, but stop the server before you copy or replace anything. A running
+        server holds the world in memory and will overwrite your edited file on
+        its next autosave.
+      </>
+    ),
+  },
+] as const;
+
+export default function WikiFaqPage() {
+  return (
+    <>
+      <WikiHeader
+        title="FAQ"
+        lead="Short answers to the questions this editor raises most often."
+      />
+
+      <div className="card divide-y divide-line">
+        {FAQ.map((entry) => (
+          <details key={entry.question} className="group p-4">
+            <summary className="cursor-pointer list-none font-medium marker:content-none">
+              <span className="text-accent group-open:hidden">+ </span>
+              <span className="hidden text-accent group-open:inline">− </span>
+              {entry.question}
+            </summary>
+            <p className="mt-2 pl-4 text-sm text-muted">{entry.answer}</p>
+          </details>
+        ))}
+      </div>
+
+      <p className="text-xs text-subtle">
+        Still stuck? The{" "}
+        <Link href="/guide" className="text-accent underline">
+          guide
+        </Link>{" "}
+        covers save locations, backups and troubleshooting in more detail.
+      </p>
+    </>
+  );
+}

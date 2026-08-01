@@ -143,6 +143,15 @@ export function ShieldIcon(props: IconProps) {
   );
 }
 
+export function BookIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4V5.5Z" />
+      <path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h6V5.5Z" />
+    </Icon>
+  );
+}
+
 export function PlayerIcon(props: IconProps) {
   return (
     <Icon {...props}>

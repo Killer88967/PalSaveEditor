@@ -7,6 +7,7 @@ import {
   ChartIcon,
   CheckIcon,
   PackIcon,
+  BookIcon,
   PalIcon,
   PlayerIcon,
   ShieldIcon,
@@ -65,6 +66,11 @@ const CAPABILITIES = [
     icon: BagIcon,
     title: "Edit inventories",
     body: "Walk each player's personal containers — pack, key items, weapon loadout, armour and food slots — add or remove items in any free slot, and rewrite IDs and stack counts.",
+  },
+  {
+    icon: BookIcon,
+    title: "Look up game data",
+    body: "A built-in wiki of Palworld's own data: 809 Pals, 2,352 items, active and passive skills, elements, work suitability, technologies and buildings — every ID the editor writes.",
   },
   {
     icon: TreeIcon,

@@ -16,6 +16,7 @@ edit Pals, inventories and individual scalars, and exports a validated
 | `/`       | Overview of the project and the container format                 |
 | `/editor` | Load a world: dashboard, Pals, players, inventories and raw tree |
 | `/tools`  | Stateless `.sav` ⇄ `.gvas` conversion, no session needed         |
+| `/wiki`   | Palworld game data (Pals, items, skills, tech) and editor docs   |
 | `/guide`  | Save locations, backup steps, format notes and troubleshooting   |
 
 Inside the editor:
@@ -35,6 +36,13 @@ Inside the editor:
   IDs the uploaded world actually contains.
 - **Raw tree** — page through every parsed property with types, child counts and
   byte lengths, and edit any scalar the parser understands.
+
+Outside the editor, `/wiki` is a browsable copy of Palworld's own game data —
+809 Pals, 2,352 items, active and passive skills, elements, work suitability,
+technologies and buildings — so the IDs the editor writes can be looked up
+without leaving the app. Its Usage, Reference and FAQ pages document the editor
+itself. Regenerate the data with `npm run wiki:data` (see
+`scripts/build-wiki-data.mjs`).
 
 Both container variants are read: `PlZ` (zlib, pre-0.6) and `PlM` (Oodle Kraken,
 0.6 onward). Exports are always written as single-pass `PlZ`, which Palworld

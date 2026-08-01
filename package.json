@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "dev": "cd web && bun dev"
+    "dev": "cd web && bun dev",
+    "wiki:data": "node scripts/build-wiki-data.mjs"
   }
 }
