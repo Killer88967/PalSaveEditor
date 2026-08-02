@@ -11,17 +11,12 @@
   "active_filters_count": "Filtres actifs ( {count} )",
   "active_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Compétence active",
         "countPlural=other": "Compétences actives"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "activity": "Activité",
@@ -70,17 +65,12 @@
   "avg_transfers_per_pal": "Moyenne des transferts par {pal} :",
   "base": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Base",
         "countPlural=other": "Bases"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "base_container": "Conteneur de base",
@@ -135,17 +125,12 @@
   "collected": "Collecté",
   "collection": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Collection",
         "countPlural=other": "Collections"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "collection_delete_warning": "Les amis présents dans cette collection ne seront pas supprimés, mais ils ne seront plus associés à cette collection.",
@@ -247,17 +232,12 @@
   "feed": "Alimentation",
   "file": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Déposer",
         "countPlural=other": "Fichiers"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "fill": "Remplir",
@@ -266,17 +246,12 @@
   "fill_entity": "Remplir {entity}",
   "filter": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Filtre",
         "countPlural=other": "Filtres"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "filter_and_sort": "Filtrer et trier",
@@ -292,17 +267,12 @@
   "grid_view": "Vue en grille",
   "guild": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Guilde",
         "countPlural=other": "Guildes"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "guild_name": "Nom de la guilde",
@@ -314,17 +284,12 @@
   "hp": "HP",
   "human": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Humain",
         "countPlural=other": "Humains"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "id": "IDENTIFIANT",
@@ -341,17 +306,12 @@
   "inventory": "Inventaire",
   "item": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Article",
         "countPlural=other": "Articles"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "item_container": "Conteneur d'objet",
@@ -475,17 +435,12 @@
   "page_of_pages": "Page {current} sur {total}",
   "pal": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Copain",
         "countPlural=other": "Copains"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "pal_box_party": "Palbox + fête",
@@ -498,50 +453,35 @@
   "passive": "Passif",
   "passive_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Compétence passive",
         "countPlural=other": "Compétences passives"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "paste": "Coller",
   "player": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Joueur",
         "countPlural=other": "Joueurs"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "predator": "Prédateur",
   "predator_pals": "Prédateur {pals}",
   "preset": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Préréglage",
         "countPlural=other": "Préréglages"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "preset_name": "Nom prédéfini",
@@ -573,17 +513,12 @@
   "right_click_edit_base": "Faites un clic droit sur une base pour modifier son nom.",
   "save": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Sauvegarder",
         "countPlural=other": "Sauvegardes"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "save_as_preset": "Enregistrer comme préréglage",
@@ -655,17 +590,12 @@
   "syncing": "Synchronisation",
   "tag": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Étiqueter",
         "countPlural=other": "Étiquettes"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "tag_changes": "Modifications des balises",
@@ -676,17 +606,12 @@
   "target_available": "La cible est disponible",
   "technology": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Technologie",
         "countPlural=other": "Technologies"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "technology_points": "Points technologiques",
@@ -709,17 +634,12 @@
   "total_pals": "Total {pals}",
   "transfer": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Transfert",
         "countPlural=other": "Transferts"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "transfer_all_pals": "Transférer tous les {pals}",
@@ -729,17 +649,12 @@
   "trust_xp": "Trust XP",
   "type": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Taper",
         "countPlural=other": "Types"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "type_label": "Type : {type}",
@@ -769,17 +684,12 @@
   "warning": "Avertissement",
   "weapon": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Arme",
         "countPlural=other": "Armes"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "weight": "Poids",

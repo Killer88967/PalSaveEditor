@@ -11,17 +11,12 @@
   "active_filters_count": "Filtros activos ( {count} )",
   "active_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Habilidad activa",
         "countPlural=other": "Habilidades activas"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "activity": "Actividad",
@@ -70,17 +65,12 @@
   "avg_transfers_per_pal": "Transferencias promedio por {pal} :",
   "base": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Base",
         "countPlural=other": "Bases"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "base_container": "Contenedor base",
@@ -135,17 +125,12 @@
   "collected": "Coleccionado",
   "collection": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Recopilación",
         "countPlural=other": "Colecciones"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "collection_delete_warning": "Los amigos que figuren en esta colección no se eliminarán, pero ya no estarán asociados a ella.",
@@ -247,17 +232,12 @@
   "feed": "Alimentar",
   "file": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Archivo",
         "countPlural=other": "Archivos"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "fill": "Llenar",
@@ -266,17 +246,12 @@
   "fill_entity": "Rellenar {entity}",
   "filter": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Filtrar",
         "countPlural=other": "Filtros"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "filter_and_sort": "Filtrar y ordenar",
@@ -292,17 +267,12 @@
   "grid_view": "Vista de cuadrícula",
   "guild": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Gremio",
         "countPlural=other": "Gremios"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "guild_name": "Nombre del gremio",
@@ -314,17 +284,12 @@
   "hp": "HP",
   "human": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Humano",
         "countPlural=other": "Humanos"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "id": "IDENTIFICACIÓN",
@@ -341,17 +306,12 @@
   "inventory": "Inventario",
   "item": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Artículo",
         "countPlural=other": "Elementos"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "item_container": "Contenedor de artículos",
@@ -475,17 +435,12 @@
   "page_of_pages": "Página {current} de {total}",
   "pal": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Camarada",
         "countPlural=other": "Amigos"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "pal_box_party": "Palbox + grupo",
@@ -498,50 +453,35 @@
   "passive": "Pasivo",
   "passive_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Habilidad pasiva",
         "countPlural=other": "Habilidades pasivas"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "paste": "Pasta",
   "player": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Jugador",
         "countPlural=other": "Jugadores"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "predator": "Depredador",
   "predator_pals": "Depredador {pals}",
   "preset": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Programar",
         "countPlural=other": "Ajustes predefinidos"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "preset_name": "Nombre del preajuste",
@@ -573,17 +513,12 @@
   "right_click_edit_base": "Haz clic con el botón derecho en una base para editar su nombre.",
   "save": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Ahorrar",
         "countPlural=other": "Guarda"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "save_as_preset": "Guardar como preajuste",
@@ -655,17 +590,12 @@
   "syncing": "Sincronización",
   "tag": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Etiqueta",
         "countPlural=other": "Etiquetas"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "tag_changes": "Cambios de etiquetas",
@@ -676,17 +606,12 @@
   "target_available": "Target está disponible",
   "technology": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Tecnología",
         "countPlural=other": "Tecnologías"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "technology_points": "Puntos tecnológicos",
@@ -709,17 +634,12 @@
   "total_pals": "Total {pals}",
   "transfer": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Transferir",
         "countPlural=other": "Transferencias"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "transfer_all_pals": "Transferir todos {pals}",
@@ -729,17 +649,12 @@
   "trust_xp": "Confianza en XP",
   "type": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Tipo",
         "countPlural=other": "Tipos"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "type_label": "Tipo: {type}",
@@ -769,17 +684,12 @@
   "warning": "Advertencia",
   "weapon": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Arma",
         "countPlural=other": "Armas"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "weight": "Peso",

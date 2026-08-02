@@ -11,17 +11,12 @@
   "active_filters_count": "Filter Aktif ( {count} )",
   "active_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Keterampilan Aktif",
         "countPlural=other": "Keterampilan Aktif"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "activity": "Aktivitas",
@@ -70,17 +65,12 @@
   "avg_transfers_per_pal": "Rata-rata transfer per {pal} :",
   "base": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Basis",
         "countPlural=other": "Pangkalan"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "base_container": "Kontainer Dasar",
@@ -135,17 +125,12 @@
   "collected": "Dikumpulkan",
   "collection": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Koleksi",
         "countPlural=other": "Koleksi"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "collection_delete_warning": "Teman-teman dalam koleksi ini tidak akan dihapus, tetapi mereka tidak akan lagi dikaitkan dengan koleksi ini.",
@@ -247,17 +232,12 @@
   "feed": "Memberi makan",
   "file": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Mengajukan",
         "countPlural=other": "Berkas"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "fill": "Mengisi",
@@ -266,17 +246,12 @@
   "fill_entity": "Isi {entity}",
   "filter": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Menyaring",
         "countPlural=other": "Filter"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "filter_and_sort": "Filter & Urutkan",
@@ -292,17 +267,12 @@
   "grid_view": "Tampilan Kisi",
   "guild": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Persekutuan",
         "countPlural=other": "Serikat pekerja"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "guild_name": "Nama Serikat",
@@ -314,17 +284,12 @@
   "hp": "HP",
   "human": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Manusia",
         "countPlural=other": "Manusia"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "id": "PENGENAL",
@@ -341,17 +306,12 @@
   "inventory": "Inventaris",
   "item": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Barang",
         "countPlural=other": "Barang-barang"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "item_container": "Wadah Barang",
@@ -475,17 +435,12 @@
   "page_of_pages": "Halaman {current} dari {total}",
   "pal": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Sahabat",
         "countPlural=other": "Teman-teman"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "pal_box_party": "Palbox + pesta",
@@ -498,50 +453,35 @@
   "passive": "Pasif",
   "passive_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Keterampilan Pasif",
         "countPlural=other": "Keterampilan Pasif"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "paste": "Pasta",
   "player": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Pemain",
         "countPlural=other": "Pemain"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "predator": "Predator",
   "predator_pals": "Predator {pals}",
   "preset": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Pengaturan Awal",
         "countPlural=other": "Pengaturan Awal"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "preset_name": "Nama preset",
@@ -573,17 +513,12 @@
   "right_click_edit_base": "Klik kanan pada pangkalan untuk mengedit namanya.",
   "save": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Menyimpan",
         "countPlural=other": "Simpanan"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "save_as_preset": "Simpan sebagai preset",
@@ -655,17 +590,12 @@
   "syncing": "Sinkronisasi",
   "tag": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Menandai",
         "countPlural=other": "Tag"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "tag_changes": "Perubahan Tag",
@@ -676,17 +606,12 @@
   "target_available": "Target tersedia",
   "technology": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Teknologi",
         "countPlural=other": "Teknologi"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "technology_points": "Poin Teknologi",
@@ -709,17 +634,12 @@
   "total_pals": "Total {pals}",
   "transfer": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Transfer",
         "countPlural=other": "Transfer"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "transfer_all_pals": "Pindahkan semua {pals}",
@@ -729,17 +649,12 @@
   "trust_xp": "Trust XP",
   "type": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Jenis",
         "countPlural=other": "Jenis"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "type_label": "Tipe: {type}",
@@ -769,17 +684,12 @@
   "warning": "Peringatan",
   "weapon": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Senjata",
         "countPlural=other": "Senjata"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "weight": "Berat",

@@ -11,17 +11,12 @@
   "active_filters_count": "ตัวกรองที่ใช้งานอยู่ ( {count} )",
   "active_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "ทักษะเชิงรุก",
         "countPlural=other": "ทักษะเชิงปฏิบัติ"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "activity": "กิจกรรม",
@@ -70,17 +65,12 @@
   "avg_transfers_per_pal": "จำนวนการโอนเฉลี่ยต่อ {pal} :",
   "base": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "ฐาน",
         "countPlural=other": "ฐาน"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "base_container": "คอนเทนเนอร์ฐาน",
@@ -135,17 +125,12 @@
   "collected": "รวบรวม",
   "collection": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "ของสะสม",
         "countPlural=other": "คอลเลกชัน"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "collection_delete_warning": "เพื่อนในกลุ่มนี้จะไม่ถูกลบ แต่จะไม่เกี่ยวข้องกับกลุ่มนี้อีกต่อไป",
@@ -247,17 +232,12 @@
   "feed": "ให้อาหาร",
   "file": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "ไฟล์",
         "countPlural=other": "ไฟล์"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "fill": "เติม",
@@ -266,17 +246,12 @@
   "fill_entity": "กรอกข้อมูล {entity}",
   "filter": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "กรอง",
         "countPlural=other": "ตัวกรอง"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "filter_and_sort": "กรองและจัดเรียง",
@@ -292,17 +267,12 @@
   "grid_view": "มุมมองแบบตาราง",
   "guild": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "กิลด์",
         "countPlural=other": "กิลด์"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "guild_name": "ชื่อกิลด์",
@@ -314,17 +284,12 @@
   "hp": "เอชพี",
   "human": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "มนุษย์",
         "countPlural=other": "มนุษย์"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "id": "รหัสประจำตัว",
@@ -341,17 +306,12 @@
   "inventory": "รายการสิ่งของ",
   "item": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "รายการ",
         "countPlural=other": "รายการ"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "item_container": "ภาชนะบรรจุสิ่งของ",
@@ -475,17 +435,12 @@
   "page_of_pages": "หน้า {current} จาก {total}",
   "pal": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "เพื่อน",
         "countPlural=other": "เพื่อน ๆ"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "pal_box_party": "ปาลบ็อกซ์ + ปาร์ตี้",
@@ -498,50 +453,35 @@
   "passive": "พาสซีฟ",
   "passive_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "สกิลติดตัว",
         "countPlural=other": "ทักษะติดตัว"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "paste": "แปะ",
   "player": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "ผู้เล่น",
         "countPlural=other": "ผู้เล่น"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "predator": "นักล่า",
   "predator_pals": "นักล่า {pals}",
   "preset": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "ตั้งค่าล่วงหน้า",
         "countPlural=other": "ค่าที่ตั้งไว้ล่วงหน้า"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "preset_name": "ชื่อค่าที่ตั้งไว้ล่วงหน้า",
@@ -573,17 +513,12 @@
   "right_click_edit_base": "คลิกขวาที่ฐานเพื่อแก้ไขชื่อ",
   "save": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "บันทึก",
         "countPlural=other": "บันทึก"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "save_as_preset": "บันทึกเป็นค่าที่ตั้งไว้ล่วงหน้า",
@@ -655,17 +590,12 @@
   "syncing": "กำลังซิงค์",
   "tag": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "แท็ก",
         "countPlural=other": "แท็ก"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "tag_changes": "การเปลี่ยนแปลงแท็ก",
@@ -676,17 +606,12 @@
   "target_available": "Target พร้อมให้บริการแล้ว",
   "technology": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "เทคโนโลยี",
         "countPlural=other": "เทคโนโลยี"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "technology_points": "ประเด็นด้านเทคโนโลยี",
@@ -709,17 +634,12 @@
   "total_pals": "รวมทั้งหมด {pals}",
   "transfer": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "โอนย้าย",
         "countPlural=other": "การโอนเงิน"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "transfer_all_pals": "โอนย้าย {pals} ทั้งหมด",
@@ -729,17 +649,12 @@
   "trust_xp": "เชื่อถือ XP",
   "type": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "พิมพ์",
         "countPlural=other": "ประเภท"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "type_label": "ประเภท: {type}",
@@ -769,17 +684,12 @@
   "warning": "คำเตือน",
   "weapon": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "อาวุธ",
         "countPlural=other": "อาวุธ"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "weight": "น้ำหนัก",

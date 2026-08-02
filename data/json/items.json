@@ -25,9 +25,7 @@
     "icon": "t_itemicon_accessory_at_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Attack_ACC_up3"
-      ]
+      "passive_skills": ["Attack_ACC_up3"]
     },
     "disabled": false
   },
@@ -44,9 +42,7 @@
     "icon": "t_itemicon_accessory_at_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Attack_ACC_up3"
-      ]
+      "passive_skills": ["Attack_ACC_up3"]
     },
     "disabled": false
   },
@@ -63,9 +59,7 @@
     "icon": "t_itemicon_accessory_at_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Attack_ACC_up3"
-      ]
+      "passive_skills": ["Attack_ACC_up3"]
     },
     "disabled": false
   },
@@ -82,9 +76,7 @@
     "icon": "t_itemicon_accessory_airdash",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "AirDash_1"
-      ]
+      "passive_skills": ["AirDash_1"]
     },
     "disabled": false
   },
@@ -101,9 +93,7 @@
     "icon": "t_itemicon_accessory_airdash",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "AirDash_2"
-      ]
+      "passive_skills": ["AirDash_2"]
     },
     "disabled": false
   },
@@ -120,9 +110,7 @@
     "icon": "t_itemicon_accessory_airdash",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "AirDash_3"
-      ]
+      "passive_skills": ["AirDash_3"]
     },
     "disabled": false
   },
@@ -139,9 +127,7 @@
     "icon": "t_itemicon_accessory_airdash",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "AirDash_4"
-      ]
+      "passive_skills": ["AirDash_4"]
     },
     "disabled": false
   },
@@ -158,9 +144,7 @@
     "icon": "t_itemicon_accessory_aquaresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Aqua_3"
-      ]
+      "passive_skills": ["ElementResist_Aqua_3"]
     },
     "disabled": false
   },
@@ -177,9 +161,7 @@
     "icon": "t_itemicon_accessory_aquaresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Aqua_3"
-      ]
+      "passive_skills": ["ElementResist_Aqua_3"]
     },
     "disabled": false
   },
@@ -196,9 +178,7 @@
     "icon": "t_itemicon_accessory_aquaresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Aqua_3"
-      ]
+      "passive_skills": ["ElementResist_Aqua_3"]
     },
     "disabled": false
   },
@@ -215,9 +195,7 @@
     "icon": "t_itemicon_accessory_accessory_avoid_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "AvoidDurationUp_EquipSkill_2"
-      ]
+      "passive_skills": ["AvoidDurationUp_EquipSkill_2"]
     },
     "disabled": false
   },
@@ -234,10 +212,7 @@
     "icon": "t_itemicon_accessory_coldice_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Cold3",
-        "ElementResist_Ice_4"
-      ]
+      "passive_skills": ["TemperatureResist_Cold3", "ElementResist_Ice_4"]
     },
     "disabled": false
   },
@@ -254,9 +229,7 @@
     "icon": "t_itemicon_accessory_heatresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Cold3"
-      ]
+      "passive_skills": ["TemperatureResist_Cold3"]
     },
     "disabled": false
   },
@@ -273,9 +246,7 @@
     "icon": "t_itemicon_accessory_heatresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Cold3"
-      ]
+      "passive_skills": ["TemperatureResist_Cold3"]
     },
     "disabled": false
   },
@@ -292,9 +263,7 @@
     "icon": "t_itemicon_accessory_heatresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Cold3"
-      ]
+      "passive_skills": ["TemperatureResist_Cold3"]
     },
     "disabled": false
   },
@@ -311,10 +280,7 @@
     "icon": "t_itemicon_accessory_dfhp_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "defense_ACC_up4",
-        "HP_ACC_up4"
-      ]
+      "passive_skills": ["defense_ACC_up4", "HP_ACC_up4"]
     },
     "disabled": false
   },
@@ -331,9 +297,7 @@
     "icon": "t_itemicon_accessory_darkresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Dark_3"
-      ]
+      "passive_skills": ["ElementResist_Dark_3"]
     },
     "disabled": false
   },
@@ -350,9 +314,7 @@
     "icon": "t_itemicon_accessory_darkresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Dark_3"
-      ]
+      "passive_skills": ["ElementResist_Dark_3"]
     },
     "disabled": false
   },
@@ -369,9 +331,7 @@
     "icon": "t_itemicon_accessory_darkresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Dark_3"
-      ]
+      "passive_skills": ["ElementResist_Dark_3"]
     },
     "disabled": false
   },
@@ -388,9 +348,7 @@
     "icon": "t_itemicon_accessory_dragonresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Dragon_3"
-      ]
+      "passive_skills": ["ElementResist_Dragon_3"]
     },
     "disabled": false
   },
@@ -407,9 +365,7 @@
     "icon": "t_itemicon_accessory_dragonresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Dragon_3"
-      ]
+      "passive_skills": ["ElementResist_Dragon_3"]
     },
     "disabled": false
   },
@@ -426,9 +382,7 @@
     "icon": "t_itemicon_accessory_dragonresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Dragon_3"
-      ]
+      "passive_skills": ["ElementResist_Dragon_3"]
     },
     "disabled": false
   },
@@ -445,9 +399,7 @@
     "icon": "t_itemicon_accessory_earthresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Earth_3"
-      ]
+      "passive_skills": ["ElementResist_Earth_3"]
     },
     "disabled": false
   },
@@ -464,9 +416,7 @@
     "icon": "t_itemicon_accessory_earthresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Earth_3"
-      ]
+      "passive_skills": ["ElementResist_Earth_3"]
     },
     "disabled": false
   },
@@ -483,9 +433,7 @@
     "icon": "t_itemicon_accessory_earthresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Earth_3"
-      ]
+      "passive_skills": ["ElementResist_Earth_3"]
     },
     "disabled": false
   },
@@ -502,9 +450,7 @@
     "icon": "t_itemicon_accessory_explosionresist",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Defuser_ExplosiveSpore_EquipSkill"
-      ]
+      "passive_skills": ["Defuser_ExplosiveSpore_EquipSkill"]
     },
     "disabled": false
   },
@@ -521,9 +467,7 @@
     "icon": "t_itemicon_accessory_fireresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Fire_3"
-      ]
+      "passive_skills": ["ElementResist_Fire_3"]
     },
     "disabled": false
   },
@@ -540,9 +484,7 @@
     "icon": "t_itemicon_accessory_fireresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Fire_3"
-      ]
+      "passive_skills": ["ElementResist_Fire_3"]
     },
     "disabled": false
   },
@@ -559,9 +501,7 @@
     "icon": "t_itemicon_accessory_fireresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Fire_3"
-      ]
+      "passive_skills": ["ElementResist_Fire_3"]
     },
     "disabled": false
   },
@@ -578,10 +518,7 @@
     "icon": "t_itemicon_accessory_hchp_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Heat3Cold3",
-        "HP_ACC_up4"
-      ]
+      "passive_skills": ["TemperatureResist_Heat3Cold3", "HP_ACC_up4"]
     },
     "disabled": false
   },
@@ -618,9 +555,7 @@
     "icon": "t_itemicon_accessory_hp_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "HP_ACC_up3"
-      ]
+      "passive_skills": ["HP_ACC_up3"]
     },
     "disabled": false
   },
@@ -637,9 +572,7 @@
     "icon": "t_itemicon_accessory_hp_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "HP_ACC_up3"
-      ]
+      "passive_skills": ["HP_ACC_up3"]
     },
     "disabled": false
   },
@@ -656,9 +589,7 @@
     "icon": "t_itemicon_accessory_hp_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "HP_ACC_up3"
-      ]
+      "passive_skills": ["HP_ACC_up3"]
     },
     "disabled": false
   },
@@ -675,9 +606,7 @@
     "icon": "t_itemicon_accessory_heatcoldresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Heat3Cold3"
-      ]
+      "passive_skills": ["TemperatureResist_Heat3Cold3"]
     },
     "disabled": false
   },
@@ -694,9 +623,7 @@
     "icon": "t_itemicon_accessory_heatcoldresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Heat3Cold3"
-      ]
+      "passive_skills": ["TemperatureResist_Heat3Cold3"]
     },
     "disabled": false
   },
@@ -713,9 +640,7 @@
     "icon": "t_itemicon_accessory_heatcoldresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Heat3Cold3"
-      ]
+      "passive_skills": ["TemperatureResist_Heat3Cold3"]
     },
     "disabled": false
   },
@@ -732,10 +657,7 @@
     "icon": "t_itemicon_accessory_heatfire_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Heat3",
-        "ElementResist_Fire_4"
-      ]
+      "passive_skills": ["TemperatureResist_Heat3", "ElementResist_Fire_4"]
     },
     "disabled": false
   },
@@ -752,9 +674,7 @@
     "icon": "t_itemicon_accessory_coolresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Heat3"
-      ]
+      "passive_skills": ["TemperatureResist_Heat3"]
     },
     "disabled": false
   },
@@ -771,9 +691,7 @@
     "icon": "t_itemicon_accessory_coolresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Heat3"
-      ]
+      "passive_skills": ["TemperatureResist_Heat3"]
     },
     "disabled": false
   },
@@ -790,9 +708,7 @@
     "icon": "t_itemicon_accessory_coolresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "TemperatureResist_Heat3"
-      ]
+      "passive_skills": ["TemperatureResist_Heat3"]
     },
     "disabled": false
   },
@@ -809,9 +725,7 @@
     "icon": "t_itemicon_accessory_iceresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Ice_3"
-      ]
+      "passive_skills": ["ElementResist_Ice_3"]
     },
     "disabled": false
   },
@@ -828,9 +742,7 @@
     "icon": "t_itemicon_accessory_iceresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Ice_3"
-      ]
+      "passive_skills": ["ElementResist_Ice_3"]
     },
     "disabled": false
   },
@@ -847,9 +759,7 @@
     "icon": "t_itemicon_accessory_iceresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Ice_3"
-      ]
+      "passive_skills": ["ElementResist_Ice_3"]
     },
     "disabled": false
   },
@@ -866,10 +776,7 @@
     "icon": "t_itemicon_accessory_jumpair_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "JumpCount_Increase1",
-        "AirDash_1"
-      ]
+      "passive_skills": ["JumpCount_Increase1", "AirDash_1"]
     },
     "disabled": false
   },
@@ -886,10 +793,7 @@
     "icon": "t_itemicon_accessory_jumpair_2",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "JumpCount_Increase1",
-        "AirDash_2"
-      ]
+      "passive_skills": ["JumpCount_Increase1", "AirDash_2"]
     },
     "disabled": false
   },
@@ -906,9 +810,7 @@
     "icon": "t_itemicon_accessory_jumpcount_increase",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "JumpCount_Increase1"
-      ]
+      "passive_skills": ["JumpCount_Increase1"]
     },
     "disabled": false
   },
@@ -925,9 +827,7 @@
     "icon": "t_itemicon_accessory_jumpcount_increase",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "JumpCount_Increase2"
-      ]
+      "passive_skills": ["JumpCount_Increase2"]
     },
     "disabled": false
   },
@@ -944,9 +844,7 @@
     "icon": "t_itemicon_accessory_jumpcount_increase",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "JumpCount_Increase3"
-      ]
+      "passive_skills": ["JumpCount_Increase3"]
     },
     "disabled": false
   },
@@ -963,9 +861,7 @@
     "icon": "t_itemicon_accessory_jumppower_increase",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "JumpPower_Increase"
-      ]
+      "passive_skills": ["JumpPower_Increase"]
     },
     "disabled": false
   },
@@ -982,9 +878,7 @@
     "icon": "t_itemicon_accessory_leafresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Leaf_3"
-      ]
+      "passive_skills": ["ElementResist_Leaf_3"]
     },
     "disabled": false
   },
@@ -1001,9 +895,7 @@
     "icon": "t_itemicon_accessory_leafresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Leaf_3"
-      ]
+      "passive_skills": ["ElementResist_Leaf_3"]
     },
     "disabled": false
   },
@@ -1020,9 +912,7 @@
     "icon": "t_itemicon_accessory_leafresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Leaf_3"
-      ]
+      "passive_skills": ["ElementResist_Leaf_3"]
     },
     "disabled": false
   },
@@ -1039,9 +929,7 @@
     "icon": "t_itemicon_accessory_maxweightup",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "MaxInventoryWeight_up_Equip_3"
-      ]
+      "passive_skills": ["MaxInventoryWeight_up_Equip_3"]
     },
     "disabled": false
   },
@@ -1058,9 +946,7 @@
     "icon": "t_itemicon_accessory_maxweightup",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "MaxInventoryWeight_up_Equip_2"
-      ]
+      "passive_skills": ["MaxInventoryWeight_up_Equip_2"]
     },
     "disabled": false
   },
@@ -1077,9 +963,7 @@
     "icon": "t_itemicon_accessory_maxweightup",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "MaxInventoryWeight_up_Equip_3"
-      ]
+      "passive_skills": ["MaxInventoryWeight_up_Equip_3"]
     },
     "disabled": false
   },
@@ -1096,9 +980,7 @@
     "icon": "t_itemicon_accessory_nonkchecker_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "NonKilling"
-      ]
+      "passive_skills": ["NonKilling"]
     },
     "disabled": false
   },
@@ -1115,9 +997,7 @@
     "icon": "t_itemicon_accessory_nonkilling",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "NonKilling"
-      ]
+      "passive_skills": ["NonKilling"]
     },
     "disabled": false
   },
@@ -1134,9 +1014,7 @@
     "icon": "t_itemicon_accessory_normalresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Normal_3"
-      ]
+      "passive_skills": ["ElementResist_Normal_3"]
     },
     "disabled": false
   },
@@ -1153,9 +1031,7 @@
     "icon": "t_itemicon_accessory_normalresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Normal_3"
-      ]
+      "passive_skills": ["ElementResist_Normal_3"]
     },
     "disabled": false
   },
@@ -1172,9 +1048,7 @@
     "icon": "t_itemicon_accessory_normalresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Normal_3"
-      ]
+      "passive_skills": ["ElementResist_Normal_3"]
     },
     "disabled": false
   },
@@ -1371,10 +1245,7 @@
     "icon": "t_itemicon_accessory_ppat_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Attack_ACC_up4",
-        "Attack_ACC_up4_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["Attack_ACC_up4", "Attack_ACC_up4_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -1391,10 +1262,7 @@
     "icon": "t_itemicon_accessory_ppdf_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "defense_ACC_up4",
-        "Defense_ACC_up4_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["defense_ACC_up4", "Defense_ACC_up4_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -1411,10 +1279,7 @@
     "icon": "t_itemicon_accessory_superjumpair_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "JumpCount_Increase2",
-        "AirDash_1"
-      ]
+      "passive_skills": ["JumpCount_Increase2", "AirDash_1"]
     },
     "disabled": false
   },
@@ -1431,10 +1296,7 @@
     "icon": "t_itemicon_accessory_superjumpair_2",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "JumpCount_Increase2",
-        "AirDash_2"
-      ]
+      "passive_skills": ["JumpCount_Increase2", "AirDash_2"]
     },
     "disabled": false
   },
@@ -1468,9 +1330,7 @@
     "icon": "t_itemicon_accessory_thunderresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Thunder_3"
-      ]
+      "passive_skills": ["ElementResist_Thunder_3"]
     },
     "disabled": false
   },
@@ -1487,9 +1347,7 @@
     "icon": "t_itemicon_accessory_thunderresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Thunder_3"
-      ]
+      "passive_skills": ["ElementResist_Thunder_3"]
     },
     "disabled": false
   },
@@ -1506,9 +1364,7 @@
     "icon": "t_itemicon_accessory_thunderresist_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementResist_Thunder_3"
-      ]
+      "passive_skills": ["ElementResist_Thunder_3"]
     },
     "disabled": false
   },
@@ -1525,10 +1381,7 @@
     "icon": "t_itemicon_accessory_wkmc_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "MaxInventoryWeight_up_Equip_4",
-        "WorkSpeed_ACC_up4"
-      ]
+      "passive_skills": ["MaxInventoryWeight_up_Equip_4", "WorkSpeed_ACC_up4"]
     },
     "disabled": false
   },
@@ -1545,9 +1398,7 @@
     "icon": "t_itemicon_accessory_workspeed_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "WorkSpeed_ACC_up3"
-      ]
+      "passive_skills": ["WorkSpeed_ACC_up3"]
     },
     "disabled": false
   },
@@ -1564,9 +1415,7 @@
     "icon": "t_itemicon_accessory_workspeed_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "WorkSpeed_ACC_up3"
-      ]
+      "passive_skills": ["WorkSpeed_ACC_up3"]
     },
     "disabled": false
   },
@@ -1583,9 +1432,7 @@
     "icon": "t_itemicon_accessory_workspeed_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "WorkSpeed_ACC_up3"
-      ]
+      "passive_skills": ["WorkSpeed_ACC_up3"]
     },
     "disabled": false
   },
@@ -1602,9 +1449,7 @@
     "icon": "t_itemicon_accessory_defense_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "defense_ACC_up3"
-      ]
+      "passive_skills": ["defense_ACC_up3"]
     },
     "disabled": false
   },
@@ -1621,9 +1466,7 @@
     "icon": "t_itemicon_accessory_defense_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "defense_ACC_up3"
-      ]
+      "passive_skills": ["defense_ACC_up3"]
     },
     "disabled": false
   },
@@ -1640,9 +1483,7 @@
     "icon": "t_itemicon_accessory_defense_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "defense_ACC_up3"
-      ]
+      "passive_skills": ["defense_ACC_up3"]
     },
     "disabled": false
   },
@@ -1738,10 +1579,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 25000,
-      "passive_skills": [
-        "TemperatureResist_Cold2",
-        "TemperatureResist_Heat2"
-      ]
+      "passive_skills": ["TemperatureResist_Cold2", "TemperatureResist_Heat2"]
     },
     "defense": 800,
     "disabled": false
@@ -2209,10 +2047,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 25000,
-      "passive_skills": [
-        "ElementResist_Normal_1",
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1", "ElementResist_Dragon_1"]
     },
     "defense": 500,
     "disabled": false
@@ -2231,10 +2066,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 37500,
-      "passive_skills": [
-        "ElementResist_Normal_1",
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1", "ElementResist_Dragon_1"]
     },
     "defense": 550,
     "disabled": false
@@ -2253,10 +2085,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 50000,
-      "passive_skills": [
-        "ElementResist_Normal_1",
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1", "ElementResist_Dragon_1"]
     },
     "defense": 575,
     "disabled": false
@@ -2275,10 +2104,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 75000,
-      "passive_skills": [
-        "ElementResist_Normal_1",
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1", "ElementResist_Dragon_1"]
     },
     "defense": 600,
     "disabled": false
@@ -2297,10 +2123,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 100000,
-      "passive_skills": [
-        "ElementResist_Normal_1",
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1", "ElementResist_Dragon_1"]
     },
     "defense": 650,
     "disabled": false
@@ -2640,9 +2463,7 @@
     "dynamic": {
       "type": "weapon",
       "durability": 400,
-      "passive_skills": [
-        "WoodDrop_Boost_4"
-      ]
+      "passive_skills": ["WoodDrop_Boost_4"]
     },
     "damage": 120,
     "disabled": false
@@ -2680,9 +2501,7 @@
     "dynamic": {
       "type": "weapon",
       "durability": 250,
-      "passive_skills": [
-        "WoodDrop_Boost_1"
-      ]
+      "passive_skills": ["WoodDrop_Boost_1"]
     },
     "damage": 30,
     "disabled": false
@@ -2701,9 +2520,7 @@
     "dynamic": {
       "type": "weapon",
       "durability": 300,
-      "passive_skills": [
-        "WoodDrop_Boost_2"
-      ]
+      "passive_skills": ["WoodDrop_Boost_2"]
     },
     "damage": 60,
     "disabled": false
@@ -2722,9 +2539,7 @@
     "dynamic": {
       "type": "weapon",
       "durability": 400,
-      "passive_skills": [
-        "WoodDrop_Boost_3"
-      ]
+      "passive_skills": ["WoodDrop_Boost_3"]
     },
     "damage": 75,
     "disabled": false
@@ -13387,9 +13202,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 150,
-      "passive_skills": [
-        "TemperatureResist_Cold1"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1"]
     },
     "defense": 15,
     "disabled": false
@@ -13408,9 +13221,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "TemperatureResist_Cold2"
-      ]
+      "passive_skills": ["TemperatureResist_Cold2"]
     },
     "defense": 25,
     "disabled": false
@@ -13429,10 +13240,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "TemperatureResist_Cold2",
-        "Attack_ACC_up1_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold2", "Attack_ACC_up1_Armor"]
     },
     "defense": 32,
     "disabled": false
@@ -13451,10 +13259,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "TemperatureResist_Cold2",
-        "Attack_ACC_up2_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold2", "Attack_ACC_up2_Armor"]
     },
     "defense": 35,
     "disabled": false
@@ -13473,10 +13278,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "TemperatureResist_Cold2",
-        "Attack_ACC_up3_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold2", "Attack_ACC_up3_Armor"]
     },
     "defense": 37,
     "disabled": false
@@ -13495,10 +13297,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "TemperatureResist_Cold2",
-        "Attack_ACC_up4_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold2", "Attack_ACC_up4_Armor"]
     },
     "defense": 40,
     "disabled": false
@@ -13517,9 +13316,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "TemperatureResist_Heat2"
-      ]
+      "passive_skills": ["TemperatureResist_Heat2"]
     },
     "defense": 25,
     "disabled": false
@@ -13538,10 +13335,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "TemperatureResist_Heat2",
-        "Attack_ACC_up1_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Heat2", "Attack_ACC_up1_Armor"]
     },
     "defense": 32,
     "disabled": false
@@ -13560,10 +13354,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "TemperatureResist_Heat2",
-        "Attack_ACC_up2_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Heat2", "Attack_ACC_up2_Armor"]
     },
     "defense": 35,
     "disabled": false
@@ -13582,10 +13373,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "TemperatureResist_Heat2",
-        "Attack_ACC_up3_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Heat2", "Attack_ACC_up3_Armor"]
     },
     "defense": 37,
     "disabled": false
@@ -13604,10 +13392,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "TemperatureResist_Heat2",
-        "Attack_ACC_up4_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Heat2", "Attack_ACC_up4_Armor"]
     },
     "defense": 40,
     "disabled": false
@@ -13626,10 +13411,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 400,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "Attack_ACC_up1_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "Attack_ACC_up1_Armor"]
     },
     "defense": 19,
     "disabled": false
@@ -13648,10 +13430,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 500,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "Attack_ACC_up2_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "Attack_ACC_up2_Armor"]
     },
     "defense": 21,
     "disabled": false
@@ -13670,10 +13449,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "Attack_ACC_up3_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "Attack_ACC_up3_Armor"]
     },
     "defense": 22,
     "disabled": false
@@ -13692,10 +13468,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 700,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "Attack_ACC_up4_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "Attack_ACC_up4_Armor"]
     },
     "defense": 24,
     "disabled": false
@@ -13840,10 +13613,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 700,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "TemperatureResist_Heat1"]
     },
     "defense": 70,
     "disabled": false
@@ -16133,9 +15903,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "TemperatureResist_Cold1"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1"]
     },
     "defense": 35,
     "disabled": false
@@ -16154,10 +15922,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "TemperatureResist_Cold2",
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["TemperatureResist_Cold2", "ElementResist_Ice_1"]
     },
     "defense": 45,
     "disabled": false
@@ -16268,10 +16033,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "TemperatureResist_Heat2",
-        "ElementResist_Fire_1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat2", "ElementResist_Fire_1"]
     },
     "defense": 45,
     "disabled": false
@@ -16382,10 +16144,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 800,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "Attack_ACC_up1_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "Attack_ACC_up1_Armor"]
     },
     "defense": 45,
     "disabled": false
@@ -16404,10 +16163,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1000,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "Attack_ACC_up2_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "Attack_ACC_up2_Armor"]
     },
     "defense": 49,
     "disabled": false
@@ -16426,10 +16182,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "Attack_ACC_up3_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "Attack_ACC_up3_Armor"]
     },
     "defense": 52,
     "disabled": false
@@ -16448,10 +16201,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1400,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "Attack_ACC_up4_Armor"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "Attack_ACC_up4_Armor"]
     },
     "defense": 56,
     "disabled": false
@@ -16470,9 +16220,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 200,
-      "passive_skills": [
-        "MaxInventoryWeight_up_Equip_1"
-      ]
+      "passive_skills": ["MaxInventoryWeight_up_Equip_1"]
     },
     "defense": 15,
     "disabled": false
@@ -16491,9 +16239,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 520,
-      "passive_skills": [
-        "MaxInventoryWeight_up_Equip_1"
-      ]
+      "passive_skills": ["MaxInventoryWeight_up_Equip_1"]
     },
     "defense": 19,
     "disabled": false
@@ -16512,9 +16258,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "MaxInventoryWeight_up_Equip_1"
-      ]
+      "passive_skills": ["MaxInventoryWeight_up_Equip_1"]
     },
     "defense": 21,
     "disabled": false
@@ -16533,9 +16277,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 680,
-      "passive_skills": [
-        "MaxInventoryWeight_up_Equip_1"
-      ]
+      "passive_skills": ["MaxInventoryWeight_up_Equip_1"]
     },
     "defense": 22,
     "disabled": false
@@ -16554,9 +16296,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 800,
-      "passive_skills": [
-        "MaxInventoryWeight_up_Equip_1"
-      ]
+      "passive_skills": ["MaxInventoryWeight_up_Equip_1"]
     },
     "defense": 24,
     "disabled": false
@@ -16707,9 +16447,7 @@
     "icon": "t_itemicon_accessory_gasmask",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Invalid_ToxicGas_EquipSkill"
-      ]
+      "passive_skills": ["Invalid_ToxicGas_EquipSkill"]
     },
     "disabled": false
   },
@@ -17617,9 +17355,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 525,
-      "passive_skills": [
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Dragon_1"]
     },
     "defense": 30,
     "disabled": false
@@ -17638,9 +17374,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 787,
-      "passive_skills": [
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Dragon_1"]
     },
     "defense": 45,
     "disabled": false
@@ -17659,9 +17393,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1050,
-      "passive_skills": [
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Dragon_1"]
     },
     "defense": 67,
     "disabled": false
@@ -17680,9 +17412,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1575,
-      "passive_skills": [
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Dragon_1"]
     },
     "defense": 90,
     "disabled": false
@@ -17701,9 +17431,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 2100,
-      "passive_skills": [
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Dragon_1"]
     },
     "defense": 120,
     "disabled": false
@@ -17722,9 +17450,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 30,
     "disabled": false
@@ -17743,9 +17469,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 675,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 45,
     "disabled": false
@@ -17764,9 +17488,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 67,
     "disabled": false
@@ -17785,9 +17507,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1350,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 90,
     "disabled": false
@@ -17806,9 +17526,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1800,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 120,
     "disabled": false
@@ -17827,9 +17545,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 225,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 20,
     "disabled": false
@@ -17848,9 +17564,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 337,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 30,
     "disabled": false
@@ -17869,9 +17583,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 45,
     "disabled": false
@@ -17890,9 +17602,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 675,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 60,
     "disabled": false
@@ -17911,9 +17621,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 80,
     "disabled": false
@@ -17932,9 +17640,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -17953,9 +17659,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 30,
     "disabled": false
@@ -17974,9 +17678,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 45,
     "disabled": false
@@ -17995,9 +17697,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 60,
     "disabled": false
@@ -18016,9 +17716,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 80,
     "disabled": false
@@ -18037,9 +17735,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 270,
-      "passive_skills": [
-        "ElementResist_Earth_1"
-      ]
+      "passive_skills": ["ElementResist_Earth_1"]
     },
     "defense": 25,
     "disabled": false
@@ -18058,9 +17754,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 405,
-      "passive_skills": [
-        "ElementResist_Earth_1"
-      ]
+      "passive_skills": ["ElementResist_Earth_1"]
     },
     "defense": 37,
     "disabled": false
@@ -18079,9 +17773,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 540,
-      "passive_skills": [
-        "ElementResist_Earth_1"
-      ]
+      "passive_skills": ["ElementResist_Earth_1"]
     },
     "defense": 56,
     "disabled": false
@@ -18100,9 +17792,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 810,
-      "passive_skills": [
-        "ElementResist_Earth_1"
-      ]
+      "passive_skills": ["ElementResist_Earth_1"]
     },
     "defense": 75,
     "disabled": false
@@ -18121,9 +17811,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1080,
-      "passive_skills": [
-        "ElementResist_Earth_1"
-      ]
+      "passive_skills": ["ElementResist_Earth_1"]
     },
     "defense": 100,
     "disabled": false
@@ -18142,9 +17830,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Thunder_1"
-      ]
+      "passive_skills": ["ElementResist_Thunder_1"]
     },
     "defense": 30,
     "disabled": false
@@ -18163,9 +17849,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Thunder_1"
-      ]
+      "passive_skills": ["ElementResist_Thunder_1"]
     },
     "defense": 45,
     "disabled": false
@@ -18184,9 +17868,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Thunder_1"
-      ]
+      "passive_skills": ["ElementResist_Thunder_1"]
     },
     "defense": 67,
     "disabled": false
@@ -18205,9 +17887,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1800,
-      "passive_skills": [
-        "ElementResist_Thunder_1"
-      ]
+      "passive_skills": ["ElementResist_Thunder_1"]
     },
     "defense": 90,
     "disabled": false
@@ -18226,9 +17906,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 2400,
-      "passive_skills": [
-        "ElementResist_Thunder_1"
-      ]
+      "passive_skills": ["ElementResist_Thunder_1"]
     },
     "defense": 120,
     "disabled": false
@@ -18247,9 +17925,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Fire_1"
-      ]
+      "passive_skills": ["ElementResist_Fire_1"]
     },
     "defense": 25,
     "disabled": false
@@ -18268,9 +17944,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Fire_1"
-      ]
+      "passive_skills": ["ElementResist_Fire_1"]
     },
     "defense": 37,
     "disabled": false
@@ -18289,9 +17963,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Fire_1"
-      ]
+      "passive_skills": ["ElementResist_Fire_1"]
     },
     "defense": 56,
     "disabled": false
@@ -18310,9 +17982,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Fire_1"
-      ]
+      "passive_skills": ["ElementResist_Fire_1"]
     },
     "defense": 75,
     "disabled": false
@@ -18331,9 +18001,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Fire_1"
-      ]
+      "passive_skills": ["ElementResist_Fire_1"]
     },
     "defense": 100,
     "disabled": false
@@ -18352,9 +18020,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 375,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 25,
     "disabled": false
@@ -18373,9 +18039,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 562,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 37,
     "disabled": false
@@ -18394,9 +18058,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 750,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 56,
     "disabled": false
@@ -18415,9 +18077,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1125,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 75,
     "disabled": false
@@ -18436,9 +18096,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1500,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 100,
     "disabled": false
@@ -18457,9 +18115,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 270,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 25,
     "disabled": false
@@ -18478,9 +18134,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 324,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 37,
     "disabled": false
@@ -18499,9 +18153,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 405,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 56,
     "disabled": false
@@ -18520,9 +18172,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 486,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 75,
     "disabled": false
@@ -18541,9 +18191,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 594,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 100,
     "disabled": false
@@ -18562,9 +18210,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "WorkSpeed_ACC_up1"
-      ]
+      "passive_skills": ["WorkSpeed_ACC_up1"]
     },
     "defense": 30,
     "disabled": false
@@ -18583,9 +18229,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "WorkSpeed_ACC_up1"
-      ]
+      "passive_skills": ["WorkSpeed_ACC_up1"]
     },
     "defense": 45,
     "disabled": false
@@ -18604,9 +18248,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "WorkSpeed_ACC_up1"
-      ]
+      "passive_skills": ["WorkSpeed_ACC_up1"]
     },
     "defense": 67,
     "disabled": false
@@ -18625,9 +18267,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "WorkSpeed_ACC_up1"
-      ]
+      "passive_skills": ["WorkSpeed_ACC_up1"]
     },
     "defense": 90,
     "disabled": false
@@ -18646,9 +18286,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "WorkSpeed_ACC_up1"
-      ]
+      "passive_skills": ["WorkSpeed_ACC_up1"]
     },
     "defense": 120,
     "disabled": false
@@ -18667,9 +18305,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 270,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 10,
     "disabled": false
@@ -18688,9 +18324,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 405,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 15,
     "disabled": false
@@ -18709,9 +18343,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 540,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 22,
     "disabled": false
@@ -18730,9 +18362,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 810,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 30,
     "disabled": false
@@ -18751,9 +18381,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1080,
-      "passive_skills": [
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Heat1"]
     },
     "defense": 40,
     "disabled": false
@@ -18772,9 +18400,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 20,
     "disabled": false
@@ -18793,9 +18419,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 30,
     "disabled": false
@@ -18814,9 +18438,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 45,
     "disabled": false
@@ -18835,9 +18457,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 60,
     "disabled": false
@@ -18856,9 +18476,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 80,
     "disabled": false
@@ -18877,9 +18495,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 20,
     "disabled": false
@@ -18898,9 +18514,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 30,
     "disabled": false
@@ -18919,9 +18533,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 45,
     "disabled": false
@@ -18940,9 +18552,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 60,
     "disabled": false
@@ -18961,9 +18571,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 80,
     "disabled": false
@@ -18982,9 +18590,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19003,9 +18609,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 30,
     "disabled": false
@@ -19024,9 +18628,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 45,
     "disabled": false
@@ -19045,9 +18647,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 60,
     "disabled": false
@@ -19066,9 +18666,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 80,
     "disabled": false
@@ -19087,9 +18685,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19108,9 +18704,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 30,
     "disabled": false
@@ -19129,9 +18723,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 45,
     "disabled": false
@@ -19150,9 +18742,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 60,
     "disabled": false
@@ -19171,9 +18761,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 80,
     "disabled": false
@@ -19192,9 +18780,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19213,9 +18799,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 30,
     "disabled": false
@@ -19234,9 +18818,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 45,
     "disabled": false
@@ -19255,9 +18837,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 60,
     "disabled": false
@@ -19276,9 +18856,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 80,
     "disabled": false
@@ -19297,9 +18875,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19318,9 +18894,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 30,
     "disabled": false
@@ -19339,9 +18913,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 45,
     "disabled": false
@@ -19360,9 +18932,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 60,
     "disabled": false
@@ -19381,9 +18951,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 80,
     "disabled": false
@@ -19402,9 +18970,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 5000,
-      "passive_skills": [
-        "ElementResist_Dragon_1"
-      ]
+      "passive_skills": ["ElementResist_Dragon_1"]
     },
     "defense": 30,
     "disabled": false
@@ -19423,9 +18989,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19444,9 +19008,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19465,9 +19027,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19486,9 +19046,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19507,9 +19065,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19528,9 +19084,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19549,9 +19103,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19570,9 +19122,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19591,9 +19141,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19612,9 +19160,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19633,9 +19179,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19654,9 +19198,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19675,9 +19217,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19696,9 +19236,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19717,9 +19255,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19738,9 +19274,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19759,9 +19293,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19780,9 +19312,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19801,9 +19331,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19822,9 +19350,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Earth_1"
-      ]
+      "passive_skills": ["ElementResist_Earth_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19843,9 +19369,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19864,9 +19388,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19885,9 +19407,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19906,9 +19426,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19927,9 +19445,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19948,9 +19464,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Thunder_1"
-      ]
+      "passive_skills": ["ElementResist_Thunder_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19969,9 +19483,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 450,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -19990,9 +19502,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 600,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20011,9 +19521,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 900,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20032,9 +19540,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1200,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20053,9 +19559,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20074,9 +19578,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 5000,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 30,
     "disabled": false
@@ -20095,9 +19597,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 5000,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 30,
     "disabled": false
@@ -20116,9 +19616,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 700,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 70,
     "disabled": false
@@ -20137,9 +19635,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 5000,
-      "passive_skills": [
-        "ElementResist_Thunder_1"
-      ]
+      "passive_skills": ["ElementResist_Thunder_1"]
     },
     "defense": 30,
     "disabled": false
@@ -20196,9 +19692,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20217,9 +19711,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20238,9 +19730,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20259,9 +19749,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20280,9 +19768,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20301,9 +19787,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20322,9 +19806,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Normal_1"
-      ]
+      "passive_skills": ["ElementResist_Normal_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20343,9 +19825,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 30,
     "disabled": false
@@ -20364,9 +19844,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Leaf_1"
-      ]
+      "passive_skills": ["ElementResist_Leaf_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20385,9 +19863,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Aqua_1"
-      ]
+      "passive_skills": ["ElementResist_Aqua_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20406,9 +19882,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Ice_1"
-      ]
+      "passive_skills": ["ElementResist_Ice_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20427,9 +19901,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20448,9 +19920,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 300,
-      "passive_skills": [
-        "ElementResist_Dark_1"
-      ]
+      "passive_skills": ["ElementResist_Dark_1"]
     },
     "defense": 20,
     "disabled": false
@@ -20653,10 +20123,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1500,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "TemperatureResist_Heat1"]
     },
     "defense": 150,
     "disabled": false
@@ -21536,9 +21003,7 @@
     "dynamic": {
       "type": "weapon",
       "durability": 850,
-      "passive_skills": [
-        "StonWoodDrop_Boost"
-      ]
+      "passive_skills": ["StonWoodDrop_Boost"]
     },
     "damage": 250,
     "disabled": false
@@ -23452,10 +22917,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 19000,
-      "passive_skills": [
-        "TemperatureResist_Cold2",
-        "TemperatureResist_Heat2"
-      ]
+      "passive_skills": ["TemperatureResist_Cold2", "TemperatureResist_Heat2"]
     },
     "defense": 600,
     "disabled": false
@@ -24093,9 +23555,7 @@
     "icon": "t_itemicon_accessory_otomo_attack_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Attack_ACC_up3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["Attack_ACC_up3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24112,9 +23572,7 @@
     "icon": "t_itemicon_accessory_otomo_attack_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Attack_ACC_up3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["Attack_ACC_up3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24131,9 +23589,7 @@
     "icon": "t_itemicon_accessory_otomo_attack_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Attack_ACC_up3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["Attack_ACC_up3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24330,9 +23786,7 @@
     "icon": "t_itemicon_accessory_otomo_defense_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Defense_ACC_up3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["Defense_ACC_up3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24349,9 +23803,7 @@
     "icon": "t_itemicon_accessory_otomo_defense_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Defense_ACC_up3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["Defense_ACC_up3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24368,9 +23820,7 @@
     "icon": "t_itemicon_accessory_otomo_defense_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "Defense_ACC_up3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["Defense_ACC_up3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24387,9 +23837,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_dark",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Dark_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Dark_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24406,9 +23854,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_dark",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Dark_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Dark_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24425,9 +23871,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_dark",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Dark_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Dark_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24444,9 +23888,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_dragon",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Dragon_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Dragon_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24463,9 +23905,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_dragon",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Dragon_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Dragon_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24482,9 +23922,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_dragon",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Dragon_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Dragon_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24501,9 +23939,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_earth",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Earth_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Earth_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24520,9 +23956,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_earth",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Earth_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Earth_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24539,9 +23973,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_earth",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Earth_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Earth_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24558,9 +23990,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_electricity",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Electricity_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Electricity_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24577,9 +24007,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_electricity",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Electricity_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Electricity_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24596,9 +24024,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_electricity",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Electricity_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Electricity_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24615,9 +24041,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_fire",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Fire_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Fire_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24634,9 +24058,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_fire",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Fire_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Fire_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24653,9 +24075,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_fire",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Fire_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Fire_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24672,9 +24092,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_ice",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Ice_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Ice_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24691,9 +24109,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_ice",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Ice_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Ice_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24710,9 +24126,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_ice",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Ice_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Ice_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24729,9 +24143,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_leaf",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Leaf_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Leaf_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24748,9 +24160,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_leaf",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Leaf_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Leaf_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24767,9 +24177,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_leaf",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Leaf_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Leaf_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24786,9 +24194,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_normal",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Normal_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Normal_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24805,9 +24211,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_normal",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Normal_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Normal_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24824,9 +24228,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_normal",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Normal_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Normal_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24843,9 +24245,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_water",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Water_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Water_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24862,9 +24262,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_water",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Water_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Water_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24881,9 +24279,7 @@
     "icon": "t_itemicon_accessory_otomo_elementboost_water",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "ElementBoost_Water_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["ElementBoost_Water_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24900,9 +24296,7 @@
     "icon": "t_itemicon_accessory_otomo_movespeed_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "MoveSpeed_up_1_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["MoveSpeed_up_1_Otomo_Only_Equip"]
     },
     "disabled": true
   },
@@ -24919,9 +24313,7 @@
     "icon": "t_itemicon_accessory_otomo_palconfidence_increase_1",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "FriendshipPoint_Increase_EquipSkill"
-      ]
+      "passive_skills": ["FriendshipPoint_Increase_EquipSkill"]
     },
     "disabled": false
   },
@@ -24938,9 +24330,7 @@
     "icon": "t_itemicon_accessory_otomo_exp_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "PalExp_Increase_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["PalExp_Increase_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24957,9 +24347,7 @@
     "icon": "t_itemicon_accessory_otomo_exp_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "PalExp_Increase_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["PalExp_Increase_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -24976,9 +24364,7 @@
     "icon": "t_itemicon_accessory_otomo_exp_up",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "PalExp_Increase_3_Otomo_Only_Equip"
-      ]
+      "passive_skills": ["PalExp_Increase_3_Otomo_Only_Equip"]
     },
     "disabled": false
   },
@@ -25633,11 +25019,7 @@
     "dynamic": {
       "type": "egg",
       "passive_skills": [],
-      "character_ids": [
-        "FairyDragon",
-        "GhostDragon",
-        "SkyDragon"
-      ]
+      "character_ids": ["FairyDragon", "GhostDragon", "SkyDragon"]
     },
     "disabled": false
   },
@@ -25914,9 +25296,7 @@
     "dynamic": {
       "type": "egg",
       "passive_skills": [],
-      "character_ids": [
-        "ElecPanda"
-      ]
+      "character_ids": ["ElecPanda"]
     },
     "disabled": false
   },
@@ -28411,9 +27791,7 @@
     "dynamic": {
       "type": "weapon",
       "durability": 400,
-      "passive_skills": [
-        "StonDrop_Boost_4"
-      ]
+      "passive_skills": ["StonDrop_Boost_4"]
     },
     "damage": 120,
     "disabled": false
@@ -28451,9 +27829,7 @@
     "dynamic": {
       "type": "weapon",
       "durability": 250,
-      "passive_skills": [
-        "StonDrop_Boost_1"
-      ]
+      "passive_skills": ["StonDrop_Boost_1"]
     },
     "damage": 30,
     "disabled": false
@@ -28472,9 +27848,7 @@
     "dynamic": {
       "type": "weapon",
       "durability": 300,
-      "passive_skills": [
-        "StonDrop_Boost_2"
-      ]
+      "passive_skills": ["StonDrop_Boost_2"]
     },
     "damage": 60,
     "disabled": false
@@ -28535,10 +27909,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 18000,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "TemperatureResist_Heat1"]
     },
     "defense": 385,
     "disabled": false
@@ -29114,10 +28485,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 1800,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "TemperatureResist_Heat1"]
     },
     "defense": 50,
     "disabled": false
@@ -29901,10 +29269,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 20000,
-      "passive_skills": [
-        "TemperatureResist_Cold2",
-        "TemperatureResist_Heat2"
-      ]
+      "passive_skills": ["TemperatureResist_Cold2", "TemperatureResist_Heat2"]
     },
     "defense": 580,
     "disabled": false
@@ -35125,10 +34490,7 @@
     "icon": "t_itemicon_spheremodule_curve",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "SphereModule_Curve",
-        "CaptureLevel_Up_2"
-      ]
+      "passive_skills": ["SphereModule_Curve", "CaptureLevel_Up_2"]
     },
     "disabled": false
   },
@@ -35145,10 +34507,7 @@
     "icon": "t_itemicon_spheremodule_curve2",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "SphereModule_Curve2",
-        "CaptureLevel_Up_3"
-      ]
+      "passive_skills": ["SphereModule_Curve2", "CaptureLevel_Up_3"]
     },
     "disabled": false
   },
@@ -35165,10 +34524,7 @@
     "icon": "t_itemicon_spheremodule_heavy",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "SphereModule_Heavy",
-        "CaptureLevel_Up_1"
-      ]
+      "passive_skills": ["SphereModule_Heavy", "CaptureLevel_Up_1"]
     },
     "disabled": false
   },
@@ -35185,10 +34541,7 @@
     "icon": "t_itemicon_spheremodule_homing",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "SphereModule_Homing",
-        "CaptureLevel_Up_3"
-      ]
+      "passive_skills": ["SphereModule_Homing", "CaptureLevel_Up_3"]
     },
     "disabled": false
   },
@@ -35205,10 +34558,7 @@
     "icon": "t_itemicon_spheremodule_spiper",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "SphereModule_Sniper",
-        "CaptureLevel_Up_2"
-      ]
+      "passive_skills": ["SphereModule_Sniper", "CaptureLevel_Up_2"]
     },
     "disabled": false
   },
@@ -35225,10 +34575,7 @@
     "icon": "t_itemicon_spheremodule_sniper2",
     "dynamic": {
       "type": "armor",
-      "passive_skills": [
-        "SphereModule_Sniper2",
-        "CaptureLevel_Up_3"
-      ]
+      "passive_skills": ["SphereModule_Sniper2", "CaptureLevel_Up_3"]
     },
     "disabled": false
   },
@@ -35301,10 +34648,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 5000,
-      "passive_skills": [
-        "TemperatureResist_Cold1",
-        "TemperatureResist_Heat1"
-      ]
+      "passive_skills": ["TemperatureResist_Cold1", "TemperatureResist_Heat1"]
     },
     "defense": 220,
     "disabled": false
@@ -37735,9 +37079,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 4500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Melee_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Melee_Equip"]
     },
     "defense": 140,
     "disabled": false
@@ -37756,9 +37098,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 6000,
-      "passive_skills": [
-        "YakushimaDagameBoost_Melee_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Melee_Equip"]
     },
     "defense": 154,
     "disabled": false
@@ -37777,9 +37117,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 7500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Melee_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Melee_Equip"]
     },
     "defense": 161,
     "disabled": false
@@ -37798,9 +37136,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 10500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Melee_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Melee_Equip"]
     },
     "defense": 168,
     "disabled": false
@@ -37819,9 +37155,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 13500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Melee_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Melee_Equip"]
     },
     "defense": 182,
     "disabled": false
@@ -37840,9 +37174,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 4500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Magic_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Magic_Equip"]
     },
     "defense": 140,
     "disabled": false
@@ -37861,9 +37193,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 6000,
-      "passive_skills": [
-        "YakushimaDagameBoost_Magic_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Magic_Equip"]
     },
     "defense": 154,
     "disabled": false
@@ -37882,9 +37212,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 7500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Magic_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Magic_Equip"]
     },
     "defense": 161,
     "disabled": false
@@ -37903,9 +37231,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 10500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Magic_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Magic_Equip"]
     },
     "defense": 168,
     "disabled": false
@@ -37924,9 +37250,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 13500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Magic_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Magic_Equip"]
     },
     "defense": 182,
     "disabled": false
@@ -37945,9 +37269,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 4500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Ranged_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Ranged_Equip"]
     },
     "defense": 140,
     "disabled": false
@@ -37966,9 +37288,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 6000,
-      "passive_skills": [
-        "YakushimaDagameBoost_Ranged_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Ranged_Equip"]
     },
     "defense": 154,
     "disabled": false
@@ -37987,9 +37307,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 7500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Ranged_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Ranged_Equip"]
     },
     "defense": 161,
     "disabled": false
@@ -38008,9 +37326,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 10500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Ranged_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Ranged_Equip"]
     },
     "defense": 168,
     "disabled": false
@@ -38029,9 +37345,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 13500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Ranged_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Ranged_Equip"]
     },
     "defense": 182,
     "disabled": false
@@ -38050,9 +37364,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 4500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Summon_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Summon_Equip"]
     },
     "defense": 140,
     "disabled": false
@@ -38071,9 +37383,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 6000,
-      "passive_skills": [
-        "YakushimaDagameBoost_Summon_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Summon_Equip"]
     },
     "defense": 154,
     "disabled": false
@@ -38092,9 +37402,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 7500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Summon_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Summon_Equip"]
     },
     "defense": 161,
     "disabled": false
@@ -38113,9 +37421,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 10500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Summon_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Summon_Equip"]
     },
     "defense": 168,
     "disabled": false
@@ -38134,9 +37440,7 @@
     "dynamic": {
       "type": "armor",
       "durability": 13500,
-      "passive_skills": [
-        "YakushimaDagameBoost_Summon_Equip"
-      ]
+      "passive_skills": ["YakushimaDagameBoost_Summon_Equip"]
     },
     "defense": 182,
     "disabled": false

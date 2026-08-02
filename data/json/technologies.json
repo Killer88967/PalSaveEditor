@@ -1,9 +1,7 @@
 {
   "AIcore": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AIcore"
-    ],
+    "unlock_item_recipes": ["AIcore"],
     "icon_name": "AIcore",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -16,9 +14,7 @@
   },
   "Accessory_AirDash1": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Accessory_AirDash1"
-    ],
+    "unlock_item_recipes": ["Accessory_AirDash1"],
     "icon_name": "Accessory_AirDash1",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -31,9 +27,7 @@
   },
   "Accessory_AirDash2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Accessory_AirDash2"
-    ],
+    "unlock_item_recipes": ["Accessory_AirDash2"],
     "icon_name": "Accessory_AirDash2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -46,9 +40,7 @@
   },
   "Accessory_AirDash3": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Accessory_AirDash3"
-    ],
+    "unlock_item_recipes": ["Accessory_AirDash3"],
     "icon_name": "Accessory_AirDash3",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "Accessory_AirDash2",
@@ -61,9 +53,7 @@
   },
   "Accessory_ExplosionResist": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Accessory_ExplosionResist"
-    ],
+    "unlock_item_recipes": ["Accessory_ExplosionResist"],
     "icon_name": "Accessory_ExplosionResist",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -76,9 +66,7 @@
   },
   "Accessory_JumpCount_Increase1": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Accessory_JumpCount_Increase1"
-    ],
+    "unlock_item_recipes": ["Accessory_JumpCount_Increase1"],
     "icon_name": "Accessory_JumpCount_Increase1",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -91,9 +79,7 @@
   },
   "Accessory_JumpCount_Increase2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Accessory_JumpCount_Increase2"
-    ],
+    "unlock_item_recipes": ["Accessory_JumpCount_Increase2"],
     "icon_name": "Accessory_JumpCount_Increase2",
     "require_defeat_tower_boss": "EPalBossType::SorajimaBoss",
     "require_technology": "None",
@@ -106,9 +92,7 @@
   },
   "Accessory_JumpPower_Increase": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Accessory_JumpPower_Increase"
-    ],
+    "unlock_item_recipes": ["Accessory_JumpPower_Increase"],
     "icon_name": "Accessory_JumpPower_Increase",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -121,9 +105,7 @@
   },
   "Accessory_Nonkilling": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Accessory_Nonkilling"
-    ],
+    "unlock_item_recipes": ["Accessory_Nonkilling"],
     "icon_name": "Accessory_Nonkilling",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -136,9 +118,7 @@
   },
   "Accessory_TalentChecker": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Accessory_TalentChecker"
-    ],
+    "unlock_item_recipes": ["Accessory_TalentChecker"],
     "icon_name": "Accessory_TalentChecker",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -151,9 +131,7 @@
   },
   "AdditionalInventory_001": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AdditionalInventory_001"
-    ],
+    "unlock_item_recipes": ["AdditionalInventory_001"],
     "icon_name": "AdditionalInventory_001",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -166,9 +144,7 @@
   },
   "AdditionalInventory_002": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AdditionalInventory_002"
-    ],
+    "unlock_item_recipes": ["AdditionalInventory_002"],
     "icon_name": "AdditionalInventory_002",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "AdditionalInventory_001",
@@ -181,9 +157,7 @@
   },
   "AdditionalInventory_003": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AdditionalInventory_003"
-    ],
+    "unlock_item_recipes": ["AdditionalInventory_003"],
     "icon_name": "AdditionalInventory_003",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "AdditionalInventory_002",
@@ -196,9 +170,7 @@
   },
   "AdditionalInventory_004": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AdditionalInventory_004"
-    ],
+    "unlock_item_recipes": ["AdditionalInventory_004"],
     "icon_name": "AdditionalInventory_004",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "AdditionalInventory_003",
@@ -210,9 +182,7 @@
     "icon": "t_itemicon_essential_additionalinventory_004"
   },
   "Altar": {
-    "unlock_build_objects": [
-      "Altar"
-    ],
+    "unlock_build_objects": ["Altar"],
     "unlock_item_recipes": [],
     "icon_name": "Altar",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -226,9 +196,7 @@
   },
   "AncientArmor": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AncientArmor"
-    ],
+    "unlock_item_recipes": ["AncientArmor"],
     "icon_name": "AncientArmor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -241,9 +209,7 @@
   },
   "AncientArmorCold": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AncientArmorCold"
-    ],
+    "unlock_item_recipes": ["AncientArmorCold"],
     "icon_name": "AncientArmorCold",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -256,9 +222,7 @@
   },
   "AncientArmorHeat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AncientArmorHeat"
-    ],
+    "unlock_item_recipes": ["AncientArmorHeat"],
     "icon_name": "AncientArmorHeat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -271,9 +235,7 @@
   },
   "AncientArmorWeight": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AncientArmorWeight"
-    ],
+    "unlock_item_recipes": ["AncientArmorWeight"],
     "icon_name": "AncientArmorWeight",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -285,9 +247,7 @@
     "icon": "t_itemicon_armor_ancientarmorweight"
   },
   "AncientBlastFurnace": {
-    "unlock_build_objects": [
-      "AncientBlastFurnace"
-    ],
+    "unlock_build_objects": ["AncientBlastFurnace"],
     "unlock_item_recipes": [],
     "icon_name": "AncientBlastFurnace",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -300,9 +260,7 @@
     "icon": "t_icon_buildobject_ancientblastfurnace"
   },
   "AncientCookingStove": {
-    "unlock_build_objects": [
-      "AncientCookingStove"
-    ],
+    "unlock_build_objects": ["AncientCookingStove"],
     "unlock_item_recipes": [],
     "icon_name": "AncientCookingStove",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -315,9 +273,7 @@
     "icon": "t_icon_buildobject_ancientcookingstove"
   },
   "AncientElectricGenerator": {
-    "unlock_build_objects": [
-      "AncientElectricGenerator"
-    ],
+    "unlock_build_objects": ["AncientElectricGenerator"],
     "unlock_item_recipes": [],
     "icon_name": "AncientElectricGenerator",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -330,9 +286,7 @@
     "icon": "t_icon_buildobject_ancientelectricgenerator"
   },
   "AncientFarmBlock": {
-    "unlock_build_objects": [
-      "AncientFarmBlock"
-    ],
+    "unlock_build_objects": ["AncientFarmBlock"],
     "unlock_item_recipes": [],
     "icon_name": "AncientFarmBlock",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -346,9 +300,7 @@
   },
   "AncientHelmet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AncientHelmet"
-    ],
+    "unlock_item_recipes": ["AncientHelmet"],
     "icon_name": "AncientHelmet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -360,9 +312,7 @@
     "icon": "t_itemicon_armor_ancienthelmet"
   },
   "AncientMultiProduct": {
-    "unlock_build_objects": [
-      "AncientMultiProduct"
-    ],
+    "unlock_build_objects": ["AncientMultiProduct"],
     "unlock_item_recipes": [],
     "icon_name": "AncientMultiProduct",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -375,9 +325,7 @@
     "icon": "t_icon_buildobject_ancientmultiproduct"
   },
   "AncientRelicRecycler": {
-    "unlock_build_objects": [
-      "AncientRelicRecycler"
-    ],
+    "unlock_build_objects": ["AncientRelicRecycler"],
     "unlock_item_recipes": [],
     "icon_name": "AncientRelicRecycler",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -390,9 +338,7 @@
     "icon": "t_icon_buildobject_ancientrelicrecycler"
   },
   "AncientWorkBench": {
-    "unlock_build_objects": [
-      "AncientWorkBench"
-    ],
+    "unlock_build_objects": ["AncientWorkBench"],
     "unlock_item_recipes": [],
     "icon_name": "AncientWorkBench",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -405,9 +351,7 @@
     "icon": "t_icon_buildobject_ancientworkbench"
   },
   "Ancient_Clinic": {
-    "unlock_build_objects": [
-      "Ancient_Clinic"
-    ],
+    "unlock_build_objects": ["Ancient_Clinic"],
     "unlock_item_recipes": [],
     "icon_name": "Ancient_Clinic",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -453,9 +397,7 @@
     "icon": "t_icon_buildobject_ancient_foundation"
   },
   "Ancient_MedicalPalBed": {
-    "unlock_build_objects": [
-      "Ancient_MedicalPalBed"
-    ],
+    "unlock_build_objects": ["Ancient_MedicalPalBed"],
     "unlock_item_recipes": [],
     "icon_name": "Ancient_MedicalPalBed",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -468,9 +410,7 @@
     "icon": "t_icon_buildobject_ancient_medicalpalbed"
   },
   "Ancient_Spa": {
-    "unlock_build_objects": [
-      "Ancient_Spa"
-    ],
+    "unlock_build_objects": ["Ancient_Spa"],
     "unlock_item_recipes": [],
     "icon_name": "Ancient_Spa",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -484,9 +424,7 @@
   },
   "Arrow": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Arrow"
-    ],
+    "unlock_item_recipes": ["Arrow"],
     "icon_name": "Arrow",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -499,9 +437,7 @@
   },
   "Arrow_Fire": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Arrow_Fire"
-    ],
+    "unlock_item_recipes": ["Arrow_Fire"],
     "icon_name": "Arrow_Fire",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -514,9 +450,7 @@
   },
   "Arrow_Poison": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Arrow_Poison"
-    ],
+    "unlock_item_recipes": ["Arrow_Poison"],
     "icon_name": "Arrow_Poison",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -529,9 +463,7 @@
   },
   "AssaultRifleBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AssaultRifleBullet"
-    ],
+    "unlock_item_recipes": ["AssaultRifleBullet"],
     "icon_name": "AssaultRifleBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -544,9 +476,7 @@
   },
   "AutoMealPouch_Tier1": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AutoMealPouch_Tier1"
-    ],
+    "unlock_item_recipes": ["AutoMealPouch_Tier1"],
     "icon_name": "AutoMealPouch_Tier1",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -559,9 +489,7 @@
   },
   "AutoMealPouch_Tier2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AutoMealPouch_Tier2"
-    ],
+    "unlock_item_recipes": ["AutoMealPouch_Tier2"],
     "icon_name": "AutoMealPouch_Tier2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "AutoMealPouch_Tier1",
@@ -574,9 +502,7 @@
   },
   "AutoMealPouch_Tier3": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AutoMealPouch_Tier3"
-    ],
+    "unlock_item_recipes": ["AutoMealPouch_Tier3"],
     "icon_name": "AutoMealPouch_Tier3",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "AutoMealPouch_Tier2",
@@ -589,9 +515,7 @@
   },
   "AutoMealPouch_Tier4": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AutoMealPouch_Tier4"
-    ],
+    "unlock_item_recipes": ["AutoMealPouch_Tier4"],
     "icon_name": "AutoMealPouch_Tier4",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "AutoMealPouch_Tier3",
@@ -604,9 +528,7 @@
   },
   "AutoMealPouch_Tier5": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AutoMealPouch_Tier5"
-    ],
+    "unlock_item_recipes": ["AutoMealPouch_Tier5"],
     "icon_name": "AutoMealPouch_Tier5",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "AutoMealPouch_Tier4",
@@ -618,9 +540,7 @@
     "icon": "t_itemicon_essential_automealpouch_tier5"
   },
   "BaseCampBattleDirector": {
-    "unlock_build_objects": [
-      "BaseCampBattleDirector"
-    ],
+    "unlock_build_objects": ["BaseCampBattleDirector"],
     "unlock_item_recipes": [],
     "icon_name": "BaseCampBattleDirector",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -633,9 +553,7 @@
     "icon": "t_icon_buildobject_basecampbattledirector"
   },
   "BaseCampItemDispenser": {
-    "unlock_build_objects": [
-      "BaseCampItemDispenser"
-    ],
+    "unlock_build_objects": ["BaseCampItemDispenser"],
     "unlock_item_recipes": [],
     "icon_name": "BaseCampItemDispenser",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -648,9 +566,7 @@
     "icon": "t_icon_buildobject_basecampitemdispenser"
   },
   "BaseCampWorkHard": {
-    "unlock_build_objects": [
-      "BaseCampWorkHard"
-    ],
+    "unlock_build_objects": ["BaseCampWorkHard"],
     "unlock_item_recipes": [],
     "icon_name": "BaseCampWorkHard",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -663,9 +579,7 @@
     "icon": "t_icon_buildobject_basecampworkhard"
   },
   "BaseCampWorkHard02": {
-    "unlock_build_objects": [
-      "BaseCampWorkHard02"
-    ],
+    "unlock_build_objects": ["BaseCampWorkHard02"],
     "unlock_item_recipes": [],
     "icon_name": "BaseCampWorkHard02",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -678,9 +592,7 @@
     "icon": "t_icon_buildobject_basecampworkhard02"
   },
   "BaseCampWorkHard03": {
-    "unlock_build_objects": [
-      "BaseCampWorkHard03"
-    ],
+    "unlock_build_objects": ["BaseCampWorkHard03"],
     "unlock_item_recipes": [],
     "icon_name": "BaseCampWorkHard03",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -693,9 +605,7 @@
     "icon": "t_icon_buildobject_basecampworkhard03"
   },
   "BaseCampWorkerExtraStation": {
-    "unlock_build_objects": [
-      "BaseCampWorkerExtraStation"
-    ],
+    "unlock_build_objects": ["BaseCampWorkerExtraStation"],
     "unlock_item_recipes": [],
     "icon_name": "BaseCampWorkerExtraStation",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -709,9 +619,7 @@
   },
   "Bat3": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Bat3"
-    ],
+    "unlock_item_recipes": ["Bat3"],
     "icon_name": "Bat3",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -724,9 +632,7 @@
   },
   "Battle_Armor_Grade_01_Cloth": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ClothArmor"
-    ],
+    "unlock_item_recipes": ["ClothArmor"],
     "icon_name": "LeatherClothing",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -739,9 +645,7 @@
   },
   "Battle_Armor_Grade_01_Cloth_Cold": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ClothArmorCold"
-    ],
+    "unlock_item_recipes": ["ClothArmorCold"],
     "icon_name": "ClothArmorCold",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -754,9 +658,7 @@
   },
   "Battle_Armor_Grade_01_Cloth_Heat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ClothArmorHeat"
-    ],
+    "unlock_item_recipes": ["ClothArmorHeat"],
     "icon_name": "ClothArmorHeat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -769,9 +671,7 @@
   },
   "Battle_Armor_Grade_02_Fur": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FurArmor"
-    ],
+    "unlock_item_recipes": ["FurArmor"],
     "icon_name": "FurArmor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -784,9 +684,7 @@
   },
   "Battle_Armor_Grade_02_Fur_Cold": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FurArmorCold"
-    ],
+    "unlock_item_recipes": ["FurArmorCold"],
     "icon_name": "FurArmorCold",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -799,9 +697,7 @@
   },
   "Battle_Armor_Grade_02_Fur_Heat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FurArmorHeat"
-    ],
+    "unlock_item_recipes": ["FurArmorHeat"],
     "icon_name": "FurArmorHeat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -814,9 +710,7 @@
   },
   "Battle_Armor_Grade_03_Copper": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "CopperArmor"
-    ],
+    "unlock_item_recipes": ["CopperArmor"],
     "icon_name": "CopperArmor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -829,9 +723,7 @@
   },
   "Battle_Armor_Grade_03_Copper_Cold": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "CopperArmorCold"
-    ],
+    "unlock_item_recipes": ["CopperArmorCold"],
     "icon_name": "CopperArmorCold",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -844,9 +736,7 @@
   },
   "Battle_Armor_Grade_03_Copper_Heat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "CopperArmorHeat"
-    ],
+    "unlock_item_recipes": ["CopperArmorHeat"],
     "icon_name": "CopperArmorHeat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -859,9 +749,7 @@
   },
   "Battle_Armor_Grade_03_Iron": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "IronArmor"
-    ],
+    "unlock_item_recipes": ["IronArmor"],
     "icon_name": "IronArmor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -874,9 +762,7 @@
   },
   "Battle_Armor_Grade_03_Iron_Cold": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "IronArmorCold"
-    ],
+    "unlock_item_recipes": ["IronArmorCold"],
     "icon_name": "IronArmorCold",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -889,9 +775,7 @@
   },
   "Battle_Armor_Grade_03_Iron_Heat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "IronArmorHeat"
-    ],
+    "unlock_item_recipes": ["IronArmorHeat"],
     "icon_name": "IronArmorHeat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -904,9 +788,7 @@
   },
   "Battle_Armor_Grade_04_Steal": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "StealArmor"
-    ],
+    "unlock_item_recipes": ["StealArmor"],
     "icon_name": "StealArmor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -919,9 +801,7 @@
   },
   "Battle_Armor_Grade_04_Steal_Cold": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "StealArmorCold"
-    ],
+    "unlock_item_recipes": ["StealArmorCold"],
     "icon_name": "StealArmorCold",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -934,9 +814,7 @@
   },
   "Battle_Armor_Grade_04_Steal_Heat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "StealArmorHeat"
-    ],
+    "unlock_item_recipes": ["StealArmorHeat"],
     "icon_name": "StealArmorHeat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -949,9 +827,7 @@
   },
   "Battle_Armor_Grade_05_Plastic": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PlasticArmor"
-    ],
+    "unlock_item_recipes": ["PlasticArmor"],
     "icon_name": "PlasticArmor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -964,9 +840,7 @@
   },
   "Battle_Armor_Grade_05_Plastic_Cold": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PlasticArmorCold"
-    ],
+    "unlock_item_recipes": ["PlasticArmorCold"],
     "icon_name": "PlasticArmorCold",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -979,9 +853,7 @@
   },
   "Battle_Armor_Grade_05_Plastic_Heat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PlasticArmorHeat"
-    ],
+    "unlock_item_recipes": ["PlasticArmorHeat"],
     "icon_name": "PlasticArmorHeat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -994,9 +866,7 @@
   },
   "Battle_Armor_Grade_05_Plastic_Weight": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PlasticArmorWeight"
-    ],
+    "unlock_item_recipes": ["PlasticArmorWeight"],
     "icon_name": "PlasticArmorWeight",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1009,9 +879,7 @@
   },
   "Battle_Cloth": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Cloth"
-    ],
+    "unlock_item_recipes": ["Cloth"],
     "icon_name": "Cloth",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1023,9 +891,7 @@
     "icon": "t_itemicon_material_cloth"
   },
   "Battle_Defense_BowGun": {
-    "unlock_build_objects": [
-      "DefenseBowGun"
-    ],
+    "unlock_build_objects": ["DefenseBowGun"],
     "unlock_item_recipes": [],
     "icon_name": "DefenseBowGun",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -1038,9 +904,7 @@
     "icon": "t_icon_buildobject_efensebulletlauncher_bowgun"
   },
   "Battle_Defense_MachineGun": {
-    "unlock_build_objects": [
-      "DefenseMachinegun"
-    ],
+    "unlock_build_objects": ["DefenseMachinegun"],
     "unlock_item_recipes": [],
     "icon_name": "DefenseMachinegun",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -1053,9 +917,7 @@
     "icon": "t_icon_buildobject_defensemachinegun"
   },
   "Battle_Defense_Missile": {
-    "unlock_build_objects": [
-      "DefenseMissile"
-    ],
+    "unlock_build_objects": ["DefenseMissile"],
     "unlock_item_recipes": [],
     "icon_name": "DefenseMissile",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -1069,9 +931,7 @@
   },
   "Battle_Glider_Grade_01": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Glider_Old"
-    ],
+    "unlock_item_recipes": ["Glider_Old"],
     "icon_name": "Glider_Old",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1084,9 +944,7 @@
   },
   "Battle_Glider_Grade_02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Glider_Good"
-    ],
+    "unlock_item_recipes": ["Glider_Good"],
     "icon_name": "Glider_Good",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1099,9 +957,7 @@
   },
   "Battle_Glider_Grade_03": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Glider_Super"
-    ],
+    "unlock_item_recipes": ["Glider_Super"],
     "icon_name": "Glider_Super",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1114,9 +970,7 @@
   },
   "Battle_Glider_Grade_04": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Glider_Tera"
-    ],
+    "unlock_item_recipes": ["Glider_Tera"],
     "icon_name": "Glider_Legendary",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1129,9 +983,7 @@
   },
   "Battle_GunPowder_Grade_02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Gunpowder2"
-    ],
+    "unlock_item_recipes": ["Gunpowder2"],
     "icon_name": "GunPowder2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1144,9 +996,7 @@
   },
   "Battle_Helm_Grade_02_Fur": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FurHelmet"
-    ],
+    "unlock_item_recipes": ["FurHelmet"],
     "icon_name": "FurHelmet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1159,9 +1009,7 @@
   },
   "Battle_Helm_Grade_03_Copper": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "CopperHelmet"
-    ],
+    "unlock_item_recipes": ["CopperHelmet"],
     "icon_name": "CopperHelmet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1174,9 +1022,7 @@
   },
   "Battle_Helm_Grade_04_Iron": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "IronHelmet"
-    ],
+    "unlock_item_recipes": ["IronHelmet"],
     "icon_name": "IronHelmet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1189,9 +1035,7 @@
   },
   "Battle_Helm_Grade_05_Steal": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "StealHelmet"
-    ],
+    "unlock_item_recipes": ["StealHelmet"],
     "icon_name": "StealHelmet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1204,9 +1048,7 @@
   },
   "Battle_Helm_Grade_06_Plastic": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PlasticHelmet"
-    ],
+    "unlock_item_recipes": ["PlasticHelmet"],
     "icon_name": "PlasticHelmet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1219,9 +1061,7 @@
   },
   "Battle_MeleeWeapon_Axe_Steal": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Axe_Steal"
-    ],
+    "unlock_item_recipes": ["Axe_Steal"],
     "icon_name": "Axe_Steal",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1234,9 +1074,7 @@
   },
   "Battle_MeleeWeapon_Bat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Bat"
-    ],
+    "unlock_item_recipes": ["Bat"],
     "icon_name": "Bat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1249,9 +1087,7 @@
   },
   "Battle_MeleeWeapon_Bat2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Bat2"
-    ],
+    "unlock_item_recipes": ["Bat2"],
     "icon_name": "Bat2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1264,9 +1100,7 @@
   },
   "Battle_MeleeWeapon_Pickaxe_Steal": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Pickaxe_Steal"
-    ],
+    "unlock_item_recipes": ["Pickaxe_Steal"],
     "icon_name": "Pickaxe_Steal",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1279,9 +1113,7 @@
   },
   "Battle_MeleeWeapon_Sword": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Sword"
-    ],
+    "unlock_item_recipes": ["Sword"],
     "icon_name": "Sword",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1294,9 +1126,7 @@
   },
   "Battle_RangeWeapon_AssaultRifle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "AssaultRifle_Default1"
-    ],
+    "unlock_item_recipes": ["AssaultRifle_Default1"],
     "icon_name": "AssaultRifle_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1309,9 +1139,7 @@
   },
   "Battle_RangeWeapon_Bow1": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "WeakerBow"
-    ],
+    "unlock_item_recipes": ["WeakerBow"],
     "icon_name": "Bow",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1324,9 +1152,7 @@
   },
   "Battle_RangeWeapon_Bow3": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Bow_triple"
-    ],
+    "unlock_item_recipes": ["Bow_triple"],
     "icon_name": "Bow3",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1339,9 +1165,7 @@
   },
   "Battle_RangeWeapon_BowGun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "BowGun"
-    ],
+    "unlock_item_recipes": ["BowGun"],
     "icon_name": "BowGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1354,9 +1178,7 @@
   },
   "Battle_RangeWeapon_CompoundBow": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "CompoundBow"
-    ],
+    "unlock_item_recipes": ["CompoundBow"],
     "icon_name": "CompoundBow",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1369,9 +1191,7 @@
   },
   "Battle_RangeWeapon_FlameThrower": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FlameThrower"
-    ],
+    "unlock_item_recipes": ["FlameThrower"],
     "icon_name": "FlameThrower",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1384,9 +1204,7 @@
   },
   "Battle_RangeWeapon_GatlingGun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GatlingGun"
-    ],
+    "unlock_item_recipes": ["GatlingGun"],
     "icon_name": "GatlingGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1399,9 +1217,7 @@
   },
   "Battle_RangeWeapon_GrenadeLauncher": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GrenadeLauncher"
-    ],
+    "unlock_item_recipes": ["GrenadeLauncher"],
     "icon_name": "GrenadeLauncher",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1414,9 +1230,7 @@
   },
   "Battle_RangeWeapon_GuidedMissileLauncher": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GuidedMissileLauncher"
-    ],
+    "unlock_item_recipes": ["GuidedMissileLauncher"],
     "icon_name": "GuidedMissileLauncher",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1429,9 +1243,7 @@
   },
   "Battle_RangeWeapon_HandGun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "HandGun_Default"
-    ],
+    "unlock_item_recipes": ["HandGun_Default"],
     "icon_name": "HandGun_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1444,9 +1256,7 @@
   },
   "Battle_RangeWeapon_HomingSphereLauncher": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "HomingSphereLauncher"
-    ],
+    "unlock_item_recipes": ["HomingSphereLauncher"],
     "icon_name": "HomingSphereLauncher",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1459,9 +1269,7 @@
   },
   "Battle_RangeWeapon_LaserRifle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "LaserRifle"
-    ],
+    "unlock_item_recipes": ["LaserRifle"],
     "icon_name": "LaserRifle",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1474,9 +1282,7 @@
   },
   "Battle_RangeWeapon_OldRevolver": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "OldRevolver"
-    ],
+    "unlock_item_recipes": ["OldRevolver"],
     "icon_name": "OldRevolver",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1489,9 +1295,7 @@
   },
   "Battle_RangeWeapon_Rifle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SingleShotRifle"
-    ],
+    "unlock_item_recipes": ["SingleShotRifle"],
     "icon_name": "SingleShotRifle",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1504,9 +1308,7 @@
   },
   "Battle_RangeWeapon_RocketLauncher": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Launcher_Default"
-    ],
+    "unlock_item_recipes": ["Launcher_Default"],
     "icon_name": "Launcher_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1519,9 +1321,7 @@
   },
   "Battle_RangeWeapon_SemiAutoRifle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SemiAutoRifle"
-    ],
+    "unlock_item_recipes": ["SemiAutoRifle"],
     "icon_name": "SemiAutoRifle",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1534,9 +1334,7 @@
   },
   "Battle_RangeWeapon_SemiAutoShotgun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SemiAutoShotgun"
-    ],
+    "unlock_item_recipes": ["SemiAutoShotgun"],
     "icon_name": "SemiAutoShotgun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1549,9 +1347,7 @@
   },
   "Battle_RangeWeapon_ShotGun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "DoubleBarrelShotgun"
-    ],
+    "unlock_item_recipes": ["DoubleBarrelShotgun"],
     "icon_name": "DoubleBarrelShotgun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1564,9 +1360,7 @@
   },
   "Battle_RangeWeapon_ShotGun_Multi": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PumpActionShotgun"
-    ],
+    "unlock_item_recipes": ["PumpActionShotgun"],
     "icon_name": "ShotGun_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1579,9 +1373,7 @@
   },
   "Battle_RangeWeapon_SphereLauncher": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SphereLauncher"
-    ],
+    "unlock_item_recipes": ["SphereLauncher"],
     "icon_name": "SphereLauncher",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1594,9 +1386,7 @@
   },
   "Battle_RangeWeapon_SphereLauncher_Once": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SphereLauncher_Once"
-    ],
+    "unlock_item_recipes": ["SphereLauncher_Once"],
     "icon_name": "SphereLauncher_Once",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1609,9 +1399,7 @@
   },
   "Battle_RangeWeapon_SubmachineGun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SubmachineGun"
-    ],
+    "unlock_item_recipes": ["SubmachineGun"],
     "icon_name": "SubmachineGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1624,9 +1412,7 @@
   },
   "BeamLauncher": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "BeamLauncher"
-    ],
+    "unlock_item_recipes": ["BeamLauncher"],
     "icon_name": "BeamLauncher",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1639,9 +1425,7 @@
   },
   "BeamLauncherBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "BeamLauncherBullet"
-    ],
+    "unlock_item_recipes": ["BeamLauncherBullet"],
     "icon_name": "BeamLauncherBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1654,9 +1438,7 @@
   },
   "BeamSword": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "BeamSword"
-    ],
+    "unlock_item_recipes": ["BeamSword"],
     "icon_name": "BeamSword",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1668,10 +1450,7 @@
     "icon": "t_itemicon_weapon_beamsword"
   },
   "BelieverFlagSet": {
-    "unlock_build_objects": [
-      "Believer_Flag",
-      "Believer_Banner"
-    ],
+    "unlock_build_objects": ["Believer_Flag", "Believer_Banner"],
     "unlock_item_recipes": [],
     "icon_name": "Believer_Flag",
     "require_defeat_tower_boss": "EPalBossType::ForestBoss",
@@ -1685,9 +1464,7 @@
   },
   "Bio_Battery": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Bio_Battery"
-    ],
+    "unlock_item_recipes": ["Bio_Battery"],
     "icon_name": "Bio_Battery",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1700,9 +1477,7 @@
   },
   "Bio_Coolant": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Bio_Coolant"
-    ],
+    "unlock_item_recipes": ["Bio_Coolant"],
     "icon_name": "Bio_Coolant",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1714,9 +1489,7 @@
     "icon": "t_itemicon_material_bio_coolant"
   },
   "BlastFurnace4": {
-    "unlock_build_objects": [
-      "BlastFurnace4"
-    ],
+    "unlock_build_objects": ["BlastFurnace4"],
     "unlock_item_recipes": [],
     "icon_name": "BlastFurnace4",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -1729,9 +1502,7 @@
     "icon": "t_icon_buildobject_blastfurnace4"
   },
   "BreedFarm": {
-    "unlock_build_objects": [
-      "BreedFarm"
-    ],
+    "unlock_build_objects": ["BreedFarm"],
     "unlock_item_recipes": [],
     "icon_name": "BreedFarm",
     "require_defeat_tower_boss": "EPalBossType::ForestBoss",
@@ -1745,9 +1516,7 @@
   },
   "BronzeSword": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "BronzeSword"
-    ],
+    "unlock_item_recipes": ["BronzeSword"],
     "icon_name": "BronzeSword",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1759,9 +1528,7 @@
     "icon": "t_itemicon_weapon_bronzesword"
   },
   "BuildableGoddessStatue": {
-    "unlock_build_objects": [
-      "BuildableGoddessStatue"
-    ],
+    "unlock_build_objects": ["BuildableGoddessStatue"],
     "unlock_item_recipes": [],
     "icon_name": "BuildableGoddessStatue",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -1775,9 +1542,7 @@
   },
   "Cake02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Cake02"
-    ],
+    "unlock_item_recipes": ["Cake02"],
     "icon_name": "Cake02",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1790,9 +1555,7 @@
   },
   "Cake03": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Cake03"
-    ],
+    "unlock_item_recipes": ["Cake03"],
     "icon_name": "Cake03",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1805,9 +1568,7 @@
   },
   "Cake04": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Cake04"
-    ],
+    "unlock_item_recipes": ["Cake04"],
     "icon_name": "Cake04",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1820,9 +1581,7 @@
   },
   "Cake05": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Cake05"
-    ],
+    "unlock_item_recipes": ["Cake05"],
     "icon_name": "Cake05",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1835,10 +1594,7 @@
   },
   "CarbonFiber": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "CarbonFiber",
-      "CarbonFiber2"
-    ],
+    "unlock_item_recipes": ["CarbonFiber", "CarbonFiber2"],
     "icon_name": "CarbonFiber",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1850,9 +1606,7 @@
     "icon": "t_itemicon_material_carbonfiber"
   },
   "Cauldron": {
-    "unlock_build_objects": [
-      "Cauldron"
-    ],
+    "unlock_build_objects": ["Cauldron"],
     "unlock_item_recipes": [],
     "icon_name": "Cauldron",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -1865,9 +1619,7 @@
     "icon": "t_icon_buildobject_cauldron"
   },
   "CeilingLamp": {
-    "unlock_build_objects": [
-      "CeilingLamp"
-    ],
+    "unlock_build_objects": ["CeilingLamp"],
     "unlock_item_recipes": [],
     "icon_name": "CeilingLamp",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -1881,9 +1633,7 @@
   },
   "Cement": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Cement"
-    ],
+    "unlock_item_recipes": ["Cement"],
     "icon_name": "Cement",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1896,9 +1646,7 @@
   },
   "ChargeLaserRifle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ChargeLaserRifle"
-    ],
+    "unlock_item_recipes": ["ChargeLaserRifle"],
     "icon_name": "ChargeLaserRifle",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1911,9 +1659,7 @@
   },
   "ChargeLaserRifleBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ChargeLaserRifleBullet"
-    ],
+    "unlock_item_recipes": ["ChargeLaserRifleBullet"],
     "icon_name": "ChargeLaserRifleBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1925,9 +1671,7 @@
     "icon": "t_itemicon_ammo_chargelaserriflebullet"
   },
   "Clinic": {
-    "unlock_build_objects": [
-      "Clinic"
-    ],
+    "unlock_build_objects": ["Clinic"],
     "unlock_item_recipes": [],
     "icon_name": "Clinic",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -1941,9 +1685,7 @@
   },
   "Cloth2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Cloth2"
-    ],
+    "unlock_item_recipes": ["Cloth2"],
     "icon_name": "Cloth",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1955,9 +1697,7 @@
     "icon": "t_itemicon_material_cloth"
   },
   "CompositeDesk": {
-    "unlock_build_objects": [
-      "CompositeDesk"
-    ],
+    "unlock_build_objects": ["CompositeDesk"],
     "unlock_item_recipes": [],
     "icon_name": "CompositeDesk",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -1971,9 +1711,7 @@
   },
   "Computer": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Computer"
-    ],
+    "unlock_item_recipes": ["Computer"],
     "icon_name": "Computer",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -1985,9 +1723,7 @@
     "icon": "t_itemicon_material_computer"
   },
   "Cooler": {
-    "unlock_build_objects": [
-      "Cooler"
-    ],
+    "unlock_build_objects": ["Cooler"],
     "unlock_item_recipes": [],
     "icon_name": "Cooler",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2000,9 +1736,7 @@
     "icon": "t_icon_buildobject_coolermedieval"
   },
   "CoolerBox": {
-    "unlock_build_objects": [
-      "CoolerBox"
-    ],
+    "unlock_build_objects": ["CoolerBox"],
     "unlock_item_recipes": [],
     "icon_name": "CoolerBox",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2015,9 +1749,7 @@
     "icon": "t_icon_buildobject_coolerbox"
   },
   "CoolerPalFoodBox": {
-    "unlock_build_objects": [
-      "CoolerPalFoodBox"
-    ],
+    "unlock_build_objects": ["CoolerPalFoodBox"],
     "unlock_item_recipes": [],
     "icon_name": "CoolerPalFoodBox",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2031,9 +1763,7 @@
   },
   "Corrosive_Solvent": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Corrosive_Solvent"
-    ],
+    "unlock_item_recipes": ["Corrosive_Solvent"],
     "icon_name": "Corrosive_Solvent",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2045,9 +1775,7 @@
     "icon": "t_itemicon_material_corrosive_solvent"
   },
   "Crusher": {
-    "unlock_build_objects": [
-      "Crusher"
-    ],
+    "unlock_build_objects": ["Crusher"],
     "unlock_item_recipes": [],
     "icon_name": "Crusher",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2060,9 +1788,7 @@
     "icon": "t_icon_buildobject_crusher"
   },
   "CrystalPit": {
-    "unlock_build_objects": [
-      "CrystalPit"
-    ],
+    "unlock_build_objects": ["CrystalPit"],
     "unlock_item_recipes": [],
     "icon_name": "CrystalPit",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2075,9 +1801,7 @@
     "icon": "t_icon_buildobject_crystalpit"
   },
   "DamagedScarecrow": {
-    "unlock_build_objects": [
-      "DamagedScarecrow"
-    ],
+    "unlock_build_objects": ["DamagedScarecrow"],
     "unlock_item_recipes": [],
     "icon_name": "DamagedScarecrow",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2090,10 +1814,7 @@
     "icon": "t_icon_buildobject_damagedscarecrow"
   },
   "DarkIslandFlagSet": {
-    "unlock_build_objects": [
-      "DarkIsland_Flag",
-      "DarkIsland_Banner"
-    ],
+    "unlock_build_objects": ["DarkIsland_Flag", "DarkIsland_Banner"],
     "unlock_item_recipes": [],
     "icon_name": "DarkIsland_Flag",
     "require_defeat_tower_boss": "EPalBossType::VikingBoss",
@@ -2126,9 +1847,7 @@
     "icon": "t_itemicon_ammo_inkbullet"
   },
   "DefenseWait": {
-    "unlock_build_objects": [
-      "DefenseWait"
-    ],
+    "unlock_build_objects": ["DefenseWait"],
     "unlock_item_recipes": [],
     "icon_name": "DefenseWait",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2141,9 +1860,7 @@
     "icon": "t_icon_buildobject_defensewait"
   },
   "DefenseWall": {
-    "unlock_build_objects": [
-      "DefenseWall"
-    ],
+    "unlock_build_objects": ["DefenseWall"],
     "unlock_item_recipes": [],
     "icon_name": "DefenseWall",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2156,9 +1873,7 @@
     "icon": "t_icon_buildobject_defensewall"
   },
   "DefenseWall_Metal": {
-    "unlock_build_objects": [
-      "DefenseWall_Metal"
-    ],
+    "unlock_build_objects": ["DefenseWall_Metal"],
     "unlock_item_recipes": [],
     "icon_name": "DefenseWall_Metal",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2171,9 +1886,7 @@
     "icon": "t_icon_buildobject_defensewall_metal"
   },
   "DefenseWall_Wood": {
-    "unlock_build_objects": [
-      "DefenseWall_Wood"
-    ],
+    "unlock_build_objects": ["DefenseWall_Wood"],
     "unlock_item_recipes": [],
     "icon_name": "DefenseWall_Wood",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2186,9 +1899,7 @@
     "icon": "t_icon_buildobject_defensewall_wood"
   },
   "DimensionPalStorage": {
-    "unlock_build_objects": [
-      "DimensionPalStorage"
-    ],
+    "unlock_build_objects": ["DimensionPalStorage"],
     "unlock_item_recipes": [],
     "icon_name": "DimensionPalStorage",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2201,9 +1912,7 @@
     "icon": "t_icon_buildobject_dimensionpalstorage"
   },
   "DismantlingConveyor": {
-    "unlock_build_objects": [
-      "DismantlingConveyor"
-    ],
+    "unlock_build_objects": ["DismantlingConveyor"],
     "unlock_item_recipes": [],
     "icon_name": "DismantlingConveyor",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2216,9 +1925,7 @@
     "icon": "t_icon_buildobject_dismantlingconveyor"
   },
   "DisplayCharacter": {
-    "unlock_build_objects": [
-      "DisplayCharacter"
-    ],
+    "unlock_build_objects": ["DisplayCharacter"],
     "unlock_item_recipes": [],
     "icon_name": "DisplayCharacter",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2232,9 +1939,7 @@
   },
   "DroneLauncher": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "DroneLauncher"
-    ],
+    "unlock_item_recipes": ["DroneLauncher"],
     "icon_name": "DroneLauncher",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2247,9 +1952,7 @@
   },
   "ElecBaton": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ElecBaton"
-    ],
+    "unlock_item_recipes": ["ElecBaton"],
     "icon_name": "ElecBaton",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2262,9 +1965,7 @@
   },
   "ElectricArcAssaultRifle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ElectricArcAssaultRifle"
-    ],
+    "unlock_item_recipes": ["ElectricArcAssaultRifle"],
     "icon_name": "ElectricArcAssaultRifle",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2277,9 +1978,7 @@
   },
   "ElectricArcAssaultRifleBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ElectricArcAssaultRifleBullet"
-    ],
+    "unlock_item_recipes": ["ElectricArcAssaultRifleBullet"],
     "icon_name": "ElectricArcAssaultRifleBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2291,9 +1990,7 @@
     "icon": "t_itemicon_ammo_electricarcassaultriflebullet"
   },
   "ElectricCooler": {
-    "unlock_build_objects": [
-      "ElectricCooler"
-    ],
+    "unlock_build_objects": ["ElectricCooler"],
     "unlock_item_recipes": [],
     "icon_name": "ElectricCooler",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2306,9 +2003,7 @@
     "icon": "t_icon_buildobject_coolerelectric"
   },
   "ElectricGenerator_Large": {
-    "unlock_build_objects": [
-      "ElectricGenerator_Large"
-    ],
+    "unlock_build_objects": ["ElectricGenerator_Large"],
     "unlock_item_recipes": [],
     "icon_name": "ElectricGenerator_Large",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2321,9 +2016,7 @@
     "icon": "t_icon_buildobject_electricgenerator_large"
   },
   "ElectricHeater": {
-    "unlock_build_objects": [
-      "ElectricHeater"
-    ],
+    "unlock_build_objects": ["ElectricHeater"],
     "unlock_item_recipes": [],
     "icon_name": "ElectricHeater",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2337,9 +2030,7 @@
   },
   "EnergyLauncherBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "EnergyLauncherBullet"
-    ],
+    "unlock_item_recipes": ["EnergyLauncherBullet"],
     "icon_name": "EnergyLauncherBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2352,9 +2043,7 @@
   },
   "EnergyRocketLauncher": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "EnergyRocketLauncher"
-    ],
+    "unlock_item_recipes": ["EnergyRocketLauncher"],
     "icon_name": "EnergyRocketLauncher",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2367,9 +2056,7 @@
   },
   "EnergyShotgun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "EnergyShotgun"
-    ],
+    "unlock_item_recipes": ["EnergyShotgun"],
     "icon_name": "EnergyShotgun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2382,9 +2069,7 @@
   },
   "EnergyShotgunBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "EnergyShotgunBullet"
-    ],
+    "unlock_item_recipes": ["EnergyShotgunBullet"],
     "icon_name": "EnergyShotgunBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2396,9 +2081,7 @@
     "icon": "t_itemicon_ammo_energyshotgunbullet"
   },
   "EnergyStorage_Electric": {
-    "unlock_build_objects": [
-      "EnergyStorage_Electric"
-    ],
+    "unlock_build_objects": ["EnergyStorage_Electric"],
     "unlock_item_recipes": [],
     "icon_name": "EnergyStorage_Electric",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2411,9 +2094,7 @@
     "icon": "t_icon_buildobject_energystorage_electric"
   },
   "Expedition": {
-    "unlock_build_objects": [
-      "Expedition"
-    ],
+    "unlock_build_objects": ["Expedition"],
     "unlock_item_recipes": [],
     "icon_name": "Expedition",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2426,9 +2107,7 @@
     "icon": "t_icon_buildobject_expedition"
   },
   "Factory_Hard_04": {
-    "unlock_build_objects": [
-      "Factory_Hard_04"
-    ],
+    "unlock_build_objects": ["Factory_Hard_04"],
     "unlock_item_recipes": [],
     "icon_name": "Factory_Hard_04",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2441,9 +2120,7 @@
     "icon": "t_icon_buildobject_factory_hard_04"
   },
   "Factory_Money": {
-    "unlock_build_objects": [
-      "Factory_Money"
-    ],
+    "unlock_build_objects": ["Factory_Money"],
     "unlock_item_recipes": [],
     "icon_name": "Factory_Money",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2456,9 +2133,7 @@
     "icon": "t_icon_buildobject_factory_money"
   },
   "Farm_SkillFruits": {
-    "unlock_build_objects": [
-      "Farm_SkillFruits"
-    ],
+    "unlock_build_objects": ["Farm_SkillFruits"],
     "unlock_item_recipes": [],
     "icon_name": "Farm_SkillFruits",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2471,10 +2146,7 @@
     "icon": "t_icon_buildobject_farm_skillfruits"
   },
   "FireCultFlagSet": {
-    "unlock_build_objects": [
-      "FireCult_Flag",
-      "FireCult_Banner"
-    ],
+    "unlock_build_objects": ["FireCult_Flag", "FireCult_Banner"],
     "unlock_item_recipes": [],
     "icon_name": "FireCult_Flag",
     "require_defeat_tower_boss": "EPalBossType::ElectricBoss",
@@ -2488,9 +2160,7 @@
   },
   "FishingBait_2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FishingBait_2"
-    ],
+    "unlock_item_recipes": ["FishingBait_2"],
     "icon_name": "FishingBait_2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2503,9 +2173,7 @@
   },
   "FishingBait_3": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FishingBait_3"
-    ],
+    "unlock_item_recipes": ["FishingBait_3"],
     "icon_name": "FishingBait_3",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2518,9 +2186,7 @@
   },
   "FishingBait_3_A": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FishingBait_3_A"
-    ],
+    "unlock_item_recipes": ["FishingBait_3_A"],
     "icon_name": "FishingBait_3_A",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2532,9 +2198,7 @@
     "icon": "t_itemicon_consume_fishingbait_3_a"
   },
   "FishingPond1": {
-    "unlock_build_objects": [
-      "FishingPond1"
-    ],
+    "unlock_build_objects": ["FishingPond1"],
     "unlock_item_recipes": [],
     "icon_name": "FishingPond1",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2547,9 +2211,7 @@
     "icon": "t_icon_buildobject_fishingpond1"
   },
   "FishingPond2": {
-    "unlock_build_objects": [
-      "FishingPond2"
-    ],
+    "unlock_build_objects": ["FishingPond2"],
     "unlock_item_recipes": [],
     "icon_name": "FishingPond2",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2563,10 +2225,7 @@
   },
   "FishingRod_02_1": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FishingRod_02_1",
-      "FishingBait_1"
-    ],
+    "unlock_item_recipes": ["FishingRod_02_1", "FishingBait_1"],
     "icon_name": "FishingRod_3",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2579,10 +2238,7 @@
   },
   "FishingRod_03_1": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FishingRod_03_1",
-      "FishingBait_1"
-    ],
+    "unlock_item_recipes": ["FishingRod_03_1", "FishingBait_1"],
     "icon_name": "FishingRod_5",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2595,10 +2251,7 @@
   },
   "FishingSet1": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FishingRod_01_1",
-      "FishingBait_1"
-    ],
+    "unlock_item_recipes": ["FishingRod_01_1", "FishingBait_1"],
     "icon_name": "FishingRod_1",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2611,9 +2264,7 @@
   },
   "FlamethrowerBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FlamethrowerBullet"
-    ],
+    "unlock_item_recipes": ["FlamethrowerBullet"],
     "icon_name": "FlamethrowerBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2625,9 +2276,7 @@
     "icon": "t_itemicon_ammo_flamethrowerbullet"
   },
   "FlourMill": {
-    "unlock_build_objects": [
-      "FlourMill"
-    ],
+    "unlock_build_objects": ["FlourMill"],
     "unlock_item_recipes": [],
     "icon_name": "FlourMill",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2640,9 +2289,7 @@
     "icon": "t_icon_buildobject_flourmill"
   },
   "FlowerBed": {
-    "unlock_build_objects": [
-      "FlowerBed"
-    ],
+    "unlock_build_objects": ["FlowerBed"],
     "unlock_item_recipes": [],
     "icon_name": "FlowerBed",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2655,9 +2302,7 @@
     "icon": "t_icon_buildobject_flowerbed"
   },
   "Fountain": {
-    "unlock_build_objects": [
-      "Fountain"
-    ],
+    "unlock_build_objects": ["Fountain"],
     "unlock_item_recipes": [],
     "icon_name": "Fountain",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2671,9 +2316,7 @@
   },
   "FragGrenade": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade"
-    ],
+    "unlock_item_recipes": ["FragGrenade"],
     "icon_name": "FragGrenade",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2686,9 +2329,7 @@
   },
   "FragGrenade_Dark": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade_Dark"
-    ],
+    "unlock_item_recipes": ["FragGrenade_Dark"],
     "icon_name": "FragGrenade_Dark",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2701,9 +2342,7 @@
   },
   "FragGrenade_Dragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade_Dragon"
-    ],
+    "unlock_item_recipes": ["FragGrenade_Dragon"],
     "icon_name": "FragGrenade_Dragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2716,9 +2355,7 @@
   },
   "FragGrenade_Elec": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade_Elec"
-    ],
+    "unlock_item_recipes": ["FragGrenade_Elec"],
     "icon_name": "FragGrenade_Elec",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2731,9 +2368,7 @@
   },
   "FragGrenade_Fire": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade_Fire"
-    ],
+    "unlock_item_recipes": ["FragGrenade_Fire"],
     "icon_name": "FragGrenade_Fire",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2746,9 +2381,7 @@
   },
   "FragGrenade_Ground": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade_Ground"
-    ],
+    "unlock_item_recipes": ["FragGrenade_Ground"],
     "icon_name": "FragGrenade_Ground",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2761,9 +2394,7 @@
   },
   "FragGrenade_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade_Ice"
-    ],
+    "unlock_item_recipes": ["FragGrenade_Ice"],
     "icon_name": "FragGrenade_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2776,9 +2407,7 @@
   },
   "FragGrenade_Leaf": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade_Leaf"
-    ],
+    "unlock_item_recipes": ["FragGrenade_Leaf"],
     "icon_name": "FragGrenade_Leaf",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2791,9 +2420,7 @@
   },
   "FragGrenade_Super": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade_Super"
-    ],
+    "unlock_item_recipes": ["FragGrenade_Super"],
     "icon_name": "FragGrenade_Super",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2806,9 +2433,7 @@
   },
   "FragGrenade_Water": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "FragGrenade_Water"
-    ],
+    "unlock_item_recipes": ["FragGrenade_Water"],
     "icon_name": "FragGrenade_Water",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -2930,10 +2555,7 @@
     "icon": "t_icon_buildobject_tableside01_iron"
   },
   "FurnitureSet_15": {
-    "unlock_build_objects": [
-      "Piano01_Stone",
-      "Piano02_Stone"
-    ],
+    "unlock_build_objects": ["Piano01_Stone", "Piano02_Stone"],
     "unlock_item_recipes": [],
     "icon_name": "Piano01_Stone",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2981,11 +2603,7 @@
     "icon": "t_icon_buildobject_rug01_stone"
   },
   "FurnitureSet_18": {
-    "unlock_build_objects": [
-      "Sofa01_Stone",
-      "Sofa02_Stone",
-      "Sofa03_Stone"
-    ],
+    "unlock_build_objects": ["Sofa01_Stone", "Sofa02_Stone", "Sofa03_Stone"],
     "unlock_item_recipes": [],
     "icon_name": "Sofa01_Stone",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -2998,11 +2616,7 @@
     "icon": "t_icon_buildobject_sofa01_stone"
   },
   "FurnitureSet_19": {
-    "unlock_build_objects": [
-      "Chair01_Stone",
-      "Chair02_Stone",
-      "Stool01_Stone"
-    ],
+    "unlock_build_objects": ["Chair01_Stone", "Chair02_Stone", "Stool01_Stone"],
     "unlock_item_recipes": [],
     "icon_name": "Chair01_Stone",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3089,10 +2703,7 @@
     "icon": "t_icon_buildobject_shelf05_stone"
   },
   "FurnitureSet_23": {
-    "unlock_build_objects": [
-      "Clock01_Wall_Iron",
-      "Clock01_Stone"
-    ],
+    "unlock_build_objects": ["Clock01_Wall_Iron", "Clock01_Stone"],
     "unlock_item_recipes": [],
     "icon_name": "Clock01_Wall_Iron",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3105,10 +2716,7 @@
     "icon": "t_icon_buildobject_clock01_wall_iron"
   },
   "FurnitureSet_24": {
-    "unlock_build_objects": [
-      "Desk01_Stone",
-      "TableCircular01_Stone"
-    ],
+    "unlock_build_objects": ["Desk01_Stone", "TableCircular01_Stone"],
     "unlock_item_recipes": [],
     "icon_name": "Desk01_Stone",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3175,10 +2783,7 @@
     "icon": "t_icon_buildobject_light_lightpole01"
   },
   "FurnitureSet_28": {
-    "unlock_build_objects": [
-      "Light_FirePlace01",
-      "Light_FirePlace02"
-    ],
+    "unlock_build_objects": ["Light_FirePlace01", "Light_FirePlace02"],
     "unlock_item_recipes": [],
     "icon_name": "Light_FirePlace01",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3209,10 +2814,7 @@
     "icon": "t_icon_buildobject_light_floorlamp01"
   },
   "FurnitureSet_3": {
-    "unlock_build_objects": [
-      "Counter_Wood",
-      "Shelf_Hang02_Wood"
-    ],
+    "unlock_build_objects": ["Counter_Wood", "Shelf_Hang02_Wood"],
     "unlock_item_recipes": [],
     "icon_name": "Counter_Wood",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3278,11 +2880,7 @@
     "icon": "t_icon_buildobject_curtain01_wall_stone"
   },
   "FurnitureSet_4": {
-    "unlock_build_objects": [
-      "Ivy01",
-      "Ivy02",
-      "Ivy03"
-    ],
+    "unlock_build_objects": ["Ivy01", "Ivy02", "Ivy03"],
     "unlock_item_recipes": [],
     "icon_name": "Ivy01",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3295,11 +2893,7 @@
     "icon": "t_icon_buildobject_ivy01"
   },
   "FurnitureSet_5": {
-    "unlock_build_objects": [
-      "Barrel01_Iron",
-      "Barrel02_Iron",
-      "Barrel03_Iron"
-    ],
+    "unlock_build_objects": ["Barrel01_Iron", "Barrel02_Iron", "Barrel03_Iron"],
     "unlock_item_recipes": [],
     "icon_name": "Barrel01_Iron",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3312,11 +2906,7 @@
     "icon": "t_icon_buildobject_barrel01_iron"
   },
   "FurnitureSet_6": {
-    "unlock_build_objects": [
-      "Container01_Iron",
-      "Box01_Iron",
-      "Box02_Iron"
-    ],
+    "unlock_build_objects": ["Container01_Iron", "Box01_Iron", "Box02_Iron"],
     "unlock_item_recipes": [],
     "icon_name": "Container01_Iron",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3347,10 +2937,7 @@
     "icon": "t_icon_buildobject_sofa01_iron"
   },
   "FurnitureSet_8": {
-    "unlock_build_objects": [
-      "SignExit_Ceiling_Iron",
-      "SignExit_Wall_Iron"
-    ],
+    "unlock_build_objects": ["SignExit_Ceiling_Iron", "SignExit_Wall_Iron"],
     "unlock_item_recipes": [],
     "icon_name": "SignExit_Ceiling_Iron",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3552,9 +3139,7 @@
   },
   "GasMask": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GasMask"
-    ],
+    "unlock_item_recipes": ["GasMask"],
     "icon_name": "GasMask",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3567,9 +3152,7 @@
   },
   "GatlingBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GatlingBullet"
-    ],
+    "unlock_item_recipes": ["GatlingBullet"],
     "icon_name": "GatlingBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3614,9 +3197,7 @@
     "icon": "t_icon_buildobject_glass_foundation"
   },
   "GlobalPalStorage": {
-    "unlock_build_objects": [
-      "GlobalPalStorage"
-    ],
+    "unlock_build_objects": ["GlobalPalStorage"],
     "unlock_item_recipes": [],
     "icon_name": "GlobalPalStorage",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3630,9 +3211,7 @@
   },
   "GrapplingGun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GrapplingGun"
-    ],
+    "unlock_item_recipes": ["GrapplingGun"],
     "icon_name": "GrapplingGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3645,9 +3224,7 @@
   },
   "GrapplingGun2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GrapplingGun2"
-    ],
+    "unlock_item_recipes": ["GrapplingGun2"],
     "icon_name": "GrapplingGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "GrapplingGun",
@@ -3660,9 +3237,7 @@
   },
   "GrapplingGun3": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GrapplingGun3"
-    ],
+    "unlock_item_recipes": ["GrapplingGun3"],
     "icon_name": "GrapplingGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "GrapplingGun2",
@@ -3675,9 +3250,7 @@
   },
   "GrapplingGun4": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GrapplingGun4"
-    ],
+    "unlock_item_recipes": ["GrapplingGun4"],
     "icon_name": "GrapplingGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "GrapplingGun3",
@@ -3690,9 +3263,7 @@
   },
   "GrapplingGun5": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GrapplingGun5"
-    ],
+    "unlock_item_recipes": ["GrapplingGun5"],
     "icon_name": "GrapplingGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "GrapplingGun4",
@@ -3705,9 +3276,7 @@
   },
   "GrenadeBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "GrenadeBullet"
-    ],
+    "unlock_item_recipes": ["GrenadeBullet"],
     "icon_name": "GrenadeBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3719,9 +3288,7 @@
     "icon": "t_itemicon_ammo_grenadebullet"
   },
   "GuildChest": {
-    "unlock_build_objects": [
-      "GuildChest"
-    ],
+    "unlock_build_objects": ["GuildChest"],
     "unlock_item_recipes": [],
     "icon_name": "GuildChest",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3735,9 +3302,7 @@
   },
   "HandTorch": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Torch"
-    ],
+    "unlock_item_recipes": ["Torch"],
     "icon_name": "Torch",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3750,9 +3315,7 @@
   },
   "HandgunBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "HandgunBullet"
-    ],
+    "unlock_item_recipes": ["HandgunBullet"],
     "icon_name": "HandgunBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3764,9 +3327,7 @@
     "icon": "t_itemicon_ammo_handgunbullet"
   },
   "Headstone": {
-    "unlock_build_objects": [
-      "Headstone"
-    ],
+    "unlock_build_objects": ["Headstone"],
     "unlock_item_recipes": [],
     "icon_name": "Headstone",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3779,9 +3340,7 @@
     "icon": "t_icon_buildobject_headstone"
   },
   "Heater": {
-    "unlock_build_objects": [
-      "Heater"
-    ],
+    "unlock_build_objects": ["Heater"],
     "unlock_item_recipes": [],
     "icon_name": "Heater",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3795,9 +3354,7 @@
   },
   "HighGrade_Processed_Wood": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "HighGrade_Processed_Wood"
-    ],
+    "unlock_item_recipes": ["HighGrade_Processed_Wood"],
     "icon_name": "HighGrade_Processed_Wood",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3810,9 +3367,7 @@
   },
   "Homeward": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Homeward"
-    ],
+    "unlock_item_recipes": ["Homeward"],
     "icon_name": "Homeward",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3824,9 +3379,7 @@
     "icon": "t_itemicon_consume_homeward"
   },
   "HugeKitchen": {
-    "unlock_build_objects": [
-      "HugeKitchen"
-    ],
+    "unlock_build_objects": ["HugeKitchen"],
     "unlock_item_recipes": [],
     "icon_name": "HugeKitchen",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3839,10 +3392,7 @@
     "icon": "t_icon_buildobject_hugekitchen"
   },
   "HunterFlagSet": {
-    "unlock_build_objects": [
-      "Hunter_Flag",
-      "Hunter_Banner"
-    ],
+    "unlock_build_objects": ["Hunter_Flag", "Hunter_Banner"],
     "unlock_item_recipes": [],
     "icon_name": "Hunter_Flag",
     "require_defeat_tower_boss": "EPalBossType::GrassBoss",
@@ -3855,9 +3405,7 @@
     "icon": "t_icon_buildobject_hunter_flag"
   },
   "IceCrusher": {
-    "unlock_build_objects": [
-      "IceCrusher"
-    ],
+    "unlock_build_objects": ["IceCrusher"],
     "unlock_item_recipes": [],
     "icon_name": "IceCrusher",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3870,9 +3418,7 @@
     "icon": "t_icon_buildobject_icecrusher"
   },
   "IceHorseStatue": {
-    "unlock_build_objects": [
-      "IceHorseStatue"
-    ],
+    "unlock_build_objects": ["IceHorseStatue"],
     "unlock_item_recipes": [],
     "icon_name": "IceHorseStatue",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3885,9 +3431,7 @@
     "icon": "t_icon_buildobject_icehorsestatue"
   },
   "Infra_ElectricGenerator_Grade_01": {
-    "unlock_build_objects": [
-      "ElectricGenerator"
-    ],
+    "unlock_build_objects": ["ElectricGenerator"],
     "unlock_item_recipes": [],
     "icon_name": "ElectricGenerator",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3901,9 +3445,7 @@
   },
   "Infra_ElectronicCircuit": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "MachineParts2"
-    ],
+    "unlock_item_recipes": ["MachineParts2"],
     "icon_name": "ElectronicCircuit",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3915,9 +3457,7 @@
     "icon": "t_itemicon_material_electroniccircuit"
   },
   "Infra_ItemChest_Grade_01": {
-    "unlock_build_objects": [
-      "ItemChest"
-    ],
+    "unlock_build_objects": ["ItemChest"],
     "unlock_item_recipes": [],
     "icon_name": "Chest",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3930,9 +3470,7 @@
     "icon": "t_icon_buildobject_itemchest"
   },
   "Infra_ItemChest_Grade_02": {
-    "unlock_build_objects": [
-      "ItemChest_02"
-    ],
+    "unlock_build_objects": ["ItemChest_02"],
     "unlock_item_recipes": [],
     "icon_name": "Chest2",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3945,9 +3483,7 @@
     "icon": "t_icon_buildobject_itemchest_02"
   },
   "Infra_ItemChest_Grade_03": {
-    "unlock_build_objects": [
-      "ItemChest_03"
-    ],
+    "unlock_build_objects": ["ItemChest_03"],
     "unlock_item_recipes": [],
     "icon_name": "Chest3",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3961,9 +3497,7 @@
   },
   "Infra_MachineParts": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "MachineParts"
-    ],
+    "unlock_item_recipes": ["MachineParts"],
     "icon_name": "MachineParts",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -3975,9 +3509,7 @@
     "icon": "t_itemicon_material_machineparts"
   },
   "Infra_PalBed_Grade_01": {
-    "unlock_build_objects": [
-      "MedicalPalBed_02"
-    ],
+    "unlock_build_objects": ["MedicalPalBed_02"],
     "unlock_item_recipes": [],
     "icon_name": "MedicalPalBed_02",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -3990,9 +3522,7 @@
     "icon": "t_icon_buildobject_medicalpalbed_02"
   },
   "Infra_PalBed_Grade_02": {
-    "unlock_build_objects": [
-      "MedicalPalBed_03"
-    ],
+    "unlock_build_objects": ["MedicalPalBed_03"],
     "unlock_item_recipes": [],
     "icon_name": "MedicalPalBed_03",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4005,9 +3535,7 @@
     "icon": "t_icon_buildobject_medicalpalbed_03"
   },
   "Infra_PlayerBed_Grade_01": {
-    "unlock_build_objects": [
-      "PlayerBed_02"
-    ],
+    "unlock_build_objects": ["PlayerBed_02"],
     "unlock_item_recipes": [],
     "icon_name": "PlayerBed_02",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4020,9 +3548,7 @@
     "icon": "t_icon_buildobject_playerbed_02"
   },
   "Infra_PlayerBed_Grade_02": {
-    "unlock_build_objects": [
-      "PlayerBed_03"
-    ],
+    "unlock_build_objects": ["PlayerBed_03"],
     "unlock_item_recipes": [],
     "icon_name": "PlayerBed_03",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4035,9 +3561,7 @@
     "icon": "t_icon_buildobject_playerbed_03"
   },
   "ItemBooth": {
-    "unlock_build_objects": [
-      "ItemBooth"
-    ],
+    "unlock_build_objects": ["ItemBooth"],
     "unlock_item_recipes": [],
     "icon_name": "ItemBooth",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4050,9 +3574,7 @@
     "icon": "t_icon_buildobject_itembooth"
   },
   "ItemChest_04": {
-    "unlock_build_objects": [
-      "ItemChest_04"
-    ],
+    "unlock_build_objects": ["ItemChest_04"],
     "unlock_item_recipes": [],
     "icon_name": "ItemChest_04",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4102,9 +3624,7 @@
     "icon": "t_icon_buildobject_japanesestyle_foundation"
   },
   "JetDragonStatue": {
-    "unlock_build_objects": [
-      "JetDragonStatue"
-    ],
+    "unlock_build_objects": ["JetDragonStatue"],
     "unlock_item_recipes": [],
     "icon_name": "JetDragonStatue",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4118,9 +3638,7 @@
   },
   "Katana": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Katana"
-    ],
+    "unlock_item_recipes": ["Katana"],
     "icon_name": "Katana",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4132,9 +3650,7 @@
     "icon": "t_itemicon_weapon_katana"
   },
   "Lab": {
-    "unlock_build_objects": [
-      "Lab"
-    ],
+    "unlock_build_objects": ["Lab"],
     "unlock_item_recipes": [],
     "icon_name": "Lab",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4147,9 +3663,7 @@
     "icon": "t_icon_buildobject_lab"
   },
   "Lamp": {
-    "unlock_build_objects": [
-      "Lamp"
-    ],
+    "unlock_build_objects": ["Lamp"],
     "unlock_item_recipes": [],
     "icon_name": "Lamp",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4163,9 +3677,7 @@
   },
   "Lantern": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Lantern"
-    ],
+    "unlock_item_recipes": ["Lantern"],
     "icon_name": "Lantern",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4178,9 +3690,7 @@
   },
   "Lantern_High": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Lantern_High"
-    ],
+    "unlock_item_recipes": ["Lantern_High"],
     "icon_name": "Lantern_High",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "Lantern",
@@ -4192,9 +3702,7 @@
     "icon": "t_itemicon_essential_lantern"
   },
   "LargeCeilingLamp": {
-    "unlock_build_objects": [
-      "LargeCeilingLamp"
-    ],
+    "unlock_build_objects": ["LargeCeilingLamp"],
     "unlock_item_recipes": [],
     "icon_name": "LargeCeilingLamp",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4207,9 +3715,7 @@
     "icon": "t_icon_buildobject_lamptoplarge"
   },
   "LargeLamp": {
-    "unlock_build_objects": [
-      "LargeLamp"
-    ],
+    "unlock_build_objects": ["LargeLamp"],
     "unlock_item_recipes": [],
     "icon_name": "LargeLamp",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4223,9 +3729,7 @@
   },
   "LaserBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "LaserBullet"
-    ],
+    "unlock_item_recipes": ["LaserBullet"],
     "icon_name": "LaserBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4238,9 +3742,7 @@
   },
   "LaserGatlingBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "LaserGatlingBullet"
-    ],
+    "unlock_item_recipes": ["LaserGatlingBullet"],
     "icon_name": "LaserGatlingBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4253,9 +3755,7 @@
   },
   "LaserGatlingGun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "LaserGatlingGun"
-    ],
+    "unlock_item_recipes": ["LaserGatlingGun"],
     "icon_name": "LaserGatlingGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4268,9 +3768,7 @@
   },
   "LaserMiningTool": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "LaserMiningTool"
-    ],
+    "unlock_item_recipes": ["LaserMiningTool"],
     "icon_name": "LaserMiningTool",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4283,9 +3781,7 @@
   },
   "LauncherBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ExplosiveBullet"
-    ],
+    "unlock_item_recipes": ["ExplosiveBullet"],
     "icon_name": "ExplosiveBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4298,10 +3794,7 @@
   },
   "Launcher_Meteor": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Launcher_Meteor",
-      "MeteorBullet"
-    ],
+    "unlock_item_recipes": ["Launcher_Meteor", "MeteorBullet"],
     "icon_name": "Launcher_Meteor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4314,9 +3807,7 @@
   },
   "MakeshiftAssaultRifle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "MakeshiftAssaultRifle"
-    ],
+    "unlock_item_recipes": ["MakeshiftAssaultRifle"],
     "icon_name": "MakeshiftAssaultRifle",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4329,9 +3820,7 @@
   },
   "MakeshiftHandgun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "MakeshiftHandgun"
-    ],
+    "unlock_item_recipes": ["MakeshiftHandgun"],
     "icon_name": "MakeshiftHandgun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4344,9 +3833,7 @@
   },
   "MakeshiftShotgun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "MakeshiftShotgun"
-    ],
+    "unlock_item_recipes": ["MakeshiftShotgun"],
     "icon_name": "MakeshiftShotgun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4359,9 +3846,7 @@
   },
   "MakeshiftSubmachineGun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "MakeshiftSubmachineGun"
-    ],
+    "unlock_item_recipes": ["MakeshiftSubmachineGun"],
     "icon_name": "MakeshiftSubmachineGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4374,9 +3859,7 @@
   },
   "ManganeseIngot": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ManganeseIngot"
-    ],
+    "unlock_item_recipes": ["ManganeseIngot"],
     "icon_name": "ManganeseIngot",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4388,9 +3871,7 @@
     "icon": "t_itemicon_material_manganeseingot"
   },
   "ManualElectricGenerator": {
-    "unlock_build_objects": [
-      "ManualElectricGenerator"
-    ],
+    "unlock_build_objects": ["ManualElectricGenerator"],
     "unlock_item_recipes": [],
     "icon_name": "ManualElectricGenerator",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4404,9 +3885,7 @@
   },
   "MeatCutterKnife": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "MeatCutterKnife"
-    ],
+    "unlock_item_recipes": ["MeatCutterKnife"],
     "icon_name": "MeatCutterKnife",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4418,9 +3897,7 @@
     "icon": "t_itemicon_weapon_meatcutterknife"
   },
   "MedicalPalBed_04": {
-    "unlock_build_objects": [
-      "MedicalPalBed_04"
-    ],
+    "unlock_build_objects": ["MedicalPalBed_04"],
     "unlock_item_recipes": [],
     "icon_name": "MedicalPalBed_04",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4433,9 +3910,7 @@
     "icon": "t_icon_buildobject_medicalpalbed_04"
   },
   "MedicalPalBed_05": {
-    "unlock_build_objects": [
-      "MedicalPalBed_05"
-    ],
+    "unlock_build_objects": ["MedicalPalBed_05"],
     "unlock_item_recipes": [],
     "icon_name": "MedicalPalBed_05",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4448,9 +3923,7 @@
     "icon": "t_icon_buildobject_medicalpalbed_05"
   },
   "MedicineFacility_03": {
-    "unlock_build_objects": [
-      "MedicineFacility_03"
-    ],
+    "unlock_build_objects": ["MedicineFacility_03"],
     "unlock_item_recipes": [],
     "icon_name": "MedicineFacility_03",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4464,9 +3937,7 @@
   },
   "MetalDetector": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "MetalDetector"
-    ],
+    "unlock_item_recipes": ["MetalDetector"],
     "icon_name": "MetalDetector",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4478,9 +3949,7 @@
     "icon": "t_itemicon_essential_metaldetector"
   },
   "Metal_Gate": {
-    "unlock_build_objects": [
-      "Metal_Gate"
-    ],
+    "unlock_build_objects": ["Metal_Gate"],
     "unlock_item_recipes": [],
     "icon_name": "Metal_Gate",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4526,9 +3995,7 @@
     "icon": "t_icon_buildobject_metal_foundation"
   },
   "MiningTool": {
-    "unlock_build_objects": [
-      "MiningTool"
-    ],
+    "unlock_build_objects": ["MiningTool"],
     "unlock_item_recipes": [],
     "icon_name": "MiningTool",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4542,9 +4009,7 @@
   },
   "MissileBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "MissileBullet"
-    ],
+    "unlock_item_recipes": ["MissileBullet"],
     "icon_name": "MissileBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4556,9 +4021,7 @@
     "icon": "t_itemicon_ammo_missilebullet"
   },
   "MonsterFarm": {
-    "unlock_build_objects": [
-      "MonsterFarm"
-    ],
+    "unlock_build_objects": ["MonsterFarm"],
     "unlock_item_recipes": [],
     "icon_name": "MonsterFarm",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4571,9 +4034,7 @@
     "icon": "t_icon_buildobject_monsterfarm"
   },
   "MultiElectricHatchingPalEgg": {
-    "unlock_build_objects": [
-      "MultiElectricHatchingPalEgg"
-    ],
+    "unlock_build_objects": ["MultiElectricHatchingPalEgg"],
     "unlock_item_recipes": [],
     "icon_name": "MultiElectricHatchingPalEgg",
     "require_defeat_tower_boss": "EPalBossType::VikingBoss",
@@ -4586,9 +4047,7 @@
     "icon": "t_icon_buildobject_multielectrichatchingpalegg"
   },
   "MultiElectricHatchingPalEggWithBreed": {
-    "unlock_build_objects": [
-      "MultiElectricHatchingPalEggWithBreed"
-    ],
+    "unlock_build_objects": ["MultiElectricHatchingPalEggWithBreed"],
     "unlock_item_recipes": [],
     "icon_name": "MultiElectricHatchingPalEggWithBreed",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4601,9 +4060,7 @@
     "icon": "t_icon_buildobject_multielectrichatchingpaleggwithbreed"
   },
   "MultiHatchingPalEgg": {
-    "unlock_build_objects": [
-      "MultiHatchingPalEgg"
-    ],
+    "unlock_build_objects": ["MultiHatchingPalEgg"],
     "unlock_item_recipes": [],
     "icon_name": "MultiHatchingPalEgg",
     "require_defeat_tower_boss": "EPalBossType::SnowBoss",
@@ -4617,9 +4074,7 @@
   },
   "Musket": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Musket"
-    ],
+    "unlock_item_recipes": ["Musket"],
     "icon_name": "Musket",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4631,10 +4086,7 @@
     "icon": "t_itemicon_weapon_musket"
   },
   "NinjaFlagSet": {
-    "unlock_build_objects": [
-      "Ninja_Flag",
-      "Ninja_Banner"
-    ],
+    "unlock_build_objects": ["Ninja_Flag", "Ninja_Banner"],
     "unlock_item_recipes": [],
     "icon_name": "Ninja_Flag",
     "require_defeat_tower_boss": "EPalBossType::SakurajimaBoss",
@@ -4648,10 +4100,7 @@
   },
   "OctaviaSet01": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Octavia001_Armor",
-      "OctaviaRevolver"
-    ],
+    "unlock_item_recipes": ["Octavia001_Armor", "OctaviaRevolver"],
     "icon_name": "Octavia001_Armor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4664,10 +4113,7 @@
   },
   "OctaviaSet02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Octavia002_Armor",
-      "OctaviaShotgun"
-    ],
+    "unlock_item_recipes": ["Octavia002_Armor", "OctaviaShotgun"],
     "icon_name": "Octavia002_Armor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4679,9 +4125,7 @@
     "icon": "t_itemicon_armor_octavia002_armor"
   },
   "OilPump": {
-    "unlock_build_objects": [
-      "OilPump"
-    ],
+    "unlock_build_objects": ["OilPump"],
     "unlock_item_recipes": [],
     "icon_name": "OilPump",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4694,9 +4138,7 @@
     "icon": "t_icon_buildobject_oilpump"
   },
   "OilPump02": {
-    "unlock_build_objects": [
-      "OilPump02"
-    ],
+    "unlock_build_objects": ["OilPump02"],
     "unlock_item_recipes": [],
     "icon_name": "OilPump02",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4709,9 +4151,7 @@
     "icon": "t_icon_buildobject_oilpump02"
   },
   "OlympicCauldron": {
-    "unlock_build_objects": [
-      "OlympicCauldron"
-    ],
+    "unlock_build_objects": ["OlympicCauldron"],
     "unlock_item_recipes": [],
     "icon_name": "OlympicCauldron",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4724,9 +4164,7 @@
     "icon": "t_icon_buildobject_olympiccauldron"
   },
   "OperatingTable": {
-    "unlock_build_objects": [
-      "OperatingTable"
-    ],
+    "unlock_build_objects": ["OperatingTable"],
     "unlock_item_recipes": [],
     "icon_name": "OperatingTable",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4740,9 +4178,7 @@
   },
   "OverheatRifle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "OverheatRifle"
-    ],
+    "unlock_item_recipes": ["OverheatRifle"],
     "icon_name": "OverheatRifle",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4755,9 +4191,7 @@
   },
   "OverheatRifleBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "OverheatRifleBullet"
-    ],
+    "unlock_item_recipes": ["OverheatRifleBullet"],
     "icon_name": "OverheatRifleBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4769,9 +4203,7 @@
     "icon": "t_itemicon_ammo_overheatriflebullet"
   },
   "PALBOX": {
-    "unlock_build_objects": [
-      "PalBoxV2"
-    ],
+    "unlock_build_objects": ["PalBoxV2"],
     "unlock_item_recipes": [],
     "icon_name": "PalBoxV2",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4784,9 +4216,7 @@
     "icon": "t_icon_buildobject_palboxv2"
   },
   "PalBooth": {
-    "unlock_build_objects": [
-      "PalBooth"
-    ],
+    "unlock_build_objects": ["PalBooth"],
     "unlock_item_recipes": [],
     "icon_name": "PalBooth",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4800,9 +4230,7 @@
   },
   "PalDopingShot": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalDopingShot"
-    ],
+    "unlock_item_recipes": ["PalDopingShot"],
     "icon_name": "PalDopingShot",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4815,9 +4243,7 @@
   },
   "PalDopingShotBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalDopingShotBullet"
-    ],
+    "unlock_item_recipes": ["PalDopingShotBullet"],
     "icon_name": "PalDopingShotBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4830,9 +4256,7 @@
   },
   "PalDopingShot_2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalDopingShot_2"
-    ],
+    "unlock_item_recipes": ["PalDopingShot_2"],
     "icon_name": "PalDopingShot_2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4844,9 +4268,7 @@
     "icon": "t_itemicon_weapon_paldopingshot_2"
   },
   "PalFoodBox": {
-    "unlock_build_objects": [
-      "PalFoodBox"
-    ],
+    "unlock_build_objects": ["PalFoodBox"],
     "unlock_item_recipes": [],
     "icon_name": "PalFoodBox",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4860,9 +4282,7 @@
   },
   "PalHealingGrenade": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalHealingGrenade"
-    ],
+    "unlock_item_recipes": ["PalHealingGrenade"],
     "icon_name": "PalHealingGrenade",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4874,9 +4294,7 @@
     "icon": "t_itemicon_weapon_palhealinggrenade"
   },
   "PalMedicineBox": {
-    "unlock_build_objects": [
-      "PalMedicineBox"
-    ],
+    "unlock_build_objects": ["PalMedicineBox"],
     "unlock_item_recipes": [],
     "icon_name": "PalMedicineBox",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -4890,9 +4308,7 @@
   },
   "PalRevive": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalRevive"
-    ],
+    "unlock_item_recipes": ["PalRevive"],
     "icon_name": "PalRevive",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4905,9 +4321,7 @@
   },
   "PalSphere_Ancient_1": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere_Ancient_1"
-    ],
+    "unlock_item_recipes": ["PalSphere_Ancient_1"],
     "icon_name": "PalSphere_Ancient_1",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4920,9 +4334,7 @@
   },
   "PalSphere_Ancient_2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere_Ancient_2"
-    ],
+    "unlock_item_recipes": ["PalSphere_Ancient_2"],
     "icon_name": "PalSphere_Ancient_2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4935,9 +4347,7 @@
   },
   "PalSphere_Exotic": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere_Exotic"
-    ],
+    "unlock_item_recipes": ["PalSphere_Exotic"],
     "icon_name": "PalSphere_Exotic",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4950,9 +4360,7 @@
   },
   "Plastic": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Plastic"
-    ],
+    "unlock_item_recipes": ["Plastic"],
     "icon_name": "Plastic",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4964,10 +4372,7 @@
     "icon": "t_itemicon_material_plastic"
   },
   "PoliceFlagSet": {
-    "unlock_build_objects": [
-      "Police_Flag",
-      "Police_Banner"
-    ],
+    "unlock_build_objects": ["Police_Flag", "Police_Banner"],
     "unlock_item_recipes": [],
     "icon_name": "Police_Flag",
     "require_defeat_tower_boss": "EPalBossType::DesertBoss",
@@ -4981,9 +4386,7 @@
   },
   "Polymer": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Polymer"
-    ],
+    "unlock_item_recipes": ["Polymer"],
     "icon_name": "Polymer",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -4996,9 +4399,7 @@
   },
   "Potion_Extreme": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Potion_Extreme"
-    ],
+    "unlock_item_recipes": ["Potion_Extreme"],
     "icon_name": "Potion_Extreme",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5011,9 +4412,7 @@
   },
   "Processed_Wood": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Processed_Wood"
-    ],
+    "unlock_item_recipes": ["Processed_Wood"],
     "icon_name": "Processed_Wood",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5026,9 +4425,7 @@
   },
   "Product_Axe_Grade_01": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Axe_Tier_00"
-    ],
+    "unlock_item_recipes": ["Axe_Tier_00"],
     "icon_name": "Axe_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5041,9 +4438,7 @@
   },
   "Product_Axe_Grade_02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Axe_Tier_01"
-    ],
+    "unlock_item_recipes": ["Axe_Tier_01"],
     "icon_name": "Axe_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5056,9 +4451,7 @@
   },
   "Product_Axe_Grade_03": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Axe_Tier_02"
-    ],
+    "unlock_item_recipes": ["Axe_Tier_02"],
     "icon_name": "Axe_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5070,9 +4463,7 @@
     "icon": "t_itemicon_weapon_axe_tier_00"
   },
   "Product_CoalPit": {
-    "unlock_build_objects": [
-      "CoalPit"
-    ],
+    "unlock_build_objects": ["CoalPit"],
     "unlock_item_recipes": [],
     "icon_name": "CoalPit",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5085,9 +4476,7 @@
     "icon": "t_icon_buildobject_coalpit"
   },
   "Product_Cooking_Grade_01": {
-    "unlock_build_objects": [
-      "CampFire"
-    ],
+    "unlock_build_objects": ["CampFire"],
     "unlock_item_recipes": [],
     "icon_name": "Campfire",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5100,9 +4489,7 @@
     "icon": "t_icon_buildobject_campfire"
   },
   "Product_Cooking_Grade_02": {
-    "unlock_build_objects": [
-      "CookingStove"
-    ],
+    "unlock_build_objects": ["CookingStove"],
     "unlock_item_recipes": [],
     "icon_name": "CookingStove",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5115,9 +4502,7 @@
     "icon": "t_icon_buildobject_cookingstove"
   },
   "Product_Cooking_Grade_03": {
-    "unlock_build_objects": [
-      "ElectricKitchen"
-    ],
+    "unlock_build_objects": ["ElectricKitchen"],
     "unlock_item_recipes": [],
     "icon_name": "ElectricKitchen",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5130,9 +4515,7 @@
     "icon": "t_icon_buildobject_electrickitchen"
   },
   "Product_CopperPit": {
-    "unlock_build_objects": [
-      "CopperPit"
-    ],
+    "unlock_build_objects": ["CopperPit"],
     "unlock_item_recipes": [],
     "icon_name": "CopperPit",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5145,9 +4528,7 @@
     "icon": "t_icon_buildobject_copperpit"
   },
   "Product_CopperPit_2": {
-    "unlock_build_objects": [
-      "CopperPit_2"
-    ],
+    "unlock_build_objects": ["CopperPit_2"],
     "unlock_item_recipes": [],
     "icon_name": "CopperPit_2",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5160,9 +4541,7 @@
     "icon": "t_icon_buildobject_copperpit_2"
   },
   "Product_Factory_Hard_Grade_01": {
-    "unlock_build_objects": [
-      "Factory_Hard_01"
-    ],
+    "unlock_build_objects": ["Factory_Hard_01"],
     "unlock_item_recipes": [],
     "icon_name": "Factory_Hard_01",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5175,9 +4554,7 @@
     "icon": "t_icon_buildobject_factory_hard_01"
   },
   "Product_Factory_Hard_Grade_02": {
-    "unlock_build_objects": [
-      "Factory_Hard_02"
-    ],
+    "unlock_build_objects": ["Factory_Hard_02"],
     "unlock_item_recipes": [],
     "icon_name": "Factory_Hard_02",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5190,9 +4567,7 @@
     "icon": "t_icon_buildobject_factory_hard_02"
   },
   "Product_Factory_Hard_Grade_03": {
-    "unlock_build_objects": [
-      "Factory_Hard_03"
-    ],
+    "unlock_build_objects": ["Factory_Hard_03"],
     "unlock_item_recipes": [],
     "icon_name": "Factory_Hard_03",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5205,9 +4580,7 @@
     "icon": "t_icon_buildobject_factory_hard_03"
   },
   "Product_Farm_Berries": {
-    "unlock_build_objects": [
-      "FarmBlockV2_Berries"
-    ],
+    "unlock_build_objects": ["FarmBlockV2_Berries"],
     "unlock_item_recipes": [],
     "icon_name": "FarmBlockV2_Berries",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5220,9 +4593,7 @@
     "icon": "t_icon_buildobject_farmblockv2_berries"
   },
   "Product_Farm_Carrot": {
-    "unlock_build_objects": [
-      "FarmBlockV2_Carrot"
-    ],
+    "unlock_build_objects": ["FarmBlockV2_Carrot"],
     "unlock_item_recipes": [],
     "icon_name": "FarmBlockV2_Carrot",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5235,9 +4606,7 @@
     "icon": "t_icon_buildobject_farmblockv2_carrot"
   },
   "Product_Farm_Lettuce": {
-    "unlock_build_objects": [
-      "FarmBlockV2_Lettuce"
-    ],
+    "unlock_build_objects": ["FarmBlockV2_Lettuce"],
     "unlock_item_recipes": [],
     "icon_name": "FarmBlockV2_Lettuce",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5250,9 +4619,7 @@
     "icon": "t_icon_buildobject_farmblockv2_lettuce"
   },
   "Product_Farm_Onion": {
-    "unlock_build_objects": [
-      "FarmBlockV2_Onion"
-    ],
+    "unlock_build_objects": ["FarmBlockV2_Onion"],
     "unlock_item_recipes": [],
     "icon_name": "FarmBlockV2_Onion",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5265,9 +4632,7 @@
     "icon": "t_icon_buildobject_farmblockv2_onion"
   },
   "Product_Farm_Potato": {
-    "unlock_build_objects": [
-      "FarmBlockV2_Potato"
-    ],
+    "unlock_build_objects": ["FarmBlockV2_Potato"],
     "unlock_item_recipes": [],
     "icon_name": "FarmBlockV2_Potato",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5280,9 +4645,7 @@
     "icon": "t_icon_buildobject_farmblockv2_potato"
   },
   "Product_Farm_tomato": {
-    "unlock_build_objects": [
-      "FarmBlockV2_tomato"
-    ],
+    "unlock_build_objects": ["FarmBlockV2_tomato"],
     "unlock_item_recipes": [],
     "icon_name": "FarmBlockV2_tomato",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5295,9 +4658,7 @@
     "icon": "t_icon_buildobject_farmblockv2_tomato"
   },
   "Product_Farm_wheat": {
-    "unlock_build_objects": [
-      "FarmBlockV2_wheet"
-    ],
+    "unlock_build_objects": ["FarmBlockV2_wheet"],
     "unlock_item_recipes": [],
     "icon_name": "FarmBlockV2_wheet",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5310,9 +4671,7 @@
     "icon": "t_icon_buildobject_farmblockv2_wheet"
   },
   "Product_Ingot_Grade_01_Copper": {
-    "unlock_build_objects": [
-      "BlastFurnace"
-    ],
+    "unlock_build_objects": ["BlastFurnace"],
     "unlock_item_recipes": [],
     "icon_name": "BlastFurnace",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5325,9 +4684,7 @@
     "icon": "t_icon_buildobject_blastfurnace"
   },
   "Product_Ingot_Grade_02_Iron": {
-    "unlock_build_objects": [
-      "BlastFurnace2"
-    ],
+    "unlock_build_objects": ["BlastFurnace2"],
     "unlock_item_recipes": [],
     "icon_name": "BlastFurnace2",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5340,9 +4697,7 @@
     "icon": "t_icon_buildobject_blastfurnace_2"
   },
   "Product_Ingot_Grade_03_Steal": {
-    "unlock_build_objects": [
-      "BlastFurnace3"
-    ],
+    "unlock_build_objects": ["BlastFurnace3"],
     "unlock_item_recipes": [],
     "icon_name": "BlastFurnace3",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5355,9 +4710,7 @@
     "icon": "t_icon_buildobject_blastfurnace3"
   },
   "Product_Medicine_Grade_01": {
-    "unlock_build_objects": [
-      "MedicineFacility_01"
-    ],
+    "unlock_build_objects": ["MedicineFacility_01"],
     "unlock_item_recipes": [],
     "icon_name": "MedicineFacility_01",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5370,9 +4723,7 @@
     "icon": "t_icon_buildobject_medicinefacility_01"
   },
   "Product_Medicine_Grade_02": {
-    "unlock_build_objects": [
-      "MedicineFacility_02"
-    ],
+    "unlock_build_objects": ["MedicineFacility_02"],
     "unlock_item_recipes": [],
     "icon_name": "MedicineFacility_02",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5386,9 +4737,7 @@
   },
   "Product_Pickaxe_Grade_01": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Pickaxe_Tier_00"
-    ],
+    "unlock_item_recipes": ["Pickaxe_Tier_00"],
     "icon_name": "Pickaxe_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5401,9 +4750,7 @@
   },
   "Product_Pickaxe_Grade_02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Pickaxe_Tier_01"
-    ],
+    "unlock_item_recipes": ["Pickaxe_Tier_01"],
     "icon_name": "Pickaxe_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5416,9 +4763,7 @@
   },
   "Product_Pickaxe_Grade_03": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Pickaxe_Tier_02"
-    ],
+    "unlock_item_recipes": ["Pickaxe_Tier_02"],
     "icon_name": "Pickaxe_Default",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5430,9 +4775,7 @@
     "icon": "t_itemicon_weapon_pickaxe_tier_00"
   },
   "Product_QuartzPit": {
-    "unlock_build_objects": [
-      "QuartzPit"
-    ],
+    "unlock_build_objects": ["QuartzPit"],
     "unlock_item_recipes": [],
     "icon_name": "QuartzPit",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5445,9 +4788,7 @@
     "icon": "t_icon_buildobject_quartzpit"
   },
   "Product_StationDeforest": {
-    "unlock_build_objects": [
-      "StationDeforest2"
-    ],
+    "unlock_build_objects": ["StationDeforest2"],
     "unlock_item_recipes": [],
     "icon_name": "StationDeforest2",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5460,9 +4801,7 @@
     "icon": "t_icon_buildobject_stationdeforest2"
   },
   "Product_StationDeforest2": {
-    "unlock_build_objects": [
-      "StationDeforest3"
-    ],
+    "unlock_build_objects": ["StationDeforest3"],
     "unlock_item_recipes": [],
     "icon_name": "StationDeforest3",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5475,9 +4814,7 @@
     "icon": "t_icon_buildobject_stationdeforest3"
   },
   "Product_StonePit": {
-    "unlock_build_objects": [
-      "StonePit"
-    ],
+    "unlock_build_objects": ["StonePit"],
     "unlock_item_recipes": [],
     "icon_name": "StonePit",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5490,9 +4827,7 @@
     "icon": "t_icon_buildobject_stonepit"
   },
   "Product_SulfurPit": {
-    "unlock_build_objects": [
-      "SulfurPit"
-    ],
+    "unlock_build_objects": ["SulfurPit"],
     "unlock_item_recipes": [],
     "icon_name": "SulfurPit",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5505,9 +4840,7 @@
     "icon": "t_icon_buildobject_sulfurpit"
   },
   "Product_WeaponFactory_Dirty_Grade_01": {
-    "unlock_build_objects": [
-      "WeaponFactory_Dirty_01"
-    ],
+    "unlock_build_objects": ["WeaponFactory_Dirty_01"],
     "unlock_item_recipes": [],
     "icon_name": "WeaponFactory_Dirty_01",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5520,9 +4853,7 @@
     "icon": "t_icon_buildobject_weaponfactory_dirty_01"
   },
   "Product_WeaponFactory_Dirty_Grade_02": {
-    "unlock_build_objects": [
-      "WeaponFactory_Dirty_02"
-    ],
+    "unlock_build_objects": ["WeaponFactory_Dirty_02"],
     "unlock_item_recipes": [],
     "icon_name": "WeaponFactory_Dirty_02",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5535,9 +4866,7 @@
     "icon": "t_icon_buildobject_weaponfactory_dirty_02"
   },
   "Product_WeaponFactory_Dirty_Grade_03": {
-    "unlock_build_objects": [
-      "WeaponFactory_Dirty_03"
-    ],
+    "unlock_build_objects": ["WeaponFactory_Dirty_03"],
     "unlock_item_recipes": [],
     "icon_name": "WeaponFactory_Dirty_03",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5550,9 +4879,7 @@
     "icon": "t_icon_buildobject_weaponfactory_dirty_03"
   },
   "Product_WorkBench_SkillUnlock": {
-    "unlock_build_objects": [
-      "WorkBench_SkillUnlock"
-    ],
+    "unlock_build_objects": ["WorkBench_SkillUnlock"],
     "unlock_item_recipes": [],
     "icon_name": "WorkBench_SkillUnlock",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5565,9 +4892,7 @@
     "icon": "t_icon_buildobject_workbench_skillunlock"
   },
   "Refrigerator": {
-    "unlock_build_objects": [
-      "Refrigerator"
-    ],
+    "unlock_build_objects": ["Refrigerator"],
     "unlock_item_recipes": [],
     "icon_name": "Refrigerator",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5581,9 +4906,7 @@
   },
   "ReinforcedArrow": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ReinforcedArrow"
-    ],
+    "unlock_item_recipes": ["ReinforcedArrow"],
     "icon_name": "ReinforcedArrow",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5595,9 +4918,7 @@
     "icon": "t_itemicon_ammo_reinforcedarrow"
   },
   "RepairBench": {
-    "unlock_build_objects": [
-      "RepairBench"
-    ],
+    "unlock_build_objects": ["RepairBench"],
     "unlock_item_recipes": [],
     "icon_name": "RepairBench",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5611,9 +4932,7 @@
   },
   "RifleBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "RifleBullet"
-    ],
+    "unlock_item_recipes": ["RifleBullet"],
     "icon_name": "RifleBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5626,9 +4945,7 @@
   },
   "RoughBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "RoughBullet"
-    ],
+    "unlock_item_recipes": ["RoughBullet"],
     "icon_name": "RoughBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5641,9 +4958,7 @@
   },
   "SFArmor": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SFArmor"
-    ],
+    "unlock_item_recipes": ["SFArmor"],
     "icon_name": "SFArmor",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5656,9 +4971,7 @@
   },
   "SFArmorCold": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SFArmorCold"
-    ],
+    "unlock_item_recipes": ["SFArmorCold"],
     "icon_name": "SFArmorCold",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5671,9 +4984,7 @@
   },
   "SFArmorHeat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SFArmorHeat"
-    ],
+    "unlock_item_recipes": ["SFArmorHeat"],
     "icon_name": "SFArmorHeat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5686,9 +4997,7 @@
   },
   "SFArmorWeight": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SFArmorWeight"
-    ],
+    "unlock_item_recipes": ["SFArmorWeight"],
     "icon_name": "SFArmorWeight",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5701,9 +5010,7 @@
   },
   "SFArrow": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SFArrow"
-    ],
+    "unlock_item_recipes": ["SFArrow"],
     "icon_name": "SFArrow",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5716,9 +5023,7 @@
   },
   "SFBow": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SFBow"
-    ],
+    "unlock_item_recipes": ["SFBow"],
     "icon_name": "SFBow",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5731,9 +5036,7 @@
   },
   "SFHelmet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SFHelmet"
-    ],
+    "unlock_item_recipes": ["SFHelmet"],
     "icon_name": "SFHelmet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5780,9 +5083,7 @@
   },
   "Salvage_TreasureBoxKey02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Salvage_TreasureBoxKey02"
-    ],
+    "unlock_item_recipes": ["Salvage_TreasureBoxKey02"],
     "icon_name": "Salvage_TreasureBoxKey02",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5794,9 +5095,7 @@
     "icon": "t_itemicon_salvage_treasureboxkey02"
   },
   "SanityDecrease1": {
-    "unlock_build_objects": [
-      "SanityDecrease1"
-    ],
+    "unlock_build_objects": ["SanityDecrease1"],
     "unlock_item_recipes": [],
     "icon_name": "SanityDecrease1",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5809,10 +5108,7 @@
     "icon": "t_icon_buildobject_sanitydecrease1"
   },
   "ScientistFlagSet": {
-    "unlock_build_objects": [
-      "Scientist_Flag",
-      "Scientist_Banner"
-    ],
+    "unlock_build_objects": ["Scientist_Flag", "Scientist_Banner"],
     "unlock_item_recipes": [],
     "icon_name": "Scientist_Flag",
     "require_defeat_tower_boss": "EPalBossType::SnowBoss",
@@ -5826,9 +5122,7 @@
   },
   "Shield_01": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Shield_01"
-    ],
+    "unlock_item_recipes": ["Shield_01"],
     "icon_name": "Shield_01",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5841,9 +5135,7 @@
   },
   "Shield_02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Shield_02"
-    ],
+    "unlock_item_recipes": ["Shield_02"],
     "icon_name": "Shield_02",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5856,9 +5148,7 @@
   },
   "Shield_03": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Shield_03"
-    ],
+    "unlock_item_recipes": ["Shield_03"],
     "icon_name": "Shield_03",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5871,9 +5161,7 @@
   },
   "Shield_04": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Shield_04"
-    ],
+    "unlock_item_recipes": ["Shield_04"],
     "icon_name": "Shield_04",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5886,9 +5174,7 @@
   },
   "Shield_05": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Shield_Ultra"
-    ],
+    "unlock_item_recipes": ["Shield_Ultra"],
     "icon_name": "Shield_05",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5901,9 +5187,7 @@
   },
   "Shield_07": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Shield_07"
-    ],
+    "unlock_item_recipes": ["Shield_07"],
     "icon_name": "Shield_07",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5916,9 +5200,7 @@
   },
   "Shield_SF": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Shield_SF"
-    ],
+    "unlock_item_recipes": ["Shield_SF"],
     "icon_name": "Shield_SF",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5931,9 +5213,7 @@
   },
   "ShotGunBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "ShotgunBullet"
-    ],
+    "unlock_item_recipes": ["ShotgunBullet"],
     "icon_name": "ShotGunBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5945,9 +5225,7 @@
     "icon": "t_itemicon_ammo_shotgunbullet"
   },
   "Signboard": {
-    "unlock_build_objects": [
-      "Signboard"
-    ],
+    "unlock_build_objects": ["Signboard"],
     "unlock_item_recipes": [],
     "icon_name": "Signboard",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5960,9 +5238,7 @@
     "icon": "t_icon_buildobject_signboard"
   },
   "Silo": {
-    "unlock_build_objects": [
-      "Silo"
-    ],
+    "unlock_build_objects": ["Silo"],
     "unlock_item_recipes": [],
     "icon_name": "Silo",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -5976,9 +5252,7 @@
   },
   "SkillUnlock_Alpaca": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Alpaca"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Alpaca"],
     "icon_name": "Alpaca",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -5991,9 +5265,7 @@
   },
   "SkillUnlock_AmaterasuWolf": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_AmaterasuWolf"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_AmaterasuWolf"],
     "icon_name": "AmaterasuWolf",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6006,9 +5278,7 @@
   },
   "SkillUnlock_AmaterasuWolf_Dark": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_AmaterasuWolf_Dark"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_AmaterasuWolf_Dark"],
     "icon_name": "AmaterasuWolf_Dark",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6021,9 +5291,7 @@
   },
   "SkillUnlock_BadCatgirl": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BadCatgirl"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BadCatgirl"],
     "icon_name": "BadCatgirl",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6036,9 +5304,7 @@
   },
   "SkillUnlock_BirdDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BirdDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BirdDragon"],
     "icon_name": "BirdDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6051,9 +5317,7 @@
   },
   "SkillUnlock_BirdDragon_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BirdDragon_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BirdDragon_Ice"],
     "icon_name": "BirdDragon_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6066,9 +5330,7 @@
   },
   "SkillUnlock_BlackCentaur": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BlackCentaur"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BlackCentaur"],
     "icon_name": "BlackCentaur",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6081,9 +5343,7 @@
   },
   "SkillUnlock_BlackGriffon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BlackGriffon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BlackGriffon"],
     "icon_name": "BlackGriffon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6096,9 +5356,7 @@
   },
   "SkillUnlock_BlackMetalDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BlackMetalDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BlackMetalDragon"],
     "icon_name": "BlackMetalDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6111,9 +5369,7 @@
   },
   "SkillUnlock_BlackPuppy": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BlackPuppy"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BlackPuppy"],
     "icon_name": "BlackPuppy",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6126,9 +5382,7 @@
   },
   "SkillUnlock_BlueDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BlueDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BlueDragon"],
     "icon_name": "BlueDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6141,9 +5395,7 @@
   },
   "SkillUnlock_BlueDragon_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BlueDragon_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BlueDragon_Ice"],
     "icon_name": "BlueDragon_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6156,9 +5408,7 @@
   },
   "SkillUnlock_BlueSkyDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BlueSkyDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BlueSkyDragon"],
     "icon_name": "BlueSkyDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6171,9 +5421,7 @@
   },
   "SkillUnlock_BlueThunderHorse": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_BlueThunderHorse"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_BlueThunderHorse"],
     "icon_name": "BlueThunderHorse",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6186,9 +5434,7 @@
   },
   "SkillUnlock_Boar": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Boar"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Boar"],
     "icon_name": "Boar",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6201,9 +5447,7 @@
   },
   "SkillUnlock_Carbunclo": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Carbunclo"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Carbunclo"],
     "icon_name": "Carbunclo",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6216,9 +5460,7 @@
   },
   "SkillUnlock_ColorfulBird": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_ColorfulBird"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_ColorfulBird"],
     "icon_name": "ColorfulBird",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6231,9 +5473,7 @@
   },
   "SkillUnlock_CubeTurtle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_CubeTurtle"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_CubeTurtle"],
     "icon_name": "CubeTurtle",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6246,9 +5486,7 @@
   },
   "SkillUnlock_CubeTurtle_Neutral": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_CubeTurtle_Neutral"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_CubeTurtle_Neutral"],
     "icon_name": "CubeTurtle_Neutral",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6261,9 +5499,7 @@
   },
   "SkillUnlock_DarkMechaDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_DarkMechaDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_DarkMechaDragon"],
     "icon_name": "DarkMechaDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6276,9 +5512,7 @@
   },
   "SkillUnlock_Deer": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Deer"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Deer"],
     "icon_name": "Deer",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6291,9 +5525,7 @@
   },
   "SkillUnlock_Deer_Ground": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Deer_Ground"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Deer_Ground"],
     "icon_name": "Deer_Ground",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6306,9 +5538,7 @@
   },
   "SkillUnlock_DomeArmorDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_DomeArmorDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_DomeArmorDragon"],
     "icon_name": "DomeArmorDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6321,9 +5551,7 @@
   },
   "SkillUnlock_ElecPanda": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_ElecPanda"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_ElecPanda"],
     "icon_name": "ElecPanda",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6336,9 +5564,7 @@
   },
   "SkillUnlock_FairyDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FairyDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FairyDragon"],
     "icon_name": "FairyDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6351,9 +5577,7 @@
   },
   "SkillUnlock_FairyDragon_Water": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FairyDragon_Water"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FairyDragon_Water"],
     "icon_name": "FairyDragon_Water",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6366,9 +5590,7 @@
   },
   "SkillUnlock_FeatherOstrich": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FeatherOstrich"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FeatherOstrich"],
     "icon_name": "FeatherOstrich",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6381,9 +5603,7 @@
   },
   "SkillUnlock_FengyunDeeper": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FengyunDeeper"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FengyunDeeper"],
     "icon_name": "FengyunDeeper",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6396,9 +5616,7 @@
   },
   "SkillUnlock_FengyunDeeper_Electric": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FengyunDeeper_Electric"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FengyunDeeper_Electric"],
     "icon_name": "FengyunDeeper_Electric",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6411,9 +5629,7 @@
   },
   "SkillUnlock_FireKirin": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FireKirin"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FireKirin"],
     "icon_name": "FireKirin",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6426,9 +5642,7 @@
   },
   "SkillUnlock_FireKirin_Dark": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FireKirin_Dark"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FireKirin_Dark"],
     "icon_name": "FireKirin_Dark",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6441,9 +5655,7 @@
   },
   "SkillUnlock_FlameBuffalo": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FlameBuffalo"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FlameBuffalo"],
     "icon_name": "FlameBuffalo",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6456,9 +5668,7 @@
   },
   "SkillUnlock_FlowerDinosaur": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FlowerDinosaur"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FlowerDinosaur"],
     "icon_name": "FlowerDinosaur",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6471,9 +5681,7 @@
   },
   "SkillUnlock_FlowerDinosaur_Electric": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_FlowerDinosaur_Electric"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_FlowerDinosaur_Electric"],
     "icon_name": "FlowerDinosaur_Electric",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6486,9 +5694,7 @@
   },
   "SkillUnlock_Garm": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Garm"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Garm"],
     "icon_name": "Garm",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6501,9 +5707,7 @@
   },
   "SkillUnlock_GhostAnglerfish": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GhostAnglerfish"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GhostAnglerfish"],
     "icon_name": "GhostAnglerfish",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6516,9 +5720,7 @@
   },
   "SkillUnlock_GhostAnglerfish_Fire": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GhostAnglerfish_Fire"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GhostAnglerfish_Fire"],
     "icon_name": "GhostAnglerfish_Fire",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6531,9 +5733,7 @@
   },
   "SkillUnlock_GhostBeast": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GhostBeast"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GhostBeast"],
     "icon_name": "GhostBeast",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6546,9 +5746,7 @@
   },
   "SkillUnlock_GhostDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GhostDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GhostDragon"],
     "icon_name": "GhostDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6561,9 +5759,7 @@
   },
   "SkillUnlock_GhostDragon_Fire": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GhostDragon_Fire"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GhostDragon_Fire"],
     "icon_name": "GhostDragon_Fire",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6576,9 +5772,7 @@
   },
   "SkillUnlock_GoldenHorse": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GoldenHorse"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GoldenHorse"],
     "icon_name": "GoldenHorse",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6591,9 +5785,7 @@
   },
   "SkillUnlock_GrassGolem": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GrassGolem"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GrassGolem"],
     "icon_name": "GrassGolem",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6606,9 +5798,7 @@
   },
   "SkillUnlock_GrassGolem_Dark": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GrassGolem_Dark"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GrassGolem_Dark"],
     "icon_name": "GrassGolem_Dark",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6621,9 +5811,7 @@
   },
   "SkillUnlock_GrassMammoth": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GrassMammoth"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GrassMammoth"],
     "icon_name": "GrassMammoth",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6636,9 +5824,7 @@
   },
   "SkillUnlock_GrassMammoth_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GrassMammoth_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GrassMammoth_Ice"],
     "icon_name": "GrassMammoth_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6651,9 +5837,7 @@
   },
   "SkillUnlock_GrassPanda": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GrassPanda"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GrassPanda"],
     "icon_name": "GrassPanda",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6666,9 +5850,7 @@
   },
   "SkillUnlock_GrassPanda_Electric": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GrassPanda_Electric"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GrassPanda_Electric"],
     "icon_name": "GrassPanda_Electric",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6681,9 +5863,7 @@
   },
   "SkillUnlock_GuardianDog": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_GuardianDog"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_GuardianDog"],
     "icon_name": "GuardianDog",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6696,9 +5876,7 @@
   },
   "SkillUnlock_HadesBird": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_HadesBird"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_HadesBird"],
     "icon_name": "HadesBird",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6711,9 +5889,7 @@
   },
   "SkillUnlock_HadesBird_Electric": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_HadesBird_Electric"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_HadesBird_Electric"],
     "icon_name": "HadesBird_Electric",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6726,9 +5902,7 @@
   },
   "SkillUnlock_HawkBird": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_HawkBird"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_HawkBird"],
     "icon_name": "HawkBird",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6741,9 +5915,7 @@
   },
   "SkillUnlock_Horus": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Horus"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Horus"],
     "icon_name": "Horus",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6756,9 +5928,7 @@
   },
   "SkillUnlock_Horus_Water": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Horus_Water"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Horus_Water"],
     "icon_name": "Horus_Water",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6771,9 +5941,7 @@
   },
   "SkillUnlock_IceDeer": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_IceDeer"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_IceDeer"],
     "icon_name": "IceDeer",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6786,9 +5954,7 @@
   },
   "SkillUnlock_IceHorse": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_IceHorse"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_IceHorse"],
     "icon_name": "IceHorse",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6801,9 +5967,7 @@
   },
   "SkillUnlock_IceHorse_Dark": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_IceHorse_Dark"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_IceHorse_Dark"],
     "icon_name": "IceHorse_Dark",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6816,9 +5980,7 @@
   },
   "SkillUnlock_IceNarwhal": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_IceNarwhal"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_IceNarwhal"],
     "icon_name": "IceNarwhal",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6831,9 +5993,7 @@
   },
   "SkillUnlock_IceNarwhal_Fire": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_IceNarwhal_Fire"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_IceNarwhal_Fire"],
     "icon_name": "IceNarwhal_Fire",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6846,9 +6006,7 @@
   },
   "SkillUnlock_IceSeal": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_IceSeal"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_IceSeal"],
     "icon_name": "IceSeal",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6861,9 +6019,7 @@
   },
   "SkillUnlock_IceSeal_Ground": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_IceSeal_Ground"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_IceSeal_Ground"],
     "icon_name": "IceSeal_Ground",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6876,9 +6032,7 @@
   },
   "SkillUnlock_JetDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_JetDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_JetDragon"],
     "icon_name": "JetDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6891,9 +6045,7 @@
   },
   "SkillUnlock_KingAlpaca": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_KingAlpaca"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_KingAlpaca"],
     "icon_name": "KingAlpaca",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6906,9 +6058,7 @@
   },
   "SkillUnlock_KingAlpaca_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_KingAlpaca_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_KingAlpaca_Ice"],
     "icon_name": "KingAlpaca_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6921,9 +6071,7 @@
   },
   "SkillUnlock_KingBahamut": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_KingBahamut"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_KingBahamut"],
     "icon_name": "KingBahamut",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6936,9 +6084,7 @@
   },
   "SkillUnlock_KingBahamut_Dragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_KingBahamut_Dragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_KingBahamut_Dragon"],
     "icon_name": "KingBahamut_Dragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6951,9 +6097,7 @@
   },
   "SkillUnlock_KingSunfish": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_KingSunfish"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_KingSunfish"],
     "icon_name": "KingSunfish",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6966,9 +6110,7 @@
   },
   "SkillUnlock_KingSunfish_Thunder": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_KingSunfish_Thunder"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_KingSunfish_Thunder"],
     "icon_name": "KingSunfish_Thunder",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6981,9 +6123,7 @@
   },
   "SkillUnlock_Kirin": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Kirin"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Kirin"],
     "icon_name": "Kirin",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -6996,9 +6136,7 @@
   },
   "SkillUnlock_Kirin_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Kirin_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Kirin_Ice"],
     "icon_name": "Kirin_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7011,9 +6149,7 @@
   },
   "SkillUnlock_Kitsunebi": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Kitsunebi"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Kitsunebi"],
     "icon_name": "Kitsunebi",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7026,9 +6162,7 @@
   },
   "SkillUnlock_Kitsunebi_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Kitsunebi_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Kitsunebi_Ice"],
     "icon_name": "Kitsunebi_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7041,9 +6175,7 @@
   },
   "SkillUnlock_LazyDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_LazyDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_LazyDragon"],
     "icon_name": "LazyDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7056,9 +6188,7 @@
   },
   "SkillUnlock_LazyDragon_Electric": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_LazyDragon_Electric"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_LazyDragon_Electric"],
     "icon_name": "LazyDragon_Electric",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7071,9 +6201,7 @@
   },
   "SkillUnlock_LegendDeer": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_LegendDeer"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_LegendDeer"],
     "icon_name": "LegendDeer",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7086,9 +6214,7 @@
   },
   "SkillUnlock_LotusDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_LotusDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_LotusDragon"],
     "icon_name": "LotusDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7101,9 +6227,7 @@
   },
   "SkillUnlock_Manticore": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Manticore"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Manticore"],
     "icon_name": "Manticore",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7116,9 +6240,7 @@
   },
   "SkillUnlock_Manticore_Dark": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Manticore_Dark"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Manticore_Dark"],
     "icon_name": "Manticore_Dark",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7131,9 +6253,7 @@
   },
   "SkillUnlock_Monkey": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Monkey"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Monkey"],
     "icon_name": "Monkey",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7146,9 +6266,7 @@
   },
   "SkillUnlock_Monkey_Fire": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Monkey_Fire"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Monkey_Fire"],
     "icon_name": "Monkey_Fire",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7161,9 +6279,7 @@
   },
   "SkillUnlock_MoonQueen": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_MoonQueen"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_MoonQueen"],
     "icon_name": "MoonQueen",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7176,9 +6292,7 @@
   },
   "SkillUnlock_MopKing": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_MopKing"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_MopKing"],
     "icon_name": "MopKing",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7191,9 +6305,7 @@
   },
   "SkillUnlock_MushroomDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_MushroomDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_MushroomDragon"],
     "icon_name": "MushroomDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7206,9 +6318,7 @@
   },
   "SkillUnlock_MushroomDragon_Dark": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_MushroomDragon_Dark"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_MushroomDragon_Dark"],
     "icon_name": "MushroomDragon_Dark",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7221,9 +6331,7 @@
   },
   "SkillUnlock_NaughtyCat": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_NaughtyCat"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_NaughtyCat"],
     "icon_name": "NaughtyCat",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7236,9 +6344,7 @@
   },
   "SkillUnlock_NightBlueHorse": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_NightBlueHorse"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_NightBlueHorse"],
     "icon_name": "NightBlueHorse",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7251,9 +6357,7 @@
   },
   "SkillUnlock_NightBlueHorse_Neutral": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_NightBlueHorse_Neutral"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_NightBlueHorse_Neutral"],
     "icon_name": "NightBlueHorse_Neutral",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7266,9 +6370,7 @@
   },
   "SkillUnlock_Penguin": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Penguin"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Penguin"],
     "icon_name": "Penguin",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7281,9 +6383,7 @@
   },
   "SkillUnlock_Penguin_Electric": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Penguin_Electric"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Penguin_Electric"],
     "icon_name": "Penguin_Electric",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7296,9 +6396,7 @@
   },
   "SkillUnlock_Plesiosaur": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Plesiosaur"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Plesiosaur"],
     "icon_name": "Plesiosaur",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7311,9 +6409,7 @@
   },
   "SkillUnlock_PoseidonOrca": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_PoseidonOrca"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_PoseidonOrca"],
     "icon_name": "PoseidonOrca",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7326,9 +6422,7 @@
   },
   "SkillUnlock_PurpleSpider": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_PurpleSpider"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_PurpleSpider"],
     "icon_name": "PurpleSpider",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7341,9 +6435,7 @@
   },
   "SkillUnlock_RedArmorBird": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_RedArmorBird"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_RedArmorBird"],
     "icon_name": "RedArmorBird",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7356,9 +6448,7 @@
   },
   "SkillUnlock_SaintCentaur": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_SaintCentaur"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_SaintCentaur"],
     "icon_name": "SaintCentaur",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7371,9 +6461,7 @@
   },
   "SkillUnlock_SakuraSaurus": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_SakuraSaurus"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_SakuraSaurus"],
     "icon_name": "SakuraSaurus",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7386,9 +6474,7 @@
   },
   "SkillUnlock_SakuraSaurus_Water": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Sakurasaurus_Water"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Sakurasaurus_Water"],
     "icon_name": "SakuraSaurus_Water",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7401,9 +6487,7 @@
   },
   "SkillUnlock_Serpent": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Serpent"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Serpent"],
     "icon_name": "Serpent",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7416,9 +6500,7 @@
   },
   "SkillUnlock_Serpent_Ground": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Serpent_Ground"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Serpent_Ground"],
     "icon_name": "Serpent_Ground",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7431,9 +6513,7 @@
   },
   "SkillUnlock_SkyDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_SkyDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_SkyDragon"],
     "icon_name": "SkyDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7446,9 +6526,7 @@
   },
   "SkillUnlock_SkyDragon_Grass": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_SkyDragon_Grass"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_SkyDragon_Grass"],
     "icon_name": "SkyDragon_Grass",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7461,9 +6539,7 @@
   },
   "SkillUnlock_SnowTigerBeastman": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_SnowTigerBeastman"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_SnowTigerBeastman"],
     "icon_name": "SnowTigerBeastman",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7476,9 +6552,7 @@
   },
   "SkillUnlock_SumoDog": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_SumoDog"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_SumoDog"],
     "icon_name": "SumoDog",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7491,9 +6565,7 @@
   },
   "SkillUnlock_Suzaku": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Suzaku"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Suzaku"],
     "icon_name": "Suzaku",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7506,9 +6578,7 @@
   },
   "SkillUnlock_Suzaku_Water": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Suzaku_Water"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Suzaku_Water"],
     "icon_name": "Suzaku_Water",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7521,9 +6591,7 @@
   },
   "SkillUnlock_ThiefBird": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_ThiefBird"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_ThiefBird"],
     "icon_name": "ThiefBird",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7536,9 +6604,7 @@
   },
   "SkillUnlock_ThunderBird": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_ThunderBird"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_ThunderBird"],
     "icon_name": "ThunderBird",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7551,9 +6617,7 @@
   },
   "SkillUnlock_ThunderBird_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_ThunderBird_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_ThunderBird_Ice"],
     "icon_name": "ThunderBird_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7566,9 +6630,7 @@
   },
   "SkillUnlock_ThunderDog": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_ThunderDog"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_ThunderDog"],
     "icon_name": "ThunderDog",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7581,9 +6643,7 @@
   },
   "SkillUnlock_ThunderFluffyBird": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_ThunderFluffyBird"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_ThunderFluffyBird"],
     "icon_name": "ThunderFluffyBird",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7596,9 +6656,7 @@
   },
   "SkillUnlock_Thunderdog_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Thunderdog_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Thunderdog_Ice"],
     "icon_name": "Thunderdog_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7611,9 +6669,7 @@
   },
   "SkillUnlock_TropicalOstrich": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_TropicalOstrich"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_TropicalOstrich"],
     "icon_name": "TropicalOstrich",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7626,9 +6682,7 @@
   },
   "SkillUnlock_Umihebi": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Umihebi"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Umihebi"],
     "icon_name": "Umihebi",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7641,9 +6695,7 @@
   },
   "SkillUnlock_Umihebi_Fire": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Umihebi_Fire"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Umihebi_Fire"],
     "icon_name": "Umihebi_Fire",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7656,9 +6708,7 @@
   },
   "SkillUnlock_VolcanicMonster": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_VolcanicMonster"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_VolcanicMonster"],
     "icon_name": "VolcanicMonster",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7671,9 +6721,7 @@
   },
   "SkillUnlock_VolcanicMonster_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_VolcanicMonster_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_VolcanicMonster_Ice"],
     "icon_name": "VolcanicMonster_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7686,9 +6734,7 @@
   },
   "SkillUnlock_VolcanoDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_VolcanoDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_VolcanoDragon"],
     "icon_name": "VolcanoDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7701,9 +6747,7 @@
   },
   "SkillUnlock_VolcanoDragon_Ice": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_VolcanoDragon_Ice"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_VolcanoDragon_Ice"],
     "icon_name": "VolcanoDragon_Ice",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7716,9 +6760,7 @@
   },
   "SkillUnlock_WeaselDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_WeaselDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_WeaselDragon"],
     "icon_name": "WeaselDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7731,9 +6773,7 @@
   },
   "SkillUnlock_WeaselDragon_Fire": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_WeaselDragon_Fire"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_WeaselDragon_Fire"],
     "icon_name": "WeaselDragon_Fire",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7746,9 +6786,7 @@
   },
   "SkillUnlock_WhiteAlienDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_WhiteAlienDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_WhiteAlienDragon"],
     "icon_name": "WhiteAlienDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7761,9 +6799,7 @@
   },
   "SkillUnlock_WhiteDeer": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_WhiteDeer"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_WhiteDeer"],
     "icon_name": "WhiteDeer",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7776,9 +6812,7 @@
   },
   "SkillUnlock_WhiteDeer_Dark": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_WhiteDeer_Dark"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_WhiteDeer_Dark"],
     "icon_name": "WhiteDeer_Dark",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7791,9 +6825,7 @@
   },
   "SkillUnlock_WhiteShieldDragon": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_WhiteShieldDragon"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_WhiteShieldDragon"],
     "icon_name": "WhiteShieldDragon",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7806,9 +6838,7 @@
   },
   "SkillUnlock_Yeti": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Yeti"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Yeti"],
     "icon_name": "Yeti",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7821,9 +6851,7 @@
   },
   "SkillUnlock_Yeti_Grass": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkillUnlock_Yeti_Grass"
-    ],
+    "unlock_item_recipes": ["SkillUnlock_Yeti_Grass"],
     "icon_name": "Yeti_Grass",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7835,9 +6863,7 @@
     "icon": "t_yeti_grass_icon_normal"
   },
   "SkinChange": {
-    "unlock_build_objects": [
-      "SkinChange"
-    ],
+    "unlock_build_objects": ["SkinChange"],
     "unlock_item_recipes": [],
     "icon_name": "SkinChange",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -7851,9 +6877,7 @@
   },
   "SkyAssaultRifle": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyAssaultRifle"
-    ],
+    "unlock_item_recipes": ["SkyAssaultRifle"],
     "icon_name": "SkyAssaultRifle",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7866,9 +6890,7 @@
   },
   "SkyAssaultRifleBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyAssaultRifleBullet"
-    ],
+    "unlock_item_recipes": ["SkyAssaultRifleBullet"],
     "icon_name": "SkyAssaultRifleBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7881,9 +6903,7 @@
   },
   "SkyBeamSword": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyBeamSword"
-    ],
+    "unlock_item_recipes": ["SkyBeamSword"],
     "icon_name": "SkyBeamSword",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7896,9 +6916,7 @@
   },
   "SkyBow": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyBow"
-    ],
+    "unlock_item_recipes": ["SkyBow"],
     "icon_name": "SkyBow",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7911,9 +6929,7 @@
   },
   "SkyBowArrow": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyBowArrow"
-    ],
+    "unlock_item_recipes": ["SkyBowArrow"],
     "icon_name": "SkyBowArrow",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7926,9 +6942,7 @@
   },
   "SkyGrenadeLauncher": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyGrenadeLauncher"
-    ],
+    "unlock_item_recipes": ["SkyGrenadeLauncher"],
     "icon_name": "SkyGrenadeLauncher",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7941,9 +6955,7 @@
   },
   "SkyGrenadeLauncherBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyGrenadeLauncherBullet"
-    ],
+    "unlock_item_recipes": ["SkyGrenadeLauncherBullet"],
     "icon_name": "SkyGrenadeLauncherBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -7955,10 +6967,7 @@
     "icon": "t_itemicon_ammo_skygrenadelauncherbullet"
   },
   "SkyIslandFlagSet": {
-    "unlock_build_objects": [
-      "SkyIsland_Flag",
-      "SkyIsland_Banner"
-    ],
+    "unlock_build_objects": ["SkyIsland_Flag", "SkyIsland_Banner"],
     "unlock_item_recipes": [],
     "icon_name": "SkyIsland_Flag",
     "require_defeat_tower_boss": "EPalBossType::SorajimaBoss",
@@ -7971,9 +6980,7 @@
     "icon": "t_icon_buildobject_skyisland_flag"
   },
   "SkyIslandOrePit": {
-    "unlock_build_objects": [
-      "SkyIslandOrePit"
-    ],
+    "unlock_build_objects": ["SkyIslandOrePit"],
     "unlock_item_recipes": [],
     "icon_name": "SkyIslandOrePit",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -7987,9 +6994,7 @@
   },
   "SkyShotgun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyShotgun"
-    ],
+    "unlock_item_recipes": ["SkyShotgun"],
     "icon_name": "SkyShotgun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8002,9 +7007,7 @@
   },
   "SkyShotgunBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyShotgunBullet"
-    ],
+    "unlock_item_recipes": ["SkyShotgunBullet"],
     "icon_name": "SkyShotgunBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8017,9 +7020,7 @@
   },
   "SkySubmachineGun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkySubmachineGun"
-    ],
+    "unlock_item_recipes": ["SkySubmachineGun"],
     "icon_name": "SkySubmachineGun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8032,9 +7033,7 @@
   },
   "SkySubmachineGunBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkySubmachineGunBullet"
-    ],
+    "unlock_item_recipes": ["SkySubmachineGunBullet"],
     "icon_name": "SkySubmachineGunBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8047,9 +7046,7 @@
   },
   "SkyislandIngot": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SkyislandIngot"
-    ],
+    "unlock_item_recipes": ["SkyislandIngot"],
     "icon_name": "SkyislandIngot",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8061,9 +7058,7 @@
     "icon": "t_itemicon_material_skyislandingot"
   },
   "Snowman": {
-    "unlock_build_objects": [
-      "Snowman"
-    ],
+    "unlock_build_objects": ["Snowman"],
     "unlock_item_recipes": [],
     "icon_name": "Snowman",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8076,9 +7071,7 @@
     "icon": "t_icon_buildobject_snowman"
   },
   "Spa": {
-    "unlock_build_objects": [
-      "Spa"
-    ],
+    "unlock_build_objects": ["Spa"],
     "unlock_item_recipes": [],
     "icon_name": "Spa",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8091,9 +7084,7 @@
     "icon": "t_icon_buildobject_spa"
   },
   "Spa2": {
-    "unlock_build_objects": [
-      "Spa2"
-    ],
+    "unlock_build_objects": ["Spa2"],
     "unlock_item_recipes": [],
     "icon_name": "Spa2",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8106,9 +7097,7 @@
     "icon": "t_icon_buildobject_spa_2"
   },
   "Spa3": {
-    "unlock_build_objects": [
-      "Spa3"
-    ],
+    "unlock_build_objects": ["Spa3"],
     "unlock_item_recipes": [],
     "icon_name": "Spa3",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8122,9 +7111,7 @@
   },
   "Spear": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Spear"
-    ],
+    "unlock_item_recipes": ["Spear"],
     "icon_name": "Spear",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8137,9 +7124,7 @@
   },
   "Spear_2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Spear_2"
-    ],
+    "unlock_item_recipes": ["Spear_2"],
     "icon_name": "Spear",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8152,9 +7137,7 @@
   },
   "Spear_3": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Spear_3"
-    ],
+    "unlock_item_recipes": ["Spear_3"],
     "icon_name": "Spear",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8167,9 +7150,7 @@
   },
   "Spear_ForestBoss": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Spear_ForestBoss"
-    ],
+    "unlock_item_recipes": ["Spear_ForestBoss"],
     "icon_name": "Spear_ForestBoss",
     "require_defeat_tower_boss": "EPalBossType::ForestBoss",
     "require_technology": "None",
@@ -8182,9 +7163,7 @@
   },
   "Spear_ForestBoss2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Spear_ForestBoss2"
-    ],
+    "unlock_item_recipes": ["Spear_ForestBoss2"],
     "icon_name": "Spear_ForestBoss2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8196,9 +7175,7 @@
     "icon": "t_itemicon_weapon_spear_forestboss2"
   },
   "Special_ElectricHatchingPalEgg": {
-    "unlock_build_objects": [
-      "ElectricHatchingPalEgg"
-    ],
+    "unlock_build_objects": ["ElectricHatchingPalEgg"],
     "unlock_item_recipes": [],
     "icon_name": "ElectricHatchingPalEgg",
     "require_defeat_tower_boss": "EPalBossType::DesertBoss",
@@ -8211,9 +7188,7 @@
     "icon": "t_icon_buildobject_electrichatchingpalegg"
   },
   "Special_HatchingPalEgg": {
-    "unlock_build_objects": [
-      "HatchingPalEgg"
-    ],
+    "unlock_build_objects": ["HatchingPalEgg"],
     "unlock_item_recipes": [],
     "icon_name": "HatchingPalEgg",
     "require_defeat_tower_boss": "EPalBossType::GrassBoss",
@@ -8226,9 +7201,7 @@
     "icon": "t_icon_buildobject_hatchingpalegg"
   },
   "Special_PalRankUp": {
-    "unlock_build_objects": [
-      "CharacterRankUp"
-    ],
+    "unlock_build_objects": ["CharacterRankUp"],
     "unlock_item_recipes": [],
     "icon_name": "CharacterRankUp",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8242,9 +7215,7 @@
   },
   "Special_PalSphere_Grade_01": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere"
-    ],
+    "unlock_item_recipes": ["PalSphere"],
     "icon_name": "CapturePrism",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8257,9 +7228,7 @@
   },
   "Special_PalSphere_Grade_02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere_Mega"
-    ],
+    "unlock_item_recipes": ["PalSphere_Mega"],
     "icon_name": "PalSphere_Mega",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8272,9 +7241,7 @@
   },
   "Special_PalSphere_Grade_03": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere_Giga"
-    ],
+    "unlock_item_recipes": ["PalSphere_Giga"],
     "icon_name": "PalSphere_Giga",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8287,9 +7254,7 @@
   },
   "Special_PalSphere_Grade_04": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere_Tera"
-    ],
+    "unlock_item_recipes": ["PalSphere_Tera"],
     "icon_name": "PalSphere_Tera",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8302,9 +7267,7 @@
   },
   "Special_PalSphere_Grade_05": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere_Master"
-    ],
+    "unlock_item_recipes": ["PalSphere_Master"],
     "icon_name": "PalSphere_Master",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8317,9 +7280,7 @@
   },
   "Special_PalSphere_Grade_06": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere_Legend"
-    ],
+    "unlock_item_recipes": ["PalSphere_Legend"],
     "icon_name": "PalSphere_Legend",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8332,9 +7293,7 @@
   },
   "Special_PalSphere_Grade_07": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "PalSphere_Ultimate"
-    ],
+    "unlock_item_recipes": ["PalSphere_Ultimate"],
     "icon_name": "PalSphere_Ultimate",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8346,9 +7305,7 @@
     "icon": "t_itemicon_palsphere_ultimate"
   },
   "Special_SphereFactory_Black_Grade_01": {
-    "unlock_build_objects": [
-      "SphereFactory_Black_01"
-    ],
+    "unlock_build_objects": ["SphereFactory_Black_01"],
     "unlock_item_recipes": [],
     "icon_name": "SphereFactory_Black_01",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8361,9 +7318,7 @@
     "icon": "t_icon_buildobject_spherefactory_black_01"
   },
   "Special_SphereFactory_Black_Grade_02": {
-    "unlock_build_objects": [
-      "SphereFactory_Black_02"
-    ],
+    "unlock_build_objects": ["SphereFactory_Black_02"],
     "unlock_item_recipes": [],
     "icon_name": "SphereFactory_Black_02",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8376,9 +7331,7 @@
     "icon": "t_icon_buildobject_spherefactory_black_02"
   },
   "Special_SphereFactory_Black_Grade_03": {
-    "unlock_build_objects": [
-      "SphereFactory_Black_03"
-    ],
+    "unlock_build_objects": ["SphereFactory_Black_03"],
     "unlock_item_recipes": [],
     "icon_name": "SphereFactory_Black_03",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8391,9 +7344,7 @@
     "icon": "t_icon_buildobject_spherefactory_black_03"
   },
   "SphereFactory_Black_04": {
-    "unlock_build_objects": [
-      "SphereFactory_Black_04"
-    ],
+    "unlock_build_objects": ["SphereFactory_Black_04"],
     "unlock_item_recipes": [],
     "icon_name": "SphereFactory_Black_04",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8407,9 +7358,7 @@
   },
   "SphereModule_Curve": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SphereModule_Curve"
-    ],
+    "unlock_item_recipes": ["SphereModule_Curve"],
     "icon_name": "SphereModule_Curve",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8422,9 +7371,7 @@
   },
   "SphereModule_Curve2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SphereModule_Curve2"
-    ],
+    "unlock_item_recipes": ["SphereModule_Curve2"],
     "icon_name": "SphereModule_Curve2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8437,9 +7384,7 @@
   },
   "SphereModule_Heavy": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SphereModule_Heavy"
-    ],
+    "unlock_item_recipes": ["SphereModule_Heavy"],
     "icon_name": "SphereModule_Heavy",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8452,9 +7397,7 @@
   },
   "SphereModule_Homing": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SphereModule_Homing"
-    ],
+    "unlock_item_recipes": ["SphereModule_Homing"],
     "icon_name": "SphereModule_Homing",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8467,9 +7410,7 @@
   },
   "SphereModule_Sniper": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SphereModule_Sniper"
-    ],
+    "unlock_item_recipes": ["SphereModule_Sniper"],
     "icon_name": "SphereModule_Sniper",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8482,9 +7423,7 @@
   },
   "SphereModule_Sniper2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "SphereModule_Sniper2"
-    ],
+    "unlock_item_recipes": ["SphereModule_Sniper2"],
     "icon_name": "SphereModule_Sniper2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8497,9 +7436,7 @@
   },
   "StainlessSteel": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "StainlessSteel"
-    ],
+    "unlock_item_recipes": ["StainlessSteel"],
     "icon_name": "StainlessSteel",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8511,9 +7448,7 @@
     "icon": "t_itemicon_material_stainlesssteel"
   },
   "Stone_Gate": {
-    "unlock_build_objects": [
-      "Stone_Gate"
-    ],
+    "unlock_build_objects": ["Stone_Gate"],
     "unlock_item_recipes": [],
     "icon_name": "Stone_Gate",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8559,9 +7494,7 @@
     "icon": "t_icon_buildobject_stone_foundation"
   },
   "Stump": {
-    "unlock_build_objects": [
-      "Stump"
-    ],
+    "unlock_build_objects": ["Stump"],
     "unlock_item_recipes": [],
     "icon_name": "Stump",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8575,9 +7508,7 @@
   },
   "Supplement": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Supplement"
-    ],
+    "unlock_item_recipes": ["Supplement"],
     "icon_name": "Supplement",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8605,9 +7536,7 @@
     "icon": "t_icon_buildobject_tablecircular_wood_none"
   },
   "TableDresser01_Stone": {
-    "unlock_build_objects": [
-      "TableDresser01_Stone"
-    ],
+    "unlock_build_objects": ["TableDresser01_Stone"],
     "unlock_item_recipes": [],
     "icon_name": "TableDresser01_Stone",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8621,9 +7550,7 @@
   },
   "Thermal_Core": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Thermal_Core"
-    ],
+    "unlock_item_recipes": ["Thermal_Core"],
     "icon_name": "Thermal_Core",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8635,9 +7562,7 @@
     "icon": "t_itemicon_material_thermal_core"
   },
   "ToolBoxV1": {
-    "unlock_build_objects": [
-      "ToolBoxV1"
-    ],
+    "unlock_build_objects": ["ToolBoxV1"],
     "unlock_item_recipes": [],
     "icon_name": "ToolBoxV1",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8650,9 +7575,7 @@
     "icon": "t_icon_buildobject_toolboxv1"
   },
   "Torch": {
-    "unlock_build_objects": [
-      "Torch"
-    ],
+    "unlock_build_objects": ["Torch"],
     "unlock_item_recipes": [],
     "icon_name": "TorchStand",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8665,9 +7588,7 @@
     "icon": "t_icon_buildobject_torchstand"
   },
   "TransmissionTower": {
-    "unlock_build_objects": [
-      "TransmissionTower"
-    ],
+    "unlock_build_objects": ["TransmissionTower"],
     "unlock_item_recipes": [],
     "icon_name": "TransmissionTower",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8680,9 +7601,7 @@
     "icon": "t_icon_buildobject_transmissiontower"
   },
   "Trap_LegHold": {
-    "unlock_build_objects": [
-      "Trap_LegHold"
-    ],
+    "unlock_build_objects": ["Trap_LegHold"],
     "unlock_item_recipes": [],
     "icon_name": "Trap_LegHold",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8695,9 +7614,7 @@
     "icon": "t_icon_buildobject_trap_leghold"
   },
   "Trap_LegHold_Big": {
-    "unlock_build_objects": [
-      "Trap_LegHold_Big"
-    ],
+    "unlock_build_objects": ["Trap_LegHold_Big"],
     "unlock_item_recipes": [],
     "icon_name": "Trap_LegHold",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8710,9 +7627,7 @@
     "icon": "t_icon_buildobject_trap_leghold"
   },
   "Trap_MineAttack": {
-    "unlock_build_objects": [
-      "Trap_MineAttack"
-    ],
+    "unlock_build_objects": ["Trap_MineAttack"],
     "unlock_item_recipes": [],
     "icon_name": "Trap_MineAttack",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8725,9 +7640,7 @@
     "icon": "t_icon_buildobject_trap_mineattack"
   },
   "Trap_MineElecShock": {
-    "unlock_build_objects": [
-      "Trap_MineElecShock"
-    ],
+    "unlock_build_objects": ["Trap_MineElecShock"],
     "unlock_item_recipes": [],
     "icon_name": "Trap_MineElecShock",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8740,9 +7653,7 @@
     "icon": "t_icon_buildobject_trap_mineelecshock"
   },
   "Trap_MineFreeze": {
-    "unlock_build_objects": [
-      "Trap_MineFreeze"
-    ],
+    "unlock_build_objects": ["Trap_MineFreeze"],
     "unlock_item_recipes": [],
     "icon_name": "Trap_MineFreeze",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8755,9 +7666,7 @@
     "icon": "t_icon_buildobject_trap_minefreeze"
   },
   "Trap_Noose": {
-    "unlock_build_objects": [
-      "Trap_Noose"
-    ],
+    "unlock_build_objects": ["Trap_Noose"],
     "unlock_item_recipes": [],
     "icon_name": "Trap_Noose",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8771,9 +7680,7 @@
   },
   "UnlockEquipmentSlot_Weapon_01": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "UnlockEquipmentSlot_Weapon_01"
-    ],
+    "unlock_item_recipes": ["UnlockEquipmentSlot_Weapon_01"],
     "icon_name": "UnlockEquipmentSlot_Weapon_01",
     "require_defeat_tower_boss": "EPalBossType::ElectricBoss",
     "require_technology": "None",
@@ -8786,9 +7693,7 @@
   },
   "UnlockEquipmentSlot_Weapon_02": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "UnlockEquipmentSlot_Weapon_02"
-    ],
+    "unlock_item_recipes": ["UnlockEquipmentSlot_Weapon_02"],
     "icon_name": "UnlockEquipmentSlot_Weapon_02",
     "require_defeat_tower_boss": "EPalBossType::SakurajimaBoss",
     "require_technology": "None",
@@ -8801,9 +7706,7 @@
   },
   "Unlock_Picking_Tier1": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Unlock_Picking_Tier1"
-    ],
+    "unlock_item_recipes": ["Unlock_Picking_Tier1"],
     "icon_name": "Unlock_Picking",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8816,9 +7719,7 @@
   },
   "Unlock_Picking_Tier2": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Unlock_Picking_Tier2"
-    ],
+    "unlock_item_recipes": ["Unlock_Picking_Tier2"],
     "icon_name": "Unlock_Picking_Tier2",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "Unlock_Picking_Tier1",
@@ -8831,9 +7732,7 @@
   },
   "Unlock_Picking_Tier3": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "Unlock_Picking_Tier3"
-    ],
+    "unlock_item_recipes": ["Unlock_Picking_Tier3"],
     "icon_name": "Unlock_Picking_Tier3",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "Unlock_Picking_Tier2",
@@ -8845,9 +7744,7 @@
     "icon": "t_itemicon_essential_unlock_picking_tier3"
   },
   "WallSignboard": {
-    "unlock_build_objects": [
-      "WallSignboard"
-    ],
+    "unlock_build_objects": ["WallSignboard"],
     "unlock_item_recipes": [],
     "icon_name": "WallSignboard",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8860,9 +7757,7 @@
     "icon": "t_icon_buildobject_wallsignboard"
   },
   "WallTorch": {
-    "unlock_build_objects": [
-      "WallTorch"
-    ],
+    "unlock_build_objects": ["WallTorch"],
     "unlock_item_recipes": [],
     "icon_name": "WallTorch",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8876,9 +7771,7 @@
   },
   "WaterBuildKit": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "WaterBuildKit"
-    ],
+    "unlock_item_recipes": ["WaterBuildKit"],
     "icon_name": "WaterBuildKit",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8890,9 +7783,7 @@
     "icon": "t_itemicon_essential_waterbuildkit"
   },
   "WeaponFactory_Dirty_04": {
-    "unlock_build_objects": [
-      "WeaponFactory_Dirty_04"
-    ],
+    "unlock_build_objects": ["WeaponFactory_Dirty_04"],
     "unlock_item_recipes": [],
     "icon_name": "WeaponFactory_Dirty_04",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -8906,9 +7797,7 @@
   },
   "WidePenetrateShotgun": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "WidePenetrateShotgun"
-    ],
+    "unlock_item_recipes": ["WidePenetrateShotgun"],
     "icon_name": "WidePenetrateShotgun",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8921,9 +7810,7 @@
   },
   "WidePenetrateShotgunBullet": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "WidePenetrateShotgunBullet"
-    ],
+    "unlock_item_recipes": ["WidePenetrateShotgunBullet"],
     "icon_name": "WidePenetrateShotgunBullet",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8936,9 +7823,7 @@
   },
   "WingGlider": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "WingGlider"
-    ],
+    "unlock_item_recipes": ["WingGlider"],
     "icon_name": "WingGlider",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8951,9 +7836,7 @@
   },
   "WingGlider_Fuel": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "WingGlider_Fuel"
-    ],
+    "unlock_item_recipes": ["WingGlider_Fuel"],
     "icon_name": "WingGlider_Fuel",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -8965,9 +7848,7 @@
     "icon": "t_itemicon_material_wingglider_fuel"
   },
   "Wood_Gate": {
-    "unlock_build_objects": [
-      "Wood_Gate"
-    ],
+    "unlock_build_objects": ["Wood_Gate"],
     "unlock_item_recipes": [],
     "icon_name": "Wood_Gate",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -9013,9 +7894,7 @@
     "icon": "t_icon_buildobject_wood_foundation"
   },
   "Wooden_ladder": {
-    "unlock_build_objects": [
-      "Wooden_ladder"
-    ],
+    "unlock_build_objects": ["Wooden_ladder"],
     "unlock_item_recipes": [],
     "icon_name": "Wooden_ladder",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -9028,9 +7907,7 @@
     "icon": "t_icon_buildobject_wooden_ladder"
   },
   "WorkSpeedIncrease1": {
-    "unlock_build_objects": [
-      "WorkSpeedIncrease1"
-    ],
+    "unlock_build_objects": ["WorkSpeedIncrease1"],
     "unlock_item_recipes": [],
     "icon_name": "WorkSpeedIncrease1",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -9043,9 +7920,7 @@
     "icon": "t_icon_buildobject_workspeedincrease1"
   },
   "Workbench": {
-    "unlock_build_objects": [
-      "Workbench"
-    ],
+    "unlock_build_objects": ["Workbench"],
     "unlock_item_recipes": [],
     "icon_name": "WorkBench",
     "require_defeat_tower_boss": "EPalBossType::None",
@@ -9059,9 +7934,7 @@
   },
   "WorldTreeIngot": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "WorldTreeIngot"
-    ],
+    "unlock_item_recipes": ["WorldTreeIngot"],
     "icon_name": "WorldTreeIngot",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",
@@ -9074,9 +7947,7 @@
   },
   "YakushimaBlade": {
     "unlock_build_objects": [],
-    "unlock_item_recipes": [
-      "YakushimaBlade"
-    ],
+    "unlock_item_recipes": ["YakushimaBlade"],
     "icon_name": "YakushimaBlade",
     "require_defeat_tower_boss": "EPalBossType::None",
     "require_technology": "None",

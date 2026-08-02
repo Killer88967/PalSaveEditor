@@ -5,9 +5,7 @@
     "pal_deck_index": 20,
     "size": "M",
     "rarity": 3,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -78,9 +76,7 @@
     "pal_deck_index": 111,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -153,9 +149,7 @@
     "pal_deck_index": 111,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -228,9 +222,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -303,9 +295,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -440,9 +430,7 @@
     "pal_deck_index": 139,
     "size": "M",
     "rarity": 10,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -504,9 +492,7 @@
       "SandTwister": 55,
       "RockBeat": 70
     },
-    "passive_skills": [
-      "ElementBoost_Earth_2_PAL"
-    ],
+    "passive_skills": ["ElementBoost_Earth_2_PAL"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -2924,9 +2910,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -4176,9 +4160,7 @@
     "pal_deck_index": 143,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -4249,10 +4231,7 @@
     "pal_deck_index": 91,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Fire",
-      "Dark"
-    ],
+    "element_types": ["Fire", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -4323,9 +4302,7 @@
     "pal_deck_index": 91,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -4397,9 +4374,7 @@
     "pal_deck_index": 91,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -4471,9 +4446,7 @@
     "pal_deck_index": 27,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -4544,9 +4517,7 @@
     "pal_deck_index": 27,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -5361,9 +5332,7 @@
     "pal_deck_index": 34,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -5434,9 +5403,7 @@
     "pal_deck_index": 34,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -5507,10 +5474,7 @@
     "pal_deck_index": 64,
     "size": "L",
     "rarity": 5,
-    "element_types": [
-      "Fire",
-      "Dark"
-    ],
+    "element_types": ["Fire", "Dark"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -5582,10 +5546,7 @@
     "pal_deck_index": 64,
     "size": "L",
     "rarity": 5,
-    "element_types": [
-      "Ice",
-      "Dark"
-    ],
+    "element_types": ["Ice", "Dark"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -5657,9 +5618,7 @@
     "pal_deck_index": 199,
     "size": "L",
     "rarity": 20,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -5722,10 +5681,7 @@
       "RockBeat": 60,
       "DarkLegion": 70
     },
-    "passive_skills": [
-      "Legend",
-      "ElementBoost_Dark_2_PAL"
-    ],
+    "passive_skills": ["Legend", "ElementBoost_Dark_2_PAL"],
     "disabled": false,
     "icon": "t_blackcentaur_icon_normal"
   },
@@ -5735,10 +5691,7 @@
     "pal_deck_index": -1,
     "size": "L",
     "rarity": 10,
-    "element_types": [
-      "Dark",
-      "Dragon"
-    ],
+    "element_types": ["Dark", "Dragon"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -5800,9 +5753,7 @@
     "pal_deck_index": 189,
     "size": "L",
     "rarity": 10,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -5874,10 +5825,7 @@
     "pal_deck_index": 158,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Dark"
-    ],
+    "element_types": ["Dragon", "Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -5939,9 +5887,7 @@
       "DragonMeteor": 50,
       "DarkLegion": 70
     },
-    "passive_skills": [
-      "Deffence_up1"
-    ],
+    "passive_skills": ["Deffence_up1"],
     "disabled": false,
     "icon": "t_blackmetaldragon_icon_normal"
   },
@@ -5951,9 +5897,7 @@
     "pal_deck_index": 149,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -6026,10 +5970,7 @@
     "pal_deck_index": 149,
     "size": "None",
     "rarity": 3,
-    "element_types": [
-      "Dark",
-      "Ice"
-    ],
+    "element_types": ["Dark", "Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -6163,10 +6104,7 @@
     "pal_deck_index": 41,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Water",
-      "Dragon"
-    ],
+    "element_types": ["Water", "Dragon"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -6237,10 +6175,7 @@
     "pal_deck_index": 41,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Ice",
-      "Dragon"
-    ],
+    "element_types": ["Ice", "Dragon"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -6311,9 +6246,7 @@
     "pal_deck_index": 5,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -6384,10 +6317,7 @@
     "pal_deck_index": 5,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Water",
-      "Fire"
-    ],
+    "element_types": ["Water", "Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -6458,10 +6388,7 @@
     "pal_deck_index": 192,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Water"
-    ],
+    "element_types": ["Dragon", "Water"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -6532,9 +6459,7 @@
     "pal_deck_index": 161,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -6606,10 +6531,7 @@
     "pal_deck_index": 147,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Leaf",
-      "Dark"
-    ],
+    "element_types": ["Leaf", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -6680,9 +6602,7 @@
     "pal_deck_index": 28,
     "size": "S",
     "rarity": 1,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -6815,9 +6735,7 @@
     "pal_deck_index": 165,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -6888,9 +6806,7 @@
     "pal_deck_index": 100,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -6961,10 +6877,7 @@
     "pal_deck_index": 100,
     "size": "None",
     "rarity": 3,
-    "element_types": [
-      "Dark",
-      "Leaf"
-    ],
+    "element_types": ["Dark", "Leaf"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -7035,10 +6948,7 @@
     "pal_deck_index": 135,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Dark",
-      "Fire"
-    ],
+    "element_types": ["Dark", "Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -7109,10 +7019,7 @@
     "pal_deck_index": 18,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Water",
-      "Ice"
-    ],
+    "element_types": ["Water", "Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -7183,10 +7090,7 @@
     "pal_deck_index": 18,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Water",
-      "Electricity"
-    ],
+    "element_types": ["Water", "Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -7505,9 +7409,7 @@
     "pal_deck_index": 4,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -7578,9 +7480,7 @@
     "pal_deck_index": 52,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -7651,9 +7551,7 @@
     "pal_deck_index": 79,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -7724,10 +7622,7 @@
     "pal_deck_index": 79,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Dark",
-      "Fire"
-    ],
+    "element_types": ["Dark", "Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -7798,9 +7693,7 @@
     "pal_deck_index": 65,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -7871,9 +7764,7 @@
     "pal_deck_index": 3,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -7944,9 +7835,7 @@
     "pal_deck_index": 47,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -8017,10 +7906,7 @@
     "pal_deck_index": 14,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Leaf",
-      "Normal"
-    ],
+    "element_types": ["Leaf", "Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -8091,9 +7977,7 @@
     "pal_deck_index": 176,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -8164,9 +8048,7 @@
     "pal_deck_index": 53,
     "size": "S",
     "rarity": 1,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -8237,9 +8119,7 @@
     "pal_deck_index": 40,
     "size": "S",
     "rarity": 2,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -8310,9 +8190,7 @@
     "pal_deck_index": 142,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -8383,9 +8261,7 @@
     "pal_deck_index": 142,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -8456,9 +8332,7 @@
     "pal_deck_index": 61,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -8529,9 +8403,7 @@
     "pal_deck_index": 6,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -8602,9 +8474,7 @@
     "pal_deck_index": 31,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -8676,9 +8546,7 @@
     "pal_deck_index": 164,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -8749,9 +8617,7 @@
     "pal_deck_index": 145,
     "size": "S",
     "rarity": 7,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -8812,9 +8678,7 @@
       "DarkLaser": 50,
       "DarkLegion": 70
     },
-    "passive_skills": [
-      "Alien"
-    ],
+    "passive_skills": ["Alien"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -8824,9 +8688,7 @@
     "pal_deck_index": 145,
     "size": "S",
     "rarity": 7,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -8887,9 +8749,7 @@
       "DarkLaser": 50,
       "DarkLegion": 70
     },
-    "passive_skills": [
-      "Alien"
-    ],
+    "passive_skills": ["Alien"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -8899,9 +8759,7 @@
     "pal_deck_index": 57,
     "size": "M",
     "rarity": 3,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -8972,10 +8830,7 @@
     "pal_deck_index": 115,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Dark",
-      "Fire"
-    ],
+    "element_types": ["Dark", "Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -9046,10 +8901,7 @@
     "pal_deck_index": 196,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Dark",
-      "Dragon"
-    ],
+    "element_types": ["Dark", "Dragon"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -9110,10 +8962,7 @@
       "Unique_DarkMechaDragon_FunnelLaser": 50,
       "CommetRain": 70
     },
-    "passive_skills": [
-      "Invader",
-      "Alien"
-    ],
+    "passive_skills": ["Invader", "Alien"],
     "disabled": false,
     "icon": "t_darkmechadragon_icon_normal"
   },
@@ -9123,10 +8972,7 @@
     "pal_deck_index": 99,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Dark",
-      "Earth"
-    ],
+    "element_types": ["Dark", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -9198,9 +9044,7 @@
     "pal_deck_index": 99,
     "size": "L",
     "rarity": 10,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -9333,9 +9177,7 @@
     "pal_deck_index": 32,
     "size": "L",
     "rarity": 5,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -9406,9 +9248,7 @@
     "pal_deck_index": 32,
     "size": "L",
     "rarity": 6,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -9542,10 +9382,7 @@
     "pal_deck_index": 184,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Dragon",
-      "Earth"
-    ],
+    "element_types": ["Dragon", "Earth"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -9606,9 +9443,7 @@
       "DragonMeteor": 50,
       "Unique_DomeArmorDragon_ExplosiveMissile": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_domearmordragon_icon_normal"
   },
@@ -9618,9 +9453,7 @@
     "pal_deck_index": 22,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -9691,9 +9524,7 @@
     "pal_deck_index": 107,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -9754,9 +9585,7 @@
       "RockLance": 50,
       "RockBeat": 70
     },
-    "passive_skills": [
-      "Deffence_up1"
-    ],
+    "passive_skills": ["Deffence_up1"],
     "disabled": false,
     "icon": "t_drillgame_icon_normal"
   },
@@ -9766,9 +9595,7 @@
     "pal_deck_index": 49,
     "size": "M",
     "rarity": 2,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -9839,9 +9666,7 @@
     "pal_deck_index": 42,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -9912,9 +9737,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 0,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -9976,9 +9799,7 @@
     "pal_deck_index": 167,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -10049,9 +9870,7 @@
     "pal_deck_index": 185,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -10123,9 +9942,7 @@
     "pal_deck_index": 62,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -10197,9 +10014,7 @@
     "pal_deck_index": 163,
     "size": "S",
     "rarity": 2,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -10270,10 +10085,7 @@
     "pal_deck_index": 163,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Electricity",
-      "Earth"
-    ],
+    "element_types": ["Electricity", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -11646,9 +11458,7 @@
     "pal_deck_index": 63,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Dragon"
-    ],
+    "element_types": ["Dragon"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -11719,10 +11529,7 @@
     "pal_deck_index": 63,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Dragon",
-      "Water"
-    ],
+    "element_types": ["Dragon", "Water"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -11793,9 +11600,7 @@
     "pal_deck_index": 123,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -13778,9 +13583,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -13842,9 +13645,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -13906,9 +13707,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -13970,9 +13769,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -14034,9 +13831,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -14098,9 +13893,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -14234,9 +14027,7 @@
     "pal_deck_index": 83,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -14307,9 +14098,7 @@
     "pal_deck_index": 83,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -15000,9 +14789,7 @@
     "pal_deck_index": 93,
     "size": "L",
     "rarity": 6,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -15073,10 +14860,7 @@
     "pal_deck_index": 93,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Fire",
-      "Dark"
-    ],
+    "element_types": ["Fire", "Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -15147,9 +14931,7 @@
     "pal_deck_index": 26,
     "size": "S",
     "rarity": 2,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -15220,9 +15002,7 @@
     "pal_deck_index": 58,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -15293,10 +15073,7 @@
     "pal_deck_index": 84,
     "size": "L",
     "rarity": 6,
-    "element_types": [
-      "Leaf",
-      "Dragon"
-    ],
+    "element_types": ["Leaf", "Dragon"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -15367,10 +15144,7 @@
     "pal_deck_index": 84,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Electricity",
-      "Dragon"
-    ],
+    "element_types": ["Electricity", "Dragon"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -15442,9 +15216,7 @@
     "pal_deck_index": 89,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -15515,10 +15287,7 @@
     "pal_deck_index": 89,
     "size": "M",
     "rarity": 9,
-    "element_types": [
-      "Leaf",
-      "Fire"
-    ],
+    "element_types": ["Leaf", "Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -15589,10 +15358,7 @@
     "pal_deck_index": 194,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Leaf",
-      "Dark"
-    ],
+    "element_types": ["Leaf", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -15663,9 +15429,7 @@
     "pal_deck_index": 77,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -15736,9 +15500,7 @@
     "pal_deck_index": 59,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -15809,9 +15571,7 @@
     "pal_deck_index": 7,
     "size": "M",
     "rarity": 3,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -15882,10 +15642,7 @@
     "pal_deck_index": 7,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Water",
-      "Electricity"
-    ],
+    "element_types": ["Water", "Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -15956,9 +15713,7 @@
     "pal_deck_index": 174,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -16029,9 +15784,7 @@
     "pal_deck_index": 78,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -16102,10 +15855,7 @@
     "pal_deck_index": 78,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Fire",
-      "Dark"
-    ],
+    "element_types": ["Fire", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -16176,9 +15926,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -16249,9 +15997,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -16323,9 +16069,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -16397,10 +16141,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Water"
-    ],
+    "element_types": ["Dragon", "Water"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -16471,10 +16212,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Water"
-    ],
+    "element_types": ["Dragon", "Water"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -16546,9 +16284,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -16616,9 +16352,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -16690,9 +16424,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -16767,9 +16499,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -16840,9 +16570,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -16915,9 +16643,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -16986,9 +16712,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -17062,10 +16786,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark",
-      "Normal"
-    ],
+    "element_types": ["Dark", "Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -17137,10 +16858,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark",
-      "Normal"
-    ],
+    "element_types": ["Dark", "Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -17215,10 +16933,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark",
-      "Normal"
-    ],
+    "element_types": ["Dark", "Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -17289,9 +17004,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -17363,9 +17076,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -17438,10 +17149,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Electricity"
-    ],
+    "element_types": ["Dragon", "Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -17511,10 +17219,7 @@
     "pal_deck_index": -2,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Electricity"
-    ],
+    "element_types": ["Dragon", "Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -17729,9 +17434,7 @@
     "pal_deck_index": 11,
     "size": "M",
     "rarity": 1,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -17802,9 +17505,7 @@
     "pal_deck_index": 33,
     "size": "S",
     "rarity": 2,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -17876,10 +17577,7 @@
     "pal_deck_index": 97,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Dark",
-      "Water"
-    ],
+    "element_types": ["Dark", "Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -17941,10 +17639,7 @@
     "pal_deck_index": 97,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Fire",
-      "Water"
-    ],
+    "element_types": ["Fire", "Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -18006,9 +17701,7 @@
     "pal_deck_index": 117,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -18080,9 +17773,7 @@
     "pal_deck_index": 50,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -18153,10 +17844,7 @@
     "pal_deck_index": 171,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Dragon",
-      "Dark"
-    ],
+    "element_types": ["Dragon", "Dark"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -18227,10 +17915,7 @@
     "pal_deck_index": 171,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Dragon",
-      "Fire"
-    ],
+    "element_types": ["Dragon", "Fire"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -18301,9 +17986,7 @@
     "pal_deck_index": 148,
     "size": "S",
     "rarity": 6,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -18374,9 +18057,7 @@
     "pal_deck_index": 148,
     "size": "S",
     "rarity": 7,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -18447,9 +18128,7 @@
     "pal_deck_index": 154,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -18584,9 +18263,7 @@
     "pal_deck_index": 74,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -18647,9 +18324,7 @@
       "HyperBeam": 50,
       "HolyBlast": 70
     },
-    "passive_skills": [
-      "PAL_rude"
-    ],
+    "passive_skills": ["PAL_rude"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -18659,9 +18334,7 @@
     "pal_deck_index": 74,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -18723,9 +18396,7 @@
       "RockLance": 50,
       "RockBeat": 70
     },
-    "passive_skills": [
-      "PAL_rude"
-    ],
+    "passive_skills": ["PAL_rude"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -18799,10 +18470,7 @@
     "pal_deck_index": 138,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Earth",
-      "Leaf"
-    ],
+    "element_types": ["Earth", "Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -18863,9 +18531,7 @@
       "WindBurst": 50,
       "Unique_GrassGolem_ArmCannon": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -18875,10 +18541,7 @@
     "pal_deck_index": 138,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Earth",
-      "Dark"
-    ],
+    "element_types": ["Earth", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -18939,9 +18602,7 @@
       "DarkLegion": 50,
       "Unique_GrassGolem_Dark_DarkArmCannon": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -18951,10 +18612,7 @@
     "pal_deck_index": 87,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Leaf",
-      "Earth"
-    ],
+    "element_types": ["Leaf", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -19015,9 +18673,7 @@
       "SolarBeam": 50,
       "WindBurst": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_grassmammoth_icon_normal"
   },
@@ -19027,10 +18683,7 @@
     "pal_deck_index": 87,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Ice",
-      "Earth"
-    ],
+    "element_types": ["Ice", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -19091,9 +18744,7 @@
       "IcicleThrow": 50,
       "DiamondFall": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_grassmammoth_ice_icon_normal"
   },
@@ -19103,9 +18754,7 @@
     "pal_deck_index": 81,
     "size": "L",
     "rarity": 6,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -19176,9 +18825,7 @@
     "pal_deck_index": 81,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -19249,9 +18896,7 @@
     "pal_deck_index": 102,
     "size": "L",
     "rarity": 6,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -19322,9 +18967,7 @@
     "pal_deck_index": 102,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -19395,9 +19038,7 @@
     "pal_deck_index": 102,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -19468,9 +19109,7 @@
     "pal_deck_index": 152,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -19542,9 +19181,7 @@
     "pal_deck_index": 153,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -19605,9 +19242,7 @@
       "DarkLegion": 50,
       "FireBall": 70
     },
-    "passive_skills": [
-      "PAL_sadist"
-    ],
+    "passive_skills": ["PAL_sadist"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -19741,9 +19376,7 @@
     "pal_deck_index": 127,
     "size": "None",
     "rarity": 4,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -19816,9 +19449,7 @@
     "pal_deck_index": 80,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -19889,10 +19520,7 @@
     "pal_deck_index": 80,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Dark",
-      "Electricity"
-    ],
+    "element_types": ["Dark", "Electricity"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -19963,9 +19591,7 @@
     "pal_deck_index": 80,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -20036,9 +19662,7 @@
     "pal_deck_index": 51,
     "size": "M",
     "rarity": 3,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -20109,9 +19733,7 @@
     "pal_deck_index": 15,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -20182,9 +19804,7 @@
     "pal_deck_index": 15,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -20503,10 +20123,7 @@
     "pal_deck_index": 113,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Earth",
-      "Leaf"
-    ],
+    "element_types": ["Earth", "Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -20567,9 +20184,7 @@
       "SolarBeam": 50,
       "WindBurst": 70
     },
-    "passive_skills": [
-      "Deffence_up1"
-    ],
+    "passive_skills": ["Deffence_up1"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -20579,9 +20194,7 @@
     "pal_deck_index": 113,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -20642,9 +20255,7 @@
       "RockBeat": 50,
       "Railbolt": 70
     },
-    "passive_skills": [
-      "Deffence_up1"
-    ],
+    "passive_skills": ["Deffence_up1"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -20654,9 +20265,7 @@
     "pal_deck_index": 166,
     "size": "None",
     "rarity": 3,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -20727,9 +20336,7 @@
     "pal_deck_index": 188,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -20801,9 +20408,7 @@
     "pal_deck_index": 188,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -20875,9 +20480,7 @@
     "pal_deck_index": 188,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -22674,9 +22277,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -23978,9 +23579,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -24352,9 +23951,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -24364,10 +23961,7 @@
     "pal_deck_index": 86,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Ice",
-      "Water"
-    ],
+    "element_types": ["Ice", "Water"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -24438,9 +24032,7 @@
     "pal_deck_index": 101,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -24511,9 +24103,7 @@
     "pal_deck_index": 95,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -24584,9 +24174,7 @@
     "pal_deck_index": 200,
     "size": "L",
     "rarity": 20,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -24649,10 +24237,7 @@
       "DoubleIcicleThrow": 60,
       "IceAge": 70
     },
-    "passive_skills": [
-      "Legend",
-      "ElementBoost_Ice_2_PAL"
-    ],
+    "passive_skills": ["Legend", "ElementBoost_Ice_2_PAL"],
     "disabled": false,
     "icon": "t_icehorse_icon_normal"
   },
@@ -24662,9 +24247,7 @@
     "pal_deck_index": 200,
     "size": "L",
     "rarity": 20,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -24728,10 +24311,7 @@
       "DarkLegion": 60,
       "IceAge": 70
     },
-    "passive_skills": [
-      "Legend",
-      "ElementBoost_Dark_2_PAL"
-    ],
+    "passive_skills": ["Legend", "ElementBoost_Dark_2_PAL"],
     "disabled": false,
     "icon": "t_icehorse_dark_icon_normal"
   },
@@ -24741,10 +24321,7 @@
     "pal_deck_index": 151,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Ice",
-      "Water"
-    ],
+    "element_types": ["Ice", "Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -24815,10 +24392,7 @@
     "pal_deck_index": 151,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Ice",
-      "Fire"
-    ],
+    "element_types": ["Ice", "Fire"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -24889,10 +24463,7 @@
     "pal_deck_index": 72,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Ice",
-      "Water"
-    ],
+    "element_types": ["Ice", "Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -24963,10 +24534,7 @@
     "pal_deck_index": 72,
     "size": "S",
     "rarity": 6,
-    "element_types": [
-      "Ice",
-      "Earth"
-    ],
+    "element_types": ["Ice", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -25037,9 +24605,7 @@
     "pal_deck_index": 119,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -25172,9 +24738,7 @@
     "pal_deck_index": 45,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -25245,10 +24809,7 @@
     "pal_deck_index": 46,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Water",
-      "Dark"
-    ],
+    "element_types": ["Water", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -25319,9 +24880,7 @@
     "pal_deck_index": 202,
     "size": "XL",
     "rarity": 20,
-    "element_types": [
-      "Dragon"
-    ],
+    "element_types": ["Dragon"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -25384,10 +24943,7 @@
       "CommetRain": 60,
       "StarMine": 70
     },
-    "passive_skills": [
-      "Legend",
-      "ElementBoost_Dragon_2_PAL"
-    ],
+    "passive_skills": ["Legend", "ElementBoost_Dragon_2_PAL"],
     "disabled": false,
     "icon": "t_jetdragon_icon_normal"
   },
@@ -25397,9 +24953,7 @@
     "pal_deck_index": 183,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -25470,9 +25024,7 @@
     "pal_deck_index": 43,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -25543,9 +25095,7 @@
     "pal_deck_index": 43,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -25616,9 +25166,7 @@
     "pal_deck_index": 9,
     "size": "None",
     "rarity": 4,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -25689,10 +25237,7 @@
     "pal_deck_index": 9,
     "size": "None",
     "rarity": 5,
-    "element_types": [
-      "Water",
-      "Dark"
-    ],
+    "element_types": ["Water", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -25763,9 +25308,7 @@
     "pal_deck_index": 21,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -25826,9 +25369,7 @@
       "HyperBeam": 50,
       "HolyBlast": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_kingalpaca_icon_normal"
   },
@@ -25838,9 +25379,7 @@
     "pal_deck_index": 21,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -25902,9 +25441,7 @@
       "IcicleThrow": 50,
       "DiamondFall": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_kingalpaca_ice_icon_normal"
   },
@@ -25914,9 +25451,7 @@
     "pal_deck_index": 137,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -25978,9 +25513,7 @@
       "RockLance": 50,
       "RockBeat": 70
     },
-    "passive_skills": [
-      "ElementBoost_Fire_2_PAL"
-    ],
+    "passive_skills": ["ElementBoost_Fire_2_PAL"],
     "disabled": false,
     "icon": "t_kingbahamut_icon_normal"
   },
@@ -25990,10 +25523,7 @@
     "pal_deck_index": 137,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dragon",
-      "Fire"
-    ],
+    "element_types": ["Dragon", "Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -26054,9 +25584,7 @@
       "Unique_KingBahamut_AirCrash": 50,
       "CommetRain": 70
     },
-    "passive_skills": [
-      "EternalFlame"
-    ],
+    "passive_skills": ["EternalFlame"],
     "disabled": false,
     "icon": "t_kingbahamut_dragon_icon_normal"
   },
@@ -26066,9 +25594,7 @@
     "pal_deck_index": 169,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -26139,10 +25665,7 @@
     "pal_deck_index": 169,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Water",
-      "Electricity"
-    ],
+    "element_types": ["Water", "Electricity"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -26213,9 +25736,7 @@
     "pal_deck_index": 203,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -26286,9 +25807,7 @@
     "pal_deck_index": 54,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -26360,9 +25879,7 @@
     "pal_deck_index": 54,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -26433,9 +25950,7 @@
     "pal_deck_index": 29,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -26506,9 +26021,7 @@
     "pal_deck_index": 29,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -26579,10 +26092,7 @@
     "pal_deck_index": 180,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Dark",
-      "Fire"
-    ],
+    "element_types": ["Dark", "Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -26653,9 +26163,7 @@
     "pal_deck_index": 25,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -26726,10 +26234,7 @@
     "pal_deck_index": 109,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Earth",
-      "Water"
-    ],
+    "element_types": ["Earth", "Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -26791,10 +26296,7 @@
     "pal_deck_index": 109,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Earth",
-      "Water"
-    ],
+    "element_types": ["Earth", "Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -26856,10 +26358,7 @@
     "pal_deck_index": 94,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Dragon",
-      "Water"
-    ],
+    "element_types": ["Dragon", "Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -26920,9 +26419,7 @@
       "DragonMeteor": 50,
       "SeaGush": 70
     },
-    "passive_skills": [
-      "PAL_FullStomach_Up_1"
-    ],
+    "passive_skills": ["PAL_FullStomach_Up_1"],
     "disabled": false,
     "icon": "t_lazydragon_icon_normal"
   },
@@ -26932,10 +26429,7 @@
     "pal_deck_index": 94,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Electricity"
-    ],
+    "element_types": ["Dragon", "Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -27006,10 +26500,7 @@
     "pal_deck_index": 94,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Electricity"
-    ],
+    "element_types": ["Dragon", "Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -27080,10 +26571,7 @@
     "pal_deck_index": 10,
     "size": "None",
     "rarity": 3,
-    "element_types": [
-      "Leaf",
-      "Normal"
-    ],
+    "element_types": ["Leaf", "Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -27154,9 +26642,7 @@
     "pal_deck_index": 125,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -27227,9 +26713,7 @@
     "pal_deck_index": 197,
     "size": "L",
     "rarity": 10,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -27290,9 +26774,7 @@
       "Unique_LegendDeer_RadiantPurge_Otomo": 50,
       "WindBurst": 70
     },
-    "passive_skills": [
-      "Salvation"
-    ],
+    "passive_skills": ["Salvation"],
     "disabled": false,
     "icon": "t_legenddeer_icon_normal"
   },
@@ -27302,9 +26784,7 @@
     "pal_deck_index": 186,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -27366,9 +26846,7 @@
       "Unique_LilyQueen_LilyHealing": 55,
       "WindBurst": 70
     },
-    "passive_skills": [
-      "ElementBoost_Leaf_2_PAL"
-    ],
+    "passive_skills": ["ElementBoost_Leaf_2_PAL"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -27378,9 +26856,7 @@
     "pal_deck_index": 186,
     "size": "L",
     "rarity": 10,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -27452,9 +26928,7 @@
     "pal_deck_index": 60,
     "size": "S",
     "rarity": 1,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -27525,9 +26999,7 @@
     "pal_deck_index": 73,
     "size": "S",
     "rarity": 2,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -27598,9 +27070,7 @@
     "pal_deck_index": 73,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -27671,9 +27141,7 @@
     "pal_deck_index": 73,
     "size": "S",
     "rarity": 2,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -27744,9 +27212,7 @@
     "pal_deck_index": 162,
     "size": "S",
     "rarity": 2,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -27817,10 +27283,7 @@
     "pal_deck_index": 175,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Leaf",
-      "Water"
-    ],
+    "element_types": ["Leaf", "Water"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -30423,9 +29886,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -30487,9 +29948,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -30551,9 +30010,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -30615,9 +30072,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -30679,9 +30134,7 @@
       "MonsterFarm": 0
     },
     "skill_set": {},
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -32365,9 +31818,7 @@
     "pal_deck_index": 112,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -32439,10 +31890,7 @@
     "pal_deck_index": 112,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Fire",
-      "Dark"
-    ],
+    "element_types": ["Fire", "Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -32514,9 +31962,7 @@
     "pal_deck_index": 144,
     "size": "None",
     "rarity": 7,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -32773,9 +32219,7 @@
     "pal_deck_index": 23,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -32846,9 +32290,7 @@
     "pal_deck_index": 23,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -32919,10 +32361,7 @@
     "pal_deck_index": 182,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Dark",
-      "Normal"
-    ],
+    "element_types": ["Dark", "Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -32993,9 +32432,7 @@
     "pal_deck_index": 181,
     "size": "S",
     "rarity": 2,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -33066,10 +32503,7 @@
     "pal_deck_index": 190,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Dark",
-      "Normal"
-    ],
+    "element_types": ["Dark", "Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -33141,9 +32575,7 @@
     "pal_deck_index": 35,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -33214,9 +32646,7 @@
     "pal_deck_index": 36,
     "size": "L",
     "rarity": 6,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -33287,9 +32717,7 @@
     "pal_deck_index": 193,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -33360,10 +32788,7 @@
     "pal_deck_index": 120,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Dark",
-      "Earth"
-    ],
+    "element_types": ["Dark", "Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -33434,9 +32859,7 @@
     "pal_deck_index": 118,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -33507,10 +32930,7 @@
     "pal_deck_index": 118,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Leaf",
-      "Dark"
-    ],
+    "element_types": ["Leaf", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -33581,9 +33001,7 @@
     "pal_deck_index": 179,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -33654,9 +33072,7 @@
     "pal_deck_index": 82,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -33727,9 +33143,7 @@
     "pal_deck_index": 150,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -33986,9 +33400,7 @@
     "pal_deck_index": 70,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -34059,9 +33471,7 @@
     "pal_deck_index": 16,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -34132,10 +33542,7 @@
     "pal_deck_index": 30,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Dark",
-      "Water"
-    ],
+    "element_types": ["Dark", "Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -34206,10 +33613,7 @@
     "pal_deck_index": 30,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Normal",
-      "Water"
-    ],
+    "element_types": ["Normal", "Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -34280,9 +33684,7 @@
     "pal_deck_index": 130,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -34354,9 +33756,7 @@
     "pal_deck_index": 130,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -34427,9 +33827,7 @@
     "pal_deck_index": 24,
     "size": "None",
     "rarity": 6,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -34500,9 +33898,7 @@
     "pal_deck_index": 195,
     "size": "M",
     "rarity": 20,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -34573,9 +33969,7 @@
     "pal_deck_index": 195,
     "size": "M",
     "rarity": 20,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -34636,9 +34030,7 @@
       "Unique_NightLady_WarpBeam": 50,
       "DarkLegion": 70
     },
-    "passive_skills": [
-      "Witch"
-    ],
+    "passive_skills": ["Witch"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -35268,10 +34660,7 @@
     "pal_deck_index": 48,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Water",
-      "Dark"
-    ],
+    "element_types": ["Water", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -35342,10 +34731,7 @@
     "pal_deck_index": 48,
     "size": "S",
     "rarity": 6,
-    "element_types": [
-      "Water",
-      "Normal"
-    ],
+    "element_types": ["Water", "Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -35416,9 +34802,7 @@
     "pal_deck_index": 168,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -35489,9 +34873,7 @@
     "pal_deck_index": -1,
     "size": "L",
     "rarity": 3,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -35562,9 +34944,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -35638,9 +35018,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -35716,9 +35094,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -35792,10 +35168,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Fire",
-      "Dark"
-    ],
+    "element_types": ["Fire", "Dark"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -35869,10 +35242,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark",
-      "Fire"
-    ],
+    "element_types": ["Dark", "Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -35946,10 +35316,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Dark",
-      "Earth"
-    ],
+    "element_types": ["Dark", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -36022,9 +35389,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -36088,9 +35453,7 @@
       "RockLance": 50,
       "RockBeat": 70
     },
-    "passive_skills": [
-      "Deffence_up1"
-    ],
+    "passive_skills": ["Deffence_up1"],
     "disabled": false,
     "icon": ""
   },
@@ -36100,9 +35463,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon"
-    ],
+    "element_types": ["Dragon"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -36174,9 +35535,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -36250,10 +35609,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Leaf",
-      "Dragon"
-    ],
+    "element_types": ["Leaf", "Dragon"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -36326,9 +35682,7 @@
     "pal_deck_index": -1,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -36388,9 +35742,7 @@
       "GrassTornado": 40,
       "SolarBeam": 50
     },
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -36400,9 +35752,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -36474,9 +35824,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -36548,9 +35896,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -36623,9 +35969,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 0,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -36701,9 +36045,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -36766,9 +36108,7 @@
       "PowerBall": 40,
       "HolyBlast": 70
     },
-    "passive_skills": [
-      "PAL_rude"
-    ],
+    "passive_skills": ["PAL_rude"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -36778,10 +36118,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Ice",
-      "Earth"
-    ],
+    "element_types": ["Ice", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -36845,9 +36182,7 @@
       "IcicleThrow": 50,
       "DiamondFall": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": ""
   },
@@ -36857,9 +36192,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -36932,9 +36265,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -37007,9 +36338,7 @@
     "pal_deck_index": -1,
     "size": "L",
     "rarity": 1,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -37082,10 +36411,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark",
-      "Electricity"
-    ],
+    "element_types": ["Dark", "Electricity"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -37158,9 +36484,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -37233,10 +36557,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dragon",
-      "Water"
-    ],
+    "element_types": ["Dragon", "Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -37299,9 +36620,7 @@
       "DragonMeteor": 50,
       "SeaGush": 70
     },
-    "passive_skills": [
-      "PAL_FullStomach_Up_1"
-    ],
+    "passive_skills": ["PAL_FullStomach_Up_1"],
     "disabled": false,
     "icon": ""
   },
@@ -37311,10 +36630,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Fire",
-      "Dark"
-    ],
+    "element_types": ["Fire", "Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -37388,10 +36704,7 @@
     "pal_deck_index": -1,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Dark",
-      "Normal"
-    ],
+    "element_types": ["Dark", "Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -37463,10 +36776,7 @@
     "pal_deck_index": -1,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Dark",
-      "Earth"
-    ],
+    "element_types": ["Dark", "Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -37539,9 +36849,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -37614,9 +36922,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 1,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -37688,9 +36994,7 @@
     "pal_deck_index": -1,
     "size": "L",
     "rarity": 1,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -37765,9 +37069,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -37841,9 +37143,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -37905,9 +37205,7 @@
       "BubbleShower": 35,
       "DarkLegion": 70
     },
-    "passive_skills": [
-      "ElementResist_Normal_1_PAL"
-    ],
+    "passive_skills": ["ElementResist_Normal_1_PAL"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -37917,9 +37215,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -37981,9 +37277,7 @@
       "DarkLaser": 55,
       "DarkLegion": 70
     },
-    "passive_skills": [
-      "ElementResist_Normal_1_PAL"
-    ],
+    "passive_skills": ["ElementResist_Normal_1_PAL"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -37993,9 +37287,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 1,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -38069,9 +37361,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -38146,9 +37436,7 @@
     "pal_deck_index": -1,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -38222,10 +37510,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Fire",
-      "Dark"
-    ],
+    "element_types": ["Fire", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -38300,10 +37585,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dark",
-      "Earth"
-    ],
+    "element_types": ["Dark", "Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -38376,9 +37658,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -38451,9 +37731,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -38525,9 +37803,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -38600,9 +37876,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -38676,10 +37950,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dragon",
-      "Fire"
-    ],
+    "element_types": ["Dragon", "Fire"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -38754,10 +38025,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dragon",
-      "Fire"
-    ],
+    "element_types": ["Dragon", "Fire"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -38828,10 +38096,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Ice",
-      "Earth"
-    ],
+    "element_types": ["Ice", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -38895,9 +38160,7 @@
       "RockLance": 50,
       "DiamondFall": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": ""
   },
@@ -38907,10 +38170,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Fire",
-      "Earth"
-    ],
+    "element_types": ["Fire", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -38984,9 +38244,7 @@
     "pal_deck_index": -1,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -39060,9 +38318,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon"
-    ],
+    "element_types": ["Dragon"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -39122,9 +38378,7 @@
       "ChargeCanon": 40,
       "Unique_WhiteShieldDragon_ShieldTackle": 50
     },
-    "passive_skills": [
-      "Nocturnal"
-    ],
+    "passive_skills": ["Nocturnal"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -39134,9 +38388,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -39211,9 +38463,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -39597,9 +38847,7 @@
     "pal_deck_index": 90,
     "size": "S",
     "rarity": 7,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -39670,10 +38918,7 @@
     "pal_deck_index": 17,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Water",
-      "Ice"
-    ],
+    "element_types": ["Water", "Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -39744,10 +38989,7 @@
     "pal_deck_index": 17,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Water",
-      "Electricity"
-    ],
+    "element_types": ["Water", "Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -39818,9 +39060,7 @@
     "pal_deck_index": 2,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -39881,9 +39121,7 @@
       "HyperBeam": 50,
       "HolyBlast": 70
     },
-    "passive_skills": [
-      "PAL_ALLAttack_down1"
-    ],
+    "passive_skills": ["PAL_ALLAttack_down1"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -39893,9 +39131,7 @@
     "pal_deck_index": 69,
     "size": "L",
     "rarity": 5,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -39958,9 +39194,7 @@
       "DarkLaser": 55,
       "DarkLegion": 70
     },
-    "passive_skills": [
-      "ElementResist_Normal_1_PAL"
-    ],
+    "passive_skills": ["ElementResist_Normal_1_PAL"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -39970,9 +39204,7 @@
     "pal_deck_index": 44,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -40043,9 +39275,7 @@
     "pal_deck_index": 44,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -40116,10 +39346,7 @@
     "pal_deck_index": 12,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Leaf",
-      "Earth"
-    ],
+    "element_types": ["Leaf", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -40190,10 +39417,7 @@
     "pal_deck_index": 12,
     "size": "None",
     "rarity": 10,
-    "element_types": [
-      "Leaf",
-      "Earth"
-    ],
+    "element_types": ["Leaf", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -40264,10 +39488,7 @@
     "pal_deck_index": 110,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Leaf",
-      "Earth"
-    ],
+    "element_types": ["Leaf", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -40328,9 +39549,7 @@
       "RockBeat": 50,
       "WindBurst": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_plesiosaur_icon_normal"
   },
@@ -41766,9 +40985,7 @@
     "pal_deck_index": 201,
     "size": "XL",
     "rarity": 20,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -41830,10 +41047,7 @@
       "Unique_PoseidonOrca_TorrentLaser": 60,
       "ThunderStorm": 70
     },
-    "passive_skills": [
-      "Legend",
-      "Nushi"
-    ],
+    "passive_skills": ["Legend", "Nushi"],
     "disabled": false,
     "icon": "t_poseidonorca_icon_normal"
   },
@@ -41843,9 +41057,7 @@
     "pal_deck_index": 71,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -41916,9 +41128,7 @@
     "pal_deck_index": 68,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -42051,9 +41261,7 @@
     "pal_deck_index": 2,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -42114,9 +41322,7 @@
       "HyperBeam": 50,
       "HolyBlast": 70
     },
-    "passive_skills": [
-      "PAL_ALLAttack_down1"
-    ],
+    "passive_skills": ["PAL_ALLAttack_down1"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -42126,9 +41332,7 @@
     "pal_deck_index": 1,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -42695,10 +41899,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dark",
-      "Dragon"
-    ],
+    "element_types": ["Dark", "Dragon"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -42773,10 +41974,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dark",
-      "Dragon"
-    ],
+    "element_types": ["Dark", "Dragon"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -42857,10 +42055,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dragon",
-      "Fire"
-    ],
+    "element_types": ["Dragon", "Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -42933,10 +42128,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dragon",
-      "Fire"
-    ],
+    "element_types": ["Dragon", "Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -43009,10 +42201,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Water",
-      "Leaf"
-    ],
+    "element_types": ["Water", "Leaf"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -43082,10 +42271,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Water",
-      "Leaf"
-    ],
+    "element_types": ["Water", "Leaf"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -43155,9 +42341,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -43228,9 +42412,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -43302,9 +42484,7 @@
     "pal_deck_index": -1,
     "size": "XL",
     "rarity": 10,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -44028,9 +43208,7 @@
     "pal_deck_index": 92,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -44101,10 +43279,7 @@
     "pal_deck_index": 92,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Dark",
-      "Electricity"
-    ],
+    "element_types": ["Dark", "Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -44237,9 +43412,7 @@
     "pal_deck_index": 104,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -44311,9 +43484,7 @@
     "pal_deck_index": 173,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -46058,9 +45229,7 @@
     "pal_deck_index": 76,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -46131,10 +45300,7 @@
     "pal_deck_index": 76,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Leaf",
-      "Earth"
-    ],
+    "element_types": ["Leaf", "Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -46205,9 +45371,7 @@
     "pal_deck_index": 131,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -46268,9 +45432,7 @@
       "Unique_RockBeast_RockHorn": 50,
       "RockBeat": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_rockbeast_icon_normal"
   },
@@ -46280,9 +45442,7 @@
     "pal_deck_index": 131,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -46343,9 +45503,7 @@
       "Unique_RockBeast_Ice_IceHorn": 50,
       "IceAge": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_rockbeast_ice_icon_normal"
   },
@@ -46355,9 +45513,7 @@
     "pal_deck_index": 85,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -46428,10 +45584,7 @@
     "pal_deck_index": 85,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Fire",
-      "Dark"
-    ],
+    "element_types": ["Fire", "Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -46503,9 +45656,7 @@
     "pal_deck_index": 145,
     "size": "S",
     "rarity": 7,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -46561,9 +45712,7 @@
       "PoisonShot": 2,
       "DarkCanon": 3
     },
-    "passive_skills": [
-      "Alien"
-    ],
+    "passive_skills": ["Alien"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -46573,9 +45722,7 @@
     "pal_deck_index": 145,
     "size": "S",
     "rarity": 7,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -46631,9 +45778,7 @@
       "ShadowBall": 2,
       "DarkCanon": 3
     },
-    "passive_skills": [
-      "Alien"
-    ],
+    "passive_skills": ["Alien"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -46643,9 +45788,7 @@
     "pal_deck_index": 146,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Dragon"
-    ],
+    "element_types": ["Dragon"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -46701,9 +45844,7 @@
       "Commet": 2,
       "DragonCanon": 3
     },
-    "passive_skills": [
-      "Alien"
-    ],
+    "passive_skills": ["Alien"],
     "disabled": false,
     "icon": ""
   },
@@ -46713,9 +45854,7 @@
     "pal_deck_index": 146,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Dragon"
-    ],
+    "element_types": ["Dragon"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -46771,9 +45910,7 @@
       "Commet": 2,
       "BeamSlicer": 3
     },
-    "passive_skills": [
-      "Alien"
-    ],
+    "passive_skills": ["Alien"],
     "disabled": false,
     "icon": ""
   },
@@ -46783,9 +45920,7 @@
     "pal_deck_index": 198,
     "size": "L",
     "rarity": 20,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -46848,10 +45983,7 @@
       "HolyBlast": 60,
       "RadiantBarrage": 70
     },
-    "passive_skills": [
-      "Legend",
-      "ElementBoost_Normal_2_PAL"
-    ],
+    "passive_skills": ["Legend", "ElementBoost_Normal_2_PAL"],
     "disabled": false,
     "icon": "t_saintcentaur_icon_normal"
   },
@@ -46861,9 +45993,7 @@
     "pal_deck_index": 108,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -46924,9 +46054,7 @@
       "SolarBeam": 50,
       "WindBurst": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_sakurasaurus_icon_normal"
   },
@@ -46936,10 +46064,7 @@
     "pal_deck_index": 108,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Leaf",
-      "Water"
-    ],
+    "element_types": ["Leaf", "Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -47001,9 +46126,7 @@
       "HydroPump": 50,
       "SeaGush": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_sakurasaurus_water_icon_normal"
   },
@@ -47385,9 +46508,7 @@
     "pal_deck_index": 13,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -47769,10 +46890,7 @@
     "pal_deck_index": 141,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Dark",
-      "Earth"
-    ],
+    "element_types": ["Dark", "Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -47843,10 +46961,7 @@
     "pal_deck_index": 141,
     "size": "S",
     "rarity": 6,
-    "element_types": [
-      "Electricity",
-      "Earth"
-    ],
+    "element_types": ["Electricity", "Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -48041,9 +47156,7 @@
     "pal_deck_index": 140,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -48114,9 +47227,7 @@
     "pal_deck_index": 75,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -48187,9 +47298,7 @@
     "pal_deck_index": 75,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -48260,9 +47369,7 @@
     "pal_deck_index": 55,
     "size": "S",
     "rarity": 2,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -48333,9 +47440,7 @@
     "pal_deck_index": 55,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -48406,9 +47511,7 @@
     "pal_deck_index": 1,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -48479,9 +47582,7 @@
     "pal_deck_index": 155,
     "size": "S",
     "rarity": 6,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -48552,9 +47653,7 @@
     "pal_deck_index": 124,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Dragon"
-    ],
+    "element_types": ["Dragon"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -48625,10 +47724,7 @@
     "pal_deck_index": 124,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Dragon",
-      "Leaf"
-    ],
+    "element_types": ["Dragon", "Leaf"],
     "genus_category": "Dragon",
     "weapon": "None",
     "weapon_equip": false,
@@ -48699,9 +47795,7 @@
     "pal_deck_index": 170,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -48772,9 +47866,7 @@
     "pal_deck_index": 126,
     "size": "None",
     "rarity": 4,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -48845,9 +47937,7 @@
     "pal_deck_index": 133,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -48918,9 +48008,7 @@
     "pal_deck_index": 178,
     "size": "S",
     "rarity": 5,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -48991,9 +48079,7 @@
     "pal_deck_index": 114,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -49064,9 +48150,7 @@
     "pal_deck_index": 191,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -49138,9 +48222,7 @@
     "pal_deck_index": 67,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -49274,9 +48356,7 @@
     "pal_deck_index": 88,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -49347,10 +48427,7 @@
     "pal_deck_index": 88,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Water",
-      "Fire"
-    ],
+    "element_types": ["Water", "Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -49421,9 +48498,7 @@
     "pal_deck_index": 156,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -49494,9 +48569,7 @@
     "pal_deck_index": 122,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -49567,9 +48640,7 @@
     "pal_deck_index": 122,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -49640,9 +48711,7 @@
     "pal_deck_index": 39,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -49713,9 +48782,7 @@
     "pal_deck_index": 39,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -49786,9 +48853,7 @@
     "pal_deck_index": 128,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -49859,10 +48924,7 @@
     "pal_deck_index": 128,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Water",
-      "Fire"
-    ],
+    "element_types": ["Water", "Fire"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -49933,9 +48995,7 @@
     "pal_deck_index": 37,
     "size": "M",
     "rarity": 3,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -50006,10 +49066,7 @@
     "pal_deck_index": 37,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Water",
-      "Earth"
-    ],
+    "element_types": ["Water", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -50080,9 +49137,7 @@
     "pal_deck_index": 177,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -50153,9 +49208,7 @@
     "pal_deck_index": 96,
     "size": "L",
     "rarity": 6,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -50227,9 +49280,7 @@
     "pal_deck_index": 96,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -50300,9 +49351,7 @@
     "pal_deck_index": 98,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -50376,9 +49425,7 @@
     "pal_deck_index": 98,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -50451,10 +49498,7 @@
     "pal_deck_index": 187,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Electricity"
-    ],
+    "element_types": ["Dragon", "Electricity"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -50516,9 +49560,7 @@
       "Unique_ThunderDragonMan_NumerousSwordAttack": 55,
       "CommetRain": 70
     },
-    "passive_skills": [
-      "ElementBoost_Thunder_2_PAL"
-    ],
+    "passive_skills": ["ElementBoost_Thunder_2_PAL"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -50528,9 +49570,7 @@
     "pal_deck_index": 172,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Electricity"
-    ],
+    "element_types": ["Electricity"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -50601,9 +49641,7 @@
     "pal_deck_index": 106,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -50674,10 +49712,7 @@
     "pal_deck_index": 121,
     "size": "XL",
     "rarity": 8,
-    "element_types": [
-      "Dragon",
-      "Water"
-    ],
+    "element_types": ["Dragon", "Water"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -50739,9 +49774,7 @@
       "DragonMeteor": 50,
       "SeaGush": 70
     },
-    "passive_skills": [
-      "ElementBoost_Aqua_2_PAL"
-    ],
+    "passive_skills": ["ElementBoost_Aqua_2_PAL"],
     "disabled": false,
     "icon": "t_umihebi_icon_normal"
   },
@@ -50751,10 +49784,7 @@
     "pal_deck_index": 121,
     "size": "XL",
     "rarity": 9,
-    "element_types": [
-      "Dragon",
-      "Fire"
-    ],
+    "element_types": ["Dragon", "Fire"],
     "genus_category": "Fish",
     "weapon": "None",
     "weapon_equip": false,
@@ -50826,9 +49856,7 @@
     "pal_deck_index": 136,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -51457,9 +50485,7 @@
     "pal_deck_index": 66,
     "size": "M",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -51778,10 +50804,7 @@
     "pal_deck_index": 129,
     "size": "L",
     "rarity": 6,
-    "element_types": [
-      "Fire",
-      "Earth"
-    ],
+    "element_types": ["Fire", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -51842,9 +50865,7 @@
       "RockLance": 50,
       "FireBall": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_volcanicmonster_icon_normal"
   },
@@ -51854,10 +50875,7 @@
     "pal_deck_index": 129,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Ice",
-      "Earth"
-    ],
+    "element_types": ["Ice", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -51918,9 +50936,7 @@
       "RockLance": 50,
       "DiamondFall": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_volcanicmonster_ice_icon_normal"
   },
@@ -51930,10 +50946,7 @@
     "pal_deck_index": 105,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Fire",
-      "Earth"
-    ],
+    "element_types": ["Fire", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -52004,10 +51017,7 @@
     "pal_deck_index": 105,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Ice",
-      "Earth"
-    ],
+    "element_types": ["Ice", "Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -52140,10 +51150,7 @@
     "pal_deck_index": 103,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Ice",
-      "Dragon"
-    ],
+    "element_types": ["Ice", "Dragon"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -52215,10 +51222,7 @@
     "pal_deck_index": 103,
     "size": "M",
     "rarity": 5,
-    "element_types": [
-      "Fire",
-      "Dragon"
-    ],
+    "element_types": ["Fire", "Dragon"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -52289,9 +51293,7 @@
     "pal_deck_index": 56,
     "size": "M",
     "rarity": 3,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -52362,9 +51364,7 @@
     "pal_deck_index": 56,
     "size": "M",
     "rarity": 3,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -52435,9 +51435,7 @@
     "pal_deck_index": 146,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Dragon"
-    ],
+    "element_types": ["Dragon"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -52498,9 +51496,7 @@
       "BeamSlicer": 50,
       "DragonMeteor": 70
     },
-    "passive_skills": [
-      "Alien"
-    ],
+    "passive_skills": ["Alien"],
     "disabled": false,
     "icon": "t_whitealiendragon_icon_normal"
   },
@@ -52510,9 +51506,7 @@
     "pal_deck_index": 157,
     "size": "M",
     "rarity": 6,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -52583,9 +51577,7 @@
     "pal_deck_index": 157,
     "size": "M",
     "rarity": 7,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -52656,9 +51648,7 @@
     "pal_deck_index": 116,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -52729,9 +51719,7 @@
     "pal_deck_index": 116,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -52802,9 +51790,7 @@
     "pal_deck_index": 160,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Dragon"
-    ],
+    "element_types": ["Dragon"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -52865,9 +51851,7 @@
       "Unique_WhiteShieldDragon_ShieldTackle": 50,
       "DragonMeteor": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_whiteshielddragon_icon_normal"
   },
@@ -52877,9 +51861,7 @@
     "pal_deck_index": 132,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -52951,9 +51933,7 @@
     "pal_deck_index": 132,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -53149,9 +52129,7 @@
     "pal_deck_index": 38,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -53222,9 +52200,7 @@
     "pal_deck_index": 38,
     "size": "None",
     "rarity": 2,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -53295,9 +52271,7 @@
     "pal_deck_index": 159,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -53358,9 +52332,7 @@
       "SandTwister": 50,
       "RockBeat": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -53370,9 +52342,7 @@
     "pal_deck_index": 159,
     "size": "L",
     "rarity": 10,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -53433,9 +52403,7 @@
       "FireBall": 50,
       "Unique_WingGolem_Fire_FlameCutter": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -53445,9 +52413,7 @@
     "pal_deck_index": 159,
     "size": "L",
     "rarity": 9,
-    "element_types": [
-      "Earth"
-    ],
+    "element_types": ["Earth"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -53507,9 +52473,7 @@
       "Unique_WingGolem_RoundCutter": 40,
       "SandTwister": 50
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -53519,9 +52483,7 @@
     "pal_deck_index": 19,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Bird",
     "weapon": "None",
     "weapon_equip": false,
@@ -53592,9 +52554,7 @@
     "pal_deck_index": 8,
     "size": "None",
     "rarity": 1,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -53727,9 +52687,7 @@
     "pal_deck_index": -1,
     "size": "L",
     "rarity": 6,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -53794,9 +52752,7 @@
     "pal_deck_index": -1,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -53860,9 +52816,7 @@
     "pal_deck_index": -1,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -53926,9 +52880,7 @@
     "pal_deck_index": -1,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Water"
-    ],
+    "element_types": ["Water"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -53992,9 +52944,7 @@
     "pal_deck_index": -1,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -54058,9 +53008,7 @@
     "pal_deck_index": -1,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Dark"
-    ],
+    "element_types": ["Dark"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -54124,9 +53072,7 @@
     "pal_deck_index": -1,
     "size": "M",
     "rarity": 4,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -54190,9 +53136,7 @@
     "pal_deck_index": -1,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Fire"
-    ],
+    "element_types": ["Fire"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -54256,9 +53200,7 @@
     "pal_deck_index": -1,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -54322,9 +53264,7 @@
     "pal_deck_index": -1,
     "size": "S",
     "rarity": 3,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -54388,9 +53328,7 @@
     "pal_deck_index": -1,
     "size": "S",
     "rarity": 4,
-    "element_types": [
-      "Normal"
-    ],
+    "element_types": ["Normal"],
     "genus_category": "Unknown",
     "weapon": "None",
     "weapon_equip": false,
@@ -54764,9 +53702,7 @@
     "pal_deck_index": 134,
     "size": "L",
     "rarity": 7,
-    "element_types": [
-      "Ice"
-    ],
+    "element_types": ["Ice"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -54828,9 +53764,7 @@
       "SolarBeam": 50,
       "DiamondFall": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   },
@@ -54840,9 +53774,7 @@
     "pal_deck_index": 134,
     "size": "L",
     "rarity": 8,
-    "element_types": [
-      "Leaf"
-    ],
+    "element_types": ["Leaf"],
     "genus_category": "Humanoid",
     "weapon": "None",
     "weapon_equip": false,
@@ -54904,9 +53836,7 @@
       "SolarBeam": 50,
       "WindBurst": 70
     },
-    "passive_skills": [
-      "Deffence_up2_2"
-    ],
+    "passive_skills": ["Deffence_up2_2"],
     "disabled": false,
     "icon": "t_commonhuman_icon_normal"
   }

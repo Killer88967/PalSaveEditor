@@ -5410,62 +5410,32 @@
   {
     "name": "Worker",
     "type": "passive_skills",
-    "skills": [
-      "CraftSpeed_up1",
-      "CraftSpeed_up2",
-      "CraftSpeed_up3",
-      "Rare"
-    ]
+    "skills": ["CraftSpeed_up1", "CraftSpeed_up2", "CraftSpeed_up3", "Rare"]
   },
   {
     "name": "Runner",
     "type": "passive_skills",
-    "skills": [
-      "MoveSpeed_up_3",
-      "MoveSpeed_up_2",
-      "MoveSpeed_up_1",
-      "Legend"
-    ]
+    "skills": ["MoveSpeed_up_3", "MoveSpeed_up_2", "MoveSpeed_up_1", "Legend"]
   },
   {
     "name": "Tank",
     "type": "passive_skills",
-    "skills": [
-      "Deffence_up2",
-      "Deffence_up1",
-      "PAL_masochist",
-      "Legend"
-    ]
+    "skills": ["Deffence_up2", "Deffence_up1", "PAL_masochist", "Legend"]
   },
   {
     "name": "Attack",
     "type": "passive_skills",
-    "skills": [
-      "Noukin",
-      "PAL_ALLAttack_up2",
-      "Rare",
-      "Legend"
-    ]
+    "skills": ["Noukin", "PAL_ALLAttack_up2", "Rare", "Legend"]
   },
   {
     "name": "Balanced",
     "type": "passive_skills",
-    "skills": [
-      "Noukin",
-      "PAL_ALLAttack_up2",
-      "Deffence_up2",
-      "Legend"
-    ]
+    "skills": ["Noukin", "PAL_ALLAttack_up2", "Deffence_up2", "Legend"]
   },
   {
     "name": "Mount",
     "type": "passive_skills",
-    "skills": [
-      "Noukin",
-      "PAL_ALLAttack_up2",
-      "MoveSpeed_up_3",
-      "Legend"
-    ]
+    "skills": ["Noukin", "PAL_ALLAttack_up2", "MoveSpeed_up_3", "Legend"]
   },
   {
     "name": "Dark",

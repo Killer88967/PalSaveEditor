@@ -11,17 +11,12 @@
   "active_filters_count": "Bộ lọc đang hoạt động ( {count} )",
   "active_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Kỹ năng chủ động",
         "countPlural=other": "Kỹ năng chủ động"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "activity": "Hoạt động",
@@ -70,17 +65,12 @@
   "avg_transfers_per_pal": "Số lượt chuyển khoản trung bình mỗi {pal} :",
   "base": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Căn cứ",
         "countPlural=other": "Căn cứ"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "base_container": "Thùng chứa cơ bản",
@@ -135,17 +125,12 @@
   "collected": "Đã thu thập",
   "collection": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Bộ sưu tập",
         "countPlural=other": "Bộ sưu tập"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "collection_delete_warning": "Những người bạn trong bộ sưu tập này sẽ không bị xóa, nhưng họ sẽ không còn được liên kết với bộ sưu tập này nữa.",
@@ -247,17 +232,12 @@
   "feed": "Cho ăn",
   "file": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Tài liệu",
         "countPlural=other": "Tệp"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "fill": "Đổ đầy",
@@ -266,17 +246,12 @@
   "fill_entity": "Điền {entity}",
   "filter": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Lọc",
         "countPlural=other": "Bộ lọc"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "filter_and_sort": "Lọc & Sắp xếp",
@@ -292,17 +267,12 @@
   "grid_view": "Chế độ xem lưới",
   "guild": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Hội",
         "countPlural=other": "Hội"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "guild_name": "Tên Bang hội",
@@ -314,17 +284,12 @@
   "hp": "HP",
   "human": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Nhân loại",
         "countPlural=other": "Con người"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "id": "NHẬN DẠNG",
@@ -341,17 +306,12 @@
   "inventory": "Hàng tồn kho",
   "item": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Mục",
         "countPlural=other": "Mặt hàng"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "item_container": "Thùng chứa vật phẩm",
@@ -475,17 +435,12 @@
   "page_of_pages": "Trang {current} trên tổng {total}",
   "pal": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Pal",
         "countPlural=other": "Bạn bè"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "pal_box_party": "Palbox + tiệc",
@@ -498,50 +453,35 @@
   "passive": "Thụ động",
   "passive_skill": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Kỹ năng bị động",
         "countPlural=other": "Kỹ năng bị động"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "paste": "Dán",
   "player": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Người chơi",
         "countPlural=other": "Người chơi"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "predator": "Kẻ săn mồi",
   "predator_pals": "Kẻ săn mồi {pals}",
   "preset": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Cài đặt sẵn",
         "countPlural=other": "Cài đặt sẵn"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "preset_name": "Tên cài đặt sẵn",
@@ -573,17 +513,12 @@
   "right_click_edit_base": "Nhấp chuột phải vào một căn cứ để chỉnh sửa tên của nó.",
   "save": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Cứu",
         "countPlural=other": "Lưu"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "save_as_preset": "Lưu dưới dạng cài đặt sẵn",
@@ -655,17 +590,12 @@
   "syncing": "Đồng bộ hóa",
   "tag": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Nhãn",
         "countPlural=other": "Thẻ"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "tag_changes": "Thay đổi thẻ",
@@ -676,17 +606,12 @@
   "target_available": "Target hiện có sẵn",
   "technology": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Công nghệ",
         "countPlural=other": "Công nghệ"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "technology_points": "Điểm công nghệ",
@@ -709,17 +634,12 @@
   "total_pals": "Tổng số {pals}",
   "transfer": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Chuyển khoản",
         "countPlural=other": "Chuyển nhượng"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "transfer_all_pals": "Chuyển tất cả {pals}",
@@ -729,17 +649,12 @@
   "trust_xp": "Tin tưởng XP",
   "type": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Kiểu",
         "countPlural=other": "Các loại"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "type_label": "Loại: {type}",
@@ -769,17 +684,12 @@
   "warning": "Cảnh báo",
   "weapon": [
     {
-      "declarations": [
-        "input count",
-        "local countPlural = count: plural"
-      ],
+      "declarations": ["input count", "local countPlural = count: plural"],
       "match": {
         "countPlural=one": "Vũ khí",
         "countPlural=other": "Vũ khí"
       },
-      "selectors": [
-        "countPlural"
-      ]
+      "selectors": ["countPlural"]
     }
   ],
   "weight": "Cân nặng",
