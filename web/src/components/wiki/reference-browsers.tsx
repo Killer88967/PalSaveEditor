@@ -20,16 +20,20 @@ export function ElementsBrowser() {
   const [pals, setPals] = useState<WikiPal[]>([]);
 
   useEffect(() => {
-    void loadWikiData("pals").then(setPals).catch(() => {});
+    void loadWikiData("pals")
+      .then(setPals)
+      .catch(() => {});
   }, []);
 
   return (
     <WikiBrowser
       set="elements"
       searchPlaceholder="Search elements…"
-      keyOf={(element) => element.id}
-      matches={(element, query) => element.name.toLowerCase().includes(query)}
-      renderRow={(element) => (
+      keyOfAction={(element) => element.id}
+      matchesAction={(element, query) =>
+        element.name.toLowerCase().includes(query)
+      }
+      renderRowAction={(element) => (
         <>
           <WikiIcon icon={element.icon} alt="" className="size-5" />
           <span className="flex-1 text-sm font-medium">{element.name}</span>
@@ -41,7 +45,7 @@ export function ElementsBrowser() {
         </>
       )}
       emptyDetail="Select an element."
-      renderDetail={(element) => {
+      renderDetailAction={(element) => {
         const members = pals
           .filter((pal) => pal.isPal && pal.elements.includes(element.id))
           .sort((a, b) => a.name.localeCompare(b.name));
@@ -87,7 +91,9 @@ export function WorkSuitabilityBrowser() {
   const [pals, setPals] = useState<WikiPal[]>([]);
 
   useEffect(() => {
-    void loadWikiData("pals").then(setPals).catch(() => {});
+    void loadWikiData("pals")
+      .then(setPals)
+      .catch(() => {});
   }, []);
 
   const iconOf = (id: string) => pals.find((pal) => pal.id === id)?.icon;
@@ -96,12 +102,12 @@ export function WorkSuitabilityBrowser() {
     <WikiBrowser
       set="work-suitability"
       searchPlaceholder="Search work types…"
-      keyOf={(work) => work.id}
-      matches={(work, query) =>
+      keyOfAction={(work) => work.id}
+      matchesAction={(work, query) =>
         work.name.toLowerCase().includes(query) ||
         work.id.toLowerCase().includes(query)
       }
-      renderRow={(work) => (
+      renderRowAction={(work) => (
         <>
           <WikiIcon icon={work.icon} alt="" className="size-5" />
           <span className="flex-1 text-sm font-medium">{work.name}</span>
@@ -111,7 +117,7 @@ export function WorkSuitabilityBrowser() {
         </>
       )}
       emptyDetail="Select a work type."
-      renderDetail={(work) => (
+      renderDetailAction={(work) => (
         <div className="space-y-4">
           <DetailHeader
             icon={work.icon}
@@ -152,8 +158,8 @@ export function TechnologiesBrowser() {
     <WikiBrowser
       set="technologies"
       searchPlaceholder="Search technologies…"
-      keyOf={(tech) => tech.id}
-      matches={(tech, query) =>
+      keyOfAction={(tech) => tech.id}
+      matchesAction={(tech, query) =>
         tech.name.toLowerCase().includes(query) ||
         tech.id.toLowerCase().includes(query)
       }
@@ -161,7 +167,7 @@ export function TechnologiesBrowser() {
         { id: "boss", label: "Ancient (boss)" },
         { id: "normal", label: "Standard" },
       ]}
-      passesFilter={(tech, filter) =>
+      passesFilterAction={(tech, filter) =>
         filter === "boss" ? tech.boss : !tech.boss
       }
       sorts={[
@@ -183,7 +189,7 @@ export function TechnologiesBrowser() {
           compare: (a: WikiTechnology, b: WikiTechnology) => b.cost - a.cost,
         },
       ]}
-      renderRow={(tech) => (
+      renderRowAction={(tech) => (
         <>
           <WikiIcon icon={tech.icon} alt="" className="size-7" />
           <span className="min-w-0 flex-1">
@@ -200,7 +206,7 @@ export function TechnologiesBrowser() {
         </>
       )}
       emptyDetail="Select a technology."
-      renderDetail={(tech) => (
+      renderDetailAction={(tech) => (
         <div className="space-y-4">
           <DetailHeader
             icon={tech.icon}
@@ -209,7 +215,9 @@ export function TechnologiesBrowser() {
             description={tech.description}
             badges={
               <>
-                <span className="badge badge-accent">Level {tech.levelCap}</span>
+                <span className="badge badge-accent">
+                  Level {tech.levelCap}
+                </span>
                 <span className="badge">Tier {tech.tier}</span>
                 {tech.boss && (
                   <span className="badge badge-warning">Ancient</span>
@@ -255,8 +263,8 @@ export function BuildingsBrowser() {
     <WikiBrowser
       set="buildings"
       searchPlaceholder="Search buildings…"
-      keyOf={(building) => building.id}
-      matches={(building, query) =>
+      keyOfAction={(building) => building.id}
+      matchesAction={(building, query) =>
         building.name.toLowerCase().includes(query) ||
         building.id.toLowerCase().includes(query)
       }
@@ -268,7 +276,7 @@ export function BuildingsBrowser() {
         { id: "Defense", label: "Defence" },
         { id: "Foundation", label: "Foundation" },
       ]}
-      passesFilter={(building, filter) => building.typeA === filter}
+      passesFilterAction={(building, filter) => building.typeA === filter}
       sorts={[
         {
           id: "name",
@@ -282,7 +290,7 @@ export function BuildingsBrowser() {
           compare: (a: WikiBuilding, b: WikiBuilding) => b.hp - a.hp,
         },
       ]}
-      renderRow={(building) => (
+      renderRowAction={(building) => (
         <>
           <WikiIcon icon={building.icon} alt="" className="size-7" />
           <span className="min-w-0 flex-1">
@@ -296,7 +304,7 @@ export function BuildingsBrowser() {
         </>
       )}
       emptyDetail="Select a building."
-      renderDetail={(building) => (
+      renderDetailAction={(building) => (
         <div className="space-y-4">
           <DetailHeader
             icon={building.icon}

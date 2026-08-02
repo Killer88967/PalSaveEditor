@@ -1,1 +1,3489 @@
-[{"id":"ElementResist_Normal_1_PAL","name":"Abnormal","description":"10.0% decrease in incoming Neutral damage.","rank":1,"effects":[{"type":"ElementResist_Normal","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"SwimSpeed_up_2","name":"Ace Swimmer","rank":3,"effects":[],"attachesTo":["Pals"]},{"id":"AirDash_1","name":"Aerial Dash +1","description":"Aerial Dash +1","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"AirDash_2","name":"Aerial Dash +2","description":"Aerial Dash +2","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"AirDash_3","name":"Aerial Dash +3","description":"Aerial Dash +3","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"AirDash_4","name":"Aerial Dash +4","description":"Aerial Dash +4","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"PAL_oraora","name":"Aggressive","rank":1,"effects":[{"type":"ShotAttack","value":10,"target":"ToSelf"},{"type":"Defense","value":-10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CraftSpeed_up2","name":"Artisan","rank":3,"effects":[{"type":"CraftSpeed","value":50,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"Attack_ACC_up1_Armor","name":"Attack Up (S) Lv. 1","rank":1,"effects":[{"type":"ShotAttack","value":3,"target":"ToSelf"}],"attachesTo":[]},{"id":"Attack_ACC_up2_Armor","name":"Attack Up (S) Lv. 2","rank":2,"effects":[{"type":"ShotAttack","value":6,"target":"ToSelf"}],"attachesTo":[]},{"id":"Attack_ACC_up3_Armor","name":"Attack Up (S) Lv. 3","rank":3,"effects":[{"type":"ShotAttack","value":9,"target":"ToSelf"}],"attachesTo":[]},{"id":"Attack_ACC_up4_Armor","name":"Attack Up (S) Lv. 4","rank":4,"effects":[{"type":"ShotAttack","value":12,"target":"ToSelf"}],"attachesTo":[]},{"id":"Attack_ACC_up1","name":"Attack Up Lv. 1","rank":1,"effects":[{"type":"ShotAttack","value":5,"target":"ToSelf"}],"attachesTo":[]},{"id":"Attack_ACC_up2","name":"Attack Up Lv. 2","rank":2,"effects":[{"type":"ShotAttack","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"Attack_ACC_up3","name":"Attack Up Lv. 3","rank":3,"effects":[{"type":"ShotAttack","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"Attack_ACC_up4","name":"Attack Up Lv. 4","rank":4,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"}],"attachesTo":[]},{"id":"MutationPal_Babysitter","name":"Babysitter","description":"While at a base, increases egg production speed by +30.0% and incubation speed by +30.0% for Pals assigned to a Breeding Farm.","rank":4,"effects":[{"type":"PalEggHatchingSpeed","value":30,"target":"ToBuildObject"}],"attachesTo":[]},{"id":"CollectItem_Berries","name":"Berry Picker","rank":1,"effects":[{"type":"CollectItem","value":0,"target":"ToSelf"}],"attachesTo":[]},{"id":"OctaviaArmorVampire","name":"Blood Is Fuel","rank":4,"effects":[{"type":"LifeSteal","value":1,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Dragon_1_PAL","name":"Blood of the Dragon","description":"10.0% increase in Dragon attack damage.","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"ElementResist_Leaf_1_PAL","name":"Botanical Barrier","description":"10.0% decrease in incoming Grass damage.","rank":1,"effects":[{"type":"ElementResist_Leaf","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"PAL_FullStomach_Up_2","name":"Bottomless Stomach","description":"Hunger decreases <NumRed_13>+15.0%</> faster.","rank":-2,"effects":[{"type":"FullStomatch_Decrease","value":15,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"PAL_ALLAttack_up1","name":"Brave","rank":1,"effects":[{"type":"ShotAttack","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"Deffence_down2","name":"Brittle","rank":-3,"effects":[{"type":"Defense","value":-20,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"GYM_NAME_Volcano","name":"Brothers of the Eternal Pyre Soul Leader","rank":3,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"},{"type":"MoveSpeed","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"Deffence_up2","name":"Burly Body","description":"Defense +20.0% Immune to Flinch","rank":3,"effects":[{"type":"Defense","value":20,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"ElementBoost_Thunder_1_PAL","name":"Capacitor","description":"10.0% increase in Lightning attack damage.","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CaptureLevel_Up_1","name":"Capture Strength +1","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"CaptureLevel_Up_2","name":"Capture Strength +2","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"CaptureLevel_Up_3","name":"Capture Strength +3","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"CaptureLevel_Up_4","name":"Capture Strength +4","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"CaptureLevel_Up_5","name":"Capture Strength +5","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"CaptureLevel_Up_6","name":"Capture Strength +6","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Normal_2_PAL","name":"Celestial Emperor","rank":3,"effects":[{"type":"ElementBoost_Normal","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Dark_1_PAL","name":"Cheery","description":"10.0% decrease in incoming Dark damage.","rank":1,"effects":[{"type":"ElementResist_Dark","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CraftSpeed_down1","name":"Clumsy","rank":-1,"effects":[{"type":"CraftSpeed","value":-10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"TemperatureResist_Cold1","name":"Cold Resistance Lv. 1","rank":1,"effects":[{"type":"TemperatureResist_Cold","value":1,"target":"ToSelf"}],"attachesTo":[]},{"id":"TemperatureResist_Cold2","name":"Cold Resistance Lv. 2","rank":2,"effects":[{"type":"TemperatureResist_Cold","value":2,"target":"ToSelf"}],"attachesTo":[]},{"id":"TemperatureResist_Cold3","name":"Cold Resistance Lv. 3","rank":3,"effects":[{"type":"TemperatureResist_Cold","value":3,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Ice_1_PAL","name":"Coldblooded","description":"10.0% increase in Ice attack damage.","rank":1,"effects":[{"type":"ElementBoost_Ice","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"PAL_conceited","name":"Conceited","rank":1,"effects":[{"type":"CraftSpeed","value":10,"target":"ToSelf"},{"type":"Defense","value":-10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CollectItem_Sweets","name":"Confectioner","rank":1,"effects":[{"type":"CollectItem","value":0,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_ALLAttack_down1","name":"Coward","rank":-1,"effects":[{"type":"ShotAttack","value":-10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"PAL_FullStomach_Down_1","name":"Dainty Eater","description":"Hunger decreases <NumBlue_13>+10.0%</> slower.","rank":1,"effects":[{"type":"FullStomatch_Decrease","value":-10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"ElementBoost_Dark_3_BossDefeat","name":"Dark Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_GrassGolem_Dark","name":"Dark Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_MoonChild","name":"Dark Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_WhiteDeer_Dark","name":"Dark Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Dark_2_BossDefeat","name":"Dark Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_AmaterasuWolf_Dark","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_BadCatgirl","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_BlackPuppy","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_CatMage","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_CatVampire","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_DarkScorpion","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_GhostRabbit","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_GrimGirl","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_IceHorse_Dark","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_LilyQueen_Dark","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_MysteryMask","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_NightBlueHorse","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_PurpleSpider","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_RaijinDaughter_Water","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_SaintCentaur_2","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Dark_1_BossDefeat","name":"Dark Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dark","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementResist_Dark_1","name":"Dark Damage Reduction Lv. 1","rank":1,"effects":[{"type":"ElementResist_Dark","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Dark_2","name":"Dark Damage Reduction Lv. 2","rank":2,"effects":[{"type":"ElementResist_Dark","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Dark_3","name":"Dark Damage Reduction Lv. 3","rank":3,"effects":[{"type":"ElementResist_Dark","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Dark_4","name":"Dark Damage Reduction Lv. 4","rank":4,"effects":[{"type":"ElementResist_Dark","value":35,"target":"ToSelf"}],"attachesTo":[]},{"id":"defense_ACC_up1","name":"Defense Up Lv. 1","rank":1,"effects":[{"type":"Defense","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"defense_ACC_up2","name":"Defense Up Lv. 2","rank":2,"effects":[{"type":"Defense","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"defense_ACC_up3","name":"Defense Up Lv. 3","rank":3,"effects":[{"type":"Defense","value":20,"target":"ToSelf"}],"attachesTo":[]},{"id":"defense_ACC_up4","name":"Defense Up Lv. 4","rank":4,"effects":[{"type":"Defense","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_ALLAttack_up3","name":"Demon God","rank":4,"effects":[{"type":"ShotAttack","value":30,"target":"ToSelf"},{"type":"Defense","value":5,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"WorldTree_CraftSpeed","name":"Demon’s Hand","description":"Work Speed <NumBlue_13>+</>90.0<NumBlue_13>%</> SAN dreceases <NumRed_13>+15.0% faster</> World Tree harvestables won't vanish when approached.","rank":5,"effects":[{"type":"CraftSpeed","value":90,"target":"ToSelf"},{"type":"Sanity_Decrease","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_Sanity_Up_2","name":"Destructive","description":"SAN drops <NumRed_13>+15.0%</> faster.","rank":-2,"effects":[{"type":"Sanity_Decrease","value":15,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"Deffence_up3","name":"Diamond Body","description":"Defense +30.0% Immune to Flinch Immune to Knockback","rank":4,"effects":[{"type":"Defense","value":30,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"PAL_FullStomach_Down_2","name":"Diet Lover","description":"Hunger decreases <NumBlue_13>+15.0%</> slower.","rank":3,"effects":[{"type":"FullStomatch_Decrease","value":-15,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"WorldTree_MoveSpeed","name":"Dimensional Leap","description":"Movement Speed <NumBlue_13>+</>50.0<NumBlue_13>%</> Increases Hunger depletion rate by <NumRed_13>+15.0%</> World Tree resources will not vanish when approached.","rank":5,"effects":[{"type":"MoveSpeed","value":50,"target":"ToSelf"},{"type":"FullStomatch_Decrease","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Dragon_2_PAL","name":"Divine Dragon","rank":3,"effects":[{"type":"ElementBoost_Dragon","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"Deffence_down1","name":"Downtrodden","rank":-1,"effects":[{"type":"Defense","value":-10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"BossDefeatReward_DomeArmorDragon","name":"Dragon Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_JetDragon","name":"Dragon Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Dragon_3_BossDefeat","name":"Dragon Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_BlackMetalDragon","name":"Dragon Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_GhostDragon","name":"Dragon Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_WhiteShieldDragon","name":"Dragon Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Dragon_2_BossDefeat","name":"Dragon Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_FairyDragon","name":"Dragon Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_LazyDragon_Electric","name":"Dragon Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_SkyDragon","name":"Dragon Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Dragon_1_BossDefeat","name":"Dragon Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementResist_Dragon_1","name":"Dragon Damage Reduction Lv. 1","rank":1,"effects":[{"type":"ElementResist_Dragon","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Dragon_2","name":"Dragon Damage Reduction Lv. 2","rank":2,"effects":[{"type":"ElementResist_Dragon","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Dragon_3","name":"Dragon Damage Reduction Lv. 3","rank":3,"effects":[{"type":"ElementResist_Dragon","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Dragon_4","name":"Dragon Damage Reduction Lv. 4","rank":4,"effects":[{"type":"ElementResist_Dragon","value":35,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Dragon_1_PAL","name":"Dragonkiller","description":"10.0% decrease in incoming Dragon damage.","rank":1,"effects":[{"type":"ElementResist_Dragon","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"ElementResist_Earth_1","name":"Earth Damage Reduction Lv. 1","rank":1,"effects":[{"type":"ElementResist_Earth","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Earth_2","name":"Earth Damage Reduction Lv. 2","rank":2,"effects":[{"type":"ElementResist_Earth","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Earth_3","name":"Earth Damage Reduction Lv. 3","rank":3,"effects":[{"type":"ElementResist_Earth","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Earth_2_PAL","name":"Earth Emperor","rank":3,"effects":[{"type":"ElementBoost_Earth","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Earth_1_PAL","name":"Earthquake Resistant","description":"10.0% decrease in incoming Earth damage.","rank":1,"effects":[{"type":"ElementResist_Earth","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CoolTimeReduction_Down_1","name":"Easygoing","description":"Active skill cooldown extension -15.0%","rank":-1,"effects":[{"type":"ActiveSkillCoolTime_Decrease","value":-15,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CollectItem_Egg","name":"Egg Layer","rank":1,"effects":[{"type":"CollectItem","value":0,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Electricity_3_BossDefeat","name":"Electric Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_BlueThunderHorse","name":"Electric Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_ElecPanda","name":"Electric Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_FengyunDeeper_Electric","name":"Electric Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Electricity_2_BossDefeat","name":"Electric Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_ElecLizard","name":"Electric Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_ElecSnail","name":"Electric Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_FlowerDinosaur_Electric","name":"Electric Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_GrassPanda_Electric","name":"Electric Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Kirin","name":"Electric Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_ScorpionMan_Electric","name":"Electric Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_ThunderBird","name":"Electric Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_ThunderFluffyBird","name":"Electric Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Electricity_1_BossDefeat","name":"Electric Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementResist_Thunder_1","name":"Electric Damage Reduction Lv. 1","rank":1,"effects":[{"type":"ElementResist_Electricity","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Thunder_2","name":"Electric Damage Reduction Lv. 2","rank":2,"effects":[{"type":"ElementResist_Electricity","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Thunder_3","name":"Electric Damage Reduction Lv. 3","rank":3,"effects":[{"type":"ElementResist_Electricity","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Thunder_4","name":"Electric Damage Reduction Lv. 4","rank":4,"effects":[{"type":"ElementResist_Electricity","value":35,"target":"ToSelf"}],"attachesTo":[]},{"id":"Stamina_Up_3","name":"Eternal Engine","description":"Max stamina +75.0% *This effect is only valid for rideable pals.","rank":4,"effects":[{"type":"PalSP_Increase","value":75,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"EternalFlame","name":"Eternal Flame","rank":4,"effects":[{"type":"ElementBoost_Fire","value":30,"target":"ToSelf"},{"type":"ElementBoost_Electricity","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"Defuser_ExplosiveSpore_EquipSkill","name":"Explosion Immunity","rank":1,"effects":[],"attachesTo":[]},{"id":"AvoidDurationUp_EquipSkill_2","name":"Extended Dodge Immunity","rank":1,"effects":[],"attachesTo":[]},{"id":"WorkSuitabilityAddRank_MonsterFarm_1","name":"Farmhand","description":"Farming's Work Suitability<NumBlue_13> +1</>","rank":3,"effects":[],"attachesTo":["Pals"]},{"id":"PAL_ALLAttack_up2","name":"Ferocious","rank":3,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"SalePrice_Up_2","name":"Fine Furs","description":"Increases the value of items when sold by +3.0%","rank":1,"effects":[{"type":"ShopSellPrice_Money_Increase","value":3,"target":"ToSelf"},{"type":"ShopBuyPrice_Money_Increase","value":-3,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"BossDefeatReward_IceNarwhal_Fire","name":"Fire Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_KingBahamut","name":"Fire Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Suzaku","name":"Fire Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Fire_3_BossDefeat","name":"Fire Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_FoxExorcist","name":"Fire Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_KabukiMan","name":"Fire Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Ronin","name":"Fire Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Fire_2_BossDefeat","name":"Fire Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_FireKirin","name":"Fire Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_FlameBuffalo","name":"Fire Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_FoxMage","name":"Fire Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Manticore","name":"Fire Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_VolcanoDragon","name":"Fire Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Fire_1_BossDefeat","name":"Fire Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Fire","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementResist_Fire_1","name":"Fire Damage Reduction Lv. 1","rank":1,"effects":[{"type":"ElementResist_Fire","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Fire_2","name":"Fire Damage Reduction Lv. 2","rank":2,"effects":[{"type":"ElementResist_Fire","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Fire_3","name":"Fire Damage Reduction Lv. 3","rank":3,"effects":[{"type":"ElementResist_Fire","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Fire_4","name":"Fire Damage Reduction Lv. 4","rank":4,"effects":[{"type":"ElementResist_Fire","value":35,"target":"ToSelf"}],"attachesTo":[]},{"id":"Stamina_Up_2","name":"Fit as a Fiddle","description":"Max stamina +25.0% *This effect is only valid for rideable pals.","rank":1,"effects":[{"type":"PalSP_Increase","value":25,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"ElementBoost_Fire_2_PAL","name":"Flame Emperor","rank":3,"effects":[{"type":"ElementBoost_Fire","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Leaf_1_PAL","name":"Fragrant Foliage","description":"10.0% increase in Grass attack damage.","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"GYM_NAME_Forest","name":"Free Pal Alliance Founder","rank":3,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"},{"type":"MoveSpeed","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_FullStomach_Up_1","name":"Glutton","description":"Hunger decreases <NumRed_13>+10.0%</> faster.","rank":-1,"effects":[{"type":"FullStomatch_Decrease","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"WorldTree_ATK_DEF","name":"God of Destruction","description":"Attack <NumBlue_13>+</>40.0% Defense <NumBlue_13>+</>20.0% Max Health -50.0% World Tree resources will not vanish when approached.","rank":5,"effects":[{"type":"ShotAttack","value":40,"target":"ToSelf"},{"type":"Defense","value":20,"target":"ToSelf"},{"type":"MaxHP","value":-50,"target":"ToSelf"}],"attachesTo":[]},{"id":"CollectItem_Money","name":"Gold Digger","rank":1,"effects":[{"type":"CollectItem","value":0,"target":"ToSelf"}],"attachesTo":[]},{"id":"BossDefeatReward_LilyQueen","name":"Grass Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Leaf_3_BossDefeat","name":"Grass Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_BerryGoat_Dark","name":"Grass Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_BlueberryFairy","name":"Grass Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_GrassGolem","name":"Grass Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_GrassMammoth","name":"Grass Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_PinkRabbit_Grass","name":"Grass Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_VioletFairy","name":"Grass Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Leaf_2_BossDefeat","name":"Grass Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_CactusDoll","name":"Grass Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_FlowerDoll","name":"Grass Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_GrassRabbitMan","name":"Grass Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_MushroomLady","name":"Grass Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_QueenBee","name":"Grass Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_SakuraSaurus","name":"Grass Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Yeti_Grass","name":"Grass Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Leaf_1_BossDefeat","name":"Grass Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementResist_Leaf_1","name":"Grass Damage Reduction Lv. 1","rank":1,"effects":[{"type":"ElementResist_Leaf","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Leaf_2","name":"Grass Damage Reduction Lv. 2","rank":2,"effects":[{"type":"ElementResist_Leaf","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Leaf_3","name":"Grass Damage Reduction Lv. 3","rank":3,"effects":[{"type":"ElementResist_Leaf","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Leaf_4","name":"Grass Damage Reduction Lv. 4","rank":4,"effects":[{"type":"ElementResist_Leaf","value":35,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Earth_3_BossDefeat","name":"Ground Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_GoldenHorse","name":"Ground Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_HerculesBeetle_Ground","name":"Ground Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_RockBeast","name":"Ground Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_WhiteTiger_Ground","name":"Ground Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Earth_2_BossDefeat","name":"Ground Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Anubis","name":"Ground Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_CubeTurtle","name":"Ground Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_DarkScorpion_Ground","name":"Ground Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_HerculesBeetle","name":"Ground Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_LazyCatfish","name":"Ground Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_PlantSlime","name":"Ground Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_VolcanicMonster","name":"Ground Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_WingGolem","name":"Ground Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Earth_1_BossDefeat","name":"Ground Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Earth","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementResist_Earth_4","name":"Ground Damage Reduction Lv. 4","rank":4,"effects":[{"type":"ElementResist_Earth","value":35,"target":"ToSelf"}],"attachesTo":[]},{"id":"YakushimaProtection_Equip","name":"Hallowed Guard","rank":-1,"effects":[],"attachesTo":[]},{"id":"YakushimaDagameBoost_Melee_Equip","name":"Hallowed Power: Close Range","rank":-1,"effects":[],"attachesTo":[]},{"id":"YakushimaDagameBoost_Magic_Equip","name":"Hallowed Power: Magic","rank":-1,"effects":[],"attachesTo":[]},{"id":"YakushimaDagameBoost_Ranged_Equip","name":"Hallowed Power: Ranged","rank":-1,"effects":[],"attachesTo":[]},{"id":"YakushimaDagameBoost_Summon_Equip","name":"Hallowed Power: Summon","rank":-1,"effects":[],"attachesTo":[]},{"id":"Deffence_up1","name":"Hard Skin","rank":1,"effects":[{"type":"Defense","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"AutoHPRegeneRate_Passive","name":"Healing Coach","rank":3,"effects":[],"attachesTo":["Pals"]},{"id":"HP_ACC_up1","name":"Health Up Lv. 1","rank":1,"effects":[{"type":"MaxHP","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"HP_ACC_up2","name":"Health Up Lv. 2","rank":2,"effects":[{"type":"MaxHP","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"HP_ACC_up3","name":"Health Up Lv. 3","rank":3,"effects":[{"type":"MaxHP","value":20,"target":"ToSelf"}],"attachesTo":[]},{"id":"HP_ACC_up4","name":"Health Up Lv. 4","rank":4,"effects":[{"type":"MaxHP","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_Sanity_Down_3","name":"Heart of the Immovable King","description":"SAN drops <NumBlue_13>+20.0%</> slower.","rank":4,"effects":[{"type":"Sanity_Decrease","value":-20,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"TemperatureResist_Heat1","name":"Heat Resistance Lv. 1","rank":1,"effects":[{"type":"TemperatureResist_Heat","value":1,"target":"ToSelf"}],"attachesTo":[]},{"id":"TemperatureResist_Heat1Cold1","name":"Heat Resistance Lv. 1 / Cold Resistance Lv. 1","rank":1,"effects":[{"type":"TemperatureResist_Cold","value":1,"target":"ToSelf"},{"type":"TemperatureResist_Heat","value":1,"target":"ToSelf"}],"attachesTo":[]},{"id":"TemperatureResist_Heat2","name":"Heat Resistance Lv. 2","rank":2,"effects":[{"type":"TemperatureResist_Heat","value":2,"target":"ToSelf"}],"attachesTo":[]},{"id":"TemperatureResist_Heat2Cold2","name":"Heat Resistance Lv. 2 / Cold Resistance Lv. 2","rank":2,"effects":[{"type":"TemperatureResist_Cold","value":2,"target":"ToSelf"},{"type":"TemperatureResist_Heat","value":2,"target":"ToSelf"}],"attachesTo":[]},{"id":"TemperatureResist_Heat3","name":"Heat Resistance Lv. 3","rank":3,"effects":[{"type":"TemperatureResist_Heat","value":3,"target":"ToSelf"}],"attachesTo":[]},{"id":"TemperatureResist_Heat3Cold3","name":"Heat Resistance Lv. 3 / Cold Resistance Lv. 3","rank":3,"effects":[{"type":"TemperatureResist_Cold","value":3,"target":"ToSelf"},{"type":"TemperatureResist_Heat","value":3,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Ice_1_PAL","name":"Heated Body","description":"10.0% decrease in incoming Ice damage.","rank":1,"effects":[{"type":"ElementResist_Ice","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"MutationPal_ExplosionResist","name":"Heavily Armored","description":"<Status_Up>Immune</> to Explosion Damage","rank":4,"effects":[],"attachesTo":[]},{"id":"Deffence_up2_2","name":"Heavyweight","description":"Defense +20.0% Immune to Knockback","rank":2,"effects":[{"type":"Defense","value":20,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"WorldTree_Sanity","name":"Hermit Sage","description":"SAN depletion rate -<NumBlue_13>50.0%</> Work Speed -20.0<NumRed_13>%</> World Tree resources will not vanish when approached.","rank":5,"effects":[{"type":"Sanity_Decrease","value":-50,"target":"ToSelf"},{"type":"CraftSpeed","value":-20,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_rude","name":"Hooligan","rank":1,"effects":[{"type":"ShotAttack","value":15,"target":"ToSelf"},{"type":"CraftSpeed","value":-10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"ElementBoost_Aqua_1_PAL","name":"Hydromaniac","description":"10.0% increase in Water attack damage.","rank":1,"effects":[{"type":"ElementBoost_Water","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"BossDefeatReward_IceHorse","name":"Ice Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_IceNarwhal","name":"Ice Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Kitsunebi_Ice","name":"Ice Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Werewolf_Ice","name":"Ice Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Ice_3_BossDefeat","name":"Ice Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_KingAlpaca_Ice","name":"Ice Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_RockBeast_Ice","name":"Ice Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_VolcanoDragon_Ice","name":"Ice Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Ice_2_BossDefeat","name":"Ice Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_IceFox","name":"Ice Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_MopKing","name":"Ice Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_WeaselDragon","name":"Ice Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_WhiteMoth","name":"Ice Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Ice_1_BossDefeat","name":"Ice Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Ice","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementResist_Ice_1","name":"Ice Damage Reduction Lv. 1","rank":1,"effects":[{"type":"ElementResist_Ice","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Ice_2","name":"Ice Damage Reduction Lv. 2","rank":2,"effects":[{"type":"ElementResist_Ice","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Ice_3","name":"Ice Damage Reduction Lv. 3","rank":3,"effects":[{"type":"ElementResist_Ice","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Ice_4","name":"Ice Damage Reduction Lv. 4","rank":4,"effects":[{"type":"ElementResist_Ice","value":35,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Ice_2_PAL","name":"Ice Emperor","rank":3,"effects":[{"type":"ElementBoost_Ice","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"MutationPal_Mutant","name":"Idiosyncratic","description":"Pal and Player Auto Health Regeneration Rate +50.0% Defense +{EffectValue4}% <Status_Up>Immune</> to Poison Damage <Status_Up>Immune</> to Burn Damage","rank":4,"effects":[],"attachesTo":[]},{"id":"MutationPal_Immortal","name":"Immortality","description":"Life Steal +5.0% Pal Auto Health Regeneration Rate +100.0% Attack +15.0%","rank":4,"effects":[{"type":"LifeSteal","value":5,"target":"ToSelf"},{"type":"ShotAttack","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"CoolTimeReduction_Up_2","name":"Impatient","description":"Active skill cooldown reduction 15.0%","rank":1,"effects":[{"type":"ActiveSkillCoolTime_Decrease","value":15,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"Stamina_Up_1","name":"Infinite Stamina","description":"Max stamina +50.0% *This effect is only valid for rideable pals.","rank":3,"effects":[{"type":"PalSP_Increase","value":50,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"Nocturnal","name":"Insomnia","description":"Does not sleep and continues to work even at night.","rank":1,"effects":[{"type":"Nocturnal","value":0,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"ElementResist_Thunder_1_PAL","name":"Insulated Body","description":"10.0% decrease in incoming Lightning damage.","rank":1,"effects":[{"type":"ElementResist_Electricity","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"Invader","name":"Invader","rank":4,"effects":[{"type":"ElementBoost_Dark","value":30,"target":"ToSelf"},{"type":"ElementBoost_Dragon","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"GYM_NAME_Viking","name":"Jarl of Feybreak","rank":3,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"},{"type":"MoveSpeed","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"JumpCount_Increase1","name":"Jump Count Increase +1","description":"Jump Count Increase +1","rank":1,"effects":[{"type":"JumpCount_Increase","value":1,"target":"ToSelf"}],"attachesTo":["Armour","Accessories"]},{"id":"JumpCount_Increase2","name":"Jump Count Increase +2","description":"Jump Count Increase +2","rank":1,"effects":[{"type":"JumpCount_Increase","value":2,"target":"ToSelf"}],"attachesTo":["Armour","Accessories"]},{"id":"JumpCount_Increase3","name":"Jump Count Increase +3","description":"Jump Count Increase +3","rank":1,"effects":[{"type":"JumpCount_Increase","value":3,"target":"ToSelf"}],"attachesTo":["Armour","Accessories"]},{"id":"JumpPower_Increase","name":"Jump Power Boost","description":"Jump Power Boost","rank":1,"effects":[{"type":"JumpPower_Increase","value":25,"target":"ToSelf"}],"attachesTo":["Armour","Accessories"]},{"id":"SwimSpeed_up_3","name":"King of the Waves","rank":4,"effects":[],"attachesTo":["Pals"]},{"id":"SelfDeathAddItemDrop_up_3","name":"Lavish Hospitality","description":"Your Dropped Items + 100.0%","rank":4,"effects":[],"attachesTo":["Pals"]},{"id":"GYM_NAME_Sakurajima","name":"Leader of the Moonflowers","rank":3,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"},{"type":"MoveSpeed","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"Legend","name":"Legend","description":"Attack +20.0% Defense +20.0% Movement Speed increases 20.0%","rank":4,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"},{"type":"Defense","value":20,"target":"ToSelf"},{"type":"MoveSpeed","value":20,"target":"ToSelf"}],"attachesTo":[]},{"id":"RideJumpCount_Increase1","name":"Lightfooted","description":"Mounted Jump Count +1","rank":4,"effects":[],"attachesTo":["Pals"]},{"id":"TrainerLogging_up1","name":"Logging Foreman","description":"25.0% increase in Player Logging Efficiency.","rank":3,"effects":[{"type":"Logging","value":25,"target":"ToTrainer"}],"attachesTo":["Pals"]},{"id":"WoodDrop_Boost_1","name":"Logging Yield Up Lv. 1","description":"Slightly increases the drop amount of Wood.","rank":1,"effects":[],"attachesTo":[]},{"id":"WoodDrop_Boost_2","name":"Logging Yield Up Lv. 2","description":"Increases the drop amount of Wood.","rank":1,"effects":[],"attachesTo":[]},{"id":"WoodDrop_Boost_3","name":"Logging Yield Up Lv. 3","description":"Greatly increases the drop amount of Wood.","rank":3,"effects":[],"attachesTo":[]},{"id":"WoodDrop_Boost_4","name":"Logging Yield Up Lv. 4","description":"Significantly increases the drop amount of Wood.","rank":3,"effects":[],"attachesTo":[]},{"id":"WoodDrop_Boost_5","name":"Logging Yield Up Lv. 5","description":"Massively increases the drop amount of Wood.","rank":4,"effects":[],"attachesTo":[]},{"id":"StonWoodDrop_Boost","name":"Logging/Mining Yield Up","description":"Significantly increases the drop amount of Wood, Stone, and Ore.","rank":3,"effects":[],"attachesTo":[]},{"id":"ElementBoost_Thunder_2_PAL","name":"Lord of Lightning","rank":3,"effects":[{"type":"ElementBoost_Electricity","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Aqua_2_PAL","name":"Lord of the Sea","rank":3,"effects":[{"type":"ElementBoost_Water","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Dark_2_PAL","name":"Lord of the Underworld","rank":3,"effects":[{"type":"ElementBoost_Dark","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"Rare","name":"Lucky","rank":4,"effects":[{"type":"ShotAttack","value":15,"target":"ToSelf"},{"type":"Defense","value":15,"target":"None"},{"type":"CraftSpeed","value":20,"target":"ToSelf"}],"attachesTo":["Rare Pals"]},{"id":"Nushi","name":"Lunker","description":"20.0% increase to Water attack damage 20.0% increase to Ice attack damage 20.0% increase to defense.","rank":4,"effects":[{"type":"ElementBoost_Water","value":20,"target":"ToSelf"},{"type":"ElementBoost_Ice","value":20,"target":"ToSelf"},{"type":"Defense","value":20,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_masochist","name":"Masochist","rank":1,"effects":[{"type":"Defense","value":15,"target":"ToSelf"},{"type":"ShotAttack","value":-15,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"PAL_FullStomach_Down_3","name":"Mastery of Fasting","description":"Hunger decreases <NumBlue_13>+20.0%</> slower.","rank":4,"effects":[{"type":"FullStomatch_Decrease","value":-20,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"MaxInventoryWeight_up","name":"Max Carrying Capacity Lv. 1","rank":1,"effects":[{"type":"MaxInventoryWeight","value":50,"target":"ToTrainer"}],"attachesTo":[]},{"id":"MaxInventoryWeight_up_Equip_1","name":"Max Carrying Capacity Lv. 1","rank":-1,"effects":[{"type":"MaxInventoryWeight","value":50,"target":"ToSelf"}],"attachesTo":[]},{"id":"MaxInventoryWeight_up2","name":"Max Carrying Capacity Lv. 2","rank":1,"effects":[{"type":"MaxInventoryWeight","value":150,"target":"ToTrainer"}],"attachesTo":[]},{"id":"MaxInventoryWeight_up_Equip_2","name":"Max Carrying Capacity Lv. 2","rank":-1,"effects":[{"type":"MaxInventoryWeight","value":100,"target":"ToSelf"}],"attachesTo":[]},{"id":"MaxInventoryWeight_up3","name":"Max Carrying Capacity Lv. 3","rank":3,"effects":[{"type":"MaxInventoryWeight","value":200,"target":"ToTrainer"}],"attachesTo":[]},{"id":"MaxInventoryWeight_up_Equip_3","name":"Max Carrying Capacity Lv. 3","rank":-1,"effects":[{"type":"MaxInventoryWeight","value":200,"target":"ToSelf"}],"attachesTo":[]},{"id":"MaxInventoryWeight_up_Equip_4","name":"Max Carrying Capacity Lv. 4","rank":-1,"effects":[{"type":"MaxInventoryWeight","value":300,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_SpiritualInst","name":"Mentally unstable","rank":-1,"effects":[{"type":"CraftSpeed","value":-10,"target":"ToSelf"},{"type":"Defense","value":-10,"target":"ToSelf"}],"attachesTo":[]},{"id":"NonKilling","name":"Mercy Hit","description":"Pacifist. Will not reduce the target's Health below 1.","rank":-1,"effects":[{"type":"NonKilling","value":0,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CollectItem_Milk","name":"Milk Maker","rank":1,"effects":[{"type":"CollectItem","value":0,"target":"ToSelf"}],"attachesTo":[]},{"id":"TrainerMining_up1","name":"Mine Foreman","description":"25.0% increase in Player Mining Efficiency.","rank":3,"effects":[{"type":"Mining","value":25,"target":"ToTrainer"}],"attachesTo":["Pals"]},{"id":"StonDrop_Boost_1","name":"Mining Yield Up Lv. 1","description":"Slightly increases the drop amount of Stone and Ore.","rank":1,"effects":[],"attachesTo":[]},{"id":"StonDrop_Boost_2","name":"Mining Yield Up Lv. 2","description":"Increases the drop amount of Stone and Ore.","rank":1,"effects":[],"attachesTo":[]},{"id":"StonDrop_Boost_3","name":"Mining Yield Up Lv. 3","description":"Greatly increases the drop amount of Stone and Ore.","rank":3,"effects":[],"attachesTo":[]},{"id":"StonDrop_Boost_4","name":"Mining Yield Up Lv. 4","description":"Significantly increases the drop amount of Stone and Ore.","rank":3,"effects":[],"attachesTo":[]},{"id":"StonDrop_Boost_5","name":"Mining Yield Up Lv. 5","description":"Massively increases the drop amount of Stone and Ore.","rank":4,"effects":[],"attachesTo":[]},{"id":"TrainerWorkSpeed_UP_1","name":"Motivational Leader","description":"25.0% increase in Player Work Speed.","rank":3,"effects":[{"type":"CraftSpeed","value":25,"target":"ToTrainer"}],"attachesTo":["Pals"]},{"id":"Noukin","name":"Musclehead","rank":2,"effects":[{"type":"ShotAttack","value":30,"target":"ToSelf"},{"type":"CraftSpeed","value":-50,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"BossDefeatReward_SaintCentaur_1","name":"Neutral Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Normal_3_BossDefeat","name":"Neutral Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_CubeTurtle_Neutral","name":"Neutral Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_WhiteDeer","name":"Neutral Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Normal_2_BossDefeat","name":"Neutral Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_FengyunDeeper","name":"Neutral Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_HawkBird","name":"Neutral Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_KingAlpaca","name":"Neutral Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Mutant","name":"Neutral Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_NaughtyCat","name":"Neutral Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Normal_1_BossDefeat","name":"Neutral Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Normal","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementResist_Normal_1","name":"Neutral Damage Reduction Lv. 1","rank":1,"effects":[{"type":"ElementResist_Normal","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Normal_2","name":"Neutral Damage Reduction Lv. 2","rank":2,"effects":[{"type":"ElementResist_Normal","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Normal_3","name":"Neutral Damage Reduction Lv. 3","rank":3,"effects":[{"type":"ElementResist_Normal","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Normal_4","name":"Neutral Damage Reduction Lv. 4","rank":4,"effects":[{"type":"ElementResist_Normal","value":35,"target":"ToSelf"}],"attachesTo":[]},{"id":"NightOwl","name":"Night Owl","description":"Tends to nap through the day, due to being nocturnal.","rank":-1,"effects":[],"attachesTo":["Pals"]},{"id":"MoveSpeed_up_1","name":"Nimble","description":"10.0% increase to movement speed.","rank":1,"effects":[{"type":"MoveSpeed","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"SalePrice_Up_1","name":"Noble","description":"Increases the value of items when sold by +5.0%","rank":3,"effects":[{"type":"ShopSellPrice_Money_Increase","value":5,"target":"ToSelf"},{"type":"ShopBuyPrice_Money_Increase","value":-5,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"Alien","name":"Otherworldly Cells","description":"Attack +10.0% Fire damage reduction 15.0% Lightning damage reduction 15.0%","rank":1,"effects":[{"type":"ShotAttack","value":10,"target":"ToSelf"},{"type":"ElementResist_Fire","value":15,"target":"ToSelf"},{"type":"ElementBoost_Electricity","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_ALLAttack_down2","name":"Pacifist","rank":-3,"effects":[{"type":"ShotAttack","value":-20,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"Attack_ACC_up1_Otomo_Only_Equip","name":"Pal Attack Up Lv. 1","rank":1,"effects":[{"type":"ShotAttack","value":4,"target":"None"}],"attachesTo":[]},{"id":"Attack_ACC_up2_Otomo_Only_Equip","name":"Pal Attack Up Lv. 2","rank":2,"effects":[{"type":"ShotAttack","value":8,"target":"None"}],"attachesTo":[]},{"id":"Attack_ACC_up3_Otomo_Only_Equip","name":"Pal Attack Up Lv. 3","rank":3,"effects":[{"type":"ShotAttack","value":12,"target":"None"}],"attachesTo":[]},{"id":"Attack_ACC_up4_Otomo_Only_Equip","name":"Pal Attack Up Lv. 4","rank":4,"effects":[{"type":"ShotAttack","value":16,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Dark_1_Otomo_Only_Equip","name":"Pal Dark Damage Enhancement Lv. 1","rank":1,"effects":[{"type":"ElementBoost_Dark","value":6,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Dark_2_Otomo_Only_Equip","name":"Pal Dark Damage Enhancement Lv. 2","rank":2,"effects":[{"type":"ElementBoost_Dark","value":12,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Dark_3_Otomo_Only_Equip","name":"Pal Dark Damage Enhancement Lv. 3","rank":3,"effects":[{"type":"ElementBoost_Dark","value":18,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Dark_4_Otomo_Only_Equip","name":"Pal Dark Damage Enhancement Lv. 4","rank":4,"effects":[{"type":"ElementBoost_Dark","value":20,"target":"None"}],"attachesTo":[]},{"id":"Defense_ACC_up1_Otomo_Only_Equip","name":"Pal Defense Up Lv. 1","rank":1,"effects":[{"type":"Defense","value":5,"target":"None"}],"attachesTo":[]},{"id":"Defense_ACC_up2_Otomo_Only_Equip","name":"Pal Defense Up Lv. 2","rank":2,"effects":[{"type":"Defense","value":10,"target":"None"}],"attachesTo":[]},{"id":"Defense_ACC_up3_Otomo_Only_Equip","name":"Pal Defense Up Lv. 3","rank":3,"effects":[{"type":"Defense","value":15,"target":"None"}],"attachesTo":[]},{"id":"Defense_ACC_up4_Otomo_Only_Equip","name":"Pal Defense Up Lv. 4","rank":4,"effects":[{"type":"Defense","value":20,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Dragon_1_Otomo_Only_Equip","name":"Pal Dragon Damage Enhancement Lv. 1","rank":1,"effects":[{"type":"ElementBoost_Dragon","value":6,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Dragon_2_Otomo_Only_Equip","name":"Pal Dragon Damage Enhancement Lv. 2","rank":2,"effects":[{"type":"ElementBoost_Dragon","value":12,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Dragon_3_Otomo_Only_Equip","name":"Pal Dragon Damage Enhancement Lv. 3","rank":3,"effects":[{"type":"ElementBoost_Dragon","value":18,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Dragon_4_Otomo_Only_Equip","name":"Pal Dragon Damage Enhancement Lv. 4","rank":4,"effects":[{"type":"ElementBoost_Dragon","value":20,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Electricity_1_Otomo_Only_Equip","name":"Pal Electric Damage Enhancement Lv. 1","rank":1,"effects":[{"type":"ElementBoost_Electricity","value":6,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Electricity_2_Otomo_Only_Equip","name":"Pal Electric Damage Enhancement Lv. 2","rank":2,"effects":[{"type":"ElementBoost_Electricity","value":12,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Electricity_3_Otomo_Only_Equip","name":"Pal Electric Damage Enhancement Lv. 3","rank":3,"effects":[{"type":"ElementBoost_Electricity","value":18,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Electricity_4_Otomo_Only_Equip","name":"Pal Electric Damage Enhancement Lv. 4","rank":4,"effects":[{"type":"ElementBoost_Electricity","value":20,"target":"None"}],"attachesTo":[]},{"id":"PalExp_Increase_1_Otomo_Only_Equip","name":"Pal EXP Up Lv. 1","rank":1,"effects":[{"type":"PalExp_Increase","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"PalExp_Increase_2_Otomo_Only_Equip","name":"Pal EXP Up Lv. 2","rank":2,"effects":[{"type":"PalExp_Increase","value":40,"target":"ToSelf"}],"attachesTo":[]},{"id":"PalExp_Increase_3_Otomo_Only_Equip","name":"Pal EXP Up Lv. 3","rank":3,"effects":[{"type":"PalExp_Increase","value":50,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Fire_1_Otomo_Only_Equip","name":"Pal Fire Damage Enhancement Lv. 1","rank":1,"effects":[{"type":"ElementBoost_Fire","value":6,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Fire_2_Otomo_Only_Equip","name":"Pal Fire Damage Enhancement Lv. 2","rank":2,"effects":[{"type":"ElementBoost_Fire","value":12,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Fire_3_Otomo_Only_Equip","name":"Pal Fire Damage Enhancement Lv. 3","rank":3,"effects":[{"type":"ElementBoost_Fire","value":18,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Fire_4_Otomo_Only_Equip","name":"Pal Fire Damage Enhancement Lv. 4","rank":4,"effects":[{"type":"ElementBoost_Fire","value":20,"target":"None"}],"attachesTo":[]},{"id":"GYM_NAME_Snow","name":"PAL Genetic Research Unit Commander","rank":3,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"},{"type":"MoveSpeed","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Leaf_1_Otomo_Only_Equip","name":"Pal Grass Damage Enhancement Lv. 1","rank":1,"effects":[{"type":"ElementBoost_Leaf","value":6,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Leaf_2_Otomo_Only_Equip","name":"Pal Grass Damage Enhancement Lv. 2","rank":2,"effects":[{"type":"ElementBoost_Leaf","value":12,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Leaf_3_Otomo_Only_Equip","name":"Pal Grass Damage Enhancement Lv. 3","rank":3,"effects":[{"type":"ElementBoost_Leaf","value":18,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Leaf_4_Otomo_Only_Equip","name":"Pal Grass Damage Enhancement Lv. 4","rank":4,"effects":[{"type":"ElementBoost_Leaf","value":20,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Earth_1_Otomo_Only_Equip","name":"Pal Ground Damage Enhancement Lv. 1","rank":1,"effects":[{"type":"ElementBoost_Earth","value":6,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Earth_2_Otomo_Only_Equip","name":"Pal Ground Damage Enhancement Lv. 2","rank":2,"effects":[{"type":"ElementBoost_Earth","value":12,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Earth_3_Otomo_Only_Equip","name":"Pal Ground Damage Enhancement Lv. 3","rank":3,"effects":[{"type":"ElementBoost_Earth","value":18,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Earth_4_Otomo_Only_Equip","name":"Pal Ground Damage Enhancement Lv. 4","rank":4,"effects":[{"type":"ElementBoost_Earth","value":20,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Ice_1_Otomo_Only_Equip","name":"Pal Ice Damage Enhancement Lv. 1","rank":1,"effects":[{"type":"ElementBoost_Ice","value":6,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Ice_2_Otomo_Only_Equip","name":"Pal Ice Damage Enhancement Lv. 2","rank":2,"effects":[{"type":"ElementBoost_Ice","value":12,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Ice_3_Otomo_Only_Equip","name":"Pal Ice Damage Enhancement Lv. 3","rank":3,"effects":[{"type":"ElementBoost_Ice","value":18,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Ice_4_Otomo_Only_Equip","name":"Pal Ice Damage Enhancement Lv. 4","rank":4,"effects":[{"type":"ElementBoost_Ice","value":20,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Normal_1_Otomo_Only_Equip","name":"Pal Neutral Damage Enhancement Lv. 1","rank":1,"effects":[{"type":"ElementBoost_Normal","value":6,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Normal_2_Otomo_Only_Equip","name":"Pal Neutral Damage Enhancement Lv. 2","rank":2,"effects":[{"type":"ElementBoost_Normal","value":12,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Normal_3_Otomo_Only_Equip","name":"Pal Neutral Damage Enhancement Lv. 3","rank":3,"effects":[{"type":"ElementBoost_Normal","value":18,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Normal_4_Otomo_Only_Equip","name":"Pal Neutral Damage Enhancement Lv. 4","rank":4,"effects":[{"type":"ElementBoost_Normal","value":20,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Water_1_Otomo_Only_Equip","name":"Pal Water Damage Enhancement Lv. 1","rank":1,"effects":[{"type":"ElementBoost_Water","value":6,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Water_2_Otomo_Only_Equip","name":"Pal Water Damage Enhancement Lv. 2","rank":2,"effects":[{"type":"ElementBoost_Water","value":12,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Water_3_Otomo_Only_Equip","name":"Pal Water Damage Enhancement Lv. 3","rank":3,"effects":[{"type":"ElementBoost_Water","value":18,"target":"None"}],"attachesTo":[]},{"id":"ElementBoost_Water_4_Otomo_Only_Equip","name":"Pal Water Damage Enhancement Lv. 4","rank":4,"effects":[{"type":"ElementBoost_Water","value":20,"target":"None"}],"attachesTo":[]},{"id":"FriendshipPoint_Increase_EquipSkill","name":"Party Pals Bond Boost","rank":-1,"effects":[],"attachesTo":[]},{"id":"Test_PalEgg_HatchingSpeed_Up","name":"Philanthropist","description":"When assigned to a Breeding Farm, breeding speed is increased by 100.0%.","rank":3,"effects":[{"type":"BreedSpeed","value":100,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"GYM_NAME_Desert","name":"PIDF Commander","rank":3,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"},{"type":"MoveSpeed","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_Sanity_Down_1","name":"Positive Thinker","description":"SAN drops <NumBlue_13>+10.0%</> slower.","rank":1,"effects":[{"type":"Sanity_Decrease","value":-10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"ElementBoost_Earth_1_PAL","name":"Power of Gaia","description":"10.0% increase in Earth attack damage.","rank":1,"effects":[{"type":"ElementBoost_Earth","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"ElementBoost_Fire_1_PAL","name":"Pyromaniac","description":"10.0% increase in Fire attack damage.","rank":1,"effects":[{"type":"ElementBoost_Fire","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"WorkSuitabilityAddRank_MonsterFarm_2","name":"Ranch Master","description":"Farming's Work Suitability<NumBlue_13> +2</>","rank":4,"effects":[],"attachesTo":["Pals"]},{"id":"GYM_NAME_Meadow","name":"Rayne Syndicate Boss","description":"Attack +20.0% Movement Speed increases 10.0%","rank":3,"effects":[{"type":"ShotAttack","value":20,"target":"ToSelf"},{"type":"MoveSpeed","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"ReloadSpeedUp_Passive","name":"Reload Master","rank":3,"effects":[],"attachesTo":["Pals"]},{"id":"CraftSpeed_up3","name":"Remarkable Craftsmanship","rank":4,"effects":[{"type":"CraftSpeed","value":75,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"MoveSpeed_up_2","name":"Runner","description":"20.0% increase to movement speed.","rank":3,"effects":[{"type":"MoveSpeed","value":20,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"PAL_sadist","name":"Sadist","rank":1,"effects":[{"type":"ShotAttack","value":15,"target":"ToSelf"},{"type":"Defense","value":-15,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"WorldTree_DEF","name":"Sanctified Meat Shield","description":"Defense <NumBlue_13>+</>50.0% Attack -30.0% World Tree resources will not vanish when approached.","rank":5,"effects":[{"type":"Defense","value":50,"target":"ToSelf"},{"type":"ShotAttack","value":-30,"target":"ToSelf"}],"attachesTo":[]},{"id":"Salvation","name":"Savior","rank":4,"effects":[{"type":"ElementBoost_Normal","value":30,"target":"ToSelf"},{"type":"ElementBoost_Leaf","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"CoolTimeReduction_Up_1","name":"Serenity","description":"Active skill cooldown reduction 30.0% Attack +10.0%","rank":3,"effects":[{"type":"ActiveSkillCoolTime_Decrease","value":30,"target":"ToSelf"},{"type":"ShotAttack","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CraftSpeed_up1","name":"Serious","rank":1,"effects":[{"type":"CraftSpeed","value":20,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"SelfDeathAddItemDrop_up_2","name":"Service-Minded","description":"Your Dropped Items + 50.0%","rank":3,"effects":[],"attachesTo":["Pals"]},{"id":"SalePrice_Down_1","name":"Shabby","description":"Decrease the value of items when sold by -10.0%","rank":-1,"effects":[{"type":"ShopSellPrice_Money_Increase","value":-10,"target":"ToSelf"},{"type":"ShopBuyPrice_Money_Increase","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"SelfDeathAddItemDrop_up_1","name":"Sharing is Caring","description":"Your Dropped Items + 15.0%","rank":1,"effects":[],"attachesTo":[]},{"id":"Stamina_Down_1","name":"Sickly","description":"Max Stamina -25.0% *This effect is only valid for rideable pals.","rank":-1,"effects":[{"type":"PalSP_Increase","value":-25,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CollectItem_Wool_WhiteMoth","name":"Silk Spinner","rank":1,"effects":[{"type":"CollectItem","value":0,"target":"ToSelf"}],"attachesTo":[]},{"id":"Witch","name":"Siren of the Void","rank":4,"effects":[{"type":"ElementBoost_Dark","value":30,"target":"ToSelf"},{"type":"ElementBoost_Ice","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"RideJumpCount_Increase2","name":"Skymarcher","description":"Mounted Jump Count +2","rank":4,"effects":[],"attachesTo":[]},{"id":"CraftSpeed_down2","name":"Slacker","rank":-3,"effects":[{"type":"CraftSpeed","value":-30,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"SwimSpeed_up_1","name":"Sleek Stroke","description":"30.0% increase movement speed on water.","rank":1,"effects":[],"attachesTo":["Pals"]},{"id":"WorkSpeed_ACC_up1","name":"Speedy Worker Lv. 1","rank":1,"effects":[{"type":"CraftSpeed","value":10,"target":"ToSelf"}],"attachesTo":[]},{"id":"WorkSpeed_ACC_up2","name":"Speedy Worker Lv. 2","rank":2,"effects":[{"type":"CraftSpeed","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"WorkSpeed_ACC_up3","name":"Speedy Worker Lv. 3","rank":3,"effects":[{"type":"CraftSpeed","value":20,"target":"ToSelf"}],"attachesTo":[]},{"id":"WorkSpeed_ACC_up4","name":"Speedy Worker Lv. 4","rank":4,"effects":[{"type":"CraftSpeed","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"SphereModule_Curve","name":"Sphere Curve +1","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"SphereModule_Homing","name":"Sphere Homing","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"SphereModule_Sniper","name":"Sphere Range +1","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"SphereModule_Sniper2","name":"Sphere Range +2","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"SphereModule_Curve2","name":"Sphere Slider","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"SphereModule_Heavy","name":"Sphere Weight +1","rank":1,"effects":[],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Leaf_2_PAL","name":"Spirit Emperor","rank":3,"effects":[{"type":"ElementBoost_Leaf","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementBoost_Normal_1_PAL","name":"Spirit of Zen","description":"10.0% increase in Neutral attack damage.","rank":1,"effects":[{"type":"ElementBoost_Normal","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"TrainerDEF_UP_1","name":"Stronghold Strategist","description":"10.0% increase in Player Defense.","rank":3,"effects":[{"type":"Defense","value":10,"target":"ToTrainer"}],"attachesTo":["Pals"]},{"id":"ElementResist_Fire_1_PAL","name":"Suntan Lover","description":"10.0% decrease in incoming Fire damage.","rank":1,"effects":[{"type":"ElementResist_Fire","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"MoveSpeed_up_3","name":"Swift","description":"30.0% increase to movement speed.","rank":4,"effects":[{"type":"MoveSpeed","value":30,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"CoolTimeReduction_Up_3","name":"Tempest Fury","description":"Active skill cooldown reduction 0.0% Attack +0.0%","rank":4,"effects":[{"type":"ActiveSkillCoolTime_Decrease","value":0,"target":"ToSelf"},{"type":"ShotAttack","value":0,"target":"ToSelf"}],"attachesTo":[]},{"id":"Invalid_ToxicGas_EquipSkill","name":"Toxic Gas Immunity","rank":1,"effects":[],"attachesTo":[]},{"id":"WorldTree_ATK","name":"Twin-Edged Holy Blade","description":"Attack <NumBlue_13>+</>50.0% Defense -30.0% World Tree resources will not vanish when approached.","rank":5,"effects":[{"type":"ShotAttack","value":50,"target":"ToSelf"},{"type":"Defense","value":-30,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_Sanity_Up_1","name":"Unstable","description":"SAN drops <NumRed_13>+10.0%</> faster.","rank":-1,"effects":[{"type":"Sanity_Decrease","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"Vampire","name":"Vampiric","description":"Absorbs a portion of the damage dealt to restore Health. Does not sleep at night and continues to work.","rank":4,"effects":[{"type":"Nocturnal","value":0,"target":"ToSelf"},{"type":"LifeSteal","value":5,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"TrainerATK_UP_1","name":"Vanguard","description":"10.0% increase in Player Attack.","rank":3,"effects":[{"type":"ShotAttack","value":10,"target":"ToTrainer"}],"attachesTo":["Pals"]},{"id":"ElementBoost_Dark_1_PAL","name":"Veil of Darkness","description":"10.0% increase in Dark attack damage.","rank":1,"effects":[{"type":"ElementBoost_Dark","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"BossDefeatReward_PoseidonOrca","name":"Water Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Water","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Water_3_BossDefeat","name":"Water Damage Enhancement (Large)","rank":1,"effects":[{"type":"ElementBoost_Water","value":3,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Horus_Water","name":"Water Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Water","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_LotusDragon","name":"Water Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Water","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_Umihebi","name":"Water Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Water","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Water_2_BossDefeat","name":"Water Damage Enhancement (Medium)","rank":1,"effects":[{"type":"ElementBoost_Water","value":2,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_BlueDragon","name":"Water Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Water","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_CaptainPenguin","name":"Water Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Water","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"BossDefeatReward_SakuraSaurus_Water","name":"Water Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Water","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementBoost_Water_1_BossDefeat","name":"Water Damage Enhancement (Small)","rank":1,"effects":[{"type":"ElementBoost_Water","value":1,"target":"None"}],"attachesTo":["Armour","Accessories"]},{"id":"ElementResist_Aqua_1","name":"Water Damage Reduction Lv. 1","rank":1,"effects":[{"type":"ElementResist_Water","value":15,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Aqua_2","name":"Water Damage Reduction Lv. 2","rank":2,"effects":[{"type":"ElementResist_Water","value":25,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Aqua_3","name":"Water Damage Reduction Lv. 3","rank":3,"effects":[{"type":"ElementResist_Water","value":30,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Aqua_4","name":"Water Damage Reduction Lv. 4","rank":4,"effects":[{"type":"ElementResist_Water","value":35,"target":"ToSelf"}],"attachesTo":[]},{"id":"ElementResist_Aqua_1_PAL","name":"Waterproof","description":"10.0% decrease in incoming Water damage.","rank":1,"effects":[{"type":"ElementResist_Water","value":10,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"PlayerSP_DecreaseRate_Passive","name":"Wellness Watcher","rank":3,"effects":[],"attachesTo":["Pals"]},{"id":"MiniNushi","name":"Whopper","rank":3,"effects":[{"type":"ElementBoost_Water","value":5,"target":"ToSelf"},{"type":"ElementBoost_Ice","value":5,"target":"ToSelf"},{"type":"Defense","value":5,"target":"ToSelf"}],"attachesTo":[]},{"id":"CollectItem_Wool_Alpaca","name":"Wool Maker","rank":1,"effects":[{"type":"CollectItem","value":0,"target":"ToSelf"}],"attachesTo":[]},{"id":"CollectItem_Wool_SheepBall","name":"Wool Maker","rank":1,"effects":[{"type":"CollectItem","value":0,"target":"ToSelf"}],"attachesTo":[]},{"id":"PAL_CorporateSlave","name":"Work Slave","rank":1,"effects":[{"type":"CraftSpeed","value":30,"target":"ToSelf"},{"type":"ShotAttack","value":-30,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"PAL_Sanity_Down_2","name":"Workaholic","description":"SAN drops <NumBlue_13>+15.0%</> slower.","rank":3,"effects":[{"type":"Sanity_Decrease","value":-15,"target":"ToSelf"}],"attachesTo":["Pals"]},{"id":"WorldTree_FullStomach","name":"World Tree Seedbed","description":"Decrease Hunger depletion rate by <NumBlue_13>+50.0%</> HP -20.0<NumRed_13>%</> World Tree resources will not vanish when approached.","rank":5,"effects":[{"type":"FullStomatch_Decrease","value":-50,"target":"ToSelf"},{"type":"MaxHP","value":-20,"target":"ToSelf"}],"attachesTo":[]}]
+[
+  {
+    "id": "ElementResist_Normal_1_PAL",
+    "name": "Abnormal",
+    "description": "10.0% decrease in incoming Neutral damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Normal", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "SwimSpeed_up_2",
+    "name": "Ace Swimmer",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "AirDash_1",
+    "name": "Aerial Dash +1",
+    "description": "Aerial Dash +1",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "AirDash_2",
+    "name": "Aerial Dash +2",
+    "description": "Aerial Dash +2",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "AirDash_3",
+    "name": "Aerial Dash +3",
+    "description": "Aerial Dash +3",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "AirDash_4",
+    "name": "Aerial Dash +4",
+    "description": "Aerial Dash +4",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "PAL_oraora",
+    "name": "Aggressive",
+    "rank": 1,
+    "effects": [
+      { "type": "ShotAttack", "value": 10, "target": "ToSelf" },
+      { "type": "Defense", "value": -10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CraftSpeed_up2",
+    "name": "Artisan",
+    "rank": 3,
+    "effects": [{ "type": "CraftSpeed", "value": 50, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Attack_ACC_up1_Armor",
+    "name": "Attack Up (S) Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "ShotAttack", "value": 3, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up2_Armor",
+    "name": "Attack Up (S) Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "ShotAttack", "value": 6, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up3_Armor",
+    "name": "Attack Up (S) Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "ShotAttack", "value": 9, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up4_Armor",
+    "name": "Attack Up (S) Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "ShotAttack", "value": 12, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up1",
+    "name": "Attack Up Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "ShotAttack", "value": 5, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up2",
+    "name": "Attack Up Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "ShotAttack", "value": 10, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up3",
+    "name": "Attack Up Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "ShotAttack", "value": 15, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up4",
+    "name": "Attack Up Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "ShotAttack", "value": 20, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "MutationPal_Babysitter",
+    "name": "Babysitter",
+    "description": "While at a base, increases egg production speed by +30.0% and incubation speed by +30.0% for Pals assigned to a Breeding Farm.",
+    "rank": 4,
+    "effects": [
+      { "type": "PalEggHatchingSpeed", "value": 30, "target": "ToBuildObject" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "CollectItem_Berries",
+    "name": "Berry Picker",
+    "rank": 1,
+    "effects": [{ "type": "CollectItem", "value": 0, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "OctaviaArmorVampire",
+    "name": "Blood Is Fuel",
+    "rank": 4,
+    "effects": [{ "type": "LifeSteal", "value": 1, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dragon_1_PAL",
+    "name": "Blood of the Dragon",
+    "description": "10.0% increase in Dragon attack damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementResist_Leaf_1_PAL",
+    "name": "Botanical Barrier",
+    "description": "10.0% decrease in incoming Grass damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Leaf", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PAL_FullStomach_Up_2",
+    "name": "Bottomless Stomach",
+    "description": "Hunger decreases <NumRed_13>+15.0%</> faster.",
+    "rank": -2,
+    "effects": [
+      { "type": "FullStomatch_Decrease", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PAL_ALLAttack_up1",
+    "name": "Brave",
+    "rank": 1,
+    "effects": [{ "type": "ShotAttack", "value": 10, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Deffence_down2",
+    "name": "Brittle",
+    "rank": -3,
+    "effects": [{ "type": "Defense", "value": -20, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "GYM_NAME_Volcano",
+    "name": "Brothers of the Eternal Pyre Soul Leader",
+    "rank": 3,
+    "effects": [
+      { "type": "ShotAttack", "value": 20, "target": "ToSelf" },
+      { "type": "MoveSpeed", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "Deffence_up2",
+    "name": "Burly Body",
+    "description": "Defense +20.0% Immune to Flinch",
+    "rank": 3,
+    "effects": [{ "type": "Defense", "value": 20, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementBoost_Thunder_1_PAL",
+    "name": "Capacitor",
+    "description": "10.0% increase in Lightning attack damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CaptureLevel_Up_1",
+    "name": "Capture Strength +1",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "CaptureLevel_Up_2",
+    "name": "Capture Strength +2",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "CaptureLevel_Up_3",
+    "name": "Capture Strength +3",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "CaptureLevel_Up_4",
+    "name": "Capture Strength +4",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "CaptureLevel_Up_5",
+    "name": "Capture Strength +5",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "CaptureLevel_Up_6",
+    "name": "Capture Strength +6",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Normal_2_PAL",
+    "name": "Celestial Emperor",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Dark_1_PAL",
+    "name": "Cheery",
+    "description": "10.0% decrease in incoming Dark damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Dark", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CraftSpeed_down1",
+    "name": "Clumsy",
+    "rank": -1,
+    "effects": [{ "type": "CraftSpeed", "value": -10, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "TemperatureResist_Cold1",
+    "name": "Cold Resistance Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "TemperatureResist_Cold", "value": 1, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "TemperatureResist_Cold2",
+    "name": "Cold Resistance Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "TemperatureResist_Cold", "value": 2, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "TemperatureResist_Cold3",
+    "name": "Cold Resistance Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "TemperatureResist_Cold", "value": 3, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Ice_1_PAL",
+    "name": "Coldblooded",
+    "description": "10.0% increase in Ice attack damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Ice", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PAL_conceited",
+    "name": "Conceited",
+    "rank": 1,
+    "effects": [
+      { "type": "CraftSpeed", "value": 10, "target": "ToSelf" },
+      { "type": "Defense", "value": -10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CollectItem_Sweets",
+    "name": "Confectioner",
+    "rank": 1,
+    "effects": [{ "type": "CollectItem", "value": 0, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_ALLAttack_down1",
+    "name": "Coward",
+    "rank": -1,
+    "effects": [{ "type": "ShotAttack", "value": -10, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PAL_FullStomach_Down_1",
+    "name": "Dainty Eater",
+    "description": "Hunger decreases <NumBlue_13>+10.0%</> slower.",
+    "rank": 1,
+    "effects": [
+      { "type": "FullStomatch_Decrease", "value": -10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementBoost_Dark_3_BossDefeat",
+    "name": "Dark Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_GrassGolem_Dark",
+    "name": "Dark Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_MoonChild",
+    "name": "Dark Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_WhiteDeer_Dark",
+    "name": "Dark Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Dark_2_BossDefeat",
+    "name": "Dark Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_AmaterasuWolf_Dark",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_BadCatgirl",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_BlackPuppy",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_CatMage",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_CatVampire",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_DarkScorpion",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_GhostRabbit",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_GrimGirl",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_IceHorse_Dark",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_LilyQueen_Dark",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_MysteryMask",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_NightBlueHorse",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_PurpleSpider",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_RaijinDaughter_Water",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_SaintCentaur_2",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Dark_1_BossDefeat",
+    "name": "Dark Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementResist_Dark_1",
+    "name": "Dark Damage Reduction Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Dark", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Dark_2",
+    "name": "Dark Damage Reduction Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementResist_Dark", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Dark_3",
+    "name": "Dark Damage Reduction Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementResist_Dark", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Dark_4",
+    "name": "Dark Damage Reduction Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementResist_Dark", "value": 35, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "defense_ACC_up1",
+    "name": "Defense Up Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "Defense", "value": 10, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "defense_ACC_up2",
+    "name": "Defense Up Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "Defense", "value": 15, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "defense_ACC_up3",
+    "name": "Defense Up Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "Defense", "value": 20, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "defense_ACC_up4",
+    "name": "Defense Up Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "Defense", "value": 25, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_ALLAttack_up3",
+    "name": "Demon God",
+    "rank": 4,
+    "effects": [
+      { "type": "ShotAttack", "value": 30, "target": "ToSelf" },
+      { "type": "Defense", "value": 5, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "WorldTree_CraftSpeed",
+    "name": "Demon’s Hand",
+    "description": "Work Speed <NumBlue_13>+</>90.0<NumBlue_13>%</> SAN dreceases <NumRed_13>+15.0% faster</> World Tree harvestables won't vanish when approached.",
+    "rank": 5,
+    "effects": [
+      { "type": "CraftSpeed", "value": 90, "target": "ToSelf" },
+      { "type": "Sanity_Decrease", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_Sanity_Up_2",
+    "name": "Destructive",
+    "description": "SAN drops <NumRed_13>+15.0%</> faster.",
+    "rank": -2,
+    "effects": [{ "type": "Sanity_Decrease", "value": 15, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Deffence_up3",
+    "name": "Diamond Body",
+    "description": "Defense +30.0% Immune to Flinch Immune to Knockback",
+    "rank": 4,
+    "effects": [{ "type": "Defense", "value": 30, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PAL_FullStomach_Down_2",
+    "name": "Diet Lover",
+    "description": "Hunger decreases <NumBlue_13>+15.0%</> slower.",
+    "rank": 3,
+    "effects": [
+      { "type": "FullStomatch_Decrease", "value": -15, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "WorldTree_MoveSpeed",
+    "name": "Dimensional Leap",
+    "description": "Movement Speed <NumBlue_13>+</>50.0<NumBlue_13>%</> Increases Hunger depletion rate by <NumRed_13>+15.0%</> World Tree resources will not vanish when approached.",
+    "rank": 5,
+    "effects": [
+      { "type": "MoveSpeed", "value": 50, "target": "ToSelf" },
+      { "type": "FullStomatch_Decrease", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dragon_2_PAL",
+    "name": "Divine Dragon",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "Deffence_down1",
+    "name": "Downtrodden",
+    "rank": -1,
+    "effects": [{ "type": "Defense", "value": -10, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "BossDefeatReward_DomeArmorDragon",
+    "name": "Dragon Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 3, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_JetDragon",
+    "name": "Dragon Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 3, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Dragon_3_BossDefeat",
+    "name": "Dragon Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 3, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_BlackMetalDragon",
+    "name": "Dragon Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_GhostDragon",
+    "name": "Dragon Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_WhiteShieldDragon",
+    "name": "Dragon Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Dragon_2_BossDefeat",
+    "name": "Dragon Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_FairyDragon",
+    "name": "Dragon Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_LazyDragon_Electric",
+    "name": "Dragon Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_SkyDragon",
+    "name": "Dragon Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Dragon_1_BossDefeat",
+    "name": "Dragon Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementResist_Dragon_1",
+    "name": "Dragon Damage Reduction Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Dragon", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Dragon_2",
+    "name": "Dragon Damage Reduction Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementResist_Dragon", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Dragon_3",
+    "name": "Dragon Damage Reduction Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementResist_Dragon", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Dragon_4",
+    "name": "Dragon Damage Reduction Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementResist_Dragon", "value": 35, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Dragon_1_PAL",
+    "name": "Dragonkiller",
+    "description": "10.0% decrease in incoming Dragon damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Dragon", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementResist_Earth_1",
+    "name": "Earth Damage Reduction Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Earth", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Earth_2",
+    "name": "Earth Damage Reduction Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementResist_Earth", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Earth_3",
+    "name": "Earth Damage Reduction Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementResist_Earth", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Earth_2_PAL",
+    "name": "Earth Emperor",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Earth", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Earth_1_PAL",
+    "name": "Earthquake Resistant",
+    "description": "10.0% decrease in incoming Earth damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Earth", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CoolTimeReduction_Down_1",
+    "name": "Easygoing",
+    "description": "Active skill cooldown extension -15.0%",
+    "rank": -1,
+    "effects": [
+      {
+        "type": "ActiveSkillCoolTime_Decrease",
+        "value": -15,
+        "target": "ToSelf"
+      }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CollectItem_Egg",
+    "name": "Egg Layer",
+    "rank": 1,
+    "effects": [{ "type": "CollectItem", "value": 0, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Electricity_3_BossDefeat",
+    "name": "Electric Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 3, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_BlueThunderHorse",
+    "name": "Electric Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_ElecPanda",
+    "name": "Electric Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_FengyunDeeper_Electric",
+    "name": "Electric Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Electricity_2_BossDefeat",
+    "name": "Electric Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_ElecLizard",
+    "name": "Electric Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_ElecSnail",
+    "name": "Electric Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_FlowerDinosaur_Electric",
+    "name": "Electric Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_GrassPanda_Electric",
+    "name": "Electric Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Kirin",
+    "name": "Electric Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_ScorpionMan_Electric",
+    "name": "Electric Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_ThunderBird",
+    "name": "Electric Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_ThunderFluffyBird",
+    "name": "Electric Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Electricity_1_BossDefeat",
+    "name": "Electric Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementResist_Thunder_1",
+    "name": "Electric Damage Reduction Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Electricity", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Thunder_2",
+    "name": "Electric Damage Reduction Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementResist_Electricity", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Thunder_3",
+    "name": "Electric Damage Reduction Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementResist_Electricity", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Thunder_4",
+    "name": "Electric Damage Reduction Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementResist_Electricity", "value": 35, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "Stamina_Up_3",
+    "name": "Eternal Engine",
+    "description": "Max stamina +75.0% *This effect is only valid for rideable pals.",
+    "rank": 4,
+    "effects": [{ "type": "PalSP_Increase", "value": 75, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "EternalFlame",
+    "name": "Eternal Flame",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Fire", "value": 30, "target": "ToSelf" },
+      { "type": "ElementBoost_Electricity", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "Defuser_ExplosiveSpore_EquipSkill",
+    "name": "Explosion Immunity",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "AvoidDurationUp_EquipSkill_2",
+    "name": "Extended Dodge Immunity",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "WorkSuitabilityAddRank_MonsterFarm_1",
+    "name": "Farmhand",
+    "description": "Farming's Work Suitability<NumBlue_13> +1</>",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PAL_ALLAttack_up2",
+    "name": "Ferocious",
+    "rank": 3,
+    "effects": [{ "type": "ShotAttack", "value": 20, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "SalePrice_Up_2",
+    "name": "Fine Furs",
+    "description": "Increases the value of items when sold by +3.0%",
+    "rank": 1,
+    "effects": [
+      {
+        "type": "ShopSellPrice_Money_Increase",
+        "value": 3,
+        "target": "ToSelf"
+      },
+      { "type": "ShopBuyPrice_Money_Increase", "value": -3, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "BossDefeatReward_IceNarwhal_Fire",
+    "name": "Fire Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_KingBahamut",
+    "name": "Fire Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Suzaku",
+    "name": "Fire Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Fire_3_BossDefeat",
+    "name": "Fire Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_FoxExorcist",
+    "name": "Fire Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_KabukiMan",
+    "name": "Fire Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Ronin",
+    "name": "Fire Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Fire_2_BossDefeat",
+    "name": "Fire Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_FireKirin",
+    "name": "Fire Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_FlameBuffalo",
+    "name": "Fire Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_FoxMage",
+    "name": "Fire Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Manticore",
+    "name": "Fire Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_VolcanoDragon",
+    "name": "Fire Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Fire_1_BossDefeat",
+    "name": "Fire Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementResist_Fire_1",
+    "name": "Fire Damage Reduction Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Fire", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Fire_2",
+    "name": "Fire Damage Reduction Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementResist_Fire", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Fire_3",
+    "name": "Fire Damage Reduction Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementResist_Fire", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Fire_4",
+    "name": "Fire Damage Reduction Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementResist_Fire", "value": 35, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "Stamina_Up_2",
+    "name": "Fit as a Fiddle",
+    "description": "Max stamina +25.0% *This effect is only valid for rideable pals.",
+    "rank": 1,
+    "effects": [{ "type": "PalSP_Increase", "value": 25, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementBoost_Fire_2_PAL",
+    "name": "Flame Emperor",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Fire", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Leaf_1_PAL",
+    "name": "Fragrant Foliage",
+    "description": "10.0% increase in Grass attack damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Leaf", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "GYM_NAME_Forest",
+    "name": "Free Pal Alliance Founder",
+    "rank": 3,
+    "effects": [
+      { "type": "ShotAttack", "value": 20, "target": "ToSelf" },
+      { "type": "MoveSpeed", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_FullStomach_Up_1",
+    "name": "Glutton",
+    "description": "Hunger decreases <NumRed_13>+10.0%</> faster.",
+    "rank": -1,
+    "effects": [
+      { "type": "FullStomatch_Decrease", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "WorldTree_ATK_DEF",
+    "name": "God of Destruction",
+    "description": "Attack <NumBlue_13>+</>40.0% Defense <NumBlue_13>+</>20.0% Max Health -50.0% World Tree resources will not vanish when approached.",
+    "rank": 5,
+    "effects": [
+      { "type": "ShotAttack", "value": 40, "target": "ToSelf" },
+      { "type": "Defense", "value": 20, "target": "ToSelf" },
+      { "type": "MaxHP", "value": -50, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "CollectItem_Money",
+    "name": "Gold Digger",
+    "rank": 1,
+    "effects": [{ "type": "CollectItem", "value": 0, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "BossDefeatReward_LilyQueen",
+    "name": "Grass Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Leaf_3_BossDefeat",
+    "name": "Grass Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_BerryGoat_Dark",
+    "name": "Grass Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_BlueberryFairy",
+    "name": "Grass Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_GrassGolem",
+    "name": "Grass Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_GrassMammoth",
+    "name": "Grass Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_PinkRabbit_Grass",
+    "name": "Grass Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_VioletFairy",
+    "name": "Grass Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Leaf_2_BossDefeat",
+    "name": "Grass Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_CactusDoll",
+    "name": "Grass Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_FlowerDoll",
+    "name": "Grass Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_GrassRabbitMan",
+    "name": "Grass Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_MushroomLady",
+    "name": "Grass Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_QueenBee",
+    "name": "Grass Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_SakuraSaurus",
+    "name": "Grass Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Yeti_Grass",
+    "name": "Grass Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Leaf_1_BossDefeat",
+    "name": "Grass Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementResist_Leaf_1",
+    "name": "Grass Damage Reduction Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Leaf", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Leaf_2",
+    "name": "Grass Damage Reduction Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementResist_Leaf", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Leaf_3",
+    "name": "Grass Damage Reduction Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementResist_Leaf", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Leaf_4",
+    "name": "Grass Damage Reduction Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementResist_Leaf", "value": 35, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Earth_3_BossDefeat",
+    "name": "Ground Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_GoldenHorse",
+    "name": "Ground Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_HerculesBeetle_Ground",
+    "name": "Ground Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_RockBeast",
+    "name": "Ground Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_WhiteTiger_Ground",
+    "name": "Ground Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Earth_2_BossDefeat",
+    "name": "Ground Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Anubis",
+    "name": "Ground Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_CubeTurtle",
+    "name": "Ground Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_DarkScorpion_Ground",
+    "name": "Ground Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_HerculesBeetle",
+    "name": "Ground Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_LazyCatfish",
+    "name": "Ground Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_PlantSlime",
+    "name": "Ground Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_VolcanicMonster",
+    "name": "Ground Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_WingGolem",
+    "name": "Ground Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Earth_1_BossDefeat",
+    "name": "Ground Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementResist_Earth_4",
+    "name": "Ground Damage Reduction Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementResist_Earth", "value": 35, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "YakushimaProtection_Equip",
+    "name": "Hallowed Guard",
+    "rank": -1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "YakushimaDagameBoost_Melee_Equip",
+    "name": "Hallowed Power: Close Range",
+    "rank": -1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "YakushimaDagameBoost_Magic_Equip",
+    "name": "Hallowed Power: Magic",
+    "rank": -1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "YakushimaDagameBoost_Ranged_Equip",
+    "name": "Hallowed Power: Ranged",
+    "rank": -1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "YakushimaDagameBoost_Summon_Equip",
+    "name": "Hallowed Power: Summon",
+    "rank": -1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "Deffence_up1",
+    "name": "Hard Skin",
+    "rank": 1,
+    "effects": [{ "type": "Defense", "value": 10, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "AutoHPRegeneRate_Passive",
+    "name": "Healing Coach",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "HP_ACC_up1",
+    "name": "Health Up Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "MaxHP", "value": 10, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "HP_ACC_up2",
+    "name": "Health Up Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "MaxHP", "value": 15, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "HP_ACC_up3",
+    "name": "Health Up Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "MaxHP", "value": 20, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "HP_ACC_up4",
+    "name": "Health Up Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "MaxHP", "value": 25, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_Sanity_Down_3",
+    "name": "Heart of the Immovable King",
+    "description": "SAN drops <NumBlue_13>+20.0%</> slower.",
+    "rank": 4,
+    "effects": [
+      { "type": "Sanity_Decrease", "value": -20, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "TemperatureResist_Heat1",
+    "name": "Heat Resistance Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "TemperatureResist_Heat", "value": 1, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "TemperatureResist_Heat1Cold1",
+    "name": "Heat Resistance Lv. 1 / Cold Resistance Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "TemperatureResist_Cold", "value": 1, "target": "ToSelf" },
+      { "type": "TemperatureResist_Heat", "value": 1, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "TemperatureResist_Heat2",
+    "name": "Heat Resistance Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "TemperatureResist_Heat", "value": 2, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "TemperatureResist_Heat2Cold2",
+    "name": "Heat Resistance Lv. 2 / Cold Resistance Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "TemperatureResist_Cold", "value": 2, "target": "ToSelf" },
+      { "type": "TemperatureResist_Heat", "value": 2, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "TemperatureResist_Heat3",
+    "name": "Heat Resistance Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "TemperatureResist_Heat", "value": 3, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "TemperatureResist_Heat3Cold3",
+    "name": "Heat Resistance Lv. 3 / Cold Resistance Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "TemperatureResist_Cold", "value": 3, "target": "ToSelf" },
+      { "type": "TemperatureResist_Heat", "value": 3, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Ice_1_PAL",
+    "name": "Heated Body",
+    "description": "10.0% decrease in incoming Ice damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Ice", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "MutationPal_ExplosionResist",
+    "name": "Heavily Armored",
+    "description": "<Status_Up>Immune</> to Explosion Damage",
+    "rank": 4,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "Deffence_up2_2",
+    "name": "Heavyweight",
+    "description": "Defense +20.0% Immune to Knockback",
+    "rank": 2,
+    "effects": [{ "type": "Defense", "value": 20, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "WorldTree_Sanity",
+    "name": "Hermit Sage",
+    "description": "SAN depletion rate -<NumBlue_13>50.0%</> Work Speed -20.0<NumRed_13>%</> World Tree resources will not vanish when approached.",
+    "rank": 5,
+    "effects": [
+      { "type": "Sanity_Decrease", "value": -50, "target": "ToSelf" },
+      { "type": "CraftSpeed", "value": -20, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_rude",
+    "name": "Hooligan",
+    "rank": 1,
+    "effects": [
+      { "type": "ShotAttack", "value": 15, "target": "ToSelf" },
+      { "type": "CraftSpeed", "value": -10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementBoost_Aqua_1_PAL",
+    "name": "Hydromaniac",
+    "description": "10.0% increase in Water attack damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Water", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "BossDefeatReward_IceHorse",
+    "name": "Ice Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_IceNarwhal",
+    "name": "Ice Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Kitsunebi_Ice",
+    "name": "Ice Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Werewolf_Ice",
+    "name": "Ice Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Ice_3_BossDefeat",
+    "name": "Ice Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_KingAlpaca_Ice",
+    "name": "Ice Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_RockBeast_Ice",
+    "name": "Ice Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_VolcanoDragon_Ice",
+    "name": "Ice Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Ice_2_BossDefeat",
+    "name": "Ice Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_IceFox",
+    "name": "Ice Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_MopKing",
+    "name": "Ice Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_WeaselDragon",
+    "name": "Ice Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_WhiteMoth",
+    "name": "Ice Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Ice_1_BossDefeat",
+    "name": "Ice Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementResist_Ice_1",
+    "name": "Ice Damage Reduction Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Ice", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Ice_2",
+    "name": "Ice Damage Reduction Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementResist_Ice", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Ice_3",
+    "name": "Ice Damage Reduction Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementResist_Ice", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Ice_4",
+    "name": "Ice Damage Reduction Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementResist_Ice", "value": 35, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Ice_2_PAL",
+    "name": "Ice Emperor",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Ice", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "MutationPal_Mutant",
+    "name": "Idiosyncratic",
+    "description": "Pal and Player Auto Health Regeneration Rate +50.0% Defense +{EffectValue4}% <Status_Up>Immune</> to Poison Damage <Status_Up>Immune</> to Burn Damage",
+    "rank": 4,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "MutationPal_Immortal",
+    "name": "Immortality",
+    "description": "Life Steal +5.0% Pal Auto Health Regeneration Rate +100.0% Attack +15.0%",
+    "rank": 4,
+    "effects": [
+      { "type": "LifeSteal", "value": 5, "target": "ToSelf" },
+      { "type": "ShotAttack", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "CoolTimeReduction_Up_2",
+    "name": "Impatient",
+    "description": "Active skill cooldown reduction 15.0%",
+    "rank": 1,
+    "effects": [
+      {
+        "type": "ActiveSkillCoolTime_Decrease",
+        "value": 15,
+        "target": "ToSelf"
+      }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Stamina_Up_1",
+    "name": "Infinite Stamina",
+    "description": "Max stamina +50.0% *This effect is only valid for rideable pals.",
+    "rank": 3,
+    "effects": [{ "type": "PalSP_Increase", "value": 50, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Nocturnal",
+    "name": "Insomnia",
+    "description": "Does not sleep and continues to work even at night.",
+    "rank": 1,
+    "effects": [{ "type": "Nocturnal", "value": 0, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementResist_Thunder_1_PAL",
+    "name": "Insulated Body",
+    "description": "10.0% decrease in incoming Lightning damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Electricity", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Invader",
+    "name": "Invader",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Dark", "value": 30, "target": "ToSelf" },
+      { "type": "ElementBoost_Dragon", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "GYM_NAME_Viking",
+    "name": "Jarl of Feybreak",
+    "rank": 3,
+    "effects": [
+      { "type": "ShotAttack", "value": 20, "target": "ToSelf" },
+      { "type": "MoveSpeed", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "JumpCount_Increase1",
+    "name": "Jump Count Increase +1",
+    "description": "Jump Count Increase +1",
+    "rank": 1,
+    "effects": [
+      { "type": "JumpCount_Increase", "value": 1, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "JumpCount_Increase2",
+    "name": "Jump Count Increase +2",
+    "description": "Jump Count Increase +2",
+    "rank": 1,
+    "effects": [
+      { "type": "JumpCount_Increase", "value": 2, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "JumpCount_Increase3",
+    "name": "Jump Count Increase +3",
+    "description": "Jump Count Increase +3",
+    "rank": 1,
+    "effects": [
+      { "type": "JumpCount_Increase", "value": 3, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "JumpPower_Increase",
+    "name": "Jump Power Boost",
+    "description": "Jump Power Boost",
+    "rank": 1,
+    "effects": [
+      { "type": "JumpPower_Increase", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "SwimSpeed_up_3",
+    "name": "King of the Waves",
+    "rank": 4,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "SelfDeathAddItemDrop_up_3",
+    "name": "Lavish Hospitality",
+    "description": "Your Dropped Items + 100.0%",
+    "rank": 4,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "GYM_NAME_Sakurajima",
+    "name": "Leader of the Moonflowers",
+    "rank": 3,
+    "effects": [
+      { "type": "ShotAttack", "value": 20, "target": "ToSelf" },
+      { "type": "MoveSpeed", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "Legend",
+    "name": "Legend",
+    "description": "Attack +20.0% Defense +20.0% Movement Speed increases 20.0%",
+    "rank": 4,
+    "effects": [
+      { "type": "ShotAttack", "value": 20, "target": "ToSelf" },
+      { "type": "Defense", "value": 20, "target": "ToSelf" },
+      { "type": "MoveSpeed", "value": 20, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "RideJumpCount_Increase1",
+    "name": "Lightfooted",
+    "description": "Mounted Jump Count +1",
+    "rank": 4,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "TrainerLogging_up1",
+    "name": "Logging Foreman",
+    "description": "25.0% increase in Player Logging Efficiency.",
+    "rank": 3,
+    "effects": [{ "type": "Logging", "value": 25, "target": "ToTrainer" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "WoodDrop_Boost_1",
+    "name": "Logging Yield Up Lv. 1",
+    "description": "Slightly increases the drop amount of Wood.",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "WoodDrop_Boost_2",
+    "name": "Logging Yield Up Lv. 2",
+    "description": "Increases the drop amount of Wood.",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "WoodDrop_Boost_3",
+    "name": "Logging Yield Up Lv. 3",
+    "description": "Greatly increases the drop amount of Wood.",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "WoodDrop_Boost_4",
+    "name": "Logging Yield Up Lv. 4",
+    "description": "Significantly increases the drop amount of Wood.",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "WoodDrop_Boost_5",
+    "name": "Logging Yield Up Lv. 5",
+    "description": "Massively increases the drop amount of Wood.",
+    "rank": 4,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "StonWoodDrop_Boost",
+    "name": "Logging/Mining Yield Up",
+    "description": "Significantly increases the drop amount of Wood, Stone, and Ore.",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Thunder_2_PAL",
+    "name": "Lord of Lightning",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Aqua_2_PAL",
+    "name": "Lord of the Sea",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Water", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dark_2_PAL",
+    "name": "Lord of the Underworld",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Dark", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "Rare",
+    "name": "Lucky",
+    "rank": 4,
+    "effects": [
+      { "type": "ShotAttack", "value": 15, "target": "ToSelf" },
+      { "type": "Defense", "value": 15, "target": "None" },
+      { "type": "CraftSpeed", "value": 20, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Rare Pals"]
+  },
+  {
+    "id": "Nushi",
+    "name": "Lunker",
+    "description": "20.0% increase to Water attack damage 20.0% increase to Ice attack damage 20.0% increase to defense.",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Water", "value": 20, "target": "ToSelf" },
+      { "type": "ElementBoost_Ice", "value": 20, "target": "ToSelf" },
+      { "type": "Defense", "value": 20, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_masochist",
+    "name": "Masochist",
+    "rank": 1,
+    "effects": [
+      { "type": "Defense", "value": 15, "target": "ToSelf" },
+      { "type": "ShotAttack", "value": -15, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PAL_FullStomach_Down_3",
+    "name": "Mastery of Fasting",
+    "description": "Hunger decreases <NumBlue_13>+20.0%</> slower.",
+    "rank": 4,
+    "effects": [
+      { "type": "FullStomatch_Decrease", "value": -20, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "MaxInventoryWeight_up",
+    "name": "Max Carrying Capacity Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "MaxInventoryWeight", "value": 50, "target": "ToTrainer" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "MaxInventoryWeight_up_Equip_1",
+    "name": "Max Carrying Capacity Lv. 1",
+    "rank": -1,
+    "effects": [
+      { "type": "MaxInventoryWeight", "value": 50, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "MaxInventoryWeight_up2",
+    "name": "Max Carrying Capacity Lv. 2",
+    "rank": 1,
+    "effects": [
+      { "type": "MaxInventoryWeight", "value": 150, "target": "ToTrainer" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "MaxInventoryWeight_up_Equip_2",
+    "name": "Max Carrying Capacity Lv. 2",
+    "rank": -1,
+    "effects": [
+      { "type": "MaxInventoryWeight", "value": 100, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "MaxInventoryWeight_up3",
+    "name": "Max Carrying Capacity Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "MaxInventoryWeight", "value": 200, "target": "ToTrainer" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "MaxInventoryWeight_up_Equip_3",
+    "name": "Max Carrying Capacity Lv. 3",
+    "rank": -1,
+    "effects": [
+      { "type": "MaxInventoryWeight", "value": 200, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "MaxInventoryWeight_up_Equip_4",
+    "name": "Max Carrying Capacity Lv. 4",
+    "rank": -1,
+    "effects": [
+      { "type": "MaxInventoryWeight", "value": 300, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_SpiritualInst",
+    "name": "Mentally unstable",
+    "rank": -1,
+    "effects": [
+      { "type": "CraftSpeed", "value": -10, "target": "ToSelf" },
+      { "type": "Defense", "value": -10, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "NonKilling",
+    "name": "Mercy Hit",
+    "description": "Pacifist. Will not reduce the target's Health below 1.",
+    "rank": -1,
+    "effects": [{ "type": "NonKilling", "value": 0, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CollectItem_Milk",
+    "name": "Milk Maker",
+    "rank": 1,
+    "effects": [{ "type": "CollectItem", "value": 0, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "TrainerMining_up1",
+    "name": "Mine Foreman",
+    "description": "25.0% increase in Player Mining Efficiency.",
+    "rank": 3,
+    "effects": [{ "type": "Mining", "value": 25, "target": "ToTrainer" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "StonDrop_Boost_1",
+    "name": "Mining Yield Up Lv. 1",
+    "description": "Slightly increases the drop amount of Stone and Ore.",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "StonDrop_Boost_2",
+    "name": "Mining Yield Up Lv. 2",
+    "description": "Increases the drop amount of Stone and Ore.",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "StonDrop_Boost_3",
+    "name": "Mining Yield Up Lv. 3",
+    "description": "Greatly increases the drop amount of Stone and Ore.",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "StonDrop_Boost_4",
+    "name": "Mining Yield Up Lv. 4",
+    "description": "Significantly increases the drop amount of Stone and Ore.",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "StonDrop_Boost_5",
+    "name": "Mining Yield Up Lv. 5",
+    "description": "Massively increases the drop amount of Stone and Ore.",
+    "rank": 4,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "TrainerWorkSpeed_UP_1",
+    "name": "Motivational Leader",
+    "description": "25.0% increase in Player Work Speed.",
+    "rank": 3,
+    "effects": [{ "type": "CraftSpeed", "value": 25, "target": "ToTrainer" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Noukin",
+    "name": "Musclehead",
+    "rank": 2,
+    "effects": [
+      { "type": "ShotAttack", "value": 30, "target": "ToSelf" },
+      { "type": "CraftSpeed", "value": -50, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "BossDefeatReward_SaintCentaur_1",
+    "name": "Neutral Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 3, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Normal_3_BossDefeat",
+    "name": "Neutral Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 3, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_CubeTurtle_Neutral",
+    "name": "Neutral Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_WhiteDeer",
+    "name": "Neutral Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Normal_2_BossDefeat",
+    "name": "Neutral Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 2, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_FengyunDeeper",
+    "name": "Neutral Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_HawkBird",
+    "name": "Neutral Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_KingAlpaca",
+    "name": "Neutral Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Mutant",
+    "name": "Neutral Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_NaughtyCat",
+    "name": "Neutral Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Normal_1_BossDefeat",
+    "name": "Neutral Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 1, "target": "None" }
+    ],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementResist_Normal_1",
+    "name": "Neutral Damage Reduction Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Normal", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Normal_2",
+    "name": "Neutral Damage Reduction Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementResist_Normal", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Normal_3",
+    "name": "Neutral Damage Reduction Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementResist_Normal", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Normal_4",
+    "name": "Neutral Damage Reduction Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementResist_Normal", "value": 35, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "NightOwl",
+    "name": "Night Owl",
+    "description": "Tends to nap through the day, due to being nocturnal.",
+    "rank": -1,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "MoveSpeed_up_1",
+    "name": "Nimble",
+    "description": "10.0% increase to movement speed.",
+    "rank": 1,
+    "effects": [{ "type": "MoveSpeed", "value": 10, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "SalePrice_Up_1",
+    "name": "Noble",
+    "description": "Increases the value of items when sold by +5.0%",
+    "rank": 3,
+    "effects": [
+      {
+        "type": "ShopSellPrice_Money_Increase",
+        "value": 5,
+        "target": "ToSelf"
+      },
+      { "type": "ShopBuyPrice_Money_Increase", "value": -5, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Alien",
+    "name": "Otherworldly Cells",
+    "description": "Attack +10.0% Fire damage reduction 15.0% Lightning damage reduction 15.0%",
+    "rank": 1,
+    "effects": [
+      { "type": "ShotAttack", "value": 10, "target": "ToSelf" },
+      { "type": "ElementResist_Fire", "value": 15, "target": "ToSelf" },
+      { "type": "ElementBoost_Electricity", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_ALLAttack_down2",
+    "name": "Pacifist",
+    "rank": -3,
+    "effects": [{ "type": "ShotAttack", "value": -20, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Attack_ACC_up1_Otomo_Only_Equip",
+    "name": "Pal Attack Up Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "ShotAttack", "value": 4, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up2_Otomo_Only_Equip",
+    "name": "Pal Attack Up Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "ShotAttack", "value": 8, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up3_Otomo_Only_Equip",
+    "name": "Pal Attack Up Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "ShotAttack", "value": 12, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Attack_ACC_up4_Otomo_Only_Equip",
+    "name": "Pal Attack Up Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "ShotAttack", "value": 16, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dark_1_Otomo_Only_Equip",
+    "name": "Pal Dark Damage Enhancement Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 6, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dark_2_Otomo_Only_Equip",
+    "name": "Pal Dark Damage Enhancement Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 12, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dark_3_Otomo_Only_Equip",
+    "name": "Pal Dark Damage Enhancement Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 18, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dark_4_Otomo_Only_Equip",
+    "name": "Pal Dark Damage Enhancement Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "ElementBoost_Dark", "value": 20, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Defense_ACC_up1_Otomo_Only_Equip",
+    "name": "Pal Defense Up Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "Defense", "value": 5, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Defense_ACC_up2_Otomo_Only_Equip",
+    "name": "Pal Defense Up Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "Defense", "value": 10, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Defense_ACC_up3_Otomo_Only_Equip",
+    "name": "Pal Defense Up Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "Defense", "value": 15, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Defense_ACC_up4_Otomo_Only_Equip",
+    "name": "Pal Defense Up Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "Defense", "value": 20, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dragon_1_Otomo_Only_Equip",
+    "name": "Pal Dragon Damage Enhancement Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 6, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dragon_2_Otomo_Only_Equip",
+    "name": "Pal Dragon Damage Enhancement Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 12, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dragon_3_Otomo_Only_Equip",
+    "name": "Pal Dragon Damage Enhancement Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 18, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Dragon_4_Otomo_Only_Equip",
+    "name": "Pal Dragon Damage Enhancement Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Dragon", "value": 20, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Electricity_1_Otomo_Only_Equip",
+    "name": "Pal Electric Damage Enhancement Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 6, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Electricity_2_Otomo_Only_Equip",
+    "name": "Pal Electric Damage Enhancement Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 12, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Electricity_3_Otomo_Only_Equip",
+    "name": "Pal Electric Damage Enhancement Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 18, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Electricity_4_Otomo_Only_Equip",
+    "name": "Pal Electric Damage Enhancement Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Electricity", "value": 20, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "PalExp_Increase_1_Otomo_Only_Equip",
+    "name": "Pal EXP Up Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "PalExp_Increase", "value": 30, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "PalExp_Increase_2_Otomo_Only_Equip",
+    "name": "Pal EXP Up Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "PalExp_Increase", "value": 40, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "PalExp_Increase_3_Otomo_Only_Equip",
+    "name": "Pal EXP Up Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "PalExp_Increase", "value": 50, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Fire_1_Otomo_Only_Equip",
+    "name": "Pal Fire Damage Enhancement Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 6, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Fire_2_Otomo_Only_Equip",
+    "name": "Pal Fire Damage Enhancement Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 12, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Fire_3_Otomo_Only_Equip",
+    "name": "Pal Fire Damage Enhancement Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 18, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Fire_4_Otomo_Only_Equip",
+    "name": "Pal Fire Damage Enhancement Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "ElementBoost_Fire", "value": 20, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "GYM_NAME_Snow",
+    "name": "PAL Genetic Research Unit Commander",
+    "rank": 3,
+    "effects": [
+      { "type": "ShotAttack", "value": 20, "target": "ToSelf" },
+      { "type": "MoveSpeed", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Leaf_1_Otomo_Only_Equip",
+    "name": "Pal Grass Damage Enhancement Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 6, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Leaf_2_Otomo_Only_Equip",
+    "name": "Pal Grass Damage Enhancement Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 12, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Leaf_3_Otomo_Only_Equip",
+    "name": "Pal Grass Damage Enhancement Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 18, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Leaf_4_Otomo_Only_Equip",
+    "name": "Pal Grass Damage Enhancement Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "ElementBoost_Leaf", "value": 20, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Earth_1_Otomo_Only_Equip",
+    "name": "Pal Ground Damage Enhancement Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Earth", "value": 6, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Earth_2_Otomo_Only_Equip",
+    "name": "Pal Ground Damage Enhancement Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementBoost_Earth", "value": 12, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Earth_3_Otomo_Only_Equip",
+    "name": "Pal Ground Damage Enhancement Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Earth", "value": 18, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Earth_4_Otomo_Only_Equip",
+    "name": "Pal Ground Damage Enhancement Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Earth", "value": 20, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Ice_1_Otomo_Only_Equip",
+    "name": "Pal Ice Damage Enhancement Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 6, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Ice_2_Otomo_Only_Equip",
+    "name": "Pal Ice Damage Enhancement Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 12, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Ice_3_Otomo_Only_Equip",
+    "name": "Pal Ice Damage Enhancement Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 18, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Ice_4_Otomo_Only_Equip",
+    "name": "Pal Ice Damage Enhancement Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "ElementBoost_Ice", "value": 20, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Normal_1_Otomo_Only_Equip",
+    "name": "Pal Neutral Damage Enhancement Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 6, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Normal_2_Otomo_Only_Equip",
+    "name": "Pal Neutral Damage Enhancement Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 12, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Normal_3_Otomo_Only_Equip",
+    "name": "Pal Neutral Damage Enhancement Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 18, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Normal_4_Otomo_Only_Equip",
+    "name": "Pal Neutral Damage Enhancement Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 20, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Water_1_Otomo_Only_Equip",
+    "name": "Pal Water Damage Enhancement Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 6, "target": "None" }],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Water_2_Otomo_Only_Equip",
+    "name": "Pal Water Damage Enhancement Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementBoost_Water", "value": 12, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Water_3_Otomo_Only_Equip",
+    "name": "Pal Water Damage Enhancement Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Water", "value": 18, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Water_4_Otomo_Only_Equip",
+    "name": "Pal Water Damage Enhancement Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Water", "value": 20, "target": "None" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "FriendshipPoint_Increase_EquipSkill",
+    "name": "Party Pals Bond Boost",
+    "rank": -1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "Test_PalEgg_HatchingSpeed_Up",
+    "name": "Philanthropist",
+    "description": "When assigned to a Breeding Farm, breeding speed is increased by 100.0%.",
+    "rank": 3,
+    "effects": [{ "type": "BreedSpeed", "value": 100, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "GYM_NAME_Desert",
+    "name": "PIDF Commander",
+    "rank": 3,
+    "effects": [
+      { "type": "ShotAttack", "value": 20, "target": "ToSelf" },
+      { "type": "MoveSpeed", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_Sanity_Down_1",
+    "name": "Positive Thinker",
+    "description": "SAN drops <NumBlue_13>+10.0%</> slower.",
+    "rank": 1,
+    "effects": [
+      { "type": "Sanity_Decrease", "value": -10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementBoost_Earth_1_PAL",
+    "name": "Power of Gaia",
+    "description": "10.0% increase in Earth attack damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Earth", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementBoost_Fire_1_PAL",
+    "name": "Pyromaniac",
+    "description": "10.0% increase in Fire attack damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Fire", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "WorkSuitabilityAddRank_MonsterFarm_2",
+    "name": "Ranch Master",
+    "description": "Farming's Work Suitability<NumBlue_13> +2</>",
+    "rank": 4,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "GYM_NAME_Meadow",
+    "name": "Rayne Syndicate Boss",
+    "description": "Attack +20.0% Movement Speed increases 10.0%",
+    "rank": 3,
+    "effects": [
+      { "type": "ShotAttack", "value": 20, "target": "ToSelf" },
+      { "type": "MoveSpeed", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ReloadSpeedUp_Passive",
+    "name": "Reload Master",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CraftSpeed_up3",
+    "name": "Remarkable Craftsmanship",
+    "rank": 4,
+    "effects": [{ "type": "CraftSpeed", "value": 75, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "MoveSpeed_up_2",
+    "name": "Runner",
+    "description": "20.0% increase to movement speed.",
+    "rank": 3,
+    "effects": [{ "type": "MoveSpeed", "value": 20, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PAL_sadist",
+    "name": "Sadist",
+    "rank": 1,
+    "effects": [
+      { "type": "ShotAttack", "value": 15, "target": "ToSelf" },
+      { "type": "Defense", "value": -15, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "WorldTree_DEF",
+    "name": "Sanctified Meat Shield",
+    "description": "Defense <NumBlue_13>+</>50.0% Attack -30.0% World Tree resources will not vanish when approached.",
+    "rank": 5,
+    "effects": [
+      { "type": "Defense", "value": 50, "target": "ToSelf" },
+      { "type": "ShotAttack", "value": -30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "Salvation",
+    "name": "Savior",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 30, "target": "ToSelf" },
+      { "type": "ElementBoost_Leaf", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "CoolTimeReduction_Up_1",
+    "name": "Serenity",
+    "description": "Active skill cooldown reduction 30.0% Attack +10.0%",
+    "rank": 3,
+    "effects": [
+      {
+        "type": "ActiveSkillCoolTime_Decrease",
+        "value": 30,
+        "target": "ToSelf"
+      },
+      { "type": "ShotAttack", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CraftSpeed_up1",
+    "name": "Serious",
+    "rank": 1,
+    "effects": [{ "type": "CraftSpeed", "value": 20, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "SelfDeathAddItemDrop_up_2",
+    "name": "Service-Minded",
+    "description": "Your Dropped Items + 50.0%",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "SalePrice_Down_1",
+    "name": "Shabby",
+    "description": "Decrease the value of items when sold by -10.0%",
+    "rank": -1,
+    "effects": [
+      {
+        "type": "ShopSellPrice_Money_Increase",
+        "value": -10,
+        "target": "ToSelf"
+      },
+      { "type": "ShopBuyPrice_Money_Increase", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "SelfDeathAddItemDrop_up_1",
+    "name": "Sharing is Caring",
+    "description": "Your Dropped Items + 15.0%",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "Stamina_Down_1",
+    "name": "Sickly",
+    "description": "Max Stamina -25.0% *This effect is only valid for rideable pals.",
+    "rank": -1,
+    "effects": [{ "type": "PalSP_Increase", "value": -25, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CollectItem_Wool_WhiteMoth",
+    "name": "Silk Spinner",
+    "rank": 1,
+    "effects": [{ "type": "CollectItem", "value": 0, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "Witch",
+    "name": "Siren of the Void",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementBoost_Dark", "value": 30, "target": "ToSelf" },
+      { "type": "ElementBoost_Ice", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "RideJumpCount_Increase2",
+    "name": "Skymarcher",
+    "description": "Mounted Jump Count +2",
+    "rank": 4,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "CraftSpeed_down2",
+    "name": "Slacker",
+    "rank": -3,
+    "effects": [{ "type": "CraftSpeed", "value": -30, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "SwimSpeed_up_1",
+    "name": "Sleek Stroke",
+    "description": "30.0% increase movement speed on water.",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "WorkSpeed_ACC_up1",
+    "name": "Speedy Worker Lv. 1",
+    "rank": 1,
+    "effects": [{ "type": "CraftSpeed", "value": 10, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "WorkSpeed_ACC_up2",
+    "name": "Speedy Worker Lv. 2",
+    "rank": 2,
+    "effects": [{ "type": "CraftSpeed", "value": 15, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "WorkSpeed_ACC_up3",
+    "name": "Speedy Worker Lv. 3",
+    "rank": 3,
+    "effects": [{ "type": "CraftSpeed", "value": 20, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "WorkSpeed_ACC_up4",
+    "name": "Speedy Worker Lv. 4",
+    "rank": 4,
+    "effects": [{ "type": "CraftSpeed", "value": 25, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "SphereModule_Curve",
+    "name": "Sphere Curve +1",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "SphereModule_Homing",
+    "name": "Sphere Homing",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "SphereModule_Sniper",
+    "name": "Sphere Range +1",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "SphereModule_Sniper2",
+    "name": "Sphere Range +2",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "SphereModule_Curve2",
+    "name": "Sphere Slider",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "SphereModule_Heavy",
+    "name": "Sphere Weight +1",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Leaf_2_PAL",
+    "name": "Spirit Emperor",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Leaf", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementBoost_Normal_1_PAL",
+    "name": "Spirit of Zen",
+    "description": "10.0% increase in Neutral attack damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Normal", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "TrainerDEF_UP_1",
+    "name": "Stronghold Strategist",
+    "description": "10.0% increase in Player Defense.",
+    "rank": 3,
+    "effects": [{ "type": "Defense", "value": 10, "target": "ToTrainer" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementResist_Fire_1_PAL",
+    "name": "Suntan Lover",
+    "description": "10.0% decrease in incoming Fire damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Fire", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "MoveSpeed_up_3",
+    "name": "Swift",
+    "description": "30.0% increase to movement speed.",
+    "rank": 4,
+    "effects": [{ "type": "MoveSpeed", "value": 30, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "CoolTimeReduction_Up_3",
+    "name": "Tempest Fury",
+    "description": "Active skill cooldown reduction 0.0% Attack +0.0%",
+    "rank": 4,
+    "effects": [
+      {
+        "type": "ActiveSkillCoolTime_Decrease",
+        "value": 0,
+        "target": "ToSelf"
+      },
+      { "type": "ShotAttack", "value": 0, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "Invalid_ToxicGas_EquipSkill",
+    "name": "Toxic Gas Immunity",
+    "rank": 1,
+    "effects": [],
+    "attachesTo": []
+  },
+  {
+    "id": "WorldTree_ATK",
+    "name": "Twin-Edged Holy Blade",
+    "description": "Attack <NumBlue_13>+</>50.0% Defense -30.0% World Tree resources will not vanish when approached.",
+    "rank": 5,
+    "effects": [
+      { "type": "ShotAttack", "value": 50, "target": "ToSelf" },
+      { "type": "Defense", "value": -30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_Sanity_Up_1",
+    "name": "Unstable",
+    "description": "SAN drops <NumRed_13>+10.0%</> faster.",
+    "rank": -1,
+    "effects": [{ "type": "Sanity_Decrease", "value": 10, "target": "ToSelf" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "Vampire",
+    "name": "Vampiric",
+    "description": "Absorbs a portion of the damage dealt to restore Health. Does not sleep at night and continues to work.",
+    "rank": 4,
+    "effects": [
+      { "type": "Nocturnal", "value": 0, "target": "ToSelf" },
+      { "type": "LifeSteal", "value": 5, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "TrainerATK_UP_1",
+    "name": "Vanguard",
+    "description": "10.0% increase in Player Attack.",
+    "rank": 3,
+    "effects": [{ "type": "ShotAttack", "value": 10, "target": "ToTrainer" }],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "ElementBoost_Dark_1_PAL",
+    "name": "Veil of Darkness",
+    "description": "10.0% increase in Dark attack damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementBoost_Dark", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "BossDefeatReward_PoseidonOrca",
+    "name": "Water Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Water_3_BossDefeat",
+    "name": "Water Damage Enhancement (Large)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 3, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Horus_Water",
+    "name": "Water Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_LotusDragon",
+    "name": "Water Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_Umihebi",
+    "name": "Water Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Water_2_BossDefeat",
+    "name": "Water Damage Enhancement (Medium)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 2, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_BlueDragon",
+    "name": "Water Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_CaptainPenguin",
+    "name": "Water Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "BossDefeatReward_SakuraSaurus_Water",
+    "name": "Water Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementBoost_Water_1_BossDefeat",
+    "name": "Water Damage Enhancement (Small)",
+    "rank": 1,
+    "effects": [{ "type": "ElementBoost_Water", "value": 1, "target": "None" }],
+    "attachesTo": ["Armour", "Accessories"]
+  },
+  {
+    "id": "ElementResist_Aqua_1",
+    "name": "Water Damage Reduction Lv. 1",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Water", "value": 15, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Aqua_2",
+    "name": "Water Damage Reduction Lv. 2",
+    "rank": 2,
+    "effects": [
+      { "type": "ElementResist_Water", "value": 25, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Aqua_3",
+    "name": "Water Damage Reduction Lv. 3",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementResist_Water", "value": 30, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Aqua_4",
+    "name": "Water Damage Reduction Lv. 4",
+    "rank": 4,
+    "effects": [
+      { "type": "ElementResist_Water", "value": 35, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "ElementResist_Aqua_1_PAL",
+    "name": "Waterproof",
+    "description": "10.0% decrease in incoming Water damage.",
+    "rank": 1,
+    "effects": [
+      { "type": "ElementResist_Water", "value": 10, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PlayerSP_DecreaseRate_Passive",
+    "name": "Wellness Watcher",
+    "rank": 3,
+    "effects": [],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "MiniNushi",
+    "name": "Whopper",
+    "rank": 3,
+    "effects": [
+      { "type": "ElementBoost_Water", "value": 5, "target": "ToSelf" },
+      { "type": "ElementBoost_Ice", "value": 5, "target": "ToSelf" },
+      { "type": "Defense", "value": 5, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  },
+  {
+    "id": "CollectItem_Wool_Alpaca",
+    "name": "Wool Maker",
+    "rank": 1,
+    "effects": [{ "type": "CollectItem", "value": 0, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "CollectItem_Wool_SheepBall",
+    "name": "Wool Maker",
+    "rank": 1,
+    "effects": [{ "type": "CollectItem", "value": 0, "target": "ToSelf" }],
+    "attachesTo": []
+  },
+  {
+    "id": "PAL_CorporateSlave",
+    "name": "Work Slave",
+    "rank": 1,
+    "effects": [
+      { "type": "CraftSpeed", "value": 30, "target": "ToSelf" },
+      { "type": "ShotAttack", "value": -30, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "PAL_Sanity_Down_2",
+    "name": "Workaholic",
+    "description": "SAN drops <NumBlue_13>+15.0%</> slower.",
+    "rank": 3,
+    "effects": [
+      { "type": "Sanity_Decrease", "value": -15, "target": "ToSelf" }
+    ],
+    "attachesTo": ["Pals"]
+  },
+  {
+    "id": "WorldTree_FullStomach",
+    "name": "World Tree Seedbed",
+    "description": "Decrease Hunger depletion rate by <NumBlue_13>+50.0%</> HP -20.0<NumRed_13>%</> World Tree resources will not vanish when approached.",
+    "rank": 5,
+    "effects": [
+      { "type": "FullStomatch_Decrease", "value": -50, "target": "ToSelf" },
+      { "type": "MaxHP", "value": -20, "target": "ToSelf" }
+    ],
+    "attachesTo": []
+  }
+]

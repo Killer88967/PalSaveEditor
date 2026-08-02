@@ -12,7 +12,9 @@ export default function ActiveSkillsWikiPage() {
     <>
       <header className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Active skills</h1>
-        <p className="text-sm text-muted">Combat skills, as the save stores them in EquipWaza.</p>
+        <p className="text-sm text-muted">
+          Combat skills, as the save stores them in EquipWaza.
+        </p>
       </header>
 
       <ActiveSkillsBrowser />

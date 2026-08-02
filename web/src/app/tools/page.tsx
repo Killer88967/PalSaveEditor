@@ -73,7 +73,7 @@ export default function ToolsPage() {
           </p>
         </header>
         <div className="scroll-slim overflow-x-auto">
-          <table className="w-full min-w-[34rem] text-left text-sm">
+          <table className="w-full min-w-136 text-left text-sm">
             <thead className="text-xs text-subtle">
               <tr>
                 <th scope="col" className="px-4 py-2 font-medium">

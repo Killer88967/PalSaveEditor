@@ -99,11 +99,11 @@ function BarList({
 export function SaveOverviewPanel({
   session,
   revision,
-  onSelectPlayer,
+  onSelectPlayerAction,
 }: {
   session: SaveSession;
   revision: number;
-  onSelectPlayer?: (playerUid: string) => void;
+  onSelectPlayerAction?: (playerUid: string) => void;
 }) {
   const [overview, setOverview] = useState<SaveOverview | null>(null);
   const [error, setError] = useState<string>();
@@ -330,8 +330,8 @@ export function SaveOverviewPanel({
                     <td className="px-4 py-2">
                       <button
                         type="button"
-                        disabled={!onSelectPlayer || !player.playerUid}
-                        onClick={() => onSelectPlayer?.(player.playerUid)}
+                        disabled={!onSelectPlayerAction || !player.playerUid}
+                        onClick={() => onSelectPlayerAction?.(player.playerUid)}
                         className="text-left enabled:hover:text-accent disabled:cursor-default"
                       >
                         <span className="font-medium">

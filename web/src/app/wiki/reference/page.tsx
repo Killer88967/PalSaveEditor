@@ -97,15 +97,31 @@ export default function WikiReferencePage() {
           mono={[0]}
           rows={[
             ["CharacterID", "Pals", "Species ID, e.g. Anubis or BOSS_Anubis"],
-            ["Level", "Both", "Stored as a byte, so 255 is the format's ceiling"],
+            [
+              "Level",
+              "Both",
+              "Stored as a byte, so 255 is the format's ceiling",
+            ],
             ["Exp", "Players", "Total experience, Int64"],
             ["Rank", "Pals", "Star rank — read by the editor, not written"],
-            ["Rank_HP / _Attack / _Defence / _CraftSpeed", "Pals", "Souls, 0–255 each"],
-            ["Talent_HP / _Melee / _Shot / _Defense", "Pals", "IVs, 0–255 each"],
+            [
+              "Rank_HP / _Attack / _Defence / _CraftSpeed",
+              "Pals",
+              "Souls, 0–255 each",
+            ],
+            [
+              "Talent_HP / _Melee / _Shot / _Defense",
+              "Pals",
+              "IVs, 0–255 each",
+            ],
             ["PassiveSkillList", "Pals", "Passive skill IDs"],
             ["EquipWaza", "Pals", "Equipped active skill IDs"],
             ["GotStatusPointList", "Players", "Spent status points, by name"],
-            ["GotExStatusPointList", "Players", "The separate bonus allocation"],
+            [
+              "GotExStatusPointList",
+              "Players",
+              "The separate bonus allocation",
+            ],
             ["NickName", "Both", "Display name"],
           ]}
         />
@@ -187,12 +203,24 @@ export default function WikiReferencePage() {
           rows={[
             ["Pal level", "1 – 255", "Byte storage"],
             ["Pal souls and IVs", "0 – 255", "Byte storage"],
-            ["Player level", "1 – whatever the field holds (255 for a byte)", "No balance cap is imposed"],
+            [
+              "Player level",
+              "1 – whatever the field holds (255 for a byte)",
+              "No balance cap is imposed",
+            ],
             ["Player experience", "0 or greater", "Int64"],
             ["Status points", "0 – 255", "Matches the Pal soul cap"],
-            ["Stack quantity", "Any i32 the slot can hold", "The game clamps display, not storage"],
+            [
+              "Stack quantity",
+              "Any i32 the slot can hold",
+              "The game clamps display, not storage",
+            ],
             ["Nickname", "Up to 64 characters", "Editor guard"],
-            ["Skill lists", "Up to 64 IDs, each ≤ 128 characters", "Editor guard"],
+            [
+              "Skill lists",
+              "Up to 64 IDs, each ≤ 128 characters",
+              "Editor guard",
+            ],
           ]}
         />
         <p>
@@ -215,17 +243,49 @@ export default function WikiReferencePage() {
             ["POST", "/sessions", "Parse an upload into a session"],
             ["GET", "/sessions/{id}/overview", "Dashboard statistics"],
             ["GET", "/sessions/{id}/pals", "Filtered, paged character index"],
-            ["PATCH", "/sessions/{id}/pals/{palId}", "Update supported Pal fields"],
-            ["GET", "/sessions/{id}/player-stats", "Player level, experience and status points"],
-            ["PATCH", "/sessions/{id}/player-stats/{uid}", "Update player level and status points"],
-            ["GET", "/sessions/{id}/players/{uid}/inventory", "A player's containers and slots"],
-            ["POST", "/sessions/{id}/players/{uid}/inventory/{containerId}/slots", "Add an item to a free slot"],
+            [
+              "PATCH",
+              "/sessions/{id}/pals/{palId}",
+              "Update supported Pal fields",
+            ],
+            [
+              "GET",
+              "/sessions/{id}/player-stats",
+              "Player level, experience and status points",
+            ],
+            [
+              "PATCH",
+              "/sessions/{id}/player-stats/{uid}",
+              "Update player level and status points",
+            ],
+            [
+              "GET",
+              "/sessions/{id}/players/{uid}/inventory",
+              "A player's containers and slots",
+            ],
+            [
+              "POST",
+              "/sessions/{id}/players/{uid}/inventory/{containerId}/slots",
+              "Add an item to a free slot",
+            ],
             ["PATCH", "…/slots/{index}", "Write one slot"],
             ["DELETE", "…/slots/{index}", "Empty a slot by dropping its entry"],
             ["GET", "/sessions/{id}/items", "Item IDs present in this world"],
-            ["PATCH", "/sessions/{id}/scalar", "Write one scalar anywhere in the tree"],
-            ["GET", "/sessions/{id}/export?validate=true", "Recompiled .sav, re-parsed first"],
-            ["GET", "/sessions/{id}/gvas", "Uncompressed GVAS for the current tree"],
+            [
+              "PATCH",
+              "/sessions/{id}/scalar",
+              "Write one scalar anywhere in the tree",
+            ],
+            [
+              "GET",
+              "/sessions/{id}/export?validate=true",
+              "Recompiled .sav, re-parsed first",
+            ],
+            [
+              "GET",
+              "/sessions/{id}/gvas",
+              "Uncompressed GVAS for the current tree",
+            ],
             ["POST", "/convert/decompile", ".sav → raw GVAS, stateless"],
             ["POST", "/convert/recompile", "Raw GVAS → .sav, stateless"],
           ]}

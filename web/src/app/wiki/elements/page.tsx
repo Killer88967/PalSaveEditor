@@ -12,7 +12,9 @@ export default function ElementsWikiPage() {
     <>
       <header className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Elements</h1>
-        <p className="text-sm text-muted">The nine element types and their members.</p>
+        <p className="text-sm text-muted">
+          The nine element types and their members.
+        </p>
       </header>
 
       <ElementsBrowser />

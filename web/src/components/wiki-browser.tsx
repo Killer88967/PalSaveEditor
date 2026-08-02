@@ -63,24 +63,27 @@ export interface WikiSort<T> {
 export function WikiBrowser<K extends WikiDataSet>({
   set,
   searchPlaceholder,
-  keyOf,
-  matches,
+  keyOfAction,
+  matchesAction,
   filters,
-  passesFilter,
+  passesFilterAction,
   sorts,
-  renderRow,
-  renderDetail,
+  renderRowAction,
+  renderDetailAction,
   emptyDetail,
 }: {
   set: K;
   searchPlaceholder: string;
-  keyOf: (entry: WikiDataSets[K][number]) => string;
-  matches: (entry: WikiDataSets[K][number], query: string) => boolean;
+  keyOfAction: (entry: WikiDataSets[K][number]) => string;
+  matchesAction: (entry: WikiDataSets[K][number], query: string) => boolean;
   filters?: WikiFilter[];
-  passesFilter?: (entry: WikiDataSets[K][number], filter: string) => boolean;
+  passesFilterAction?: (
+    entry: WikiDataSets[K][number],
+    filter: string,
+  ) => boolean;
   sorts?: WikiSort<WikiDataSets[K][number]>[];
-  renderRow: (entry: WikiDataSets[K][number]) => React.ReactNode;
-  renderDetail: (entry: WikiDataSets[K][number]) => React.ReactNode;
+  renderRowAction: (entry: WikiDataSets[K][number]) => React.ReactNode;
+  renderDetailAction: (entry: WikiDataSets[K][number]) => React.ReactNode;
   emptyDetail: string;
 }) {
   type Entry = WikiDataSets[K][number];
@@ -117,20 +120,20 @@ export function WikiBrowser<K extends WikiDataSet>({
     const query = search.trim().toLowerCase();
     let result = entries;
 
-    if (filter !== "all" && passesFilter) {
-      result = result.filter((entry) => passesFilter(entry, filter));
+    if (filter !== "all" && passesFilterAction) {
+      result = result.filter((entry) => passesFilterAction(entry, filter));
     }
     if (query) {
-      result = result.filter((entry) => matches(entry, query));
+      result = result.filter((entry) => matchesAction(entry, query));
     }
 
     const compare = sorts?.find((option) => option.id === sort)?.compare;
 
     return compare ? [...result].sort(compare) : result;
-  }, [entries, search, filter, sort, matches, passesFilter, sorts]);
+  }, [entries, search, filter, sort, matchesAction, passesFilterAction, sorts]);
 
   const current =
-    visible.find((entry) => keyOf(entry) === selected) ?? visible[0];
+    visible.find((entry) => keyOfAction(entry) === selected) ?? visible[0];
 
   if (error) {
     return (
@@ -195,7 +198,9 @@ export function WikiBrowser<K extends WikiDataSet>({
                   onClick={() => setSort(option.id)}
                   aria-pressed={sort === option.id}
                   className={`badge transition-colors ${
-                    sort === option.id ? "badge-accent" : "hover:text-foreground"
+                    sort === option.id
+                      ? "badge-accent"
+                      : "hover:text-foreground"
                   }`}
                 >
                   {option.label}
@@ -211,10 +216,10 @@ export function WikiBrowser<K extends WikiDataSet>({
           </p>
         </div>
 
-        <ul className="scroll-slim max-h-[34rem] overflow-y-auto p-1.5">
+        <ul className="scroll-slim max-h-136 overflow-y-auto p-1.5">
           {visible.slice(0, 400).map((entry) => {
-            const key = keyOf(entry);
-            const active = current && keyOf(current) === key;
+            const key = keyOfAction(entry);
+            const active = current && keyOfAction(current) === key;
 
             return (
               <li key={key}>
@@ -228,7 +233,7 @@ export function WikiBrowser<K extends WikiDataSet>({
                       : "hover:bg-raised hover:text-foreground"
                   }`}
                 >
-                  {renderRow(entry)}
+                  {renderRowAction(entry)}
                 </button>
               </li>
             );
@@ -247,9 +252,9 @@ export function WikiBrowser<K extends WikiDataSet>({
         </ul>
       </div>
 
-      <div className="card scroll-slim max-h-[42rem] overflow-y-auto p-4">
+      <div className="card scroll-slim max-h-168 overflow-y-auto p-4">
         {current ? (
-          renderDetail(current)
+          renderDetailAction(current)
         ) : (
           <p className="p-6 text-center text-sm text-subtle">
             {loading ? "Loading…" : emptyDetail}
@@ -271,7 +276,9 @@ export function Stat({
   return (
     <div className="panel p-2.5">
       <dt className="text-xs text-subtle">{label}</dt>
-      <dd className="mt-0.5 break-words text-sm tabular-nums">{value ?? "—"}</dd>
+      <dd className="mt-0.5 wrap-break-word text-sm tabular-nums">
+        {value ?? "—"}
+      </dd>
     </div>
   );
 }
@@ -297,7 +304,9 @@ export function DetailHeader({
         <p className="truncate font-mono text-xs text-subtle" title={id}>
           {id}
         </p>
-        {badges && <div className="mt-1.5 flex flex-wrap gap-1.5">{badges}</div>}
+        {badges && (
+          <div className="mt-1.5 flex flex-wrap gap-1.5">{badges}</div>
+        )}
         {description && (
           <p className="mt-2 text-sm text-muted">{description}</p>
         )}

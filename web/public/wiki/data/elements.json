@@ -1,1 +1,16 @@
-[{"id":"Dark","name":"Dark","color":"#ad0035","icon":"dark"},{"id":"Dragon","name":"Dragon","color":"#c22df9","icon":"dragon"},{"id":"Earth","name":"Ground","color":"#ba5608","icon":"ground"},{"id":"Electricity","name":"Electric","color":"#feed01","icon":"electric"},{"id":"Fire","name":"Fire","color":"#ff4208","icon":"fire"},{"id":"Ice","name":"Ice","color":"#00f2ff","icon":"ice"},{"id":"Leaf","name":"Grass","color":"#83f001","icon":"grass"},{"id":"Normal","name":"Neutral","color":"#d8a796","icon":"neutral"},{"id":"Water","name":"Water","color":"#0074ff","icon":"water"}]
+[
+  { "id": "Dark", "name": "Dark", "color": "#ad0035", "icon": "dark" },
+  { "id": "Dragon", "name": "Dragon", "color": "#c22df9", "icon": "dragon" },
+  { "id": "Earth", "name": "Ground", "color": "#ba5608", "icon": "ground" },
+  {
+    "id": "Electricity",
+    "name": "Electric",
+    "color": "#feed01",
+    "icon": "electric"
+  },
+  { "id": "Fire", "name": "Fire", "color": "#ff4208", "icon": "fire" },
+  { "id": "Ice", "name": "Ice", "color": "#00f2ff", "icon": "ice" },
+  { "id": "Leaf", "name": "Grass", "color": "#83f001", "icon": "grass" },
+  { "id": "Normal", "name": "Neutral", "color": "#d8a796", "icon": "neutral" },
+  { "id": "Water", "name": "Water", "color": "#0074ff", "icon": "water" }
+]

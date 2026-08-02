@@ -170,7 +170,8 @@ export const WIKI_CATEGORIES = [
   {
     href: "/wiki/pals",
     label: "Pals",
-    blurb: "Elements, stat scaling, work suitability and the skills each Pal learns.",
+    blurb:
+      "Elements, stat scaling, work suitability and the skills each Pal learns.",
   },
   {
     href: "/wiki/items",
@@ -200,7 +201,8 @@ export const WIKI_CATEGORIES = [
   {
     href: "/wiki/technologies",
     label: "Technologies",
-    blurb: "Tech tree entries with unlock level, point cost and what they unlock.",
+    blurb:
+      "Tech tree entries with unlock level, point cost and what they unlock.",
   },
   {
     href: "/wiki/buildings",
@@ -218,7 +220,8 @@ export const WIKI_DOCS = [
   {
     href: "/wiki/reference",
     label: "Reference",
-    blurb: "Save container, world collections, editing limits and the HTTP API.",
+    blurb:
+      "Save container, world collections, editing limits and the HTTP API.",
   },
   {
     href: "/wiki/faq",

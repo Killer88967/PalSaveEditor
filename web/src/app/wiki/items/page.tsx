@@ -12,7 +12,10 @@ export default function ItemsWikiPage() {
     <>
       <header className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Items</h1>
-        <p className="text-sm text-muted">Every item in the game data. The ID under each name is what a save stores in an inventory slot, and what the inventory editor writes.</p>
+        <p className="text-sm text-muted">
+          Every item in the game data. The ID under each name is what a save
+          stores in an inventory slot, and what the inventory editor writes.
+        </p>
       </header>
 
       <ItemsBrowser />

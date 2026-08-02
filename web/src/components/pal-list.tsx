@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   getPal,
   getPals,
+  getPlayerStats,
   getSaveSession,
   updatePal,
   PalSaveApiError,
@@ -24,25 +25,49 @@ const PARSE_BADGE: Record<string, string> = {
   unsupported: "badge-danger",
 };
 
+/** A Pal's owner, named when the world's player list knows the UID. */
+function OwnerCell({
+  pal,
+  names,
+}: {
+  pal: PalSummary;
+  names: Map<string, string>;
+}) {
+  const uid = pal.ownerPlayerUid ?? pal.playerUid;
+  if (!uid) return <p>Wild</p>;
+
+  const name = names.get(uid.toLowerCase());
+  return (
+    <p title={uid} className={name ? "truncate" : "font-mono"}>
+      {name ?? shortId(uid)}
+    </p>
+  );
+}
+
 export function PalList({
   sessionId,
   generation,
   refreshToken,
-  onViewRaw,
+  onViewRawAction,
   revision,
-  onSessionUpdate,
+  onSessionUpdateAction,
 }: {
   sessionId: string;
   generation: number;
   refreshToken: number;
-  onViewRaw: (path: SavePathSegment[]) => void;
+  onViewRawAction: (path: SavePathSegment[]) => void;
   revision: number;
-  onSessionUpdate: (dirty: boolean, revision: number) => void;
+  onSessionUpdateAction: (dirty: boolean, revision: number) => void;
 }) {
   const [input, setInput] = useState("");
   const [search, setSearch] = useState("");
-  const [includePlayers, setIncludePlayers] = useState(false);
+  const [owner, setOwner] = useState("");
   const [minLevel, setMinLevel] = useState("");
+
+  /** The world's players, so Pals can be narrowed to the one who owns them. */
+  const [owners, setOwners] = useState<{ playerUid: string; label: string }[]>(
+    [],
+  );
 
   /** The page currently shown, tagged with the filters that produced it. */
   const [page, setPage] = useState<{
@@ -70,6 +95,29 @@ export function PalList({
     return () => window.clearTimeout(timer);
   }, [input]);
 
+  useEffect(() => {
+    const controller = new AbortController();
+
+    void getPlayerStats(sessionId, controller.signal)
+      .then((players) => {
+        if (controller.signal.aborted) return;
+        setOwners(
+          players
+            .filter((player) => player.playerUid)
+            .map((player) => ({
+              playerUid: player.playerUid!,
+              label: player.nickname || shortId(player.playerUid!),
+            })),
+        );
+      })
+      // Owner filtering is a convenience; the list still works without it.
+      .catch(() => {
+        if (!controller.signal.aborted) setOwners([]);
+      });
+
+    return () => controller.abort();
+  }, [sessionId]);
+
   const parsedMinLevel = minLevel.trim() === "" ? undefined : Number(minLevel);
   const minLevelFilter =
     parsedMinLevel !== undefined && Number.isFinite(parsedMinLevel)
@@ -79,7 +127,7 @@ export function PalList({
   const filters: GetPalsQuery = {
     limit: PAGE_SIZE,
     search: search || undefined,
-    includePlayers: includePlayers || undefined,
+    ownerPlayerUid: owner || undefined,
     minLevel: minLevelFilter,
   };
 
@@ -91,6 +139,11 @@ export function PalList({
     refreshToken,
     filters,
   ]);
+
+  // Owner UIDs are opaque; the players list is what gives them names.
+  const ownerNames = new Map(
+    owners.map((entry) => [entry.playerUid.toLowerCase(), entry.label]),
+  );
 
   const current = page?.key === listKey ? page : null;
   const items = current?.items ?? [];
@@ -188,12 +241,12 @@ export function PalList({
           ? { ...state, items: updatePalRow(state.items, response.pal) }
           : state,
       );
-      onSessionUpdate(response.dirty, response.revision);
+      onSessionUpdateAction(response.dirty, response.revision);
       return response.pal;
     } catch (cause) {
       if (cause instanceof PalSaveApiError && cause.status === 409) {
         const metadata = await getSaveSession(sessionId);
-        onSessionUpdate(metadata.dirty, metadata.revision);
+        onSessionUpdateAction(metadata.dirty, metadata.revision);
       }
       throw cause;
     } finally {
@@ -202,10 +255,10 @@ export function PalList({
   }
 
   return (
-    <div className="card grid min-h-[32rem] overflow-hidden lg:grid-cols-[minmax(0,1.3fr)_minmax(22rem,0.9fr)]">
+    <div className="card grid min-h-128 overflow-hidden lg:grid-cols-[minmax(0,1.3fr)_minmax(22rem,0.9fr)]">
       <section
         className="flex min-w-0 flex-col border-b border-line lg:border-b-0 lg:border-r"
-        aria-label="Character list"
+        aria-label="Pal list"
       >
         <div className="space-y-3 border-b border-line p-4">
           <label className="block">
@@ -236,26 +289,33 @@ export function PalList({
               />
             </label>
 
-            <label className="flex items-center gap-2 pb-1.5 text-sm text-muted">
-              <input
-                type="checkbox"
-                checked={includePlayers}
-                onChange={(event) => setIncludePlayers(event.target.checked)}
-                className="accent-[var(--accent)]"
-              />
-              Include players
-            </label>
+            {owners.length > 0 && (
+              <label className="w-44">
+                <span className="field-label">Owner</span>
+                <select
+                  value={owner}
+                  onChange={(event) => setOwner(event.target.value)}
+                  className="field field-sm"
+                >
+                  <option value="">Any owner</option>
+                  {owners.map((entry) => (
+                    <option key={entry.playerUid} value={entry.playerUid}>
+                      {entry.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
 
             <p className="ml-auto pb-1.5 text-xs text-subtle">
-              {total.toLocaleString()}{" "}
-              {total === 1 ? "character" : "characters"}
+              {total.toLocaleString()} {total === 1 ? "Pal" : "Pals"}
             </p>
           </div>
         </div>
 
         {loading && items.length === 0 && (
           <p className="p-4 text-sm text-muted" role="status">
-            Building the character index…
+            Building the Pal index…
           </p>
         )}
         {error && (
@@ -265,7 +325,7 @@ export function PalList({
         )}
         {!loading && !error && items.length === 0 && (
           <p className="p-4 text-sm text-subtle">
-            No characters match these filters.
+            No Pals match these filters.
           </p>
         )}
 
@@ -275,7 +335,7 @@ export function PalList({
               <thead className="sticky top-0 bg-surface text-xs text-subtle">
                 <tr>
                   <th scope="col" className="px-4 py-2 font-medium">
-                    Character
+                    Pal
                   </th>
                   <th scope="col" className="px-2 py-2 font-medium">
                     Lv / ★
@@ -315,13 +375,8 @@ export function PalList({
                     }`}
                   >
                     <td className="px-4 py-2">
-                      <p className="flex items-center gap-1.5 font-medium">
-                        <span className="truncate">
-                          {pal.nickname || humanizeId(pal.characterId)}
-                        </span>
-                        {pal.isPlayer && (
-                          <span className="badge shrink-0">Player</span>
-                        )}
+                      <p className="truncate font-medium">
+                        {pal.nickname || humanizeId(pal.characterId)}
                       </p>
                       <p className="truncate font-mono text-xs text-subtle">
                         {pal.characterId ?? pal.id}
@@ -344,12 +399,8 @@ export function PalList({
                     <td className="hidden px-2 py-2 sm:table-cell">
                       {pal.gender || "—"}
                     </td>
-                    <td className="hidden px-4 py-2 font-mono text-xs text-subtle md:table-cell">
-                      <p title={pal.ownerPlayerUid ?? pal.playerUid}>
-                        {shortId(pal.ownerPlayerUid ?? pal.playerUid) === "—"
-                          ? "Wild"
-                          : shortId(pal.ownerPlayerUid ?? pal.playerUid)}
-                      </p>
+                    <td className="hidden px-4 py-2 text-xs text-subtle md:table-cell">
+                      <OwnerCell pal={pal} names={ownerNames} />
                     </td>
                   </tr>
                 ))}
@@ -380,8 +431,8 @@ export function PalList({
         loading={detailLoading}
         error={detailError}
         revision={revision}
-        onSave={savePal}
-        onViewRaw={(selected) => onViewRaw(selected.rawPath)}
+        onSaveAction={savePal}
+        onViewRawAction={(selected) => onViewRawAction(selected.rawPath)}
       />
     </div>
   );

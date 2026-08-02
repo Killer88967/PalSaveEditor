@@ -132,7 +132,7 @@ function TreeNode({
                 type="checkbox"
                 checked={checked}
                 onChange={(event) => setChecked(event.target.checked)}
-                className="accent-[var(--accent)]"
+                className="accent-accent"
               />
             ) : (
               <input
@@ -263,10 +263,10 @@ export function SaveTree({
   expanded,
   loaded,
   highlightedPath,
-  onToggle,
-  onLoadMore,
-  onLoadMoreRoot,
-  onSave,
+  onToggleAction,
+  onLoadMoreAction,
+  onLoadMoreRootAction,
+  onSaveAction,
 }: {
   sessionId: string;
   root: SaveNodeResponse | null;
@@ -275,10 +275,13 @@ export function SaveTree({
   expanded: Set<string>;
   loaded: Record<string, LoadedNode>;
   highlightedPath?: string;
-  onToggle: (id: string, node: SaveNodeSummary) => void;
-  onLoadMore: (id: string, node: SaveNodeSummary) => void;
-  onLoadMoreRoot: () => void;
-  onSave: (node: SaveNodeSummary, value: EditableScalarValue) => Promise<void>;
+  onToggleAction: (id: string, node: SaveNodeSummary) => void;
+  onLoadMoreAction: (id: string, node: SaveNodeSummary) => void;
+  onLoadMoreRootAction: () => void;
+  onSaveAction: (
+    node: SaveNodeSummary,
+    value: EditableScalarValue,
+  ) => Promise<void>;
 }) {
   return (
     <section className="card overflow-hidden" aria-label="Raw save tree">
@@ -305,7 +308,7 @@ export function SaveTree({
         </p>
       )}
 
-      <div className="scroll-slim max-h-[42rem] overflow-auto p-2">
+      <div className="scroll-slim max-h-168 overflow-auto p-2">
         {loading && !root && (
           <p className="p-3 text-sm text-muted">Loading root summary…</p>
         )}
@@ -326,9 +329,9 @@ export function SaveTree({
                   sessionId={sessionId}
                   expanded={expanded}
                   loaded={loaded}
-                  onToggle={onToggle}
-                  onLoadMore={onLoadMore}
-                  onSave={onSave}
+                  onToggle={onToggleAction}
+                  onLoadMore={onLoadMoreAction}
+                  onSave={onSaveAction}
                 />
               ))}
             </ul>
@@ -336,7 +339,7 @@ export function SaveTree({
               <button
                 type="button"
                 disabled={loading}
-                onClick={onLoadMoreRoot}
+                onClick={onLoadMoreRootAction}
                 className="btn btn-secondary btn-sm m-2"
               >
                 {loading

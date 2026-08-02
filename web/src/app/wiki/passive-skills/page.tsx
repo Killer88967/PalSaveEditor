@@ -11,8 +11,12 @@ export default function PassiveSkillsWikiPage() {
   return (
     <>
       <header className="space-y-1">
-        <h1 className="text-2xl font-semibold tracking-tight">Passive skills</h1>
-        <p className="text-sm text-muted">Passive traits, as the save stores them in PassiveSkillList.</p>
+        <h1 className="text-2xl font-semibold tracking-tight">
+          Passive skills
+        </h1>
+        <p className="text-sm text-muted">
+          Passive traits, as the save stores them in PassiveSkillList.
+        </p>
       </header>
 
       <PassiveSkillsBrowser />

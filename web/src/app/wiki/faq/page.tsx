@@ -68,8 +68,8 @@ const FAQ = [
     answer: (
       <>
         They are not in the save. Palworld derives them from level and status
-        points when it loads a character, so raising{" "}
-        <em>Max HP</em> status points is the way to change them.
+        points when it loads a character, so raising <em>Max HP</em> status
+        points is the way to change them.
       </>
     ),
   },
@@ -123,9 +123,9 @@ const FAQ = [
     answer: (
       <>
         No. The editor changes values that already exist and adds inventory
-        entries; it does not create characters, containers or map objects.
-        Those carry cross-references the save format expects to be consistent,
-        and a half-built one corrupts a world.
+        entries; it does not create characters, containers or map objects. Those
+        carry cross-references the save format expects to be consistent, and a
+        half-built one corrupts a world.
       </>
     ),
   },

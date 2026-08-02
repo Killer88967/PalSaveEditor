@@ -43,7 +43,9 @@ export function ActiveSkillsBrowser() {
   const [elements, setElements] = useState<WikiElement[]>([]);
 
   useEffect(() => {
-    void loadWikiData("elements").then(setElements).catch(() => {});
+    void loadWikiData("elements")
+      .then(setElements)
+      .catch(() => {});
   }, []);
 
   const elementOf = (id: string | null) =>
@@ -53,8 +55,8 @@ export function ActiveSkillsBrowser() {
     <WikiBrowser
       set="active-skills"
       searchPlaceholder="Search active skills…"
-      keyOf={(skill) => skill.id}
-      matches={(skill, query) =>
+      keyOfAction={(skill) => skill.id}
+      matchesAction={(skill, query) =>
         skill.name.toLowerCase().includes(query) ||
         skill.id.toLowerCase().includes(query)
       }
@@ -63,7 +65,7 @@ export function ActiveSkillsBrowser() {
         label: element.name,
         icon: element.icon,
       }))}
-      passesFilter={(skill, filter) => skill.element === filter}
+      passesFilterAction={(skill, filter) => skill.element === filter}
       sorts={[
         {
           id: "name",
@@ -84,7 +86,7 @@ export function ActiveSkillsBrowser() {
             a.cooldown - b.cooldown,
         },
       ]}
-      renderRow={(skill) => (
+      renderRowAction={(skill) => (
         <>
           <WikiIcon
             icon={elementOf(skill.element)?.icon}
@@ -105,7 +107,7 @@ export function ActiveSkillsBrowser() {
         </>
       )}
       emptyDetail="Select a skill to see its numbers."
-      renderDetail={(skill) => {
+      renderDetailAction={(skill) => {
         const element = elementOf(skill.element);
 
         return (
@@ -154,8 +156,8 @@ export function PassiveSkillsBrowser() {
     <WikiBrowser
       set="passive-skills"
       searchPlaceholder="Search passive skills…"
-      keyOf={(skill) => skill.id}
-      matches={(skill, query) =>
+      keyOfAction={(skill) => skill.id}
+      matchesAction={(skill, query) =>
         skill.name.toLowerCase().includes(query) ||
         skill.id.toLowerCase().includes(query)
       }
@@ -165,7 +167,7 @@ export function PassiveSkillsBrowser() {
         { id: "armor", label: "Armour" },
         { id: "accessory", label: "Accessories" },
       ]}
-      passesFilter={(skill, filter) => {
+      passesFilterAction={(skill, filter) => {
         const attaches = skill.attachesTo.join(" ").toLowerCase();
         if (filter === "pal") return attaches.includes("pal");
         if (filter === "weapon") return attaches.includes("weapon");
@@ -186,7 +188,7 @@ export function PassiveSkillsBrowser() {
             b.rank - a.rank || a.name.localeCompare(b.name),
         },
       ]}
-      renderRow={(skill) => (
+      renderRowAction={(skill) => (
         <>
           <span className="min-w-0 flex-1">
             <span className="block truncate text-sm font-medium">
@@ -206,7 +208,7 @@ export function PassiveSkillsBrowser() {
         </>
       )}
       emptyDetail="Select a passive to see what it does."
-      renderDetail={(skill) => (
+      renderDetailAction={(skill) => (
         <div className="space-y-4">
           <DetailHeader
             name={skill.name}

@@ -13,11 +13,11 @@ import { formatFileSize } from "@/lib/format";
  * message rather than a server error.
  */
 export function SaveDropzone({
-  onFiles,
+  onFilesAction,
   busy,
   disabled,
 }: {
-  onFiles: (files: File[]) => void;
+  onFilesAction: (files: File[]) => void;
   busy?: boolean;
   disabled?: boolean;
 }) {
@@ -55,7 +55,7 @@ export function SaveDropzone({
       );
     }
 
-    onFiles(saves);
+    onFilesAction(saves);
   }
 
   return (

@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Note, OnThisPage, Section, Steps, WikiHeader } from "@/components/wiki-ui";
+import {
+  Note,
+  OnThisPage,
+  Section,
+  Steps,
+  WikiHeader,
+} from "@/components/wiki-ui";
 
 export const metadata: Metadata = {
   title: "Usage",
@@ -37,7 +43,10 @@ export default function WikiUsagePage() {
               world folder somewhere safe.
             </>,
             <>
-              Open the <Link href="/editor" className="text-accent underline">editor</Link>{" "}
+              Open the{" "}
+              <Link href="/editor" className="text-accent underline">
+                editor
+              </Link>{" "}
               and drop in <code>Level.sav</code> together with the contents of
               the world&apos;s <code>Players</code> folder.
             </>,
@@ -58,7 +67,10 @@ export default function WikiUsagePage() {
         <Note tone="warning">
           <p>
             The backup in step 1 is the only thing that makes any of the rest
-            reversible. <Link href="/guide" className="text-accent underline">The guide</Link>{" "}
+            reversible.{" "}
+            <Link href="/guide" className="text-accent underline">
+              The guide
+            </Link>{" "}
             has the exact folder for your platform.
           </p>
         </Note>
@@ -66,15 +78,17 @@ export default function WikiUsagePage() {
 
       <Section id="loading" title="Loading a world">
         <p>
-          The editor keys everything off <code>Level.sav</code> — the world
-          file that holds every character, base and container. Select it
-          together with the individual <code>Players/&lt;uid&gt;.sav</code>{" "}
-          files in one drop; the player files are what connect a player to
-          their inventory containers.
+          The editor keys everything off <code>Level.sav</code> — the world file
+          that holds every character, base and container. Select it together
+          with the individual <code>Players/&lt;uid&gt;.sav</code> files in one
+          drop; the player files are what connect a player to their inventory
+          containers.
         </p>
         <ul className="space-y-1.5">
           <li>
-            <strong className="font-medium text-foreground">Level.sav only</strong>{" "}
+            <strong className="font-medium text-foreground">
+              Level.sav only
+            </strong>{" "}
             — Overview, Pals, Players and the raw tree all work.
           </li>
           <li>
@@ -87,8 +101,8 @@ export default function WikiUsagePage() {
         <p>
           The upload becomes a <em>session</em>: the parsed save is held in
           memory by the Rust API, addressed by a session ID, and carries a
-          revision number that every edit increments. Nothing is written to
-          disk until you export.
+          revision number that every edit increments. Nothing is written to disk
+          until you export.
         </p>
         <p>
           Uploads are capped at 512 MiB, and a decompressed world at 2 GiB
@@ -103,8 +117,9 @@ export default function WikiUsagePage() {
           items={[
             <>
               Open the <strong>Pals</strong> tab and narrow the list: search by
-              species, nickname or instance ID, or filter by level, gender,
-              species and owner.
+              species, nickname or instance ID, set a minimum level, or pick an
+              owner to see only that player&apos;s Pals. Players themselves live
+              in the <strong>Players</strong> tab, not this one.
             </>,
             <>
               Select a row, then press <strong>Edit</strong>. Only the fields

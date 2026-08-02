@@ -12,7 +12,9 @@ export default function TechnologiesWikiPage() {
     <>
       <header className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Technologies</h1>
-        <p className="text-sm text-muted">Technology tree entries, ordered by the level that unlocks them.</p>
+        <p className="text-sm text-muted">
+          Technology tree entries, ordered by the level that unlocks them.
+        </p>
       </header>
 
       <TechnologiesBrowser />

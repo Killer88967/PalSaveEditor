@@ -12,7 +12,9 @@ export default function BuildingsWikiPage() {
     <>
       <header className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Buildings</h1>
-        <p className="text-sm text-muted">Base structures with their build materials and durability.</p>
+        <p className="text-sm text-muted">
+          Base structures with their build materials and durability.
+        </p>
       </header>
 
       <BuildingsBrowser />

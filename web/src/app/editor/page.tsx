@@ -423,7 +423,7 @@ export default function EditorPage() {
         <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <div className="space-y-3">
             <SaveDropzone
-              onFiles={(picked) => void openFiles(picked)}
+              onFilesAction={(picked) => void openFiles(picked)}
               busy={opening}
               disabled={opening}
             />
@@ -570,7 +570,7 @@ export default function EditorPage() {
             <SaveOverviewPanel
               session={session}
               revision={session.revision}
-              onSelectPlayer={(playerUid) => {
+              onSelectPlayerAction={(playerUid) => {
                 setFocusPlayer(playerUid);
                 setView("inventory");
               }}
@@ -584,7 +584,7 @@ export default function EditorPage() {
               generation={generation.current}
               refreshToken={palRefresh}
               revision={session.revision}
-              onSessionUpdate={(dirty, revision) => {
+              onSessionUpdateAction={(dirty, revision) => {
                 setSession((state) =>
                   state ? { ...state, dirty, revision } : state,
                 );
@@ -593,7 +593,7 @@ export default function EditorPage() {
                   text: `Pal saved — revision ${revision}`,
                 });
               }}
-              onViewRaw={viewRawPath}
+              onViewRawAction={viewRawPath}
             />
           )}
 
@@ -620,7 +620,7 @@ export default function EditorPage() {
               sessionId={session.id}
               revision={session.revision}
               focusPlayerUid={focusPlayer}
-              onSessionUpdate={(dirty, revision) => {
+              onSessionUpdateAction={(dirty, revision) => {
                 setSession((state) =>
                   state ? { ...state, dirty, revision } : state,
                 );
@@ -641,10 +641,10 @@ export default function EditorPage() {
               expanded={expanded}
               loaded={loaded}
               highlightedPath={rawPath}
-              onToggle={toggleNode}
-              onLoadMore={loadMore}
-              onLoadMoreRoot={() => void loadMoreRoot()}
-              onSave={saveScalar}
+              onToggleAction={toggleNode}
+              onLoadMoreAction={loadMore}
+              onLoadMoreRootAction={() => void loadMoreRoot()}
+              onSaveAction={saveScalar}
             />
           )}
         </>

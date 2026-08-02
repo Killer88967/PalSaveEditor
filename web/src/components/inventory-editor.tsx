@@ -41,13 +41,13 @@ export function InventoryEditor({
   sessionId,
   revision,
   focusPlayerUid,
-  onSessionUpdate,
+  onSessionUpdateAction,
 }: {
   sessionId: string;
   revision: number;
   /** Pre-selects a player, e.g. after clicking a row in the overview. */
   focusPlayerUid?: string;
-  onSessionUpdate: (dirty: boolean, revision: number) => void;
+  onSessionUpdateAction: (dirty: boolean, revision: number) => void;
 }) {
   const [players, setPlayers] = useState<PlayerInventoryOwner[]>([]);
   const [selected, setSelected] = useState("");
@@ -134,7 +134,7 @@ export function InventoryEditor({
     setError(undefined);
     setNotice(message);
     setReloads((value) => value + 1);
-    onSessionUpdate(dirty, nextRevision);
+    onSessionUpdateAction(dirty, nextRevision);
   }
 
   function fail(cause: unknown) {

@@ -39,15 +39,15 @@ export function PalDetail({
   loading,
   error,
   revision,
-  onViewRaw,
-  onSave,
+  onViewRawAction,
+  onSaveAction,
 }: {
   detail: PalDetailModel | null;
   loading: boolean;
   error?: string;
   revision: number;
-  onViewRaw: (detail: PalDetailModel) => void;
-  onSave: (request: UpdatePalRequest) => Promise<PalDetailModel>;
+  onViewRawAction: (detail: PalDetailModel) => void;
+  onSaveAction: (request: UpdatePalRequest) => Promise<PalDetailModel>;
 }) {
   const [editing, setEditing] = useState(false);
   const [form, setForm] = useState<PalDetailModel | null>(detail);
@@ -105,7 +105,9 @@ export function PalDetail({
     setFormError(undefined);
     setFields({});
     try {
-      const updated = await onSave(buildPalUpdate(detail!, form!, revision));
+      const updated = await onSaveAction(
+        buildPalUpdate(detail!, form!, revision),
+      );
       setForm(updated);
       setEditing(false);
     } catch (cause) {
@@ -123,7 +125,7 @@ export function PalDetail({
 
   return (
     <section
-      className="scroll-slim max-h-[42rem] space-y-4 overflow-y-auto p-4"
+      className="scroll-slim max-h-168 space-y-4 overflow-y-auto p-4"
       aria-label="Selected character details"
     >
       <div className="flex items-start justify-between gap-3">
@@ -158,7 +160,7 @@ export function PalDetail({
           <button
             type="button"
             className="btn btn-ghost btn-sm"
-            onClick={() => onViewRaw(detail)}
+            onClick={() => onViewRawAction(detail)}
             title="Jump to this entry in the raw property tree"
           >
             <TreeIcon className="size-4" />

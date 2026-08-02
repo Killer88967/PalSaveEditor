@@ -54,15 +54,15 @@ export function ItemsBrowser() {
     <WikiBrowser
       set="items"
       searchPlaceholder="Search items by name or ID…"
-      keyOf={(item) => item.id}
-      matches={(item, query) =>
+      keyOfAction={(item) => item.id}
+      matchesAction={(item, query) =>
         item.name.toLowerCase().includes(query) ||
         item.id.toLowerCase().includes(query)
       }
       filters={TYPES.map((type) => ({ id: type, label: humanizeId(type) }))}
-      passesFilter={(item, filter) => item.typeA === filter}
+      passesFilterAction={(item, filter) => item.typeA === filter}
       sorts={SORTS}
-      renderRow={(item) => (
+      renderRowAction={(item) => (
         <>
           <WikiIcon icon={item.icon} alt="" className="size-7" />
           <span className="min-w-0 flex-1">
@@ -81,7 +81,7 @@ export function ItemsBrowser() {
         </>
       )}
       emptyDetail="Select an item to see its details."
-      renderDetail={(item) => (
+      renderDetailAction={(item) => (
         <div className="space-y-4">
           <DetailHeader
             icon={item.icon}
