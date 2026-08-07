@@ -6,12 +6,7 @@ import type { KnownItem } from "@/lib/palsave-api";
  * navigable, never used to decide what may be written.
  */
 export type ItemCategory =
-  | "key"
-  | "sphere"
-  | "gear"
-  | "ammo"
-  | "food"
-  | "material";
+  "key" | "sphere" | "gear" | "ammo" | "food" | "material";
 
 export const CATEGORY_LABELS: Record<ItemCategory, string> = {
   key: "Key items",
