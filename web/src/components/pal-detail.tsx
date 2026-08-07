@@ -22,6 +22,12 @@ const NUMBERS = [
   ["talentDefense", "IV · Defence", 0, 255],
 ] as const;
 
+const BOSS = "BOSS_";
+const base = (id: string) => id.replace(/^(BOSS_|GYM_)/, "");
+const isAlpha = (id: string) => id.startsWith(BOSS);
+// toggle on  -> update characterId = BOSS + base(current)
+// toggle off -> update characterId = base(current)
+
 /** Values above this are legal in the file but well outside normal gameplay. */
 const UNUSUAL_THRESHOLD = 100;
 
