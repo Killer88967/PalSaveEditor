@@ -49,6 +49,7 @@ pub struct FieldUpdate<T> {
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct UpdatePalRequest {
     pub expected_revision: u64,
+    pub character_id: Option<FieldUpdate<String>>,
     pub nickname: Option<FieldUpdate<String>>,
     pub level: Option<FieldUpdate<i32>>,
     pub rank: Option<FieldUpdate<i32>>,
@@ -68,6 +69,7 @@ pub struct UpdatePalRequest {
 #[derive(Debug, Clone, Default, PartialEq, Eq, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct PalEditCapabilities {
+    pub character_id: bool,
     pub nickname: bool,
     pub level: bool,
     pub rank: bool,
@@ -456,6 +458,7 @@ fn capabilities(properties: Option<&Properties>) -> PalEditCapabilities {
         })
     };
     PalEditCapabilities {
+        character_id: property("CharacterID").is_some_and(|v| matches!(v, Property::Name(_) | Property::Str(_))),
         nickname: property("NickName").is_some_and(|v| matches!(v, Property::Str(_))),
         level: integer("Level"),
         rank: false,
@@ -643,6 +646,14 @@ fn validate_update(
             }
         };
     }
+    existing!(character_id, character_id, "characterId");
+    if let Some(v) = &request.character_id {
+        let id = v.value.trim();
+        if id.is_empty() || !id.chars().all(|c| c.is_ascii_alphanumeric() || c == '_') {
+            errors.insert("characterId".into(),
+                "Species id must be non-empty letters, digits, or underscores".into());
+        }
+    }
     existing!(nickname, nickname, "nickname");
     existing!(level, level, "level");
     if request.rank.is_some() {
@@ -763,6 +774,10 @@ fn apply_update(properties: &mut Properties, r: &UpdatePalRequest) -> Result<(),
             }
         };
     }
+    if let Some(v) = &r.character_id {
+        set_existing_name(properties, "CharacterID", v.value.clone())
+            .map_err(|e| ("characterId".into(), e))?;
+    }
     if let Some(v) = &r.nickname {
         set_existing_string(properties, "NickName", v.value.clone()).map_err(|e| (
             "nickname".into(),
@@ -831,6 +846,13 @@ fn set_existing_string(p: &mut Properties, name: &str, value: String) -> Result<
         _ => {
             return Err(format!("{name} is not a string property"));
         }
+    }
+    Ok(())
+}
+fn set_existing_name(p: &mut Properties, name: &str, value: String) -> Result<(), String> {
+    match exact_mut(p, name, 0).ok_or_else(|| format!("{name} is absent"))? {
+        Property::Name(v) | Property::Str(v) => *v = value,
+        _ => return Err(format!("{name} is not a name/string property")),
     }
     Ok(())
 }
