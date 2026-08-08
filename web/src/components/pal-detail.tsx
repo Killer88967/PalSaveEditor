@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type {
   PalDetail as PalDetailModel,
   UpdatePalRequest,
@@ -60,6 +60,7 @@ export function PalDetail({
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState<string>();
   const [fields, setFields] = useState<Record<string, string>>({});
+  const [species, setSpecies] = useState<{ characterId: string; name: string }[]>([]);
 
   if (loading) {
     return (
