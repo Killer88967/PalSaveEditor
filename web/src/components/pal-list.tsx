@@ -32,7 +32,11 @@ const PARSE_BADGE: Record<string, string> = {
   unsupported: "badge-danger",
 };
 
-/** A Pal's owner, named when the world's player list knows the UID. */
+/**
+ * @deprecated until I figure out to do with it.
+ *
+ * A Pal's owner, named when the world's player list knows the UID.
+ */
 function OwnerCell({
   pal,
   names,
