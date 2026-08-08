@@ -16,7 +16,12 @@ use axum::{
 };
 use dashmap::DashMap;
 use serde::{ Deserialize, Serialize };
-use std::{ collections::BTreeMap, env, sync::{ Arc, Mutex } };
+use std::{
+    collections::BTreeMap,
+    env,
+    sync::{ Arc, Mutex, atomic::{ AtomicI64, Ordering } },
+    time::Duration,
+};
 use tower_http::trace::TraceLayer;
 use uesave::Save;
 use uuid::Uuid;
@@ -29,6 +34,16 @@ mod pals;
 const DEFAULT_PORT: u16 = 47_831;
 const MAX_UPLOAD_SIZE: usize = 512 * 1024 * 1024;
 const DEFAULT_MAX_DECOMPRESSED_SIZE: usize = 2 * 1024 * 1024 * 1024;
+const SESSION_TTL_MS: i64 = 30 * 60 * 1000;
+const MAX_SESSIONS: usize = 50;
+
+fn now_millis() -> i64 {
+    std::time::SystemTime
+        ::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map(|d| d.as_millis() as i64)
+        .unwrap_or(0)
+}
 
 type SessionStore = Arc<DashMap<Uuid, SaveSession>>;
 
@@ -43,6 +58,7 @@ struct SaveSession {
     decompressed_size: usize,
     container: palsave_core::SavContainer,
     save: Arc<Mutex<SaveSessionData>>,
+    last_accessed: Arc<AtomicI64>,
 }
 
 struct SaveSessionData {
@@ -271,6 +287,7 @@ async fn create_session(
                 player_saves,
             })
         ),
+        last_accessed: Arc::new(AtomicI64::new(now_millis())),
     });
     Ok((
         StatusCode::CREATED,
@@ -323,6 +340,47 @@ async fn get_session(
             container,
         })
     )
+}
+
+async fn touch_session(
+    State(state): State<Arc<AppState>>,
+    req: axum::extract::Request,
+    next: axum::middleware::Next
+) -> axum::response::Response {
+    if
+        let Some(id) = req
+            .uri()
+            .path()
+            .strip_prefix("/sessions/")
+            .and_then(|rest| rest.split('/').next())
+            .and_then(|seg| Uuid::parse_str(seg).ok()) &&
+        let Some(session) = state.sessions.get(&id)
+    {
+        session.last_accessed.store(now_millis(), Ordering::Relaxed);
+    }
+
+    next.run(req).await
+}
+
+fn spawn_session_sweeper(sessions: SessionStore) {
+    tokio::spawn(async move {
+        let mut tick = tokio::time::interval(Duration::from_secs(120));
+        loop {
+            tick.tick().await;
+            let now = now_millis();
+            sessions.retain(|_, s| now - s.last_accessed.load(Ordering::Relaxed) < SESSION_TTL_MS);
+            if sessions.len() > MAX_SESSIONS {
+                let mut aged: Vec<(Uuid, i64)> = sessions
+                    .iter()
+                    .map(|e| (*e.key(), e.last_accessed.load(Ordering::Relaxed)))
+                    .collect(); // collect fully before removing — avoids DashMap deadlock
+                aged.sort_by_key(|(_, t)| *t);
+                for (id, _) in aged.into_iter().take(sessions.len() - MAX_SESSIONS) {
+                    sessions.remove(&id);
+                }
+            }
+        }
+    });
 }
 
 async fn get_overview(
@@ -1186,6 +1244,7 @@ fn build_app(state: Arc<AppState>) -> Router {
         .route("/convert/decompile", post(convert_decompile))
         .route("/convert/recompile", post(convert_recompile))
         .layer(DefaultBodyLimit::max(MAX_UPLOAD_SIZE))
+        .layer(axum::middleware::from_fn_with_state(state.clone(), touch_session))
         .layer(TraceLayer::new_for_http())
         .with_state(state)
 }
@@ -1205,6 +1264,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         sessions: Arc::new(DashMap::new()),
         max_decompressed_size: max_decompressed_size()?,
     });
+
+    spawn_session_sweeper(state.sessions.clone());
 
     let app = build_app(state);
 
@@ -1364,6 +1425,7 @@ mod tests {
                 compressed_size: 0,
             },
             save: Arc::clone(&data),
+            last_accessed: Arc::new(AtomicI64::new(now_millis())),
         });
         (state, id, data)
     }
