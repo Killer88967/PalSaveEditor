@@ -1,5 +1,16 @@
 # PalSave Editor
 
+[![Build](https://github.com/Killer88967/PalSaveEditor/actions/workflows/build.yml/badge.svg)](https://github.com/Killer88967/PalSaveEditor/actions/workflows/build.yml)
+[![GitHub Issues](https://img.shields.io/github/issues/Killer88967/PalSaveEditor)](https://github.com/Killer88967/PalSaveEditor/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/Killer88967/PalSaveEditor)](https://github.com/Killer88967/PalSaveEditor/stargazers)
+[![GitHub License](https://img.shields.io/github/license/Killer88967/PalSaveEditor)](LICENSE)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/Killer88967/PalSaveEditor)](https://github.com/Killer88967/PalSaveEditor/commits/main)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/Killer88967/PalSaveEditor)
+
+![Rust](https://img.shields.io/badge/Rust-Backend-black?logo=rust)
+![Next.js](https://img.shields.io/badge/Next.js-Frontend-black?logo=nextdotjs)
+![Docker](https://img.shields.io/badge/Docker-Supported-2496ED?logo=docker&logoColor=white)
+
 A browser-based decompiler, recompiler and editor for Palworld save files. It
 decompresses both container formats, parses the Unreal property tree, lets you
 edit Pals, inventories and individual scalars, and exports a validated
