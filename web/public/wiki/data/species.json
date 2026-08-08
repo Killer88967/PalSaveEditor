@@ -3,1646 +3,2408 @@
     "characterId": "Sheepball",
     "name": "Lamball",
     "icon": "sheepball",
-    "dex": 1
+    "dex": 1,
+    "elements": ["Normal"],
+    "rarity": 1
   },
-  { "characterId": "PinkCat", "name": "Cattiva", "icon": "pinkcat", "dex": 2 },
+  {
+    "characterId": "PinkCat",
+    "name": "Cattiva",
+    "icon": "pinkcat",
+    "dex": 2,
+    "elements": ["Normal"],
+    "rarity": 1
+  },
   {
     "characterId": "ChickenPal",
     "name": "Chikipi",
     "icon": "chickenpal",
-    "dex": 3
+    "dex": 3,
+    "elements": ["Normal"],
+    "rarity": 1
   },
   {
     "characterId": "Carbunclo",
     "name": "Lifmunk",
     "icon": "carbunclo",
-    "dex": 4
+    "dex": 4,
+    "elements": ["Leaf"],
+    "rarity": 1
   },
   {
     "characterId": "BluePlatypus",
     "name": "Fuack",
     "icon": "blueplatypus",
-    "dex": 5
+    "dex": 5,
+    "elements": ["Water"],
+    "rarity": 1
   },
   {
     "characterId": "BluePlatypus_Fire",
     "name": "Fuack Ignis",
     "icon": "blueplatypus_fire",
-    "dex": 5
+    "dex": 5,
+    "elements": ["Water", "Fire"],
+    "rarity": 2
   },
-  { "characterId": "CuteFox", "name": "Vixy", "icon": "cutefox", "dex": 6 },
+  {
+    "characterId": "CuteFox",
+    "name": "Vixy",
+    "icon": "cutefox",
+    "dex": 6,
+    "elements": ["Normal"],
+    "rarity": 2
+  },
   {
     "characterId": "FlyingManta",
     "name": "Celaray",
     "icon": "flyingmanta",
-    "dex": 7
+    "dex": 7,
+    "elements": ["Water"],
+    "rarity": 3
   },
   {
     "characterId": "FlyingManta_Thunder",
     "name": "Celaray Lux",
     "icon": "flyingmanta_thunder",
-    "dex": 7
+    "dex": 7,
+    "elements": ["Water", "Electricity"],
+    "rarity": 4
   },
-  { "characterId": "WoolFox", "name": "Cremis", "icon": "woolfox", "dex": 8 },
+  {
+    "characterId": "WoolFox",
+    "name": "Cremis",
+    "icon": "woolfox",
+    "dex": 8,
+    "elements": ["Normal"],
+    "rarity": 1
+  },
   {
     "characterId": "KendoFrog",
     "name": "Croajiro",
     "icon": "kendofrog",
-    "dex": 9
+    "dex": 9,
+    "elements": ["Water"],
+    "rarity": 4
   },
   {
     "characterId": "KendoFrog_Dark",
     "name": "Croajiro Noct",
     "icon": "kendofrog_dark",
-    "dex": 9
+    "dex": 9,
+    "elements": ["Water", "Dark"],
+    "rarity": 5
   },
   {
     "characterId": "LeafMomonga",
     "name": "Herbil",
     "icon": "leafmomonga",
-    "dex": 10
+    "dex": 10,
+    "elements": ["Leaf", "Normal"],
+    "rarity": 3
   },
-  { "characterId": "Ganesha", "name": "Teafant", "icon": "ganesha", "dex": 11 },
+  {
+    "characterId": "Ganesha",
+    "name": "Teafant",
+    "icon": "ganesha",
+    "dex": 11,
+    "elements": ["Water"],
+    "rarity": 1
+  },
   {
     "characterId": "PlantSlime",
     "name": "Gumoss",
     "icon": "plantslime",
-    "dex": 12
+    "dex": 12,
+    "elements": ["Leaf", "Earth"],
+    "rarity": 1
   },
   {
     "characterId": "PlantSlime_Flower",
     "name": "Gumoss",
     "icon": "plantslime_flower",
-    "dex": 12
+    "dex": 12,
+    "elements": ["Leaf", "Earth"],
+    "rarity": 10
   },
   {
     "characterId": "SamuraiDog",
     "name": "Pupperai",
     "icon": "samuraidog",
-    "dex": 13
+    "dex": 13,
+    "elements": ["Earth"],
+    "rarity": 2
   },
   {
     "characterId": "CloverFairy",
     "name": "Clovee",
     "icon": "cloverfairy",
-    "dex": 14
+    "dex": 14,
+    "elements": ["Leaf", "Normal"],
+    "rarity": 2
   },
   {
     "characterId": "Hedgehog",
     "name": "Jolthog",
     "icon": "hedgehog",
-    "dex": 15
+    "dex": 15,
+    "elements": ["Electricity"],
+    "rarity": 1
   },
   {
     "characterId": "Hedgehog_Ice",
     "name": "Jolthog Cryst",
     "icon": "hedgehog_ice",
-    "dex": 15
+    "dex": 15,
+    "elements": ["Ice"],
+    "rarity": 2
   },
   {
     "characterId": "NegativeKoala",
     "name": "Depresso",
     "icon": "negativekoala",
-    "dex": 16
+    "dex": 16,
+    "elements": ["Dark"],
+    "rarity": 1
   },
   {
     "characterId": "Penguin",
     "name": "Pengullet",
     "icon": "penguin",
-    "dex": 17
+    "dex": 17,
+    "elements": ["Water", "Ice"],
+    "rarity": 1
   },
   {
     "characterId": "Penguin_Electric",
     "name": "Pengullet Lux",
     "icon": "penguin_electric",
-    "dex": 17
+    "dex": 17,
+    "elements": ["Water", "Electricity"],
+    "rarity": 2
   },
   {
     "characterId": "CaptainPenguin",
     "name": "Penking",
     "icon": "captainpenguin",
-    "dex": 18
+    "dex": 18,
+    "elements": ["Water", "Ice"],
+    "rarity": 6
   },
   {
     "characterId": "CaptainPenguin_Black",
     "name": "Penking Lux",
     "icon": "captainpenguin_black",
-    "dex": 18
+    "dex": 18,
+    "elements": ["Water", "Electricity"],
+    "rarity": 7
   },
   {
     "characterId": "WizardOwl",
     "name": "Hoocrates",
     "icon": "wizardowl",
-    "dex": 19
+    "dex": 19,
+    "elements": ["Dark"],
+    "rarity": 1
   },
-  { "characterId": "Alpaca", "name": "Melpaca", "icon": "alpaca", "dex": 20 },
+  {
+    "characterId": "Alpaca",
+    "name": "Melpaca",
+    "icon": "alpaca",
+    "dex": 20,
+    "elements": ["Normal"],
+    "rarity": 3
+  },
   {
     "characterId": "KingAlpaca",
     "name": "Kingpaca",
     "icon": "kingalpaca",
-    "dex": 21
+    "dex": 21,
+    "elements": ["Normal"],
+    "rarity": 8
   },
   {
     "characterId": "KingAlpaca_Ice",
     "name": "Kingpaca Cryst",
     "icon": "kingalpaca_ice",
-    "dex": 21
+    "dex": 21,
+    "elements": ["Ice"],
+    "rarity": 9
   },
   {
     "characterId": "DreamDemon",
     "name": "Daedream",
     "icon": "dreamdemon",
-    "dex": 22
+    "dex": 22,
+    "elements": ["Dark"],
+    "rarity": 1
   },
-  { "characterId": "Monkey", "name": "Tanzee", "icon": "monkey", "dex": 23 },
+  {
+    "characterId": "Monkey",
+    "name": "Tanzee",
+    "icon": "monkey",
+    "dex": 23,
+    "elements": ["Leaf"],
+    "rarity": 1
+  },
   {
     "characterId": "Monkey_Fire",
     "name": "Tanzee Ignis",
     "icon": "monkey_fire",
-    "dex": 23
+    "dex": 23,
+    "elements": ["Fire"],
+    "rarity": 2
   },
-  { "characterId": "NightFox", "name": "Nox", "icon": "nightfox", "dex": 24 },
+  {
+    "characterId": "NightFox",
+    "name": "Nox",
+    "icon": "nightfox",
+    "dex": 24,
+    "elements": ["Dark"],
+    "rarity": 6
+  },
   {
     "characterId": "LavaGirl",
     "name": "Flambelle",
     "icon": "lavagirl",
-    "dex": 25
+    "dex": 25,
+    "elements": ["Fire"],
+    "rarity": 1
   },
   {
     "characterId": "FlameBambi",
     "name": "Rooby",
     "icon": "flamebambi",
-    "dex": 26
+    "dex": 26,
+    "elements": ["Fire"],
+    "rarity": 2
   },
-  { "characterId": "Bastet", "name": "Mau", "icon": "bastet", "dex": 27 },
+  {
+    "characterId": "Bastet",
+    "name": "Mau",
+    "icon": "bastet",
+    "dex": 27,
+    "elements": ["Dark"],
+    "rarity": 1
+  },
   {
     "characterId": "Bastet_Ice",
     "name": "Mau Cryst",
     "icon": "bastet_ice",
-    "dex": 27
+    "dex": 27,
+    "elements": ["Ice"],
+    "rarity": 2
   },
-  { "characterId": "Boar", "name": "Rushoar", "icon": "boar", "dex": 28 },
+  {
+    "characterId": "Boar",
+    "name": "Rushoar",
+    "icon": "boar",
+    "dex": 28,
+    "elements": ["Earth"],
+    "rarity": 1
+  },
   {
     "characterId": "Kitsunebi",
     "name": "Foxparks",
     "icon": "kitsunebi",
-    "dex": 29
+    "dex": 29,
+    "elements": ["Fire"],
+    "rarity": 1
   },
   {
     "characterId": "Kitsunebi_Ice",
     "name": "Foxparks Cryst",
     "icon": "kitsunebi_ice",
-    "dex": 29
+    "dex": 29,
+    "elements": ["Ice"],
+    "rarity": 1
   },
   {
     "characterId": "NegativeOctopus",
     "name": "Killamari",
     "icon": "negativeoctopus",
-    "dex": 30
+    "dex": 30,
+    "elements": ["Dark", "Water"],
+    "rarity": 1
   },
   {
     "characterId": "NegativeOctopus_Neutral",
     "name": "Killamari Primo",
     "icon": "negativeoctopus_neutral",
-    "dex": 30
+    "dex": 30,
+    "elements": ["Normal", "Water"],
+    "rarity": 2
   },
   {
     "characterId": "CuteMole",
     "name": "Fuddler",
     "icon": "cutemole",
-    "dex": 31
+    "dex": 31,
+    "elements": ["Earth"],
+    "rarity": 1
   },
-  { "characterId": "Deer", "name": "Eikthyrdeer", "icon": "deer", "dex": 32 },
+  {
+    "characterId": "Deer",
+    "name": "Eikthyrdeer",
+    "icon": "deer",
+    "dex": 32,
+    "elements": ["Normal"],
+    "rarity": 5
+  },
   {
     "characterId": "Deer_Ground",
     "name": "Eikthyrdeer Terra",
     "icon": "deer_ground",
-    "dex": 32
+    "dex": 32,
+    "elements": ["Earth"],
+    "rarity": 6
   },
-  { "characterId": "Garm", "name": "Direhowl", "icon": "garm", "dex": 33 },
+  {
+    "characterId": "Garm",
+    "name": "Direhowl",
+    "icon": "garm",
+    "dex": 33,
+    "elements": ["Normal"],
+    "rarity": 2
+  },
   {
     "characterId": "BerryGoat",
     "name": "Caprity",
     "icon": "berrygoat",
-    "dex": 34
+    "dex": 34,
+    "elements": ["Leaf"],
+    "rarity": 3
   },
   {
     "characterId": "BerryGoat_Dark",
     "name": "Caprity Noct",
     "icon": "berrygoat_dark",
-    "dex": 34
+    "dex": 34,
+    "elements": ["Dark"],
+    "rarity": 3
   },
-  { "characterId": "MopBaby", "name": "Swee", "icon": "mopbaby", "dex": 35 },
-  { "characterId": "MopKing", "name": "Sweepa", "icon": "mopking", "dex": 36 },
+  {
+    "characterId": "MopBaby",
+    "name": "Swee",
+    "icon": "mopbaby",
+    "dex": 35,
+    "elements": ["Ice"],
+    "rarity": 1
+  },
+  {
+    "characterId": "MopKing",
+    "name": "Sweepa",
+    "icon": "mopking",
+    "dex": 36,
+    "elements": ["Ice"],
+    "rarity": 6
+  },
   {
     "characterId": "TentacleTurtle",
     "name": "Turtacle",
     "icon": "tentacleturtle",
-    "dex": 37
+    "dex": 37,
+    "elements": ["Water"],
+    "rarity": 3
   },
   {
     "characterId": "TentacleTurtle_Ground",
     "name": "Turtacle Terra",
     "icon": "tentacleturtle_ground",
-    "dex": 37
+    "dex": 37,
+    "elements": ["Water", "Earth"],
+    "rarity": 4
   },
   {
     "characterId": "WindChimes",
     "name": "Hangyu",
     "icon": "windchimes",
-    "dex": 38
+    "dex": 38,
+    "elements": ["Earth"],
+    "rarity": 1
   },
   {
     "characterId": "WindChimes_Ice",
     "name": "Hangyu Cryst",
     "icon": "windchimes_ice",
-    "dex": 38
+    "dex": 38,
+    "elements": ["Ice"],
+    "rarity": 2
   },
   {
     "characterId": "SweetsSheep",
     "name": "Woolipop",
     "icon": "sweetssheep",
-    "dex": 39
+    "dex": 39,
+    "elements": ["Normal"],
+    "rarity": 3
   },
   {
     "characterId": "SweetsSheep_Ground",
     "name": "Woolipop Terra",
     "icon": "sweetssheep_ground",
-    "dex": 39
+    "dex": 39,
+    "elements": ["Earth"],
+    "rarity": 4
   },
-  { "characterId": "CowPal", "name": "Mozzarina", "icon": "cowpal", "dex": 40 },
+  {
+    "characterId": "CowPal",
+    "name": "Mozzarina",
+    "icon": "cowpal",
+    "dex": 40,
+    "elements": ["Normal"],
+    "rarity": 2
+  },
   {
     "characterId": "BlueDragon",
     "name": "Azurobe",
     "icon": "bluedragon",
-    "dex": 41
+    "dex": 41,
+    "elements": ["Water", "Dragon"],
+    "rarity": 7
   },
   {
     "characterId": "BlueDragon_Ice",
     "name": "Azurobe Cryst",
     "icon": "bluedragon_ice",
-    "dex": 41
+    "dex": 41,
+    "elements": ["Ice", "Dragon"],
+    "rarity": 8
   },
-  { "characterId": "ElecCat", "name": "Sparkit", "icon": "eleccat", "dex": 42 },
-  { "characterId": "Kelpie", "name": "Kelpsea", "icon": "kelpie", "dex": 43 },
+  {
+    "characterId": "ElecCat",
+    "name": "Sparkit",
+    "icon": "eleccat",
+    "dex": 42,
+    "elements": ["Electricity"],
+    "rarity": 1
+  },
+  {
+    "characterId": "Kelpie",
+    "name": "Kelpsea",
+    "icon": "kelpie",
+    "dex": 43,
+    "elements": ["Water"],
+    "rarity": 1
+  },
   {
     "characterId": "Kelpie_Fire",
     "name": "Kelpsea Ignis",
     "icon": "kelpie_fire",
-    "dex": 43
+    "dex": 43,
+    "elements": ["Fire"],
+    "rarity": 2
   },
   {
     "characterId": "PinkRabbit",
     "name": "Ribbuny",
     "icon": "pinkrabbit",
-    "dex": 44
+    "dex": 44,
+    "elements": ["Normal"],
+    "rarity": 1
   },
   {
     "characterId": "PinkRabbit_Grass",
     "name": "Ribbuny Botan",
     "icon": "pinkrabbit_grass",
-    "dex": 44
+    "dex": 44,
+    "elements": ["Leaf"],
+    "rarity": 1
   },
   {
     "characterId": "JellyfishFairy",
     "name": "Jelliette",
     "icon": "jellyfishfairy",
-    "dex": 45
+    "dex": 45,
+    "elements": ["Water"],
+    "rarity": 3
   },
   {
     "characterId": "JellyfishGhost",
     "name": "Jellroy",
     "icon": "jellyfishghost",
-    "dex": 46
+    "dex": 46,
+    "elements": ["Water", "Dark"],
+    "rarity": 3
   },
   {
     "characterId": "ClioneTwins",
     "name": "Amione",
     "icon": "clionetwins",
-    "dex": 47
+    "dex": 47,
+    "elements": ["Water"],
+    "rarity": 2
   },
   {
     "characterId": "OctopusGirl",
     "name": "Gloopie",
     "icon": "octopusgirl",
-    "dex": 48
+    "dex": 48,
+    "elements": ["Water", "Dark"],
+    "rarity": 5
   },
   {
     "characterId": "OctopusGirl_Neutral",
     "name": "Gloopie Primo",
     "icon": "octopusgirl_neutral",
-    "dex": 48
+    "dex": 48,
+    "elements": ["Water", "Normal"],
+    "rarity": 6
   },
-  { "characterId": "Eagle", "name": "Galeclaw", "icon": "eagle", "dex": 49 },
+  {
+    "characterId": "Eagle",
+    "name": "Galeclaw",
+    "icon": "eagle",
+    "dex": 49,
+    "elements": ["Normal"],
+    "rarity": 2
+  },
   {
     "characterId": "GhostBlackCat",
     "name": "Wispaw",
     "icon": "ghostblackcat",
-    "dex": 50
+    "dex": 50,
+    "elements": ["Dark"],
+    "rarity": 5
   },
   {
     "characterId": "HawkBird",
     "name": "Nitewing",
     "icon": "hawkbird",
-    "dex": 51
+    "dex": 51,
+    "elements": ["Normal"],
+    "rarity": 3
   },
-  { "characterId": "CatBat", "name": "Tombat", "icon": "catbat", "dex": 52 },
+  {
+    "characterId": "CatBat",
+    "name": "Tombat",
+    "icon": "catbat",
+    "dex": 52,
+    "elements": ["Dark"],
+    "rarity": 5
+  },
   {
     "characterId": "ColorfulBird",
     "name": "Tocotoco",
     "icon": "colorfulbird",
-    "dex": 53
+    "dex": 53,
+    "elements": ["Normal"],
+    "rarity": 1
   },
-  { "characterId": "Kirin", "name": "Univolt", "icon": "kirin", "dex": 54 },
+  {
+    "characterId": "Kirin",
+    "name": "Univolt",
+    "icon": "kirin",
+    "dex": 54,
+    "elements": ["Electricity"],
+    "rarity": 5
+  },
   {
     "characterId": "Kirin_Ice",
     "name": "Univolt Cryst",
     "icon": "kirin_ice",
-    "dex": 54
+    "dex": 54,
+    "elements": ["Ice"],
+    "rarity": 6
   },
   {
     "characterId": "SharkKid",
     "name": "Gobfin",
     "icon": "sharkkid",
-    "dex": 55
+    "dex": 55,
+    "elements": ["Water"],
+    "rarity": 2
   },
   {
     "characterId": "SharkKid_Fire",
     "name": "Gobfin Ignis",
     "icon": "sharkkid_fire",
-    "dex": 55
+    "dex": 55,
+    "elements": ["Fire"],
+    "rarity": 3
   },
   {
     "characterId": "Werewolf",
     "name": "Loupmoon",
     "icon": "werewolf",
-    "dex": 56
+    "dex": 56,
+    "elements": ["Dark"],
+    "rarity": 3
   },
   {
     "characterId": "Werewolf_Ice",
     "name": "Loupmoon Cryst",
     "icon": "werewolf_ice",
-    "dex": 56
+    "dex": 56,
+    "elements": ["Ice"],
+    "rarity": 3
   },
   {
     "characterId": "DarkCrow",
     "name": "Cawgnito",
     "icon": "darkcrow",
-    "dex": 57
+    "dex": 57,
+    "elements": ["Dark"],
+    "rarity": 3
   },
   {
     "characterId": "FlameBuffalo",
     "name": "Arsox",
     "icon": "flamebuffalo",
-    "dex": 58
+    "dex": 58,
+    "elements": ["Fire"],
+    "rarity": 4
   },
   {
     "characterId": "FluffyBird",
     "name": "Muffly",
     "icon": "fluffybird",
-    "dex": 59
+    "dex": 59,
+    "elements": ["Ice"],
+    "rarity": 2
   },
   {
     "characterId": "LittleBriarRose",
     "name": "Bristla",
     "icon": "littlebriarrose",
-    "dex": 60
+    "dex": 60,
+    "elements": ["Leaf"],
+    "rarity": 1
   },
   {
     "characterId": "CuteButterfly",
     "name": "Cinnamoth",
     "icon": "cutebutterfly",
-    "dex": 61
+    "dex": 61,
+    "elements": ["Leaf"],
+    "rarity": 4
   },
   {
     "characterId": "ElecPomeranian",
     "name": "Puffolt",
     "icon": "elecpomeranian",
-    "dex": 62
+    "dex": 62,
+    "elements": ["Electricity"],
+    "rarity": 2
   },
   {
     "characterId": "FairyDragon",
     "name": "Elphidran",
     "icon": "fairydragon",
-    "dex": 63
+    "dex": 63,
+    "elements": ["Dragon"],
+    "rarity": 7
   },
   {
     "characterId": "FairyDragon_Water",
     "name": "Elphidran Aqua",
     "icon": "fairydragon_water",
-    "dex": 63
+    "dex": 63,
+    "elements": ["Dragon", "Water"],
+    "rarity": 8
   },
   {
     "characterId": "BirdDragon",
     "name": "Vanwyrm",
     "icon": "birddragon",
-    "dex": 64
+    "dex": 64,
+    "elements": ["Fire", "Dark"],
+    "rarity": 5
   },
   {
     "characterId": "BirdDragon_Ice",
     "name": "Vanwyrm Cryst",
     "icon": "birddragon_ice",
-    "dex": 64
+    "dex": 64,
+    "elements": ["Ice", "Dark"],
+    "rarity": 5
   },
   {
     "characterId": "CatVampire",
     "name": "Felbat",
     "icon": "catvampire",
-    "dex": 65
+    "dex": 65,
+    "elements": ["Dark"],
+    "rarity": 6
   },
   {
     "characterId": "VioletFairy",
     "name": "Vaelet",
     "icon": "violetfairy",
-    "dex": 66
+    "dex": 66,
+    "elements": ["Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "SoldierBee",
     "name": "Beegarde",
     "icon": "soldierbee",
-    "dex": 67
+    "dex": 67,
+    "elements": ["Leaf"],
+    "rarity": 4
   },
   {
     "characterId": "QueenBee",
     "name": "Elizabee",
     "icon": "queenbee",
-    "dex": 68
+    "dex": 68,
+    "elements": ["Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "PinkLizard",
     "name": "Lovander",
     "icon": "pinklizard",
-    "dex": 69
+    "dex": 69,
+    "elements": ["Dark"],
+    "rarity": 5
   },
   {
     "characterId": "NaughtyCat",
     "name": "Grintale",
     "icon": "naughtycat",
-    "dex": 70
+    "dex": 70,
+    "elements": ["Normal"],
+    "rarity": 6
   },
   {
     "characterId": "PurpleSpider",
     "name": "Tarantriss",
     "icon": "purplespider",
-    "dex": 71
+    "dex": 71,
+    "elements": ["Dark"],
+    "rarity": 3
   },
-  { "characterId": "IceSeal", "name": "Polapup", "icon": "iceseal", "dex": 72 },
+  {
+    "characterId": "IceSeal",
+    "name": "Polapup",
+    "icon": "iceseal",
+    "dex": 72,
+    "elements": ["Ice", "Water"],
+    "rarity": 5
+  },
   {
     "characterId": "IceSeal_Ground",
     "name": "Polapup Terra",
     "icon": "iceseal_ground",
-    "dex": 72
+    "dex": 72,
+    "elements": ["Ice", "Earth"],
+    "rarity": 6
   },
   {
     "characterId": "LizardMan",
     "name": "Leezpunk",
     "icon": "lizardman",
-    "dex": 73
+    "dex": 73,
+    "elements": ["Dark"],
+    "rarity": 2
   },
   {
     "characterId": "LizardMan_Oilrig",
     "name": "Leezpunk",
     "icon": "lizardman",
-    "dex": 73
+    "dex": 73,
+    "elements": ["Dark"],
+    "rarity": 2
   },
   {
     "characterId": "LizardMan_Fire",
     "name": "Leezpunk Ignis",
     "icon": "lizardman_fire",
-    "dex": 73
+    "dex": 73,
+    "elements": ["Fire"],
+    "rarity": 3
   },
-  { "characterId": "Gorilla", "name": "Gorirat", "icon": "gorilla", "dex": 74 },
+  {
+    "characterId": "Gorilla",
+    "name": "Gorirat",
+    "icon": "gorilla",
+    "dex": 74,
+    "elements": ["Normal"],
+    "rarity": 5
+  },
   {
     "characterId": "Gorilla_Ground",
     "name": "Gorirat Terra",
     "icon": "gorilla_ground",
-    "dex": 74
+    "dex": 74,
+    "elements": ["Earth"],
+    "rarity": 5
   },
-  { "characterId": "Serpent", "name": "Surfent", "icon": "serpent", "dex": 75 },
+  {
+    "characterId": "Serpent",
+    "name": "Surfent",
+    "icon": "serpent",
+    "dex": 75,
+    "elements": ["Water"],
+    "rarity": 4
+  },
   {
     "characterId": "Serpent_Ground",
     "name": "Surfent Terra",
     "icon": "serpent_ground",
-    "dex": 75
+    "dex": 75,
+    "elements": ["Earth"],
+    "rarity": 5
   },
   {
     "characterId": "RobinHood",
     "name": "Robinquill",
     "icon": "robinhood",
-    "dex": 76
+    "dex": 76,
+    "elements": ["Leaf"],
+    "rarity": 5
   },
   {
     "characterId": "RobinHood_Ground",
     "name": "Robinquill Terra",
     "icon": "robinhood_ground",
-    "dex": 76
+    "dex": 76,
+    "elements": ["Leaf", "Earth"],
+    "rarity": 6
   },
   {
     "characterId": "FlowerRabbit",
     "name": "Flopie",
     "icon": "flowerrabbit",
-    "dex": 77
+    "dex": 77,
+    "elements": ["Leaf"],
+    "rarity": 1
   },
-  { "characterId": "FoxMage", "name": "Wixen", "icon": "foxmage", "dex": 78 },
+  {
+    "characterId": "FoxMage",
+    "name": "Wixen",
+    "icon": "foxmage",
+    "dex": 78,
+    "elements": ["Fire"],
+    "rarity": 6
+  },
   {
     "characterId": "FoxMage_Dark",
     "name": "Wixen Noct",
     "icon": "foxmage_dark",
-    "dex": 78
+    "dex": 78,
+    "elements": ["Fire", "Dark"],
+    "rarity": 6
   },
-  { "characterId": "CatMage", "name": "Katress", "icon": "catmage", "dex": 79 },
+  {
+    "characterId": "CatMage",
+    "name": "Katress",
+    "icon": "catmage",
+    "dex": 79,
+    "elements": ["Dark"],
+    "rarity": 6
+  },
   {
     "characterId": "CatMage_Fire",
     "name": "Katress Ignis",
     "icon": "catmage_fire",
-    "dex": 79
+    "dex": 79,
+    "elements": ["Dark", "Fire"],
+    "rarity": 6
   },
   {
     "characterId": "HadesBird",
     "name": "Helzephyr",
     "icon": "hadesbird",
-    "dex": 80
+    "dex": 80,
+    "elements": ["Dark"],
+    "rarity": 7
   },
   {
     "characterId": "HadesBird_Oilrig",
     "name": "Helzephyr",
     "icon": "hadesbird",
-    "dex": 80
+    "dex": 80,
+    "elements": ["Dark"],
+    "rarity": 7
   },
   {
     "characterId": "HadesBird_Electric",
     "name": "Helzephyr Lux",
     "icon": "hadesbird_electric",
-    "dex": 80
+    "dex": 80,
+    "elements": ["Dark", "Electricity"],
+    "rarity": 8
   },
   {
     "characterId": "GrassMinotaur",
     "name": "Elgrove",
     "icon": "grassminotaur",
-    "dex": 81
+    "dex": 81,
+    "elements": ["Leaf"],
+    "rarity": 6
   },
   {
     "characterId": "GrassMinotaur_Ice",
     "name": "Elgrove Cryst",
     "icon": "grassminotaur_ice",
-    "dex": 81
+    "dex": 81,
+    "elements": ["Ice"],
+    "rarity": 7
   },
-  { "characterId": "Mutant", "name": "Lunaris", "icon": "mutant", "dex": 82 },
+  {
+    "characterId": "Mutant",
+    "name": "Lunaris",
+    "icon": "mutant",
+    "dex": 82,
+    "elements": ["Normal"],
+    "rarity": 6
+  },
   {
     "characterId": "FengyunDeeper",
     "name": "Fenglope",
     "icon": "fengyundeeper",
-    "dex": 83
+    "dex": 83,
+    "elements": ["Normal"],
+    "rarity": 3
   },
   {
     "characterId": "FengyunDeeper_Electric",
     "name": "Fenglope Lux",
     "icon": "fengyundeeper_electric",
-    "dex": 83
+    "dex": 83,
+    "elements": ["Electricity"],
+    "rarity": 3
   },
   {
     "characterId": "FlowerDinosaur",
     "name": "Dinossom",
     "icon": "flowerdinosaur",
-    "dex": 84
+    "dex": 84,
+    "elements": ["Leaf", "Dragon"],
+    "rarity": 6
   },
   {
     "characterId": "FlowerDinosaur_Electric",
     "name": "Dinossom Lux",
     "icon": "flowerdinosaur_electric",
-    "dex": 84
+    "dex": 84,
+    "elements": ["Electricity", "Dragon"],
+    "rarity": 7
   },
-  { "characterId": "Ronin", "name": "Bushi", "icon": "ronin", "dex": 85 },
+  {
+    "characterId": "Ronin",
+    "name": "Bushi",
+    "icon": "ronin",
+    "dex": 85,
+    "elements": ["Fire"],
+    "rarity": 7
+  },
   {
     "characterId": "Ronin_Dark",
     "name": "Bushi Noct",
     "icon": "ronin_dark",
-    "dex": 85
+    "dex": 85,
+    "elements": ["Fire", "Dark"],
+    "rarity": 7
   },
   {
     "characterId": "IceCrocodile",
     "name": "Munchill",
     "icon": "icecrocodile",
-    "dex": 86
+    "dex": 86,
+    "elements": ["Ice", "Water"],
+    "rarity": 3
   },
   {
     "characterId": "GrassMammoth",
     "name": "Mammorest",
     "icon": "grassmammoth",
-    "dex": 87
+    "dex": 87,
+    "elements": ["Leaf", "Earth"],
+    "rarity": 8
   },
   {
     "characterId": "GrassMammoth_Ice",
     "name": "Mammorest Cryst",
     "icon": "grassmammoth_ice",
-    "dex": 87
+    "dex": 87,
+    "elements": ["Ice", "Earth"],
+    "rarity": 9
   },
   {
     "characterId": "StuffedShark",
     "name": "Finsider",
     "icon": "stuffedshark",
-    "dex": 88
+    "dex": 88,
+    "elements": ["Water"],
+    "rarity": 3
   },
   {
     "characterId": "StuffedShark_Fire",
     "name": "Finsider Ignis",
     "icon": "stuffedshark_fire",
-    "dex": 88
+    "dex": 88,
+    "elements": ["Water", "Fire"],
+    "rarity": 4
   },
   {
     "characterId": "FlowerDoll",
     "name": "Petallia",
     "icon": "flowerdoll",
-    "dex": 89
+    "dex": 89,
+    "elements": ["Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "FlowerDoll_Fire",
     "name": "Petallia Ignis",
     "icon": "flowerdoll_fire",
-    "dex": 89
+    "dex": 89,
+    "elements": ["Leaf", "Fire"],
+    "rarity": 9
   },
   {
     "characterId": "PandaGirl",
     "name": "Leafan",
     "icon": "pandagirl",
-    "dex": 90
+    "dex": 90,
+    "elements": ["Leaf"],
+    "rarity": 7
   },
   {
     "characterId": "Baphomet",
     "name": "Incineram",
     "icon": "baphomet",
-    "dex": 91
+    "dex": 91,
+    "elements": ["Fire", "Dark"],
+    "rarity": 4
   },
   {
     "characterId": "Baphomet_Dark",
     "name": "Incineram Noct",
     "icon": "baphomet_dark",
-    "dex": 91
+    "dex": 91,
+    "elements": ["Dark"],
+    "rarity": 5
   },
   {
     "characterId": "Baphomet_Dark_Oilrig",
     "name": "Incineram Noct",
     "icon": "baphomet_dark",
-    "dex": 91
+    "dex": 91,
+    "elements": ["Dark"],
+    "rarity": 5
   },
   {
     "characterId": "RaijinDaughter",
     "name": "Dazzi",
     "icon": "raijindaughter",
-    "dex": 92
+    "dex": 92,
+    "elements": ["Electricity"],
+    "rarity": 2
   },
   {
     "characterId": "RaijinDaughter_Water",
     "name": "Dazzi Noct",
     "icon": "raijindaughter_water",
-    "dex": 92
+    "dex": 92,
+    "elements": ["Dark", "Electricity"],
+    "rarity": 2
   },
   {
     "characterId": "FireKirin",
     "name": "Pyrin",
     "icon": "firekirin",
-    "dex": 93
+    "dex": 93,
+    "elements": ["Fire"],
+    "rarity": 6
   },
   {
     "characterId": "FireKirin_Dark",
     "name": "Pyrin Noct",
     "icon": "firekirin_dark",
-    "dex": 93
+    "dex": 93,
+    "elements": ["Fire", "Dark"],
+    "rarity": 7
   },
   {
     "characterId": "LazyDragon",
     "name": "Relaxaurus",
     "icon": "lazydragon",
-    "dex": 94
+    "dex": 94,
+    "elements": ["Dragon", "Water"],
+    "rarity": 8
   },
   {
     "characterId": "LazyDragon_Electric",
     "name": "Relaxaurus Lux",
     "icon": "lazydragon_electric",
-    "dex": 94
+    "dex": 94,
+    "elements": ["Dragon", "Electricity"],
+    "rarity": 9
   },
   {
     "characterId": "LazyDragon_Electric_Tower",
     "name": "Relaxaurus Lux",
     "icon": "lazydragon_electric_tower",
-    "dex": 94
+    "dex": 94,
+    "elements": ["Dragon", "Electricity"],
+    "rarity": 9
   },
-  { "characterId": "IceFox", "name": "Foxcicle", "icon": "icefox", "dex": 95 },
+  {
+    "characterId": "IceFox",
+    "name": "Foxcicle",
+    "icon": "icefox",
+    "dex": 95,
+    "elements": ["Ice"],
+    "rarity": 5
+  },
   {
     "characterId": "ThunderBird",
     "name": "Beakon",
     "icon": "thunderbird",
-    "dex": 96
+    "dex": 96,
+    "elements": ["Electricity"],
+    "rarity": 6
   },
   {
     "characterId": "ThunderBird_Ice",
     "name": "Beakon Cryst",
     "icon": "thunderbird_ice",
-    "dex": 96
+    "dex": 96,
+    "elements": ["Ice"],
+    "rarity": 7
   },
   {
     "characterId": "GhostAnglerfish",
     "name": "Ghangler",
     "icon": "ghostanglerfish",
-    "dex": 97
+    "dex": 97,
+    "elements": ["Dark", "Water"],
+    "rarity": 5
   },
   {
     "characterId": "GhostAnglerfish_Fire",
     "name": "Ghangler Ignis",
     "icon": "ghostanglerfish_fire",
-    "dex": 97
+    "dex": 97,
+    "elements": ["Fire", "Water"],
+    "rarity": 6
   },
   {
     "characterId": "ThunderDog",
     "name": "Rayhound",
     "icon": "thunderdog",
-    "dex": 98
+    "dex": 98,
+    "elements": ["Electricity"],
+    "rarity": 5
   },
   {
     "characterId": "ThunderDog_Ice",
     "name": "Rayhound Cryst",
     "icon": "thunderdog_ice",
-    "dex": 98
+    "dex": 98,
+    "elements": ["Ice"],
+    "rarity": 6
   },
   {
     "characterId": "DarkScorpion",
     "name": "Menasting",
     "icon": "darkscorpion",
-    "dex": 99
+    "dex": 99,
+    "elements": ["Dark", "Earth"],
+    "rarity": 9
   },
   {
     "characterId": "DarkScorpion_Ground",
     "name": "Menasting Terra",
     "icon": "darkscorpion_ground",
-    "dex": 99
+    "dex": 99,
+    "elements": ["Earth"],
+    "rarity": 10
   },
   {
     "characterId": "CactusDoll",
     "name": "Needoll",
     "icon": "cactusdoll",
-    "dex": 100
+    "dex": 100,
+    "elements": ["Leaf"],
+    "rarity": 2
   },
   {
     "characterId": "CactusDoll_Dark",
     "name": "Needoll Noct",
     "icon": "cactusdoll_dark",
-    "dex": 100
+    "dex": 100,
+    "elements": ["Dark", "Leaf"],
+    "rarity": 3
   },
   {
     "characterId": "IceDeer",
     "name": "Reindrix",
     "icon": "icedeer",
-    "dex": 101
+    "dex": 101,
+    "elements": ["Ice"],
+    "rarity": 4
   },
   {
     "characterId": "GrassPanda",
     "name": "Mossanda",
     "icon": "grasspanda",
-    "dex": 102
+    "dex": 102,
+    "elements": ["Leaf"],
+    "rarity": 6
   },
   {
     "characterId": "GrassPanda_Electric",
     "name": "Mossanda Lux",
     "icon": "grasspanda_electric",
-    "dex": 102
+    "dex": 102,
+    "elements": ["Electricity"],
+    "rarity": 7
   },
   {
     "characterId": "GrassPanda_Electric_Tower",
     "name": "Mossanda Lux",
     "icon": "grasspanda_electric_tower",
-    "dex": 102
+    "dex": 102,
+    "elements": ["Electricity"],
+    "rarity": 7
   },
   {
     "characterId": "WeaselDragon",
     "name": "Chillet",
     "icon": "weaseldragon",
-    "dex": 103
+    "dex": 103,
+    "elements": ["Ice", "Dragon"],
+    "rarity": 4
   },
   {
     "characterId": "WeaselDragon_Fire",
     "name": "Chillet Ignis",
     "icon": "weaseldragon_fire",
-    "dex": 103
+    "dex": 103,
+    "elements": ["Fire", "Dragon"],
+    "rarity": 5
   },
   {
     "characterId": "RedArmorBird",
     "name": "Ragnahawk",
     "icon": "redarmorbird",
-    "dex": 104
+    "dex": 104,
+    "elements": ["Fire"],
+    "rarity": 7
   },
   {
     "characterId": "VolcanoDragon",
     "name": "Moldron",
     "icon": "volcanodragon",
-    "dex": 105
+    "dex": 105,
+    "elements": ["Fire", "Earth"],
+    "rarity": 7
   },
   {
     "characterId": "VolcanoDragon_Ice",
     "name": "Moldron Cryst",
     "icon": "volcanodragon_ice",
-    "dex": 105
+    "dex": 105,
+    "elements": ["Ice", "Earth"],
+    "rarity": 8
   },
   {
     "characterId": "TropicalOstrich",
     "name": "Palumba",
     "icon": "tropicalostrich",
-    "dex": 106
+    "dex": 106,
+    "elements": ["Leaf"],
+    "rarity": 6
   },
   {
     "characterId": "DrillGame",
     "name": "Digtoise",
     "icon": "drillgame",
-    "dex": 107
+    "dex": 107,
+    "elements": ["Earth"],
+    "rarity": 5
   },
   {
     "characterId": "SakuraSaurus",
     "name": "Broncherry",
     "icon": "sakurasaurus",
-    "dex": 108
+    "dex": 108,
+    "elements": ["Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "SakuraSaurus_Water",
     "name": "Broncherry Aqua",
     "icon": "sakurasaurus_water",
-    "dex": 108
+    "dex": 108,
+    "elements": ["Leaf", "Water"],
+    "rarity": 8
   },
   {
     "characterId": "LazyCatfish",
     "name": "Dumud",
     "icon": "lazycatfish",
-    "dex": 109
+    "dex": 109,
+    "elements": ["Earth", "Water"],
+    "rarity": 4
   },
   {
     "characterId": "LazyCatfish_Gold",
     "name": "Dumud Gild",
     "icon": "lazycatfish_gold",
-    "dex": 109
+    "dex": 109,
+    "elements": ["Earth", "Water"],
+    "rarity": 5
   },
   {
     "characterId": "Plesiosaur",
     "name": "Braloha",
     "icon": "plesiosaur",
-    "dex": 110
+    "dex": 110,
+    "elements": ["Leaf", "Earth"],
+    "rarity": 8
   },
   {
     "characterId": "AmaterasuWolf",
     "name": "Kitsun",
     "icon": "amaterasuwolf",
-    "dex": 111
+    "dex": 111,
+    "elements": ["Fire"],
+    "rarity": 6
   },
   {
     "characterId": "AmaterasuWolf_Dark",
     "name": "Kitsun Noct",
     "icon": "amaterasuwolf_dark",
-    "dex": 111
+    "dex": 111,
+    "elements": ["Dark"],
+    "rarity": 6
   },
   {
     "characterId": "Manticore",
     "name": "Blazehowl",
     "icon": "manticore",
-    "dex": 112
+    "dex": 112,
+    "elements": ["Fire"],
+    "rarity": 7
   },
   {
     "characterId": "Manticore_Dark",
     "name": "Blazehowl Noct",
     "icon": "manticore_dark",
-    "dex": 112
+    "dex": 112,
+    "elements": ["Fire", "Dark"],
+    "rarity": 8
   },
   {
     "characterId": "HerculesBeetle",
     "name": "Warsect",
     "icon": "herculesbeetle",
-    "dex": 113
+    "dex": 113,
+    "elements": ["Earth", "Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "HerculesBeetle_Ground",
     "name": "Warsect Terra",
     "icon": "herculesbeetle_ground",
-    "dex": 113
+    "dex": 113,
+    "elements": ["Earth"],
+    "rarity": 9
   },
   {
     "characterId": "SnowPeafowl",
     "name": "Frostplume",
     "icon": "snowpeafowl",
-    "dex": 114
+    "dex": 114,
+    "elements": ["Ice"],
+    "rarity": 4
   },
   {
     "characterId": "DarkFlameFox",
     "name": "Majex",
     "icon": "darkflamefox",
-    "dex": 115
+    "dex": 115,
+    "elements": ["Dark", "Fire"],
+    "rarity": 5
   },
   {
     "characterId": "WhiteMoth",
     "name": "Sibelyx",
     "icon": "whitemoth",
-    "dex": 116
+    "dex": 116,
+    "elements": ["Ice"],
+    "rarity": 7
   },
   {
     "characterId": "WhiteMoth_Neutral",
     "name": "Sibelyx Primo",
     "icon": "whitemoth_neutral",
-    "dex": 116
+    "dex": 116,
+    "elements": ["Normal"],
+    "rarity": 8
   },
   {
     "characterId": "GhostBeast",
     "name": "Maraith",
     "icon": "ghostbeast",
-    "dex": 117
+    "dex": 117,
+    "elements": ["Dark"],
+    "rarity": 6
   },
   {
     "characterId": "MushroomDragon",
     "name": "Shroomer",
     "icon": "mushroomdragon",
-    "dex": 118
+    "dex": 118,
+    "elements": ["Leaf"],
+    "rarity": 4
   },
   {
     "characterId": "MushroomDragon_Dark",
     "name": "Shroomer Noct",
     "icon": "mushroomdragon_dark",
-    "dex": 118
+    "dex": 118,
+    "elements": ["Leaf", "Dark"],
+    "rarity": 5
   },
   {
     "characterId": "IceWitch",
     "name": "Icelyn",
     "icon": "icewitch",
-    "dex": 119
+    "dex": 119,
+    "elements": ["Ice"],
+    "rarity": 4
   },
   {
     "characterId": "MummyPal",
     "name": "Gildra",
     "icon": "mummypal",
-    "dex": 120
+    "dex": 120,
+    "elements": ["Dark", "Earth"],
+    "rarity": 5
   },
   {
     "characterId": "Umihebi",
     "name": "Jormuntide",
     "icon": "umihebi",
-    "dex": 121
+    "dex": 121,
+    "elements": ["Dragon", "Water"],
+    "rarity": 8
   },
   {
     "characterId": "Umihebi_Fire",
     "name": "Jormuntide Ignis",
     "icon": "umihebi_fire",
-    "dex": 121
+    "dex": 121,
+    "elements": ["Dragon", "Fire"],
+    "rarity": 9
   },
-  { "characterId": "Suzaku", "name": "Suzaku", "icon": "suzaku", "dex": 122 },
+  {
+    "characterId": "Suzaku",
+    "name": "Suzaku",
+    "icon": "suzaku",
+    "dex": 122,
+    "elements": ["Fire"],
+    "rarity": 8
+  },
   {
     "characterId": "Suzaku_Water",
     "name": "Suzaku Aqua",
     "icon": "suzaku_water",
-    "dex": 122
+    "dex": 122,
+    "elements": ["Water"],
+    "rarity": 9
   },
   {
     "characterId": "FeatherOstrich",
     "name": "Dazemu",
     "icon": "featherostrich",
-    "dex": 123
+    "dex": 123,
+    "elements": ["Earth"],
+    "rarity": 5
   },
   {
     "characterId": "SkyDragon",
     "name": "Quivern",
     "icon": "skydragon",
-    "dex": 124
+    "dex": 124,
+    "elements": ["Dragon"],
+    "rarity": 7
   },
   {
     "characterId": "SkyDragon_Grass",
     "name": "Quivern Botan",
     "icon": "skydragon_grass",
-    "dex": 124
+    "dex": 124,
+    "elements": ["Dragon", "Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "LeafPrincess",
     "name": "Lullu",
     "icon": "leafprincess",
-    "dex": 125
+    "dex": 125,
+    "elements": ["Leaf"],
+    "rarity": 4
   },
   {
     "characterId": "SmallArmadillo",
     "name": "Kikit",
     "icon": "smallarmadillo",
-    "dex": 126
+    "dex": 126,
+    "elements": ["Earth"],
+    "rarity": 4
   },
   {
     "characterId": "GuardianDog",
     "name": "Yakumo",
     "icon": "guardiandog",
-    "dex": 127
+    "dex": 127,
+    "elements": ["Normal"],
+    "rarity": 4
   },
   {
     "characterId": "SwordCutlassfish",
     "name": "Skutlass",
     "icon": "swordcutlassfish",
-    "dex": 128
+    "dex": 128,
+    "elements": ["Water"],
+    "rarity": 5
   },
   {
     "characterId": "SwordCutlassfish_Fire",
     "name": "Skutlass Ignis",
     "icon": "swordcutlassfish_fire",
-    "dex": 128
+    "dex": 128,
+    "elements": ["Water", "Fire"],
+    "rarity": 5
   },
   {
     "characterId": "VolcanicMonster",
     "name": "Reptyro",
     "icon": "volcanicmonster",
-    "dex": 129
+    "dex": 129,
+    "elements": ["Fire", "Earth"],
+    "rarity": 6
   },
   {
     "characterId": "VolcanicMonster_Ice",
     "name": "Reptyro Cryst",
     "icon": "volcanicmonster_ice",
-    "dex": 129
+    "dex": 129,
+    "elements": ["Ice", "Earth"],
+    "rarity": 7
   },
   {
     "characterId": "NightBlueHorse",
     "name": "Starryon",
     "icon": "nightbluehorse",
-    "dex": 130
+    "dex": 130,
+    "elements": ["Dark"],
+    "rarity": 7
   },
   {
     "characterId": "NightBlueHorse_Neutral",
     "name": "Starryon Primo",
     "icon": "nightbluehorse_neutral",
-    "dex": 130
+    "dex": 130,
+    "elements": ["Normal"],
+    "rarity": 8
   },
   {
     "characterId": "RockBeast",
     "name": "Pierdon",
     "icon": "rockbeast",
-    "dex": 131
+    "dex": 131,
+    "elements": ["Earth"],
+    "rarity": 6
   },
   {
     "characterId": "RockBeast_Ice",
     "name": "Pierdon Cryst",
     "icon": "rockbeast_ice",
-    "dex": 131
+    "dex": 131,
+    "elements": ["Ice"],
+    "rarity": 7
   },
   {
     "characterId": "WhiteTiger",
     "name": "Cryolinx",
     "icon": "whitetiger",
-    "dex": 132
+    "dex": 132,
+    "elements": ["Ice"],
+    "rarity": 7
   },
   {
     "characterId": "WhiteTiger_Ground",
     "name": "Cryolinx Terra",
     "icon": "whitetiger_ground",
-    "dex": 132
+    "dex": 132,
+    "elements": ["Earth"],
+    "rarity": 7
   },
   {
     "characterId": "SmallYeti",
     "name": "Snugloo",
     "icon": "smallyeti",
-    "dex": 133
+    "dex": 133,
+    "elements": ["Ice"],
+    "rarity": 3
   },
-  { "characterId": "Yeti", "name": "Wumpo", "icon": "yeti", "dex": 134 },
+  {
+    "characterId": "Yeti",
+    "name": "Wumpo",
+    "icon": "yeti",
+    "dex": 134,
+    "elements": ["Ice"],
+    "rarity": 7
+  },
   {
     "characterId": "Yeti_Grass",
     "name": "Wumpo Botan",
     "icon": "yeti_grass",
-    "dex": 134
+    "dex": 134,
+    "elements": ["Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "CandleGhost",
     "name": "Sootseer",
     "icon": "candleghost",
-    "dex": 135
+    "dex": 135,
+    "elements": ["Dark", "Fire"],
+    "rarity": 7
   },
   {
     "characterId": "VenusFlytrap",
     "name": "Carnibora",
     "icon": "venusflytrap",
-    "dex": 136
+    "dex": 136,
+    "elements": ["Leaf"],
+    "rarity": 6
   },
   {
     "characterId": "KingBahamut",
     "name": "Blazamut",
     "icon": "kingbahamut",
-    "dex": 137
+    "dex": 137,
+    "elements": ["Fire"],
+    "rarity": 9
   },
   {
     "characterId": "KingBahamut_Dragon",
     "name": "Blazamut Ryu",
     "icon": "kingbahamut_dragon",
-    "dex": 137
+    "dex": 137,
+    "elements": ["Dragon", "Fire"],
+    "rarity": 10
   },
   {
     "characterId": "GrassGolem",
     "name": "Dualith",
     "icon": "grassgolem",
-    "dex": 138
+    "dex": 138,
+    "elements": ["Earth", "Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "GrassGolem_Dark",
     "name": "Dualith Noct",
     "icon": "grassgolem_dark",
-    "dex": 138
+    "dex": 138,
+    "elements": ["Earth", "Dark"],
+    "rarity": 8
   },
-  { "characterId": "Anubis", "name": "Anubis", "icon": "anubis", "dex": 139 },
+  {
+    "characterId": "Anubis",
+    "name": "Anubis",
+    "icon": "anubis",
+    "dex": 139,
+    "elements": ["Earth"],
+    "rarity": 10
+  },
   {
     "characterId": "Sekhmet",
     "name": "Sekhmet",
     "icon": "sekhmet",
-    "dex": 140
+    "dex": 140,
+    "elements": ["Earth"],
+    "rarity": 5
   },
   {
     "characterId": "ScorpionMan",
     "name": "Prixter",
     "icon": "scorpionman",
-    "dex": 141
+    "dex": 141,
+    "elements": ["Dark", "Earth"],
+    "rarity": 5
   },
   {
     "characterId": "ScorpionMan_Electric",
     "name": "Prixter Lux",
     "icon": "scorpionman_electric",
-    "dex": 141
+    "dex": 141,
+    "elements": ["Electricity", "Earth"],
+    "rarity": 6
   },
   {
     "characterId": "CubeTurtle",
     "name": "Tetroise",
     "icon": "cubeturtle",
-    "dex": 142
+    "dex": 142,
+    "elements": ["Earth"],
+    "rarity": 8
   },
   {
     "characterId": "CubeTurtle_Neutral",
     "name": "Tetroise Primo",
     "icon": "cubeturtle_neutral",
-    "dex": 142
+    "dex": 142,
+    "elements": ["Normal"],
+    "rarity": 8
   },
   {
     "characterId": "BadCatgirl",
     "name": "Nyafia",
     "icon": "badcatgirl",
-    "dex": 143
+    "dex": 143,
+    "elements": ["Dark"],
+    "rarity": 4
   },
   {
     "characterId": "MimicDog",
     "name": "Mimog",
     "icon": "mimicdog",
-    "dex": 144
+    "dex": 144,
+    "elements": ["Normal"],
+    "rarity": 7
   },
   {
     "characterId": "DarkAlien",
     "name": "Xenovader",
     "icon": "darkalien",
-    "dex": 145
+    "dex": 145,
+    "elements": ["Dark"],
+    "rarity": 7
   },
   {
     "characterId": "DarkAlien_Oilrig",
     "name": "Xenovader",
     "icon": "darkalien",
-    "dex": 145
+    "dex": 145,
+    "elements": ["Dark"],
+    "rarity": 7
   },
   {
     "characterId": "SUMMON_DarkAlien",
     "name": "Xenovader",
     "icon": "darkalien",
-    "dex": 145
+    "dex": 145,
+    "elements": ["Dark"],
+    "rarity": 7
   },
   {
     "characterId": "SUMMON_DarkAlien_MAX",
     "name": "Xenovader",
     "icon": "darkalien",
-    "dex": 145
+    "dex": 145,
+    "elements": ["Dark"],
+    "rarity": 7
   },
   {
     "characterId": "SUMMON_WhiteAlienDragon",
     "name": "Xenogard",
     "icon": "whitealiendragon",
-    "dex": 146
+    "dex": 146,
+    "elements": ["Dragon"],
+    "rarity": 9
   },
   {
     "characterId": "SUMMON_WhiteAlienDragon_MAX",
     "name": "Xenogard",
     "icon": "whitealiendragon",
-    "dex": 146
+    "dex": 146,
+    "elements": ["Dragon"],
+    "rarity": 9
   },
   {
     "characterId": "WhiteAlienDragon",
     "name": "Xenogard",
     "icon": "whitealiendragon",
-    "dex": 146
+    "dex": 146,
+    "elements": ["Dragon"],
+    "rarity": 9
   },
   {
     "characterId": "BlueberryFairy",
     "name": "Prunelia",
     "icon": "blueberryfairy",
-    "dex": 147
+    "dex": 147,
+    "elements": ["Leaf", "Dark"],
+    "rarity": 5
   },
   {
     "characterId": "GhostRabbit",
     "name": "Nitemary",
     "icon": "ghostrabbit",
-    "dex": 148
+    "dex": 148,
+    "elements": ["Dark"],
+    "rarity": 6
   },
   {
     "characterId": "GhostRabbit_Grass",
     "name": "Nitemary Botan",
     "icon": "ghostrabbit_grass",
-    "dex": 148
+    "dex": 148,
+    "elements": ["Leaf"],
+    "rarity": 7
   },
   {
     "characterId": "BlackPuppy",
     "name": "Smokie",
     "icon": "blackpuppy",
-    "dex": 149
+    "dex": 149,
+    "elements": ["Dark"],
+    "rarity": 2
   },
   {
     "characterId": "BlackPuppy_Ice",
     "name": "Smokie Cryst",
     "icon": "blackpuppy_ice",
-    "dex": 149
+    "dex": 149,
+    "elements": ["Dark", "Ice"],
+    "rarity": 3
   },
   {
     "characterId": "MysteryMask",
     "name": "Omascul",
     "icon": "mysterymask",
-    "dex": 150
+    "dex": 150,
+    "elements": ["Dark"],
+    "rarity": 4
   },
   {
     "characterId": "IceNarwhal",
     "name": "Whalaska",
     "icon": "icenarwhal",
-    "dex": 151
+    "dex": 151,
+    "elements": ["Ice", "Water"],
+    "rarity": 8
   },
   {
     "characterId": "IceNarwhal_Fire",
     "name": "Whalaska Ignis",
     "icon": "icenarwhal_fire",
-    "dex": 151
+    "dex": 151,
+    "elements": ["Ice", "Fire"],
+    "rarity": 8
   },
   {
     "characterId": "GrassRabbitMan",
     "name": "Verdash",
     "icon": "grassrabbitman",
-    "dex": 152
+    "dex": 152,
+    "elements": ["Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "GrimGirl",
     "name": "Splatterina",
     "icon": "grimgirl",
-    "dex": 153
+    "dex": 153,
+    "elements": ["Dark"],
+    "rarity": 4
   },
   {
     "characterId": "GoldenHorse",
     "name": "Gildane",
     "icon": "goldenhorse",
-    "dex": 154
+    "dex": 154,
+    "elements": ["Earth"],
+    "rarity": 8
   },
-  { "characterId": "SifuDog", "name": "Dogen", "icon": "sifudog", "dex": 155 },
+  {
+    "characterId": "SifuDog",
+    "name": "Dogen",
+    "icon": "sifudog",
+    "dex": 155,
+    "elements": ["Normal"],
+    "rarity": 6
+  },
   {
     "characterId": "SumoDog",
     "name": "Bulldosu",
     "icon": "sumodog",
-    "dex": 156
+    "dex": 156,
+    "elements": ["Earth"],
+    "rarity": 4
   },
   {
     "characterId": "WhiteDeer",
     "name": "Celesdir",
     "icon": "whitedeer",
-    "dex": 157
+    "dex": 157,
+    "elements": ["Normal"],
+    "rarity": 6
   },
   {
     "characterId": "WhiteDeer_Dark",
     "name": "Celesdir Noct",
     "icon": "whitedeer_dark",
-    "dex": 157
+    "dex": 157,
+    "elements": ["Dark"],
+    "rarity": 7
   },
   {
     "characterId": "BlackMetalDragon",
     "name": "Astegon",
     "icon": "blackmetaldragon",
-    "dex": 158
+    "dex": 158,
+    "elements": ["Dragon", "Dark"],
+    "rarity": 9
   },
   {
     "characterId": "WingGolem",
     "name": "Knocklem",
     "icon": "winggolem",
-    "dex": 159
+    "dex": 159,
+    "elements": ["Earth"],
+    "rarity": 9
   },
   {
     "characterId": "WingGolem_Oilrig",
     "name": "Knocklem",
     "icon": "winggolem",
-    "dex": 159
+    "dex": 159,
+    "elements": ["Earth"],
+    "rarity": 9
   },
   {
     "characterId": "WingGolem_Fire",
     "name": "Knocklem Ignis",
     "icon": "winggolem_fire",
-    "dex": 159
+    "dex": 159,
+    "elements": ["Fire"],
+    "rarity": 10
   },
   {
     "characterId": "WhiteShieldDragon",
     "name": "Silvegis",
     "icon": "whiteshielddragon",
-    "dex": 160
+    "dex": 160,
+    "elements": ["Dragon"],
+    "rarity": 8
   },
   {
     "characterId": "BlueThunderHorse",
     "name": "Azurmane",
     "icon": "bluethunderhorse",
-    "dex": 161
+    "dex": 161,
+    "elements": ["Electricity"],
+    "rarity": 7
   },
   {
     "characterId": "LongCat",
     "name": "Valentail",
     "icon": "longcat",
-    "dex": 162
+    "dex": 162,
+    "elements": ["Normal"],
+    "rarity": 2
   },
   {
     "characterId": "ElecSnail",
     "name": "Snock",
     "icon": "elecsnail",
-    "dex": 163
+    "dex": 163,
+    "elements": ["Electricity"],
+    "rarity": 2
   },
   {
     "characterId": "ElecSnail_Ground",
     "name": "Snock Lux",
     "icon": "elecsnail_ground",
-    "dex": 163
+    "dex": 163,
+    "elements": ["Electricity", "Earth"],
+    "rarity": 3
   },
   {
     "characterId": "DandelionGirl",
     "name": "Souffline",
     "icon": "dandeliongirl",
-    "dex": 164
+    "dex": 164,
+    "elements": ["Leaf"],
+    "rarity": 3
   },
   {
     "characterId": "BrownRabbit",
     "name": "Lapiron",
     "icon": "brownrabbit",
-    "dex": 165
+    "dex": 165,
+    "elements": ["Earth"],
+    "rarity": 3
   },
   {
     "characterId": "HoodGhost",
     "name": "Hoodle",
     "icon": "hoodghost",
-    "dex": 166
+    "dex": 166,
+    "elements": ["Dark"],
+    "rarity": 3
   },
   {
     "characterId": "ElecLizard",
     "name": "Slowatt",
     "icon": "eleclizard",
-    "dex": 167
+    "dex": 167,
+    "elements": ["Electricity"],
+    "rarity": 4
   },
   {
     "characterId": "OniGhostGirl",
     "name": "Bakemi",
     "icon": "onighostgirl",
-    "dex": 168
+    "dex": 168,
+    "elements": ["Dark"],
+    "rarity": 4
   },
   {
     "characterId": "KingSunfish",
     "name": "Solmora",
     "icon": "kingsunfish",
-    "dex": 169
+    "dex": 169,
+    "elements": ["Water"],
+    "rarity": 4
   },
   {
     "characterId": "KingSunfish_Thunder",
     "name": "Solmora Lux",
     "icon": "kingsunfish_thunder",
-    "dex": 169
+    "dex": 169,
+    "elements": ["Water", "Electricity"],
+    "rarity": 5
   },
   {
     "characterId": "SleeveRabbit",
     "name": "Lapure",
     "icon": "sleeverabbit",
-    "dex": 170
+    "dex": 170,
+    "elements": ["Normal"],
+    "rarity": 4
   },
   {
     "characterId": "GhostDragon",
     "name": "Eidrolon",
     "icon": "ghostdragon",
-    "dex": 171
+    "dex": 171,
+    "elements": ["Dragon", "Dark"],
+    "rarity": 7
   },
   {
     "characterId": "GhostDragon_Fire",
     "name": "Eidrolon Ignis",
     "icon": "ghostdragon_fire",
-    "dex": 171
+    "dex": 171,
+    "elements": ["Dragon", "Fire"],
+    "rarity": 8
   },
   {
     "characterId": "ThunderFluffyBird",
     "name": "Dynamoff",
     "icon": "thunderfluffybird",
-    "dex": 172
+    "dex": 172,
+    "elements": ["Electricity"],
+    "rarity": 6
   },
   {
     "characterId": "RedFlowerBird",
     "name": "Tropicaw",
     "icon": "redflowerbird",
-    "dex": 173
+    "dex": 173,
+    "elements": ["Leaf"],
+    "rarity": 5
   },
   {
     "characterId": "FoxExorcist",
     "name": "Flaracle",
     "icon": "foxexorcist",
-    "dex": 174
+    "dex": 174,
+    "elements": ["Fire"],
+    "rarity": 7
   },
   {
     "characterId": "LotusDragon",
     "name": "Ophydia",
     "icon": "lotusdragon",
-    "dex": 175
+    "dex": 175,
+    "elements": ["Leaf", "Water"],
+    "rarity": 9
   },
   {
     "characterId": "ClownRabbit",
     "name": "Dupin",
     "icon": "clownrabbit",
-    "dex": 176
+    "dex": 176,
+    "elements": ["Fire"],
+    "rarity": 7
   },
   {
     "characterId": "ThiefBird",
     "name": "Roujay",
     "icon": "thiefbird",
-    "dex": 177
+    "dex": 177,
+    "elements": ["Dark"],
+    "rarity": 5
   },
   {
     "characterId": "SnakeGirl",
     "name": "Venusa",
     "icon": "snakegirl",
-    "dex": 178
+    "dex": 178,
+    "elements": ["Dark"],
+    "rarity": 5
   },
   {
     "characterId": "MushroomLady",
     "name": "Mycora",
     "icon": "mushroomlady",
-    "dex": 179
+    "dex": 179,
+    "elements": ["Leaf"],
+    "rarity": 6
   },
   {
     "characterId": "LanternButler",
     "name": "Loomen",
     "icon": "lanternbutler",
-    "dex": 180
+    "dex": 180,
+    "elements": ["Dark", "Fire"],
+    "rarity": 5
   },
   {
     "characterId": "MoonChild",
     "name": "Wistella",
     "icon": "moonchild",
-    "dex": 181
+    "dex": 181,
+    "elements": ["Dark"],
+    "rarity": 2
   },
   {
     "characterId": "MonochromeQueen",
     "name": "Solenne",
     "icon": "monochromequeen",
-    "dex": 182
+    "dex": 182,
+    "elements": ["Dark", "Normal"],
+    "rarity": 7
   },
   {
     "characterId": "KabukiMan",
     "name": "Renjishi",
     "icon": "kabukiman",
-    "dex": 183
+    "dex": 183,
+    "elements": ["Fire"],
+    "rarity": 7
   },
   {
     "characterId": "DomeArmorDragon",
     "name": "Aegidron",
     "icon": "domearmordragon",
-    "dex": 184
+    "dex": 184,
+    "elements": ["Dragon", "Earth"],
+    "rarity": 8
   },
   {
     "characterId": "ElecPanda",
     "name": "Grizzbolt",
     "icon": "elecpanda",
-    "dex": 185
+    "dex": 185,
+    "elements": ["Electricity"],
+    "rarity": 8
   },
   {
     "characterId": "LilyQueen",
     "name": "Lyleen",
     "icon": "lilyqueen",
-    "dex": 186
+    "dex": 186,
+    "elements": ["Leaf"],
+    "rarity": 9
   },
   {
     "characterId": "LilyQueen_Dark",
     "name": "Lyleen Noct",
     "icon": "lilyqueen_dark",
-    "dex": 186
+    "dex": 186,
+    "elements": ["Dark"],
+    "rarity": 10
   },
   {
     "characterId": "ThunderDragonMan",
     "name": "Orserk",
     "icon": "thunderdragonman",
-    "dex": 187
+    "dex": 187,
+    "elements": ["Dragon", "Electricity"],
+    "rarity": 9
   },
-  { "characterId": "Horus", "name": "Faleris", "icon": "horus", "dex": 188 },
+  {
+    "characterId": "Horus",
+    "name": "Faleris",
+    "icon": "horus",
+    "dex": 188,
+    "elements": ["Fire"],
+    "rarity": 9
+  },
   {
     "characterId": "Horus_Oilrig",
     "name": "Faleris",
     "icon": "horus",
-    "dex": 188
+    "dex": 188,
+    "elements": ["Fire"],
+    "rarity": 9
   },
   {
     "characterId": "Horus_Water",
     "name": "Faleris Aqua",
     "icon": "horus_water",
-    "dex": 188
+    "dex": 188,
+    "elements": ["Water"],
+    "rarity": 9
   },
   {
     "characterId": "BlackGriffon",
     "name": "Shadowbeak",
     "icon": "blackgriffon",
-    "dex": 189
+    "dex": 189,
+    "elements": ["Dark"],
+    "rarity": 10
   },
   {
     "characterId": "MoonQueen",
     "name": "Selyne",
     "icon": "moonqueen",
-    "dex": 190
+    "dex": 190,
+    "elements": ["Dark", "Normal"],
+    "rarity": 9
   },
   {
     "characterId": "SnowTigerBeastman",
     "name": "Bastigor",
     "icon": "snowtigerbeastman",
-    "dex": 191
+    "dex": 191,
+    "elements": ["Ice"],
+    "rarity": 8
   },
   {
     "characterId": "BlueSkyDragon",
     "name": "Shaolong",
     "icon": "blueskydragon",
-    "dex": 192
+    "dex": 192,
+    "elements": ["Dragon", "Water"],
+    "rarity": 9
   },
   {
     "characterId": "Mothman",
     "name": "Silvance",
     "icon": "mothman",
-    "dex": 193
+    "dex": 193,
+    "elements": ["Leaf"],
+    "rarity": 8
   },
   {
     "characterId": "FlowerPrince",
     "name": "Dandilord",
     "icon": "flowerprince",
-    "dex": 194
+    "dex": 194,
+    "elements": ["Leaf", "Dark"],
+    "rarity": 8
   },
   {
     "characterId": "NightLady",
     "name": "Bellanoir",
     "icon": "nightlady",
-    "dex": 195
+    "dex": 195,
+    "elements": ["Dark"],
+    "rarity": 20
   },
   {
     "characterId": "NightLady_Dark",
     "name": "Bellanoir Libero",
     "icon": "nightlady_dark",
-    "dex": 195
+    "dex": 195,
+    "elements": ["Dark"],
+    "rarity": 20
   },
   {
     "characterId": "DarkMechaDragon",
     "name": "Xenolord",
     "icon": "darkmechadragon",
-    "dex": 196
+    "dex": 196,
+    "elements": ["Dark", "Dragon"],
+    "rarity": 8
   },
   {
     "characterId": "LegendDeer",
     "name": "Hartalis",
     "icon": "legenddeer",
-    "dex": 197
+    "dex": 197,
+    "elements": ["Normal"],
+    "rarity": 10
   },
   {
     "characterId": "SaintCentaur",
     "name": "Paladius",
     "icon": "saintcentaur",
-    "dex": 198
+    "dex": 198,
+    "elements": ["Normal"],
+    "rarity": 20
   },
   {
     "characterId": "BlackCentaur",
     "name": "Necromus",
     "icon": "blackcentaur",
-    "dex": 199
+    "dex": 199,
+    "elements": ["Dark"],
+    "rarity": 20
   },
   {
     "characterId": "IceHorse",
     "name": "Frostallion",
     "icon": "icehorse",
-    "dex": 200
+    "dex": 200,
+    "elements": ["Ice"],
+    "rarity": 20
   },
   {
     "characterId": "IceHorse_Dark",
     "name": "Frostallion Noct",
     "icon": "icehorse_dark",
-    "dex": 200
+    "dex": 200,
+    "elements": ["Dark"],
+    "rarity": 20
   },
   {
     "characterId": "PoseidonOrca",
     "name": "Neptilius",
     "icon": "poseidonorca",
-    "dex": 201
+    "dex": 201,
+    "elements": ["Water"],
+    "rarity": 20
   },
   {
     "characterId": "JetDragon",
     "name": "Jetragon",
     "icon": "jetdragon",
-    "dex": 202
+    "dex": 202,
+    "elements": ["Dragon"],
+    "rarity": 20
   },
   {
     "characterId": "KingWhale",
     "name": "Panthalus",
     "icon": "kingwhale",
-    "dex": 203
+    "dex": 203,
+    "elements": ["Water"],
+    "rarity": 10
   },
   {
     "characterId": "WorldTreeDragon",
     "name": "Astralym",
     "icon": "worldtreedragon",
-    "dex": 204
+    "dex": 204,
+    "elements": [],
+    "rarity": 10
   }
 ]

@@ -17,6 +17,13 @@ import {
 import { PalDetail } from "@/components/pal-detail";
 import { updatePalRow } from "@/lib/pal-form";
 import { humanizeId, shortId } from "@/lib/format";
+import { WikiIcon } from "@/components/wiki-browser";
+import {
+  ELEMENT_COLORS,
+  isAlpha,
+  lookupSpecies,
+  usePalCatalog,
+} from "@/lib/pal-catalog";
 
 const PAGE_SIZE = 50;
 
@@ -89,6 +96,7 @@ export function PalList({
   const [savingPal, setSavingPal] = useState(false);
 
   const detailController = useRef<AbortController | null>(null);
+  const catalog = usePalCatalog();
 
   useEffect(() => {
     const timer = window.setTimeout(() => setSearch(input.trim()), 300);
@@ -331,81 +339,127 @@ export function PalList({
 
         {items.length > 0 && (
           <div className="scroll-slim min-h-0 flex-1 overflow-y-auto">
-            <table className="w-full text-left text-sm">
-              <thead className="sticky top-0 bg-surface text-xs text-subtle">
-                <tr>
-                  <th scope="col" className="px-4 py-2 font-medium">
-                    Pal
-                  </th>
-                  <th scope="col" className="px-2 py-2 font-medium">
-                    Lv / ★
-                  </th>
-                  <th
-                    scope="col"
-                    className="hidden px-2 py-2 font-medium sm:table-cell"
-                  >
-                    Gender
-                  </th>
-                  <th
-                    scope="col"
-                    className="hidden px-4 py-2 font-medium md:table-cell"
-                  >
-                    Owner
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {items.map((pal) => (
-                  <tr
-                    key={pal.id}
-                    aria-selected={selectedId === pal.id}
-                    tabIndex={0}
-                    onClick={() => {
-                      if (!savingPal) void selectPal(pal);
-                    }}
-                    onKeyDown={(event) => {
-                      if (event.key === "Enter" && !savingPal) {
-                        void selectPal(pal);
-                      }
-                    }}
-                    className={`cursor-pointer border-t border-line transition-colors ${
-                      selectedId === pal.id
-                        ? "bg-accent-soft"
-                        : "hover:bg-raised"
-                    }`}
-                  >
-                    <td className="px-4 py-2">
-                      <p className="truncate font-medium">
-                        {pal.nickname || humanizeId(pal.characterId)}
-                      </p>
-                      <p className="truncate font-mono text-xs text-subtle">
-                        {pal.characterId ?? pal.id}
-                      </p>
-                      {pal.parseStatus !== "complete" && (
-                        <span
-                          className={`${PARSE_BADGE[pal.parseStatus]} mt-1`}
-                        >
-                          {pal.parseStatus === "partial"
-                            ? "Partial data"
-                            : "Unsupported"}
+            <ul className="divide-y divide-line">
+              {items.map((pal) => {
+                const sp = lookupSpecies(catalog, pal.characterId);
+                const alpha = isAlpha(pal.characterId);
+                const stars =
+                  pal.rank !== undefined ? Math.max(0, pal.rank - 1) : 0;
+                const el0 = sp?.elements?.[0];
+                const ownerUid = pal.ownerPlayerUid ?? pal.playerUid;
+                const ownerName = ownerUid
+                  ? ownerNames.get(ownerUid.toLowerCase())
+                  : undefined;
+                const selected = selectedId === pal.id;
+                return (
+                  <li key={pal.id}>
+                    <button
+                      type="button"
+                      aria-current={selected || undefined}
+                      onClick={() => {
+                        if (!savingPal) void selectPal(pal);
+                      }}
+                      className={`flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors ${
+                        selected ? "bg-accent-soft" : "hover:bg-raised"
+                      }`}
+                    >
+                      <span
+                        className="grid size-12 shrink-0 place-items-center overflow-hidden rounded-lg border border-line bg-sunken"
+                        style={
+                          el0
+                            ? {
+                                boxShadow: `inset 0 0 0 1.5px ${ELEMENT_COLORS[el0]}66`,
+                              }
+                            : undefined
+                        }
+                      >
+                        {sp?.icon ? (
+                          <WikiIcon icon={sp.icon} alt="" className="size-11" />
+                        ) : (
+                          <span className="text-sm text-subtle">
+                            {(
+                              pal.nickname ||
+                              humanizeId(pal.characterId) ||
+                              "?"
+                            ).slice(0, 1)}
+                          </span>
+                        )}
+                      </span>
+
+                      <span className="min-w-0 flex-1">
+                        <span className="flex items-center gap-2">
+                          <span className="truncate font-medium">
+                            {pal.nickname ||
+                              sp?.name ||
+                              humanizeId(pal.characterId)}
+                          </span>
+                          {alpha && (
+                            <span
+                              className="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold"
+                              style={{
+                                color: "#f0733b",
+                                background: "#f0733b1f",
+                              }}
+                            >
+                              Alpha
+                            </span>
+                          )}
                         </span>
-                      )}
-                    </td>
-                    <td className="whitespace-nowrap px-2 py-2 tabular-nums">
-                      {pal.level ?? "—"}
-                      <span className="text-subtle"> / </span>
-                      {pal.rank !== undefined ? pal.rank - 1 : "—"}
-                    </td>
-                    <td className="hidden px-2 py-2 sm:table-cell">
-                      {pal.gender || "—"}
-                    </td>
-                    <td className="hidden px-4 py-2 text-xs text-subtle md:table-cell">
-                      <OwnerCell pal={pal} names={ownerNames} />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                        <span className="mt-0.5 flex flex-wrap items-center gap-1.5">
+                          {pal.nickname && sp?.name && (
+                            <span className="truncate text-xs text-subtle">
+                              {sp.name}
+                            </span>
+                          )}
+                          {sp?.elements?.map((el) => (
+                            <span
+                              key={el}
+                              className="rounded px-1.5 py-0.5 text-[10px] font-medium"
+                              style={{
+                                color:
+                                  ELEMENT_COLORS[el] ?? "var(--color-subtle)",
+                                background: `${ELEMENT_COLORS[el] ?? "#888"}1f`,
+                              }}
+                            >
+                              {el}
+                            </span>
+                          ))}
+                          {ownerName && (
+                            <span className="hidden truncate text-xs text-subtle md:inline">
+                              · {ownerName}
+                            </span>
+                          )}
+                        </span>
+                      </span>
+
+                      <span className="shrink-0 text-right">
+                        <span className="block text-sm font-medium tabular-nums">
+                          Lv {pal.level ?? "—"}
+                        </span>
+                        {stars > 0 && (
+                          <span
+                            className="text-xs"
+                            style={{ color: "#e6c53a" }}
+                            aria-label={`${stars} stars`}
+                          >
+                            {"★".repeat(stars)}
+                          </span>
+                        )}
+                        {pal.parseStatus !== "complete" && (
+                          <span
+                            className={`${PARSE_BADGE[pal.parseStatus]} mt-1 block`}
+                          >
+                            {pal.parseStatus === "partial"
+                              ? "Partial"
+                              : "Unsupported"}
+                          </span>
+                        )}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
 
             {hasMore && (
               <div className="border-t border-line p-3 text-center">
