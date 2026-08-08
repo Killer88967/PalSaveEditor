@@ -60,9 +60,14 @@ export function PalDetail({
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState<string>();
   const [fields, setFields] = useState<Record<string, string>>({});
-  const [species, setSpecies] = useState<{ characterId: string; name: string }[]>([]);
+  const [species, setSpecies] = useState<
+    { characterId: string; name: string }[]
+  >([]);
   useEffect(() => {
-    fetch("/wiki/data/species.json").then((r) => r.json()).then(setSpecies).catch(() => {});
+    fetch("/wiki/data/species.json")
+      .then((r) => r.json())
+      .then(setSpecies)
+      .catch(() => {});
   }, []);
 
   if (loading) {
@@ -149,6 +154,47 @@ export function PalDetail({
           <div className="mt-2 flex flex-wrap gap-1.5">
             {detail.isPlayer && <span className="badge">Player</span>}
             {detail.gender && <span className="badge">{detail.gender}</span>}
+            {capabilities.characterId && form.characterId && (
+              <label className="field">
+                <span>Species</span>
+                <select
+                  value={base(form.characterId)}
+                  onChange={(e) =>
+                    set(
+                      "characterId",
+                      (isAlpha(form.characterId!) ? BOSS : "") + e.target.value,
+                    )
+                  }
+                >
+                  {!species.some(
+                    (s) => s.characterId === base(form.characterId!),
+                  ) && (
+                    <option value={base(form.characterId)}>
+                      {humanizeId(base(form.characterId))}
+                    </option>
+                  )}
+                  {species.map((s) => (
+                    <option key={s.characterId} value={s.characterId}>
+                      {s.name}
+                    </option>
+                  ))}
+                </select>
+                <label className="mt-1 flex items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={isAlpha(form.characterId)}
+                    onChange={(e) =>
+                      set(
+                        "characterId",
+                        (e.target.checked ? BOSS : "") +
+                          base(form.characterId!),
+                      )
+                    }
+                  />
+                  Alpha / Boss variant
+                </label>
+              </label>
+            )}
             {detail.instanceId && (
               <span className="badge" title={detail.instanceId}>
                 <span className="font-mono">{shortId(detail.instanceId)}</span>

@@ -1,1 +1,1648 @@
-[{"characterId":"Sheepball","name":"Lamball","icon":"sheepball","dex":1},{"characterId":"PinkCat","name":"Cattiva","icon":"pinkcat","dex":2},{"characterId":"ChickenPal","name":"Chikipi","icon":"chickenpal","dex":3},{"characterId":"Carbunclo","name":"Lifmunk","icon":"carbunclo","dex":4},{"characterId":"BluePlatypus","name":"Fuack","icon":"blueplatypus","dex":5},{"characterId":"BluePlatypus_Fire","name":"Fuack Ignis","icon":"blueplatypus_fire","dex":5},{"characterId":"CuteFox","name":"Vixy","icon":"cutefox","dex":6},{"characterId":"FlyingManta","name":"Celaray","icon":"flyingmanta","dex":7},{"characterId":"FlyingManta_Thunder","name":"Celaray Lux","icon":"flyingmanta_thunder","dex":7},{"characterId":"WoolFox","name":"Cremis","icon":"woolfox","dex":8},{"characterId":"KendoFrog","name":"Croajiro","icon":"kendofrog","dex":9},{"characterId":"KendoFrog_Dark","name":"Croajiro Noct","icon":"kendofrog_dark","dex":9},{"characterId":"LeafMomonga","name":"Herbil","icon":"leafmomonga","dex":10},{"characterId":"Ganesha","name":"Teafant","icon":"ganesha","dex":11},{"characterId":"PlantSlime","name":"Gumoss","icon":"plantslime","dex":12},{"characterId":"PlantSlime_Flower","name":"Gumoss","icon":"plantslime_flower","dex":12},{"characterId":"SamuraiDog","name":"Pupperai","icon":"samuraidog","dex":13},{"characterId":"CloverFairy","name":"Clovee","icon":"cloverfairy","dex":14},{"characterId":"Hedgehog","name":"Jolthog","icon":"hedgehog","dex":15},{"characterId":"Hedgehog_Ice","name":"Jolthog Cryst","icon":"hedgehog_ice","dex":15},{"characterId":"NegativeKoala","name":"Depresso","icon":"negativekoala","dex":16},{"characterId":"Penguin","name":"Pengullet","icon":"penguin","dex":17},{"characterId":"Penguin_Electric","name":"Pengullet Lux","icon":"penguin_electric","dex":17},{"characterId":"CaptainPenguin","name":"Penking","icon":"captainpenguin","dex":18},{"characterId":"CaptainPenguin_Black","name":"Penking Lux","icon":"captainpenguin_black","dex":18},{"characterId":"WizardOwl","name":"Hoocrates","icon":"wizardowl","dex":19},{"characterId":"Alpaca","name":"Melpaca","icon":"alpaca","dex":20},{"characterId":"KingAlpaca","name":"Kingpaca","icon":"kingalpaca","dex":21},{"characterId":"KingAlpaca_Ice","name":"Kingpaca Cryst","icon":"kingalpaca_ice","dex":21},{"characterId":"DreamDemon","name":"Daedream","icon":"dreamdemon","dex":22},{"characterId":"Monkey","name":"Tanzee","icon":"monkey","dex":23},{"characterId":"Monkey_Fire","name":"Tanzee Ignis","icon":"monkey_fire","dex":23},{"characterId":"NightFox","name":"Nox","icon":"nightfox","dex":24},{"characterId":"LavaGirl","name":"Flambelle","icon":"lavagirl","dex":25},{"characterId":"FlameBambi","name":"Rooby","icon":"flamebambi","dex":26},{"characterId":"Bastet","name":"Mau","icon":"bastet","dex":27},{"characterId":"Bastet_Ice","name":"Mau Cryst","icon":"bastet_ice","dex":27},{"characterId":"Boar","name":"Rushoar","icon":"boar","dex":28},{"characterId":"Kitsunebi","name":"Foxparks","icon":"kitsunebi","dex":29},{"characterId":"Kitsunebi_Ice","name":"Foxparks Cryst","icon":"kitsunebi_ice","dex":29},{"characterId":"NegativeOctopus","name":"Killamari","icon":"negativeoctopus","dex":30},{"characterId":"NegativeOctopus_Neutral","name":"Killamari Primo","icon":"negativeoctopus_neutral","dex":30},{"characterId":"CuteMole","name":"Fuddler","icon":"cutemole","dex":31},{"characterId":"Deer","name":"Eikthyrdeer","icon":"deer","dex":32},{"characterId":"Deer_Ground","name":"Eikthyrdeer Terra","icon":"deer_ground","dex":32},{"characterId":"Garm","name":"Direhowl","icon":"garm","dex":33},{"characterId":"BerryGoat","name":"Caprity","icon":"berrygoat","dex":34},{"characterId":"BerryGoat_Dark","name":"Caprity Noct","icon":"berrygoat_dark","dex":34},{"characterId":"MopBaby","name":"Swee","icon":"mopbaby","dex":35},{"characterId":"MopKing","name":"Sweepa","icon":"mopking","dex":36},{"characterId":"TentacleTurtle","name":"Turtacle","icon":"tentacleturtle","dex":37},{"characterId":"TentacleTurtle_Ground","name":"Turtacle Terra","icon":"tentacleturtle_ground","dex":37},{"characterId":"WindChimes","name":"Hangyu","icon":"windchimes","dex":38},{"characterId":"WindChimes_Ice","name":"Hangyu Cryst","icon":"windchimes_ice","dex":38},{"characterId":"SweetsSheep","name":"Woolipop","icon":"sweetssheep","dex":39},{"characterId":"SweetsSheep_Ground","name":"Woolipop Terra","icon":"sweetssheep_ground","dex":39},{"characterId":"CowPal","name":"Mozzarina","icon":"cowpal","dex":40},{"characterId":"BlueDragon","name":"Azurobe","icon":"bluedragon","dex":41},{"characterId":"BlueDragon_Ice","name":"Azurobe Cryst","icon":"bluedragon_ice","dex":41},{"characterId":"ElecCat","name":"Sparkit","icon":"eleccat","dex":42},{"characterId":"Kelpie","name":"Kelpsea","icon":"kelpie","dex":43},{"characterId":"Kelpie_Fire","name":"Kelpsea Ignis","icon":"kelpie_fire","dex":43},{"characterId":"PinkRabbit","name":"Ribbuny","icon":"pinkrabbit","dex":44},{"characterId":"PinkRabbit_Grass","name":"Ribbuny Botan","icon":"pinkrabbit_grass","dex":44},{"characterId":"JellyfishFairy","name":"Jelliette","icon":"jellyfishfairy","dex":45},{"characterId":"JellyfishGhost","name":"Jellroy","icon":"jellyfishghost","dex":46},{"characterId":"ClioneTwins","name":"Amione","icon":"clionetwins","dex":47},{"characterId":"OctopusGirl","name":"Gloopie","icon":"octopusgirl","dex":48},{"characterId":"OctopusGirl_Neutral","name":"Gloopie Primo","icon":"octopusgirl_neutral","dex":48},{"characterId":"Eagle","name":"Galeclaw","icon":"eagle","dex":49},{"characterId":"GhostBlackCat","name":"Wispaw","icon":"ghostblackcat","dex":50},{"characterId":"HawkBird","name":"Nitewing","icon":"hawkbird","dex":51},{"characterId":"CatBat","name":"Tombat","icon":"catbat","dex":52},{"characterId":"ColorfulBird","name":"Tocotoco","icon":"colorfulbird","dex":53},{"characterId":"Kirin","name":"Univolt","icon":"kirin","dex":54},{"characterId":"Kirin_Ice","name":"Univolt Cryst","icon":"kirin_ice","dex":54},{"characterId":"SharkKid","name":"Gobfin","icon":"sharkkid","dex":55},{"characterId":"SharkKid_Fire","name":"Gobfin Ignis","icon":"sharkkid_fire","dex":55},{"characterId":"Werewolf","name":"Loupmoon","icon":"werewolf","dex":56},{"characterId":"Werewolf_Ice","name":"Loupmoon Cryst","icon":"werewolf_ice","dex":56},{"characterId":"DarkCrow","name":"Cawgnito","icon":"darkcrow","dex":57},{"characterId":"FlameBuffalo","name":"Arsox","icon":"flamebuffalo","dex":58},{"characterId":"FluffyBird","name":"Muffly","icon":"fluffybird","dex":59},{"characterId":"LittleBriarRose","name":"Bristla","icon":"littlebriarrose","dex":60},{"characterId":"CuteButterfly","name":"Cinnamoth","icon":"cutebutterfly","dex":61},{"characterId":"ElecPomeranian","name":"Puffolt","icon":"elecpomeranian","dex":62},{"characterId":"FairyDragon","name":"Elphidran","icon":"fairydragon","dex":63},{"characterId":"FairyDragon_Water","name":"Elphidran Aqua","icon":"fairydragon_water","dex":63},{"characterId":"BirdDragon","name":"Vanwyrm","icon":"birddragon","dex":64},{"characterId":"BirdDragon_Ice","name":"Vanwyrm Cryst","icon":"birddragon_ice","dex":64},{"characterId":"CatVampire","name":"Felbat","icon":"catvampire","dex":65},{"characterId":"VioletFairy","name":"Vaelet","icon":"violetfairy","dex":66},{"characterId":"SoldierBee","name":"Beegarde","icon":"soldierbee","dex":67},{"characterId":"QueenBee","name":"Elizabee","icon":"queenbee","dex":68},{"characterId":"PinkLizard","name":"Lovander","icon":"pinklizard","dex":69},{"characterId":"NaughtyCat","name":"Grintale","icon":"naughtycat","dex":70},{"characterId":"PurpleSpider","name":"Tarantriss","icon":"purplespider","dex":71},{"characterId":"IceSeal","name":"Polapup","icon":"iceseal","dex":72},{"characterId":"IceSeal_Ground","name":"Polapup Terra","icon":"iceseal_ground","dex":72},{"characterId":"LizardMan","name":"Leezpunk","icon":"lizardman","dex":73},{"characterId":"LizardMan_Oilrig","name":"Leezpunk","icon":"lizardman","dex":73},{"characterId":"LizardMan_Fire","name":"Leezpunk Ignis","icon":"lizardman_fire","dex":73},{"characterId":"Gorilla","name":"Gorirat","icon":"gorilla","dex":74},{"characterId":"Gorilla_Ground","name":"Gorirat Terra","icon":"gorilla_ground","dex":74},{"characterId":"Serpent","name":"Surfent","icon":"serpent","dex":75},{"characterId":"Serpent_Ground","name":"Surfent Terra","icon":"serpent_ground","dex":75},{"characterId":"RobinHood","name":"Robinquill","icon":"robinhood","dex":76},{"characterId":"RobinHood_Ground","name":"Robinquill Terra","icon":"robinhood_ground","dex":76},{"characterId":"FlowerRabbit","name":"Flopie","icon":"flowerrabbit","dex":77},{"characterId":"FoxMage","name":"Wixen","icon":"foxmage","dex":78},{"characterId":"FoxMage_Dark","name":"Wixen Noct","icon":"foxmage_dark","dex":78},{"characterId":"CatMage","name":"Katress","icon":"catmage","dex":79},{"characterId":"CatMage_Fire","name":"Katress Ignis","icon":"catmage_fire","dex":79},{"characterId":"HadesBird","name":"Helzephyr","icon":"hadesbird","dex":80},{"characterId":"HadesBird_Oilrig","name":"Helzephyr","icon":"hadesbird","dex":80},{"characterId":"HadesBird_Electric","name":"Helzephyr Lux","icon":"hadesbird_electric","dex":80},{"characterId":"GrassMinotaur","name":"Elgrove","icon":"grassminotaur","dex":81},{"characterId":"GrassMinotaur_Ice","name":"Elgrove Cryst","icon":"grassminotaur_ice","dex":81},{"characterId":"Mutant","name":"Lunaris","icon":"mutant","dex":82},{"characterId":"FengyunDeeper","name":"Fenglope","icon":"fengyundeeper","dex":83},{"characterId":"FengyunDeeper_Electric","name":"Fenglope Lux","icon":"fengyundeeper_electric","dex":83},{"characterId":"FlowerDinosaur","name":"Dinossom","icon":"flowerdinosaur","dex":84},{"characterId":"FlowerDinosaur_Electric","name":"Dinossom Lux","icon":"flowerdinosaur_electric","dex":84},{"characterId":"Ronin","name":"Bushi","icon":"ronin","dex":85},{"characterId":"Ronin_Dark","name":"Bushi Noct","icon":"ronin_dark","dex":85},{"characterId":"IceCrocodile","name":"Munchill","icon":"icecrocodile","dex":86},{"characterId":"GrassMammoth","name":"Mammorest","icon":"grassmammoth","dex":87},{"characterId":"GrassMammoth_Ice","name":"Mammorest Cryst","icon":"grassmammoth_ice","dex":87},{"characterId":"StuffedShark","name":"Finsider","icon":"stuffedshark","dex":88},{"characterId":"StuffedShark_Fire","name":"Finsider Ignis","icon":"stuffedshark_fire","dex":88},{"characterId":"FlowerDoll","name":"Petallia","icon":"flowerdoll","dex":89},{"characterId":"FlowerDoll_Fire","name":"Petallia Ignis","icon":"flowerdoll_fire","dex":89},{"characterId":"PandaGirl","name":"Leafan","icon":"pandagirl","dex":90},{"characterId":"Baphomet","name":"Incineram","icon":"baphomet","dex":91},{"characterId":"Baphomet_Dark","name":"Incineram Noct","icon":"baphomet_dark","dex":91},{"characterId":"Baphomet_Dark_Oilrig","name":"Incineram Noct","icon":"baphomet_dark","dex":91},{"characterId":"RaijinDaughter","name":"Dazzi","icon":"raijindaughter","dex":92},{"characterId":"RaijinDaughter_Water","name":"Dazzi Noct","icon":"raijindaughter_water","dex":92},{"characterId":"FireKirin","name":"Pyrin","icon":"firekirin","dex":93},{"characterId":"FireKirin_Dark","name":"Pyrin Noct","icon":"firekirin_dark","dex":93},{"characterId":"LazyDragon","name":"Relaxaurus","icon":"lazydragon","dex":94},{"characterId":"LazyDragon_Electric","name":"Relaxaurus Lux","icon":"lazydragon_electric","dex":94},{"characterId":"LazyDragon_Electric_Tower","name":"Relaxaurus Lux","icon":"lazydragon_electric_tower","dex":94},{"characterId":"IceFox","name":"Foxcicle","icon":"icefox","dex":95},{"characterId":"ThunderBird","name":"Beakon","icon":"thunderbird","dex":96},{"characterId":"ThunderBird_Ice","name":"Beakon Cryst","icon":"thunderbird_ice","dex":96},{"characterId":"GhostAnglerfish","name":"Ghangler","icon":"ghostanglerfish","dex":97},{"characterId":"GhostAnglerfish_Fire","name":"Ghangler Ignis","icon":"ghostanglerfish_fire","dex":97},{"characterId":"ThunderDog","name":"Rayhound","icon":"thunderdog","dex":98},{"characterId":"ThunderDog_Ice","name":"Rayhound Cryst","icon":"thunderdog_ice","dex":98},{"characterId":"DarkScorpion","name":"Menasting","icon":"darkscorpion","dex":99},{"characterId":"DarkScorpion_Ground","name":"Menasting Terra","icon":"darkscorpion_ground","dex":99},{"characterId":"CactusDoll","name":"Needoll","icon":"cactusdoll","dex":100},{"characterId":"CactusDoll_Dark","name":"Needoll Noct","icon":"cactusdoll_dark","dex":100},{"characterId":"IceDeer","name":"Reindrix","icon":"icedeer","dex":101},{"characterId":"GrassPanda","name":"Mossanda","icon":"grasspanda","dex":102},{"characterId":"GrassPanda_Electric","name":"Mossanda Lux","icon":"grasspanda_electric","dex":102},{"characterId":"GrassPanda_Electric_Tower","name":"Mossanda Lux","icon":"grasspanda_electric_tower","dex":102},{"characterId":"WeaselDragon","name":"Chillet","icon":"weaseldragon","dex":103},{"characterId":"WeaselDragon_Fire","name":"Chillet Ignis","icon":"weaseldragon_fire","dex":103},{"characterId":"RedArmorBird","name":"Ragnahawk","icon":"redarmorbird","dex":104},{"characterId":"VolcanoDragon","name":"Moldron","icon":"volcanodragon","dex":105},{"characterId":"VolcanoDragon_Ice","name":"Moldron Cryst","icon":"volcanodragon_ice","dex":105},{"characterId":"TropicalOstrich","name":"Palumba","icon":"tropicalostrich","dex":106},{"characterId":"DrillGame","name":"Digtoise","icon":"drillgame","dex":107},{"characterId":"SakuraSaurus","name":"Broncherry","icon":"sakurasaurus","dex":108},{"characterId":"SakuraSaurus_Water","name":"Broncherry Aqua","icon":"sakurasaurus_water","dex":108},{"characterId":"LazyCatfish","name":"Dumud","icon":"lazycatfish","dex":109},{"characterId":"LazyCatfish_Gold","name":"Dumud Gild","icon":"lazycatfish_gold","dex":109},{"characterId":"Plesiosaur","name":"Braloha","icon":"plesiosaur","dex":110},{"characterId":"AmaterasuWolf","name":"Kitsun","icon":"amaterasuwolf","dex":111},{"characterId":"AmaterasuWolf_Dark","name":"Kitsun Noct","icon":"amaterasuwolf_dark","dex":111},{"characterId":"Manticore","name":"Blazehowl","icon":"manticore","dex":112},{"characterId":"Manticore_Dark","name":"Blazehowl Noct","icon":"manticore_dark","dex":112},{"characterId":"HerculesBeetle","name":"Warsect","icon":"herculesbeetle","dex":113},{"characterId":"HerculesBeetle_Ground","name":"Warsect Terra","icon":"herculesbeetle_ground","dex":113},{"characterId":"SnowPeafowl","name":"Frostplume","icon":"snowpeafowl","dex":114},{"characterId":"DarkFlameFox","name":"Majex","icon":"darkflamefox","dex":115},{"characterId":"WhiteMoth","name":"Sibelyx","icon":"whitemoth","dex":116},{"characterId":"WhiteMoth_Neutral","name":"Sibelyx Primo","icon":"whitemoth_neutral","dex":116},{"characterId":"GhostBeast","name":"Maraith","icon":"ghostbeast","dex":117},{"characterId":"MushroomDragon","name":"Shroomer","icon":"mushroomdragon","dex":118},{"characterId":"MushroomDragon_Dark","name":"Shroomer Noct","icon":"mushroomdragon_dark","dex":118},{"characterId":"IceWitch","name":"Icelyn","icon":"icewitch","dex":119},{"characterId":"MummyPal","name":"Gildra","icon":"mummypal","dex":120},{"characterId":"Umihebi","name":"Jormuntide","icon":"umihebi","dex":121},{"characterId":"Umihebi_Fire","name":"Jormuntide Ignis","icon":"umihebi_fire","dex":121},{"characterId":"Suzaku","name":"Suzaku","icon":"suzaku","dex":122},{"characterId":"Suzaku_Water","name":"Suzaku Aqua","icon":"suzaku_water","dex":122},{"characterId":"FeatherOstrich","name":"Dazemu","icon":"featherostrich","dex":123},{"characterId":"SkyDragon","name":"Quivern","icon":"skydragon","dex":124},{"characterId":"SkyDragon_Grass","name":"Quivern Botan","icon":"skydragon_grass","dex":124},{"characterId":"LeafPrincess","name":"Lullu","icon":"leafprincess","dex":125},{"characterId":"SmallArmadillo","name":"Kikit","icon":"smallarmadillo","dex":126},{"characterId":"GuardianDog","name":"Yakumo","icon":"guardiandog","dex":127},{"characterId":"SwordCutlassfish","name":"Skutlass","icon":"swordcutlassfish","dex":128},{"characterId":"SwordCutlassfish_Fire","name":"Skutlass Ignis","icon":"swordcutlassfish_fire","dex":128},{"characterId":"VolcanicMonster","name":"Reptyro","icon":"volcanicmonster","dex":129},{"characterId":"VolcanicMonster_Ice","name":"Reptyro Cryst","icon":"volcanicmonster_ice","dex":129},{"characterId":"NightBlueHorse","name":"Starryon","icon":"nightbluehorse","dex":130},{"characterId":"NightBlueHorse_Neutral","name":"Starryon Primo","icon":"nightbluehorse_neutral","dex":130},{"characterId":"RockBeast","name":"Pierdon","icon":"rockbeast","dex":131},{"characterId":"RockBeast_Ice","name":"Pierdon Cryst","icon":"rockbeast_ice","dex":131},{"characterId":"WhiteTiger","name":"Cryolinx","icon":"whitetiger","dex":132},{"characterId":"WhiteTiger_Ground","name":"Cryolinx Terra","icon":"whitetiger_ground","dex":132},{"characterId":"SmallYeti","name":"Snugloo","icon":"smallyeti","dex":133},{"characterId":"Yeti","name":"Wumpo","icon":"yeti","dex":134},{"characterId":"Yeti_Grass","name":"Wumpo Botan","icon":"yeti_grass","dex":134},{"characterId":"CandleGhost","name":"Sootseer","icon":"candleghost","dex":135},{"characterId":"VenusFlytrap","name":"Carnibora","icon":"venusflytrap","dex":136},{"characterId":"KingBahamut","name":"Blazamut","icon":"kingbahamut","dex":137},{"characterId":"KingBahamut_Dragon","name":"Blazamut Ryu","icon":"kingbahamut_dragon","dex":137},{"characterId":"GrassGolem","name":"Dualith","icon":"grassgolem","dex":138},{"characterId":"GrassGolem_Dark","name":"Dualith Noct","icon":"grassgolem_dark","dex":138},{"characterId":"Anubis","name":"Anubis","icon":"anubis","dex":139},{"characterId":"Sekhmet","name":"Sekhmet","icon":"sekhmet","dex":140},{"characterId":"ScorpionMan","name":"Prixter","icon":"scorpionman","dex":141},{"characterId":"ScorpionMan_Electric","name":"Prixter Lux","icon":"scorpionman_electric","dex":141},{"characterId":"CubeTurtle","name":"Tetroise","icon":"cubeturtle","dex":142},{"characterId":"CubeTurtle_Neutral","name":"Tetroise Primo","icon":"cubeturtle_neutral","dex":142},{"characterId":"BadCatgirl","name":"Nyafia","icon":"badcatgirl","dex":143},{"characterId":"MimicDog","name":"Mimog","icon":"mimicdog","dex":144},{"characterId":"DarkAlien","name":"Xenovader","icon":"darkalien","dex":145},{"characterId":"DarkAlien_Oilrig","name":"Xenovader","icon":"darkalien","dex":145},{"characterId":"SUMMON_DarkAlien","name":"Xenovader","icon":"darkalien","dex":145},{"characterId":"SUMMON_DarkAlien_MAX","name":"Xenovader","icon":"darkalien","dex":145},{"characterId":"SUMMON_WhiteAlienDragon","name":"Xenogard","icon":"whitealiendragon","dex":146},{"characterId":"SUMMON_WhiteAlienDragon_MAX","name":"Xenogard","icon":"whitealiendragon","dex":146},{"characterId":"WhiteAlienDragon","name":"Xenogard","icon":"whitealiendragon","dex":146},{"characterId":"BlueberryFairy","name":"Prunelia","icon":"blueberryfairy","dex":147},{"characterId":"GhostRabbit","name":"Nitemary","icon":"ghostrabbit","dex":148},{"characterId":"GhostRabbit_Grass","name":"Nitemary Botan","icon":"ghostrabbit_grass","dex":148},{"characterId":"BlackPuppy","name":"Smokie","icon":"blackpuppy","dex":149},{"characterId":"BlackPuppy_Ice","name":"Smokie Cryst","icon":"blackpuppy_ice","dex":149},{"characterId":"MysteryMask","name":"Omascul","icon":"mysterymask","dex":150},{"characterId":"IceNarwhal","name":"Whalaska","icon":"icenarwhal","dex":151},{"characterId":"IceNarwhal_Fire","name":"Whalaska Ignis","icon":"icenarwhal_fire","dex":151},{"characterId":"GrassRabbitMan","name":"Verdash","icon":"grassrabbitman","dex":152},{"characterId":"GrimGirl","name":"Splatterina","icon":"grimgirl","dex":153},{"characterId":"GoldenHorse","name":"Gildane","icon":"goldenhorse","dex":154},{"characterId":"SifuDog","name":"Dogen","icon":"sifudog","dex":155},{"characterId":"SumoDog","name":"Bulldosu","icon":"sumodog","dex":156},{"characterId":"WhiteDeer","name":"Celesdir","icon":"whitedeer","dex":157},{"characterId":"WhiteDeer_Dark","name":"Celesdir Noct","icon":"whitedeer_dark","dex":157},{"characterId":"BlackMetalDragon","name":"Astegon","icon":"blackmetaldragon","dex":158},{"characterId":"WingGolem","name":"Knocklem","icon":"winggolem","dex":159},{"characterId":"WingGolem_Oilrig","name":"Knocklem","icon":"winggolem","dex":159},{"characterId":"WingGolem_Fire","name":"Knocklem Ignis","icon":"winggolem_fire","dex":159},{"characterId":"WhiteShieldDragon","name":"Silvegis","icon":"whiteshielddragon","dex":160},{"characterId":"BlueThunderHorse","name":"Azurmane","icon":"bluethunderhorse","dex":161},{"characterId":"LongCat","name":"Valentail","icon":"longcat","dex":162},{"characterId":"ElecSnail","name":"Snock","icon":"elecsnail","dex":163},{"characterId":"ElecSnail_Ground","name":"Snock Lux","icon":"elecsnail_ground","dex":163},{"characterId":"DandelionGirl","name":"Souffline","icon":"dandeliongirl","dex":164},{"characterId":"BrownRabbit","name":"Lapiron","icon":"brownrabbit","dex":165},{"characterId":"HoodGhost","name":"Hoodle","icon":"hoodghost","dex":166},{"characterId":"ElecLizard","name":"Slowatt","icon":"eleclizard","dex":167},{"characterId":"OniGhostGirl","name":"Bakemi","icon":"onighostgirl","dex":168},{"characterId":"KingSunfish","name":"Solmora","icon":"kingsunfish","dex":169},{"characterId":"KingSunfish_Thunder","name":"Solmora Lux","icon":"kingsunfish_thunder","dex":169},{"characterId":"SleeveRabbit","name":"Lapure","icon":"sleeverabbit","dex":170},{"characterId":"GhostDragon","name":"Eidrolon","icon":"ghostdragon","dex":171},{"characterId":"GhostDragon_Fire","name":"Eidrolon Ignis","icon":"ghostdragon_fire","dex":171},{"characterId":"ThunderFluffyBird","name":"Dynamoff","icon":"thunderfluffybird","dex":172},{"characterId":"RedFlowerBird","name":"Tropicaw","icon":"redflowerbird","dex":173},{"characterId":"FoxExorcist","name":"Flaracle","icon":"foxexorcist","dex":174},{"characterId":"LotusDragon","name":"Ophydia","icon":"lotusdragon","dex":175},{"characterId":"ClownRabbit","name":"Dupin","icon":"clownrabbit","dex":176},{"characterId":"ThiefBird","name":"Roujay","icon":"thiefbird","dex":177},{"characterId":"SnakeGirl","name":"Venusa","icon":"snakegirl","dex":178},{"characterId":"MushroomLady","name":"Mycora","icon":"mushroomlady","dex":179},{"characterId":"LanternButler","name":"Loomen","icon":"lanternbutler","dex":180},{"characterId":"MoonChild","name":"Wistella","icon":"moonchild","dex":181},{"characterId":"MonochromeQueen","name":"Solenne","icon":"monochromequeen","dex":182},{"characterId":"KabukiMan","name":"Renjishi","icon":"kabukiman","dex":183},{"characterId":"DomeArmorDragon","name":"Aegidron","icon":"domearmordragon","dex":184},{"characterId":"ElecPanda","name":"Grizzbolt","icon":"elecpanda","dex":185},{"characterId":"LilyQueen","name":"Lyleen","icon":"lilyqueen","dex":186},{"characterId":"LilyQueen_Dark","name":"Lyleen Noct","icon":"lilyqueen_dark","dex":186},{"characterId":"ThunderDragonMan","name":"Orserk","icon":"thunderdragonman","dex":187},{"characterId":"Horus","name":"Faleris","icon":"horus","dex":188},{"characterId":"Horus_Oilrig","name":"Faleris","icon":"horus","dex":188},{"characterId":"Horus_Water","name":"Faleris Aqua","icon":"horus_water","dex":188},{"characterId":"BlackGriffon","name":"Shadowbeak","icon":"blackgriffon","dex":189},{"characterId":"MoonQueen","name":"Selyne","icon":"moonqueen","dex":190},{"characterId":"SnowTigerBeastman","name":"Bastigor","icon":"snowtigerbeastman","dex":191},{"characterId":"BlueSkyDragon","name":"Shaolong","icon":"blueskydragon","dex":192},{"characterId":"Mothman","name":"Silvance","icon":"mothman","dex":193},{"characterId":"FlowerPrince","name":"Dandilord","icon":"flowerprince","dex":194},{"characterId":"NightLady","name":"Bellanoir","icon":"nightlady","dex":195},{"characterId":"NightLady_Dark","name":"Bellanoir Libero","icon":"nightlady_dark","dex":195},{"characterId":"DarkMechaDragon","name":"Xenolord","icon":"darkmechadragon","dex":196},{"characterId":"LegendDeer","name":"Hartalis","icon":"legenddeer","dex":197},{"characterId":"SaintCentaur","name":"Paladius","icon":"saintcentaur","dex":198},{"characterId":"BlackCentaur","name":"Necromus","icon":"blackcentaur","dex":199},{"characterId":"IceHorse","name":"Frostallion","icon":"icehorse","dex":200},{"characterId":"IceHorse_Dark","name":"Frostallion Noct","icon":"icehorse_dark","dex":200},{"characterId":"PoseidonOrca","name":"Neptilius","icon":"poseidonorca","dex":201},{"characterId":"JetDragon","name":"Jetragon","icon":"jetdragon","dex":202},{"characterId":"KingWhale","name":"Panthalus","icon":"kingwhale","dex":203},{"characterId":"WorldTreeDragon","name":"Astralym","icon":"worldtreedragon","dex":204}]
+[
+  {
+    "characterId": "Sheepball",
+    "name": "Lamball",
+    "icon": "sheepball",
+    "dex": 1
+  },
+  { "characterId": "PinkCat", "name": "Cattiva", "icon": "pinkcat", "dex": 2 },
+  {
+    "characterId": "ChickenPal",
+    "name": "Chikipi",
+    "icon": "chickenpal",
+    "dex": 3
+  },
+  {
+    "characterId": "Carbunclo",
+    "name": "Lifmunk",
+    "icon": "carbunclo",
+    "dex": 4
+  },
+  {
+    "characterId": "BluePlatypus",
+    "name": "Fuack",
+    "icon": "blueplatypus",
+    "dex": 5
+  },
+  {
+    "characterId": "BluePlatypus_Fire",
+    "name": "Fuack Ignis",
+    "icon": "blueplatypus_fire",
+    "dex": 5
+  },
+  { "characterId": "CuteFox", "name": "Vixy", "icon": "cutefox", "dex": 6 },
+  {
+    "characterId": "FlyingManta",
+    "name": "Celaray",
+    "icon": "flyingmanta",
+    "dex": 7
+  },
+  {
+    "characterId": "FlyingManta_Thunder",
+    "name": "Celaray Lux",
+    "icon": "flyingmanta_thunder",
+    "dex": 7
+  },
+  { "characterId": "WoolFox", "name": "Cremis", "icon": "woolfox", "dex": 8 },
+  {
+    "characterId": "KendoFrog",
+    "name": "Croajiro",
+    "icon": "kendofrog",
+    "dex": 9
+  },
+  {
+    "characterId": "KendoFrog_Dark",
+    "name": "Croajiro Noct",
+    "icon": "kendofrog_dark",
+    "dex": 9
+  },
+  {
+    "characterId": "LeafMomonga",
+    "name": "Herbil",
+    "icon": "leafmomonga",
+    "dex": 10
+  },
+  { "characterId": "Ganesha", "name": "Teafant", "icon": "ganesha", "dex": 11 },
+  {
+    "characterId": "PlantSlime",
+    "name": "Gumoss",
+    "icon": "plantslime",
+    "dex": 12
+  },
+  {
+    "characterId": "PlantSlime_Flower",
+    "name": "Gumoss",
+    "icon": "plantslime_flower",
+    "dex": 12
+  },
+  {
+    "characterId": "SamuraiDog",
+    "name": "Pupperai",
+    "icon": "samuraidog",
+    "dex": 13
+  },
+  {
+    "characterId": "CloverFairy",
+    "name": "Clovee",
+    "icon": "cloverfairy",
+    "dex": 14
+  },
+  {
+    "characterId": "Hedgehog",
+    "name": "Jolthog",
+    "icon": "hedgehog",
+    "dex": 15
+  },
+  {
+    "characterId": "Hedgehog_Ice",
+    "name": "Jolthog Cryst",
+    "icon": "hedgehog_ice",
+    "dex": 15
+  },
+  {
+    "characterId": "NegativeKoala",
+    "name": "Depresso",
+    "icon": "negativekoala",
+    "dex": 16
+  },
+  {
+    "characterId": "Penguin",
+    "name": "Pengullet",
+    "icon": "penguin",
+    "dex": 17
+  },
+  {
+    "characterId": "Penguin_Electric",
+    "name": "Pengullet Lux",
+    "icon": "penguin_electric",
+    "dex": 17
+  },
+  {
+    "characterId": "CaptainPenguin",
+    "name": "Penking",
+    "icon": "captainpenguin",
+    "dex": 18
+  },
+  {
+    "characterId": "CaptainPenguin_Black",
+    "name": "Penking Lux",
+    "icon": "captainpenguin_black",
+    "dex": 18
+  },
+  {
+    "characterId": "WizardOwl",
+    "name": "Hoocrates",
+    "icon": "wizardowl",
+    "dex": 19
+  },
+  { "characterId": "Alpaca", "name": "Melpaca", "icon": "alpaca", "dex": 20 },
+  {
+    "characterId": "KingAlpaca",
+    "name": "Kingpaca",
+    "icon": "kingalpaca",
+    "dex": 21
+  },
+  {
+    "characterId": "KingAlpaca_Ice",
+    "name": "Kingpaca Cryst",
+    "icon": "kingalpaca_ice",
+    "dex": 21
+  },
+  {
+    "characterId": "DreamDemon",
+    "name": "Daedream",
+    "icon": "dreamdemon",
+    "dex": 22
+  },
+  { "characterId": "Monkey", "name": "Tanzee", "icon": "monkey", "dex": 23 },
+  {
+    "characterId": "Monkey_Fire",
+    "name": "Tanzee Ignis",
+    "icon": "monkey_fire",
+    "dex": 23
+  },
+  { "characterId": "NightFox", "name": "Nox", "icon": "nightfox", "dex": 24 },
+  {
+    "characterId": "LavaGirl",
+    "name": "Flambelle",
+    "icon": "lavagirl",
+    "dex": 25
+  },
+  {
+    "characterId": "FlameBambi",
+    "name": "Rooby",
+    "icon": "flamebambi",
+    "dex": 26
+  },
+  { "characterId": "Bastet", "name": "Mau", "icon": "bastet", "dex": 27 },
+  {
+    "characterId": "Bastet_Ice",
+    "name": "Mau Cryst",
+    "icon": "bastet_ice",
+    "dex": 27
+  },
+  { "characterId": "Boar", "name": "Rushoar", "icon": "boar", "dex": 28 },
+  {
+    "characterId": "Kitsunebi",
+    "name": "Foxparks",
+    "icon": "kitsunebi",
+    "dex": 29
+  },
+  {
+    "characterId": "Kitsunebi_Ice",
+    "name": "Foxparks Cryst",
+    "icon": "kitsunebi_ice",
+    "dex": 29
+  },
+  {
+    "characterId": "NegativeOctopus",
+    "name": "Killamari",
+    "icon": "negativeoctopus",
+    "dex": 30
+  },
+  {
+    "characterId": "NegativeOctopus_Neutral",
+    "name": "Killamari Primo",
+    "icon": "negativeoctopus_neutral",
+    "dex": 30
+  },
+  {
+    "characterId": "CuteMole",
+    "name": "Fuddler",
+    "icon": "cutemole",
+    "dex": 31
+  },
+  { "characterId": "Deer", "name": "Eikthyrdeer", "icon": "deer", "dex": 32 },
+  {
+    "characterId": "Deer_Ground",
+    "name": "Eikthyrdeer Terra",
+    "icon": "deer_ground",
+    "dex": 32
+  },
+  { "characterId": "Garm", "name": "Direhowl", "icon": "garm", "dex": 33 },
+  {
+    "characterId": "BerryGoat",
+    "name": "Caprity",
+    "icon": "berrygoat",
+    "dex": 34
+  },
+  {
+    "characterId": "BerryGoat_Dark",
+    "name": "Caprity Noct",
+    "icon": "berrygoat_dark",
+    "dex": 34
+  },
+  { "characterId": "MopBaby", "name": "Swee", "icon": "mopbaby", "dex": 35 },
+  { "characterId": "MopKing", "name": "Sweepa", "icon": "mopking", "dex": 36 },
+  {
+    "characterId": "TentacleTurtle",
+    "name": "Turtacle",
+    "icon": "tentacleturtle",
+    "dex": 37
+  },
+  {
+    "characterId": "TentacleTurtle_Ground",
+    "name": "Turtacle Terra",
+    "icon": "tentacleturtle_ground",
+    "dex": 37
+  },
+  {
+    "characterId": "WindChimes",
+    "name": "Hangyu",
+    "icon": "windchimes",
+    "dex": 38
+  },
+  {
+    "characterId": "WindChimes_Ice",
+    "name": "Hangyu Cryst",
+    "icon": "windchimes_ice",
+    "dex": 38
+  },
+  {
+    "characterId": "SweetsSheep",
+    "name": "Woolipop",
+    "icon": "sweetssheep",
+    "dex": 39
+  },
+  {
+    "characterId": "SweetsSheep_Ground",
+    "name": "Woolipop Terra",
+    "icon": "sweetssheep_ground",
+    "dex": 39
+  },
+  { "characterId": "CowPal", "name": "Mozzarina", "icon": "cowpal", "dex": 40 },
+  {
+    "characterId": "BlueDragon",
+    "name": "Azurobe",
+    "icon": "bluedragon",
+    "dex": 41
+  },
+  {
+    "characterId": "BlueDragon_Ice",
+    "name": "Azurobe Cryst",
+    "icon": "bluedragon_ice",
+    "dex": 41
+  },
+  { "characterId": "ElecCat", "name": "Sparkit", "icon": "eleccat", "dex": 42 },
+  { "characterId": "Kelpie", "name": "Kelpsea", "icon": "kelpie", "dex": 43 },
+  {
+    "characterId": "Kelpie_Fire",
+    "name": "Kelpsea Ignis",
+    "icon": "kelpie_fire",
+    "dex": 43
+  },
+  {
+    "characterId": "PinkRabbit",
+    "name": "Ribbuny",
+    "icon": "pinkrabbit",
+    "dex": 44
+  },
+  {
+    "characterId": "PinkRabbit_Grass",
+    "name": "Ribbuny Botan",
+    "icon": "pinkrabbit_grass",
+    "dex": 44
+  },
+  {
+    "characterId": "JellyfishFairy",
+    "name": "Jelliette",
+    "icon": "jellyfishfairy",
+    "dex": 45
+  },
+  {
+    "characterId": "JellyfishGhost",
+    "name": "Jellroy",
+    "icon": "jellyfishghost",
+    "dex": 46
+  },
+  {
+    "characterId": "ClioneTwins",
+    "name": "Amione",
+    "icon": "clionetwins",
+    "dex": 47
+  },
+  {
+    "characterId": "OctopusGirl",
+    "name": "Gloopie",
+    "icon": "octopusgirl",
+    "dex": 48
+  },
+  {
+    "characterId": "OctopusGirl_Neutral",
+    "name": "Gloopie Primo",
+    "icon": "octopusgirl_neutral",
+    "dex": 48
+  },
+  { "characterId": "Eagle", "name": "Galeclaw", "icon": "eagle", "dex": 49 },
+  {
+    "characterId": "GhostBlackCat",
+    "name": "Wispaw",
+    "icon": "ghostblackcat",
+    "dex": 50
+  },
+  {
+    "characterId": "HawkBird",
+    "name": "Nitewing",
+    "icon": "hawkbird",
+    "dex": 51
+  },
+  { "characterId": "CatBat", "name": "Tombat", "icon": "catbat", "dex": 52 },
+  {
+    "characterId": "ColorfulBird",
+    "name": "Tocotoco",
+    "icon": "colorfulbird",
+    "dex": 53
+  },
+  { "characterId": "Kirin", "name": "Univolt", "icon": "kirin", "dex": 54 },
+  {
+    "characterId": "Kirin_Ice",
+    "name": "Univolt Cryst",
+    "icon": "kirin_ice",
+    "dex": 54
+  },
+  {
+    "characterId": "SharkKid",
+    "name": "Gobfin",
+    "icon": "sharkkid",
+    "dex": 55
+  },
+  {
+    "characterId": "SharkKid_Fire",
+    "name": "Gobfin Ignis",
+    "icon": "sharkkid_fire",
+    "dex": 55
+  },
+  {
+    "characterId": "Werewolf",
+    "name": "Loupmoon",
+    "icon": "werewolf",
+    "dex": 56
+  },
+  {
+    "characterId": "Werewolf_Ice",
+    "name": "Loupmoon Cryst",
+    "icon": "werewolf_ice",
+    "dex": 56
+  },
+  {
+    "characterId": "DarkCrow",
+    "name": "Cawgnito",
+    "icon": "darkcrow",
+    "dex": 57
+  },
+  {
+    "characterId": "FlameBuffalo",
+    "name": "Arsox",
+    "icon": "flamebuffalo",
+    "dex": 58
+  },
+  {
+    "characterId": "FluffyBird",
+    "name": "Muffly",
+    "icon": "fluffybird",
+    "dex": 59
+  },
+  {
+    "characterId": "LittleBriarRose",
+    "name": "Bristla",
+    "icon": "littlebriarrose",
+    "dex": 60
+  },
+  {
+    "characterId": "CuteButterfly",
+    "name": "Cinnamoth",
+    "icon": "cutebutterfly",
+    "dex": 61
+  },
+  {
+    "characterId": "ElecPomeranian",
+    "name": "Puffolt",
+    "icon": "elecpomeranian",
+    "dex": 62
+  },
+  {
+    "characterId": "FairyDragon",
+    "name": "Elphidran",
+    "icon": "fairydragon",
+    "dex": 63
+  },
+  {
+    "characterId": "FairyDragon_Water",
+    "name": "Elphidran Aqua",
+    "icon": "fairydragon_water",
+    "dex": 63
+  },
+  {
+    "characterId": "BirdDragon",
+    "name": "Vanwyrm",
+    "icon": "birddragon",
+    "dex": 64
+  },
+  {
+    "characterId": "BirdDragon_Ice",
+    "name": "Vanwyrm Cryst",
+    "icon": "birddragon_ice",
+    "dex": 64
+  },
+  {
+    "characterId": "CatVampire",
+    "name": "Felbat",
+    "icon": "catvampire",
+    "dex": 65
+  },
+  {
+    "characterId": "VioletFairy",
+    "name": "Vaelet",
+    "icon": "violetfairy",
+    "dex": 66
+  },
+  {
+    "characterId": "SoldierBee",
+    "name": "Beegarde",
+    "icon": "soldierbee",
+    "dex": 67
+  },
+  {
+    "characterId": "QueenBee",
+    "name": "Elizabee",
+    "icon": "queenbee",
+    "dex": 68
+  },
+  {
+    "characterId": "PinkLizard",
+    "name": "Lovander",
+    "icon": "pinklizard",
+    "dex": 69
+  },
+  {
+    "characterId": "NaughtyCat",
+    "name": "Grintale",
+    "icon": "naughtycat",
+    "dex": 70
+  },
+  {
+    "characterId": "PurpleSpider",
+    "name": "Tarantriss",
+    "icon": "purplespider",
+    "dex": 71
+  },
+  { "characterId": "IceSeal", "name": "Polapup", "icon": "iceseal", "dex": 72 },
+  {
+    "characterId": "IceSeal_Ground",
+    "name": "Polapup Terra",
+    "icon": "iceseal_ground",
+    "dex": 72
+  },
+  {
+    "characterId": "LizardMan",
+    "name": "Leezpunk",
+    "icon": "lizardman",
+    "dex": 73
+  },
+  {
+    "characterId": "LizardMan_Oilrig",
+    "name": "Leezpunk",
+    "icon": "lizardman",
+    "dex": 73
+  },
+  {
+    "characterId": "LizardMan_Fire",
+    "name": "Leezpunk Ignis",
+    "icon": "lizardman_fire",
+    "dex": 73
+  },
+  { "characterId": "Gorilla", "name": "Gorirat", "icon": "gorilla", "dex": 74 },
+  {
+    "characterId": "Gorilla_Ground",
+    "name": "Gorirat Terra",
+    "icon": "gorilla_ground",
+    "dex": 74
+  },
+  { "characterId": "Serpent", "name": "Surfent", "icon": "serpent", "dex": 75 },
+  {
+    "characterId": "Serpent_Ground",
+    "name": "Surfent Terra",
+    "icon": "serpent_ground",
+    "dex": 75
+  },
+  {
+    "characterId": "RobinHood",
+    "name": "Robinquill",
+    "icon": "robinhood",
+    "dex": 76
+  },
+  {
+    "characterId": "RobinHood_Ground",
+    "name": "Robinquill Terra",
+    "icon": "robinhood_ground",
+    "dex": 76
+  },
+  {
+    "characterId": "FlowerRabbit",
+    "name": "Flopie",
+    "icon": "flowerrabbit",
+    "dex": 77
+  },
+  { "characterId": "FoxMage", "name": "Wixen", "icon": "foxmage", "dex": 78 },
+  {
+    "characterId": "FoxMage_Dark",
+    "name": "Wixen Noct",
+    "icon": "foxmage_dark",
+    "dex": 78
+  },
+  { "characterId": "CatMage", "name": "Katress", "icon": "catmage", "dex": 79 },
+  {
+    "characterId": "CatMage_Fire",
+    "name": "Katress Ignis",
+    "icon": "catmage_fire",
+    "dex": 79
+  },
+  {
+    "characterId": "HadesBird",
+    "name": "Helzephyr",
+    "icon": "hadesbird",
+    "dex": 80
+  },
+  {
+    "characterId": "HadesBird_Oilrig",
+    "name": "Helzephyr",
+    "icon": "hadesbird",
+    "dex": 80
+  },
+  {
+    "characterId": "HadesBird_Electric",
+    "name": "Helzephyr Lux",
+    "icon": "hadesbird_electric",
+    "dex": 80
+  },
+  {
+    "characterId": "GrassMinotaur",
+    "name": "Elgrove",
+    "icon": "grassminotaur",
+    "dex": 81
+  },
+  {
+    "characterId": "GrassMinotaur_Ice",
+    "name": "Elgrove Cryst",
+    "icon": "grassminotaur_ice",
+    "dex": 81
+  },
+  { "characterId": "Mutant", "name": "Lunaris", "icon": "mutant", "dex": 82 },
+  {
+    "characterId": "FengyunDeeper",
+    "name": "Fenglope",
+    "icon": "fengyundeeper",
+    "dex": 83
+  },
+  {
+    "characterId": "FengyunDeeper_Electric",
+    "name": "Fenglope Lux",
+    "icon": "fengyundeeper_electric",
+    "dex": 83
+  },
+  {
+    "characterId": "FlowerDinosaur",
+    "name": "Dinossom",
+    "icon": "flowerdinosaur",
+    "dex": 84
+  },
+  {
+    "characterId": "FlowerDinosaur_Electric",
+    "name": "Dinossom Lux",
+    "icon": "flowerdinosaur_electric",
+    "dex": 84
+  },
+  { "characterId": "Ronin", "name": "Bushi", "icon": "ronin", "dex": 85 },
+  {
+    "characterId": "Ronin_Dark",
+    "name": "Bushi Noct",
+    "icon": "ronin_dark",
+    "dex": 85
+  },
+  {
+    "characterId": "IceCrocodile",
+    "name": "Munchill",
+    "icon": "icecrocodile",
+    "dex": 86
+  },
+  {
+    "characterId": "GrassMammoth",
+    "name": "Mammorest",
+    "icon": "grassmammoth",
+    "dex": 87
+  },
+  {
+    "characterId": "GrassMammoth_Ice",
+    "name": "Mammorest Cryst",
+    "icon": "grassmammoth_ice",
+    "dex": 87
+  },
+  {
+    "characterId": "StuffedShark",
+    "name": "Finsider",
+    "icon": "stuffedshark",
+    "dex": 88
+  },
+  {
+    "characterId": "StuffedShark_Fire",
+    "name": "Finsider Ignis",
+    "icon": "stuffedshark_fire",
+    "dex": 88
+  },
+  {
+    "characterId": "FlowerDoll",
+    "name": "Petallia",
+    "icon": "flowerdoll",
+    "dex": 89
+  },
+  {
+    "characterId": "FlowerDoll_Fire",
+    "name": "Petallia Ignis",
+    "icon": "flowerdoll_fire",
+    "dex": 89
+  },
+  {
+    "characterId": "PandaGirl",
+    "name": "Leafan",
+    "icon": "pandagirl",
+    "dex": 90
+  },
+  {
+    "characterId": "Baphomet",
+    "name": "Incineram",
+    "icon": "baphomet",
+    "dex": 91
+  },
+  {
+    "characterId": "Baphomet_Dark",
+    "name": "Incineram Noct",
+    "icon": "baphomet_dark",
+    "dex": 91
+  },
+  {
+    "characterId": "Baphomet_Dark_Oilrig",
+    "name": "Incineram Noct",
+    "icon": "baphomet_dark",
+    "dex": 91
+  },
+  {
+    "characterId": "RaijinDaughter",
+    "name": "Dazzi",
+    "icon": "raijindaughter",
+    "dex": 92
+  },
+  {
+    "characterId": "RaijinDaughter_Water",
+    "name": "Dazzi Noct",
+    "icon": "raijindaughter_water",
+    "dex": 92
+  },
+  {
+    "characterId": "FireKirin",
+    "name": "Pyrin",
+    "icon": "firekirin",
+    "dex": 93
+  },
+  {
+    "characterId": "FireKirin_Dark",
+    "name": "Pyrin Noct",
+    "icon": "firekirin_dark",
+    "dex": 93
+  },
+  {
+    "characterId": "LazyDragon",
+    "name": "Relaxaurus",
+    "icon": "lazydragon",
+    "dex": 94
+  },
+  {
+    "characterId": "LazyDragon_Electric",
+    "name": "Relaxaurus Lux",
+    "icon": "lazydragon_electric",
+    "dex": 94
+  },
+  {
+    "characterId": "LazyDragon_Electric_Tower",
+    "name": "Relaxaurus Lux",
+    "icon": "lazydragon_electric_tower",
+    "dex": 94
+  },
+  { "characterId": "IceFox", "name": "Foxcicle", "icon": "icefox", "dex": 95 },
+  {
+    "characterId": "ThunderBird",
+    "name": "Beakon",
+    "icon": "thunderbird",
+    "dex": 96
+  },
+  {
+    "characterId": "ThunderBird_Ice",
+    "name": "Beakon Cryst",
+    "icon": "thunderbird_ice",
+    "dex": 96
+  },
+  {
+    "characterId": "GhostAnglerfish",
+    "name": "Ghangler",
+    "icon": "ghostanglerfish",
+    "dex": 97
+  },
+  {
+    "characterId": "GhostAnglerfish_Fire",
+    "name": "Ghangler Ignis",
+    "icon": "ghostanglerfish_fire",
+    "dex": 97
+  },
+  {
+    "characterId": "ThunderDog",
+    "name": "Rayhound",
+    "icon": "thunderdog",
+    "dex": 98
+  },
+  {
+    "characterId": "ThunderDog_Ice",
+    "name": "Rayhound Cryst",
+    "icon": "thunderdog_ice",
+    "dex": 98
+  },
+  {
+    "characterId": "DarkScorpion",
+    "name": "Menasting",
+    "icon": "darkscorpion",
+    "dex": 99
+  },
+  {
+    "characterId": "DarkScorpion_Ground",
+    "name": "Menasting Terra",
+    "icon": "darkscorpion_ground",
+    "dex": 99
+  },
+  {
+    "characterId": "CactusDoll",
+    "name": "Needoll",
+    "icon": "cactusdoll",
+    "dex": 100
+  },
+  {
+    "characterId": "CactusDoll_Dark",
+    "name": "Needoll Noct",
+    "icon": "cactusdoll_dark",
+    "dex": 100
+  },
+  {
+    "characterId": "IceDeer",
+    "name": "Reindrix",
+    "icon": "icedeer",
+    "dex": 101
+  },
+  {
+    "characterId": "GrassPanda",
+    "name": "Mossanda",
+    "icon": "grasspanda",
+    "dex": 102
+  },
+  {
+    "characterId": "GrassPanda_Electric",
+    "name": "Mossanda Lux",
+    "icon": "grasspanda_electric",
+    "dex": 102
+  },
+  {
+    "characterId": "GrassPanda_Electric_Tower",
+    "name": "Mossanda Lux",
+    "icon": "grasspanda_electric_tower",
+    "dex": 102
+  },
+  {
+    "characterId": "WeaselDragon",
+    "name": "Chillet",
+    "icon": "weaseldragon",
+    "dex": 103
+  },
+  {
+    "characterId": "WeaselDragon_Fire",
+    "name": "Chillet Ignis",
+    "icon": "weaseldragon_fire",
+    "dex": 103
+  },
+  {
+    "characterId": "RedArmorBird",
+    "name": "Ragnahawk",
+    "icon": "redarmorbird",
+    "dex": 104
+  },
+  {
+    "characterId": "VolcanoDragon",
+    "name": "Moldron",
+    "icon": "volcanodragon",
+    "dex": 105
+  },
+  {
+    "characterId": "VolcanoDragon_Ice",
+    "name": "Moldron Cryst",
+    "icon": "volcanodragon_ice",
+    "dex": 105
+  },
+  {
+    "characterId": "TropicalOstrich",
+    "name": "Palumba",
+    "icon": "tropicalostrich",
+    "dex": 106
+  },
+  {
+    "characterId": "DrillGame",
+    "name": "Digtoise",
+    "icon": "drillgame",
+    "dex": 107
+  },
+  {
+    "characterId": "SakuraSaurus",
+    "name": "Broncherry",
+    "icon": "sakurasaurus",
+    "dex": 108
+  },
+  {
+    "characterId": "SakuraSaurus_Water",
+    "name": "Broncherry Aqua",
+    "icon": "sakurasaurus_water",
+    "dex": 108
+  },
+  {
+    "characterId": "LazyCatfish",
+    "name": "Dumud",
+    "icon": "lazycatfish",
+    "dex": 109
+  },
+  {
+    "characterId": "LazyCatfish_Gold",
+    "name": "Dumud Gild",
+    "icon": "lazycatfish_gold",
+    "dex": 109
+  },
+  {
+    "characterId": "Plesiosaur",
+    "name": "Braloha",
+    "icon": "plesiosaur",
+    "dex": 110
+  },
+  {
+    "characterId": "AmaterasuWolf",
+    "name": "Kitsun",
+    "icon": "amaterasuwolf",
+    "dex": 111
+  },
+  {
+    "characterId": "AmaterasuWolf_Dark",
+    "name": "Kitsun Noct",
+    "icon": "amaterasuwolf_dark",
+    "dex": 111
+  },
+  {
+    "characterId": "Manticore",
+    "name": "Blazehowl",
+    "icon": "manticore",
+    "dex": 112
+  },
+  {
+    "characterId": "Manticore_Dark",
+    "name": "Blazehowl Noct",
+    "icon": "manticore_dark",
+    "dex": 112
+  },
+  {
+    "characterId": "HerculesBeetle",
+    "name": "Warsect",
+    "icon": "herculesbeetle",
+    "dex": 113
+  },
+  {
+    "characterId": "HerculesBeetle_Ground",
+    "name": "Warsect Terra",
+    "icon": "herculesbeetle_ground",
+    "dex": 113
+  },
+  {
+    "characterId": "SnowPeafowl",
+    "name": "Frostplume",
+    "icon": "snowpeafowl",
+    "dex": 114
+  },
+  {
+    "characterId": "DarkFlameFox",
+    "name": "Majex",
+    "icon": "darkflamefox",
+    "dex": 115
+  },
+  {
+    "characterId": "WhiteMoth",
+    "name": "Sibelyx",
+    "icon": "whitemoth",
+    "dex": 116
+  },
+  {
+    "characterId": "WhiteMoth_Neutral",
+    "name": "Sibelyx Primo",
+    "icon": "whitemoth_neutral",
+    "dex": 116
+  },
+  {
+    "characterId": "GhostBeast",
+    "name": "Maraith",
+    "icon": "ghostbeast",
+    "dex": 117
+  },
+  {
+    "characterId": "MushroomDragon",
+    "name": "Shroomer",
+    "icon": "mushroomdragon",
+    "dex": 118
+  },
+  {
+    "characterId": "MushroomDragon_Dark",
+    "name": "Shroomer Noct",
+    "icon": "mushroomdragon_dark",
+    "dex": 118
+  },
+  {
+    "characterId": "IceWitch",
+    "name": "Icelyn",
+    "icon": "icewitch",
+    "dex": 119
+  },
+  {
+    "characterId": "MummyPal",
+    "name": "Gildra",
+    "icon": "mummypal",
+    "dex": 120
+  },
+  {
+    "characterId": "Umihebi",
+    "name": "Jormuntide",
+    "icon": "umihebi",
+    "dex": 121
+  },
+  {
+    "characterId": "Umihebi_Fire",
+    "name": "Jormuntide Ignis",
+    "icon": "umihebi_fire",
+    "dex": 121
+  },
+  { "characterId": "Suzaku", "name": "Suzaku", "icon": "suzaku", "dex": 122 },
+  {
+    "characterId": "Suzaku_Water",
+    "name": "Suzaku Aqua",
+    "icon": "suzaku_water",
+    "dex": 122
+  },
+  {
+    "characterId": "FeatherOstrich",
+    "name": "Dazemu",
+    "icon": "featherostrich",
+    "dex": 123
+  },
+  {
+    "characterId": "SkyDragon",
+    "name": "Quivern",
+    "icon": "skydragon",
+    "dex": 124
+  },
+  {
+    "characterId": "SkyDragon_Grass",
+    "name": "Quivern Botan",
+    "icon": "skydragon_grass",
+    "dex": 124
+  },
+  {
+    "characterId": "LeafPrincess",
+    "name": "Lullu",
+    "icon": "leafprincess",
+    "dex": 125
+  },
+  {
+    "characterId": "SmallArmadillo",
+    "name": "Kikit",
+    "icon": "smallarmadillo",
+    "dex": 126
+  },
+  {
+    "characterId": "GuardianDog",
+    "name": "Yakumo",
+    "icon": "guardiandog",
+    "dex": 127
+  },
+  {
+    "characterId": "SwordCutlassfish",
+    "name": "Skutlass",
+    "icon": "swordcutlassfish",
+    "dex": 128
+  },
+  {
+    "characterId": "SwordCutlassfish_Fire",
+    "name": "Skutlass Ignis",
+    "icon": "swordcutlassfish_fire",
+    "dex": 128
+  },
+  {
+    "characterId": "VolcanicMonster",
+    "name": "Reptyro",
+    "icon": "volcanicmonster",
+    "dex": 129
+  },
+  {
+    "characterId": "VolcanicMonster_Ice",
+    "name": "Reptyro Cryst",
+    "icon": "volcanicmonster_ice",
+    "dex": 129
+  },
+  {
+    "characterId": "NightBlueHorse",
+    "name": "Starryon",
+    "icon": "nightbluehorse",
+    "dex": 130
+  },
+  {
+    "characterId": "NightBlueHorse_Neutral",
+    "name": "Starryon Primo",
+    "icon": "nightbluehorse_neutral",
+    "dex": 130
+  },
+  {
+    "characterId": "RockBeast",
+    "name": "Pierdon",
+    "icon": "rockbeast",
+    "dex": 131
+  },
+  {
+    "characterId": "RockBeast_Ice",
+    "name": "Pierdon Cryst",
+    "icon": "rockbeast_ice",
+    "dex": 131
+  },
+  {
+    "characterId": "WhiteTiger",
+    "name": "Cryolinx",
+    "icon": "whitetiger",
+    "dex": 132
+  },
+  {
+    "characterId": "WhiteTiger_Ground",
+    "name": "Cryolinx Terra",
+    "icon": "whitetiger_ground",
+    "dex": 132
+  },
+  {
+    "characterId": "SmallYeti",
+    "name": "Snugloo",
+    "icon": "smallyeti",
+    "dex": 133
+  },
+  { "characterId": "Yeti", "name": "Wumpo", "icon": "yeti", "dex": 134 },
+  {
+    "characterId": "Yeti_Grass",
+    "name": "Wumpo Botan",
+    "icon": "yeti_grass",
+    "dex": 134
+  },
+  {
+    "characterId": "CandleGhost",
+    "name": "Sootseer",
+    "icon": "candleghost",
+    "dex": 135
+  },
+  {
+    "characterId": "VenusFlytrap",
+    "name": "Carnibora",
+    "icon": "venusflytrap",
+    "dex": 136
+  },
+  {
+    "characterId": "KingBahamut",
+    "name": "Blazamut",
+    "icon": "kingbahamut",
+    "dex": 137
+  },
+  {
+    "characterId": "KingBahamut_Dragon",
+    "name": "Blazamut Ryu",
+    "icon": "kingbahamut_dragon",
+    "dex": 137
+  },
+  {
+    "characterId": "GrassGolem",
+    "name": "Dualith",
+    "icon": "grassgolem",
+    "dex": 138
+  },
+  {
+    "characterId": "GrassGolem_Dark",
+    "name": "Dualith Noct",
+    "icon": "grassgolem_dark",
+    "dex": 138
+  },
+  { "characterId": "Anubis", "name": "Anubis", "icon": "anubis", "dex": 139 },
+  {
+    "characterId": "Sekhmet",
+    "name": "Sekhmet",
+    "icon": "sekhmet",
+    "dex": 140
+  },
+  {
+    "characterId": "ScorpionMan",
+    "name": "Prixter",
+    "icon": "scorpionman",
+    "dex": 141
+  },
+  {
+    "characterId": "ScorpionMan_Electric",
+    "name": "Prixter Lux",
+    "icon": "scorpionman_electric",
+    "dex": 141
+  },
+  {
+    "characterId": "CubeTurtle",
+    "name": "Tetroise",
+    "icon": "cubeturtle",
+    "dex": 142
+  },
+  {
+    "characterId": "CubeTurtle_Neutral",
+    "name": "Tetroise Primo",
+    "icon": "cubeturtle_neutral",
+    "dex": 142
+  },
+  {
+    "characterId": "BadCatgirl",
+    "name": "Nyafia",
+    "icon": "badcatgirl",
+    "dex": 143
+  },
+  {
+    "characterId": "MimicDog",
+    "name": "Mimog",
+    "icon": "mimicdog",
+    "dex": 144
+  },
+  {
+    "characterId": "DarkAlien",
+    "name": "Xenovader",
+    "icon": "darkalien",
+    "dex": 145
+  },
+  {
+    "characterId": "DarkAlien_Oilrig",
+    "name": "Xenovader",
+    "icon": "darkalien",
+    "dex": 145
+  },
+  {
+    "characterId": "SUMMON_DarkAlien",
+    "name": "Xenovader",
+    "icon": "darkalien",
+    "dex": 145
+  },
+  {
+    "characterId": "SUMMON_DarkAlien_MAX",
+    "name": "Xenovader",
+    "icon": "darkalien",
+    "dex": 145
+  },
+  {
+    "characterId": "SUMMON_WhiteAlienDragon",
+    "name": "Xenogard",
+    "icon": "whitealiendragon",
+    "dex": 146
+  },
+  {
+    "characterId": "SUMMON_WhiteAlienDragon_MAX",
+    "name": "Xenogard",
+    "icon": "whitealiendragon",
+    "dex": 146
+  },
+  {
+    "characterId": "WhiteAlienDragon",
+    "name": "Xenogard",
+    "icon": "whitealiendragon",
+    "dex": 146
+  },
+  {
+    "characterId": "BlueberryFairy",
+    "name": "Prunelia",
+    "icon": "blueberryfairy",
+    "dex": 147
+  },
+  {
+    "characterId": "GhostRabbit",
+    "name": "Nitemary",
+    "icon": "ghostrabbit",
+    "dex": 148
+  },
+  {
+    "characterId": "GhostRabbit_Grass",
+    "name": "Nitemary Botan",
+    "icon": "ghostrabbit_grass",
+    "dex": 148
+  },
+  {
+    "characterId": "BlackPuppy",
+    "name": "Smokie",
+    "icon": "blackpuppy",
+    "dex": 149
+  },
+  {
+    "characterId": "BlackPuppy_Ice",
+    "name": "Smokie Cryst",
+    "icon": "blackpuppy_ice",
+    "dex": 149
+  },
+  {
+    "characterId": "MysteryMask",
+    "name": "Omascul",
+    "icon": "mysterymask",
+    "dex": 150
+  },
+  {
+    "characterId": "IceNarwhal",
+    "name": "Whalaska",
+    "icon": "icenarwhal",
+    "dex": 151
+  },
+  {
+    "characterId": "IceNarwhal_Fire",
+    "name": "Whalaska Ignis",
+    "icon": "icenarwhal_fire",
+    "dex": 151
+  },
+  {
+    "characterId": "GrassRabbitMan",
+    "name": "Verdash",
+    "icon": "grassrabbitman",
+    "dex": 152
+  },
+  {
+    "characterId": "GrimGirl",
+    "name": "Splatterina",
+    "icon": "grimgirl",
+    "dex": 153
+  },
+  {
+    "characterId": "GoldenHorse",
+    "name": "Gildane",
+    "icon": "goldenhorse",
+    "dex": 154
+  },
+  { "characterId": "SifuDog", "name": "Dogen", "icon": "sifudog", "dex": 155 },
+  {
+    "characterId": "SumoDog",
+    "name": "Bulldosu",
+    "icon": "sumodog",
+    "dex": 156
+  },
+  {
+    "characterId": "WhiteDeer",
+    "name": "Celesdir",
+    "icon": "whitedeer",
+    "dex": 157
+  },
+  {
+    "characterId": "WhiteDeer_Dark",
+    "name": "Celesdir Noct",
+    "icon": "whitedeer_dark",
+    "dex": 157
+  },
+  {
+    "characterId": "BlackMetalDragon",
+    "name": "Astegon",
+    "icon": "blackmetaldragon",
+    "dex": 158
+  },
+  {
+    "characterId": "WingGolem",
+    "name": "Knocklem",
+    "icon": "winggolem",
+    "dex": 159
+  },
+  {
+    "characterId": "WingGolem_Oilrig",
+    "name": "Knocklem",
+    "icon": "winggolem",
+    "dex": 159
+  },
+  {
+    "characterId": "WingGolem_Fire",
+    "name": "Knocklem Ignis",
+    "icon": "winggolem_fire",
+    "dex": 159
+  },
+  {
+    "characterId": "WhiteShieldDragon",
+    "name": "Silvegis",
+    "icon": "whiteshielddragon",
+    "dex": 160
+  },
+  {
+    "characterId": "BlueThunderHorse",
+    "name": "Azurmane",
+    "icon": "bluethunderhorse",
+    "dex": 161
+  },
+  {
+    "characterId": "LongCat",
+    "name": "Valentail",
+    "icon": "longcat",
+    "dex": 162
+  },
+  {
+    "characterId": "ElecSnail",
+    "name": "Snock",
+    "icon": "elecsnail",
+    "dex": 163
+  },
+  {
+    "characterId": "ElecSnail_Ground",
+    "name": "Snock Lux",
+    "icon": "elecsnail_ground",
+    "dex": 163
+  },
+  {
+    "characterId": "DandelionGirl",
+    "name": "Souffline",
+    "icon": "dandeliongirl",
+    "dex": 164
+  },
+  {
+    "characterId": "BrownRabbit",
+    "name": "Lapiron",
+    "icon": "brownrabbit",
+    "dex": 165
+  },
+  {
+    "characterId": "HoodGhost",
+    "name": "Hoodle",
+    "icon": "hoodghost",
+    "dex": 166
+  },
+  {
+    "characterId": "ElecLizard",
+    "name": "Slowatt",
+    "icon": "eleclizard",
+    "dex": 167
+  },
+  {
+    "characterId": "OniGhostGirl",
+    "name": "Bakemi",
+    "icon": "onighostgirl",
+    "dex": 168
+  },
+  {
+    "characterId": "KingSunfish",
+    "name": "Solmora",
+    "icon": "kingsunfish",
+    "dex": 169
+  },
+  {
+    "characterId": "KingSunfish_Thunder",
+    "name": "Solmora Lux",
+    "icon": "kingsunfish_thunder",
+    "dex": 169
+  },
+  {
+    "characterId": "SleeveRabbit",
+    "name": "Lapure",
+    "icon": "sleeverabbit",
+    "dex": 170
+  },
+  {
+    "characterId": "GhostDragon",
+    "name": "Eidrolon",
+    "icon": "ghostdragon",
+    "dex": 171
+  },
+  {
+    "characterId": "GhostDragon_Fire",
+    "name": "Eidrolon Ignis",
+    "icon": "ghostdragon_fire",
+    "dex": 171
+  },
+  {
+    "characterId": "ThunderFluffyBird",
+    "name": "Dynamoff",
+    "icon": "thunderfluffybird",
+    "dex": 172
+  },
+  {
+    "characterId": "RedFlowerBird",
+    "name": "Tropicaw",
+    "icon": "redflowerbird",
+    "dex": 173
+  },
+  {
+    "characterId": "FoxExorcist",
+    "name": "Flaracle",
+    "icon": "foxexorcist",
+    "dex": 174
+  },
+  {
+    "characterId": "LotusDragon",
+    "name": "Ophydia",
+    "icon": "lotusdragon",
+    "dex": 175
+  },
+  {
+    "characterId": "ClownRabbit",
+    "name": "Dupin",
+    "icon": "clownrabbit",
+    "dex": 176
+  },
+  {
+    "characterId": "ThiefBird",
+    "name": "Roujay",
+    "icon": "thiefbird",
+    "dex": 177
+  },
+  {
+    "characterId": "SnakeGirl",
+    "name": "Venusa",
+    "icon": "snakegirl",
+    "dex": 178
+  },
+  {
+    "characterId": "MushroomLady",
+    "name": "Mycora",
+    "icon": "mushroomlady",
+    "dex": 179
+  },
+  {
+    "characterId": "LanternButler",
+    "name": "Loomen",
+    "icon": "lanternbutler",
+    "dex": 180
+  },
+  {
+    "characterId": "MoonChild",
+    "name": "Wistella",
+    "icon": "moonchild",
+    "dex": 181
+  },
+  {
+    "characterId": "MonochromeQueen",
+    "name": "Solenne",
+    "icon": "monochromequeen",
+    "dex": 182
+  },
+  {
+    "characterId": "KabukiMan",
+    "name": "Renjishi",
+    "icon": "kabukiman",
+    "dex": 183
+  },
+  {
+    "characterId": "DomeArmorDragon",
+    "name": "Aegidron",
+    "icon": "domearmordragon",
+    "dex": 184
+  },
+  {
+    "characterId": "ElecPanda",
+    "name": "Grizzbolt",
+    "icon": "elecpanda",
+    "dex": 185
+  },
+  {
+    "characterId": "LilyQueen",
+    "name": "Lyleen",
+    "icon": "lilyqueen",
+    "dex": 186
+  },
+  {
+    "characterId": "LilyQueen_Dark",
+    "name": "Lyleen Noct",
+    "icon": "lilyqueen_dark",
+    "dex": 186
+  },
+  {
+    "characterId": "ThunderDragonMan",
+    "name": "Orserk",
+    "icon": "thunderdragonman",
+    "dex": 187
+  },
+  { "characterId": "Horus", "name": "Faleris", "icon": "horus", "dex": 188 },
+  {
+    "characterId": "Horus_Oilrig",
+    "name": "Faleris",
+    "icon": "horus",
+    "dex": 188
+  },
+  {
+    "characterId": "Horus_Water",
+    "name": "Faleris Aqua",
+    "icon": "horus_water",
+    "dex": 188
+  },
+  {
+    "characterId": "BlackGriffon",
+    "name": "Shadowbeak",
+    "icon": "blackgriffon",
+    "dex": 189
+  },
+  {
+    "characterId": "MoonQueen",
+    "name": "Selyne",
+    "icon": "moonqueen",
+    "dex": 190
+  },
+  {
+    "characterId": "SnowTigerBeastman",
+    "name": "Bastigor",
+    "icon": "snowtigerbeastman",
+    "dex": 191
+  },
+  {
+    "characterId": "BlueSkyDragon",
+    "name": "Shaolong",
+    "icon": "blueskydragon",
+    "dex": 192
+  },
+  {
+    "characterId": "Mothman",
+    "name": "Silvance",
+    "icon": "mothman",
+    "dex": 193
+  },
+  {
+    "characterId": "FlowerPrince",
+    "name": "Dandilord",
+    "icon": "flowerprince",
+    "dex": 194
+  },
+  {
+    "characterId": "NightLady",
+    "name": "Bellanoir",
+    "icon": "nightlady",
+    "dex": 195
+  },
+  {
+    "characterId": "NightLady_Dark",
+    "name": "Bellanoir Libero",
+    "icon": "nightlady_dark",
+    "dex": 195
+  },
+  {
+    "characterId": "DarkMechaDragon",
+    "name": "Xenolord",
+    "icon": "darkmechadragon",
+    "dex": 196
+  },
+  {
+    "characterId": "LegendDeer",
+    "name": "Hartalis",
+    "icon": "legenddeer",
+    "dex": 197
+  },
+  {
+    "characterId": "SaintCentaur",
+    "name": "Paladius",
+    "icon": "saintcentaur",
+    "dex": 198
+  },
+  {
+    "characterId": "BlackCentaur",
+    "name": "Necromus",
+    "icon": "blackcentaur",
+    "dex": 199
+  },
+  {
+    "characterId": "IceHorse",
+    "name": "Frostallion",
+    "icon": "icehorse",
+    "dex": 200
+  },
+  {
+    "characterId": "IceHorse_Dark",
+    "name": "Frostallion Noct",
+    "icon": "icehorse_dark",
+    "dex": 200
+  },
+  {
+    "characterId": "PoseidonOrca",
+    "name": "Neptilius",
+    "icon": "poseidonorca",
+    "dex": 201
+  },
+  {
+    "characterId": "JetDragon",
+    "name": "Jetragon",
+    "icon": "jetdragon",
+    "dex": 202
+  },
+  {
+    "characterId": "KingWhale",
+    "name": "Panthalus",
+    "icon": "kingwhale",
+    "dex": 203
+  },
+  {
+    "characterId": "WorldTreeDragon",
+    "name": "Astralym",
+    "icon": "worldtreedragon",
+    "dex": 204
+  }
+]
