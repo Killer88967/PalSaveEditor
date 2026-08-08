@@ -461,7 +461,7 @@ fn capabilities(properties: Option<&Properties>) -> PalEditCapabilities {
         character_id: property("CharacterID").is_some_and(|v| matches!(v, Property::Name(_) | Property::Str(_))),
         nickname: property("NickName").is_some_and(|v| matches!(v, Property::Str(_))),
         level: integer("Level"),
-        rank: false,
+        rank: property("CharacterID").is_some(),
         gender: property("Gender").is_some_and(|v|
             matches!(v, Property::Enum(_) | Property::Byte(Byte::Label(_)))
         ),
@@ -576,6 +576,29 @@ fn test_schemas(
     }
 }
 
+fn ensure_rank_property(decoded: &mut DecodedRaw) -> Result<(), String> {
+    let key = PropertyKey(0, "Rank".into());
+    let created = {
+        let sp = decoded.save_parameter_mut()?;
+        if sp.0.contains_key(&key) {
+            false
+        } else {
+            sp.0.insert(key, Property::Byte(Byte::Byte(1))); // 1 = no stars
+            true
+        }
+    };
+    if created {
+        decoded.schemas.insert(
+            "SaveParameter.Rank".into(),
+            PropertyTagPartial {
+                id: None,
+                data: uesave::PropertyTagDataPartial::Byte(Some("None".into())),
+            },
+        );
+    }
+    Ok(())
+}
+
 fn encode_raw_data(header: &Header, decoded: &DecodedRaw) -> Result<Vec<u8>, String> {
     let mut writer = RawWriter::new(header, &decoded.schemas);
     write_properties_none_terminated(&mut writer, &decoded.properties).map_err(|e|
@@ -612,6 +635,9 @@ pub fn update(
     let errors = validate_update(request, decoded.save_parameter());
     if !errors.is_empty() {
         return Err(UpdateError::Validation(errors));
+    }
+    if request.rank.is_some() {
+        ensure_rank_property(&mut decoded).map_err(UpdateError::Internal)?;
     }
     apply_update(decoded.save_parameter_mut().map_err(UpdateError::Internal)?, request).map_err(
         |(field, message)| UpdateError::Validation(BTreeMap::from([(field, message)]))
@@ -656,9 +682,13 @@ fn validate_update(
     }
     existing!(nickname, nickname, "nickname");
     existing!(level, level, "level");
-    if request.rank.is_some() {
+    if let Some(v) = &request.rank {
         requested += 1;
-        errors.insert("rank".into(), "Star rank editing is not supported".into());
+        if !caps.rank {
+            errors.insert("rank".into(), "Field is absent or has an unsupported property type".into());
+        } else if !(1..=5).contains(&v.value) {
+            errors.insert("rank".into(), "Star rank must be between 1 (no stars) and 5 (4 stars)".into());
+        }
     }
     existing!(gender, gender, "gender");
     existing!(rank_hp, rank_hp, "rankHp");
