@@ -267,7 +267,7 @@ export function PalList({
   }
 
   return (
-    <div className="card grid min-h-128 overflow-hidden lg:grid-cols-[minmax(0,1.3fr)_minmax(22rem,0.9fr)]">
+    <div className="card grid min-h-128 lg:h-168 overflow-hidden lg:grid-cols-[minmax(0,1.3fr)_minmax(22rem,0.9fr)]">
       <section
         className="flex min-w-0 flex-col border-b border-line lg:border-b-0 lg:border-r"
         aria-label="Pal list"
