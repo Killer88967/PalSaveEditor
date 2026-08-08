@@ -330,7 +330,7 @@ export function PalDetail({
               <label className="block">
                 <span className="field-label">Star progression</span>
                 <select
-                  value={form.rank}
+                  value={form.rank ?? 1}
                   onChange={(e) => set("rank", Number(e.target.value))}
                   className="field"
                 >
