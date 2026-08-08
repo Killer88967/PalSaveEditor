@@ -313,8 +313,66 @@ async function apiError(response: Response): Promise<PalSaveApiError> {
   );
 }
 
+// --- transparent session recovery -------------------------------------------
+// A Render restart drops in-memory sessions ("session not found"). Keep the
+// uploaded file, silently rebuild the session, then retry the same request.
+const rawFetch = globalThis.fetch.bind(globalThis);
+const SESSION_URL = /\/api\/rust\/sessions\/([0-9a-fA-F-]{36})(?:\/|$)/;
+
+let recoveryFiles: File[] = [];
+let onRecovered: ((session: SaveSession) => void) | null = null;
+let recoveryInFlight: Promise<SaveSession> | null = null;
+
+/** Call after opening a save so an expired session can be rebuilt from the upload. */
+export function registerSessionRecovery(
+  files: File[],
+  onSession: (session: SaveSession) => void,
+) {
+  recoveryFiles = files;
+  onRecovered = onSession;
+}
+
+async function apiFetch(input: string, init?: RequestInit): Promise<Response> {
+  const response = await rawFetch(input, init);
+  const match = input.match(SESSION_URL);
+  if (
+    response.ok ||
+    !match ||
+    recoveryFiles.length === 0 ||
+    init?.body instanceof FormData
+  ) {
+    return response;
+  }
+  const text = await response.clone().text();
+  if (
+    response.status !== 404 ||
+    !/session/i.test(text) ||
+    !/not found/i.test(text)
+  ) {
+    return response;
+  }
+  // Rebuild once even if several requests fail at the same time.
+  if (!recoveryInFlight) {
+    recoveryInFlight = createSaveSession(recoveryFiles)
+      .then((session) => {
+        onRecovered?.(session);
+        return session;
+      })
+      .finally(() => {
+        recoveryInFlight = null;
+      });
+  }
+  let rebuilt: SaveSession;
+  try {
+    rebuilt = await recoveryInFlight;
+  } catch {
+    return response; // recovery failed — surface the original error
+  }
+  return rawFetch(input.replace(match[1], rebuilt.id), init); // retry against the new id
+}
+
 export async function getApiHealth(): Promise<HealthResponse> {
-  const response = await fetch("/api/rust/health");
+  const response = await apiFetch("/api/rust/health");
 
   if (!response.ok) {
     throw await apiError(response);
@@ -330,7 +388,7 @@ export async function createSaveSession(
   const formData = new FormData();
   for (const file of files) formData.append("files", file);
 
-  const response = await fetch("/api/rust/sessions", {
+  const response = await apiFetch("/api/rust/sessions", {
     method: "POST",
     body: formData,
     signal,
@@ -347,7 +405,9 @@ export async function getSaveSession(
   sessionId: string,
   signal?: AbortSignal,
 ): Promise<SaveSession> {
-  const response = await fetch(`/api/rust/sessions/${sessionId}`, { signal });
+  const response = await apiFetch(`/api/rust/sessions/${sessionId}`, {
+    signal,
+  });
 
   if (!response.ok) {
     throw await apiError(response);
@@ -360,7 +420,7 @@ export async function getSaveRoot(
   sessionId: string,
   signal?: AbortSignal,
 ): Promise<SaveNodeResponse> {
-  const response = await fetch(`/api/rust/sessions/${sessionId}/root`, {
+  const response = await apiFetch(`/api/rust/sessions/${sessionId}/root`, {
     signal,
   });
 
@@ -376,7 +436,7 @@ export async function inspectSaveNode(
   request: InspectSaveNodeRequest,
   signal?: AbortSignal,
 ): Promise<SaveNodeResponse> {
-  const response = await fetch(`/api/rust/sessions/${sessionId}/inspect`, {
+  const response = await apiFetch(`/api/rust/sessions/${sessionId}/inspect`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(request),
@@ -395,7 +455,7 @@ export async function updateSaveScalar(
   request: UpdateSaveScalarRequest,
   signal?: AbortSignal,
 ): Promise<UpdateSaveScalarResponse> {
-  const response = await fetch(`/api/rust/sessions/${sessionId}/scalar`, {
+  const response = await apiFetch(`/api/rust/sessions/${sessionId}/scalar`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(request),
@@ -411,7 +471,7 @@ export async function getSaveOverview(
   sessionId: string,
   signal?: AbortSignal,
 ): Promise<SaveOverview> {
-  const response = await fetch(
+  const response = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/overview`,
     { signal },
   );
@@ -428,7 +488,7 @@ export async function exportSaveSession(
   validate = true,
   signal?: AbortSignal,
 ): Promise<Blob> {
-  const response = await fetch(
+  const response = await apiFetch(
     `/api/rust/sessions/${sessionId}/export?validate=${validate}`,
     { signal },
   );
@@ -445,7 +505,7 @@ export async function exportSaveSessionGvas(
   sessionId: string,
   signal?: AbortSignal,
 ): Promise<Blob> {
-  const response = await fetch(
+  const response = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/gvas`,
     { signal },
   );
@@ -488,7 +548,7 @@ async function convert(
   const body = new FormData();
   body.append("file", file);
 
-  const response = await fetch(`/api/rust/convert/${operation}`, {
+  const response = await apiFetch(`/api/rust/convert/${operation}`, {
     method: "POST",
     body,
     signal,
@@ -529,7 +589,7 @@ export async function getPals(
     if (value !== undefined && value !== "") params.set(key, String(value));
   }
   const suffix = params.size ? `?${params.toString()}` : "";
-  const response = await fetch(
+  const response = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/pals${suffix}`,
     { signal },
   );
@@ -542,7 +602,7 @@ export async function getPal(
   palId: string,
   signal?: AbortSignal,
 ): Promise<PalDetail> {
-  const response = await fetch(
+  const response = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/pals/${encodeURIComponent(palId)}`,
     { signal },
   );
@@ -556,7 +616,7 @@ export async function updatePal(
   request: UpdatePalRequest,
   signal?: AbortSignal,
 ): Promise<UpdatePalResponse> {
-  const response = await fetch(
+  const response = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/pals/${encodeURIComponent(palId)}`,
     {
       method: "PATCH",
@@ -570,7 +630,7 @@ export async function updatePal(
 }
 
 export async function deleteSaveSession(sessionId: string): Promise<boolean> {
-  const response = await fetch(`/api/rust/sessions/${sessionId}`, {
+  const response = await apiFetch(`/api/rust/sessions/${sessionId}`, {
     method: "DELETE",
   });
 
@@ -646,7 +706,7 @@ export async function getInventoryPlayers(
   sessionId: string,
   signal?: AbortSignal,
 ): Promise<PlayerInventoryOwner[]> {
-  const r = await fetch(
+  const r = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/players`,
     { signal },
   );
@@ -658,7 +718,7 @@ export async function getPlayerInventory(
   playerUid: string,
   signal?: AbortSignal,
 ): Promise<InventoryContainer[]> {
-  const r = await fetch(
+  const r = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/players/${encodeURIComponent(playerUid)}/inventory`,
     { signal },
   );
@@ -673,7 +733,7 @@ export async function updateInventorySlot(
   request: UpdateInventorySlotRequest,
   signal?: AbortSignal,
 ): Promise<UpdateInventorySlotResponse> {
-  const r = await fetch(
+  const r = await apiFetch(
     `${slotsUrl(sessionId, playerUid, containerId)}/${index}`,
     {
       method: "PATCH",
@@ -692,7 +752,7 @@ export async function addInventoryItem(
   request: AddInventoryItemRequest,
   signal?: AbortSignal,
 ): Promise<AddInventoryItemResponse> {
-  const r = await fetch(slotsUrl(sessionId, playerUid, containerId), {
+  const r = await apiFetch(slotsUrl(sessionId, playerUid, containerId), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(request),
@@ -710,7 +770,7 @@ export async function removeInventorySlot(
   expectedRevision: number,
   signal?: AbortSignal,
 ): Promise<UpdateInventorySlotResponse> {
-  const r = await fetch(
+  const r = await apiFetch(
     `${slotsUrl(sessionId, playerUid, containerId)}/${index}?expectedRevision=${expectedRevision}`,
     { method: "DELETE", signal },
   );
@@ -722,7 +782,7 @@ export async function getKnownItems(
   sessionId: string,
   signal?: AbortSignal,
 ): Promise<KnownItem[]> {
-  const r = await fetch(
+  const r = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/items`,
     { signal },
   );
@@ -787,7 +847,7 @@ export async function getPlayerStats(
   sessionId: string,
   signal?: AbortSignal,
 ): Promise<PlayerDetail[]> {
-  const r = await fetch(
+  const r = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/player-stats`,
     { signal },
   );
@@ -800,7 +860,7 @@ export async function updatePlayerStats(
   request: UpdatePlayerRequest,
   signal?: AbortSignal,
 ): Promise<UpdatePlayerResponse> {
-  const r = await fetch(
+  const r = await apiFetch(
     `/api/rust/sessions/${encodeURIComponent(sessionId)}/player-stats/${encodeURIComponent(playerUid)}`,
     {
       method: "PATCH",

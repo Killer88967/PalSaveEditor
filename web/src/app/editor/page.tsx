@@ -30,6 +30,7 @@ import {
   inspectSaveNode,
   PalSaveApiError,
   updateSaveScalar,
+  registerSessionRecovery,
   type EditableScalarValue,
   type SaveNodeResponse,
   type SaveNodeSummary,
@@ -150,6 +151,13 @@ export default function EditorPage() {
       }
 
       setSession(created);
+      registerSessionRecovery(picked, (restored) => {
+        setSession(restored);
+        setStatus({
+          tone: "info",
+          text: "Session restored after a server restart.",
+        });
+      });
       setStatus({
         tone: "success",
         text: `Opened ${created.fileName} — ${created.container.compression} container, ${formatFileSize(created.decompressedSize)} of GVAS`,
