@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import type {
   PalDetail as PalDetailModel,
   UpdatePalRequest,
@@ -8,8 +8,13 @@ import type {
 import { buildPalUpdate, STAR_OPTIONS, validateSkillIds } from "@/lib/pal-form";
 import { humanizeId, shortId } from "@/lib/format";
 import { AlertIcon, PalIcon, TreeIcon } from "@/components/icons";
+import { WikiIcon } from "@/components/wiki-browser";
+import {
+  ELEMENT_COLORS,
+  lookupSpecies,
+  usePalCatalog,
+} from "@/lib/pal-catalog";
 
-/** Editable numeric fields, with the bounds the API enforces. */
 const NUMBERS = [
   ["level", "Level", 1, 255],
   ["rankHp", "Souls · HP", 0, 255],
@@ -22,20 +27,64 @@ const NUMBERS = [
   ["talentDefense", "IV · Defence", 0, 255],
 ] as const;
 
-const BOSS = "BOSS_";
-const base = (id: string) => id.replace(/^(BOSS_|GYM_)/, "");
-const isAlpha = (id: string) => id.startsWith(BOSS);
-// toggle on  -> update characterId = BOSS + base(current)
-// toggle off -> update characterId = base(current)
+const IVS = [
+  ["talentHp", "HP"],
+  ["talentMelee", "Melee"],
+  ["talentShot", "Ranged"],
+  ["talentDefense", "Defence"],
+] as const;
+const SOULS = [
+  ["rankHp", "HP"],
+  ["rankAttack", "Attack"],
+  ["rankDefence", "Defence"],
+  ["rankCraftSpeed", "Work"],
+] as const;
 
-/** Values above this are legal in the file but well outside normal gameplay. */
+const BOSS = "BOSS_";
+const base = (id?: string | null) => (id ?? "").replace(/^(BOSS_|GYM_)/, "");
+const isAlpha = (id?: string | null) => (id ?? "").startsWith(BOSS);
 const UNUSUAL_THRESHOLD = 100;
 
-function Stat({ label, value }: { label: string; value?: string | number }) {
+function ElementChip({ el }: { el: string }) {
+  const c = ELEMENT_COLORS[el];
   return (
-    <div className="panel p-2.5">
-      <dt className="text-xs text-subtle">{label}</dt>
-      <dd className="mt-0.5 break-all text-sm tabular-nums">{value ?? "—"}</dd>
+    <span
+      className="rounded px-1.5 py-0.5 text-[10px] font-medium"
+      style={{
+        color: c ?? "var(--color-subtle)",
+        background: c ? `${c}1f` : "var(--color-sunken)",
+      }}
+    >
+      {el}
+    </span>
+  );
+}
+
+function StatBar({
+  label,
+  value,
+  max,
+  color,
+}: {
+  label: string;
+  value?: number;
+  max: number;
+  color: string;
+}) {
+  const v = value ?? 0;
+  const pct = Math.max(0, Math.min(100, (v / max) * 100));
+  return (
+    <div>
+      <div className="flex justify-between text-xs">
+        <span className="text-subtle">{label}</span>
+        <span className="tabular-nums">{v}</span>
+      </div>
+      <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-sunken">
+        <div
+          className="h-full rounded-full transition-[width]"
+          style={{ width: `${pct}%`, background: color }}
+        />
+      </div>
     </div>
   );
 }
@@ -60,32 +109,24 @@ export function PalDetail({
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState<string>();
   const [fields, setFields] = useState<Record<string, string>>({});
-  const [species, setSpecies] = useState<
-    { characterId: string; name: string }[]
-  >([]);
-  useEffect(() => {
-    fetch("/wiki/data/species.json")
-      .then((r) => r.json())
-      .then(setSpecies)
-      .catch(() => {});
-  }, []);
+  const catalog = usePalCatalog();
+  const speciesOptions = useMemo(
+    () => Array.from(catalog.values()).sort((a, b) => a.dex - b.dex),
+    [catalog],
+  );
 
-  if (loading) {
+  if (loading)
     return (
       <p className="p-6 text-sm text-muted" role="status">
         Loading Pal details…
       </p>
     );
-  }
-
-  if (error) {
+  if (error)
     return (
       <p className="p-6 text-sm text-danger" role="alert">
         {error}
       </p>
     );
-  }
-
   if (!detail || !form) {
     return (
       <div className="flex flex-col items-center justify-center gap-3 p-8 text-center">
@@ -100,6 +141,12 @@ export function PalDetail({
   }
 
   const capabilities = detail.editCapabilities;
+  const species = lookupSpecies(catalog, form.characterId);
+  const el0 = species?.elements?.[0];
+  const barColor = el0
+    ? (ELEMENT_COLORS[el0] ?? "var(--color-accent)")
+    : "var(--color-accent)";
+  const alpha = isAlpha(form.characterId);
 
   function set(key: keyof PalDetailModel, value: string | number) {
     setForm((current) => (current ? { ...current, [key]: value } : current));
@@ -115,7 +162,6 @@ export function PalDetail({
       });
       return;
     }
-
     setSaving(true);
     setFormError(undefined);
     setFields({});
@@ -140,62 +186,51 @@ export function PalDetail({
 
   return (
     <section
-      className="scroll-slim max-h-168 space-y-4 overflow-y-auto p-4"
+      className="scroll-slim max-h-168 space-y-5 overflow-y-auto p-4"
       aria-label="Selected character details"
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
+      <div className="flex items-start gap-4">
+        <div className="relative shrink-0">
+          <div
+            className="grid size-20 place-items-center overflow-hidden rounded-xl border border-line bg-sunken"
+            style={
+              el0
+                ? { boxShadow: `inset 0 0 0 2px ${ELEMENT_COLORS[el0]}66` }
+                : undefined
+            }
+          >
+            {species?.icon ? (
+              <WikiIcon icon={species.icon} alt="" className="size-18" />
+            ) : (
+              <PalIcon className="size-8 text-subtle" />
+            )}
+          </div>
+          {alpha && (
+            <span
+              className="absolute -right-1.5 -top-1.5 rounded px-1.5 py-0.5 text-[10px] font-bold text-white"
+              style={{ background: "#f0733b" }}
+            >
+              ALPHA
+            </span>
+          )}
+        </div>
+
+        <div className="min-w-0 flex-1">
           <h3 className="truncate text-lg font-semibold">
-            {form.nickname || humanizeId(form.characterId)}
+            {form.nickname || species?.name || humanizeId(form.characterId)}
           </h3>
-          <p className="truncate font-mono text-xs text-subtle">
-            {form.characterId ?? "—"}
+          <p className="truncate text-sm text-subtle">
+            {species?.name ?? humanizeId(form.characterId)}
+            <span className="ml-1.5 tabular-nums text-foreground">
+              Lv {form.level ?? "—"}
+            </span>
           </p>
-          <div className="mt-2 flex flex-wrap gap-1.5">
+          <div className="mt-2 flex flex-wrap items-center gap-1.5">
+            {species?.elements?.map((el) => (
+              <ElementChip key={el} el={el} />
+            ))}
             {detail.isPlayer && <span className="badge">Player</span>}
             {detail.gender && <span className="badge">{detail.gender}</span>}
-            {capabilities.characterId && form.characterId && (
-              <label className="field">
-                <span>Species</span>
-                <select
-                  className="left-2"
-                  value={base(form.characterId)}
-                  onChange={(e) =>
-                    set(
-                      "characterId",
-                      (isAlpha(form.characterId!) ? BOSS : "") + e.target.value,
-                    )
-                  }
-                >
-                  {!species.some(
-                    (s) => s.characterId === base(form.characterId!),
-                  ) && (
-                    <option value={base(form.characterId)}>
-                      {humanizeId(base(form.characterId))}
-                    </option>
-                  )}
-                  {species.map((s) => (
-                    <option key={s.characterId} value={s.characterId}>
-                      {s.name}
-                    </option>
-                  ))}
-                </select>
-                <label className="mt-1 flex items-center gap-2 text-sm">
-                  <input
-                    type="checkbox"
-                    checked={isAlpha(form.characterId)}
-                    onChange={(e) =>
-                      set(
-                        "characterId",
-                        (e.target.checked ? BOSS : "") +
-                          base(form.characterId!),
-                      )
-                    }
-                  />
-                  Alpha / Boss variant
-                </label>
-              </label>
-            )}
             {detail.instanceId && (
               <span className="badge" title={detail.instanceId}>
                 <span className="font-mono">{shortId(detail.instanceId)}</span>
@@ -229,18 +264,62 @@ export function PalDetail({
       {editing ? (
         <form
           className="space-y-4"
-          onSubmit={(event) => {
-            event.preventDefault();
+          onSubmit={(e) => {
+            e.preventDefault();
             void submit();
           }}
         >
+          {capabilities.characterId && form.characterId && (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="block">
+                <span className="field-label">Species</span>
+                <select
+                  value={base(form.characterId)}
+                  onChange={(e) =>
+                    set(
+                      "characterId",
+                      (isAlpha(form.characterId) ? BOSS : "") + e.target.value,
+                    )
+                  }
+                  className="field"
+                >
+                  {!speciesOptions.some(
+                    (s) => s.characterId === base(form.characterId),
+                  ) && (
+                    <option value={base(form.characterId)}>
+                      {humanizeId(base(form.characterId))}
+                    </option>
+                  )}
+                  {speciesOptions.map((s) => (
+                    <option key={s.characterId} value={s.characterId}>
+                      {s.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="flex items-end gap-2 pb-2">
+                <input
+                  type="checkbox"
+                  checked={alpha}
+                  onChange={(e) =>
+                    set(
+                      "characterId",
+                      (e.target.checked ? BOSS : "") + base(form.characterId),
+                    )
+                  }
+                />
+                <span className="text-sm">Alpha / Boss variant</span>
+              </label>
+            </div>
+          )}
+
           {capabilities.nickname && (
             <label className="block">
               <span className="field-label">Nickname</span>
               <input
                 value={form.nickname ?? ""}
                 maxLength={64}
-                onChange={(event) => set("nickname", event.target.value)}
+                onChange={(e) => set("nickname", e.target.value)}
                 className="field"
               />
             </label>
@@ -252,24 +331,23 @@ export function PalDetail({
                 <span className="field-label">Star progression</span>
                 <select
                   value={form.rank}
-                  onChange={(event) => set("rank", Number(event.target.value))}
+                  onChange={(e) => set("rank", Number(e.target.value))}
                   className="field"
                 >
-                  {STAR_OPTIONS.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
+                  {STAR_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>
+                      {o.label}
                     </option>
                   ))}
                 </select>
               </label>
             )}
-
             {capabilities.gender && (
               <label className="block">
                 <span className="field-label">Gender</span>
                 <select
                   value={form.gender}
-                  onChange={(event) => set("gender", event.target.value)}
+                  onChange={(e) => set("gender", e.target.value)}
                   className="field"
                 >
                   <option value="Male">Male</option>
@@ -290,7 +368,7 @@ export function PalDetail({
                       min={min}
                       max={max}
                       value={form[key] ?? ""}
-                      onChange={(event) => set(key, Number(event.target.value))}
+                      onChange={(e) => set(key, Number(e.target.value))}
                       className="field tabular-nums"
                       aria-invalid={Boolean(fields[key])}
                     />
@@ -322,11 +400,11 @@ export function PalDetail({
                         <input
                           value={skill}
                           aria-label={`${label} ${position + 1}`}
-                          onChange={(event) =>
+                          onChange={(e) =>
                             setForm((current) => {
                               if (!current) return current;
                               const next = [...current[key]];
-                              next[position] = event.target.value;
+                              next[position] = e.target.value;
                               return { ...current, [key]: next };
                             })
                           }
@@ -341,7 +419,7 @@ export function PalDetail({
                                 ? {
                                     ...current,
                                     [key]: current[key].filter(
-                                      (_, index) => index !== position,
+                                      (_, i) => i !== position,
                                     ),
                                   }
                                 : current,
@@ -383,7 +461,6 @@ export function PalDetail({
               </p>
             </div>
           )}
-
           {formError && (
             <p className="text-sm text-danger" role="alert">
               {formError}
@@ -415,36 +492,74 @@ export function PalDetail({
         </form>
       ) : (
         <>
-          <dl className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-            <Stat label="Level" value={detail.level} />
-            <Stat
-              label="Star rank"
-              value={STAR_OPTIONS.find((o) => o.value === detail.rank)?.label}
-            />
-            {NUMBERS.slice(1).map(([key, label]) => (
-              <Stat key={key} label={label} value={detail[key]} />
+          {IVS.some(([k]) => detail[k] !== undefined) && (
+            <div>
+              <h4 className="mb-2 text-xs font-medium text-subtle">
+                IVs (Talents)
+              </h4>
+              <div className="grid gap-2.5 sm:grid-cols-2">
+                {IVS.map(
+                  ([key, label]) =>
+                    detail[key] !== undefined && (
+                      <StatBar
+                        key={key}
+                        label={label}
+                        value={detail[key] as number}
+                        max={100}
+                        color={barColor}
+                      />
+                    ),
+                )}
+              </div>
+            </div>
+          )}
+
+          <dl className="grid grid-cols-3 gap-2 sm:grid-cols-6">
+            <div className="panel p-2.5">
+              <dt className="text-xs text-subtle">Level</dt>
+              <dd className="mt-0.5 text-sm tabular-nums">
+                {detail.level ?? "—"}
+              </dd>
+            </div>
+            <div className="panel p-2.5">
+              <dt className="text-xs text-subtle">Stars</dt>
+              <dd className="mt-0.5 text-sm tabular-nums">
+                {detail.rank !== undefined ? Math.max(0, detail.rank - 1) : "—"}
+              </dd>
+            </div>
+            {SOULS.map(([key, label]) => (
+              <div key={key} className="panel p-2.5">
+                <dt className="text-xs text-subtle">Soul {label}</dt>
+                <dd className="mt-0.5 text-sm tabular-nums">
+                  {detail[key] ?? "—"}
+                </dd>
+              </div>
             ))}
           </dl>
 
           <div className="grid gap-3 sm:grid-cols-2">
             {(
               [
-                ["Passive skills", detail.passiveSkills],
                 ["Active skills", detail.activeSkills],
+                ["Passive skills", detail.passiveSkills],
               ] as const
             ).map(([label, values]) => (
               <div key={label}>
-                <h4 className="text-xs text-subtle">{label}</h4>
+                <h4 className="text-xs font-medium text-subtle">{label}</h4>
                 {values.length ? (
-                  <ul className="mt-1 flex flex-wrap gap-1">
+                  <ul className="mt-1.5 flex flex-wrap gap-1.5">
                     {values.map((value, index) => (
-                      <li key={`${value}-${index}`} className="badge">
-                        <span className="font-mono">{value}</span>
+                      <li
+                        key={`${value}-${index}`}
+                        className="badge"
+                        title={value}
+                      >
+                        {humanizeId(value)}
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="mt-1 text-sm text-subtle">None saved</p>
+                  <p className="mt-1.5 text-sm text-subtle">None saved</p>
                 )}
               </div>
             ))}
