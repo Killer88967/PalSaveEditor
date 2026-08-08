@@ -9,6 +9,7 @@ import { buildPalUpdate, STAR_OPTIONS, validateSkillIds } from "@/lib/pal-form";
 import { humanizeId, shortId } from "@/lib/format";
 import { AlertIcon, PalIcon, TreeIcon } from "@/components/icons";
 import { WikiIcon } from "@/components/wiki-browser";
+import { SpeciesSelect } from "@/components/species-select";
 import {
   ELEMENT_COLORS,
   lookupSpecies,
@@ -273,29 +274,16 @@ export function PalDetail({
             <div className="grid gap-3 sm:grid-cols-2">
               <label className="block">
                 <span className="field-label">Species</span>
-                <select
+                <SpeciesSelect
                   value={base(form.characterId)}
-                  onChange={(e) =>
+                  options={speciesOptions}
+                  onChangeAction={(id) =>
                     set(
                       "characterId",
-                      (isAlpha(form.characterId) ? BOSS : "") + e.target.value,
+                      (isAlpha(form.characterId) ? BOSS : "") + id,
                     )
                   }
-                  className="field"
-                >
-                  {!speciesOptions.some(
-                    (s) => s.characterId === base(form.characterId),
-                  ) && (
-                    <option value={base(form.characterId)}>
-                      {humanizeId(base(form.characterId))}
-                    </option>
-                  )}
-                  {speciesOptions.map((s) => (
-                    <option key={s.characterId} value={s.characterId}>
-                      {s.name}
-                    </option>
-                  ))}
-                </select>
+                />
               </label>
               <label className="flex items-end gap-2 pb-2">
                 <input
