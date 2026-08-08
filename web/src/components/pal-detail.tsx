@@ -61,6 +61,9 @@ export function PalDetail({
   const [formError, setFormError] = useState<string>();
   const [fields, setFields] = useState<Record<string, string>>({});
   const [species, setSpecies] = useState<{ characterId: string; name: string }[]>([]);
+  useEffect(() => {
+    fetch("/wiki/data/species.json").then((r) => r.json()).then(setSpecies).catch(() => {});
+  }, []);
 
   if (loading) {
     return (
