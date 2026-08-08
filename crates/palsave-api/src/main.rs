@@ -1954,12 +1954,12 @@ mod tests {
                 player_request(
                     uri.clone(),
                     json!({
-                        "expectedRevision": 0,
-                        "level": { "value": 200 },
-                        "exp": { "value": 9_000_000 },
-                        "statusPoints": { "value": [{ "name": "最大HP", "value": 255 }] },
-                        "exStatusPoints": { "value": [{ "name": "攻撃力", "value": 5 }] }
-                    })
+                    "expectedRevision": 0,
+                    "level": { "value": 200 },
+                    "exp": { "value": 9_000_000 },
+                    "statusPoints": { "value": [{ "name": "最大HP", "value": 255 }] },
+                    "exStatusPoints": { "value": [{ "name": "攻撃力", "value": 5 }] }
+                })
                 )
             ).await
             .unwrap();

@@ -458,7 +458,9 @@ fn capabilities(properties: Option<&Properties>) -> PalEditCapabilities {
         })
     };
     PalEditCapabilities {
-        character_id: property("CharacterID").is_some_and(|v| matches!(v, Property::Name(_) | Property::Str(_))),
+        character_id: property("CharacterID").is_some_and(|v|
+            matches!(v, Property::Name(_) | Property::Str(_))
+        ),
         nickname: property("NickName").is_some_and(|v| matches!(v, Property::Str(_))),
         level: integer("Level"),
         rank: property("CharacterID").is_some(),
@@ -529,7 +531,14 @@ pub(crate) fn raw_data_for_test(
     );
     let mut schemas = HashMap::new();
     test_schemas("", &properties, &mut schemas);
-    encode_raw_data(header, &(DecodedRaw { properties, suffix: Vec::new(), schemas }))
+    encode_raw_data(
+        header,
+        &(DecodedRaw {
+            properties,
+            suffix: Vec::new(),
+            schemas,
+        })
+    )
 }
 
 /// Derives the per-path property schemas the writer normally collects while
@@ -588,13 +597,10 @@ fn ensure_rank_property(decoded: &mut DecodedRaw) -> Result<(), String> {
         }
     };
     if created {
-        decoded.schemas.insert(
-            "SaveParameter.Rank".into(),
-            PropertyTagPartial {
-                id: None,
-                data: uesave::PropertyTagDataPartial::Byte(Some("None".into())),
-            },
-        );
+        decoded.schemas.insert("SaveParameter.Rank".into(), PropertyTagPartial {
+            id: None,
+            data: uesave::PropertyTagDataPartial::Byte(Some("None".into())),
+        });
     }
     Ok(())
 }
@@ -675,9 +681,11 @@ fn validate_update(
     existing!(character_id, character_id, "characterId");
     if let Some(v) = &request.character_id {
         let id = v.value.trim();
-        if id.is_empty() || !id.chars().all(|c| c.is_ascii_alphanumeric() || c == '_') {
-            errors.insert("characterId".into(),
-                "Species id must be non-empty letters, digits, or underscores".into());
+        if id.is_empty() || !id.chars().all(|c| c.is_ascii_alphanumeric() || c == '_' ) {
+            errors.insert(
+                "characterId".into(),
+                "Species id must be non-empty letters, digits, or underscores".into()
+            );
         }
     }
     existing!(nickname, nickname, "nickname");
@@ -685,9 +693,15 @@ fn validate_update(
     if let Some(v) = &request.rank {
         requested += 1;
         if !caps.rank {
-            errors.insert("rank".into(), "Field is absent or has an unsupported property type".into());
+            errors.insert(
+                "rank".into(),
+                "Field is absent or has an unsupported property type".into()
+            );
         } else if !(1..=5).contains(&v.value) {
-            errors.insert("rank".into(), "Star rank must be between 1 (no stars) and 5 (4 stars)".into());
+            errors.insert(
+                "rank".into(),
+                "Star rank must be between 1 (no stars) and 5 (4 stars)".into()
+            );
         }
     }
     existing!(gender, gender, "gender");
@@ -805,8 +819,10 @@ fn apply_update(properties: &mut Properties, r: &UpdatePalRequest) -> Result<(),
         };
     }
     if let Some(v) = &r.character_id {
-        set_existing_name(properties, "CharacterID", v.value.clone())
-            .map_err(|e| ("characterId".into(), e))?;
+        set_existing_name(properties, "CharacterID", v.value.clone()).map_err(|e| (
+            "characterId".into(),
+            e,
+        ))?;
     }
     if let Some(v) = &r.nickname {
         set_existing_string(properties, "NickName", v.value.clone()).map_err(|e| (
@@ -881,8 +897,12 @@ fn set_existing_string(p: &mut Properties, name: &str, value: String) -> Result<
 }
 fn set_existing_name(p: &mut Properties, name: &str, value: String) -> Result<(), String> {
     match exact_mut(p, name, 0).ok_or_else(|| format!("{name} is absent"))? {
-        Property::Name(v) | Property::Str(v) => *v = value,
-        _ => return Err(format!("{name} is not a name/string property")),
+        Property::Name(v) | Property::Str(v) => {
+            *v = value;
+        }
+        _ => {
+            return Err(format!("{name} is not a name/string property"));
+        }
     }
     Ok(())
 }
@@ -1445,9 +1465,9 @@ pub fn update_player(
 ) -> Result<PlayerDetail, UpdateError> {
     let header = save.header.clone();
     let entries = character_map(save).map_err(UpdateError::Internal)?;
-    let index = resolve_player(&header, entries, player_uid).ok_or_else(||
+    let index = resolve_player(&header, entries, player_uid).ok_or_else(|| {
         UpdateError::NotFound(format!("player {player_uid} was not found in the world file"))
-    )?;
+    })?;
     let mut value = entries[index].value.clone();
     let mut decoded = decode_raw_data(&header, &value).map_err(UpdateError::Internal)?;
     let errors = validate_player_update(request, decoded.save_parameter());
@@ -1460,9 +1480,9 @@ pub fn update_player(
     ).map_err(|(field, message)| UpdateError::Validation(BTreeMap::from([(field, message)])))?;
     let bytes = encode_raw_data(&header, &decoded).map_err(UpdateError::Internal)?;
     set_raw_bytes(&mut value, bytes).map_err(UpdateError::Internal)?;
-    decode_raw_data(&header, &value).map_err(|e|
+    decode_raw_data(&header, &value).map_err(|e| {
         UpdateError::Internal(format!("serialized player failed verification: {e}"))
-    )?;
+    })?;
     character_map_mut(save).map_err(UpdateError::Internal)?[index].value = value;
     let entries = character_map(save).map_err(UpdateError::Internal)?;
     Ok(player_detail_for(&header, index, &entries[index].key, &entries[index].value))
@@ -1579,8 +1599,9 @@ fn status_point(entry: &StructValue) -> Option<PlayerStatusPoint> {
 
 fn status_name(entry: &StructValue) -> Option<&str> {
     match entry {
-        StructValue::Struct(properties) =>
-            property_by_name(properties, "StatusName").and_then(as_string),
+        StructValue::Struct(properties) => {
+            property_by_name(properties, "StatusName").and_then(as_string)
+        }
         _ => None,
     }
 }
