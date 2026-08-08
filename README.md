@@ -7,9 +7,9 @@
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/Killer88967/PalSaveEditor)](https://github.com/Killer88967/PalSaveEditor/commits/main)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/Killer88967/PalSaveEditor)](#)
 
-[![Rust](https://img.shields.io/badge/Rust-Backend-black?logo=rust)](#)
-[![Next.js](https://img.shields.io/badge/Next.js-Frontend-black?logo=nextdotjs)](#)
-[![Docker](https://img.shields.io/badge/Docker-Supported-2496ED?logo=docker&logoColor=white)](#)
+[![Rust](https://img.shields.io/badge/Rust-Backend-black?logo=rust)](https://rust-lang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-Frontend-black?logo=nextdotjs)](https://nextjs.org/)
+[![Docker](https://img.shields.io/badge/Docker-Supported-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/)
 
 A browser-based decompiler, recompiler and editor for Palworld save files. It
 decompresses both container formats, parses the Unreal property tree, lets you
