@@ -25,6 +25,7 @@ export function buildPalUpdate(
   const request: UpdatePalRequest = { expectedRevision };
   const scalar = [
     "nickname",
+    "characterId",
     "level",
     "rank",
     "gender",
@@ -53,6 +54,7 @@ export function updatePalRow(items: PalSummary[], pal: PalDetail) {
       ? {
           ...item,
           nickname: pal.nickname,
+          characterId: pal.characterId,
           level: pal.level,
           rank: pal.rank,
           gender: pal.gender,
