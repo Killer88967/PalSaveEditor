@@ -158,6 +158,7 @@ export function PalDetail({
               <label className="field">
                 <span>Species</span>
                 <select
+                  className="left-2"
                   value={base(form.characterId)}
                   onChange={(e) =>
                     set(
