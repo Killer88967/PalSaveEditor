@@ -112,6 +112,7 @@ export interface PalListResponse {
 }
 
 export interface PalEditCapabilities {
+  characterId: boolean;
   nickname: boolean;
   level: boolean;
   rank: boolean;
@@ -130,6 +131,7 @@ export interface PalEditCapabilities {
 export type FieldUpdate<T> = { value: T };
 export interface UpdatePalRequest {
   expectedRevision: number;
+  characterId?: FieldUpdate<string>;
   nickname?: FieldUpdate<string>;
   level?: FieldUpdate<number>;
   rank?: FieldUpdate<number>;
