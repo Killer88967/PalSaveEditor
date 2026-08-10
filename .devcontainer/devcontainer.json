@@ -46,7 +46,9 @@
         "dbaeumer.vscode-eslint",
         "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "ultram4rine.vscode-choosealicense",
+        "usernamehw.errorlens"
       ],
       "settings": {
         "editor.formatOnSave": true,
