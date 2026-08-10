@@ -17,6 +17,7 @@ export function SpeciesSelect({
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
+  const [dropUp, setDropUp] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -45,7 +46,11 @@ export function SpeciesSelect({
 
   useEffect(() => {
     if (!open) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    const rect = rootRef.current?.getBoundingClientRect();
+    if (rect) {
+      const below = window.innerHeight - rect.bottom;
+      setDropUp(below < 320 && rect.top > below); // flip up only if cramped below and roomier above
+    }
     setQuery("");
     setActive(
       Math.max(
@@ -129,7 +134,9 @@ export function SpeciesSelect({
       </button>
 
       {open && (
-        <div className="absolute z-20 mt-1 w-full overflow-hidden rounded-lg border border-line bg-raised shadow-lg">
+        <div
+          className={`absolute z-20 w-full overflow-hidden rounded-lg border border-line bg-raised shadow-lg ${dropUp ? "bottom-full mb-1" : "top-full mt-1"}`}
+        >
           <div className="border-b border-line p-2">
             <input
               ref={inputRef}
