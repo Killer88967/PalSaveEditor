@@ -824,6 +824,10 @@ fn apply_update(properties: &mut Properties, r: &UpdatePalRequest) -> Result<(),
             e,
         ))?;
     }
+    // Swapping species invalidates the old moveset — clear equipped moves.
+    if r.character_id.is_some() {
+        let _ = set_existing_string_vec(properties, "EquipWaza", Vec::new());
+    }
     if let Some(v) = &r.nickname {
         set_existing_string(properties, "NickName", v.value.clone()).map_err(|e| (
             "nickname".into(),
