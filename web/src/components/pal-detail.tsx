@@ -10,6 +10,8 @@ import { humanizeId, shortId } from "@/lib/format";
 import { AlertIcon, PalIcon, TreeIcon } from "@/components/icons";
 import { WikiIcon } from "@/components/wiki-browser";
 import { SpeciesSelect } from "@/components/species-select";
+import { SkillSelect } from "@/components/skill-select";
+import { useSkillCatalog } from "@/lib/skill-catalog";
 import {
   ELEMENT_COLORS,
   lookupSpecies,
@@ -115,6 +117,7 @@ export function PalDetail({
     () => Array.from(catalog.values()).sort((a, b) => a.dex - b.dex),
     [catalog],
   );
+  const { active: moveOptions, passive: passiveOptions } = useSkillCatalog();
 
   if (loading)
     return (
@@ -385,18 +388,21 @@ export function PalDetail({
                   <div className="space-y-1.5">
                     {form[key].map((skill, position) => (
                       <div key={position} className="flex gap-1.5">
-                        <input
+                        <SkillSelect
                           value={skill}
-                          aria-label={`${label} ${position + 1}`}
-                          onChange={(e) =>
+                          options={
+                            key === "activeSkills"
+                              ? moveOptions
+                              : passiveOptions
+                          }
+                          onChangeAction={(v) =>
                             setForm((current) => {
                               if (!current) return current;
                               const next = [...current[key]];
-                              next[position] = e.target.value;
+                              next[position] = v;
                               return { ...current, [key]: next };
                             })
                           }
-                          className="field field-sm min-w-0 flex-1 font-mono"
                         />
                         <button
                           type="button"
