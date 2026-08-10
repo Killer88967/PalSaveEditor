@@ -382,9 +382,7 @@ export function PalDetail({
             ([key, label]) =>
               capabilities[key] && (
                 <div key={key}>
-                  <p className="field-label">
-                    {label} <span className="text-subtle">(internal IDs)</span>
-                  </p>
+                  <p className="field-label">{label}</p>
                   <div className="space-y-1.5">
                     {form[key].map((skill, position) => (
                       <div key={position} className="flex gap-1.5">
@@ -425,19 +423,23 @@ export function PalDetail({
                       </div>
                     ))}
                   </div>
-                  <button
-                    type="button"
-                    className="mt-1.5 text-xs text-accent hover:underline"
-                    onClick={() =>
-                      setForm((current) =>
-                        current
-                          ? { ...current, [key]: [...current[key], ""] }
-                          : current,
-                      )
-                    }
-                  >
-                    + Add {key === "passiveSkills" ? "passive" : "active"} skill
-                  </button>
+                  {form[key].length < (key === "activeSkills" ? 3 : 4) && (
+                    <button
+                      type="button"
+                      className="mt-1.5 text-xs text-accent hover:underline"
+                      onClick={() =>
+                        setForm((current) =>
+                          current
+                            ? { ...current, [key]: [...current[key], ""] }
+                            : current,
+                        )
+                      }
+                    >
+                      + Add {key === "passiveSkills" ? "passive" : "active"}{" "}
+                      skill
+                    </button>
+                  )}
+
                   {fields[key] && (
                     <p className="mt-1 text-xs text-danger">{fields[key]}</p>
                   )}
