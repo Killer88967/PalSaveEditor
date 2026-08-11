@@ -798,7 +798,7 @@ fn existing_passives(save: &Save, header: &Header, id: &str) -> Vec<String> {
         let entries = character_map(save).ok()?;
         let index = resolve_id(entries, id)?;
         let decoded = decode_raw_data(header, &entries[index].value).ok()?;
-        strings_field(decoded.save_parameter(), "PassiveSkillList") // match your strings_field signature
+        Some(strings_field(Some(decoded.save_parameter()), "PassiveSkillList"))
     })().unwrap_or_default()
 }
 
