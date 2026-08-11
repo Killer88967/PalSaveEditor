@@ -43,6 +43,10 @@ export function buildPalUpdate(
       (request as unknown as Record<string, unknown>)[key] = {
         value: current[key] ?? "",
       };
+  // A bool needs its own diff: the scalar loop's `?? ""` fallback would send a
+  // string, and `false` must survive as `false` rather than becoming empty.
+  if (!!current.isRare !== !!original.isRare)
+    request.isRare = { value: !!current.isRare };
   for (const key of ["passiveSkills", "activeSkills"] as const)
     if (JSON.stringify(current[key]) !== JSON.stringify(original[key]))
       request[key] = { value: current[key] };

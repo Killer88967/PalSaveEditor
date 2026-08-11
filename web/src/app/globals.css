@@ -42,6 +42,10 @@
   --radius: 0.75rem;
 }
 
+@theme {
+  --color-placeholder: #ffffff;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;

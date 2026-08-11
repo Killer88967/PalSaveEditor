@@ -152,7 +152,7 @@ export function PalDetail({
     : "var(--color-accent)";
   const alpha = isAlpha(form.characterId);
 
-  function set(key: keyof PalDetailModel, value: string | number) {
+  function set(key: keyof PalDetailModel, value: string | number | boolean) {
     setForm((current) => (current ? { ...current, [key]: value } : current));
   }
 
@@ -302,6 +302,17 @@ export function PalDetail({
                 <span className="text-sm">Alpha / Boss variant</span>
               </label>
             </div>
+          )}
+
+          {capabilities.isRare && (
+            <label className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked={!!form.isRare}
+                onChange={(e) => set("isRare", e.target.checked)}
+              />
+              <span className="text-sm">Lucky (rare) Pal ✨</span>
+            </label>
           )}
 
           {capabilities.nickname && (

@@ -116,6 +116,7 @@ export interface PalEditCapabilities {
   nickname: boolean;
   level: boolean;
   rank: boolean;
+  isRare: boolean;
   gender: boolean;
   rankHp: boolean;
   rankAttack: boolean;
@@ -135,6 +136,7 @@ export interface UpdatePalRequest {
   nickname?: FieldUpdate<string>;
   level?: FieldUpdate<number>;
   rank?: FieldUpdate<number>;
+  isRare?: FieldUpdate<boolean>;
   gender?: FieldUpdate<string>;
   rankHp?: FieldUpdate<number>;
   rankAttack?: FieldUpdate<number>;
@@ -154,6 +156,8 @@ export interface UpdatePalResponse {
 }
 
 export interface PalDetail extends PalSummary {
+  /** Absent on Pals that have never carried the `IsRarePal` property. */
+  isRare?: boolean;
   rankHp?: number;
   rankAttack?: number;
   rankDefence?: number;

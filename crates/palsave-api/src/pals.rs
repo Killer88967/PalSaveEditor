@@ -53,6 +53,7 @@ pub struct UpdatePalRequest {
     pub nickname: Option<FieldUpdate<String>>,
     pub level: Option<FieldUpdate<i32>>,
     pub rank: Option<FieldUpdate<i32>>,
+    pub is_rare: Option<FieldUpdate<bool>>,
     pub gender: Option<FieldUpdate<String>>,
     pub rank_hp: Option<FieldUpdate<i32>>,
     pub rank_attack: Option<FieldUpdate<i32>>,
@@ -73,6 +74,7 @@ pub struct PalEditCapabilities {
     pub nickname: bool,
     pub level: bool,
     pub rank: bool,
+    pub is_rare: bool,
     pub gender: bool,
     pub rank_hp: bool,
     pub rank_attack: bool,
@@ -144,6 +146,8 @@ pub struct PalDetail {
     pub level: Option<i32>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub rank: Option<i32>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub is_rare: Option<bool>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub gender: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -437,6 +441,10 @@ fn detail_for(header: &Header, index: usize, key: &Property, value: &Property) -
         nickname: summary.nickname,
         level: summary.level,
         rank: summary.rank,
+        is_rare: parameters
+            .as_ref()
+            .and_then(|properties| property_by_name(properties, "IsRarePal"))
+            .and_then(as_bool),
         gender: summary.gender,
         owner_player_uid: summary.owner_player_uid,
         player_uid: summary.player_uid,
@@ -483,6 +491,7 @@ fn capabilities(properties: Option<&Properties>) -> PalEditCapabilities {
         nickname: property("NickName").is_some_and(|v| matches!(v, Property::Str(_))),
         level: integer("Level"),
         rank: property("CharacterID").is_some(),
+        is_rare: property("CharacterID").is_some(),
         gender: property("Gender").is_some_and(|v|
             matches!(v, Property::Enum(_) | Property::Byte(Byte::Label(_)))
         ),
@@ -624,6 +633,28 @@ fn ensure_rank_property(decoded: &mut DecodedRaw) -> Result<(), String> {
     Ok(())
 }
 
+/// Lucky Pals carry `IsRarePal`; ordinary ones simply omit it, so making a Pal
+/// Lucky means creating the property (and its schema) the way `Rank` is.
+fn ensure_is_rare_property(decoded: &mut DecodedRaw) -> Result<(), String> {
+    let key = PropertyKey(0, "IsRarePal".into());
+    let created = {
+        let sp = decoded.save_parameter_mut()?;
+        if sp.0.contains_key(&key) {
+            false
+        } else {
+            sp.0.insert(key, Property::Bool(false));
+            true
+        }
+    };
+    if created {
+        decoded.schemas.insert("SaveParameter.IsRarePal".into(), PropertyTagPartial {
+            id: None,
+            data: uesave::PropertyTagDataPartial::Other(uesave::PropertyType::BoolProperty),
+        });
+    }
+    Ok(())
+}
+
 fn encode_raw_data(header: &Header, decoded: &DecodedRaw) -> Result<Vec<u8>, String> {
     let mut writer = RawWriter::new(header, &decoded.schemas);
     write_properties_none_terminated(&mut writer, &decoded.properties).map_err(|e|
@@ -663,6 +694,9 @@ pub fn update(
     }
     if request.rank.is_some() {
         ensure_rank_property(&mut decoded).map_err(UpdateError::Internal)?;
+    }
+    if request.is_rare.is_some() {
+        ensure_is_rare_property(&mut decoded).map_err(UpdateError::Internal)?;
     }
     apply_update(decoded.save_parameter_mut().map_err(UpdateError::Internal)?, request).map_err(
         |(field, message)| UpdateError::Validation(BTreeMap::from([(field, message)]))
@@ -720,6 +754,16 @@ fn validate_update(
             errors.insert(
                 "rank".into(),
                 "Star rank must be between 1 (no stars) and 5 (4 stars)".into()
+            );
+        }
+    }
+    // A bool has no range to check, only the capability gate.
+    if request.is_rare.is_some() {
+        requested += 1;
+        if !caps.is_rare {
+            errors.insert(
+                "isRare".into(),
+                "Field is absent or has an unsupported property type".into()
             );
         }
     }
@@ -925,6 +969,9 @@ fn apply_update(properties: &mut Properties, r: &UpdatePalRequest) -> Result<(),
     integer!(talent_melee, "Talent_Melee", "talentMelee");
     integer!(talent_shot, "Talent_Shot", "talentShot");
     integer!(talent_defense, "Talent_Defense", "talentDefense");
+    if let Some(v) = &r.is_rare {
+        set_existing_bool(properties, "IsRarePal", v.value).map_err(|e| ("isRare".into(), e))?;
+    }
     if let Some(v) = &r.gender {
         set_existing_gender(properties, &v.value).map_err(|e| ("gender".into(), e))?;
     }
@@ -965,6 +1012,17 @@ fn set_existing_i32(p: &mut Properties, name: &str, value: i32) -> Result<(), St
         }
         _ => {
             return Err(format!("{name} has an unsupported property type"));
+        }
+    }
+    Ok(())
+}
+fn set_existing_bool(p: &mut Properties, name: &str, value: bool) -> Result<(), String> {
+    match exact_mut(p, name, 0).ok_or_else(|| format!("{name} is absent"))? {
+        Property::Bool(v) => {
+            *v = value;
+        }
+        _ => {
+            return Err(format!("{name} is not a bool property"));
         }
     }
     Ok(())

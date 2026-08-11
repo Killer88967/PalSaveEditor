@@ -133,6 +133,11 @@ export default function WikiUsagePage() {
               nickname, and the passive and active skill lists.
             </>,
             <>
+              Tick <strong>Lucky (rare) Pal</strong> to make a Pal its shiny
+              variant. Most Pals never store <code>IsRarePal</code> at all, so
+              the editor writes the property in when you first turn it on.
+            </>,
+            <>
               Save. The row updates in place and the session revision moves on.
             </>,
           ]}
