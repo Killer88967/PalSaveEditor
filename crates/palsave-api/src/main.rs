@@ -718,6 +718,27 @@ struct ExportQuery {
     validate: Option<bool>,
 }
 
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct BulkUpdatePalRequest {
+    expected_revision: u64,
+    ids: Vec<String>,
+    #[serde(default)]
+    fields: pals::BulkPalFields,
+    #[serde(default)]
+    add_passive_skills: Vec<String>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct BulkUpdatePalResponse {
+    results: Vec<pals::BulkPalResult>,
+    succeeded: usize,
+    failed: usize,
+    dirty: bool,
+    revision: u64,
+}
+
 fn run_revisioned_mutation<T>(
     dirty: &mut bool,
     revision: &mut u64,
@@ -886,6 +907,70 @@ fn mutate_player_session_data(
         dirty: data.dirty,
         revision: data.revision,
     })
+}
+
+fn mutate_bulk_pal_session_data(
+    data: &mut SaveSessionData,
+    request: BulkUpdatePalRequest
+) -> Result<BulkUpdatePalResponse, ApiError> {
+    if request.expected_revision != data.revision {
+        return Err(ApiError::Conflict {
+            message: format!(
+                "stale revision: expected {}, current revision is {}",
+                request.expected_revision,
+                data.revision
+            ),
+            current_revision: data.revision,
+        });
+    }
+    if request.ids.is_empty() {
+        return Err(ApiError::BadRequest("no Pals selected".into()));
+    }
+    let results = pals::bulk_update(
+        &mut data.save,
+        &request.ids,
+        &request.fields,
+        &request.add_passive_skills
+    );
+    let succeeded = results
+        .iter()
+        .filter(|r| r.ok)
+        .count();
+    let failed = results.len() - succeeded;
+    if succeeded > 0 {
+        data.dirty = true;
+        data.revision = data.revision
+            .checked_add(1)
+            .ok_or_else(|| ApiError::Internal("session revision overflow".into()))?;
+        data.pal_index = None;
+    }
+    Ok(BulkUpdatePalResponse {
+        results,
+        succeeded,
+        failed,
+        dirty: data.dirty,
+        revision: data.revision,
+    })
+}
+
+async fn bulk_update_pals(
+    State(state): State<Arc<AppState>>,
+    Path(id): Path<Uuid>,
+    Json(request): Json<BulkUpdatePalRequest>
+) -> Result<Json<BulkUpdatePalResponse>, ApiError> {
+    let save = state.sessions
+        .get(&id)
+        .map(|s| Arc::clone(&s.save))
+        .ok_or_else(|| ApiError::NotFound(format!("save session {id} was not found")))?;
+    let response = tokio::task
+        ::spawn_blocking(move || {
+            let mut data = save
+                .lock()
+                .map_err(|_| ApiError::Internal("save session lock was poisoned".into()))?;
+            mutate_bulk_pal_session_data(&mut data, request)
+        }).await
+        .map_err(|e| ApiError::Internal(format!("bulk pal mutation task failed: {e}")))??;
+    Ok(Json(response))
 }
 
 async fn update_player_stats(
@@ -1237,6 +1322,7 @@ fn build_app(state: Arc<AppState>) -> Router {
         .route("/sessions/{id}/player-stats/{player_uid}", patch(update_player_stats))
         .route("/sessions/{id}/inspect", post(inspect_node))
         .route("/sessions/{id}/pals", get(get_pals))
+        .route("/sessions/{id}/pals/bulk", post(bulk_update_pals))
         .route("/sessions/{id}/pals/{pal_id}", get(get_pal).patch(update_pal))
         .route("/sessions/{id}/scalar", patch(update_scalar))
         .route("/sessions/{id}/export", get(export_session))

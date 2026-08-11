@@ -202,6 +202,25 @@ pub struct PalIndexCache {
     pub items: Vec<PalSummary>,
 }
 
+#[derive(Debug, Clone, Default, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BulkPalFields {
+    pub level: Option<FieldUpdate<i32>>,
+    pub rank: Option<FieldUpdate<i32>>,
+    pub talent_hp: Option<FieldUpdate<i32>>,
+    pub talent_melee: Option<FieldUpdate<i32>>,
+    pub talent_shot: Option<FieldUpdate<i32>>,
+    pub talent_defense: Option<FieldUpdate<i32>>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BulkPalResult {
+    pub id: String,
+    pub ok: bool,
+    pub error: Option<String>,
+}
+
 pub fn build_index(save: &Save, revision: u64) -> Result<PalIndexCache, String> {
     let items = character_map(save)?
         .iter()
@@ -772,6 +791,68 @@ fn validate_update(
         validate_skills(&mut errors, "activeSkills", &v.value);
     }
     errors
+}
+
+fn existing_passives(save: &Save, header: &Header, id: &str) -> Vec<String> {
+    (|| {
+        let entries = character_map(save).ok()?;
+        let index = resolve_id(entries, id)?;
+        let decoded = decode_raw_data(header, &entries[index].value).ok()?;
+        strings_field(decoded.save_parameter(), "PassiveSkillList") // match your strings_field signature
+    })().unwrap_or_default()
+}
+
+fn update_error_message(e: UpdateError) -> String {
+    match e {
+        UpdateError::NotFound(v) | UpdateError::Internal(v) => v,
+        UpdateError::Validation(map) =>
+            map
+                .into_iter()
+                .map(|(k, v)| format!("{k}: {v}"))
+                .collect::<Vec<_>>()
+                .join("; "),
+    }
+}
+
+pub fn bulk_update(
+    save: &mut Save,
+    ids: &[String],
+    fields: &BulkPalFields,
+    add_passive_skills: &[String]
+) -> Vec<BulkPalResult> {
+    let header = save.header.clone();
+    let mut results = Vec::with_capacity(ids.len());
+    for id in ids {
+        // "add passive" appends to each Pal's own list (dedup, cap 4)
+        let passive_skills = if add_passive_skills.is_empty() {
+            None
+        } else {
+            let mut merged = existing_passives(save, &header, id);
+            for p in add_passive_skills {
+                if !merged.iter().any(|e| e.eq_ignore_ascii_case(p)) {
+                    merged.push(p.clone());
+                }
+            }
+            merged.truncate(4);
+            Some(FieldUpdate { value: merged })
+        };
+        let request = UpdatePalRequest {
+            level: fields.level.clone(),
+            rank: fields.rank.clone(),
+            talent_hp: fields.talent_hp.clone(),
+            talent_melee: fields.talent_melee.clone(),
+            talent_shot: fields.talent_shot.clone(),
+            talent_defense: fields.talent_defense.clone(),
+            passive_skills,
+            ..Default::default()
+        };
+        let (ok, error) = match update(save, id, &request) {
+            Ok(_) => (true, None),
+            Err(e) => (false, Some(update_error_message(e))),
+        };
+        results.push(BulkPalResult { id: id.clone(), ok, error });
+    }
+    results
 }
 
 fn range(
