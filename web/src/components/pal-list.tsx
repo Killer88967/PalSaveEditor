@@ -40,6 +40,7 @@ const PARSE_BADGE: Record<string, string> = {
  *
  * A Pal's owner, named when the world's player list knows the UID.
  */
+// eslint-disable-next-line
 function OwnerCell({
   pal,
   names,
@@ -105,9 +106,11 @@ export function PalList({
   // Bulk selection + actions.
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [bulkBusy, setBulkBusy] = useState(false);
+  const [bulkNotice, setBulkNotice] = useState<string>();
   const [refreshTick, setRefreshTick] = useState(0);
 
   const detailController = useRef<AbortController | null>(null);
+  const noticeTimer = useRef<number | undefined>(undefined);
   const catalog = usePalCatalog();
   const { passive: passiveOptions } = useSkillCatalog();
 
@@ -115,6 +118,8 @@ export function PalList({
     const timer = window.setTimeout(() => setSearch(input.trim()), 300);
     return () => window.clearTimeout(timer);
   }, [input]);
+
+  useEffect(() => () => window.clearTimeout(noticeTimer.current), []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -322,6 +327,16 @@ export function PalList({
       onSessionUpdateAction(response.dirty, response.revision);
       setSelectedIds(new Set());
       setRefreshTick((tick) => tick + 1); // refetch so rows show new values
+      const msg =
+        response.failed === 0
+          ? `${response.succeeded} Pal${response.succeeded === 1 ? "" : "s"} updated`
+          : `${response.succeeded} updated · ${response.failed} skipped`;
+      window.clearTimeout(noticeTimer.current);
+      setBulkNotice(msg);
+      noticeTimer.current = window.setTimeout(
+        () => setBulkNotice(undefined),
+        4000,
+      );
     } catch (cause) {
       setFailure({
         key: listKey,
@@ -390,6 +405,20 @@ export function PalList({
             </p>
           </div>
         </div>
+
+        {bulkNotice && (
+          <p
+            role="status"
+            className="border-b border-line px-4 py-2 text-xs"
+            style={{
+              color: bulkNotice.includes("skipped")
+                ? "var(--color-warning)"
+                : "var(--color-success)",
+            }}
+          >
+            {bulkNotice}
+          </p>
+        )}
 
         {loading && items.length === 0 && (
           <p className="p-4 text-sm text-muted" role="status">
