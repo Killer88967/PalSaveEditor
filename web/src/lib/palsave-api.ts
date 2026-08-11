@@ -271,6 +271,20 @@ export interface UpdateSaveScalarResponse {
   revision: number;
 }
 
+export interface BulkPalResult {
+  id: string;
+  ok: boolean;
+  error?: string;
+}
+
+export interface BulkUpdatePalResponse {
+  results: BulkPalResult[];
+  succeeded: number;
+  failed: number;
+  dirty: boolean;
+  revision: number;
+}
+
 interface DeleteSessionResponse {
   deleted: boolean;
 }
@@ -627,6 +641,24 @@ export async function updatePal(
   );
   if (!response.ok) throw await apiError(response);
   return response.json() as Promise<UpdatePalResponse>;
+}
+
+export async function bulkUpdatePals(
+  sessionId: string,
+  request: {
+    expectedRevision: number;
+    ids: string[];
+    fields: Record<string, FieldUpdate<number>>;
+    addPassiveSkills: string[];
+  },
+): Promise<BulkUpdatePalResponse> {
+  const response = await apiFetch(`/api/rust/sessions/${sessionId}/pals/bulk`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(request),
+  });
+  if (!response.ok) throw await apiError(response);
+  return response.json();
 }
 
 export async function deleteSaveSession(sessionId: string): Promise<boolean> {

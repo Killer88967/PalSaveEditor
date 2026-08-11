@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
+  bulkUpdatePals,
   getPal,
   getPals,
   getPlayerStats,
@@ -15,9 +16,11 @@ import {
   type UpdatePalRequest,
 } from "@/lib/palsave-api";
 import { PalDetail } from "@/components/pal-detail";
+import { BulkBar } from "@/components/bulk-bar";
 import { updatePalRow } from "@/lib/pal-form";
 import { humanizeId, shortId } from "@/lib/format";
 import { WikiIcon } from "@/components/wiki-browser";
+import { useSkillCatalog } from "@/lib/skill-catalog";
 import {
   ELEMENT_COLORS,
   isAlpha,
@@ -99,8 +102,14 @@ export function PalList({
   const [detailError, setDetailError] = useState<string>();
   const [savingPal, setSavingPal] = useState(false);
 
+  // Bulk selection + actions.
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [bulkBusy, setBulkBusy] = useState(false);
+  const [refreshTick, setRefreshTick] = useState(0);
+
   const detailController = useRef<AbortController | null>(null);
   const catalog = usePalCatalog();
+  const { passive: passiveOptions } = useSkillCatalog();
 
   useEffect(() => {
     const timer = window.setTimeout(() => setSearch(input.trim()), 300);
@@ -145,10 +154,12 @@ export function PalList({
 
   // Identifies the current filter set. Results carry the key they were fetched
   // for, so a page from stale filters is simply ignored instead of rendered.
+  // `refreshTick` lets a bulk apply force a refetch of the same filters.
   const listKey = JSON.stringify([
     sessionId,
     generation,
     refreshToken,
+    refreshTick,
     filters,
   ]);
 
@@ -189,6 +200,11 @@ export function PalList({
     // `listKey` already encodes every input to the request.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listKey, sessionId]);
+
+  // Drop the selection whenever the filter set (not pagination) changes.
+  useEffect(() => {
+    setSelectedIds(new Set()); // eslint-disable-line react-hooks/set-state-in-effect
+  }, [search, owner, minLevelFilter, sessionId]);
 
   useEffect(() => () => detailController.current?.abort(), []);
 
@@ -263,6 +279,56 @@ export function PalList({
       throw cause;
     } finally {
       setSavingPal(false);
+    }
+  }
+
+  function toggleSelect(id: string) {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }
+
+  const allShownSelected =
+    items.length > 0 && items.every((pal) => selectedIds.has(pal.id));
+
+  function toggleAllShown() {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (items.every((pal) => prev.has(pal.id))) {
+        items.forEach((pal) => next.delete(pal.id));
+      } else {
+        items.forEach((pal) => next.add(pal.id));
+      }
+      return next;
+    });
+  }
+
+  async function applyBulk(
+    fields: Record<string, { value: number }>,
+    addPassiveSkills: string[],
+  ) {
+    if (selectedIds.size === 0) return;
+    setBulkBusy(true);
+    try {
+      const response = await bulkUpdatePals(sessionId, {
+        expectedRevision: revision,
+        ids: [...selectedIds],
+        fields,
+        addPassiveSkills,
+      });
+      onSessionUpdateAction(response.dirty, response.revision);
+      setSelectedIds(new Set());
+      setRefreshTick((tick) => tick + 1); // refetch so rows show new values
+    } catch (cause) {
+      setFailure({
+        key: listKey,
+        message: cause instanceof Error ? cause.message : String(cause),
+      });
+    } finally {
+      setBulkBusy(false);
     }
   }
 
@@ -342,6 +408,18 @@ export function PalList({
         )}
 
         {items.length > 0 && (
+          <label className="flex items-center gap-2 border-b border-line px-3 py-2 text-xs text-subtle">
+            <input
+              type="checkbox"
+              checked={allShownSelected}
+              onChange={toggleAllShown}
+              className="size-4"
+            />
+            Select all shown ({items.length})
+          </label>
+        )}
+
+        {items.length > 0 && (
           <div className="scroll-slim min-h-0 flex-1 overflow-y-auto">
             <ul className="divide-y divide-line">
               {items.map((pal) => {
@@ -356,14 +434,21 @@ export function PalList({
                   : undefined;
                 const selected = selectedId === pal.id;
                 return (
-                  <li key={pal.id}>
+                  <li key={pal.id} className="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={selectedIds.has(pal.id)}
+                      onChange={() => toggleSelect(pal.id)}
+                      aria-label={`Select ${pal.nickname || humanizeId(pal.characterId)}`}
+                      className="ml-3 size-4 shrink-0"
+                    />
                     <button
                       type="button"
                       aria-current={selected || undefined}
                       onClick={() => {
                         if (!savingPal) void selectPal(pal);
                       }}
-                      className={`flex w-full items-center gap-3 px-3 py-2.5 text-left transition-colors ${
+                      className={`flex min-w-0 flex-1 items-center gap-3 px-3 py-2.5 text-left transition-colors ${
                         selected ? "bg-accent-soft" : "hover:bg-raised"
                       }`}
                     >
@@ -480,6 +565,16 @@ export function PalList({
               </div>
             )}
           </div>
+        )}
+
+        {selectedIds.size > 0 && (
+          <BulkBar
+            count={selectedIds.size}
+            passiveOptions={passiveOptions}
+            busy={bulkBusy}
+            onApplyAction={applyBulk}
+            onClearAction={() => setSelectedIds(new Set())}
+          />
         )}
       </section>
 
