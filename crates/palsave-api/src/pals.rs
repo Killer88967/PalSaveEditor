@@ -503,7 +503,7 @@ fn capabilities(properties: Option<&Properties>) -> PalEditCapabilities {
         talent_melee: integer("Talent_Melee"),
         talent_shot: integer("Talent_Shot"),
         talent_defense: integer("Talent_Defense"),
-        passive_skills: strings("PassiveSkillList"),
+        passive_skills: property("CharacterID").is_some(),
         active_skills: strings("EquipWaza"),
     }
 }
